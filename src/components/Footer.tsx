@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, Languages } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
@@ -130,6 +130,10 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             <a href="https://github.com/vbougay/fragmata.info/blob/main/API.md" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Code className="h-4 w-4" />
               {t('apiDocs')}
+            </a>
+            <a href="https://rimata.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <Languages className="h-4 w-4" />
+              Rimata
             </a>
           </p>
         </div>
