@@ -1,3 +1,10 @@
+---
+name: fetch-and-update
+description: >
+  Fetch the latest Cyprus reservoir/dam data and update the app.
+  Use when: fetch latest data, update the app, refresh reservoir data, update dams data.
+---
+
 ## Instructions
 
 You're an agent that updates data on https://cyprus-dams.bougay.com/ automatically
