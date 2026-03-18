@@ -46,11 +46,24 @@ export const calculateRegionDrainDate = (regionTotal: RegionTotal, reservoirs: R
   return formatDrainDate(regionTotal.storage.current.amount, monthlyRate);
 };
 
+// Check if a drain date string (MM/YYYY) is more than N years in the future
+const isDrainDateBeyondYears = (drainDate: string, years: number): boolean => {
+  const parts = drainDate.split('/');
+  if (parts.length !== 2) return false;
+  const month = parseInt(parts[0], 10);
+  const year = parseInt(parts[1], 10);
+  if (isNaN(month) || isNaN(year)) return false;
+  const now = new Date();
+  const target = new Date(year, month - 1);
+  const cutoff = new Date(now.getFullYear() + years, now.getMonth());
+  return target > cutoff;
+};
+
 // Get the Tailwind color class for a drain date status
 export const getDrainDateColor = (drainDate: string | undefined): string => {
   if (!drainDate) return '';
   if (drainDate === 'Already Empty' || drainDate === 'Already Restricted') return 'text-red-500 dark:text-red-400';
-  if (drainDate === 'Not Draining' || drainDate === 'Not Restricted' || drainDate === 'Beyond 10 Years') return 'text-green-500 dark:text-green-400';
+  if (drainDate === 'Not Draining' || drainDate === 'Not Restricted' || drainDate === 'Beyond 10 Years' || isDrainDateBeyondYears(drainDate, 3)) return 'text-green-500 dark:text-green-400';
   return 'text-amber-500 dark:text-amber-400';
 };
 
@@ -60,6 +73,7 @@ export const getDrainDateText = (drainDate: string | undefined, t: (key: string)
   if (drainDate === 'Already Empty' || drainDate === 'Already Restricted') return t('alreadyRestricted');
   if (drainDate === 'Not Draining' || drainDate === 'Not Restricted' || drainDate === 'Beyond 10 Years') return t('notRestricted');
   if (drainDate === 'Calculating...') return t('calculating');
+  if (isDrainDateBeyondYears(drainDate, 3)) return t('notRestricted');
   return drainDate;
 };
 
