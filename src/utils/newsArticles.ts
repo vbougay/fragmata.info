@@ -31,6 +31,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Засуха накрыла Кипр. Жителей попросили включать воду только на две минуты в день', url: 'https://www.vokrugsveta.ru/news/zasukha-nakryla-kipr-zhitelei-poprosili-vklyuchat-vodu-tolko-na-dve-minuty-v-den-id6839742/', lang: 'ru', source: 'Вокруг Света' },
 
   // Greek
+  { title: 'Αισιόδοξο το ΤΑΥ για εισροές στα φράγματα — «Σε καλύτερη μοίρα από πέρσι»', url: 'https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi', lang: 'el', source: 'SigmaLive' },
   { title: 'Στο 21% η πληρότητα των φραγμάτων — «Ο Μάρτης μας χρωστάει βροχές»', url: 'https://www.sigmalive.com/news/local/1306083/sto-21-i-plirotita-ton-fraghmaton-symfona-me-to-tau', lang: 'el', source: 'SigmaLive' },
   { title: 'Δορυφορική εικόνα αποτυπώνει την τραγική κατάσταση των φραγμάτων στην Κύπρο', url: 'https://www.sigmalive.com/news/local/1304891/doriforiki-eikona-apotipwnei-tin-traghiki-katastasi-ton-fraghmaton-stin-kypro', lang: 'el', source: 'SigmaLive' },
   { title: 'Ο Μάρτης μας χρωστάει βροχές — Στο 21% η πληρότητα των φραγμάτων', url: 'https://cyprustimes.com/koinonia/o-martis-mas-chrostaei-vroches-sto-21-i-plirotita-ton-fragmaton/', lang: 'el', source: 'Cyprus Times' },
