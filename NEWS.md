@@ -28,6 +28,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Greek
 
+- [Αισιόδοξο το ΤΑΥ για εισροές στα φράγματα — «Σε καλύτερη μοίρα από πέρσι»](https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi) — SigmaLive, Mar 17, 2026
 - [Στο 21% η πληρότητα των φραγμάτων — «Ο Μάρτης μας χρωστάει βροχές»](https://www.sigmalive.com/news/local/1306083/sto-21-i-plirotita-ton-fraghmaton-symfona-me-to-tau) — SigmaLive, Mar 2026
 - [Δορυφορική εικόνα αποτυπώνει την τραγική κατάσταση των φραγμάτων στην Κύπρο](https://www.sigmalive.com/news/local/1304891/doriforiki-eikona-apotipwnei-tin-traghiki-katastasi-ton-fraghmaton-stin-kypro) — SigmaLive, Mar 2026
 - [Ο Μάρτης μας χρωστάει βροχές — Στο 21% η πληρότητα των φραγμάτων](https://cyprustimes.com/koinonia/o-martis-mas-chrostaei-vroches-sto-21-i-plirotita-ton-fragmaton/) — Cyprus Times, Mar 2026
