@@ -9,6 +9,7 @@ import StorageForecast from '@/components/StorageForecast';
 import { StatCardGrid } from '@/components/StatCardGrid';
 import { YTDInflowResult, YTDOutflowResult } from '@/utils/reservoirUtils';
 import { useReservoirData } from '@/hooks/useReservoirData';
+import { getLast7DaysInflow } from '@/utils/dataManager';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
@@ -42,6 +43,7 @@ export function DashboardClient({
   );
 
   const sparklineMap = useMemo(() => getAllSparklineData(reservoirs), [reservoirs]);
+  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
 
   const getReservoirs = (region: ReservoirRegion) => {
     return reservoirs.filter(reservoir => reservoir.region === region);
@@ -88,7 +90,7 @@ export function DashboardClient({
                         .sort((a, b) => b.capacity - a.capacity)
                         .slice(0, 4)
                         .map((reservoir) => (
-                          <ReservoirCard key={reservoir.name} reservoir={reservoir} sparklineData={sparklineMap.get(reservoir.name)} />
+                          <ReservoirCard key={reservoir.name} reservoir={reservoir} sparklineData={sparklineMap.get(reservoir.name)} last7DaysInflow={weeklyInflowMap?.get(reservoir.name)} />
                         ))}
                     </div>
                   </div>
@@ -103,7 +105,7 @@ export function DashboardClient({
               {regionTotals.filter(region => region.region !== 'Total').map((regionTotal) => (
                 <RegionSummary key={regionTotal.region} regionTotal={regionTotal}>
                   {getReservoirs(regionTotal.region).map((reservoir) => (
-                    <ReservoirCard key={reservoir.name} reservoir={reservoir} sparklineData={sparklineMap.get(reservoir.name)} />
+                    <ReservoirCard key={reservoir.name} reservoir={reservoir} sparklineData={sparklineMap.get(reservoir.name)} last7DaysInflow={weeklyInflowMap?.get(reservoir.name)} />
                   ))}
                 </RegionSummary>
               ))}

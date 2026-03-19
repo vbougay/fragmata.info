@@ -11,6 +11,7 @@ import { StatCardGrid } from '@/components/StatCardGrid';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer';
 import { useReservoirData } from '@/hooks/useReservoirData';
+import { getLast7DaysInflow } from '@/utils/dataManager';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
@@ -140,6 +141,8 @@ export function RegionDamClient({
     return new Map();
   }, [type, regionReservoirs, damName, reservoirs]);
 
+  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
+
   if (!regionTotal) return null;
 
   const regionTranslationKey: Record<string, keyof typeof translations.en> = {
@@ -207,6 +210,7 @@ export function RegionDamClient({
           animate={!mediaMode}
           compact={mediaMode}
           totalInflowSince={regionTotal.inflow.totalSince}
+          last7DaysInflow={type === 'dam' && damName && weeklyInflowMap ? weeklyInflowMap.get(damName) : undefined}
         />
 
         <div className={mediaMode ? 'space-y-4' : 'space-y-8'}>
@@ -236,6 +240,7 @@ export function RegionDamClient({
                     key={reservoir.name}
                     reservoir={reservoir}
                     sparklineData={sparklineMap.get(reservoir.name)}
+                    last7DaysInflow={weeklyInflowMap?.get(reservoir.name)}
                   />
                 ))}
             </div>

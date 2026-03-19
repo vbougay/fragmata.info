@@ -15,9 +15,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 interface ReservoirCardProps {
   reservoir: Reservoir;
   sparklineData?: SparklineDataPoint[];
+  last7DaysInflow?: number;
 }
 
-const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData }) => {
+const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData, last7DaysInflow }) => {
   const { name, capacity, inflow, storage, maxStorage, drainDate, region } = reservoir;
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -59,13 +60,23 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData 
           <CapacityChart data={reservoir} />
         </div>
 
-        <div className="card-details grid grid-cols-2 gap-2 mt-4 text-sm">
+        <div className="card-details grid grid-cols-3 gap-2 mt-4 text-sm">
           <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
             <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
               <Droplets size={12} className="text-water-500 dark:text-water-400" />
               {t('recentInflow')}
             </div>
             <div className="font-mono text-foreground">{inflow.last24Hours.toFixed(3)} MCM</div>
+          </div>
+
+          <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
+            <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
+              <Droplets size={12} className="text-water-500 dark:text-water-400" />
+              {t('last7DaysInflow')}
+            </div>
+            <div className="font-mono text-foreground">
+              {last7DaysInflow !== undefined ? `${last7DaysInflow.toFixed(3)} MCM` : '—'}
+            </div>
           </div>
 
           <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">

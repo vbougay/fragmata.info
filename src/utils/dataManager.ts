@@ -390,6 +390,54 @@ export const getScenarioInflowAverages = (
 };
 
 /**
+ * Compute last-7-days inflow for each reservoir by comparing the current dataset
+ * to the closest dataset ~7 days prior. Returns a map of reservoir name → 7-day inflow MCM.
+ * Returns null if no suitable prior dataset is found.
+ */
+export const getLast7DaysInflow = (datasetId?: string): Map<string, number> | null => {
+  const dsId = resolveId(datasetId);
+  const currentParsed = parseReportDate(dsId);
+  if (!currentParsed) return null;
+
+  const currentDate = new Date(currentParsed.year, currentParsed.month - 1, currentParsed.day);
+
+  // Find the dataset closest to 7 days before the current one (between 5-10 days)
+  let bestDataset: typeof availableDataSets[0] | null = null;
+  let bestDiff = Infinity;
+
+  for (const ds of availableDataSets) {
+    if (ds.id === dsId) continue;
+    const parsed = parseReportDate(ds.id);
+    if (!parsed) continue;
+    const dsDate = new Date(parsed.year, parsed.month - 1, parsed.day);
+    const diffDays = (currentDate.getTime() - dsDate.getTime()) / (1000 * 60 * 60 * 24);
+    if (diffDays >= 5 && diffDays <= 10) {
+      const distFrom7 = Math.abs(diffDays - 7);
+      if (distFrom7 < bestDiff) {
+        bestDiff = distFrom7;
+        bestDataset = ds;
+      }
+    }
+  }
+
+  if (!bestDataset) return null;
+
+  const currentData = reservoirData(dsId);
+  const priorData = reservoirData(bestDataset.id);
+  const result = new Map<string, number>();
+
+  for (const reservoir of currentData) {
+    const prior = priorData.find(r => r.name === reservoir.name);
+    if (prior) {
+      const diff = reservoir.inflow.totalSince - prior.inflow.totalSince;
+      result.set(reservoir.name, Math.max(0, diff));
+    }
+  }
+
+  return result;
+};
+
+/**
  * Get summary of changes for the selected dataset.
  */
 export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {

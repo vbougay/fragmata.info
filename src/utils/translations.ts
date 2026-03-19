@@ -26,7 +26,7 @@ export const translations = {
     mapCapacity: "Capacity",
     mapCurrent: "Current",
     mapLastYear: "Last Year",
-    mapRecentInflow: "Recent Inflow",
+    mapRecentInflow: "Last 24h Inflow",
     mapNoteLabel: "Note",
     
     // Cards
@@ -35,7 +35,7 @@ export const translations = {
     // Region Summary
     capacity: "capacity",
     lastYear: "Last Year",
-    recentInflow: "Recent Inflow",
+    recentInflow: "Last 24h Inflow",
     fullyDrainedBy: "Fully Drained By",
     viewReservoirs: "View Reservoirs",
     changesTitle: "Recent Changes Summary",
@@ -46,8 +46,9 @@ export const translations = {
     currentStorageShort: "Current Storage",
     lastYearShort: "Last Year",
     changeShort: "Change",
-    recentInflowShort: "Recent Inflow",
-    totalInflow: "Total Inflow",
+    recentInflowShort: "Last 24h Inflow",
+    last7DaysInflow: "Last 7 Days Inflow",
+    totalInflow: "Inflow (since Oct)",
     fullyDrainedByShort: "Fully Drained By",
     searchReservoirs: "Search reservoirs...",
     filter: "Filter",
@@ -197,7 +198,7 @@ export const translations = {
     mapCapacity: "Χωρητικότητα",
     mapCurrent: "Τρέχουσα",
     mapLastYear: "Πέρυσι",
-    mapRecentInflow: "Πρόσφατη εισροή",
+    mapRecentInflow: "Εισροή 24ω",
     mapNoteLabel: "Σημείωση",
     
     // Cards
@@ -206,7 +207,7 @@ export const translations = {
     // Region Summary
     capacity: "Χωρητικότητα",
     lastYear: "Πέρυσι",
-    recentInflow: "Πρόσφατη εισροή",
+    recentInflow: "Εισροή 24ω",
     fullyDrainedBy: "Πλήρης εξάντληση έως",
     viewReservoirs: "Προβολή ταμιευτήρων",
     changesTitle: "Σύνοψη πρόσφατων αλλαγών",
@@ -217,8 +218,9 @@ export const translations = {
     currentStorageShort: "Τρέχουσα αποθήκευση",
     lastYearShort: "Πέρυσι",
     changeShort: "Μεταβολή",
-    recentInflowShort: "Πρόσφατη εισροή",
-    totalInflow: "Συνολική εισροή",
+    recentInflowShort: "Εισροή 24ω",
+    last7DaysInflow: "Εισροή 7 ημερών",
+    totalInflow: "Εισροή (από Οκτ)",
     fullyDrainedByShort: "Πλήρης εξάντληση έως",
     searchReservoirs: "Αναζήτηση ταμιευτήρων...",
     filter: "Φίλτρο",
@@ -368,7 +370,7 @@ export const translations = {
     mapCapacity: "Вместимость",
     mapCurrent: "Текущий",
     mapLastYear: "Прошлый год",
-    mapRecentInflow: "Недавний приток",
+    mapRecentInflow: "Приток за 24ч",
     mapNoteLabel: "Примечание",
     
     // Cards
@@ -377,7 +379,7 @@ export const translations = {
     // Region Summary
     capacity: "вместимость",
     lastYear: "Год назад",
-    recentInflow: "Недавний приток",
+    recentInflow: "Приток за 24ч",
     fullyDrainedBy: "Полное истощение к",
     viewReservoirs: "Просмотр водохранилищ",
     changesTitle: "Сводка недавних изменений",
@@ -388,8 +390,9 @@ export const translations = {
     currentStorageShort: "Текущий запас",
     lastYearShort: "Прошлый год",
     changeShort: "Изменение",
-    recentInflowShort: "Недавний приток",
-    totalInflow: "Общий приток",
+    recentInflowShort: "Приток за 24ч",
+    last7DaysInflow: "Приток за 7 дн.",
+    totalInflow: "Приток (с Окт)",
     fullyDrainedByShort: "Полное истощение к",
     searchReservoirs: "Поиск водохранилищ...",
     filter: "Фильтр",
