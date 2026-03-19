@@ -5,7 +5,7 @@ import { Reservoir } from '@/types';
 import { CapacityChart } from '@/components';
 import StorageSparkline from '@/components/StorageSparkline';
 import { SparklineDataPoint, getSparklineExtremes } from '@/utils/sparklineData';
-import { DropletIcon, Droplets, TrendingUp, Calendar, Timer, TrendingDown, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
+import { DropletIcon, Droplets, Calendar, Timer, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
 import { getDrainDateColor, getDrainDateText } from '@/utils/reservoirUtils';
@@ -15,9 +15,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 interface ReservoirCardProps {
   reservoir: Reservoir;
   sparklineData?: SparklineDataPoint[];
+  last7DaysInflow?: number;
 }
 
-const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData }) => {
+const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData, last7DaysInflow }) => {
   const { name, capacity, inflow, storage, maxStorage, drainDate, region } = reservoir;
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -59,24 +60,34 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData 
           <CapacityChart data={reservoir} />
         </div>
 
-        <div className="card-details grid grid-cols-2 gap-2 mt-4 text-sm">
-          <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
-            <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
+        <div className="card-details grid grid-cols-1 gap-2 mt-4 text-sm">
+          <div className="bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
+            <div className="text-xs text-muted-foreground mb-2 flex items-center gap-1">
               <Droplets size={12} className="text-water-500 dark:text-water-400" />
-              {t('recentInflow')}
+              {t('inflowLabel')}
             </div>
-            <div className="font-mono text-foreground">{inflow.last24Hours.toFixed(3)} MCM</div>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-left">
+                <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast24h')}</div>
+                <div className="font-mono text-foreground text-xs">{inflow.last24Hours.toFixed(3)}</div>
+                <div className="text-[10px] text-muted-foreground">MCM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast7d')}</div>
+                <div className="font-mono text-foreground text-xs">
+                  {last7DaysInflow !== undefined ? last7DaysInflow.toFixed(3) : '—'}
+                </div>
+                <div className="text-[10px] text-muted-foreground">MCM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowSinceOct')}</div>
+                <div className="font-mono text-foreground text-xs">{inflow.totalSince.toFixed(3)}</div>
+                <div className="text-[10px] text-muted-foreground">MCM</div>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
-            <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
-              <TrendingUp size={12} className="text-water-500 dark:text-water-400" />
-              {t('totalInflow')}
-            </div>
-            <div className="font-mono text-foreground">{inflow.totalSince.toFixed(3)} MCM</div>
-          </div>
-
-          <div className="flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg col-span-2">
             {sparklineData && sparklineData.length > 0 ? (() => {
               const extremes = getSparklineExtremes(sparklineData);
               const formatShortDate = (iso: string) => {

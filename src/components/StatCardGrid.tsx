@@ -13,6 +13,7 @@ interface StatCardGridProps {
   compact?: boolean;
   drainDateLabel?: string;
   totalInflowSince?: number;
+  last7DaysInflow?: number;
 }
 
 export function StatCardGrid({
@@ -24,6 +25,7 @@ export function StatCardGrid({
   compact = false,
   drainDateLabel,
   totalInflowSince,
+  last7DaysInflow,
 }: StatCardGridProps) {
   const anim = animate ? 'animate-fade-in' : '';
   const delay = (ms: number) => animate ? { animationDelay: `${ms}ms` } : undefined;
@@ -142,15 +144,28 @@ export function StatCardGrid({
         )}
 
         {!ytdInflow && !ytdOutflow && totalInflowSince !== undefined && (
-          <Card className={`glass-card flex rounded-2xl overflow-hidden ${anim} glow-effect col-span-2 md:col-span-1`} style={delay(400)}>
-            <div className="stat-card-icon flex-none p-3 sm:p-4">
-              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-water-600 dark:text-water-400" />
-            </div>
-            <CardContent className="flex flex-col justify-center p-3 sm:p-4">
-              <div className="text-xs sm:text-sm text-muted-foreground">{t('totalInflow')}</div>
-              <div className="text-lg sm:text-2xl font-bold text-foreground">{totalInflowSince.toFixed(1)} MCM</div>
-            </CardContent>
-          </Card>
+          <>
+            {last7DaysInflow !== undefined && (
+              <Card className={`glass-card flex rounded-2xl overflow-hidden ${anim} glow-effect`} style={delay(400)}>
+                <div className="stat-card-icon flex-none p-2 sm:p-3">
+                  <Droplets className="h-5 w-5 text-blue-500 dark:text-blue-400" />
+                </div>
+                <CardContent className="flex flex-col justify-center p-2 min-w-0">
+                  <div className="text-xs text-muted-foreground">{t('inflowLast7d')}</div>
+                  <div className="text-sm font-bold text-foreground">{last7DaysInflow.toFixed(3)} MCM</div>
+                </CardContent>
+              </Card>
+            )}
+            <Card className={`glass-card flex rounded-2xl overflow-hidden ${anim} glow-effect ${last7DaysInflow === undefined ? 'col-span-2 md:col-span-1' : ''}`} style={delay(500)}>
+              <div className="stat-card-icon flex-none p-2 sm:p-3">
+                <TrendingUp className="h-5 w-5 text-water-600 dark:text-water-400" />
+              </div>
+              <CardContent className="flex flex-col justify-center p-2 min-w-0">
+                <div className="text-xs text-muted-foreground">{t('inflowSinceOct')}</div>
+                <div className="text-sm font-bold text-foreground">{totalInflowSince.toFixed(1)} MCM</div>
+              </CardContent>
+            </Card>
+          </>
         )}
       </div>
     </div>

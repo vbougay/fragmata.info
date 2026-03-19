@@ -149,6 +149,7 @@ const ReservoirMap: React.FC = () => {
                         {t('mapLastYear')}: {reservoir.storage.lastYear.amount.toFixed(1)} MCM ({reservoir.storage.lastYear.percentage.toFixed(1)}%)
                       </p>
                       <p style={{ margin: '0' }}>{t('mapRecentInflow')}: {reservoir.inflow.last24Hours.toFixed(3)} MCM</p>
+                      <p style={{ margin: '0' }}>{t('totalInflow')}: {reservoir.inflow.totalSince.toFixed(3)} MCM</p>
                     </div>
                   </Popup>
                 </Marker>

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Reservoir } from '@/types';
-import { getReservoirsWithDrainDates } from '@/utils/dataManager';
+import { getReservoirsWithDrainDates, getLast7DaysInflow } from '@/utils/dataManager';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
@@ -47,6 +47,7 @@ const ReservoirTable: React.FC = () => {
   const t = useTranslation(language);
   const reservoirData = getReservoirsWithDrainDates(currentDataSetId);
   const sparklineMap = useMemo(() => getAllSparklineData(reservoirData), [reservoirData]);
+  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
 
   // Define the columns for the table
   const columns: Column[] = [
@@ -150,13 +151,22 @@ const ReservoirTable: React.FC = () => {
     },
     {
       key: 'inflow',
-      label: t('recentInflowShort'),
+      label: t('inflowLast24h'),
       render: (reservoir) => <span>{reservoir.inflow.last24Hours.toFixed(3)} MCM</span>,
       sortable: true,
     },
     {
       key: 'inflow',
-      label: t('totalInflow'),
+      label: t('inflowLast7d'),
+      render: (reservoir) => {
+        const val = weeklyInflowMap?.get(reservoir.name);
+        return <span>{val !== undefined ? `${val.toFixed(3)} MCM` : '—'}</span>;
+      },
+      sortable: true,
+    },
+    {
+      key: 'inflow',
+      label: t('inflowSinceOct'),
       render: (reservoir) => <span>{reservoir.inflow.totalSince.toFixed(3)} MCM</span>,
       sortable: true,
     },
