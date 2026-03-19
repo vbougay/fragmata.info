@@ -151,13 +151,13 @@ const ReservoirTable: React.FC = () => {
     },
     {
       key: 'inflow',
-      label: t('recentInflowShort'),
+      label: t('inflowLast24h'),
       render: (reservoir) => <span>{reservoir.inflow.last24Hours.toFixed(3)} MCM</span>,
       sortable: true,
     },
     {
       key: 'inflow',
-      label: t('last7DaysInflow'),
+      label: t('inflowLast7d'),
       render: (reservoir) => {
         const val = weeklyInflowMap?.get(reservoir.name);
         return <span>{val !== undefined ? `${val.toFixed(3)} MCM` : '—'}</span>;
@@ -166,7 +166,7 @@ const ReservoirTable: React.FC = () => {
     },
     {
       key: 'inflow',
-      label: t('totalInflow'),
+      label: t('inflowSinceOct'),
       render: (reservoir) => <span>{reservoir.inflow.totalSince.toFixed(3)} MCM</span>,
       sortable: true,
     },

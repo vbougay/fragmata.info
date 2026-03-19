@@ -151,7 +151,7 @@ export function StatCardGrid({
                   <Droplets className="h-5 w-5 text-blue-500 dark:text-blue-400" />
                 </div>
                 <CardContent className="flex flex-col justify-center p-2 min-w-0">
-                  <div className="text-xs text-muted-foreground">{t('last7DaysInflow')}</div>
+                  <div className="text-xs text-muted-foreground">{t('inflowLast7d')}</div>
                   <div className="text-sm font-bold text-foreground">{last7DaysInflow.toFixed(3)} MCM</div>
                 </CardContent>
               </Card>
@@ -161,7 +161,7 @@ export function StatCardGrid({
                 <TrendingUp className="h-5 w-5 text-water-600 dark:text-water-400" />
               </div>
               <CardContent className="flex flex-col justify-center p-2 min-w-0">
-                <div className="text-xs text-muted-foreground">{t('totalInflow')}</div>
+                <div className="text-xs text-muted-foreground">{t('inflowSinceOct')}</div>
                 <div className="text-sm font-bold text-foreground">{totalInflowSince.toFixed(1)} MCM</div>
               </CardContent>
             </Card>
