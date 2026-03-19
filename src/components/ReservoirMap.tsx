@@ -62,6 +62,7 @@ const ReservoirMap: React.FC = () => {
   
   // Function to get color based on percentage
   const getColorByPercentage = (percentage: number): string => {
+    if (percentage >= 100) return '#3b82f6'; // blue (full)
     if (percentage < 25) return '#ef4444'; // red
     if (percentage < 50) return '#f97316'; // orange
     if (percentage < 75) return '#facc15'; // yellow
