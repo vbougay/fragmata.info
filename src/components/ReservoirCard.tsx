@@ -67,7 +67,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               {t('inflowLabel')}
             </div>
             <div className="grid grid-cols-3 gap-2">
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast24h')}</div>
                 <div className="font-mono text-foreground text-xs">{inflow.last24Hours.toFixed(3)}</div>
                 <div className="text-[10px] text-muted-foreground">MCM</div>
