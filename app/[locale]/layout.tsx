@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Roboto_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { notFound } from "next/navigation";
 import { Providers } from "@/components/providers";
@@ -307,6 +308,7 @@ export default async function LocaleLayout({
           <p>{ns.body}</p>
         </noscript>
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-JX6FXMP26B" />
       </body>
     </html>
   );
