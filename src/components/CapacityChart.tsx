@@ -1,9 +1,115 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useId } from 'react';
 import { RegionTotal, Reservoir } from '@/types';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
+
+interface RingColors {
+  base: string;
+  light: string;
+  dark: string;
+  glow: string;
+  textClass: string;
+}
+
+const getRingColors = (percentage: number): RingColors => {
+  if (percentage < 25) return {
+    base: '#ef4444', light: '#f87171', dark: '#dc2626',
+    glow: 'rgba(239, 68, 68, 0.6)', textClass: 'text-red-500'
+  };
+  if (percentage < 50) return {
+    base: '#f97316', light: '#fb923c', dark: '#ea580c',
+    glow: 'rgba(249, 115, 22, 0.5)', textClass: 'text-orange-500'
+  };
+  if (percentage < 75) return {
+    base: '#eab308', light: '#facc15', dark: '#ca8a04',
+    glow: 'rgba(234, 179, 8, 0.4)', textClass: 'text-yellow-500'
+  };
+  return {
+    base: '#22c55e', light: '#4ade80', dark: '#16a34a',
+    glow: 'rgba(34, 197, 94, 0.5)', textClass: 'text-green-500'
+  };
+};
+
+const RADIUS = 45;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+interface DonutRingProps {
+  percentage: number;
+  label: string;
+  ringId: string;
+}
+
+const DonutRing: React.FC<DonutRingProps> = ({ percentage, label, ringId }) => {
+  const colors = getRingColors(percentage);
+  const offset = CIRCUMFERENCE * (1 - percentage / 100);
+
+  const arcProps = {
+    cx: 50, cy: 50, r: RADIUS,
+    fill: 'none' as const,
+    strokeLinecap: 'round' as const,
+    strokeDasharray: CIRCUMFERENCE,
+    strokeDashoffset: offset,
+    transform: 'rotate(-90 50 50)',
+    className: 'progress-ring-circle',
+  };
+
+  return (
+    <div
+      className="relative w-28 h-28 flex items-center justify-center"
+      style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
+    >
+      <svg className="w-full h-full" viewBox="0 0 100 100">
+        <defs>
+          <filter id={`glow-${ringId}`} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+            <feColorMatrix
+              in="blur"
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.5 0"
+              result="glow"
+            />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        {/* Track — 3-layer volumetric groove */}
+        <circle cx="50" cy="50" r={RADIUS} fill="none"
+          stroke="rgba(0,0,0,0.2)" strokeWidth="9" />
+        <circle cx="50" cy="50" r={RADIUS} fill="none"
+          stroke="rgba(128,128,128,0.15)" strokeWidth="7" />
+        <circle cx="50" cy="50" r={RADIUS} fill="none"
+          stroke="rgba(255,255,255,0.06)" strokeWidth="2.5" />
+
+        {/* Glow layer — blurred wider copy of the progress arc */}
+        <circle
+          {...arcProps}
+          className="progress-ring-circle progress-ring-glow"
+          stroke={colors.glow}
+          strokeWidth={10}
+          filter={`url(#glow-${ringId})`}
+          opacity={0.6}
+        />
+
+        {/* Progress arc — 3-layer volumetric tube */}
+        {/* Layer 1: Dark edges (peeks out wider) */}
+        <circle {...arcProps} stroke={colors.dark} strokeWidth={8} />
+        {/* Layer 2: Main body color */}
+        <circle {...arcProps} stroke={colors.base} strokeWidth={6} />
+        {/* Layer 3: Specular highlight stripe */}
+        <circle {...arcProps} stroke={colors.light} strokeWidth={2.5} opacity={0.7} />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className={`text-lg font-bold ${colors.textClass}`}>{percentage.toFixed(1)}%</span>
+        <span className="text-[0.65rem] text-gray-500">{label}</span>
+      </div>
+    </div>
+  );
+};
 
 interface CapacityChartProps {
   data: RegionTotal | Reservoir;
@@ -15,6 +121,7 @@ const CapacityChart: React.FC<CapacityChartProps> = ({ data, showComparison = tr
   const { language } = useLanguage();
   const { isPlaying } = useDataContext();
   const t = useTranslation(language);
+  const uniqueId = useId();
 
   useEffect(() => {
     if (!chartRef.current) return;
@@ -66,58 +173,16 @@ const CapacityChart: React.FC<CapacityChartProps> = ({ data, showComparison = tr
   const lastYearPercentage = data.storage.lastYear.percentage;
   const storageDifference = currentPercentage - lastYearPercentage;
   const isIncreasing = storageDifference > 0;
-  
-  // Calculate colors based on percentage values
-  const getColor = (percentage: number) => {
-    if (percentage < 25) return 'text-red-500';
-    if (percentage < 50) return 'text-orange-500';
-    if (percentage < 75) return 'text-yellow-500';
-    return 'text-green-500';
-  };
-  
-  const currentColor = getColor(currentPercentage);
-  const lastYearColor = getColor(lastYearPercentage);
-  
+
   return (
     <div ref={chartRef} className="opacity-0 transition-opacity duration-500">
       <div className="flex items-center justify-center space-x-4">
-        {/* Current percentage circle */}
-        <div className="relative w-28 h-28 flex items-center justify-center">
-          <svg className="w-full h-full" viewBox="0 0 100 100">
-            {/* Background circle */}
-            <circle
-              cx="50"
-              cy="50"
-              r="45"
-              fill="none"
-              stroke="#e5e7eb"
-              strokeWidth="7"
-            />
+        <DonutRing
+          percentage={currentPercentage}
+          label={t('currentVeryShort')}
+          ringId={`cur-${uniqueId}`}
+        />
 
-            {/* Progress circle */}
-            <circle
-              className="progress-ring-circle"
-              cx="50"
-              cy="50"
-              r="45"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="7"
-              strokeLinecap="round"
-              strokeDasharray={`${2 * Math.PI * 45}`}
-              strokeDashoffset={`${2 * Math.PI * 45 * (1 - currentPercentage / 100)}`}
-              transform="rotate(-90 50 50)"
-              style={{ color: currentColor === 'text-red-500' ? '#ef4444' : 
-                       currentColor === 'text-orange-500' ? '#f97316' : 
-                       currentColor === 'text-yellow-500' ? '#eab308' : '#22c55e' }}
-            />
-          </svg>
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className={`text-lg font-bold ${currentColor}`}>{currentPercentage.toFixed(1)}%</span>
-            <span className="text-[0.65rem] text-gray-500">{t('currentVeryShort')}</span>
-          </div>
-        </div>
-        
         {showComparison && (
           <>
             <div className="flex flex-col items-center">
@@ -126,47 +191,15 @@ const CapacityChart: React.FC<CapacityChartProps> = ({ data, showComparison = tr
                 {isIncreasing ? '+' : ''}{storageDifference.toFixed(1)}%
               </span>
             </div>
-            
-            {/* Last year percentage circle */}
-            <div className="relative w-28 h-28 flex items-center justify-center">
-              <svg className="w-full h-full" viewBox="0 0 100 100">
-                {/* Background circle */}
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#e5e7eb"
-                  strokeWidth="7"
-                />
 
-                {/* Progress circle */}
-                <circle
-                  className="progress-ring-circle"
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  strokeDasharray={`${2 * Math.PI * 45}`}
-                  strokeDashoffset={`${2 * Math.PI * 45 * (1 - lastYearPercentage / 100)}`}
-                  transform="rotate(-90 50 50)"
-                  style={{ color: lastYearColor === 'text-red-500' ? '#ef4444' : 
-                          lastYearColor === 'text-orange-500' ? '#f97316' : 
-                          lastYearColor === 'text-yellow-500' ? '#eab308' : '#22c55e' }}
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className={`text-lg font-bold ${lastYearColor}`}>{lastYearPercentage.toFixed(1)}%</span>
-                <span className="text-[0.65rem] text-gray-500">{t('lastYearVeryShort')}</span>
-              </div>
-            </div>
+            <DonutRing
+              percentage={lastYearPercentage}
+              label={t('lastYearVeryShort')}
+              ringId={`ly-${uniqueId}`}
+            />
           </>
         )}
       </div>
-      
     </div>
   );
 };
