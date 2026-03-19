@@ -12,6 +12,7 @@ function localePath(language: string, path: string): string {
 }
 
 function levelColor(pct: number): string {
+  if (pct >= 100) return '#3b82f6';
   if (pct < 25) return '#ef4444';
   if (pct < 50) return '#f97316';
   if (pct < 75) return '#eab308';

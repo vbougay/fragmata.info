@@ -14,6 +14,10 @@ interface RingColors {
 }
 
 const getRingColors = (percentage: number): RingColors => {
+  if (percentage >= 100) return {
+    base: '#3b82f6', light: '#60a5fa', dark: '#2563eb',
+    glow: 'rgba(59, 130, 246, 0.5)', textClass: 'text-blue-500'
+  };
   if (percentage < 25) return {
     base: '#ef4444', light: '#f87171', dark: '#dc2626',
     glow: 'rgba(239, 68, 68, 0.6)', textClass: 'text-red-500'

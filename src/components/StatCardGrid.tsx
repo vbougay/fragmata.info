@@ -29,13 +29,15 @@ export function StatCardGrid({
   const delay = (ms: number) => animate ? { animationDelay: `${ms}ms` } : undefined;
 
   const storagePct = grandTotal?.storage.current.percentage ?? 0;
-  const storageColor = storagePct < 25
-    ? 'text-red-600 dark:text-red-400'
-    : storagePct < 50
-      ? 'text-orange-600 dark:text-orange-400'
-      : storagePct < 75
-        ? 'text-yellow-600 dark:text-yellow-400'
-        : 'text-green-600 dark:text-green-400';
+  const storageColor = storagePct >= 100
+    ? 'text-blue-600 dark:text-blue-400'
+    : storagePct < 25
+      ? 'text-red-600 dark:text-red-400'
+      : storagePct < 50
+        ? 'text-orange-600 dark:text-orange-400'
+        : storagePct < 75
+          ? 'text-yellow-600 dark:text-yellow-400'
+          : 'text-green-600 dark:text-green-400';
 
   const changePct = (grandTotal?.storage.current.percentage || 0) - (grandTotal?.storage.lastYear.percentage || 0);
   const changeColor = changePct > 0

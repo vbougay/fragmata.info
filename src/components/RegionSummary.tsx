@@ -75,6 +75,7 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
 
   // Get appropriate background color based on storage percentage
   const getBgColor = (percentage: number) => {
+    if (percentage >= 100) return 'bg-blue-50 dark:bg-blue-950/30 border-blue-100 dark:border-blue-900/50';
     if (percentage < 25) return 'bg-red-50 dark:bg-red-950/30 border-red-100 dark:border-red-900/50';
     if (percentage < 50) return 'bg-orange-50 dark:bg-orange-950/30 border-orange-100 dark:border-orange-900/50';
     if (percentage < 75) return 'bg-yellow-50 dark:bg-yellow-950/30 border-yellow-100 dark:border-yellow-900/50';
