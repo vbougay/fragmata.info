@@ -53,6 +53,117 @@ export const getReportDate = (): string => "20-MAR-2026";
 
 export const waterTransferred = { from: "Arminou", to: "Kouris", sinceOct: 7.98 };
 
+export const getDamSummary = (damName: string, language: 'en' | 'el' | 'ru' = 'en'): string | null => {
+  const summaries: Record<string, Record<'en' | 'el' | 'ru', string>> = {
+    'Kouris': {
+      en: 'Kouris is at 21.2% (24.4 MCM), surpassing last year\'s level for the first time this season. Receives transfers from Arminou — 8.0 MCM since October.',
+      el: 'Ο Κούρης βρίσκεται στο 21.2% (24.4 ΕΚΜ), ξεπερνώντας το περσινό επίπεδο για πρώτη φορά φέτος. Δέχεται μεταφορά από Αρμίνου — 8.0 ΕΚΜ από τον Οκτώβριο.',
+      ru: 'Курис на уровне 21.2% (24.4 МКМ) — впервые в этом сезоне превысил прошлогодний показатель. Получает воду из Арминоу — 8.0 МКМ с октября.',
+    },
+    'Kalavasos': {
+      en: 'Kalavasos holds just 8.0% (1.4 MCM), well below last year\'s 27.6%. Seasonal inflow has been modest at 0.88 MCM.',
+      el: 'Ο Καλαβασός βρίσκεται μόλις στο 8.0% (1.4 ΕΚΜ), πολύ κάτω από το περσινό 27.6%. Η εποχική εισροή ήταν μέτρια στα 0.88 ΕΚΜ.',
+      ru: 'Калавасос заполнен лишь на 8.0% (1.4 МКМ), значительно ниже прошлогодних 27.6%. Сезонный приток скромный — 0.88 МКМ.',
+    },
+    'Lefkara': {
+      en: 'Lefkara at 10.8% (1.5 MCM), down sharply from 29.5% last year. Total inflow since October only 0.53 MCM.',
+      el: 'Η Λεύκαρα στο 10.8% (1.5 ΕΚΜ), πτώση από 29.5% πέρυσι. Συνολική εισροή από Οκτώβριο μόλις 0.53 ΕΚΜ.',
+      ru: 'Лефкара на 10.8% (1.5 МКМ), резкое снижение с 29.5% в прошлом году. Общий приток с октября — всего 0.53 МКМ.',
+    },
+    'Dipotamos': {
+      en: 'Dipotamos at 25.0% (3.9 MCM), down from 35.7% a year ago. Seasonal inflow of 1.28 MCM from Troodos runoff.',
+      el: 'Ο Διπόταμος στο 25.0% (3.9 ΕΚΜ), πτώση από 35.7% πέρυσι. Εποχική εισροή 1.28 ΕΚΜ από απορροές Τροόδους.',
+      ru: 'Дипотамос на 25.0% (3.9 МКМ), ниже прошлогодних 35.7%. Сезонный приток 1.28 МКМ от стока с Троодоса.',
+    },
+    'Germasoyeia': {
+      en: 'Germasoyeia at 14.1% (1.9 MCM), nearly half of last year\'s 26.7%. Recent Troodos rain brought 2.18 MCM total inflow this season.',
+      el: 'Η Γερμασόγεια στο 14.1% (1.9 ΕΚΜ), σχεδόν τα μισά από το περσινό 26.7%. Οι βροχές Τροόδους έφεραν 2.18 ΕΚΜ φέτος.',
+      ru: 'Гермасойя на 14.1% (1.9 МКМ), почти вдвое ниже прошлогодних 26.7%. Дожди на Троодосе дали 2.18 МКМ притока в этом сезоне.',
+    },
+    'Arminou': {
+      en: 'Arminou at 38.1% (1.6 MCM), down from 57.8% last year due to ongoing transfers to Kouris — 8.0 MCM pumped since October.',
+      el: 'Ο Αρμίνου στο 38.1% (1.6 ΕΚΜ), πτώση από 57.8% λόγω μεταφοράς στον Κούρη — 8.0 ΕΚΜ από τον Οκτώβριο.',
+      ru: 'Арминоу на 38.1% (1.6 МКМ), ниже прошлогодних 57.8% из-за перекачки в Курис — 8.0 МКМ с октября.',
+    },
+    'Polemidia': {
+      en: 'Polemidia at 40.0% (1.4 MCM), stable compared to last year\'s 39.6%. One of the steadiest dams this season.',
+      el: 'Η Πολεμίδια στο 40.0% (1.4 ΕΚΜ), σταθερή σε σχέση με το περσινό 39.6%. Ένα από τα πιο σταθερά φράγματα φέτος.',
+      ru: 'Полемидия на 40.0% (1.4 МКМ), стабильна по сравнению с прошлогодними 39.6%. Одна из самых устойчивых плотин сезона.',
+    },
+    'Achna': {
+      en: 'Achna is critically low at 2.1% (0.14 MCM) with zero inflow this season, down sharply from 20.8% a year ago.',
+      el: 'Η Αχνα βρίσκεται κρίσιμα χαμηλά στο 2.1% (0.14 ΕΚΜ), χωρίς εισροή φέτος, πτώση από 20.8% πέρυσι.',
+      ru: 'Ахна критически низкая — 2.1% (0.14 МКМ) без притока в этом сезоне, резкое падение с 20.8% год назад.',
+    },
+    'Asprokremmos': {
+      en: 'Asprokremmos, the largest Paphos dam, at 23.3% (12.2 MCM), slightly below last year\'s 25.7%. Total seasonal inflow 9.38 MCM.',
+      el: 'Ο Ασπρόκρεμμος, το μεγαλύτερο φράγμα Πάφου, στο 23.3% (12.2 ΕΚΜ), ελαφρώς κάτω από πέρυσι (25.7%). Εισροή σεζόν 9.38 ΕΚΜ.',
+      ru: 'Аспрокреммос, крупнейшая плотина Пафоса, на 23.3% (12.2 МКМ), чуть ниже прошлогодних 25.7%. Приток за сезон 9.38 МКМ.',
+    },
+    'Kannaviou': {
+      en: 'Kannaviou at 29.3% (5.0 MCM), slightly above last year\'s 26.9%. Steady inflow of 4.65 MCM since October.',
+      el: 'Ο Καννάβιου στο 29.3% (5.0 ΕΚΜ), ελαφρώς πάνω από πέρυσι (26.9%). Σταθερή εισροή 4.65 ΕΚΜ από τον Οκτώβριο.',
+      ru: 'Каннавиу на 29.3% (5.0 МКМ), немного выше прошлогодних 26.9%. Стабильный приток 4.65 МКМ с октября.',
+    },
+    'Mavrokolympos': {
+      en: 'Mavrokolympos at 65.3% (1.4 MCM), a dramatic recovery from 0% last year. Inflow of 0.70 MCM has refilled the dam this season.',
+      el: 'Ο Μαυροκόλυμπος στο 65.3% (1.4 ΕΚΜ), εντυπωσιακή ανάκαμψη από 0% πέρυσι. Η εισροή 0.70 ΕΚΜ ξαναγέμισε το φράγμα.',
+      ru: 'Мавроколимпос на 65.3% (1.4 МКМ) — впечатляющее восстановление с 0% в прошлом году. Приток 0.70 МКМ заново наполнил плотину.',
+    },
+    'Evretou': {
+      en: 'Evretou at 29.2% (7.0 MCM), reaching a new annual maximum and surpassing last year\'s 25.1%. Seasonal inflow 4.84 MCM.',
+      el: 'Ο Εύρετου στο 29.2% (7.0 ΕΚΜ), νέο ετήσιο μέγιστο, ξεπερνώντας το 25.1% πέρυσι. Εισροή σεζόν 4.84 ΕΚΜ.',
+      ru: 'Эвретоу на 29.2% (7.0 МКМ) — новый годовой максимум, выше прошлогодних 25.1%. Приток за сезон 4.84 МКМ.',
+    },
+    'Argaka': {
+      en: 'Argaka is full at 100% (0.99 MCM), a major improvement from 37.6% last year. Seasonal inflow of 1.0 MCM completely filled the dam.',
+      el: 'Η Αργάκα είναι γεμάτη στο 100% (0.99 ΕΚΜ), τεράστια βελτίωση από 37.6% πέρυσι. Η εισροή 1.0 ΕΚΜ γέμισε πλήρως το φράγμα.',
+      ru: 'Аргака заполнена на 100% (0.99 МКМ) — значительное улучшение с 37.6% в прошлом году. Приток 1.0 МКМ полностью наполнил плотину.',
+    },
+    'Pomos': {
+      en: 'Pomos is full at 100% (0.86 MCM), up from 42.3% a year ago. Total seasonal inflow of 0.79 MCM.',
+      el: 'Ο Πόμος είναι γεμάτος στο 100% (0.86 ΕΚΜ), αύξηση από 42.3% πέρυσι. Εισροή σεζόν 0.79 ΕΚΜ.',
+      ru: 'Помос заполнен на 100% (0.86 МКМ), рост с 42.3% год назад. Сезонный приток 0.79 МКМ.',
+    },
+    'Agia Marina': {
+      en: 'Agia Marina at 78.9% (0.24 MCM), up from 55.4% last year. The small Chrysochou dam is benefiting from improved rainfall.',
+      el: 'Η Αγία Μαρίνα στο 78.9% (0.24 ΕΚΜ), αύξηση από 55.4% πέρυσι. Το μικρό φράγμα Χρυσοχούς ωφελείται από τις βροχοπτώσεις.',
+      ru: 'Агия Марина на 78.9% (0.24 МКМ), рост с 55.4% в прошлом году. Малая плотина Хрисоху выигрывает от улучшения осадков.',
+    },
+    'Vyzakia': {
+      en: 'Vyzakia at 38.1% (0.64 MCM), a remarkable rebound from just 2.8% last year. Inflow of 0.64 MCM revived the Nicosia dam.',
+      el: 'Τα Βυζακιά στο 38.1% (0.64 ΕΚΜ), εντυπωσιακή ανάκαμψη από μόλις 2.8% πέρυσι. Εισροή 0.64 ΕΚΜ αναζωογόνησε το φράγμα Λευκωσίας.',
+      ru: 'Визакия на 38.1% (0.64 МКМ) — заметное восстановление с 2.8% год назад. Приток 0.64 МКМ оживил никосийскую плотину.',
+    },
+    'Xyliatos': {
+      en: 'Xyliatos at 83.3% (1.19 MCM), 3.6 times last year\'s 23.1%. New annual maximum reached — the strongest recovery of any dam this season.',
+      el: 'Ο Ξυλιάτος στο 83.3% (1.19 ΕΚΜ), 3.6 φορές πέρυσι (23.1%). Νέο ετήσιο μέγιστο — η ισχυρότερη ανάκαμψη φράγματος φέτος.',
+      ru: 'Ксилиатос на 83.3% (1.19 МКМ), в 3.6 раза больше прошлогодних 23.1%. Новый годовой максимум — сильнейшее восстановление сезона.',
+    },
+    'Kalopanagiotis': {
+      en: 'Kalopanagiotis is full at 100% (0.36 MCM), up from 85.7% last year. The small Nicosia dam has exceeded its recorded maximum.',
+      el: 'Ο Καλοπαναγιώτης είναι γεμάτος στο 100% (0.36 ΕΚΜ), αύξηση από 85.7% πέρυσι. Ξεπέρασε το μέγιστο καταγεγραμμένο.',
+      ru: 'Калопанайотис заполнен на 100% (0.36 МКМ), рост с 85.7% в прошлом году. Малая никосийская плотина превысила зафиксированный максимум.',
+    },
+    'Tamassos': {
+      en: 'Tamassos at 67.9% (1.9 MCM), nearly double last year\'s 37.7%. Seasonal inflow of 1.54 MCM driven by recent Troodos rains.',
+      el: 'Ο Ταμασός στο 67.9% (1.9 ΕΚΜ), σχεδόν διπλάσιο του περσινού 37.7%. Εισροή 1.54 ΕΚΜ από πρόσφατες βροχοπτώσεις Τροόδους.',
+      ru: 'Тамассос на 67.9% (1.9 МКМ), почти вдвое больше прошлогодних 37.7%. Приток 1.54 МКМ благодаря дождям на Троодосе.',
+    },
+    'Klirou-Malounta': {
+      en: 'Klirou-Malounta is full at 100% (2.0 MCM), up from 73.5% last year. Seasonal inflow of 1.03 MCM filled the recharge dam completely.',
+      el: 'Η Κλήρου-Μαλούντα είναι γεμάτη στο 100% (2.0 ΕΚΜ), αύξηση από 73.5% πέρυσι. Εισροή 1.03 ΕΚΜ γέμισε πλήρως το φράγμα.',
+      ru: 'Клиру-Малунта заполнена на 100% (2.0 МКМ), рост с 73.5% в прошлом году. Приток 1.03 МКМ полностью наполнил плотину подпитки.',
+    },
+    'Solea': {
+      en: 'Solea is full at 100% (4.45 MCM), up from 67.3% last year. Seasonal inflow of 2.64 MCM has completely filled the recharge dam.',
+      el: 'Η Σολέα είναι γεμάτη στο 100% (4.45 ΕΚΜ), αύξηση από 67.3% πέρυσι. Εισροή 2.64 ΕΚΜ γέμισε πλήρως το φράγμα.',
+      ru: 'Солеа заполнена на 100% (4.45 МКМ), рост с 67.3% в прошлом году. Приток 2.64 МКМ полностью наполнил плотину подпитки.',
+    },
+  };
+  return summaries[damName]?.[language] ?? null;
+};
+
 export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string => {
   if (language === 'el') {
     return `

@@ -452,3 +452,17 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en', datasetId
   }
   return null;
 };
+
+/**
+ * Get a short summary for an individual dam from the selected dataset.
+ */
+export const getDamSummary = (damName: string, language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {
+  const dsId = resolveId(datasetId);
+  const dataset = availableDataSets.find(ds => ds.id === dsId);
+  const mod = dataset?.module;
+
+  if (mod && 'getDamSummary' in mod && typeof mod.getDamSummary === 'function') {
+    return mod.getDamSummary(damName, language);
+  }
+  return null;
+};

@@ -10,6 +10,7 @@ import {
   getOctoberBaselineStorage,
   DEFAULT_DATASET_ID,
   MAJOR_DAM_KEYS,
+  getDamSummary,
 } from "@/utils/dataManager";
 import { calculateYTDInflow, calculateYTDOutflow } from "@/utils/reservoirUtils";
 import { locales, isValidLocale, type Locale } from "@/utils/locale";
@@ -60,12 +61,13 @@ export async function generateMetadata({
     lang === "en"
       ? `${damInfo.name} Dam Water Level | ${regionName} | Fragmata`
       : `${translatedDamName} | ${translatedRegion} | Fragmata`;
-  const description =
-    lang === "en"
+  const damSummary = getDamSummary(damInfo.name, lang as 'en' | 'el' | 'ru', DEFAULT_DATASET_ID);
+  const description = damSummary
+    ?? (lang === "en"
       ? `Current water level, storage capacity, inflow data, and forecast for ${damInfo.name} dam in ${regionName}, Cyprus.`
       : lang === "el"
         ? `Τρέχον επίπεδο νερού, χωρητικότητα και πρόβλεψη για το φράγμα ${translatedDamName}, ${translatedRegion}, Κύπρος.`
-        : `Текущий уровень воды, вместимость и прогноз для плотины ${translatedDamName}, ${translatedRegion}, Кипр.`;
+        : `Текущий уровень воды, вместимость и прогноз для плотины ${translatedDamName}, ${translatedRegion}, Кипр.`);
 
   const localeUrl = (l: string, path: string) =>
     l === "en" ? `${siteUrl}${path}` : `${siteUrl}/${l}${path}`;

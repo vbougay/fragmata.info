@@ -11,7 +11,7 @@ import { StatCardGrid } from '@/components/StatCardGrid';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer';
 import { useReservoirData } from '@/hooks/useReservoirData';
-import { getLast7DaysInflow } from '@/utils/dataManager';
+import { getLast7DaysInflow, getDamSummary } from '@/utils/dataManager';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
@@ -162,6 +162,10 @@ export function RegionDamClient({
       ? t('damTitle').replace('{name}', translations[language][damName as keyof typeof translations.en] || damName)
       : '';
 
+  const damSummaryText = type === 'dam' && damName
+    ? getDamSummary(damName, language as 'en' | 'el' | 'ru', currentDataSetId)
+    : null;
+
   // Breadcrumb data for dam pages
   const localePath = (path: string) =>
     language === defaultLocale ? (path || '/') : `/${language}${path}`;
@@ -197,9 +201,12 @@ export function RegionDamClient({
           </Breadcrumb>
         )}
         {!mediaMode && (
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1">
             {displayName}
           </h1>
+        )}
+        {damSummaryText && !mediaMode && (
+          <p className="text-sm text-muted-foreground mb-4">{damSummaryText}</p>
         )}
 
         <StatCardGrid
