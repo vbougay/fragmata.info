@@ -81,9 +81,15 @@ export async function generateMetadata({
       url: canonical,
       siteName: "Fragmata",
       type: "article",
-      images: [{ url: "/og-image.png" }],
+      images: [{ url: `${siteUrl}/og-image.png` }],
       publishedTime: article.date,
       authors: [article.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${siteUrl}/og-image.png`],
     },
   };
 }
