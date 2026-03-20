@@ -3,6 +3,7 @@ import { type Locale } from '@/utils/locale';
 export interface ArticleMeta {
   slug: string;
   date: string;
+  dataSetId: string;
   author: string;
   title: Record<Locale, string>;
   description: Record<Locale, string>;
@@ -12,6 +13,7 @@ export const ARTICLES: ArticleMeta[] = [
   {
     slug: '2026-03-02-cyprus-reservoirs-forecast',
     date: '2026-03-02',
+    dataSetId: '02-MAR-2026',
     author: 'Vladimir Bugay',
     title: {
       en: 'Cyprus Reservoirs at 20.6% with Forecast Down to 7% — But 38 Years of Data Promise a Turnaround',
@@ -27,6 +29,7 @@ export const ARTICLES: ArticleMeta[] = [
   {
     slug: '2026-03-18-drought-retreating',
     date: '2026-03-18',
+    dataSetId: '18-MAR-2026',
     author: 'Vladimir Bugay',
     title: {
       en: 'Is the Drought Retreating? 12 of 21 Cyprus Reservoirs Exceed Last Year\'s Levels',

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { promises as fs } from "fs";
+import path from "path";
 import { ArticleListClient } from "@/components/ArticleClient";
 import { locales, isValidLocale, type Locale } from "@/utils/locale";
 import { getAllArticles } from "@/utils/articles";
@@ -66,15 +68,29 @@ export default async function ArticlesPage({
   const lang = isValidLocale(locale) ? locale : "en";
   const articles = getAllArticles();
 
-  return (
-    <ArticleListClient
-      articles={articles.map((a) => ({
+  const items = await Promise.all(
+    articles.map(async (a) => {
+      const mdPath = path.join(process.cwd(), "content", "articles", a.slug, `${lang}.md`);
+      const md = await fs.readFile(mdPath, "utf-8").catch(() => "");
+      let firstParagraph = "";
+      let pastSeparator = false;
+      for (const line of md.split("\n")) {
+        const trimmed = line.trim();
+        if (trimmed === "---") { pastSeparator = true; continue; }
+        if (pastSeparator && trimmed && !trimmed.startsWith("#") && !trimmed.startsWith("{{") && !/^\*\*/.test(trimmed)) {
+          firstParagraph = trimmed;
+          break;
+        }
+      }
+      return {
         slug: a.slug,
         title: a.title[lang],
         description: a.description[lang],
+        excerpt: firstParagraph,
         date: a.date,
-        author: a.author,
-      }))}
-    />
+      };
+    })
   );
+
+  return <ArticleListClient articles={items} />;
 }

@@ -25,10 +25,11 @@ export const useDataContext = () => useContext(DataContext);
 // Provider component
 interface DataProviderProps {
   children: ReactNode;
+  initialDataSetId?: string;
 }
 
-export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
-  const [currentDataSetId, setCurrentDataSetId] = useState<string>(DEFAULT_DATASET_ID);
+export const DataProvider: React.FC<DataProviderProps> = ({ children, initialDataSetId }) => {
+  const [currentDataSetId, setCurrentDataSetId] = useState<string>(initialDataSetId || DEFAULT_DATASET_ID);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const setDataSet = (dataSetId: string) => {

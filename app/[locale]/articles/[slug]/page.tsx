@@ -8,6 +8,39 @@ import { getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
 
 const siteUrl = "https://fragmata.info";
 
+function readArticleMd(slug: string, lang: string): Promise<string | null> {
+  const mdPath = path.join(process.cwd(), "content", "articles", slug, `${lang}.md`);
+  return fs.readFile(mdPath, "utf-8").catch(() => null);
+}
+
+function extractDescription(markdown: string): string {
+  const lines = markdown.split("\n");
+  let subtitle = "";
+  let firstParagraph = "";
+  let pastSeparator = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!subtitle && /^\*\*.+\*\*$/.test(trimmed)) {
+      subtitle = trimmed.replace(/\*\*/g, "");
+      continue;
+    }
+    if (trimmed === "---") {
+      pastSeparator = true;
+      continue;
+    }
+    if (pastSeparator && !firstParagraph && trimmed && !trimmed.startsWith("#") && !trimmed.startsWith("{{")) {
+      firstParagraph = trimmed;
+      break;
+    }
+  }
+
+  const combined = subtitle && firstParagraph
+    ? `${subtitle} ${firstParagraph}`
+    : subtitle || firstParagraph;
+  return combined.length > 300 ? combined.slice(0, 297) + "..." : combined;
+}
+
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
   return locales.flatMap((locale) =>
@@ -25,8 +58,9 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug);
   if (!article) return {};
 
+  const markdown = await readArticleMd(slug, lang);
   const title = `${article.title[lang]} | Fragmata`;
-  const description = article.description[lang];
+  const description = markdown ? extractDescription(markdown) : article.description[lang];
   const localeUrl = (l: string, p: string) =>
     l === "en" ? `${siteUrl}${p}` : `${siteUrl}/${l}${p}`;
   const canonical = localeUrl(lang, `/articles/${slug}`);
@@ -64,26 +98,15 @@ export default async function ArticlePage({
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const mdPath = path.join(
-    process.cwd(),
-    "content",
-    "articles",
-    slug,
-    `${lang}.md`
-  );
-  let markdown: string;
-  try {
-    markdown = await fs.readFile(mdPath, "utf-8");
-  } catch {
-    notFound();
-  }
+  const markdown = await readArticleMd(slug, lang);
+  if (!markdown) notFound();
 
   return (
     <ArticleClient
       markdown={markdown}
       title={article.title[lang]}
       date={article.date}
-      author={article.author}
+      dataSetId={article.dataSetId}
     />
   );
 }

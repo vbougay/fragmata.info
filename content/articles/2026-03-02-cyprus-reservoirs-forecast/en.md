@@ -14,6 +14,8 @@ Three reservoirs are at 100%: Pomos, Kalopanagiotis, and Klirou-Malounta. Evreto
 
 Yet the picture is uneven. Achna in the southeast is nearly empty at 2.1%. Kalavasos holds 8.3%, Lefkara — 12%. Germasoyeia — 11.7%. Reserves remain below last year's levels: on the same date in 2025, reservoirs were at 25.5%.
 
+{{chart:inflow}}
+
 ### What the Forecast Model Shows
 
 It was precisely to see the full picture that Fragmata (fragmata.info) was created — a free, open-source dashboard that visualizes the state of all 21 Cyprus reservoirs on a weekly basis. The platform is available in three languages — English, Greek, and Russian.
@@ -28,6 +30,8 @@ The model builds three scenarios:
 
 Under the expected scenario, reserves will continue declining and reach the ~7% threshold by November–December 2026 — a level at which severe restrictions are imposed. But then the model forecasts a sharp reversal: rising to ~28% by February 2027 and ~50% by May 2027.
 
+{{chart:forecast}}
+
 ### Why This Is Not a Linear Catastrophe
 
 Droughts in Cyprus historically last about four years, followed by a recovery period. The current drought, which began around 2022–2023, is now entering its fourth year. The model identifies analogous periods in the past and uses them to forecast.
@@ -35,6 +39,8 @@ Droughts in Cyprus historically last about four years, followed by a recovery pe
 "The current media narrative focuses on record lows and drying reservoirs. The situation is serious — that's not an exaggeration," says Fragmata developer Vladimir Bugay. "But when you look at 38 years of data, you see something else: reservoirs are most likely to hit bottom and begin recovering. The crisis is real, but history is cyclical, not catastrophic."
 
 For journalists, this is a crucial nuance. Headlines about drying dams accurately capture the current moment — but not the trend. The data shows that Cyprus has seen this film before — and it has always ended with rain.
+
+{{chart:heatmap}}
 
 ### How Fragmata Works
 

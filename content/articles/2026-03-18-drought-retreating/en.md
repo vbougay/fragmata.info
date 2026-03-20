@@ -12,6 +12,8 @@ February 2026 ended with inflow of 24.2 MCM — the best February figure in four
 
 The Water Development Department itself is optimistic. In recent comments, the department noted that "inflow is in better shape than last year," and that moisture-saturated soil is contributing to more efficient runoff into reservoirs.
 
+{{chart:inflow}}
+
 ### Xyliatos: From 64% to 80% in Two Weeks — and a Possible Overflow
 
 The most striking story of these two weeks is the mountain reservoir Xyliatos in the Nicosia district. Its trajectory:
@@ -28,6 +30,8 @@ The most striking story of these two weeks is the mountain reservoir Xyliatos in
 Note the jump on 16 March: in a single day, Xyliatos received 0.122 MCM — more than in the previous two weeks combined. This is the saturated-soil effect: when the ground can no longer absorb water, all rainfall flows directly into the reservoir.
 
 Full capacity (1.43 MCM) is now just 0.285 MCM away. For comparison: last year's peak at Xyliatos was only 0.335 MCM — the current volume is 3.4 times higher. With rain forecast for this week, overflow is becoming a realistic scenario. This would be an unprecedented event for a reservoir that just a year ago was only 23% full.
+
+{{chart:heatmap location="xyliatos"}}
 
 ### Who Has Already Overtaken Last Year
 
@@ -70,6 +74,8 @@ In our first article two weeks ago, Fragmata's forecast model predicted a declin
 With current inflow at 45.8 MCM (and at least another month of rainy season ahead), the expected scenario is shifting towards a milder outcome. The forecast of a drop to 7% is becoming increasingly unlikely. In fact, the data is beginning to match the "recovery scenario" — the more optimistic of the three scenarios the model calculates.
 
 This doesn't mean the crisis is entirely behind us. Summer will show how sustainable the current inflow proves to be. But 38 years of cyclical data and the dynamics of recent weeks provide grounds to say: a major water deficit in 2026 is most likely not going to happen.
+
+{{chart:forecast location="kouris"}}
 
 ### Regional Situation as of 18 March
 

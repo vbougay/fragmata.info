@@ -1,14 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
-import { Header } from "@/components";
+import { Header, MonthlyInflow, ReservoirCard, HistoricalHeatmap, ReservoirTable } from "@/components";
+import StorageForecast from "@/components/StorageForecast";
 import Footer from "@/components/Footer";
+import { DataProvider } from "@/context/DataContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/utils/translations";
 import { defaultLocale } from "@/utils/locale";
+import { getReservoirsWithDrainDates } from "@/utils/dataManager";
+import { DAM_SLUG_MAP, REGION_SLUG_MAP } from "@/utils/slugs";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -17,20 +21,115 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Calendar, User } from "lucide-react";
+import { Calendar } from "lucide-react";
+
+// --- Chart embed parsing ---
+
+const CHART_REGEX = /\{\{chart:([\w-]+)((?:\s+[\w-]+="[^"]*")*)\s*\}\}/;
+
+interface ChartEmbed {
+  type: string;
+  attrs: Record<string, string>;
+}
+
+function parseAttrs(attrStr: string): Record<string, string> {
+  const attrs: Record<string, string> = {};
+  for (const m of attrStr.matchAll(/([\w-]+)="([^"]*)"/g)) {
+    attrs[m[1]] = m[2];
+  }
+  return attrs;
+}
+
+type Segment = { kind: "md"; content: string } | { kind: "chart"; embed: ChartEmbed };
+
+function splitMarkdown(markdown: string): Segment[] {
+  const segments: Segment[] = [];
+  const lines = markdown.split("\n");
+  let buffer: string[] = [];
+
+  for (const line of lines) {
+    const match = line.trim().match(CHART_REGEX);
+    if (match) {
+      if (buffer.length > 0) {
+        segments.push({ kind: "md", content: buffer.join("\n") });
+        buffer = [];
+      }
+      segments.push({
+        kind: "chart",
+        embed: { type: match[1], attrs: parseAttrs(match[2] || "") },
+      });
+    } else {
+      buffer.push(line);
+    }
+  }
+  if (buffer.length > 0) {
+    segments.push({ kind: "md", content: buffer.join("\n") });
+  }
+  return segments;
+}
+
+// --- Chart embed renderer ---
+
+function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId: string }) {
+  const { type, attrs } = embed;
+  const location = attrs.location;
+  const region = attrs.region;
+
+  // Resolve dam key from slug
+  const damInfo = location ? DAM_SLUG_MAP[location] : undefined;
+  const damKey = damInfo?.key;
+
+  // Resolve region name from slug
+  const regionName = region ? REGION_SLUG_MAP[region] : undefined;
+
+  return (
+    <div className="not-prose my-6">
+      <DataProvider initialDataSetId={dataSetId}>
+        {type === "inflow" && <MonthlyInflow />}
+        {type === "forecast" && (
+          <StorageForecast selectionId={damKey || regionName || location || "all"} />
+        )}
+        {type === "heatmap" && (
+          <HistoricalHeatmap
+            filterDamKey={damKey}
+            filterRegion={!damKey && regionName ? regionName : undefined}
+          />
+        )}
+        {type === "dam-card" && damInfo && (
+          <DamCardEmbed damName={damInfo.name} dataSetId={dataSetId} />
+        )}
+        {type === "data-table" && <ReservoirTable />}
+      </DataProvider>
+    </div>
+  );
+}
+
+function DamCardEmbed({ damName, dataSetId }: { damName: string; dataSetId: string }) {
+  const reservoir = useMemo(() => {
+    const reservoirs = getReservoirsWithDrainDates(dataSetId);
+    return reservoirs.find((r) => r.name === damName) ?? null;
+  }, [damName, dataSetId]);
+
+  if (!reservoir) return null;
+  return <ReservoirCard reservoir={reservoir} />;
+}
+
+// --- Article page ---
 
 interface ArticleClientProps {
   markdown: string;
   title: string;
   date: string;
-  author: string;
+  dataSetId: string;
 }
 
-export function ArticleClient({ markdown, title, date, author }: ArticleClientProps) {
+export function ArticleClient({ markdown, title, date, dataSetId }: ArticleClientProps) {
   const { language } = useLanguage();
   const t = useTranslation(language);
   const localePath = (path: string) =>
     language === defaultLocale ? (path || "/") : `/${language}${path}`;
+
+  const segments = useMemo(() => splitMarkdown(markdown), [markdown]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 mesh-background transition-colors duration-300">
@@ -58,14 +157,18 @@ export function ArticleClient({ markdown, title, date, author }: ArticleClientPr
             <Calendar className="h-3.5 w-3.5" />
             {date}
           </span>
-          <span className="flex items-center gap-1.5">
-            <User className="h-3.5 w-3.5" />
-            {author}
-          </span>
         </div>
 
         <article className="prose prose-base dark:prose-invert max-w-none prose-headings:text-foreground prose-headings:mt-4 prose-headings:mb-2 prose-p:text-foreground/90 prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 prose-table:text-sm prose-th:text-left prose-strong:text-foreground prose-a:text-water-600 dark:prose-a:text-water-400 prose-hr:my-4">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+          {segments.map((seg, i) =>
+            seg.kind === "md" ? (
+              <ReactMarkdown key={i} remarkPlugins={[remarkGfm]}>
+                {seg.content}
+              </ReactMarkdown>
+            ) : (
+              <ArticleChartEmbed key={i} embed={seg.embed} dataSetId={dataSetId} />
+            )
+          )}
         </article>
       </main>
 
@@ -74,12 +177,14 @@ export function ArticleClient({ markdown, title, date, author }: ArticleClientPr
   );
 }
 
+// --- Article list page ---
+
 interface ArticleListItem {
   slug: string;
   title: string;
   description: string;
+  excerpt: string;
   date: string;
-  author: string;
 }
 
 interface ArticleListClientProps {
@@ -124,17 +229,18 @@ export function ArticleListClient({ articles }: ArticleListClientProps) {
                     <Calendar className="h-3.5 w-3.5" />
                     {article.date}
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <User className="h-3.5 w-3.5" />
-                    {article.author}
-                  </span>
                 </div>
                 <h2 className="text-lg font-semibold text-foreground group-hover:text-water-600 dark:group-hover:text-water-400 transition-colors mb-2">
                   {article.title}
                 </h2>
-                <p className="text-sm text-muted-foreground line-clamp-2">
+                <p className="text-sm font-medium text-muted-foreground mb-1">
                   {article.description}
                 </p>
+                {article.excerpt && (
+                  <p className="text-sm text-muted-foreground/80 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+                )}
               </article>
             </Link>
           ))}
