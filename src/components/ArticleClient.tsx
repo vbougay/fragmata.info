@@ -12,6 +12,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/utils/translations";
 import { defaultLocale } from "@/utils/locale";
 import { getReservoirsWithDrainDates } from "@/utils/dataManager";
+import { getAllSparklineData } from "@/utils/sparklineData";
 import { DAM_SLUG_MAP, REGION_SLUG_MAP } from "@/utils/slugs";
 import {
   Breadcrumb,
@@ -90,10 +91,7 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
           <StorageForecast selectionId={damKey || regionName || location || "all"} />
         )}
         {type === "heatmap" && (
-          <HistoricalHeatmap
-            filterDamKey={damKey}
-            filterRegion={!damKey && regionName ? regionName : undefined}
-          />
+          <HeatmapEmbed damKey={damKey} damName={damInfo?.name} regionName={regionName} dataSetId={dataSetId} />
         )}
         {type === "dam-card" && damInfo && (
           <DamCardEmbed damName={damInfo.name} dataSetId={dataSetId} />
@@ -112,6 +110,29 @@ function DamCardEmbed({ damName, dataSetId }: { damName: string; dataSetId: stri
 
   if (!reservoir) return null;
   return <ReservoirCard reservoir={reservoir} />;
+}
+
+function HeatmapEmbed({ damKey, damName, regionName, dataSetId }: {
+  damKey?: string;
+  damName?: string;
+  regionName?: string;
+  dataSetId: string;
+}) {
+  const sparklineData = useMemo(() => {
+    if (!damName) return undefined;
+    const reservoirs = getReservoirsWithDrainDates(dataSetId);
+    const dam = reservoirs.find((r) => r.name === damName);
+    if (!dam) return undefined;
+    return getAllSparklineData([dam]).get(damName);
+  }, [damName, dataSetId]);
+
+  return (
+    <HistoricalHeatmap
+      filterDamKey={damKey as any}
+      filterRegion={!damKey && regionName ? regionName : undefined}
+      sparklineData={sparklineData}
+    />
+  );
 }
 
 // --- Article page ---
