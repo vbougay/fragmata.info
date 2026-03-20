@@ -101,4 +101,3 @@ Follow the data in real time: **fragmata.info**
 
 *Author: Vladimir Bugay, Fragmata developer*
 *Data: Cyprus Water Development Department, report of 18 March 2026*
-*Previous article: "Cyprus Reservoirs at 20.6% with Forecast Down to 7% — But 38 Years of Data Promise a Turnaround"*

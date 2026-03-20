@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin, Languages, FileText } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, Languages, FileText, Send } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
@@ -119,6 +119,10 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             <a href="https://www.linkedin.com/in/vbougay/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Linkedin className="h-4 w-4" />
               Vladimir Bugay
+            </a>
+            <a href="https://t.me/vlad43d" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <Send className="h-4 w-4" />
+              43D
             </a>
             <a href="mailto:v@bougay.com" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Mail className="h-4 w-4" />

@@ -4,7 +4,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { ArticleClient } from "@/components/ArticleClient";
 import { locales, isValidLocale } from "@/utils/locale";
-import { getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
+import { getAllArticles, getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
 
 const siteUrl = "https://fragmata.info";
 
@@ -107,12 +107,20 @@ export default async function ArticlePage({
   const markdown = await readArticleMd(slug, lang);
   if (!markdown) notFound();
 
+  // Compute prev/next articles (sorted newest-first)
+  const allArticles = getAllArticles();
+  const currentIdx = allArticles.findIndex((a) => a.slug === slug);
+  const newer = currentIdx > 0 ? allArticles[currentIdx - 1] : null;
+  const older = currentIdx < allArticles.length - 1 ? allArticles[currentIdx + 1] : null;
+
   return (
     <ArticleClient
       markdown={markdown}
       title={article.title[lang]}
       date={article.date}
       dataSetId={article.dataSetId}
+      prevArticle={older ? { slug: older.slug, title: older.title[lang] } : undefined}
+      nextArticle={newer ? { slug: newer.slug, title: newer.title[lang] } : undefined}
     />
   );
 }

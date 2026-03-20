@@ -22,7 +22,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Calendar } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 
 // --- Chart embed parsing ---
 
@@ -151,14 +151,21 @@ function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref }: {
 
 // --- Article page ---
 
+interface ArticleNav {
+  slug: string;
+  title: string;
+}
+
 interface ArticleClientProps {
   markdown: string;
   title: string;
   date: string;
   dataSetId: string;
+  prevArticle?: ArticleNav;
+  nextArticle?: ArticleNav;
 }
 
-export function ArticleClient({ markdown, title, date, dataSetId }: ArticleClientProps) {
+export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, nextArticle }: ArticleClientProps) {
   const { language } = useLanguage();
   const t = useTranslation(language);
   const localePath = (path: string) =>
@@ -205,6 +212,29 @@ export function ArticleClient({ markdown, title, date, dataSetId }: ArticleClien
             )
           )}
         </article>
+
+        {(prevArticle || nextArticle) && (
+          <nav className="flex items-start justify-between gap-4 mt-10 pt-6 border-t border-border/50">
+            {prevArticle ? (
+              <Link
+                href={localePath(`/articles/${prevArticle.slug}`)}
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors max-w-[45%]"
+              >
+                <ChevronLeft className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <span className="line-clamp-2">{prevArticle.title}</span>
+              </Link>
+            ) : <span />}
+            {nextArticle ? (
+              <Link
+                href={localePath(`/articles/${nextArticle.slug}`)}
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors text-right max-w-[45%] ml-auto"
+              >
+                <span className="line-clamp-2">{nextArticle.title}</span>
+                <ChevronRight className="h-4 w-4 mt-0.5 flex-shrink-0" />
+              </Link>
+            ) : <span />}
+          </nav>
+        )}
       </main>
 
       <Footer hideLinks />
