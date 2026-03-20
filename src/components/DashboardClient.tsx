@@ -14,9 +14,12 @@ import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { RegionTotal, ReservoirRegion, Reservoir } from '@/types';
-import { Droplets } from 'lucide-react';
+import { Droplets, FileText, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { getAllArticles } from '@/utils/articles';
+import { defaultLocale } from '@/utils/locale';
 
 interface DashboardClientProps {
   initialReservoirs: Reservoir[];
@@ -55,6 +58,24 @@ export function DashboardClient({
 
       <main className="container mx-auto px-4 pb-2">
         <StatCardGrid grandTotal={grandTotal} ytdInflow={ytdInflow} ytdOutflow={ytdOutflow} t={t} animate />
+
+        {(() => {
+          const latest = getAllArticles()[0];
+          if (!latest) return null;
+          const href = language === defaultLocale
+            ? `/articles/${latest.slug}`
+            : `/${language}/articles/${latest.slug}`;
+          return (
+            <Link
+              href={href}
+              className="flex items-center justify-center gap-2 -mt-1 mb-6 py-1 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors group"
+            >
+              <FileText className="h-3.5 w-3.5 flex-shrink-0" />
+              <span className="truncate">{latest.title[language]}</span>
+              <ArrowRight className="h-3 w-3 flex-shrink-0" />
+            </Link>
+          );
+        })()}
 
         <Tabs defaultValue="dashboard" className="mb-8 modern-tabs">
           <TabsList className="w-full max-w-xl mx-auto grid grid-cols-4 mb-8 bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl p-1 border border-white/20 dark:border-white/10">
