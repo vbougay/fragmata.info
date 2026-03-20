@@ -57,6 +57,18 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - Write both English, Russian and Greek versions with the same structure
 - Tone: informative and factual, not verbose
 
+**Per-Dam Summaries (`getDamSummary`):**
+
+Each data module should export a `getDamSummary(damName, language)` function that returns a short 1-2 sentence summary for each of the 21 dams. These are displayed as subtitles on dam pages and used as SEO meta descriptions.
+
+- Write concise, single-line summaries (aim for ~150 characters for SEO)
+- Include: current fill %, storage in MCM, year-over-year comparison
+- Highlight notable conditions: at full capacity, critically low, transfers, dramatic recovery, new annual max
+- Support all 3 languages (`'en' | 'el' | 'ru'`)
+- Return `string | null` — return `null` if dam name not found
+- Follow the pattern in `data-20-MAR-2026.ts` as reference
+- The function is exposed via `dataManager.ts` (`getDamSummary` wrapper) — no changes needed there, it auto-detects the function
+
 **News Ticker Refresh:**
 
 The dashboard has a scrolling news ticker showing recent water crisis articles. Keep it current on each data update:
