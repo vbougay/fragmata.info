@@ -206,7 +206,7 @@ export function RegionDamClient({
           </h1>
         )}
         {damSummaryText && !mediaMode && (
-          <p className="text-sm text-muted-foreground mb-4 max-w-2xl">{damSummaryText}</p>
+          <p className="text-sm text-muted-foreground mb-4">{damSummaryText}</p>
         )}
 
         <StatCardGrid
