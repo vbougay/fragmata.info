@@ -49,6 +49,7 @@ import * as data11Mar from './data-11-MAR-2026';
 import * as data13Mar from './data-13-MAR-2026';
 import * as data16Mar from './data-16-MAR-2026';
 import * as data18Mar from './data-18-MAR-2026';
+import * as data20Mar from './data-20-MAR-2026';
 import {
   calculateDrainDate,
   calculateRegionDrainDate,
@@ -63,6 +64,7 @@ import { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_K
 
 // Define available data sets with their dates and module references
 export const availableDataSets = [
+  { id: '20-MAR-2026', label: 'March 20, 2026', value: '20-MAR-2026', module: data20Mar },
   { id: '18-MAR-2026', label: 'March 18, 2026', value: '18-MAR-2026', module: data18Mar },
   { id: '16-MAR-2026', label: 'March 16, 2026', value: '16-MAR-2026', module: data16Mar },
   { id: '13-MAR-2026', label: 'March 13, 2026', value: '13-MAR-2026', module: data13Mar },
