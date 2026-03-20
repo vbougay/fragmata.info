@@ -73,6 +73,7 @@ function splitMarkdown(markdown: string): Segment[] {
 
 function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId: string }) {
   const { type, attrs } = embed;
+  const { language } = useLanguage();
   const location = attrs.location;
   const region = attrs.region;
 
@@ -83,15 +84,26 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
   // Resolve region name from slug
   const regionName = region ? REGION_SLUG_MAP[region] : undefined;
 
+  // Compute link to corresponding section on dam/region/home page
+  const hash = type === "inflow" ? "#inflow" : type === "forecast" ? "#forecast" : type === "heatmap" ? "#heatmap" : "";
+  const basePath = location && damInfo
+    ? `/dam/${location}`
+    : region
+      ? `/region/${region}`
+      : "";
+  const linkHref = hash
+    ? (language === defaultLocale ? basePath : `/${language}${basePath}`) + hash
+    : undefined;
+
   return (
     <div className="not-prose my-6">
       <DataProvider initialDataSetId={dataSetId}>
-        {type === "inflow" && <MonthlyInflow />}
+        {type === "inflow" && <MonthlyInflow linkHref={linkHref} />}
         {type === "forecast" && (
-          <StorageForecast selectionId={damKey || regionName || location || "all"} />
+          <StorageForecast selectionId={damKey || regionName || location || "all"} linkHref={linkHref} />
         )}
         {type === "heatmap" && (
-          <HeatmapEmbed damKey={damKey} damName={damInfo?.name} regionName={regionName} dataSetId={dataSetId} />
+          <HeatmapEmbed damKey={damKey} damName={damInfo?.name} regionName={regionName} dataSetId={dataSetId} linkHref={linkHref} />
         )}
         {type === "dam-card" && damInfo && (
           <DamCardEmbed damName={damInfo.name} dataSetId={dataSetId} />
@@ -112,11 +124,12 @@ function DamCardEmbed({ damName, dataSetId }: { damName: string; dataSetId: stri
   return <ReservoirCard reservoir={reservoir} />;
 }
 
-function HeatmapEmbed({ damKey, damName, regionName, dataSetId }: {
+function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref }: {
   damKey?: string;
   damName?: string;
   regionName?: string;
   dataSetId: string;
+  linkHref?: string;
 }) {
   const sparklineData = useMemo(() => {
     if (!damName) return undefined;
@@ -131,6 +144,7 @@ function HeatmapEmbed({ damKey, damName, regionName, dataSetId }: {
       filterDamKey={damKey as any}
       filterRegion={!damKey && regionName ? regionName : undefined}
       sparklineData={sparklineData}
+      linkHref={linkHref}
     />
   );
 }

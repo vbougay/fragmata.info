@@ -4,7 +4,8 @@ import { parseReportDate } from '@/utils/reservoirUtils';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
-import { TrendingUp } from 'lucide-react';
+import { TrendingUp, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
@@ -47,7 +48,11 @@ const calendarMonthToWaterYearIndex = (calMonth: number): number => {
 
 const ALL_VALUE = 'all';
 
-const MonthlyInflow: React.FC = () => {
+interface MonthlyInflowProps {
+  linkHref?: string;
+}
+
+const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref }) => {
   const { currentDataSetId } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -277,12 +282,19 @@ const MonthlyInflow: React.FC = () => {
   ) : null;
 
   return (
-    <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 animate-fade-in">
+    <Card id="inflow" className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 animate-fade-in">
       <CardHeader className="pb-2 px-3 sm:px-6">
         <CardTitle className="text-lg md:text-xl flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <div className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-water-500 dark:text-water-400" />
-            <span>{t('monthlyInflow')}</span>
+            {linkHref ? (
+              <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
+                <span>{t('monthlyInflow')}</span>
+                <ExternalLink className="h-3.5 w-3.5 opacity-50" />
+              </Link>
+            ) : (
+              <span>{t('monthlyInflow')}</span>
+            )}
           </div>
           <div className="flex items-center gap-2">
             <div className="flex rounded-lg bg-gray-100 dark:bg-gray-800 p-0.5">

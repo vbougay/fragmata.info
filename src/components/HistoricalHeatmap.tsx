@@ -4,7 +4,8 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { useTheme } from '@/components/ThemeProvider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BarChart3, Calendar, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
+import { BarChart3, Calendar, ArrowUpCircle, ArrowDownCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { REGIONS, getCellColor } from '@/utils/heatmapConfig';
 import { SparklineDataPoint, getSparklineExtremes } from '@/utils/sparklineData';
 import { StorageSparkline } from '@/components';
@@ -30,9 +31,10 @@ interface HistoricalHeatmapProps {
   filterRegion?: string;
   filterDamKey?: keyof HistoricalStorageEntry;
   sparklineData?: SparklineDataPoint[];
+  linkHref?: string;
 }
 
-const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, filterDamKey, sparklineData }) => {
+const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, filterDamKey, sparklineData, linkHref }) => {
   const { language } = useLanguage();
   const t = useTranslation(language);
   const { theme } = useTheme();
@@ -186,12 +188,19 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
   const legendCellSize = 10;
 
   return (
-    <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800">
+    <Card id="heatmap" className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800">
       <CardHeader className="pb-2">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <CardTitle className="flex items-center gap-2 text-lg md:text-xl font-semibold tracking-tight">
             <BarChart3 className="h-5 w-5 text-water-500 dark:text-water-400" />
-            {filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')}
+            {linkHref ? (
+              <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
+                {filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')}
+                <ExternalLink className="h-3.5 w-3.5 opacity-50" />
+              </Link>
+            ) : (
+              filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')
+            )}
           </CardTitle>
           <div className="flex items-center gap-2 text-[10px] text-gray-500 dark:text-gray-400">
             <span>{t('noData')}:</span>

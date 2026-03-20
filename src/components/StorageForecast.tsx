@@ -4,7 +4,8 @@ import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
-import { TrendingDown, Info } from 'lucide-react';
+import { TrendingDown, Info, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
@@ -83,9 +84,10 @@ function getOptionById(id: string): ForecastOption {
 
 interface StorageForecastProps {
   selectionId?: string;
+  linkHref?: string;
 }
 
-const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSelectionId }) => {
+const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSelectionId, linkHref }) => {
   const { currentDataSetId } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -148,12 +150,19 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
   };
 
   return (
-    <Card className={`bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <Card id="forecast" className={`bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <CardHeader className="pb-2 px-3 sm:px-6">
         <CardTitle className="text-lg md:text-xl flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <div className="flex items-center gap-2">
             <TrendingDown className="h-5 w-5 text-water-500 dark:text-water-400" />
-            <span>{t('storageForecast')}</span>
+            {linkHref ? (
+              <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
+                <span>{t('storageForecast')}</span>
+                <ExternalLink className="h-3.5 w-3.5 opacity-50" />
+              </Link>
+            ) : (
+              <span>{t('storageForecast')}</span>
+            )}
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             {!isFixed && (
