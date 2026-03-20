@@ -73,6 +73,9 @@ export const translations = {
     // Breadcrumb
     cyprus: "Cyprus",
 
+    // Articles
+    articles: "Articles",
+
     // Region names
     southernConveyor: "Southern Conveyor",
     paphos: "Paphos",
@@ -249,6 +252,9 @@ export const translations = {
     // Breadcrumb
     cyprus: "Κύπρος",
 
+    // Articles
+    articles: "Άρθρα",
+
     // Region names
     southernConveyor: "Νότιος Αγωγός",
     paphos: "Πάφος",
@@ -424,6 +430,9 @@ export const translations = {
 
     // Breadcrumb
     cyprus: "Кипр",
+
+    // Articles
+    articles: "Статьи",
 
     // Region names
     southernConveyor: "Южный Конвейер",

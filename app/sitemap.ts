@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllRegionSlugs, getAllDamSlugs } from "@/utils/slugs";
+import { getAllArticleSlugs } from "@/utils/articles";
 
 const siteUrl = "https://fragmata.info";
 
@@ -40,5 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     makeEntry(`/dam/${slug}`, 0.7)
   );
 
-  return [...mainPages, ...regionPages, ...damPages];
+  const articleListPage = makeEntry("/articles", 0.5);
+
+  const articlePages = getAllArticleSlugs().flatMap((slug) =>
+    makeEntry(`/articles/${slug}`, 0.6)
+  );
+
+  return [...mainPages, ...regionPages, ...damPages, ...articleListPage, ...articlePages];
 }
