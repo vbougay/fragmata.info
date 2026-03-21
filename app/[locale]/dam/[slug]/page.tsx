@@ -59,8 +59,10 @@ export async function generateMetadata({
 
   const title =
     lang === "en"
-      ? `${damInfo.name} Dam Water Level | ${regionName} | Fragmata`
-      : `${translatedDamName} | ${translatedRegion} | Fragmata`;
+      ? `${damInfo.name} Dam Water Level Today | ${regionName} | Fragmata`
+      : lang === "el"
+        ? `Φράγμα ${translatedDamName} | Επίπεδο Νερού Σήμερα | ${translatedRegion} | Φράγματα`
+        : `Дамба ${translatedDamName} | Уровень воды сегодня | ${translatedRegion} | Фрагмата`;
   const damSummary = getDamSummary(damInfo.name, lang as 'en' | 'el' | 'ru', DEFAULT_DATASET_ID);
   const description = damSummary
     ?? (lang === "en"
