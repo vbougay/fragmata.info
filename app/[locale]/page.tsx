@@ -1,11 +1,10 @@
 import { DashboardClient } from "@/components/DashboardClient";
 import {
-  reservoirData,
   yearlyInflowData,
   getReportDate,
-  getReservoirsWithDrainDates,
-  calculateRegionTotals,
-  calculateGrandTotal,
+  getReservoirsWithForecastDates,
+  getRegionTotalsWithForecasts,
+  getGrandTotalWithForecast,
   getOctoberBaselineStorage,
   DEFAULT_DATASET_ID,
 } from "@/utils/dataManager";
@@ -13,9 +12,9 @@ import { calculateYTDInflow, calculateYTDOutflow } from "@/utils/reservoirUtils"
 
 export default function HomePage() {
   const dsId = DEFAULT_DATASET_ID;
-  const reservoirs = getReservoirsWithDrainDates(dsId);
-  const regionTotals = calculateRegionTotals(dsId);
-  const grandTotal = calculateGrandTotal(dsId);
+  const reservoirs = getReservoirsWithForecastDates(dsId);
+  const regionTotals = getRegionTotalsWithForecasts(dsId);
+  const grandTotal = getGrandTotalWithForecast(dsId);
   const reportDate = getReportDate(dsId);
   const ytdInflow = calculateYTDInflow(yearlyInflowData(dsId), reportDate);
   const octBaseline = getOctoberBaselineStorage(dsId);
