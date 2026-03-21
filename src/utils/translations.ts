@@ -5,6 +5,9 @@ export const translations = {
     subtitle: "Fragmata.info – Cyprus Water Dam/Reservoir Data Visualizer",
     selectDate: "Select date",
     
+    // Units
+    volumeUnit: "mln.\u00A0m³",
+
     // Dashboard
     totalCapacity: "Total Capacity",
     currentStorage: "Current Storage",
@@ -42,7 +45,7 @@ export const translations = {
     
     // Reservoir Table
     reservoir: "Reservoir",
-    capacityMCM: "Capacity (MCM)",
+    capacityMCM: "Capacity (mln. m³)",
     currentStorageShort: "Current Storage",
     lastYearShort: "Last Year",
     changeShort: "Change",
@@ -183,7 +186,10 @@ export const translations = {
     appTitle: "Φράγματα",
     subtitle: "Fragmata.info – Οπτικοποίηση Δεδομένων Φραγμάτων/Ταμιευτήρων Κύπρου",
     selectDate: "Επιλογή ημερομηνίας",
-    
+
+    // Units
+    volumeUnit: "εκατ.\u00A0κ.μ.",
+
     // Dashboard
     totalCapacity: "Συνολική χωρητικότητα",
     currentStorage: "Τρέχουσα αποθήκευση",
@@ -362,7 +368,10 @@ export const translations = {
     appTitle: "Φράγματα",
     subtitle: "Fragmata.info – Визуализация данных плотин/водохранилищ Кипра",
     selectDate: "Выбрать дату",
-    
+
+    // Units
+    volumeUnit: "млн.\u00A0м³",
+
     // Dashboard
     totalCapacity: "Общая вместимость",
     currentStorage: "Текущий запас",
@@ -400,7 +409,7 @@ export const translations = {
     
     // Reservoir Table
     reservoir: "Водохранилище",
-    capacityMCM: "Вместимость (млн м³)",
+    capacityMCM: "Вместимость (млн. м³)",
     currentStorageShort: "Текущий запас",
     lastYearShort: "Прошлый год",
     changeShort: "Изменение",

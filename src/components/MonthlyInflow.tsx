@@ -260,7 +260,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref }) => {
               <p className="font-medium text-foreground">{label}</p>
               {filtered.map((entry, index) => (
                 <p key={index} style={{ color: entry.color }} className="text-sm">
-                  {entry.name}: {(entry.value as number).toFixed(3)} MCM
+                  {entry.name}: {(entry.value as number).toFixed(3)} {t('volumeUnit')}
                 </p>
               ))}
             </div>
@@ -498,7 +498,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref }) => {
         {!isAllMode && (
           <div className="flex items-center justify-end mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
             <div className="text-sm font-medium text-water-600 dark:text-water-400">
-              {t('totalLabel')}: {yearlyInflowData(currentDataSetId).find(d => d.year === selectedYear)?.total.toFixed(3)} MCM
+              {t('totalLabel')}: {yearlyInflowData(currentDataSetId).find(d => d.year === selectedYear)?.total.toFixed(3)} {t('volumeUnit')}
             </div>
           </div>
         )}

@@ -24,6 +24,7 @@ import {
 interface Column {
   key: keyof Reservoir | 'difference';
   label: string;
+  unit?: string;
   render: (reservoir: Reservoir) => React.ReactNode;
   sortable?: boolean;
 }
@@ -101,9 +102,10 @@ const ReservoirTable: React.FC = () => {
     {
       key: 'storage',
       label: t('currentStorageShort'),
+      unit: t('volumeUnit'),
       render: (reservoir) => (
         <div>
-          <div className="font-medium">{reservoir.storage.current.amount.toFixed(3)} MCM</div>
+          <div className="font-medium">{reservoir.storage.current.amount.toFixed(3)}</div>
           <div className="text-xs text-muted-foreground">{reservoir.storage.current.percentage.toFixed(1)}%</div>
         </div>
       ),
@@ -126,9 +128,10 @@ const ReservoirTable: React.FC = () => {
     {
       key: 'storage',
       label: t('lastYearShort'),
+      unit: t('volumeUnit'),
       render: (reservoir) => (
         <div>
-          <div className="font-medium">{reservoir.storage.lastYear.amount.toFixed(3)} MCM</div>
+          <div className="font-medium">{reservoir.storage.lastYear.amount.toFixed(3)}</div>
           <div className="text-xs text-muted-foreground">{reservoir.storage.lastYear.percentage.toFixed(1)}%</div>
         </div>
       ),
@@ -152,22 +155,25 @@ const ReservoirTable: React.FC = () => {
     {
       key: 'inflow',
       label: t('inflowLast24h'),
-      render: (reservoir) => <span>{reservoir.inflow.last24Hours.toFixed(3)} MCM</span>,
+      unit: t('volumeUnit'),
+      render: (reservoir) => <span>{reservoir.inflow.last24Hours.toFixed(3)}</span>,
       sortable: true,
     },
     {
       key: 'inflow',
       label: t('inflowLast7d'),
+      unit: t('volumeUnit'),
       render: (reservoir) => {
         const val = weeklyInflowMap?.get(reservoir.name);
-        return <span>{val !== undefined ? `${val.toFixed(3)} MCM` : '—'}</span>;
+        return <span>{val !== undefined ? val.toFixed(3) : '—'}</span>;
       },
       sortable: true,
     },
     {
       key: 'inflow',
       label: t('inflowSinceOct'),
-      render: (reservoir) => <span>{reservoir.inflow.totalSince.toFixed(3)} MCM</span>,
+      unit: t('volumeUnit'),
+      render: (reservoir) => <span>{reservoir.inflow.totalSince.toFixed(3)}</span>,
       sortable: true,
     },
     {
@@ -336,13 +342,16 @@ const ReservoirTable: React.FC = () => {
           <thead>
             <tr className="border-b border-t border-border bg-muted/50">
               {columns.map((column) => (
-                <th key={`${column.key}-${column.label}`} className="p-3 text-left text-sm font-medium text-muted-foreground">
+                <th key={`${column.key}-${column.label}`} className="p-3 text-left text-sm font-medium text-muted-foreground align-top">
                   {column.sortable ? (
                     <button
                       onClick={() => handleSort(column.key.toString())}
                       className="flex items-center gap-1 hover:text-foreground transition-colors"
                     >
-                      {column.label}
+                      <span>
+                        {column.label}
+                        {column.unit && <span className="block text-[10px] font-normal text-muted-foreground/70 text-left">({column.unit})</span>}
+                      </span>
                       {sortField === column.key && (
                         sortDirection === 'asc' ?
                           <ChevronUp className="h-3 w-3" /> :
@@ -350,7 +359,10 @@ const ReservoirTable: React.FC = () => {
                       )}
                     </button>
                   ) : (
-                    column.label
+                    <span>
+                      {column.label}
+                      {column.unit && <span className="block text-[10px] font-normal text-muted-foreground/70 text-left">({column.unit})</span>}
+                    </span>
                   )}
                 </th>
               ))}

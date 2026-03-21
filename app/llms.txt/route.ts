@@ -145,9 +145,9 @@ function buildMarkdown(): string {
   lines.push("");
   lines.push("| Metric | Value |");
   lines.push("|--------|-------|");
-  lines.push(`| Total capacity | ${fmt(grandTotal.capacity)} MCM |`);
-  lines.push(`| Current storage | ${fmt(grandTotal.storage.current.amount)} MCM (${fmt(grandTotal.storage.current.percentage)}%) |`);
-  lines.push(`| Last year storage | ${fmt(grandTotal.storage.lastYear.amount)} MCM (${fmt(grandTotal.storage.lastYear.percentage)}%) |`);
+  lines.push(`| Total capacity | ${fmt(grandTotal.capacity)} mln. m³ |`);
+  lines.push(`| Current storage | ${fmt(grandTotal.storage.current.amount)} mln. m³ (${fmt(grandTotal.storage.current.percentage)}%) |`);
+  lines.push(`| Last year storage | ${fmt(grandTotal.storage.lastYear.amount)} mln. m³ (${fmt(grandTotal.storage.lastYear.percentage)}%) |`);
   const yoyChange = grandTotal.storage.current.percentage - grandTotal.storage.lastYear.percentage;
   lines.push(`| Year-over-year change | ${sign(yoyChange)}% |`);
   // Grand total forecast
@@ -161,18 +161,18 @@ function buildMarkdown(): string {
   lines.push(`| Cycle phase | ${grandForecast.cyclePhase} (${grandForecast.yearsInPhase} years), confidence: ${grandForecast.confidence} |`);
   if (ytdInflow) {
     const inflowChangeStr = ytdInflow.percentChange !== null
-      ? ` (${sign(Math.round(ytdInflow.percentChange))}% vs last year: ${fmt(ytdInflow.lastYearYTD)} MCM)`
+      ? ` (${sign(Math.round(ytdInflow.percentChange))}% vs last year: ${fmt(ytdInflow.lastYearYTD)} mln. m³)`
       : "";
-    lines.push(`| YTD inflow (${ytdInflow.currentYear}) | ${fmt(ytdInflow.currentYTD)} MCM${inflowChangeStr} |`);
+    lines.push(`| YTD inflow (${ytdInflow.currentYear}) | ${fmt(ytdInflow.currentYTD)} mln. m³${inflowChangeStr} |`);
   }
   if (ytdOutflow) {
     const outflowChangeStr = ytdOutflow.percentChange !== null
-      ? ` (${sign(Math.round(ytdOutflow.percentChange))}% vs last year: ${fmt(ytdOutflow.lastYearOutflow)} MCM)`
+      ? ` (${sign(Math.round(ytdOutflow.percentChange))}% vs last year: ${fmt(ytdOutflow.lastYearOutflow)} mln. m³)`
       : "";
-    lines.push(`| YTD outflow | ${fmt(ytdOutflow.currentOutflow)} MCM${outflowChangeStr} |`);
+    lines.push(`| YTD outflow | ${fmt(ytdOutflow.currentOutflow)} mln. m³${outflowChangeStr} |`);
   }
   if (waterTransferred) {
-    lines.push(`| Water transferred | ${fmt(waterTransferred.sinceOct)} MCM (${waterTransferred.from} → ${waterTransferred.to} since Oct) |`);
+    lines.push(`| Water transferred | ${fmt(waterTransferred.sinceOct)} mln. m³ (${waterTransferred.from} → ${waterTransferred.to} since Oct) |`);
   }
   lines.push("");
 
@@ -189,9 +189,9 @@ function buildMarkdown(): string {
     lines.push(`### ${regionName}`);
     lines.push("");
     const regionRestrictionDate = getRegionForecastDate(allReservoirs, regionName, reportDate);
-    lines.push(`Region total: ${fmt(regionTotal.storage.current.amount)} MCM / ${fmt(regionTotal.capacity)} MCM capacity (${fmt(regionTotal.storage.current.percentage)}%) — Last year: ${fmt(regionTotal.storage.lastYear.percentage)}% — Forecasted restrictions: ${regionRestrictionDate}`);
+    lines.push(`Region total: ${fmt(regionTotal.storage.current.amount)} mln. m³ / ${fmt(regionTotal.capacity)} mln. m³ capacity (${fmt(regionTotal.storage.current.percentage)}%) — Last year: ${fmt(regionTotal.storage.lastYear.percentage)}% — Forecasted restrictions: ${regionRestrictionDate}`);
     lines.push("");
-    lines.push("| Reservoir | Capacity (MCM) | Storage (MCM) | % Full | Last Year % | YTD Inflow (MCM) | Last 24h (MCM) | Max Storage (MCM) | Restriction Date |");
+    lines.push("| Reservoir | Capacity (mln. m³) | Storage (mln. m³) | % Full | Last Year % | YTD Inflow (mln. m³) | Last 24h (mln. m³) | Max Storage (mln. m³) | Restriction Date |");
     lines.push("|-----------|---------------|--------------|--------|-------------|-----------------|---------------|------------------|-----------------|");
     for (const r of regionReservoirs) {
       lines.push(
@@ -202,7 +202,7 @@ function buildMarkdown(): string {
   }
 
   // Seasonal Inflow History
-  lines.push("## Seasonal Inflow History (MCM)");
+  lines.push("## Seasonal Inflow History (mln. m³)");
   lines.push("");
   lines.push(`| Season | ${MONTH_SHORT.join(" | ")} | Total |`);
   lines.push(`|--------|${MONTH_SHORT.map(() => "-----").join("|")}|-------|`);
@@ -235,7 +235,7 @@ function buildMarkdown(): string {
   lines.push("- **Cycle phase**: declining (storage trending down from peak), trough (extended low), recovering (trending up from trough), peak (extended high)");
   lines.push("- **YTD outflow**: Water balance = total inflow since Oct − (current storage − Oct baseline storage)");
   lines.push("- **Inflow forecast**: Average of cycle-aware year group (dry/moderate/wet based on current cycle phase) for each remaining month in the current water year");
-  lines.push("- **Storage units**: MCM = Million Cubic Meters");
+  lines.push("- **Storage units**: mln. m³ = Million Cubic Meters");
   lines.push("");
 
   return lines.join("\n");

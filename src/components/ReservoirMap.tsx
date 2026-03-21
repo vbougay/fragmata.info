@@ -141,15 +141,15 @@ const ReservoirMap: React.FC = () => {
                     <div style={{ padding: '4px' }}>
                       <h3 style={{ margin: '0', fontWeight: 600 }}>{reservoir.name}</h3>
                       <p style={{ margin: '0' }}>{t('mapRegion')}: {reservoir.region}</p>
-                      <p style={{ margin: '0' }}>{t('mapCapacity')}: {reservoir.capacity.toFixed(1)} MCM</p>
+                      <p style={{ margin: '0' }}>{t('mapCapacity')}: {reservoir.capacity.toFixed(1)} {t('volumeUnit')}</p>
                       <p style={{ margin: '0' }}>
-                        {t('mapCurrent')}: {reservoir.storage.current.amount.toFixed(1)} MCM ({reservoir.storage.current.percentage.toFixed(1)}%)
+                        {t('mapCurrent')}: {reservoir.storage.current.amount.toFixed(1)} {t('volumeUnit')} ({reservoir.storage.current.percentage.toFixed(1)}%)
                       </p>
                       <p style={{ margin: '0' }}>
-                        {t('mapLastYear')}: {reservoir.storage.lastYear.amount.toFixed(1)} MCM ({reservoir.storage.lastYear.percentage.toFixed(1)}%)
+                        {t('mapLastYear')}: {reservoir.storage.lastYear.amount.toFixed(1)} {t('volumeUnit')} ({reservoir.storage.lastYear.percentage.toFixed(1)}%)
                       </p>
-                      <p style={{ margin: '0' }}>{t('mapRecentInflow')}: {reservoir.inflow.last24Hours.toFixed(3)} MCM</p>
-                      <p style={{ margin: '0' }}>{t('totalInflow')}: {reservoir.inflow.totalSince.toFixed(3)} MCM</p>
+                      <p style={{ margin: '0' }}>{t('mapRecentInflow')}: {reservoir.inflow.last24Hours.toFixed(3)} {t('volumeUnit')}</p>
+                      <p style={{ margin: '0' }}>{t('totalInflow')}: {reservoir.inflow.totalSince.toFixed(3)} {t('volumeUnit')}</p>
                     </div>
                   </Popup>
                 </Marker>

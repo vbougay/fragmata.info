@@ -475,7 +475,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
                   </div>
                   <div>
                     <span className="text-gray-400">{t('currentStorage')}: </span>
-                    <span className="font-medium">{tooltip.storageMCM?.toFixed(2)} MCM</span>
+                    <span className="font-medium">{tooltip.storageMCM?.toFixed(2)} {t('volumeUnit')}</span>
                   </div>
                 </>
               ) : (

@@ -76,12 +76,12 @@ const meta: Record<Locale, LocaleMeta> = {
       {
         question: "What is the current water level in Cyprus reservoirs?",
         answer:
-          "Current water levels for all 21 Cyprus reservoirs are displayed on the Fragmata dashboard with storage in MCM and percentage of capacity. Data is sourced from official government reports and updated regularly.",
+          "Current water levels for all 21 Cyprus reservoirs are displayed on the Fragmata dashboard with storage in million cubic meters (mln. m³) and percentage of capacity. Data is sourced from official government reports and updated regularly.",
       },
       {
         question: "Which is the largest dam in Cyprus?",
         answer:
-          "Kouris Dam is the largest in Cyprus with a capacity of 115 MCM, located in the Southern Conveyor system. The second largest is Asprokremmos Dam in Paphos at 52.4 MCM.",
+          "Kouris Dam is the largest in Cyprus with a capacity of 115 mln. m³, located in the Southern Conveyor system. The second largest is Asprokremmos Dam in Paphos at 52.4 mln. m³.",
       },
     ],
   },

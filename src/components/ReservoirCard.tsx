@@ -50,7 +50,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
           })()}
           <div className="flex items-center gap-1.5 text-xs font-normal bg-water-50 dark:bg-water-900/30 text-water-700 dark:text-water-300 px-2 py-1 rounded-full">
             <DropletIcon size={12} />
-            <span>{capacity.toFixed(3)} MCM</span>
+            <span>{capacity.toFixed(3)} {t('volumeUnit')}</span>
           </div>
         </CardTitle>
       </CardHeader>
@@ -70,19 +70,19 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               <div className="text-left">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast24h')}</div>
                 <div className="font-mono text-foreground text-xs">{inflow.last24Hours.toFixed(3)}</div>
-                <div className="text-[10px] text-muted-foreground">MCM</div>
+                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
               </div>
               <div className="text-center">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast7d')}</div>
                 <div className="font-mono text-foreground text-xs">
                   {last7DaysInflow !== undefined ? last7DaysInflow.toFixed(3) : '—'}
                 </div>
-                <div className="text-[10px] text-muted-foreground">MCM</div>
+                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
               </div>
               <div className="text-center">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowSinceOct')}</div>
                 <div className="font-mono text-foreground text-xs">{inflow.totalSince.toFixed(3)}</div>
-                <div className="text-[10px] text-muted-foreground">MCM</div>
+                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
                   </div>
                   <span className="text-xs font-mono text-muted-foreground">{maxStorage.date}</span>
                 </div>
-                <div className="font-mono text-foreground">{maxStorage.amount.toFixed(3)} MCM</div>
+                <div className="font-mono text-foreground">{maxStorage.amount.toFixed(3)} {t('volumeUnit')}</div>
               </>
             )}
           </div>

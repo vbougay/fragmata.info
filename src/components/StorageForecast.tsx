@@ -184,7 +184,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
                     <SelectLabel className="text-xs">{t('majorDams')}</SelectLabel>
                     {DAM_OPTIONS.map(opt => (
                       <SelectItem key={opt.id} value={opt.id}>
-                        {DAM_DISPLAY_NAMES[opt.id]?.[language] ?? opt.id} ({damCapacities[opt.id]?.toFixed(1)} MCM)
+                        {DAM_DISPLAY_NAMES[opt.id]?.[language] ?? opt.id} ({damCapacities[opt.id]?.toFixed(1)} {t('volumeUnit')})
                       </SelectItem>
                     ))}
                   </SelectGroup>
@@ -263,7 +263,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
                 tick={{ fontSize: 12, fill: 'currentColor' }}
                 stroke="currentColor"
                 className="text-gray-600 dark:text-gray-400"
-                label={{ value: 'MCM', angle: -90, position: 'insideLeft', style: { fontSize: 11, fill: 'currentColor' } }}
+                label={{ value: t('volumeUnit'), angle: -90, position: 'insideLeft', style: { fontSize: 11, fill: 'currentColor' } }}
               />
 
               <Tooltip
@@ -274,7 +274,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
                         <p className="font-medium text-foreground text-sm">{label}</p>
                         {payload.map((entry, index) => (
                           <p key={index} style={{ color: entry.color }} className="text-xs">
-                            {entry.name}: {(entry.value as number).toFixed(1)} MCM
+                            {entry.name}: {(entry.value as number).toFixed(1)} {t('volumeUnit')}
                           </p>
                         ))}
                       </div>
