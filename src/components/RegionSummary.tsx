@@ -119,7 +119,7 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
             })()}
           </div>
           <div className="text-sm font-normal text-muted-foreground">
-            {regionTotal.capacity.toFixed(1)} MCM {t('capacity')}
+            {regionTotal.capacity.toFixed(1)} <span className="text-xs text-muted-foreground">MCM</span> {t('capacity')}
           </div>
         </CardTitle>
       </CardHeader>
@@ -132,22 +132,22 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
           <div className="bg-white/80 dark:bg-gray-800/50 p-3 rounded-xl shadow-sm">
             <div className="text-sm text-muted-foreground mb-1">{t('currentStorage')}</div>
-            <div className="text-lg font-semibold text-foreground">{regionTotal.storage.current.amount.toFixed(3)} MCM</div>
+            <div className="text-lg font-semibold text-foreground">{regionTotal.storage.current.amount.toFixed(3)} <span className="text-xs text-muted-foreground font-medium">MCM</span></div>
           </div>
 
           <div className="bg-white/80 dark:bg-gray-800/50 p-3 rounded-xl shadow-sm">
             <div className="text-sm text-muted-foreground mb-1">{t('lastYear')}</div>
-            <div className="text-lg font-semibold text-foreground">{regionTotal.storage.lastYear.amount.toFixed(3)} MCM</div>
+            <div className="text-lg font-semibold text-foreground">{regionTotal.storage.lastYear.amount.toFixed(3)} <span className="text-xs text-muted-foreground font-medium">MCM</span></div>
           </div>
 
           <div className="bg-white/80 dark:bg-gray-800/50 p-3 rounded-xl shadow-sm">
             <div className="text-sm text-muted-foreground mb-1">{t('recentInflow')}</div>
-            <div className="text-lg font-semibold text-foreground">{regionTotal.inflow.last24Hours.toFixed(3)} MCM</div>
+            <div className="text-lg font-semibold text-foreground">{regionTotal.inflow.last24Hours.toFixed(3)} <span className="text-xs text-muted-foreground font-medium">MCM</span></div>
           </div>
 
           <div className="bg-white/80 dark:bg-gray-800/50 p-3 rounded-xl shadow-sm">
             <div className="text-sm text-muted-foreground">{t('restrictionsBy')}</div>
-            <div className="text-lg font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1 leading-tight">
               <span className={getDrainDateColor(regionTotal.drainDate)}>
                 {getDrainDateText(regionTotal.drainDate, t)}
               </span>

@@ -56,7 +56,7 @@ export function StatCardGrid({
         </div>
         <CardContent className="flex flex-col justify-center p-3 sm:p-4">
           <div className="text-xs sm:text-sm text-muted-foreground">{t('totalCapacity')}</div>
-          <div className="text-lg sm:text-2xl font-bold text-foreground">{grandTotal?.capacity.toFixed(1)} MCM</div>
+          <div className="text-lg sm:text-2xl font-bold text-foreground">{grandTotal?.capacity.toFixed(1)} <span className="text-xs sm:text-sm align-baseline text-muted-foreground font-medium">MCM</span></div>
         </CardContent>
       </Card>
 
@@ -70,7 +70,7 @@ export function StatCardGrid({
             {grandTotal?.storage.current.percentage.toFixed(1)}%
           </div>
           <div className="text-xs sm:text-sm text-muted-foreground">
-            ({grandTotal?.storage.current.amount.toFixed(1)} MCM)
+            ({grandTotal?.storage.current.amount.toFixed(1)} <span className="text-[10px] sm:text-xs">MCM</span>)
           </div>
         </CardContent>
       </Card>
@@ -96,7 +96,7 @@ export function StatCardGrid({
         </div>
         <CardContent className="flex flex-col justify-center p-3 sm:p-4 w-full">
           <div className="text-xs sm:text-sm text-muted-foreground">{drainDateLabel || t('restrictionsBy')}</div>
-          <div className="text-lg sm:text-2xl font-bold">
+          <div className="text-base sm:text-xl font-bold leading-tight">
             <span className={getDrainDateColor(grandTotal?.drainDate)}>
               {getDrainDateText(grandTotal?.drainDate, t)}
             </span>
@@ -113,7 +113,7 @@ export function StatCardGrid({
             <CardContent className="flex flex-col justify-center p-2 min-w-0">
               <div className="text-xs text-muted-foreground">{t('ytdInflow')}</div>
               <div className="text-sm font-bold text-foreground">
-                {ytdInflow.currentYTD.toFixed(1)} MCM
+                {ytdInflow.currentYTD.toFixed(1)} <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">MCM</span>
                 {ytdInflow.percentChange !== null && (
                   <span className={`text-xs font-semibold ml-1 ${ytdInflow.percentChange >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                     {ytdInflow.percentChange >= 0 ? '+' : ''}{ytdInflow.percentChange.toFixed(0)}%
@@ -132,7 +132,7 @@ export function StatCardGrid({
             <CardContent className="flex flex-col justify-center p-2 min-w-0">
               <div className="text-xs text-muted-foreground">{t('ytdOutflow')}</div>
               <div className="text-sm font-bold text-foreground">
-                {ytdOutflow.currentOutflow.toFixed(1)} MCM
+                {ytdOutflow.currentOutflow.toFixed(1)} <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">MCM</span>
                 {ytdOutflow.percentChange !== null && (
                   <span className={`text-xs font-semibold ml-1 ${ytdOutflow.percentChange <= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                     {ytdOutflow.percentChange >= 0 ? '+' : ''}{ytdOutflow.percentChange.toFixed(0)}%
@@ -152,7 +152,7 @@ export function StatCardGrid({
                 </div>
                 <CardContent className="flex flex-col justify-center p-2 min-w-0">
                   <div className="text-xs text-muted-foreground">{t('inflowLast7d')}</div>
-                  <div className="text-sm font-bold text-foreground">{last7DaysInflow.toFixed(3)} MCM</div>
+                  <div className="text-sm font-bold text-foreground">{last7DaysInflow.toFixed(3)} <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">MCM</span></div>
                 </CardContent>
               </Card>
             )}
@@ -162,7 +162,7 @@ export function StatCardGrid({
               </div>
               <CardContent className="flex flex-col justify-center p-2 min-w-0">
                 <div className="text-xs text-muted-foreground">{t('inflowSinceOct')}</div>
-                <div className="text-sm font-bold text-foreground">{totalInflowSince.toFixed(1)} MCM</div>
+                <div className="text-sm font-bold text-foreground">{totalInflowSince.toFixed(1)} <span className="text-[10px] sm:text-xs font-medium text-muted-foreground">MCM</span></div>
               </CardContent>
             </Card>
           </>

@@ -411,7 +411,7 @@ const RestrictionDateCard: React.FC<{
     <div className="text-center p-2 rounded-lg bg-gray-50 dark:bg-gray-800/50">
       <div className="text-[10px] text-muted-foreground mb-0.5">{label}</div>
       <div className="text-[9px] text-muted-foreground mb-1">{cardLabel}</div>
-      <div className={`text-sm font-semibold ${isNotRestricted ? 'text-emerald-600 dark:text-emerald-400' : color}`}>
+      <div className={`text-sm font-semibold leading-tight ${isNotRestricted ? 'text-emerald-600 dark:text-emerald-400' : color}`}>
         {displayDate}
       </div>
     </div>
