@@ -69,20 +69,15 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
             <div className="grid grid-cols-3 gap-2">
               <div className="text-left">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast24h')}</div>
-                <div className="font-mono text-foreground text-xs">{inflow.last24Hours.toFixed(3)}</div>
-                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
+                <div className="font-mono text-foreground text-xs">{inflow.last24Hours.toFixed(3)} <span className="text-[10px] text-muted-foreground font-sans">{t('volumeUnit')}</span></div>
               </div>
               <div className="text-center">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowLast7d')}</div>
-                <div className="font-mono text-foreground text-xs">
-                  {last7DaysInflow !== undefined ? last7DaysInflow.toFixed(3) : '—'}
-                </div>
-                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
+                <div className="font-mono text-foreground text-xs">{last7DaysInflow !== undefined ? last7DaysInflow.toFixed(3) : '—'} <span className="text-[10px] text-muted-foreground font-sans">{t('volumeUnit')}</span></div>
               </div>
               <div className="text-center">
                 <div className="text-[10px] text-muted-foreground mb-0.5">{t('inflowSinceOct')}</div>
-                <div className="font-mono text-foreground text-xs">{inflow.totalSince.toFixed(3)}</div>
-                <div className="text-[10px] text-muted-foreground">{t('volumeUnit')}</div>
+                <div className="font-mono text-foreground text-xs">{inflow.totalSince.toFixed(3)} <span className="text-[10px] text-muted-foreground font-sans">{t('volumeUnit')}</span></div>
               </div>
             </div>
           </div>

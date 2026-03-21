@@ -61,7 +61,7 @@ const DonutRing: React.FC<DonutRingProps> = ({ percentage, label, ringId }) => {
 
   return (
     <div
-      className="relative w-28 h-28 flex items-center justify-center"
+      className="relative w-28 h-28 shrink min-w-0 flex items-center justify-center"
       style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
     >
       <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -107,7 +107,7 @@ const DonutRing: React.FC<DonutRingProps> = ({ percentage, label, ringId }) => {
         {/* Layer 3: Specular highlight stripe */}
         <circle {...arcProps} stroke={colors.light} strokeWidth={2.5} opacity={0.7} />
       </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden">
         <span className={`text-lg font-bold ${colors.textClass}`}>{percentage.toFixed(1)}%</span>
         <span className="text-[0.65rem] text-gray-500">{label}</span>
       </div>
@@ -180,7 +180,7 @@ const CapacityChart: React.FC<CapacityChartProps> = ({ data, showComparison = tr
 
   return (
     <div ref={chartRef} className="opacity-0 transition-opacity duration-500">
-      <div className="flex items-center justify-center space-x-4">
+      <div className="flex items-center justify-center space-x-4 min-w-0">
         <DonutRing
           percentage={currentPercentage}
           label={t('currentVeryShort')}
