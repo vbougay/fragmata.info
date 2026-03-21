@@ -87,8 +87,8 @@ export function DashboardClient({
 
           <TabsContent value="dashboard" className="animate-fade-in">
               <div className="space-y-8">
-                <NewsTicker />
                 <HistoricalHeatmap />
+                <NewsTicker />
                 <div>
                   <h3 className="flex items-center gap-2 text-lg md:text-xl font-semibold tracking-tight mb-4">
                     <Droplets className="h-5 w-5 text-water-500 dark:text-water-400" />
