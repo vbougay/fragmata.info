@@ -307,7 +307,7 @@ export default async function LocaleLayout({
           <p><strong>{ns.heading}</strong></p>
           <p>{ns.body}</p>
         </noscript>
-        <SpeedInsights />
+        <SpeedInsights sampleRate={0.1} />
         <GoogleAnalytics gaId="G-JX6FXMP26B" />
       </body>
     </html>
