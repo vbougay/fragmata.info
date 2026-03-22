@@ -69,8 +69,8 @@ const ReservoirTable: React.FC = () => {
 
         const damSlug = getDamSlug(reservoir.name);
         const regionSlug = getRegionSlug(reservoir.region);
-        const damHref = damSlug ? (language === 'en' ? `/dam/${damSlug}` : `/${language}/dam/${damSlug}`) : undefined;
-        const regionHref = regionSlug ? (language === 'en' ? `/region/${regionSlug}` : `/${language}/region/${regionSlug}`) : undefined;
+        const damHref = damSlug ? (language === 'en' ? `/dam/${damSlug}/` : `/${language}/dam/${damSlug}/`) : undefined;
+        const regionHref = regionSlug ? (language === 'en' ? `/region/${regionSlug}/` : `/${language}/region/${regionSlug}/`) : undefined;
 
         return (
           <div>

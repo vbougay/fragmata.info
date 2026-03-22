@@ -108,7 +108,7 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
                 regionTotal.region === 'Recharge/Other' ? t('rechargeOther') :
                 regionTotal.region === 'Total' ? t('totalLabel') : regionTotal.region;
               const slug = regionTotal.region !== 'Total' ? getRegionSlug(regionTotal.region) : undefined;
-              const href = slug ? (language === 'en' ? `/region/${slug}` : `/${language}/region/${slug}`) : undefined;
+              const href = slug ? (language === 'en' ? `/region/${slug}/` : `/${language}/region/${slug}/`) : undefined;
               return href ? (
                 <Link href={href} className="text-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors">
                   {label}

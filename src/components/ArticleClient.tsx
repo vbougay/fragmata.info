@@ -87,9 +87,9 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
   // Compute link to corresponding section on dam/region/home page
   const hash = type === "inflow" ? "#inflow" : type === "forecast" ? "#forecast" : type === "heatmap" ? "#heatmap" : "";
   const basePath = location && damInfo
-    ? `/dam/${location}`
+    ? `/dam/${location}/`
     : region
-      ? `/region/${region}`
+      ? `/region/${region}/`
       : "";
   const linkHref = hash
     ? (language === defaultLocale ? basePath : `/${language}${basePath}`) + hash
@@ -194,6 +194,8 @@ export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, n
           </BreadcrumbList>
         </Breadcrumb>
 
+        <h1 className="text-2xl font-bold tracking-tight mb-2">{title}</h1>
+
         <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <Calendar className="h-3.5 w-3.5" />
@@ -217,7 +219,7 @@ export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, n
           <nav className="flex items-start justify-between gap-4 mt-10 pt-6 border-t border-border/50">
             {prevArticle ? (
               <Link
-                href={localePath(`/articles/${prevArticle.slug}`)}
+                href={localePath(`/articles/${prevArticle.slug}/`)}
                 className="flex items-start gap-2 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors max-w-[45%]"
               >
                 <ChevronLeft className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -226,7 +228,7 @@ export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, n
             ) : <span />}
             {nextArticle ? (
               <Link
-                href={localePath(`/articles/${nextArticle.slug}`)}
+                href={localePath(`/articles/${nextArticle.slug}/`)}
                 className="flex items-start gap-2 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors text-right max-w-[45%] ml-auto"
               >
                 <span className="line-clamp-2">{nextArticle.title}</span>
@@ -285,7 +287,7 @@ export function ArticleListClient({ articles }: ArticleListClientProps) {
           {articles.map((article) => (
             <Link
               key={article.slug}
-              href={localePath(`/articles/${article.slug}`)}
+              href={localePath(`/articles/${article.slug}/`)}
               className="block group"
             >
               <article className="rounded-xl border border-border/50 bg-white/70 dark:bg-gray-900/70 p-6 shadow-sm transition-all hover:shadow-md hover:border-water-300 dark:hover:border-water-700">
