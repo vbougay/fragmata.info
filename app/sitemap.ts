@@ -4,7 +4,7 @@ import { getAllArticleSlugs } from "@/utils/articles";
 
 const siteUrl = "https://fragmata.info";
 
-const pages = [""];
+const pages = ["", "/regions", "/map", "/table"];
 const locales = ["en", "el", "ru"] as const;
 
 function localeUrl(locale: string, path: string) {

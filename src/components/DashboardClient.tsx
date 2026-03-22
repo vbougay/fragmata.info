@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import { Header, ReservoirCard, ReservoirTable, RegionSummary, MonthlyInflow, HistoricalHeatmap } from '@/components';
 import { getAllSparklineData } from '@/utils/sparklineData';
 import { NewsTicker } from '@/components/NewsTicker';
@@ -21,7 +21,22 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getAllArticles } from '@/utils/articles';
 import { defaultLocale } from '@/utils/locale';
 
+const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
+type TabValue = (typeof VALID_TABS)[number];
+
+function isValidTab(value: string | undefined): value is TabValue {
+  return (VALID_TABS as readonly string[]).includes(value as string);
+}
+
+function getTabFromPath(pathname: string): TabValue {
+  const segments = pathname.replace(/\/$/, '').split('/').filter(Boolean);
+  const last = segments[segments.length - 1];
+  if (last && isValidTab(last) && last !== 'dashboard') return last;
+  return 'dashboard';
+}
+
 interface DashboardClientProps {
+  initialTab?: string;
   initialReservoirs: Reservoir[];
   initialRegionTotals: RegionTotal[];
   initialGrandTotal: RegionTotal;
@@ -30,6 +45,7 @@ interface DashboardClientProps {
 }
 
 export function DashboardClient({
+  initialTab,
   initialReservoirs,
   initialRegionTotals,
   initialGrandTotal,
@@ -39,6 +55,29 @@ export function DashboardClient({
   const { currentDataSetId } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
+
+  const [activeTab, setActiveTab] = useState<TabValue>(
+    isValidTab(initialTab) ? initialTab : 'dashboard'
+  );
+
+  const getTabPath = useCallback((tab: TabValue): string => {
+    const prefix = language === defaultLocale ? '' : `/${language}`;
+    return tab === 'dashboard' ? `${prefix}/` : `${prefix}/${tab}/`;
+  }, [language]);
+
+  const handleTabChange = useCallback((tab: string) => {
+    const validated = isValidTab(tab) ? tab : 'dashboard';
+    setActiveTab(validated);
+    window.history.pushState(null, '', getTabPath(validated));
+  }, [getTabPath]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      setActiveTab(getTabFromPath(window.location.pathname));
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
   const { regionTotals, grandTotal, reservoirs, ytdInflow, ytdOutflow } = useReservoirData(
     currentDataSetId,
     true,
@@ -84,7 +123,7 @@ export function DashboardClient({
           );
         })()}
 
-        <Tabs defaultValue="dashboard" className="mb-8 modern-tabs">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8 modern-tabs">
           <TabsList className="w-full max-w-xl mx-auto grid grid-cols-4 mb-8 bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl p-1 border border-white/20 dark:border-white/10">
             <TabsTrigger value="dashboard" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm rounded-lg transition-all">{t('dashboard')}</TabsTrigger>
             <TabsTrigger value="regions" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm rounded-lg transition-all">{t('byRegion')}</TabsTrigger>
