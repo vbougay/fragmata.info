@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
+  ensureDatasetLoaded,
   getReservoirsWithForecastDates,
   getRegionTotalsWithForecasts,
   getGrandTotalWithForecast,
@@ -39,32 +40,40 @@ export function useReservoirData(
   const [ytdOutflow, setYtdOutflow] = useState<YTDOutflowResult | null>(initial.ytdOutflow);
 
   useEffect(() => {
-    const totals = useForecast
-      ? getRegionTotalsWithForecasts(dataSetId)
-      : calculateRegionTotals(dataSetId);
-    setRegionTotals(totals);
+    let cancelled = false;
 
-    const total = useForecast
-      ? getGrandTotalWithForecast(dataSetId)
-      : calculateGrandTotal(dataSetId);
-    setGrandTotal(total);
+    ensureDatasetLoaded(dataSetId).then(() => {
+      if (cancelled) return;
 
-    const res = useForecast
-      ? getReservoirsWithForecastDates(dataSetId)
-      : getReservoirsWithDrainDates(dataSetId);
-    setReservoirs(res);
+      const totals = useForecast
+        ? getRegionTotalsWithForecasts(dataSetId)
+        : calculateRegionTotals(dataSetId);
+      setRegionTotals(totals);
 
-    const inflowData = yearlyInflowData(dataSetId);
-    const reportDate = getReportDate(dataSetId);
-    const inflow = calculateYTDInflow(inflowData, reportDate);
-    setYtdInflow(inflow);
+      const total = useForecast
+        ? getGrandTotalWithForecast(dataSetId)
+        : calculateGrandTotal(dataSetId);
+      setGrandTotal(total);
 
-    const octBaseline = getOctoberBaselineStorage(dataSetId);
-    if (inflow && octBaseline && total) {
-      setYtdOutflow(calculateYTDOutflow(total, inflow, octBaseline));
-    } else {
-      setYtdOutflow(null);
-    }
+      const res = useForecast
+        ? getReservoirsWithForecastDates(dataSetId)
+        : getReservoirsWithDrainDates(dataSetId);
+      setReservoirs(res);
+
+      const inflowData = yearlyInflowData(dataSetId);
+      const reportDate = getReportDate(dataSetId);
+      const inflow = calculateYTDInflow(inflowData, reportDate);
+      setYtdInflow(inflow);
+
+      const octBaseline = getOctoberBaselineStorage(dataSetId);
+      if (inflow && octBaseline && total) {
+        setYtdOutflow(calculateYTDOutflow(total, inflow, octBaseline));
+      } else {
+        setYtdOutflow(null);
+      }
+    });
+
+    return () => { cancelled = true; };
   }, [dataSetId, useForecast]);
 
   return { regionTotals, grandTotal, reservoirs, ytdInflow, ytdOutflow };

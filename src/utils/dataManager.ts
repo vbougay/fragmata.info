@@ -1,55 +1,5 @@
 import { Reservoir, ReservoirRegion, RegionTotal, YearlyInflowData, DrainForecast } from '../types';
-import * as data17Mar from './data-17-mar-2025';
-import * as data28Mar from './data-28-mar-2025';
-import * as data11Apr from './data-11-apr-2025';
-import * as data28Apr from './data-28-apr-2025';
-import * as data09May from './data-09-may-2025';
-import * as data16May from './data-16-may-2025';
-import * as data23May from './data-23-may-2025';
-import * as data02Jun from './data-02-jun-2025';
-import * as data06Jun from './data-06-jun-2025';
-import * as data10Jun from './data-10-jun-2025';
-import * as data17Jun from './data-17-jun-2025';
-import * as data27Jun from './data-27-jun-2025';
-import * as data28Jul from './data-28-jul-2025';
-import * as data18Jul from './data-18-jul-2025';
-import * as data04Jul from './data-04-jul-2025';
-import * as data08Aug from './data-08-aug-2025';
-import * as data25Aug from './data-25-aug-2025';
-import * as data01Sep from './data-01-sep-2025';
-import * as data22Sep from './data-22-sep-2025';
-import * as data10Oct from './data-10-OCT-2025';
-import * as data13Oct from './data-13-OCT-2025';
-import * as data27Oct from './data-27-OCT-2025';
-import * as data03Nov from './data-03-NOV-2025';
-import * as data10Nov from './data-10-NOV-2025';
-import * as data18Nov from './data-18-NOV-2025';
-import * as data24Nov from './data-24-NOV-2025';
-import * as data05Dec from './data-05-DEC-2025';
-import * as data11Dec from './data-11-DEC-2025';
-import * as data15Dec from './data-15-DEC-2025';
-import * as data23Dec from './data-23-DEC-2025';
-import * as data29Dec from './data-29-DEC-2025';
-import * as data05Jan from './data-05-JAN-2026';
-import * as data12Jan from './data-12-JAN-2026';
-import * as data19Jan from './data-19-JAN-2026';
-import * as data26Jan from './data-26-JAN-2026';
-import * as data02Feb from './data-02-FEB-2026';
-import * as data09Feb from './data-09-FEB-2026';
-import * as data16Feb from './data-16-FEB-2026';
-import * as data20Feb from './data-20-FEB-2026';
-import * as data24Feb from './data-24-FEB-2026';
-import * as data25Feb from './data-25-FEB-2026';
-import * as data27Feb from './data-27-FEB-2026';
-import * as data02Mar from './data-02-MAR-2026';
-import * as data04Mar from './data-04-MAR-2026';
-import * as data06Mar from './data-06-MAR-2026';
-import * as data09Mar from './data-09-MAR-2026';
-import * as data11Mar from './data-11-MAR-2026';
-import * as data13Mar from './data-13-MAR-2026';
-import * as data16Mar from './data-16-MAR-2026';
-import * as data18Mar from './data-18-MAR-2026';
-import * as data20Mar from './data-20-MAR-2026';
+import * as dataDefault from './data-20-MAR-2026';
 import {
   calculateDrainDate,
   calculateRegionDrainDate,
@@ -62,68 +12,148 @@ import {
 import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
 import { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS, getExpectedInflowYears } from './forecastEngine';
 
-// Define available data sets with their dates and module references
+// --- Lazy data module loading ---
+// Only the default (latest) dataset is statically imported.
+// All others are loaded on demand to reduce initial bundle size.
+
+interface DataModule {
+  reservoirData: Reservoir[];
+  yearlyInflowData: YearlyInflowData[];
+  getReportDate: () => string;
+  getDamSummary?: (damName: string, language?: 'en' | 'el' | 'ru') => string | null;
+  getSummaryChanges?: (language?: 'en' | 'el' | 'ru') => string;
+  waterTransferred?: { from: string; to: string; sinceOct: number };
+}
+
+const moduleCache = new Map<string, DataModule>([
+  ['20-MAR-2026', dataDefault],
+]);
+
+const importMap: Record<string, () => Promise<DataModule>> = {
+  '18-MAR-2026': () => import('./data-18-MAR-2026'),
+  '16-MAR-2026': () => import('./data-16-MAR-2026'),
+  '13-MAR-2026': () => import('./data-13-MAR-2026'),
+  '11-MAR-2026': () => import('./data-11-MAR-2026'),
+  '09-MAR-2026': () => import('./data-09-MAR-2026'),
+  '06-MAR-2026': () => import('./data-06-MAR-2026'),
+  '04-MAR-2026': () => import('./data-04-MAR-2026'),
+  '02-MAR-2026': () => import('./data-02-MAR-2026'),
+  '27-FEB-2026': () => import('./data-27-FEB-2026'),
+  '25-FEB-2026': () => import('./data-25-FEB-2026'),
+  '24-FEB-2026': () => import('./data-24-FEB-2026'),
+  '20-FEB-2026': () => import('./data-20-FEB-2026'),
+  '16-FEB-2026': () => import('./data-16-FEB-2026'),
+  '09-FEB-2026': () => import('./data-09-FEB-2026'),
+  '02-FEB-2026': () => import('./data-02-FEB-2026'),
+  '26-JAN-2026': () => import('./data-26-JAN-2026'),
+  '19-JAN-2026': () => import('./data-19-JAN-2026'),
+  '12-JAN-2026': () => import('./data-12-JAN-2026'),
+  '05-JAN-2026': () => import('./data-05-JAN-2026'),
+  '29-DEC-2025': () => import('./data-29-DEC-2025'),
+  '23-DEC-2025': () => import('./data-23-DEC-2025'),
+  '15-DEC-2025': () => import('./data-15-DEC-2025'),
+  '11-DEC-2025': () => import('./data-11-DEC-2025'),
+  '05-DEC-2025': () => import('./data-05-DEC-2025'),
+  '24-NOV-2025': () => import('./data-24-NOV-2025'),
+  '18-NOV-2025': () => import('./data-18-NOV-2025'),
+  '10-NOV-2025': () => import('./data-10-NOV-2025'),
+  '03-NOV-2025': () => import('./data-03-NOV-2025'),
+  '27-OCT-2025': () => import('./data-27-OCT-2025'),
+  '13-OCT-2025': () => import('./data-13-OCT-2025'),
+  '10-OCT-2025': () => import('./data-10-OCT-2025'),
+  '22-SEP-2025': () => import('./data-22-sep-2025'),
+  '01-SEP-2025': () => import('./data-01-sep-2025'),
+  '25-AUG-2025': () => import('./data-25-aug-2025'),
+  '08-AUG-2025': () => import('./data-08-aug-2025'),
+  '28-JUL-2025': () => import('./data-28-jul-2025'),
+  '18-JUL-2025': () => import('./data-18-jul-2025'),
+  '04-JUL-2025': () => import('./data-04-jul-2025'),
+  '27-JUN-2025': () => import('./data-27-jun-2025'),
+  '17-JUN-2025': () => import('./data-17-jun-2025'),
+  '10-JUN-2025': () => import('./data-10-jun-2025'),
+  '06-JUN-2025': () => import('./data-06-jun-2025'),
+  '02-JUN-2025': () => import('./data-02-jun-2025'),
+  '23-MAY-2025': () => import('./data-23-may-2025'),
+  '16-MAY-2025': () => import('./data-16-may-2025'),
+  '09-MAY-2025': () => import('./data-09-may-2025'),
+  '28-APR-2025': () => import('./data-28-apr-2025'),
+  '11-APR-2025': () => import('./data-11-apr-2025'),
+  '28-MAR-2025': () => import('./data-28-mar-2025'),
+  '17-MAR-2025': () => import('./data-17-mar-2025'),
+};
+
+/** Load a dataset module into the cache. No-op if already cached. */
+export async function ensureDatasetLoaded(id: string): Promise<void> {
+  if (moduleCache.has(id)) return;
+  const loader = importMap[id];
+  if (loader) {
+    const mod = await loader();
+    moduleCache.set(id, mod);
+  }
+}
+
+// Define available data sets (metadata only — modules loaded on demand)
 export const availableDataSets = [
-  { id: '20-MAR-2026', label: 'March 20, 2026', value: '20-MAR-2026', module: data20Mar },
-  { id: '18-MAR-2026', label: 'March 18, 2026', value: '18-MAR-2026', module: data18Mar },
-  { id: '16-MAR-2026', label: 'March 16, 2026', value: '16-MAR-2026', module: data16Mar },
-  { id: '13-MAR-2026', label: 'March 13, 2026', value: '13-MAR-2026', module: data13Mar },
-  { id: '11-MAR-2026', label: 'March 11, 2026', value: '11-MAR-2026', module: data11Mar },
-  { id: '09-MAR-2026', label: 'March 9, 2026', value: '09-MAR-2026', module: data09Mar },
-  { id: '06-MAR-2026', label: 'March 6, 2026', value: '06-MAR-2026', module: data06Mar },
-  { id: '04-MAR-2026', label: 'March 4, 2026', value: '04-MAR-2026', module: data04Mar },
-  { id: '02-MAR-2026', label: 'March 2, 2026', value: '02-MAR-2026', module: data02Mar },
-  { id: '27-FEB-2026', label: 'February 27, 2026', value: '27-FEB-2026', module: data27Feb },
-  { id: '25-FEB-2026', label: 'February 25, 2026', value: '25-FEB-2026', module: data25Feb },
-  { id: '24-FEB-2026', label: 'February 24, 2026', value: '24-FEB-2026', module: data24Feb },
-  { id: '20-FEB-2026', label: 'February 20, 2026', value: '20-FEB-2026', module: data20Feb },
-  { id: '16-FEB-2026', label: 'February 16, 2026', value: '16-FEB-2026', module: data16Feb },
-  { id: '09-FEB-2026', label: 'February 9, 2026', value: '09-FEB-2026', module: data09Feb },
-  { id: '02-FEB-2026', label: 'February 2, 2026', value: '02-FEB-2026', module: data02Feb },
-  { id: '26-JAN-2026', label: 'January 26, 2026', value: '26-JAN-2026', module: data26Jan },
-  { id: '19-JAN-2026', label: 'January 19, 2026', value: '19-JAN-2026', module: data19Jan },
-  { id: '12-JAN-2026', label: 'January 12, 2026', value: '12-JAN-2026', module: data12Jan },
-  { id: '05-JAN-2026', label: 'January 5, 2026', value: '05-JAN-2026', module: data05Jan },
-  { id: '29-DEC-2025', label: 'December 29, 2025', value: '29-DEC-2025', module: data29Dec },
-  { id: '23-DEC-2025', label: 'December 23, 2025', value: '23-DEC-2025', module: data23Dec },
-  { id: '15-DEC-2025', label: 'December 15, 2025', value: '15-DEC-2025', module: data15Dec },
-  { id: '11-DEC-2025', label: 'December 11, 2025', value: '11-DEC-2025', module: data11Dec },
-  { id: '05-DEC-2025', label: 'December 5, 2025', value: '05-DEC-2025', module: data05Dec },
-  { id: '24-NOV-2025', label: 'November 24, 2025', value: '24-NOV-2025', module: data24Nov },
-  { id: '18-NOV-2025', label: 'November 18, 2025', value: '18-NOV-2025', module: data18Nov },
-  { id: '10-NOV-2025', label: 'November 10, 2025', value: '10-NOV-2025', module: data10Nov },
-  { id: '03-NOV-2025', label: 'November 3, 2025', value: '03-NOV-2025', module: data03Nov },
-  { id: '27-OCT-2025', label: 'October 27, 2025', value: '27-OCT-2025', module: data27Oct },
-  { id: '13-OCT-2025', label: 'October 13, 2025', value: '13-OCT-2025', module: data13Oct },
-  { id: '10-OCT-2025', label: 'October 10, 2025', value: '10-OCT-2025', module: data10Oct },
-  { id: '22-SEP-2025', label: 'September 22, 2025', value: '22-SEP-2025', module: data22Sep },
-  { id: '01-SEP-2025', label: 'September 1, 2025', value: '01-SEP-2025', module: data01Sep },
-  { id: '25-AUG-2025', label: 'August 25, 2025', value: '25-AUG-2025', module: data25Aug },
-  { id: '08-AUG-2025', label: 'August 8, 2025', value: '08-AUG-2025', module: data08Aug },
-  { id: '28-JUL-2025', label: 'July 28, 2025', value: '28-JUL-2025', module: data28Jul },
-  { id: '18-JUL-2025', label: 'July 18, 2025', value: '18-JUL-2025', module: data18Jul },
-  { id: '04-JUL-2025', label: 'July 4, 2025', value: '04-JUL-2025', module: data04Jul },
-  { id: '27-JUN-2025', label: 'June 27, 2025', value: '27-JUN-2025', module: data27Jun },
-  { id: '17-JUN-2025', label: 'June 17, 2025', value: '17-JUN-2025', module: data17Jun },
-  { id: '10-JUN-2025', label: 'June 10, 2025', value: '10-JUN-2025', module: data10Jun },
-  { id: '06-JUN-2025', label: 'June 6, 2025', value: '06-JUN-2025', module: data06Jun },
-  { id: '02-JUN-2025', label: 'June 2, 2025', value: '02-JUN-2025', module: data02Jun },
-  { id: '23-MAY-2025', label: 'May 23, 2025', value: '23-MAY-2025', module: data23May },
-  { id: '16-MAY-2025', label: 'May 16, 2025', value: '16-MAY-2025', module: data16May },
-  { id: '09-MAY-2025', label: 'May 9, 2025', value: '09-MAY-2025', module: data09May },
-  { id: '28-APR-2025', label: 'April 28, 2025', value: '28-APR-2025', module: data28Apr },
-  { id: '11-APR-2025', label: 'April 11, 2025', value: '11-APR-2025', module: data11Apr },
-  { id: '28-MAR-2025', label: 'March 28, 2025', value: '28-MAR-2025', module: data28Mar },
-  { id: '17-MAR-2025', label: 'March 17, 2025', value: '17-MAR-2025', module: data17Mar },
+  { id: '20-MAR-2026', label: 'March 20, 2026', value: '20-MAR-2026' },
+  { id: '18-MAR-2026', label: 'March 18, 2026', value: '18-MAR-2026' },
+  { id: '16-MAR-2026', label: 'March 16, 2026', value: '16-MAR-2026' },
+  { id: '13-MAR-2026', label: 'March 13, 2026', value: '13-MAR-2026' },
+  { id: '11-MAR-2026', label: 'March 11, 2026', value: '11-MAR-2026' },
+  { id: '09-MAR-2026', label: 'March 9, 2026', value: '09-MAR-2026' },
+  { id: '06-MAR-2026', label: 'March 6, 2026', value: '06-MAR-2026' },
+  { id: '04-MAR-2026', label: 'March 4, 2026', value: '04-MAR-2026' },
+  { id: '02-MAR-2026', label: 'March 2, 2026', value: '02-MAR-2026' },
+  { id: '27-FEB-2026', label: 'February 27, 2026', value: '27-FEB-2026' },
+  { id: '25-FEB-2026', label: 'February 25, 2026', value: '25-FEB-2026' },
+  { id: '24-FEB-2026', label: 'February 24, 2026', value: '24-FEB-2026' },
+  { id: '20-FEB-2026', label: 'February 20, 2026', value: '20-FEB-2026' },
+  { id: '16-FEB-2026', label: 'February 16, 2026', value: '16-FEB-2026' },
+  { id: '09-FEB-2026', label: 'February 9, 2026', value: '09-FEB-2026' },
+  { id: '02-FEB-2026', label: 'February 2, 2026', value: '02-FEB-2026' },
+  { id: '26-JAN-2026', label: 'January 26, 2026', value: '26-JAN-2026' },
+  { id: '19-JAN-2026', label: 'January 19, 2026', value: '19-JAN-2026' },
+  { id: '12-JAN-2026', label: 'January 12, 2026', value: '12-JAN-2026' },
+  { id: '05-JAN-2026', label: 'January 5, 2026', value: '05-JAN-2026' },
+  { id: '29-DEC-2025', label: 'December 29, 2025', value: '29-DEC-2025' },
+  { id: '23-DEC-2025', label: 'December 23, 2025', value: '23-DEC-2025' },
+  { id: '15-DEC-2025', label: 'December 15, 2025', value: '15-DEC-2025' },
+  { id: '11-DEC-2025', label: 'December 11, 2025', value: '11-DEC-2025' },
+  { id: '05-DEC-2025', label: 'December 5, 2025', value: '05-DEC-2025' },
+  { id: '24-NOV-2025', label: 'November 24, 2025', value: '24-NOV-2025' },
+  { id: '18-NOV-2025', label: 'November 18, 2025', value: '18-NOV-2025' },
+  { id: '10-NOV-2025', label: 'November 10, 2025', value: '10-NOV-2025' },
+  { id: '03-NOV-2025', label: 'November 3, 2025', value: '03-NOV-2025' },
+  { id: '27-OCT-2025', label: 'October 27, 2025', value: '27-OCT-2025' },
+  { id: '13-OCT-2025', label: 'October 13, 2025', value: '13-OCT-2025' },
+  { id: '10-OCT-2025', label: 'October 10, 2025', value: '10-OCT-2025' },
+  { id: '22-SEP-2025', label: 'September 22, 2025', value: '22-SEP-2025' },
+  { id: '01-SEP-2025', label: 'September 1, 2025', value: '01-SEP-2025' },
+  { id: '25-AUG-2025', label: 'August 25, 2025', value: '25-AUG-2025' },
+  { id: '08-AUG-2025', label: 'August 8, 2025', value: '08-AUG-2025' },
+  { id: '28-JUL-2025', label: 'July 28, 2025', value: '28-JUL-2025' },
+  { id: '18-JUL-2025', label: 'July 18, 2025', value: '18-JUL-2025' },
+  { id: '04-JUL-2025', label: 'July 4, 2025', value: '04-JUL-2025' },
+  { id: '27-JUN-2025', label: 'June 27, 2025', value: '27-JUN-2025' },
+  { id: '17-JUN-2025', label: 'June 17, 2025', value: '17-JUN-2025' },
+  { id: '10-JUN-2025', label: 'June 10, 2025', value: '10-JUN-2025' },
+  { id: '06-JUN-2025', label: 'June 6, 2025', value: '06-JUN-2025' },
+  { id: '02-JUN-2025', label: 'June 2, 2025', value: '02-JUN-2025' },
+  { id: '23-MAY-2025', label: 'May 23, 2025', value: '23-MAY-2025' },
+  { id: '16-MAY-2025', label: 'May 16, 2025', value: '16-MAY-2025' },
+  { id: '09-MAY-2025', label: 'May 9, 2025', value: '09-MAY-2025' },
+  { id: '28-APR-2025', label: 'April 28, 2025', value: '28-APR-2025' },
+  { id: '11-APR-2025', label: 'April 11, 2025', value: '11-APR-2025' },
+  { id: '28-MAR-2025', label: 'March 28, 2025', value: '28-MAR-2025' },
+  { id: '17-MAR-2025', label: 'March 17, 2025', value: '17-MAR-2025' },
 ];
 
 /** The most recent dataset ID (first entry in the sorted array). */
 export const DEFAULT_DATASET_ID = availableDataSets[0].id;
 
-// Resolve a dataset module from an optional ID (defaults to latest).
-function resolveModule(datasetId?: string) {
+// Resolve a dataset module from cache (falls back to default if not yet loaded).
+function resolveModule(datasetId?: string): DataModule {
   const id = datasetId || DEFAULT_DATASET_ID;
-  return availableDataSets.find(ds => ds.id === id)?.module || availableDataSets[0].module;
+  return moduleCache.get(id) || moduleCache.get(DEFAULT_DATASET_ID)!;
 }
 
 // Resolve a valid dataset ID (defaults to latest).
@@ -396,7 +426,7 @@ export const getScenarioInflowAverages = (
  * to the closest dataset ~7 days prior. Returns a map of reservoir name → 7-day inflow MCM.
  * Returns null if no suitable prior dataset is found.
  */
-export const getLast7DaysInflow = (datasetId?: string): Map<string, number> | null => {
+export const getLast7DaysInflow = async (datasetId?: string): Promise<Map<string, number> | null> => {
   const dsId = resolveId(datasetId);
   const currentParsed = parseReportDate(dsId);
   if (!currentParsed) return null;
@@ -404,7 +434,7 @@ export const getLast7DaysInflow = (datasetId?: string): Map<string, number> | nu
   const currentDate = new Date(currentParsed.year, currentParsed.month - 1, currentParsed.day);
 
   // Find the dataset closest to 7 days before the current one (between 5-10 days)
-  let bestDataset: typeof availableDataSets[0] | null = null;
+  let bestDatasetId: string | null = null;
   let bestDiff = Infinity;
 
   for (const ds of availableDataSets) {
@@ -417,15 +447,19 @@ export const getLast7DaysInflow = (datasetId?: string): Map<string, number> | nu
       const distFrom7 = Math.abs(diffDays - 7);
       if (distFrom7 < bestDiff) {
         bestDiff = distFrom7;
-        bestDataset = ds;
+        bestDatasetId = ds.id;
       }
     }
   }
 
-  if (!bestDataset) return null;
+  if (!bestDatasetId) return null;
+
+  // Ensure both datasets are loaded before accessing their data
+  await ensureDatasetLoaded(dsId);
+  await ensureDatasetLoaded(bestDatasetId);
 
   const currentData = reservoirData(dsId);
-  const priorData = reservoirData(bestDataset.id);
+  const priorData = reservoirData(bestDatasetId);
   const result = new Map<string, number>();
 
   for (const reservoir of currentData) {
@@ -443,26 +477,14 @@ export const getLast7DaysInflow = (datasetId?: string): Map<string, number> | nu
  * Get summary of changes for the selected dataset.
  */
 export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {
-  const dsId = resolveId(datasetId);
-  const dataset = availableDataSets.find(ds => ds.id === dsId);
-  const mod = dataset?.module;
-
-  if (mod && 'getSummaryChanges' in mod && typeof mod.getSummaryChanges === 'function') {
-    return mod.getSummaryChanges(language);
-  }
-  return null;
+  const mod = resolveModule(datasetId);
+  return mod.getSummaryChanges?.(language) ?? null;
 };
 
 /**
  * Get a short summary for an individual dam from the selected dataset.
  */
 export const getDamSummary = (damName: string, language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {
-  const dsId = resolveId(datasetId);
-  const dataset = availableDataSets.find(ds => ds.id === dsId);
-  const mod = dataset?.module;
-
-  if (mod && 'getDamSummary' in mod && typeof mod.getDamSummary === 'function') {
-    return mod.getDamSummary(damName, language);
-  }
-  return null;
+  const mod = resolveModule(datasetId);
+  return mod.getDamSummary?.(damName, language) ?? null;
 };

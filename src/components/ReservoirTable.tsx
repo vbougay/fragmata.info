@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { Reservoir } from '@/types';
 import { getReservoirsWithDrainDates, getLast7DaysInflow } from '@/utils/dataManager';
@@ -48,7 +48,14 @@ const ReservoirTable: React.FC = () => {
   const t = useTranslation(language);
   const reservoirData = getReservoirsWithDrainDates(currentDataSetId);
   const sparklineMap = useMemo(() => getAllSparklineData(reservoirData), [reservoirData]);
-  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
+  const [weeklyInflowMap, setWeeklyInflowMap] = useState<Map<string, number> | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getLast7DaysInflow(currentDataSetId).then(result => {
+      if (!cancelled) setWeeklyInflowMap(result);
+    });
+    return () => { cancelled = true; };
+  }, [currentDataSetId]);
 
   // Define the columns for the table
   const columns: Column[] = [

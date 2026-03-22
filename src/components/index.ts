@@ -7,7 +7,9 @@ export { default as CapacityChart } from './CapacityChart';
 export { default as MonthlyInflow } from './MonthlyInflow';
 // ReservoirMap must be loaded via ReservoirMapWrapper (dynamic import, ssr: false)
 // to avoid "window is not defined" from Leaflet during SSR
-export { default as HistoricalHeatmap } from './HistoricalHeatmap';
+// HistoricalHeatmap is also loaded via wrapper (ssr: false) to avoid 2MB+ of
+// inline-styled heatmap cells in the server-rendered HTML
+export { default as HistoricalHeatmap } from './HistoricalHeatmapWrapper';
 export { default as MediaHeader } from './MediaHeader';
 export { default as ChurchSilhouette } from './ChurchSilhouette';
 export { default as StorageSparkline } from './StorageSparkline';

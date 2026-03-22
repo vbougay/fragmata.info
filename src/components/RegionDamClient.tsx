@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useRef } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { toBlob } from 'html-to-image';
 import { Header, ReservoirCard, HistoricalHeatmap } from '@/components';
 import HistoricalHeatmapStatic from '@/components/HistoricalHeatmapStatic';
@@ -141,7 +141,14 @@ export function RegionDamClient({
     return new Map();
   }, [type, regionReservoirs, damName, reservoirs]);
 
-  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
+  const [weeklyInflowMap, setWeeklyInflowMap] = useState<Map<string, number> | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getLast7DaysInflow(currentDataSetId).then(result => {
+      if (!cancelled) setWeeklyInflowMap(result);
+    });
+    return () => { cancelled = true; };
+  }, [currentDataSetId]);
 
   if (!regionTotal) return null;
 

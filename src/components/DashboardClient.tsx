@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Header, ReservoirCard, ReservoirTable, RegionSummary, MonthlyInflow, HistoricalHeatmap } from '@/components';
 import { getAllSparklineData } from '@/utils/sparklineData';
 import { NewsTicker } from '@/components/NewsTicker';
@@ -46,7 +46,14 @@ export function DashboardClient({
   );
 
   const sparklineMap = useMemo(() => getAllSparklineData(reservoirs), [reservoirs]);
-  const weeklyInflowMap = useMemo(() => getLast7DaysInflow(currentDataSetId), [currentDataSetId]);
+  const [weeklyInflowMap, setWeeklyInflowMap] = useState<Map<string, number> | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getLast7DaysInflow(currentDataSetId).then(result => {
+      if (!cancelled) setWeeklyInflowMap(result);
+    });
+    return () => { cancelled = true; };
+  }, [currentDataSetId]);
 
   const getReservoirs = (region: ReservoirRegion) => {
     return reservoirs.filter(reservoir => reservoir.region === region);
