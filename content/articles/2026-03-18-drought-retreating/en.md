@@ -2,7 +2,7 @@
 
 ---
 
-Two weeks ago, in our first article about the Fragmata dashboard, we wrote: "the crisis is real, but cyclical — not catastrophic." The forecast model, trained on 38 years of hydrological data, predicted that reservoirs would reach their minimum by the end of 2026, followed by recovery. Since then, sustained rainfall over the Troodos mountains has accelerated that scenario. According to the Water Development Department's data for 18 March, total storage of the main reservoirs rose to 22.2% (64.7 mln. m³) — up from 20.6% (59.9 mln. m³) just sixteen days earlier. What's more: 12 of 21 reservoirs have already surpassed last year's levels on the same date.
+Two weeks ago, in our [first article](/articles/2026-03-02-cyprus-reservoirs-forecast/) about the Fragmata dashboard, we wrote: "the crisis is real, but cyclical — not catastrophic." The forecast model, trained on 38 years of hydrological data, predicted that reservoirs would reach their minimum by the end of 2026, followed by recovery. Since then, sustained rainfall over the Troodos mountains has accelerated that scenario. According to the Water Development Department's data for 18 March, total storage of the main reservoirs rose to 22.2% (64.7 mln. m³) — up from 20.6% (59.9 mln. m³) just sixteen days earlier. What's more: 12 of 21 reservoirs have already surpassed last year's levels on the same date.
 
 ### Numbers That Change the Picture
 
@@ -67,7 +67,7 @@ These reservoirs are located in areas where precipitation from the Troodos barel
 
 ### The Forecast Has Improved
 
-In our first article two weeks ago, Fragmata's forecast model predicted a decline to ~7% by November–December 2026 — the threshold for severe restrictions. Since then, the situation has changed substantially.
+In our [first article](/articles/2026-03-02-cyprus-reservoirs-forecast/) two weeks ago, Fragmata's forecast model predicted a decline to ~7% by November–December 2026 — the threshold for severe restrictions. Since then, the situation has changed substantially.
 
 With current inflow at 45.8 mln. m³ (and at least another month of rainy season ahead), the expected scenario is shifting towards a milder outcome. The forecast of a drop to 7% is becoming increasingly unlikely. In fact, the data is beginning to match the "recovery scenario" — the more optimistic of the three scenarios the model calculates.
 
