@@ -8,6 +8,7 @@ import { SparklineDataPoint, getSparklineExtremes } from '@/utils/sparklineData'
 import { DropletIcon, Droplets, Calendar, Timer, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
+import { toDateLocale } from '@/utils/dateFormatting';
 import { getDrainDateColor, getDrainDateText } from '@/utils/reservoirUtils';
 import { getDamSlug } from '@/utils/slugs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -92,7 +93,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               const extremes = getSparklineExtremes(sparklineData);
               const formatShortDate = (iso: string) => {
                 const d = new Date(iso);
-                return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short' });
+                return d.toLocaleDateString(toDateLocale(language), { day: 'numeric', month: 'short' });
               };
               return (
                 <>

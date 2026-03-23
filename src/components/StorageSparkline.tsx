@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, YAxis, ReferenceDot, ReferenceLine } from 'recharts';
 import { SparklineDataPoint } from '@/utils/sparklineData';
+import { toDateLocale } from '@/utils/dateFormatting';
 
 function getSparklineColor(percentage: number): { stroke: string; fill: string } {
   if (percentage >= 100) return { stroke: '#3b82f6', fill: '#3b82f650' };
@@ -12,7 +13,7 @@ function getSparklineColor(percentage: number): { stroke: string; fill: string }
 
 function formatDate(dateStr: string, language: string = 'en'): string {
   const d = new Date(dateStr);
-  return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short', year: '2-digit' });
+  return d.toLocaleDateString(toDateLocale(language), { day: 'numeric', month: 'short', year: '2-digit' });
 }
 
 interface SparklineTooltipProps {

@@ -8,6 +8,7 @@ import { BarChart3, Calendar, ArrowUpCircle, ArrowDownCircle } from 'lucide-reac
 import { REGIONS, getCellColor } from '@/utils/heatmapConfig';
 import { SparklineDataPoint, getSparklineExtremes } from '@/utils/sparklineData';
 import { StorageSparkline } from '@/components';
+import { toDateLocale } from '@/utils/dateFormatting';
 
 const TOTAL_CAPACITY = 290.668;
 
@@ -312,7 +313,7 @@ const HistoricalHeatmapStatic: React.FC<HistoricalHeatmapStaticProps> = ({ years
           const extremes = getSparklineExtremes(sparklineData);
           const formatShortDate = (iso: string) => {
             const d = new Date(iso);
-            return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short' });
+            return d.toLocaleDateString(toDateLocale(language), { day: 'numeric', month: 'short' });
           };
           return (
             <div className="border-t border-gray-200 dark:border-gray-700 mt-3 pt-3">

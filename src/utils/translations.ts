@@ -180,6 +180,15 @@ export const translations = {
     damTitle: "{name} Dam",
     forecastNotAvailable: "Forecast data is not available for this selection.",
 
+    // Community links
+    communityLinks: "Follow us on {telegram} and {whatsapp} for updates",
+
+    // Forecast inline strings
+    yearSingular: "1 year",
+    yearPlural: "{n} years",
+    similarTo: "Similar to",
+    forecastDisclaimer: "Based on 38-year historical storage patterns. Cards show when storage drops below {pct}% capacity — the point where water restrictions typically begin.",
+
   },
   el: {
     // Header
@@ -362,6 +371,15 @@ export const translations = {
     damTitle: "Φράγμα {name}",
     forecastNotAvailable: "Τα δεδομένα πρόβλεψης δεν είναι διαθέσιμα για αυτή την επιλογή.",
 
+    // Community links
+    communityLinks: "Ακολουθήστε μας στο {telegram} και {whatsapp} για ενημερώσεις",
+
+    // Forecast inline strings
+    yearSingular: "1 έτος",
+    yearPlural: "{n} έτη",
+    similarTo: "Ανάλογο με",
+    forecastDisclaimer: "Βασισμένο σε 38ετή ιστορικά δεδομένα. Οι κάρτες δείχνουν πότε η αποθήκευση πέφτει κάτω από {pct}% — το σημείο όπου συνήθως αρχίζουν οι περιορισμοί νερού.",
+
   },
   ru: {
     // Header
@@ -543,6 +561,15 @@ export const translations = {
     // Region/Dam pages
     damTitle: "Дамба {name}",
     forecastNotAvailable: "Данные прогноза недоступны для этого выбора.",
+
+    // Community links
+    communityLinks: "Следите за нами в {telegram} и {whatsapp} для обновлений",
+
+    // Forecast inline strings
+    yearSingular: "1 год",
+    yearPlural: "{n} года",
+    similarTo: "Аналогичные",
+    forecastDisclaimer: "На основе 38-летних данных. Карточки показывают, когда запас падает ниже {pct}% — порог введения ограничений водоснабжения.",
   },
   tr: {
     // Header
@@ -724,6 +751,15 @@ export const translations = {
     // Region/Dam pages
     damTitle: "{name} Barajı",
     forecastNotAvailable: "Bu seçim için tahmin verileri mevcut değildir.",
+
+    // Community links
+    communityLinks: "Bizi {telegram} ve {whatsapp} üzerinden takip edin",
+
+    // Forecast inline strings
+    yearSingular: "1 yıl",
+    yearPlural: "{n} yıl",
+    similarTo: "Benzer",
+    forecastDisclaimer: "38 yıllık tarihsel depolama kalıplarına dayanmaktadır. Kartlar, depolamanın %{pct} kapasitenin altına düştüğü zamanı gösterir — su kısıtlamalarının genellikle başladığı nokta.",
   }
 };
 

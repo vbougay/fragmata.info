@@ -5,6 +5,11 @@ const monthAbbrToIndex: Record<string, number> = {
 
 const localeMap: Record<string, string> = { en: 'en-US', el: 'el-GR', ru: 'ru-RU', tr: 'tr-TR' };
 
+/** BCP 47 locale for toLocaleDateString(). Defaults to 'en-GB' for unknown languages. */
+export function toDateLocale(language: string): string {
+  return localeMap[language] || 'en-GB';
+}
+
 export function formatDataSetDate(id: string, language: string): string {
   const [day, monthAbbr, year] = id.split('-');
   const monthIdx = monthAbbrToIndex[monthAbbr];

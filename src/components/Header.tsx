@@ -6,7 +6,7 @@ import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { formatDataSetDate } from '@/utils/dateFormatting';
-import { defaultLocale, type Locale } from '@/utils/locale';
+import { locales, defaultLocale, type Locale } from '@/utils/locale';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -28,7 +28,7 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
   const getPagePath = useCallback(() => {
     const segments = pathname.split('/');
     const maybeLocale = segments[1];
-    if (['en', 'el', 'ru', 'tr'].includes(maybeLocale)) {
+    if ((locales as readonly string[]).includes(maybeLocale)) {
       return '/' + segments.slice(2).join('/');
     }
     return pathname;
@@ -323,15 +323,12 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
 
               {/* Community links */}
               <div className="text-center md:text-right text-xs md:text-sm text-muted-foreground">
-                {language === 'el' ? 'Ακολουθήστε μας στο' : language === 'ru' ? 'Следите за нами в' : language === 'tr' ? 'Bizi takip edin' : 'Follow us on'}{' '}
-                <a href="https://t.me/fragmatainfo" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
-                  Telegram
-                </a>
-                {' '}{language === 'el' ? 'και' : language === 'ru' ? 'и' : language === 'tr' ? 've' : 'and'}{' '}
-                <a href="https://chat.whatsapp.com/JZxEYFqo1mGDBZoi0pZBaA?mode=gi_t" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
-                  WhatsApp
-                </a>
-                {' '}{language === 'el' ? 'για ενημερώσεις' : language === 'ru' ? 'для обновлений' : language === 'tr' ? 'güncellemeler için' : 'for updates'}
+                {t('communityLinks').split(/(\{telegram\}|\{whatsapp\})/).map((part, i) => {
+                  const linkClass = "text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline";
+                  if (part === '{telegram}') return <a key={i} href="https://t.me/fragmatainfo" target="_blank" className={linkClass}>Telegram</a>;
+                  if (part === '{whatsapp}') return <a key={i} href="https://chat.whatsapp.com/JZxEYFqo1mGDBZoi0pZBaA?mode=gi_t" target="_blank" className={linkClass}>WhatsApp</a>;
+                  return <span key={i}>{part}</span>;
+                })}
               </div>
             </div>
           </div>
