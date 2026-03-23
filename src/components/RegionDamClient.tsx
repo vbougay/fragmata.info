@@ -170,7 +170,7 @@ export function RegionDamClient({
       : '';
 
   const damSummaryText = type === 'dam' && damName
-    ? getDamSummary(damName, language as 'en' | 'el' | 'ru', currentDataSetId)
+    ? getDamSummary(damName, language as 'en' | 'el' | 'ru' | 'tr', currentDataSetId)
     : null;
 
   // Breadcrumb data for dam pages

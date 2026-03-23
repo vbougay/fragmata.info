@@ -141,8 +141,8 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
   const phaseColor = PHASE_COLORS[forecast.cyclePhase];
 
   const yearLabel = forecast.yearsInPhase === 1
-    ? (language === 'en' ? '1 year' : language === 'el' ? '1 έτος' : '1 год')
-    : (language === 'en' ? `${forecast.yearsInPhase} years` : language === 'el' ? `${forecast.yearsInPhase} έτη` : `${forecast.yearsInPhase} года`);
+    ? (language === 'en' ? '1 year' : language === 'el' ? '1 έτος' : language === 'tr' ? '1 yıl' : '1 год')
+    : (language === 'en' ? `${forecast.yearsInPhase} years` : language === 'el' ? `${forecast.yearsInPhase} έτη` : language === 'tr' ? `${forecast.yearsInPhase} yıl` : `${forecast.yearsInPhase} года`);
 
   // Custom tick formatter: show only every Nth label for readability
   const formatXTick = (value: string, index: number) => {
@@ -200,7 +200,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
             </span>
             {forecast.analogYears.length > 0 && (
               <span className="text-xs text-muted-foreground hidden sm:inline">
-                {language === 'en' ? 'Similar to' : language === 'el' ? 'Ανάλογο με' : 'Аналогичные'}: {forecast.analogYears.slice(0, 3).join(', ')}
+                {language === 'en' ? 'Similar to' : language === 'el' ? 'Ανάλογο με' : language === 'tr' ? 'Benzer' : 'Аналогичные'}: {forecast.analogYears.slice(0, 3).join(', ')}
               </span>
             )}
           </div>
@@ -382,7 +382,9 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
               ? `Based on 38-year historical storage patterns. Cards show when storage drops below ${forecast.restrictionThresholdPct}% capacity — the point where water restrictions typically begin.`
               : language === 'el'
                 ? `Βασισμένο σε 38ετή ιστορικά δεδομένα. Οι κάρτες δείχνουν πότε η αποθήκευση πέφτει κάτω από ${forecast.restrictionThresholdPct}% — το σημείο όπου συνήθως αρχίζουν οι περιορισμοί νερού.`
-                : `На основе 38-летних данных. Карточки показывают, когда запас падает ниже ${forecast.restrictionThresholdPct}% — порог введения ограничений водоснабжения.`}
+                : language === 'tr'
+                  ? `38 yıllık tarihsel depolama kalıplarına dayanmaktadır. Kartlar, depolamanın %${forecast.restrictionThresholdPct} kapasitenin altına düştüğü zamanı gösterir — su kısıtlamalarının genellikle başladığı nokta.`
+                  : `На основе 38-летних данных. Карточки показывают, когда запас падает ниже ${forecast.restrictionThresholdPct}% — порог введения ограничений водоснабжения.`}
           </span>
         </div>
       </CardContent>
@@ -406,7 +408,7 @@ const RestrictionDateCard: React.FC<{
       ? t('alreadyRestricted')
       : date;
 
-  const cardLabel = language === 'en' ? 'Forecasted Restrictions' : language === 'el' ? 'Πρόβλεψη Περιορισμών' : 'Прогноз ограничений';
+  const cardLabel = language === 'en' ? 'Forecasted Restrictions' : language === 'el' ? 'Πρόβλεψη Περιορισμών' : language === 'tr' ? 'Tahmini Kısıtlamalar' : 'Прогноз ограничений';
 
   return (
     <div className="text-center p-2 rounded-lg bg-gray-50 dark:bg-gray-800/50">

@@ -10,12 +10,14 @@ const titles: Record<Locale, string> = {
   en: "Reservoir Data Table",
   el: "Πίνακας Δεδομένων",
   ru: "Таблица данных",
+  tr: "Rezervuar Veri Tablosu",
 };
 
 const descriptions: Record<Locale, string> = {
   en: "Complete data table of all Cyprus reservoirs with capacity, current storage, inflow, and year-over-year comparison.",
   el: "Πλήρης πίνακας δεδομένων ταμιευτήρων Κύπρου με χωρητικότητα, τρέχουσα αποθήκευση, εισροή και ετήσια σύγκριση.",
   ru: "Полная таблица данных водохранилищ Кипра: ёмкость, текущий объём, приток и сравнение по годам.",
+  tr: "Kapasite, mevcut depolama, akış ve yıllık karşılaştırma ile tüm Kıbrıs rezervuarlarının eksiksiz veri tablosu.",
 };
 
 function localeUrl(locale: string) {

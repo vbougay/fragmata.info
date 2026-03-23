@@ -92,7 +92,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               const extremes = getSparklineExtremes(sparklineData);
               const formatShortDate = (iso: string) => {
                 const d = new Date(iso);
-                return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'short' });
+                return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short' });
               };
               return (
                 <>

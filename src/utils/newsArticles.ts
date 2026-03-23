@@ -32,6 +32,18 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Кипр переживает худший водный кризис за десятилетие', url: 'https://cyprusbutterfly.com.cy/news/kipr-perezhivaet-xudshij-vodnyij-krizis', lang: 'ru', source: 'Cyprus Butterfly' },
   { title: 'Засуха накрыла Кипр. Жителей попросили включать воду только на две минуты в день', url: 'https://www.vokrugsveta.ru/news/zasukha-nakryla-kipr-zhitelei-poprosili-vklyuchat-vodu-tolko-na-dve-minuty-v-den-id6839742/', lang: 'ru', source: 'Вокруг Света' },
 
+  // Turkish
+  { title: 'Güney Kıbrıs\'ta barajlardaki su, son yılların en kötü seviyesinde: 2026\'da su krizi kapıda', url: 'https://haberkibris.com/-guney-kibrista-barajlardaki-su-son-yillarin-en-kotu-seviyesinde-2026da-su-krizi-kapida-1514-2025-10-25.html', lang: 'tr', source: 'Haber Kıbrıs' },
+  { title: 'Güney Kıbrıs\'taki barajlarda su seviyesi kritik düzeyde', url: 'https://haberkibris.com/guney-kibristaki-barajlarda-su-seviyesi-kritik-duzeyde-1343-2026-02-12.html', lang: 'tr', source: 'Haber Kıbrıs' },
+  { title: 'Güney Kıbrıs\'ta şiddetli kuraklık: Barajlardaki su seviyesi kritik düzeyde', url: 'https://www.kibrispostasi.com/c58-GUNEY_KIBRIS/n549247-guney-kibrista-siddetli-kuraklik-barajlardaki-su-seviyesi-kritik-duzeyde', lang: 'tr', source: 'Kıbrıs Postası' },
+  { title: 'Kuzey Kıbrıs\'ta su krizi derinleşiyor, su kıtlığı günlük hayata sızdı!', url: 'https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n566765-kuzey-kibrista-su-krizi-derinlesiyor-su-kitligi-gunluk-hayata-sizdi', lang: 'tr', source: 'Kıbrıs Postası' },
+  { title: 'KKTC su krizinde 2045\'e erken girdi: Tüketim 20 yıl önden gidiyor', url: 'https://www.kibrispostasi.com/c117-DOGA_ve_CEVRE/n565481-kktc-su-krizinde-2045e-erken-girdi-tuketim-20-yil-onden-gidiyor', lang: 'tr', source: 'Kıbrıs Postası' },
+  { title: 'Güney Kıbrıs\'ta baraj doluluk oranı yüzde 17,2\'ye geriledi', url: 'https://www.kibrispostasi.com/c58-GUNEY_KIBRIS/n592240-guney-kibrista-baraj-doluluk-orani-yuzde-172ye-geriledi', lang: 'tr', source: 'Kıbrıs Postası' },
+  { title: 'Yağış: Suyu toplayamazsak gelecek \'kuru\' gelecek', url: 'https://www.kibrispostasi.com/c117-DOGA_ve_CEVRE/n585081-yagis-suyu-toplayamazsak-gelecek-kuru-gelecek', lang: 'tr', source: 'Kıbrıs Postası' },
+  { title: 'Kuruduk!', url: 'https://www.yeniduzen.com/kuruduk-24781yy.htm', lang: 'tr', source: 'Yeni Düzen' },
+  { title: 'Baraj temizliği yapılmadığından milyonlarca metre küp su denize aktı', url: 'https://www.yeniduzen.com/baraj-temizligi-yapilmadigindan-milyonlarca-metre-kup-su-denize-akti-189802h.htm', lang: 'tr', source: 'Yeni Düzen' },
+  { title: 'Baf bölgesindeki barajlarda depolanan su miktarı yüzde 8,4', url: 'https://www.yeniduzen.com/baf-bolgesindeki-barajlarda-depolanan-su-miktari-yuzde-84-190230h.htm', lang: 'tr', source: 'Yeni Düzen' },
+
   // Greek
   { title: '«Ανάσα» για τα φράγματα μετά την κακοκαιρία', url: 'https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas', lang: 'el', source: '24Sports' },
   { title: 'Αισιόδοξο το ΤΑΥ για καλές εισροές ως τέλος Μαρτίου', url: 'https://cyprustimes.com/koinonia/aisiodoxo-to-taf-gia-kales-eisroes-os-telos-martiou-se-kalyteri-moira-apo-persi/', lang: 'el', source: 'CyprusTimes' },

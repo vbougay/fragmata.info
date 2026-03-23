@@ -10,12 +10,14 @@ const titles: Record<Locale, string> = {
   en: "Reservoir Map",
   el: "Χάρτης Ταμιευτήρων",
   ru: "Карта водохранилищ",
+  tr: "Rezervuar Haritası",
 };
 
 const descriptions: Record<Locale, string> = {
   en: "Interactive map of all 21 Cyprus dams and reservoirs showing current water storage levels and locations.",
   el: "Διαδραστικός χάρτης 21 φραγμάτων και ταμιευτήρων Κύπρου με τρέχοντα επίπεδα αποθήκευσης νερού.",
   ru: "Интерактивная карта 21 плотины и водохранилища Кипра с текущими уровнями воды.",
+  tr: "Kıbrıs'taki 21 baraj ve rezervuarın mevcut su depolama seviyelerini ve konumlarını gösteren interaktif harita.",
 };
 
 function localeUrl(locale: string) {

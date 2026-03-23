@@ -28,7 +28,7 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
   const getPagePath = useCallback(() => {
     const segments = pathname.split('/');
     const maybeLocale = segments[1];
-    if (['en', 'el', 'ru'].includes(maybeLocale)) {
+    if (['en', 'el', 'ru', 'tr'].includes(maybeLocale)) {
       return '/' + segments.slice(2).join('/');
     }
     return pathname;
@@ -183,6 +183,12 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                         <span>RU</span>
                       </div>
                     </SelectItem>
+                    <SelectItem value="tr">
+                      <div className="flex items-center gap-2">
+                        <Globe className="h-4 w-4" />
+                        <span>TR</span>
+                      </div>
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -304,6 +310,12 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                           <span>RU</span>
                         </div>
                       </SelectItem>
+                      <SelectItem value="tr">
+                        <div className="flex items-center gap-2">
+                          <Globe className="h-4 w-4" />
+                          <span>TR</span>
+                        </div>
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -311,15 +323,15 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
 
               {/* Community links */}
               <div className="text-center md:text-right text-xs md:text-sm text-muted-foreground">
-                {language === 'el' ? 'Ακολουθήστε μας στο' : language === 'ru' ? 'Следите за нами в' : 'Follow us on'}{' '}
+                {language === 'el' ? 'Ακολουθήστε μας στο' : language === 'ru' ? 'Следите за нами в' : language === 'tr' ? 'Bizi takip edin' : 'Follow us on'}{' '}
                 <a href="https://t.me/fragmatainfo" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
                   Telegram
                 </a>
-                {' '}{language === 'el' ? 'και' : language === 'ru' ? 'и' : 'and'}{' '}
+                {' '}{language === 'el' ? 'και' : language === 'ru' ? 'и' : language === 'tr' ? 've' : 'and'}{' '}
                 <a href="https://chat.whatsapp.com/JZxEYFqo1mGDBZoi0pZBaA?mode=gi_t" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
                   WhatsApp
                 </a>
-                {' '}{language === 'el' ? 'για ενημερώσεις' : language === 'ru' ? 'для обновлений' : 'for updates'}
+                {' '}{language === 'el' ? 'για ενημερώσεις' : language === 'ru' ? 'для обновлений' : language === 'tr' ? 'güncellemeler için' : 'for updates'}
               </div>
             </div>
           </div>

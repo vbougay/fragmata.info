@@ -543,13 +543,194 @@ export const translations = {
     // Region/Dam pages
     damTitle: "Дамба {name}",
     forecastNotAvailable: "Данные прогноза недоступны для этого выбора.",
+  },
+  tr: {
+    // Header
+    appTitle: "Fragmata",
+    subtitle: "Fragmata.info – Kıbrıs Baraj/Rezervuar Veri Görselleştirici",
+    selectDate: "Tarih seçin",
+
+    // Units
+    volumeUnit: "mln.\u00A0m³",
+
+    // Dashboard
+    totalCapacity: "Toplam Kapasite",
+    currentStorage: "Mevcut Depolama",
+    vs: "karşı",
+    vsLastYear: "Geçen Yıla Göre",
+    change: "değişim",
+    forecastedDrainDate: "Tahmini Tamamen Boşalma Tarihi",
+
+    // Tabs
+    dashboard: "Özet",
+    byRegion: "Bölgelere Göre",
+    map: "Harita",
+    dataTable: "Veri Tablosu",
+
+    // Map
+    mapTitle: "Kıbrıs Rezervuar Haritası",
+    mapNote: "Bu harita Kıbrıs'taki tüm rezervuarları göstermektedir. Her dairenin boyutu rezervuarın toplam kapasitesini, rengi ise mevcut depolama seviyesini gösterir (kırmızı: <%25, turuncu: %25-50, sarı: %50-75, yeşil: >%75). Ayrıntılı bilgi için bir rezervuara tıklayın.",
+    mapRegion: "Bölge",
+    mapCapacity: "Kapasite",
+    mapCurrent: "Mevcut",
+    mapLastYear: "Geçen Yıl",
+    mapRecentInflow: "Son 24s Akış",
+    mapNoteLabel: "Not",
+
+    // Cards
+    overallStatus: "Genel Rezervuar Durumu",
+
+    // Region Summary
+    capacity: "kapasite",
+    lastYear: "Geçen Yıl",
+    recentInflow: "Son 24s Akış",
+    fullyDrainedBy: "Tamamen Boşalma Tarihi",
+    viewReservoirs: "Rezervuarları Görüntüle",
+    changesTitle: "Son Değişiklikler Özeti",
+
+    // Reservoir Table
+    reservoir: "Rezervuar",
+    capacityMCM: "Kapasite (mln. m³)",
+    currentStorageShort: "Mevcut Depolama",
+    lastYearShort: "Geçen Yıl",
+    changeShort: "Değişim",
+    recentInflowShort: "Son 24s Akış",
+    last7DaysInflow: "Son 7 Gün Akış",
+    totalInflow: "Akış (Ekim'den beri)",
+    inflowLabel: "Akış",
+    inflowLast24h: "Son 24s",
+    inflowLast7d: "Son 7 gün",
+    inflowSinceOct: "1 Ekim'den",
+    fullyDrainedByShort: "Tamamen Boşalma Tarihi",
+    searchReservoirs: "Rezervuar ara...",
+    filter: "Filtre",
+    filterByRegion: "Bölgeye Göre Filtrele",
+    allRegions: "Tüm Bölgeler",
+    noReservoirs: "Arama kriterlerinize uygun rezervuar bulunamadı",
+
+    // Drain dates
+    alreadyEmpty: "Zaten Boş",
+    notDraining: "Boşalmıyor",
+    beyondTenYears: "10 Yılın Ötesinde",
+    calculating: "Hesaplanıyor...",
+
+    // Footer
+    dataFrom: "Veriler Kıbrıs Su Geliştirme Dairesi'nden",
+    apiDocs: "API",
+
+    // Breadcrumb
+    cyprus: "Kıbrıs",
+
+    // Articles
+    articles: "Makaleler",
+
+    // Region names
+    southernConveyor: "Güney Konveyör",
+    paphos: "Baf",
+    chrysochou: "Hrisokhu",
+    nicosia: "Lefkoşa",
+    rechargeOther: "Besleme/Diğer",
+
+    // Reservoir names
+    Kouris: "Kouris",
+    Kalavasos: "Kalavasos",
+    Lefkara: "Lefkara",
+    Dipotamos: "Dipotamos",
+    Germasoyeia: "Germasoyeia",
+    Arminou: "Arminou",
+    Polemidia: "Polemidia",
+    Achna: "Achna",
+    Asprokremmos: "Asprokremmos",
+    Kannaviou: "Kannaviou",
+    Mavrokolympos: "Mavrokolympos",
+    Evretou: "Evretou",
+    Argaka: "Argaka",
+    Pomos: "Pomos",
+    "Agia Marina": "Agia Marina",
+    Vyzakia: "Vyzakia",
+    Xyliatos: "Xyliatos",
+    Kalopanagiotis: "Kalopanagiotis",
+    Tamassos: "Tamassos",
+    "Klirou-Malounta": "Klirou-Malounta",
+    Solea: "Solea",
+
+    // Monthly Inflow
+    monthlyInflow: "Aylık Akış",
+    selectYear: "Yıl Seçin",
+    yearLabel: "Yıl",
+    totalLabel: "Toplam",
+
+    // Months
+    october: "Ekim",
+    november: "Kasım",
+    december: "Aralık",
+    january: "Ocak",
+    february: "Şubat",
+    march: "Mart",
+    april: "Nisan",
+    may: "Mayıs",
+    june: "Haziran",
+    july: "Temmuz",
+    augustSeptember: "Ağu-Eyl",
+
+    // ReservoirCard
+    maxStorage: "Maks. Depolama",
+    history: "Son 12 ay",
+    high: "Yüksek",
+    low: "Düşük",
+    trend12m: "12a Eğilim",
+    vsLastYearColon: "Geçen Yıla Göre:",
+
+    // Chart labels (compact)
+    currentVeryShort: "Mevcut",
+    lastYearVeryShort: "Geçen Yıl",
+    capacityShort: "Kapasite",
+
+    // Season Inflow & Outflow (water year Oct–Sep)
+    ytdInflow: "Sezon Akışı",
+    ytdOutflow: "Sezon Çıkışı (thm.)",
+    thisYear: "Bu yıl",
+    lastYearLabel: "Geçen yıl",
+    monthlyView: "Aylık",
+    cumulativeView: "Kümülatif",
+    allSeasons: "Tümü",
+    predictedAvg: "Tahmin (ort.)",
+    predictedDry: "Tahmin (kurak yıllar)",
+    predictedModerate: "Tahmin (ılımlı yıllar)",
+    predictedWet: "Tahmin (yağışlı yıllar)",
+    outflowNotAvailable: "Çıkış verileri resmi veri kaynağından mevcut değildir.",
+
+    // Historical Heatmap
+    historicalLevels: "Tarihi Rezervuar Seviyeleri",
+    historicalLevelsSingle: "Tarihi Rezervuar Seviyeleri",
+    noData: "Veri yok",
+    full: "Dolu",
+    fillLevel: "Doluluk",
+
+    // Media Mode
+    downloadImage: "Görüntü Olarak İndir",
+    downloading: "İndiriliyor...",
+
+    // Storage Forecast
+    storageForecast: "Depolama Tahmini",
+    restrictionsBy: "Tahmini Kısıtlamalar",
+    notRestricted: "Beklenmiyor",
+    alreadyRestricted: "Zaten Kısıtlı",
+    restrictionThreshold: "Kısıtlama Eşiği",
+    allMainReservoirs: "Tüm Ana Rezervuarlar",
+    regions: "Bölgeler",
+    majorDams: "Büyük Barajlar",
+
+    // Region/Dam pages
+    damTitle: "{name} Barajı",
+    forecastNotAvailable: "Bu seçim için tahmin verileri mevcut değildir.",
   }
 };
 
 // No need to re-export translations as it's already exported above
 
 // Helper function to get translations
-export const useTranslation = (language: 'en' | 'el' | 'ru') => {
+export const useTranslation = (language: keyof typeof translations) => {
   return (key: keyof typeof translations.en): string => {
     return translations[language][key] || translations.en[key];
   };

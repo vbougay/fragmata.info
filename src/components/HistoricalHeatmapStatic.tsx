@@ -312,7 +312,7 @@ const HistoricalHeatmapStatic: React.FC<HistoricalHeatmapStaticProps> = ({ years
           const extremes = getSparklineExtremes(sparklineData);
           const formatShortDate = (iso: string) => {
             const d = new Date(iso);
-            return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'short' });
+            return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short' });
           };
           return (
             <div className="border-t border-gray-200 dark:border-gray-700 mt-3 pt-3">

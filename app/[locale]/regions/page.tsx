@@ -10,12 +10,14 @@ const titles: Record<Locale, string> = {
   en: "Reservoirs by Region",
   el: "Ταμιευτήρες ανά Περιοχή",
   ru: "Водохранилища по регионам",
+  tr: "Bölgelere Göre Rezervuarlar",
 };
 
 const descriptions: Record<Locale, string> = {
   en: "View Cyprus reservoir water levels organized by region: Southern Conveyor, Paphos, Chrysochou, Nicosia, and Recharge dams.",
   el: "Επίπεδα νερού ταμιευτήρων Κύπρου ανά περιοχή: Νότιος Αγωγός, Πάφος, Χρυσοχού, Λευκωσία και φράγματα εμπλουτισμού.",
   ru: "Уровни воды в водохранилищах Кипра по регионам: Южный Конвейер, Пафос, Хрисоху, Никосия и водохранилища пополнения.",
+  tr: "Kıbrıs rezervuar su seviyelerini bölgelere göre görüntüleyin: Güney Konveyör, Baf, Hrisokhu, Lefkoşa ve Besleme barajları.",
 };
 
 function localeUrl(locale: string) {

@@ -155,6 +155,40 @@ const meta: Record<Locale, LocaleMeta> = {
       },
     ],
   },
+  tr: {
+    title: "Kıbrıs Baraj ve Rezervuar Su Seviyeleri Bugün | Fragmata",
+    description:
+      "Kıbrıs'taki 21 baraj ve rezervuarın canlı su seviyeleri. Depolama kapasitesi, günlük akış verileri, kuraklık tahminleri ve Kouris, Asprokremmos, Evretou ve daha fazlası için interaktif harita.",
+    ogLocale: "tr_TR",
+    keywords: [
+      "Kıbrıs baraj seviyeleri",
+      "Kıbrıs su seviyesi",
+      "Kıbrıs rezervuar",
+      "Kıbrıs kuraklık",
+      "Kıbrıs su krizi",
+      "baraj doluluk oranları Kıbrıs",
+      "Kıbrıs barajları",
+      "Kouris barajı su seviyesi",
+      "Kıbrıs su depolama",
+      "Kıbrıs baraj doluluk",
+    ],
+    alternateName: ["Fragmata", "Kıbrıs Rezervuar Panosu"],
+    datasetName: "Kıbrıs Rezervuar Verileri",
+    datasetDescription:
+      "Kıbrıs genelinde 21 rezervuarın su depolama seviyeleri, akış ve kapasite verileri",
+    faq: [
+      {
+        question: "Kıbrıs'taki barajlar ne kadar dolu?",
+        answer:
+          "Fragmata, Kıbrıs Su Geliştirme Dairesi'nden alınan verilerle haftalık olarak güncellenen 21 büyük barajın depolama seviyelerini takip eder. Güncel doluluk yüzdeleri, bölgesel dağılımlar ve tarihsel eğilimler için panoyu ziyaret edin.",
+      },
+      {
+        question: "Kıbrıs'taki en büyük baraj hangisidir?",
+        answer:
+          "Kouris Barajı, Güney Konveyör sisteminde yer alan 115 mln. m³ kapasitesiyle Kıbrıs'ın en büyük barajıdır. İkinci en büyüğü ise 52,4 mln. m³ kapasiteli Baf'taki Asprokremmos Barajı'dır.",
+      },
+    ],
+  },
 };
 
 function localeUrl(locale: Locale, path = "") {
@@ -184,6 +218,7 @@ export async function generateMetadata({
         en: localeUrl("en"),
         el: localeUrl("el"),
         ru: localeUrl("ru"),
+        tr: localeUrl("tr"),
         "x-default": localeUrl("en"),
       },
     },
@@ -229,6 +264,10 @@ const noscriptContent: Record<Locale, { heading: string; body: string }> = {
   ru: {
     heading: "Фрагмата — Мониторинг водохранилищ Кипра",
     body: "Мониторинг уровня воды в 21 водохранилище Кипра, включая Курис, Аспрокреммос, Эвретоу, Калавасос, Лефкара и другие.",
+  },
+  tr: {
+    heading: "Fragmata — Kıbrıs Rezervuar İzleme Panosu",
+    body: "Kouris, Asprokremmos, Evretou, Kalavasos, Lefkara ve daha fazlası dahil olmak üzere Kıbrıs'taki 21 rezervuarın su seviyelerini takip edin.",
   },
 };
 

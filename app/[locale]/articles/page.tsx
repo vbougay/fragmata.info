@@ -20,6 +20,10 @@ const pageMeta: Record<Locale, { title: string; description: string }> = {
     title: "Статьи | Fragmata",
     description: "Статьи и аналитика о состоянии водохранилищ Кипра, прогнозах засухи и гидрологических данных.",
   },
+  tr: {
+    title: "Makaleler | Fragmata",
+    description: "Kıbrıs rezervuar su seviyeleri, kuraklık tahminleri ve hidrolojik veriler hakkında makaleler ve analizler.",
+  },
 };
 
 export async function generateStaticParams() {

@@ -12,7 +12,7 @@ function getSparklineColor(percentage: number): { stroke: string; fill: string }
 
 function formatDate(dateStr: string, language: string = 'en'): string {
   const d = new Date(dateStr);
-  return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'short', year: '2-digit' });
+  return d.toLocaleDateString(language === 'el' ? 'el-GR' : language === 'ru' ? 'ru-RU' : language === 'tr' ? 'tr-TR' : 'en-GB', { day: 'numeric', month: 'short', year: '2-digit' });
 }
 
 interface SparklineTooltipProps {

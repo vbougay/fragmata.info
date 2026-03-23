@@ -62,14 +62,18 @@ export async function generateMetadata({
       ? `${damInfo.name} Dam Water Level Today | ${regionName} | Fragmata`
       : lang === "el"
         ? `Φράγμα ${translatedDamName} | Επίπεδο Νερού Σήμερα | ${translatedRegion} | Fragmata`
-        : `Дамба ${translatedDamName} | Уровень воды сегодня | ${translatedRegion} | Фрагмата`;
-  const damSummary = getDamSummary(damInfo.name, lang as 'en' | 'el' | 'ru', DEFAULT_DATASET_ID);
+        : lang === "tr"
+          ? `${translatedDamName} Barajı Su Seviyesi Bugün | ${translatedRegion} | Fragmata`
+          : `Дамба ${translatedDamName} | Уровень воды сегодня | ${translatedRegion} | Фрагмата`;
+  const damSummary = getDamSummary(damInfo.name, lang as 'en' | 'el' | 'ru' | 'tr', DEFAULT_DATASET_ID);
   const description = damSummary
     ?? (lang === "en"
       ? `Current water level, storage capacity, inflow data, and forecast for ${damInfo.name} dam in ${regionName}, Cyprus.`
       : lang === "el"
         ? `Τρέχον επίπεδο νερού, χωρητικότητα και πρόβλεψη για το φράγμα ${translatedDamName}, ${translatedRegion}, Κύπρος.`
-        : `Текущий уровень воды, вместимость и прогноз для плотины ${translatedDamName}, ${translatedRegion}, Кипр.`);
+        : lang === "tr"
+          ? `${translatedDamName} barajının mevcut su seviyesi, depolama kapasitesi, akış verileri ve tahmini, ${translatedRegion}, Kıbrıs.`
+          : `Текущий уровень воды, вместимость и прогноз для плотины ${translatedDamName}, ${translatedRegion}, Кипр.`);
 
   const localeUrl = (l: string, path: string) =>
     l === "en" ? `${siteUrl}${path}` : `${siteUrl}/${l}${path}`;

@@ -7,6 +7,7 @@ const labels = {
   en: 'In the News',
   el: 'Στα νέα',
   ru: 'В новостях',
+  tr: 'Haberlerde',
 } as const;
 
 export function NewsTicker() {

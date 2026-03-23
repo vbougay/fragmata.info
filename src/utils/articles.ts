@@ -19,11 +19,13 @@ export const ARTICLES: ArticleMeta[] = [
       en: 'Cyprus Reservoirs Exceed Last Year for the First Time — 12 mln. m³ in 3 Days, Xyliatos Overflows',
       el: 'Τα φράγματα Κύπρου ξεπέρασαν πέρυσι για πρώτη φορά — 12 εκ. m³ σε 3 ημέρες, ο Ξυλιάτος υπερχείλισε',
       ru: 'Водохранилища Кипра впервые превысили прошлогодний уровень — 12 млн. м³ за 3 дня, Ксилиатос вышел из берегов',
+      tr: 'Kıbrıs Rezervuarları İlk Kez Geçen Yılı Aştı — 3 Günde 12 mln. m³, Xyliatos Taştı',
     },
     description: {
       en: 'Exceptional Troodos rainfall delivers 12 mln. m³ in 72 hours, pushing total storage to 26.9% — above last year for the first time this season.',
       el: 'Εξαιρετικές βροχοπτώσεις Τροόδους αποδίδουν 12 εκ. m³ σε 72 ώρες, ανεβάζοντας αποθέματα στο 26.9% — πάνω από πέρυσι για πρώτη φορά φέτος.',
       ru: 'Исключительные осадки на Троодосе приносят 12 млн. м³ за 72 часа, поднимая общий запас до 26.9% — впервые в этом сезоне выше прошлогоднего уровня.',
+      tr: 'Olağanüstü Troodos yağışları 72 saatte 12 mln. m³ getirerek toplam depolamayı %26,9\'a çıkardı — bu sezon ilk kez geçen yılın üzerinde.',
     },
   },
   {
@@ -35,11 +37,13 @@ export const ARTICLES: ArticleMeta[] = [
       en: 'Cyprus Reservoirs at 20.6% with Forecast Down to 7% — But 38 Years of Data Promise a Turnaround',
       el: 'Ταμιευτήρες Κύπρου στο 20.6% με πρόβλεψη πτώσης στο 7% — Αλλά 38 χρόνια δεδομένων υπόσχονται ανάκαμψη',
       ru: 'Водохранилища Кипра: 20.6% и прогноз до 7% — но данные за 38 лет обещают разворот',
+      tr: 'Kıbrıs Rezervuarları %20,6\'da, Tahmin %7\'ye Düşüyor — Ama 38 Yıllık Veriler Dönüş Vaat Ediyor',
     },
     description: {
       en: 'Analysis of current Cyprus reservoir levels and forecast based on 38 years of hydrological data.',
       el: 'Ανάλυση τρεχόντων επιπέδων ταμιευτήρων Κύπρου και πρόβλεψη βάσει 38 ετών υδρολογικών δεδομένων.',
       ru: 'Анализ текущего состояния водохранилищ Кипра и прогноз на основе 38 лет гидрологических данных.',
+      tr: '38 yıllık hidrolojik verilere dayanan Kıbrıs rezervuar seviyelerinin analizi ve tahmini.',
     },
   },
   {
@@ -51,11 +55,13 @@ export const ARTICLES: ArticleMeta[] = [
       en: 'Is the Drought Retreating? 12 of 21 Cyprus Reservoirs Exceed Last Year\'s Levels',
       el: 'Υποχωρεί η ξηρασία; 12 από 21 ταμιευτήρες Κύπρου ξεπέρασαν τα περυσινά επίπεδα',
       ru: 'Засуха отступает? 12 из 21 водохранилища Кипра превысили прошлогодний уровень',
+      tr: 'Kuraklık Geri Çekiliyor mu? 21 Kıbrıs Rezervuarından 12\'si Geçen Yılın Seviyelerini Aştı',
     },
     description: {
       en: 'Updated Fragmata analysis: forecast improved, water deficit unlikely.',
       el: 'Ενημερωμένη ανάλυση Fragmata: η πρόβλεψη βελτιώθηκε, το έλλειμμα νερού απίθανο.',
       ru: 'Обновлённый анализ Fragmata: прогноз улучшился, дефицит маловероятен.',
+      tr: 'Güncellenmiş Fragmata analizi: tahminler iyileşti, su açığı olası değil.',
     },
   },
 ];

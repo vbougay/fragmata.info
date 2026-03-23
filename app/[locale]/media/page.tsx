@@ -33,6 +33,11 @@ const mediaMeta: Record<Locale, { title: string; description: string }> = {
     description:
       "Скачайте данные плотин и водохранилищ Кипра в виде инфографики. Визуальная сводка уровней воды, диаграммы ёмкости и региональная разбивка для всех 21 водохранилищ.",
   },
+  tr: {
+    title: "Kıbrıs Rezervuar Veri Dışa Aktarım & İnfografik | Fragmata",
+    description:
+      "Kıbrıs baraj ve rezervuar verilerini infografik görüntü olarak indirin. 21 baraj için su depolama seviyeleri, kapasite grafikleri ve bölgesel dağılımların görsel özeti.",
+  },
 };
 
 export async function generateMetadata({

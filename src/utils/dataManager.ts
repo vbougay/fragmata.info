@@ -20,8 +20,8 @@ interface DataModule {
   reservoirData: Reservoir[];
   yearlyInflowData: YearlyInflowData[];
   getReportDate: () => string;
-  getDamSummary?: (damName: string, language?: 'en' | 'el' | 'ru') => string | null;
-  getSummaryChanges?: (language?: 'en' | 'el' | 'ru') => string;
+  getDamSummary?: (damName: string, language?: 'en' | 'el' | 'ru' | 'tr') => string | null;
+  getSummaryChanges?: (language?: 'en' | 'el' | 'ru' | 'tr') => string;
   waterTransferred?: { from: string; to: string; sinceOct: number };
 }
 
@@ -478,7 +478,7 @@ export const getLast7DaysInflow = async (datasetId?: string): Promise<Map<string
 /**
  * Get summary of changes for the selected dataset.
  */
-export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {
+export const getSummaryChanges = (language: 'en' | 'el' | 'ru' | 'tr' = 'en', datasetId?: string): string | null => {
   const mod = resolveModule(datasetId);
   return mod.getSummaryChanges?.(language) ?? null;
 };
@@ -486,7 +486,7 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en', datasetId
 /**
  * Get a short summary for an individual dam from the selected dataset.
  */
-export const getDamSummary = (damName: string, language: 'en' | 'el' | 'ru' = 'en', datasetId?: string): string | null => {
+export const getDamSummary = (damName: string, language: 'en' | 'el' | 'ru' | 'tr' = 'en', datasetId?: string): string | null => {
   const mod = resolveModule(datasetId);
   return mod.getDamSummary?.(damName, language) ?? null;
 };

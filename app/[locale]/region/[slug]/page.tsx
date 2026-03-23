@@ -27,26 +27,31 @@ const regionMetaDescriptions: Record<string, Record<Locale, string>> = {
     en: "Water levels for Southern Conveyor dams: Kouris, Kalavasos, Lefkara, Dipotamos, Germasoyeia, Arminou, Polemidia, Achna. Current storage, forecasts, and historical data.",
     el: "Επίπεδα νερού για φράγματα Νότιου Αγωγού: Κούρης, Καλαβασός, Λεύκαρα, Διπόταμος, Γερμασόγεια, Αρμίνου, Πολεμίδια, Άχνα.",
     ru: "Уровни воды плотин Южного Конвейера: Курис, Калавасос, Лефкара, Дипотамос, Гермасойя, Арминоу, Полемидия, Ахна.",
+    tr: "Güney Konveyör barajları su seviyeleri: Kouris, Kalavasos, Lefkara, Dipotamos, Germasoyeia, Arminou, Polemidia, Achna. Mevcut depolama, tahminler ve tarihsel veriler.",
   },
   paphos: {
     en: "Water levels for Paphos region dams: Asprokremmos, Kannaviou, Mavrokolympos. Current storage capacity and forecasts.",
     el: "Επίπεδα νερού φραγμάτων Πάφου: Ασπρόκρεμμος, Κανναβιού, Μαυροκόλυμπος.",
     ru: "Уровни воды плотин региона Пафос: Аспрокреммос, Каннавиу, Мавроколимбос.",
+    tr: "Baf bölgesi barajları su seviyeleri: Asprokremmos, Kannaviou, Mavrokolympos. Mevcut depolama kapasitesi ve tahminler.",
   },
   chrysochou: {
     en: "Water levels for Chrysochou region dams: Evretou, Argaka, Pomos, Agia Marina. Current storage and historical data.",
     el: "Επίπεδα νερού φραγμάτων Χρυσοχούς: Ευρέτου, Αργάκα, Πόμος, Αγία Μαρίνα.",
     ru: "Уровни воды плотин региона Хрисоху: Эвретоу, Аргака, Помос, Агиа Марина.",
+    tr: "Hrisokhu bölgesi barajları su seviyeleri: Evretou, Argaka, Pomos, Agia Marina. Mevcut depolama ve tarihsel veriler.",
   },
   nicosia: {
     en: "Water levels for Nicosia region dams: Vyzakia, Xyliatos, Kalopanagiotis. Current storage and forecasts.",
     el: "Επίπεδα νερού φραγμάτων Λευκωσίας: Βυζακιά, Ξυλιάτου, Καλοπαναγιώτης.",
     ru: "Уровни воды плотин Никосии: Визакия, Ксилиату, Калопанайотис.",
+    tr: "Lefkoşa bölgesi barajları su seviyeleri: Vyzakia, Xyliatos, Kalopanagiotis. Mevcut depolama ve tahminler.",
   },
   "recharge-other": {
     en: "Water levels for Recharge/Other dams: Tamassos, Klirou-Malounta, Solea. Current storage and historical data.",
     el: "Επίπεδα νερού φραγμάτων Εμπλουτισμού: Ταμασός, Κλήρου-Μαλούντα, Σολέα.",
     ru: "Уровни воды плотин Пополнения: Тамассос, Клиру-Малунта, Солея.",
+    tr: "Besleme/Diğer barajları su seviyeleri: Tamassos, Klirou-Malounta, Solea. Mevcut depolama ve tarihsel veriler.",
   },
 };
 

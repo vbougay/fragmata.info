@@ -3,7 +3,7 @@ const monthAbbrToIndex: Record<string, number> = {
   JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11,
 };
 
-const localeMap: Record<string, string> = { en: 'en-US', el: 'el-GR', ru: 'ru-RU' };
+const localeMap: Record<string, string> = { en: 'en-US', el: 'el-GR', ru: 'ru-RU', tr: 'tr-TR' };
 
 export function formatDataSetDate(id: string, language: string): string {
   const [day, monthAbbr, year] = id.split('-');
