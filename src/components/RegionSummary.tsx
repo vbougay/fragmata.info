@@ -159,7 +159,16 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
         {showSummaryChanges && (
           <div className="summary-changes mt-6 bg-white/80 dark:bg-gray-800/50 p-4 rounded-xl shadow-sm">
             <div className="prose prose-sm dark:prose-invert max-w-none prose-headings:mt-4 prose-headings:mb-2 prose-headings:text-foreground prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 prose-strong:text-foreground">
-              <ReactMarkdown>{summaryChanges}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  a: ({ href, children, ...props }) => {
+                    if (href && href.startsWith('/')) {
+                      return <Link href={href} className="text-water-600 dark:text-water-400 hover:underline">{children}</Link>;
+                    }
+                    return <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+                  }
+                }}
+              >{summaryChanges}</ReactMarkdown>
             </div>
           </div>
         )}
