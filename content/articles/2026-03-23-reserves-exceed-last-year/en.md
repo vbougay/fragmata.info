@@ -54,7 +54,7 @@ Fragmata's forecast model has now had three public checkpoints, each of which pr
 
 The model doesn't predict the weather. It uses 38 years of historical inflow patterns to calculate probability distributions for how seasons typically unfold. When February delivered exceptional inflows and March continued the trend, the model's optimistic scenario became the central estimate. That turned out to be right.
 
-{{chart:forecast location="kouris"}}
+{{chart:forecast}}
 
 ### Asprokremmos Breaks Its Own Season Record
 

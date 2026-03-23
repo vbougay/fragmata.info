@@ -5,6 +5,7 @@ import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { TrendingDown, Info, ExternalLink } from 'lucide-react';
+import { isDrainDateBeyondYears } from '@/utils/reservoirUtils';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -397,7 +398,7 @@ const RestrictionDateCard: React.FC<{
   language: string;
   t: (key: string) => string;
 }> = ({ label, date, color, language, t }) => {
-  const isNotRestricted = date === 'Not Restricted';
+  const isNotRestricted = date === 'Not Restricted' || isDrainDateBeyondYears(date, 3);
   const isAlreadyRestricted = date === 'Already Restricted';
   const displayDate = isNotRestricted
     ? t('notRestricted')

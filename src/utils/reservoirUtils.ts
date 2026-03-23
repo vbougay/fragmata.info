@@ -47,7 +47,7 @@ export const calculateRegionDrainDate = (regionTotal: RegionTotal, reservoirs: R
 };
 
 // Check if a drain date string (MM/YYYY) is more than N years in the future
-const isDrainDateBeyondYears = (drainDate: string, years: number): boolean => {
+export const isDrainDateBeyondYears = (drainDate: string, years: number): boolean => {
   const parts = drainDate.split('/');
   if (parts.length !== 2) return false;
   const month = parseInt(parts[0], 10);
