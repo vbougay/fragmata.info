@@ -9,6 +9,8 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Heavy rainfall welcome, but warnings over water usage remain', url: 'https://cyprus-mail.com/2026/03/21/heavy-rainfall-welcome-but-warnings-over-water-usage-remain', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Cyprus dam water levels rise after rainfall', url: 'https://en.sigmalive.com/cyprus-dam-water-levels-rise-after-rainfall/', lang: 'en', source: 'Sigmalive' },
   { title: 'Heavy rain a welcome boost to water reserves', url: 'https://cyprus-mail.com/2026/03/16/heavy-rain-a-welcome-boost-to-water-reserves', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Water levels in Cyprus dams better than last year', url: 'https://www.stockwatch.com.cy/en/news/water-levels-in-cyprus-dams-better-than-last-year', lang: 'en', source: 'StockWatch' },
   { title: 'Cyprus dam levels at 21% as WDD says reserves remain low', url: 'https://www.kiprinform.com/en/cyprus_news/cyprus-dam-levels-at-21-as-wdd-says-water-reserves-remain-low-despite-recent-rainfall/', lang: 'en', source: 'Kiprinform' },
@@ -31,13 +33,13 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Засуха накрыла Кипр. Жителей попросили включать воду только на две минуты в день', url: 'https://www.vokrugsveta.ru/news/zasukha-nakryla-kipr-zhitelei-poprosili-vklyuchat-vodu-tolko-na-dve-minuty-v-den-id6839742/', lang: 'ru', source: 'Вокруг Света' },
 
   // Greek
+  { title: '«Ανάσα» για τα φράγματα μετά την κακοκαιρία', url: 'https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas', lang: 'el', source: '24Sports' },
+  { title: 'Αισιόδοξο το ΤΑΥ για καλές εισροές ως τέλος Μαρτίου', url: 'https://cyprustimes.com/koinonia/aisiodoxo-to-taf-gia-kales-eisroes-os-telos-martiou-se-kalyteri-moira-apo-persi/', lang: 'el', source: 'CyprusTimes' },
   { title: 'Ρεκόρ εισροής νερού όλων των εποχών στα φράγματα σε όλη την Κύπρο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-neroy-olon-ton-epohon-sta-fragmata-se-oli-tin-kypro', lang: 'el', source: 'AlphaNews' },
-  { title: 'Καλά νέα από τα φράγματα – Η πληρότητα μέχρι τώρα', url: 'https://www.elemesos.com/%CE%BA%CE%B1%CE%BB%CE%AC-%CE%BD%CE%AD%CE%B1-%CE%B1%CF%80%CF%8C-%CF%84%CE%B1-%CF%86%CF%81%CE%AC%CE%B3%CE%BC%CE%B1%CF%84%CE%B1-%CE%B7-%CF%80%CE%BB%CE%B7%CF%81%CF%8C%CF%84%CE%B7%CF%84%CE%B1/', lang: 'el', source: 'eLemesos' },
-  { title: 'Ελαφρώς πάνω του 1 Ε.Κ.Μ οι εισροές νερού στα φράγματα και αυτό το 24ωρο', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/elafros-pano-tou-1-ekm-oi-eisroes-nerou-sta-fragmata-kai-afto-to-24oro-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
+  { title: 'Στο 77% η μέση βροχόπτωση Μαρτίου — Έρχονται πολύ σημαντικές εισροές', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/sto-77-tis-ekato-i-mesi-vroxoptosi-martiou-erxontai-poli-simantikes-eisroes-nerou-sta-fragmata-tis-epomenes-imeres/', lang: 'el', source: 'KitasWeather' },
   { title: 'Αισιόδοξο το ΤΑΥ για εισροές στα φράγματα — «Σε καλύτερη μοίρα από πέρσι»', url: 'https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi', lang: 'el', source: 'SigmaLive' },
   { title: 'Επιτέλους νερό στα φράγματα, συνεχίζουν τα καιρικά φαινόμενα', url: 'https://www.alphanews.live/cyprus/epitelous-nero-sta-fragmata-synechizoun-ta-kairika-fainomena/', lang: 'el', source: 'AlphaNews' },
   { title: 'Σημαντική εισροή νερού στα φράγματα – Πλησιάζει το 20% η συνολική πληρότητα', url: 'https://www.politis.com.cy/politis-news/cyprus/988448/simantiki-eisroi-nerou-sta-fraghmata-to-teleftaio-4imero-plisiazei-to-20-i-sinoliki-plirotita', lang: 'el', source: 'Politis' },
-  { title: 'Σημαντική η συνολική εισροή νερού στα φράγματα — Ξεπέρασε τα 9 ΕΚΜ', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/simantiki-i-sinoliki-eisroi-nerou-sta-fragmata-to-telefteo-triimero-kseperase-ta-9-ekm-nerou/', lang: 'el', source: 'KitasWeather' },
   { title: 'Στο 21% η πληρότητα των φραγμάτων — «Ο Μάρτης μας χρωστάει βροχές»', url: 'https://www.sigmalive.com/news/local/1306083/sto-21-i-plirotita-ton-fraghmaton-symfona-me-to-tau', lang: 'el', source: 'SigmaLive' },
   { title: 'Γιατί ενώ βρέχει δεν γεμίζουν τα φράγματα — Δεν αποκλείεται η σπορά νεφών', url: 'https://www.sigmalive.com/news/all/1304121/giati-enw-vrekhei-den-ghemizoyn-ta-fraghmata-den-apoklietai-i-spora-nefwn', lang: 'el', source: 'SigmaLive' },
   { title: 'Στέρεψαν τα φράγματα, εφιαλτικό προμηνύεται το 2026', url: 'https://www.alphanews.live/cyprus/sterepsan-ta-fragmata-efialtiko-prominyetai-to-2026/', lang: 'el', source: 'AlphaNews' },
