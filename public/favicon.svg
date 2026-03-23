@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="16" fill="#0f172a"/>
   <defs>
     <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="100%" stop-color="#0284c7"/>
     </linearGradient>
   </defs>
-  <path d="M16 2 C16 2 6 14 6 21a10 10 0 0 0 20 0C26 14 16 2 16 2z" fill="url(#drop)"/>
-  <ellipse cx="12.5" cy="19" rx="2.5" ry="3.5" fill="rgba(255,255,255,0.3)" transform="rotate(-15 12.5 19)"/>
+  <path d="M16 4 C16 4 8 13 8 19a8 8 0 0 0 16 0C24 13 16 4 16 4z" fill="url(#drop)"/>
+  <ellipse cx="13" cy="17.5" rx="2" ry="2.8" fill="white" opacity="0.3" transform="rotate(-15 13 17.5)"/>
 </svg>
