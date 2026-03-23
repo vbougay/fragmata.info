@@ -1,20 +1,18 @@
-## Cyprus Reservoirs Exceed Last Year for the First Time — 12 MCM in 3 Days, Xyliatos Overflows
-
 **Exceptional Troodos rainfall rewrites the season: total storage climbs to 26.9%, surpassing last year's 24.7% — and Xyliatos confirms our prediction with an overflow**
 
 ---
 
 In our previous article five days ago, we noted that Xyliatos was filling fast and called overflow "a realistic scenario." It happened. Cyprus's smallest major Nicosia reservoir reached 100% capacity this week — a symbolic moment for an island that opened the year debating drying dams.
 
-But that's not the only headline. A three-day rainfall event starting around March 20 sent 12.3 MCM into the island's main reservoirs in 72 hours — the largest single inflow event of the 2025/26 season. Total storage of the 18 main dams jumped from 22.7% (66.1 MCM) on March 20 to **26.9% (78.1 MCM) on March 23**, surpassing last year's level of 24.7% (71.8 MCM) for the **first time this season**.
+But that's not the only headline. A three-day rainfall event starting around March 20 sent 12.3 mln. m³ into the island's main reservoirs in 72 hours — the largest single inflow event of the 2025/26 season. Total storage of the 18 main dams jumped from 22.7% (66.1 mln. m³) on March 20 to **26.9% (78.1 mln. m³) on March 23**, surpassing last year's level of 24.7% (71.8 mln. m³) for the **first time this season**.
 
 ### The Numbers Behind the Storm
 
-The 25/26 water season total inflow now stands at **59.8 MCM** — 3.2 times more than the entire 2024/25 drought season's output of 18.7 MCM, with the rainy season not yet over.
+The 25/26 water season total inflow now stands at **59.8 mln. m³** — 3.2 times more than the entire 2024/25 drought season's output of 18.7 mln. m³, with the rainy season not yet over.
 
-March alone has already delivered **20.7 MCM** as of the 23rd. For context:
+March alone has already delivered **20.7 mln. m³** as of the 23rd. For context:
 
-| Season | March inflow (MCM) |
+| Season | March inflow (mln. m³) |
 |--------|-------------------|
 | 2024/25 | 1.5 |
 | 2023/24 | 2.9 |
@@ -28,11 +26,11 @@ This is already the second-highest March in the past ten years, with roughly a w
 
 ### Xyliatos Overflows — As Predicted
 
-Five days ago we wrote: "With rain forecast for this week, overflow is becoming a realistic scenario." The prediction held. Xyliatos — a 1.43 MCM Nicosia-district reservoir that was only 23% full a year ago — is now at 100%.
+Five days ago we wrote: "With rain forecast for this week, overflow is becoming a realistic scenario." The prediction held. Xyliatos — a 1.43 mln. m³ Nicosia-district reservoir that was only 23% full a year ago — is now at 100%.
 
 Its trajectory over the past two weeks:
 
-| Date | Fill | Volume (MCM) |
+| Date | Fill | Volume (mln. m³) |
 |------|------|--------------|
 | 13 March | 66.8% | 0.955 |
 | 16 March | 75.3% | 1.077 |
@@ -40,7 +38,7 @@ Its trajectory over the past two weeks:
 | 20 March | 83.3% | 1.191 |
 | **23 March** | **100%** | **1.430** |
 
-Xyliatos is now holding 4.3 times more water than on the same date last year. Inflow of 1.41 MCM since October represents nearly its entire capacity arriving in a single season.
+Xyliatos is now holding 4.3 times more water than on the same date last year. Inflow of 1.41 mln. m³ since October represents nearly its entire capacity arriving in a single season.
 
 {{chart:heatmap location="xyliatos"}}
 
@@ -60,9 +58,9 @@ The model doesn't predict the weather. It uses 38 years of historical inflow pat
 
 ### Asprokremmos Breaks Its Own Season Record
 
-The biggest surprise of the three-day storm was **Asprokremmos**, Cyprus's second-largest dam. It jumped from 23.3% (12.2 MCM) on March 20 to **29.4% (15.42 MCM)** on March 23 — a gain of 3.2 MCM in 72 hours.
+The biggest surprise of the three-day storm was **Asprokremmos**, Cyprus's second-largest dam. It jumped from 23.3% (12.2 mln. m³) on March 20 to **29.4% (15.42 mln. m³)** on March 23 — a gain of 3.2 mln. m³ in 72 hours.
 
-This is significant: 15.42 MCM exceeds Asprokremmos's **last year's seasonal peak** of 15.35 MCM (reached January 3, 2025). The dam now holds more water than it did at any point in the previous water year.
+This is significant: 15.42 mln. m³ exceeds Asprokremmos's **last year's seasonal peak** of 15.35 mln. m³ (reached January 3, 2025). The dam now holds more water than it did at any point in the previous water year.
 
 ### All the Major Movers
 
@@ -79,13 +77,13 @@ The three-day inflow was unevenly distributed — mountain and western catchment
 | **Kouris** | 21.2% | **24.3%** | +3.1pp |
 | **Vyzakia** | 38.1% | **44.4%** | +6.3pp |
 
-Arminou's surge deserves special attention: 2.46 MCM entered the dam in just three days — more than total seasonal inflow for all of 2024/25 for some smaller reservoirs. The ongoing transfer to Kouris has now reached **9.63 MCM** since October.
+Arminou's surge deserves special attention: 2.46 mln. m³ entered the dam in just three days — more than total seasonal inflow for all of 2024/25 for some smaller reservoirs. The ongoing transfer to Kouris has now reached **9.63 mln. m³** since October.
 
 ### Still Lagging: The Eastern Lowlands
 
 Not all dams benefited. The southeastern reservoirs of the Southern Conveyor remain stubbornly low:
 
-- **Achna** — 2.1% (0.14 MCM). Zero inflow all season. Unchanged since early March
+- **Achna** — 2.1% (0.14 mln. m³). Zero inflow all season. Unchanged since early March
 - **Kalavasos** — 8.4%, below last year's 27.6%
 - **Lefkara** — 12.3%, below last year's 29.0%
 
@@ -93,7 +91,7 @@ These lowland dams lie outside the main Troodos catchment. Even an exceptional e
 
 ### Regional Picture: 23 March
 
-| Region | Capacity (MCM) | Storage (MCM) | 23 March | 13 March |
+| Region | Capacity (mln. m³) | Storage (mln. m³) | 23 March | 13 March |
 |--------|---------------|---------------|----------|----------|
 | Southern Conveyor | 189.5 | 42.1 | 22.2% | 17.9% |
 | Paphos | 71.7 | 23.2 | 32.4% | 24.4% |

@@ -1,5 +1,3 @@
-## Cyprus Reservoirs at 20.6% with Forecast Down to 7% — But 38 Years of Data Promise a Turnaround
-
 **The free Fragmata dashboard shows: the crisis is real, but cyclical — not catastrophic**
 
 ---
@@ -8,9 +6,9 @@ Cyprus reservoirs stand at 20.6% — 59.9 million cubic metres out of 316. Accor
 
 ### February Brought Hope
 
-The past two weeks gave reason for cautious optimism. Total storage rose from 18.7% to 20.6% — an increase of 5.4 million cubic metres in 10 days. February 2026 ended with inflow of 24.2 MCM — the best February in four years, since the 2021/22 season. Total inflow for the current water year (since October 2025) reached 39.4 MCM, already more than double the entire 2024/25 season, when reservoirs received just 18.7 MCM.
+The past two weeks gave reason for cautious optimism. Total storage rose from 18.7% to 20.6% — an increase of 5.4 million cubic metres in 10 days. February 2026 ended with inflow of 24.2 mln. m³ — the best February in four years, since the 2021/22 season. Total inflow for the current water year (since October 2025) reached 39.4 mln. m³, already more than double the entire 2024/25 season, when reservoirs received just 18.7 mln. m³.
 
-Three reservoirs are at 100%: Pomos, Kalopanagiotis, and Klirou-Malounta. Evretou (Chrysochou area) is approaching its annual maximum at 25.8%. Since October, 6.92 MCM of water has been pumped from Arminou to Kouris.
+Three reservoirs are at 100%: Pomos, Kalopanagiotis, and Klirou-Malounta. Evretou (Chrysochou area) is approaching its annual maximum at 25.8%. Since October, 6.92 mln. m³ of water has been pumped from Arminou to Kouris.
 
 Yet the picture is uneven. Achna in the southeast is nearly empty at 2.1%. Kalavasos holds 8.3%, Lefkara — 12%. Germasoyeia — 11.7%. Reserves remain below last year's levels: on the same date in 2025, reservoirs were at 25.5%.
 
@@ -57,7 +55,7 @@ All data comes from public reports by the Cyprus Water Development Department. T
 
 ### Current Situation by Region
 
-| Region | Capacity (MCM) | Storage (MCM) | Percentage |
+| Region | Capacity (mln. m³) | Storage (mln. m³) | Percentage |
 |--------|---------------|---------------|------------|
 | Southern Conveyor | 189.5 | 33.0 | 17.4% |
 | Paphos | 71.7 | 17.2 | 24.0% |

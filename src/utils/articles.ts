@@ -16,14 +16,14 @@ export const ARTICLES: ArticleMeta[] = [
     dataSetId: '23-MAR-2026',
     author: 'Vladimir Bugay',
     title: {
-      en: 'Cyprus Reservoirs Exceed Last Year for the First Time — 12 MCM in 3 Days, Xyliatos Overflows',
-      el: 'Τα φράγματα Κύπρου ξεπέρασαν πέρυσι για πρώτη φορά — 12 ΕΚΜ σε 3 ημέρες, ο Ξυλιάτος υπερχείλισε',
-      ru: 'Водохранилища Кипра впервые превысили прошлогодний уровень — 12 МКМ за 3 дня, Ксилиатос вышел из берегов',
+      en: 'Cyprus Reservoirs Exceed Last Year for the First Time — 12 mln. m³ in 3 Days, Xyliatos Overflows',
+      el: 'Τα φράγματα Κύπρου ξεπέρασαν πέρυσι για πρώτη φορά — 12 εκ. m³ σε 3 ημέρες, ο Ξυλιάτος υπερχείλισε',
+      ru: 'Водохранилища Кипра впервые превысили прошлогодний уровень — 12 млн. м³ за 3 дня, Ксилиатос вышел из берегов',
     },
     description: {
-      en: 'Exceptional Troodos rainfall delivers 12 MCM in 72 hours, pushing total storage to 26.9% — above last year for the first time this season.',
-      el: 'Εξαιρετικές βροχοπτώσεις Τροόδους αποδίδουν 12 ΕΚΜ σε 72 ώρες, ανεβάζοντας αποθέματα στο 26.9% — πάνω από πέρυσι για πρώτη φορά φέτος.',
-      ru: 'Исключительные осадки на Троодосе приносят 12 МКМ за 72 часа, поднимая общий запас до 26.9% — впервые в этом сезоне выше прошлогоднего уровня.',
+      en: 'Exceptional Troodos rainfall delivers 12 mln. m³ in 72 hours, pushing total storage to 26.9% — above last year for the first time this season.',
+      el: 'Εξαιρετικές βροχοπτώσεις Τροόδους αποδίδουν 12 εκ. m³ σε 72 ώρες, ανεβάζοντας αποθέματα στο 26.9% — πάνω από πέρυσι για πρώτη φορά φέτος.',
+      ru: 'Исключительные осадки на Троодосе приносят 12 млн. м³ за 72 часа, поднимая общий запас до 26.9% — впервые в этом сезоне выше прошлогоднего уровня.',
     },
   },
   {
