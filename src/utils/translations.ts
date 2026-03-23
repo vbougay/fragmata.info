@@ -183,7 +183,7 @@ export const translations = {
   },
   el: {
     // Header
-    appTitle: "Φράγματα",
+    appTitle: "Fragmata",
     subtitle: "Fragmata.info – Οπτικοποίηση Δεδομένων Φραγμάτων/Ταμιευτήρων Κύπρου",
     selectDate: "Επιλογή ημερομηνίας",
 

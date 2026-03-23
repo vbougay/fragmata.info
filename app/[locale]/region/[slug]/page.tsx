@@ -80,7 +80,7 @@ export async function generateMetadata({
     lang === "en"
       ? `${regionName} Dam Water Levels Today | Fragmata`
       : lang === "el"
-        ? `${translatedName} | Επίπεδα Νερού Σήμερα | Φράγματα`
+        ? `${translatedName} | Επίπεδα Νερού Σήμερα | Fragmata`
         : `${translatedName} | Уровень воды сегодня | Фрагмата`;
   const description =
     regionMetaDescriptions[slug]?.[lang] ?? `${translatedName} dam water levels`;

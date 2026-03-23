@@ -87,7 +87,7 @@ const meta: Record<Locale, LocaleMeta> = {
   },
   el: {
     title:
-      "Επίπεδα Νερού Φραγμάτων & Ταμιευτήρων Κύπρου Σήμερα | Φράγματα",
+      "Επίπεδα Νερού Φραγμάτων & Ταμιευτήρων Κύπρου Σήμερα | Fragmata",
     description:
       "Ζωντανά επίπεδα νερού σε 21 φράγματα και ταμιευτήρες Κύπρου. Χωρητικότητα αποθήκευσης, ημερήσια εισροή, προβλέψεις ξηρασίας, διαδραστικός χάρτης για Κούρη, Ασπρόκρεμμο, Ευρέτου και άλλα.",
     ogLocale: "el_GR",
@@ -223,7 +223,7 @@ const noscriptContent: Record<Locale, { heading: string; body: string }> = {
     body: "Track water levels across 21 Cyprus reservoirs including Kouris, Asprokremmos, Evretou, Kalavasos, Lefkara, and more.",
   },
   el: {
-    heading: "Φράγματα — Πίνακας Παρακολούθησης Ταμιευτήρων Κύπρου",
+    heading: "Fragmata — Πίνακας Παρακολούθησης Ταμιευτήρων Κύπρου",
     body: "Παρακολούθηση επιπέδων νερού σε 21 ταμιευτήρες της Κύπρου, συμπεριλαμβανομένων Κούρη, Ασπρόκρεμμου, Ευρέτου, Καλαβασού, Λεύκαρων και άλλων.",
   },
   ru: {
