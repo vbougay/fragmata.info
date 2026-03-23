@@ -309,12 +309,17 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                 </div>
               </div>
 
-              {/* Giatroi app link */}
+              {/* Community links */}
               <div className="text-center md:text-right text-xs md:text-sm text-muted-foreground">
-                {language === 'el' ? 'Επίσης' : language === 'ru' ? 'Также' : 'Also'}{' '}
-                <a href={language === 'el' ? 'https://giatroi.info/el/' : language === 'ru' ? 'https://giatroi.info/ru/' : 'https://giatroi.info/'} target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
-                  {language === 'el' ? 'βρείτε γιατρό και κλείστε ραντεβού στην Κύπρο' : language === 'ru' ? 'врачи Кипра — поиск и запись на приём' : 'search doctors and book appointments in Cyprus'}
+                {language === 'el' ? 'Ακολουθήστε μας στο' : language === 'ru' ? 'Следите за нами в' : 'Follow us on'}{' '}
+                <a href="https://t.me/fragmatainfo" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
+                  Telegram
                 </a>
+                {' '}{language === 'el' ? 'και' : language === 'ru' ? 'и' : 'and'}{' '}
+                <a href="https://chat.whatsapp.com/JZxEYFqo1mGDBZoi0pZBaA?mode=gi_t" target="_blank" className="text-water-600 dark:text-water-400 hover:text-water-800 dark:hover:text-water-300 transition-colors underline">
+                  WhatsApp
+                </a>
+                {' '}{language === 'el' ? 'για ενημερώσεις' : language === 'ru' ? 'для обновлений' : 'for updates'}
               </div>
             </div>
           </div>
