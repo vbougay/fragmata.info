@@ -43,6 +43,9 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Kuruduk!', url: 'https://www.yeniduzen.com/kuruduk-24781yy.htm', lang: 'tr', source: 'Yeni Düzen' },
   { title: 'Baraj temizliği yapılmadığından milyonlarca metre küp su denize aktı', url: 'https://www.yeniduzen.com/baraj-temizligi-yapilmadigindan-milyonlarca-metre-kup-su-denize-akti-189802h.htm', lang: 'tr', source: 'Yeni Düzen' },
   { title: 'Baf bölgesindeki barajlarda depolanan su miktarı yüzde 8,4', url: 'https://www.yeniduzen.com/baf-bolgesindeki-barajlarda-depolanan-su-miktari-yuzde-84-190230h.htm', lang: 'tr', source: 'Yeni Düzen' },
+  { title: 'Güney Kıbrıs\'ta baraj doluluk oranı yüzde 11,3\'e düştü', url: 'https://www.kibristurk.com/guney-kibrista-baraj-doluluk-orani-yuzde-113e-dustu', lang: 'tr', source: 'Kıbrıs Türk Haber' },
+  { title: 'Güney Kıbrıs\'ta Su Krizi Derinleşiyor: Olağanüstü Hal İlan Edildi', url: 'https://haberkibris.com/gecitkoy-barajina-boru-hatti-yok-su-tankerlerle-tasinabilir-1204-2025-03-23.html', lang: 'tr', source: 'Haber Kıbrıs' },
+  { title: 'Uyarılar dinlenmedi: Gönyeli Barajı\'nda krizin nedeni iklim değil ihmal', url: 'https://www.kibrispostasi.com/c35-KIBRIS_HABERLERI/n584948-uyarilar-dinlenmedi-gonyeli-barajinda-krizin-nedeni-iklim-degil-ihmal', lang: 'tr', source: 'Kıbrıs Postası' },
 
   // Greek
   { title: '«Ανάσα» για τα φράγματα μετά την κακοκαιρία', url: 'https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas', lang: 'el', source: '24Sports' },
