@@ -1,6 +1,6 @@
 # Fragmata.info: Cyprus Reservoir Visualizer
 
-A comprehensive dashboard for monitoring and visualizing water reservoir data across all 21 major reservoirs in Cyprus. Built with Next.js App Router for server-side rendering and SEO. Track storage levels, inflow trends, drain forecasts, and historical changes through 52 data snapshots spanning March 2025 to March 2026.
+A comprehensive dashboard for monitoring and visualizing water reservoir data across all 21 major reservoirs in Cyprus. Built with Next.js App Router for server-side rendering and SEO. Track storage levels, inflow trends, drain forecasts, and historical changes with data spanning March 2025 to March 2026.
 
 ![Fragmata Dashboard](/public/fragmata.info-screenshot.png)
 
@@ -34,7 +34,7 @@ A comprehensive dashboard for monitoring and visualizing water reservoir data ac
 
 ## Data Source
 
-All data is sourced from the [Cyprus Water Development Department](https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en?opendocument) of the Ministry of Agriculture. The application includes 52 data snapshots covering March 2025 through March 2026, with information on all 21 reservoirs including capacity, current storage, inflow rates, and historical comparisons.
+All data is sourced from the [Cyprus Water Development Department](https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en?opendocument) of the Ministry of Agriculture. The application includes data covering March 2025 through March 2026, with information on all 21 reservoirs including capacity, current storage, inflow rates, and historical comparisons.
 
 ## Forecasting Approach
 
