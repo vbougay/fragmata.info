@@ -24,7 +24,7 @@ const mediaMeta: Record<Locale, { title: string; description: string }> = {
       "Download Cyprus dam and reservoir data as infographic images. Visual summary of water storage levels, capacity charts, and regional breakdowns for all 21 dams.",
   },
   el: {
-    title: "Εξαγωγή Δεδομένων & Infographic Ταμιευτήρων Κύπρου | Φράγματα",
+    title: "Εξαγωγή Δεδομένων & Infographic Ταμιευτήρων Κύπρου | Fragmata",
     description:
       "Κατεβάστε δεδομένα φραγμάτων και ταμιευτήρων Κύπρου ως infographic. Οπτική σύνοψη επιπέδων αποθήκευσης νερού, γραφήματα χωρητικότητας και ανάλυση ανά περιοχή.",
   },
