@@ -52,6 +52,12 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - Keep it concise — highlight only notable or important changes, not every region or reservoir
 - Lead with overall storage change (percentage and MCM)
 - Mention notable individual reservoir movements (large swings, transfers, overflows) — skip small incremental changes
+- **Link dam names to their detail pages**: every dam name mentioned in the text (both bold and non-bold, including inline references like transfers) should be a markdown link to its detail page:
+  - English: `[Kouris](/dam/kouris/)`, `[Arminou](/dam/arminou/)→[Kouris](/dam/kouris/)`
+  - Greek: `[Κούρης](/el/dam/kouris/)`, `[Αρμίνου](/el/dam/arminou/)→[Κούρης](/el/dam/kouris/)`
+  - Russian: `[Курис](/ru/dam/kouris/)`, `[Арминоу](/ru/dam/arminou/)→[Курис](/ru/dam/kouris/)`
+  - Use the English slug from `DAM_SLUG_MAP` in `src/utils/slugs.ts` (e.g., `agia-marina`, `klirou-malounta`)
+  - The locale prefix is: none for `en`, `/el` for Greek, `/ru` for Russian
 - Search the web for Cyprus water/reservoir/drought news from the past week and incorporate relevant context (government plans, drought status, weather events)
 - Add up to 3 media article links at the end under an "In the media" / "Στα μέσα" section
 - Write both English, Russian and Greek versions with the same structure
