@@ -86,7 +86,7 @@ export default async function ArticlesPage({
         slug: a.slug,
         title: a.title[lang],
         description: a.description[lang],
-        excerpt: firstParagraph,
+        excerpt: firstParagraph.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"),
         date: a.date,
       };
     })
