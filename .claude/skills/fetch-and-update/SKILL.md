@@ -46,6 +46,13 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - `totalAll` = sum of all 21 reservoirs
 - The storage values come from each reservoir's `storage.current.amount` in the new data module
 
+**Narrative coherence** — the `getSummaryChanges` text, articles, and community posts are all part of one evolving story. Before writing any of them:
+- Read the recent entries in `.promos/COMMUNITY.md` and the latest `getSummaryChanges` to understand the current narrative arc
+- Each new update should advance the story — reference what changed since the last post, build on previous milestones, and avoid restating old news as if it's new
+- Let the data drive the narrative: when the situation shifts (e.g. a drought easing, a new region recovering, a plateau forming), the tone and focus should shift with it
+- Keep all three outputs consistent — they can differ in length and format but should not contradict each other or tell different stories
+- Articles or community posts with future dates are pre-scheduled drafts — ignore them when determining the current narrative state
+
 **Summary / Recent Changes (`getSummaryChanges`):**
 
 - For comparison use the date 7-10 days away
@@ -84,3 +91,50 @@ The dashboard has a scrolling news ticker showing recent water crisis articles. 
 - Update `NEWS.md` to keep it in sync (grouped by language: English, Russian, Greek)
 - Keep the list reasonable — cap at ~10 articles per language, removing older or less relevant ones
 - Prefer articles from established Cyprus outlets (Cyprus Mail, Politis, AlphaNews, Европа Кипр, Вестник Кипра, etc.)
+
+**Community Post (`.promos/COMMUNITY.md`):**
+
+After each data update, append a new community post entry to `.promos/COMMUNITY.md`. Each entry needs a markdown section plus Telegram and WhatsApp code blocks.
+
+- **Schedule**: Major updates on Mon/Wed/Fri, minor updates on Tue/Thu. If more than 1 day has passed since the last data update, always do a major update regardless of day.
+- **Determining the last update**: Check the last `## March XX` heading in `.promos/COMMUNITY.md` to find when the previous post was made.
+
+**Minor data updates** (📊):
+- Headline: total storage % and MCM, delta from previous update (e.g. "up from 26.9% yesterday")
+- 24-hour inflow: total across all dams, plus the top 2-3 individual dam inflows
+- Bullet points: only notable changes since previous update — new season highs, milestones (crossing round numbers like 30%), large pp swings (>1pp), transfers, unchanged laggards
+- Show pp deltas in parentheses (e.g. "+1.3pp") for reservoirs that moved significantly
+- End with gap vs last year and dashboard link
+- Keep concise — 6-8 bullet points max
+
+**Major updates** (📰):
+- Used when publishing an article or after a gap of >1 day
+- Narrative summary paragraph describing what happened
+- Detailed bullet points with context (year-over-year comparisons, multi-day trends)
+- Include article link if one was published, plus dashboard link
+- Can reference previous articles/predictions when relevant
+
+**Headline total calculation**: Exclude Recharge/Other dams (Tamassos, Klirou-Malounta, Solea) from the headline storage % and MCM — this matches the dashboard. Individual Recharge dams can still appear in bullet points.
+
+**Platform formatting** — each post needs two code blocks:
+
+Telegram (`### Telegram`):
+- Plain text, no markdown formatting (asterisks show literally when pasted)
+- Use `•` for bullets
+- Bold is applied manually after pasting (select + Cmd+B)
+- 📊 or 📰 emoji prefix on the first line
+- End with `🔗 https://fragmata.info`
+
+WhatsApp (`### WhatsApp`):
+- Wrap key numbers and headings in `*asterisks*` for native bold rendering
+- Use `•` for bullets
+- 📊 or 📰 emoji prefix on the first line
+- End with `🔗 https://fragmata.info`
+
+**What to highlight** — let the data decide, don't repeat a fixed list of dams:
+- Compare today's data vs previous update: pick the largest pp and MCM movers
+- Milestones: crossing round-number thresholds (e.g. 30%, 50%, 100%), first-time events (exceeding last year, overflowing)
+- Extremes: dams at 100% or near 0%, dramatic year-over-year ratios
+- Active transfers between dams (if `waterTransferred` changed)
+- Aim for variety across posts — rotate which dams get mentioned rather than always leading with the same ones
+- Use `×` (multiplication sign) not `x` for multipliers
