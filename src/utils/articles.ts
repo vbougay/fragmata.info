@@ -11,6 +11,38 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-04-02-kalavasos-southern-conveyor',
+    date: '2026-04-02',
+    dataSetId: '23-MAR-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'Why Kalavasos Dam Drops When It Rains: The Southern Conveyor Explained',
+      el: 'Γιατί το Φράγμα Καλαβασού Πέφτει Ενώ Βρέχει: Εξήγηση του Νότιου Αγωγού',
+      ru: 'Почему уровень дамбы Калавасос падает, когда идёт дождь: объяснение Южного водовода',
+    },
+    description: {
+      en: 'A reader noticed Kalavasos keeps dropping even after rainfall. The answer involves a deliberate WDD extraction strategy, the Southern Conveyor system, and alarming gaps in dam safety monitoring.',
+      el: 'Ένας αναγνώστης παρατήρησε ότι ο Καλαβασός συνεχίζει να πέφτει ακόμα και μετά τη βροχή. Η απάντηση αφορά τη σκόπιμη στρατηγική άντλησης του ΤΑΥ, το σύστημα του Νότιου Αγωγού και ανησυχητικά κενά στην παρακολούθηση ασφάλειας φραγμάτων.',
+      ru: 'Читатель заметил, что Калавасос продолжает снижаться даже после дождя. Ответ связан с намеренной стратегией откачки Департамента водного развития, системой Южного водовода и тревожными пробелами в мониторинге безопасности дамб.',
+    },
+  },
+  {
+    slug: '2026-03-27-famagusta-water-supply',
+    date: '2026-03-27',
+    dataSetId: '23-MAR-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'Where Does Protaras Get Its Water? Desalination, Pipes, and the Empty Dam That Was Never the Source',
+      el: 'Από Πού Παίρνει Νερό η Πρωταράς; Αφαλάτωση, Αγωγοί και το Άδειο Φράγμα που Ποτέ δεν Ήταν η Πηγή',
+      ru: 'Откуда Протарас берёт воду? Опреснение, трубопроводы и пустая дамба, которая никогда не была источником',
+    },
+    description: {
+      en: 'Achna Dam has been empty for ages — so where does Protaras / Ayia Napa / Paralimni actually get its drinking water? The answer involves aging desalination plants, a single 50-year-old pipeline, and infrastructure projects that exist only on paper.',
+      el: 'Το Φράγμα Αχνας είναι άδειο εδώ και χρόνια — πού παίρνει λοιπόν πόσιμο νερό η Πρωταράς / Αγία Νάπα / Παραλίμνι; Η απάντηση αφορά γηρασμένες μονάδες αφαλάτωσης, έναν μοναδικό αγωγό 50 ετών και έργα υποδομής που υπάρχουν μόνο στα χαρτιά.',
+      ru: 'Дамба Ахна пуста уже давно — откуда тогда Протарас / Айя-Напа / Паралимни берут питьевую воду? Ответ связан со стареющими опреснительными установками, единственным 50-летним трубопроводом и инфраструктурными проектами, существующими только на бумаге.',
+    },
+  },
+  {
     slug: '2026-03-23-reserves-exceed-last-year',
     date: '2026-03-23',
     dataSetId: '23-MAR-2026',
@@ -66,6 +98,11 @@ export function getAllArticles(): ArticleMeta[] {
 
 export function getArticleBySlug(slug: string): ArticleMeta | undefined {
   return ARTICLES.find((a) => a.slug === slug);
+}
+
+export function getLatestPublishedArticle(): ArticleMeta | undefined {
+  const today = new Date().toISOString().slice(0, 10);
+  return getAllArticles().find((a) => a.date <= today);
 }
 
 export function getAllArticleSlugs(): string[] {

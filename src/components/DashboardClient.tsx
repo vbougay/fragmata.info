@@ -18,7 +18,7 @@ import { Droplets, FileText, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { getAllArticles } from '@/utils/articles';
+import { getLatestPublishedArticle } from '@/utils/articles';
 import { defaultLocale } from '@/utils/locale';
 
 const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
@@ -106,7 +106,7 @@ export function DashboardClient({
         <StatCardGrid grandTotal={grandTotal} ytdInflow={ytdInflow} ytdOutflow={ytdOutflow} t={t} animate />
 
         {(() => {
-          const latest = getAllArticles()[0];
+          const latest = getLatestPublishedArticle();
           if (!latest) return null;
           const href = language === defaultLocale
             ? `/articles/${latest.slug}/`
