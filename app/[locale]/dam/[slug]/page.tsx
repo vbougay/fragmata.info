@@ -116,7 +116,8 @@ export default async function DamPage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const lang = (isValidLocale(locale) ? locale : "en") as "en" | "el" | "ru";
   const damInfo = getDamBySlug(slug);
   if (!damInfo) notFound();
 
@@ -137,8 +138,41 @@ export default async function DamPage({
     ? (damInfo.key as string)
     : undefined;
 
+  // FAQ structured data with dam-specific question & one-liner answer
+  const t = translations[lang];
+  const translatedDamName = t[damInfo.name as keyof typeof t] || damInfo.name;
+  const damSummary = getDamSummary(damInfo.name, lang, dsId);
+  const faqQuestion =
+    lang === "en"
+      ? `What is the current water level at ${damInfo.name} Dam?`
+      : lang === "el"
+        ? `Ποιο είναι το τρέχον επίπεδο νερού στο φράγμα ${translatedDamName};`
+        : `Какой текущий уровень воды на плотине ${translatedDamName}?`;
+
   return (
-    <RegionDamClient
+    <>
+      {damSummary && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: faqQuestion,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: damSummary,
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+      )}
+      <RegionDamClient
       type="dam"
       damName={damInfo.name}
       damKey={damInfo.key}
@@ -150,5 +184,6 @@ export default async function DamPage({
       initialYtdInflow={ytdInflow}
       initialYtdOutflow={ytdOutflow}
     />
+    </>
   );
 }

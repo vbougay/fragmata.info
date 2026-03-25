@@ -35,10 +35,6 @@ interface LocaleMeta {
   description: string;
   ogLocale: string;
   keywords: string[];
-  alternateName: string[];
-  datasetName: string;
-  datasetDescription: string;
-  faq: { question: string; answer: string }[];
 }
 
 const meta: Record<Locale, LocaleMeta> = {
@@ -63,27 +59,6 @@ const meta: Record<Locale, LocaleMeta> = {
       "cyprus dams water levels",
       "how full are the dams in cyprus",
     ],
-    alternateName: ["Φράγματα", "Cyprus Reservoir Dashboard"],
-    datasetName: "Cyprus Reservoir Data",
-    datasetDescription:
-      "Water storage levels, inflow, and capacity data for 21 reservoirs across Cyprus",
-    faq: [
-      {
-        question: "How full are the dams in Cyprus?",
-        answer:
-          "Fragmata tracks storage levels for all 21 major dams in Cyprus, updated weekly with data from the Cyprus Water Development Department. Visit the dashboard to see current fill percentages, regional breakdowns, and historical trends.",
-      },
-      {
-        question: "What is the current water level in Cyprus reservoirs?",
-        answer:
-          "Current water levels for all 21 Cyprus reservoirs are displayed on the Fragmata dashboard with storage in million cubic meters (mln. m³) and percentage of capacity. Data is sourced from official government reports and updated regularly.",
-      },
-      {
-        question: "Which is the largest dam in Cyprus?",
-        answer:
-          "Kouris Dam is the largest in Cyprus with a capacity of 115 mln. m³, located in the Southern Conveyor system. The second largest is Asprokremmos Dam in Paphos at 52.4 mln. m³.",
-      },
-    ],
   },
   el: {
     title:
@@ -103,22 +78,6 @@ const meta: Record<Locale, LocaleMeta> = {
       "αποθήκευση νερού Κύπρος",
       "επίπεδα φραγμάτων σήμερα",
     ],
-    alternateName: ["Fragmata", "Πίνακας Ταμιευτήρων Κύπρου"],
-    datasetName: "Δεδομένα Ταμιευτήρων Κύπρου",
-    datasetDescription:
-      "Επίπεδα αποθήκευσης νερού, εισροή και χωρητικότητα για 21 ταμιευτήρες στην Κύπρο",
-    faq: [
-      {
-        question: "Πόσο γεμάτα είναι τα φράγματα στην Κύπρο;",
-        answer:
-          "Το Fragmata παρακολουθεί τα επίπεδα αποθήκευσης και για τα 21 μεγάλα φράγματα της Κύπρου, με εβδομαδιαία ενημέρωση από το Τμήμα Αναπτύξεως Υδάτων. Επισκεφθείτε τον πίνακα για τρέχοντα ποσοστά πλήρωσης και ιστορικές τάσεις.",
-      },
-      {
-        question: "Ποιο είναι το μεγαλύτερο φράγμα στην Κύπρο;",
-        answer:
-          "Το φράγμα του Κούρη είναι το μεγαλύτερο στην Κύπρο με χωρητικότητα 115 εκατ. κ.μ., στο σύστημα του Νότιου Αγωγού. Δεύτερο μεγαλύτερο είναι το φράγμα Ασπρόκρεμμου στην Πάφο με 52,4 εκατ. κ.μ.",
-      },
-    ],
   },
   ru: {
     title:
@@ -137,22 +96,6 @@ const meta: Record<Locale, LocaleMeta> = {
       "Аспрокреммос плотина",
       "запас воды Кипр",
       "уровень дамб Кипра сегодня",
-    ],
-    alternateName: ["Fragmata", "Мониторинг водохранилищ Кипра"],
-    datasetName: "Данные водохранилищ Кипра",
-    datasetDescription:
-      "Уровни хранения воды, приток и ёмкость для 21 водохранилища на Кипре",
-    faq: [
-      {
-        question: "Насколько заполнены дамбы на Кипре?",
-        answer:
-          "Fragmata отслеживает уровни хранения всех 21 крупных водохранилищ Кипра с еженедельным обновлением данных от Департамента водного развития Кипра. Посетите панель мониторинга для текущих процентов заполнения и исторических тенденций.",
-      },
-      {
-        question: "Какая самая большая плотина на Кипре?",
-        answer:
-          "Плотина Курис — крупнейшая на Кипре с ёмкостью 115 млн м³, расположена в системе Южного конвейера. Вторая по величине — плотина Аспрокреммос в Пафосе с ёмкостью 52,4 млн м³.",
-      },
     ],
   },
 };
@@ -247,59 +190,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${plusJakartaSans.variable} ${robotoMono.variable}`} suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              name: "Fragmata",
-              alternateName: meta[locale].alternateName,
-              description: meta[locale].description,
-              url: localeUrl(locale),
-              applicationCategory: "UtilitiesApplication",
-              operatingSystem: "Any",
-              inLanguage: locale,
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "EUR",
-              },
-              about: {
-                "@type": "Dataset",
-                name: meta[locale].datasetName,
-                description: meta[locale].datasetDescription,
-                spatialCoverage: {
-                  "@type": "Place",
-                  name: "Cyprus",
-                },
-                temporalCoverage: "2025/..",
-                provider: {
-                  "@type": "GovernmentOrganization",
-                  name: "Cyprus Water Development Department",
-                  url: "https://www.moa.gov.cy/moa/wdd/",
-                },
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: meta[locale].faq.map((item) => ({
-                "@type": "Question",
-                name: item.question,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: item.answer,
-                },
-              })),
-            }),
-          }}
-        />
         <Providers locale={locale}>
           {children}
         </Providers>
