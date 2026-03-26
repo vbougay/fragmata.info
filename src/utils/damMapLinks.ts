@@ -28,6 +28,7 @@ const reservoirCoordinates: Record<string, { lat: number; lng: number }> = {
 
 // Well-defined Google Maps place links (manually verified)
 const knownPlaceLinks: Record<string, string> = {
+  'Kouris': 'https://maps.app.goo.gl/wT8TWwL7sJLgyU1D8',
   'Xyliatos': 'https://maps.app.goo.gl/gfWUgGzQdwLu4Nsh7',
 };
 
