@@ -209,8 +209,7 @@ export function RegionDamClient({
           </Breadcrumb>
         )}
         {!mediaMode && (
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1 flex items-center justify-between">
-            {displayName}
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1 flex items-center gap-2">
             {type === 'dam' && damName && getDamMapUrl(damName) && (
               <a
                 href={getDamMapUrl(damName)}
@@ -222,6 +221,7 @@ export function RegionDamClient({
                 <MapPin className="h-6 w-6" />
               </a>
             )}
+            {displayName}
           </h1>
         )}
         {damSummaryText && !mediaMode && (
