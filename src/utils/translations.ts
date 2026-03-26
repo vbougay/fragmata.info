@@ -31,7 +31,8 @@ export const translations = {
     mapLastYear: "Last Year",
     mapRecentInflow: "Last 24h Inflow",
     mapNoteLabel: "Note",
-    
+    viewOnMap: "View on Google Maps",
+
     // Cards
     overallStatus: "Overall Reservoir Status",
     
@@ -213,7 +214,8 @@ export const translations = {
     mapLastYear: "Πέρυσι",
     mapRecentInflow: "Εισροή 24ω",
     mapNoteLabel: "Σημείωση",
-    
+    viewOnMap: "Προβολή στο Google Maps",
+
     // Cards
     overallStatus: "Συνολική κατάσταση ταμιευτήρων",
     
@@ -395,7 +397,8 @@ export const translations = {
     mapLastYear: "Прошлый год",
     mapRecentInflow: "Приток за 24ч",
     mapNoteLabel: "Примечание",
-    
+    viewOnMap: "Посмотреть на Google Maps",
+
     // Cards
     overallStatus: "Общее Состояние Водохранилищ",
     

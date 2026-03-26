@@ -19,10 +19,11 @@ import { RegionTotal, ReservoirRegion, Reservoir } from '@/types';
 import { YTDInflowResult, YTDOutflowResult } from '@/utils/reservoirUtils';
 import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
-import { Download, Loader2, X } from 'lucide-react';
+import { Download, Loader2, X, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { getRegionSlugForDam, REGION_SLUG_MAP } from '@/utils/slugs';
 import { defaultLocale } from '@/utils/locale';
+import { getDamMapUrl } from '@/utils/damMapLinks';
 
 interface RegionDamClientProps {
   type: 'region' | 'dam';
@@ -208,8 +209,19 @@ export function RegionDamClient({
           </Breadcrumb>
         )}
         {!mediaMode && (
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1">
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1 flex items-center gap-2">
             {displayName}
+            {type === 'dam' && damName && getDamMapUrl(damName) && (
+              <a
+                href={getDamMapUrl(damName)}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={t('viewOnMap')}
+                className="text-water-500 hover:text-water-700 dark:text-water-400 dark:hover:text-water-300 transition-colors"
+              >
+                <MapPin className="h-6 w-6" />
+              </a>
+            )}
           </h1>
         )}
         {damSummaryText && !mediaMode && (
