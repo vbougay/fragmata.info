@@ -29,6 +29,11 @@ const reservoirCoordinates: Record<string, { lat: number; lng: number }> = {
 // Well-defined Google Maps place links (manually verified)
 const knownPlaceLinks: Record<string, string> = {
   'Kouris': 'https://maps.app.goo.gl/wT8TWwL7sJLgyU1D8',
+  'Asprokremmos': 'https://maps.app.goo.gl/JCxUEjWMnP28ANZr7',
+  'Mavrokolympos': 'https://maps.app.goo.gl/pCrQbMDQ8dUkxtDt6',
+  'Kannaviou': 'https://maps.app.goo.gl/iw2tTmYBAgWJX5nA6',
+  'Vyzakia': 'https://maps.app.goo.gl/19whFDKW2KeRdr6SA',
+  'Kalopanagiotis': 'https://maps.app.goo.gl/DAqbR6qk6Y4vZC62A',
   'Xyliatos': 'https://maps.app.goo.gl/gfWUgGzQdwLu4Nsh7',
 };
 
