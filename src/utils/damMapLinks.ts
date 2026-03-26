@@ -34,13 +34,20 @@ const knownPlaceLinks: Record<string, string> = {
   'Dipotamos': 'https://maps.app.goo.gl/6DKCwSJpdvt11cTUA',
   'Germasoyeia': 'https://maps.app.goo.gl/cFbFadBSUfhXzRG27',
   'Arminou': 'https://maps.app.goo.gl/bxdJt3RnS7P5UCsKA',
+  'Polemidia': 'https://maps.app.goo.gl/j2zMGazgC3LxpeBY8',
   'Achna': 'https://maps.app.goo.gl/f8XsmYsD8wCtuzrp9',
   'Asprokremmos': 'https://maps.app.goo.gl/JCxUEjWMnP28ANZr7',
-  'Mavrokolympos': 'https://maps.app.goo.gl/pCrQbMDQ8dUkxtDt6',
   'Kannaviou': 'https://maps.app.goo.gl/iw2tTmYBAgWJX5nA6',
+  'Mavrokolympos': 'https://maps.app.goo.gl/pCrQbMDQ8dUkxtDt6',
+  'Evretou': 'https://maps.app.goo.gl/NAvopj1fiEreQ2Uk9',
+  'Argaka': 'https://maps.app.goo.gl/Ztbvoh2zwEErTgyx9',
+  'Pomos': 'https://maps.app.goo.gl/c6sxciT8MpzTQ5YD7',
+  'Agia Marina': 'https://maps.app.goo.gl/a3rfGV2G42SUkErw5',
   'Vyzakia': 'https://maps.app.goo.gl/19whFDKW2KeRdr6SA',
-  'Kalopanagiotis': 'https://maps.app.goo.gl/DAqbR6qk6Y4vZC62A',
   'Xyliatos': 'https://maps.app.goo.gl/gfWUgGzQdwLu4Nsh7',
+  'Kalopanagiotis': 'https://maps.app.goo.gl/DAqbR6qk6Y4vZC62A',
+  'Tamassos': 'https://maps.app.goo.gl/8nMMCeDTV3pBNzt68',
+  'Klirou-Malounta': 'https://maps.app.goo.gl/tpQ966G2NmfiAi8X9',
 };
 
 /**
