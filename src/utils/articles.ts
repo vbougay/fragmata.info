@@ -7,6 +7,7 @@ export interface ArticleMeta {
   author: string;
   title: Record<Locale, string>;
   description: Record<Locale, string>;
+  hidden?: boolean;
 }
 
 export const ARTICLES: ArticleMeta[] = [
@@ -15,6 +16,7 @@ export const ARTICLES: ArticleMeta[] = [
     date: '2026-04-02',
     dataSetId: '23-MAR-2026',
     author: 'Vladimir Bugay',
+    hidden: true,
     title: {
       en: 'Why Kalavasos Dam Drops When It Rains: The Southern Conveyor Explained',
       el: 'Γιατί το Φράγμα Καλαβασού Πέφτει Ενώ Βρέχει: Εξήγηση του Νότιου Αγωγού',
@@ -93,7 +95,7 @@ export const ARTICLES: ArticleMeta[] = [
 ];
 
 export function getAllArticles(): ArticleMeta[] {
-  return [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date));
+  return [...ARTICLES].filter((a) => !a.hidden).sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getArticleBySlug(slug: string): ArticleMeta | undefined {
@@ -106,5 +108,5 @@ export function getLatestPublishedArticle(): ArticleMeta | undefined {
 }
 
 export function getAllArticleSlugs(): string[] {
-  return ARTICLES.map((a) => a.slug);
+  return ARTICLES.filter((a) => !a.hidden).map((a) => a.slug);
 }
