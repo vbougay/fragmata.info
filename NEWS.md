@@ -12,7 +12,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 - [Cyprus dam water levels rise after rainfall](https://en.sigmalive.com/cyprus-dam-water-levels-rise-after-rainfall/) — Sigmalive, Mar 2026
 - [Rotational water cuts continue in Larnaca due to desalination issues](https://cyprus-mail.com/2026/03/18/rotational-water-cuts-continue-in-larnaca-due-to-desalination-issues) — Cyprus Mail, Mar 18, 2026
 - [Water levels in Cyprus dams better than last year](https://www.stockwatch.com.cy/en/news/water-levels-in-cyprus-dams-better-than-last-year) — StockWatch, Mar 2026
-- [Cyprus confronts a record drought as reservoirs run dry](https://smartwatermagazine.com/news/smart-water-magazine/cyprus-confronts-a-record-drought-reservoirs-run-dry) — Smart Water Magazine, Mar 2026
+- [Heavy rain a welcome boost to water reserves](https://cyprus-mail.com/2026/03/16/heavy-rain-a-welcome-boost-to-water-reserves) — Cyprus Mail, Mar 16, 2026
 - [Desalination plants supply 80% of Cyprus drinkable water](https://cyprus-mail.com/2026/03/10/desalination-plants-supply-80-per-cent-of-cyprus-drinkable-water) — Cyprus Mail, Mar 10, 2026
 
 ## Russian
@@ -37,4 +37,4 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 - [Αισιόδοξο το ΤΑΥ για καλές εισροές ως τέλος Μαρτίου](https://cyprustimes.com/koinonia/aisiodoxo-to-taf-gia-kales-eisroes-os-telos-martiou-se-kalyteri-moira-apo-persi/) — CyprusTimes, Mar 2026
 - [Αισιόδοξο το ΤΑΥ για εισροές — «Σε καλύτερη μοίρα από πέρσι»](https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi) — SigmaLive, Mar 2026
 - [«Ανάσα» για τα φράγματα μετά την κακοκαιρία](https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas) — 24Sports, Mar 2026
-- [Στέρεψαν τα φράγματα, εφιαλτικό προμηνύεται το 2026](https://www.alphanews.live/cypress/sterepsan-ta-fragmata-efialtiko-prominyetai-to-2026/) — AlphaNews, Feb 2026
+- [Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο](https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/) — AlphaNews, Mar 2026
