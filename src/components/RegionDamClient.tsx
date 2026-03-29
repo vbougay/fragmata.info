@@ -209,20 +209,22 @@ export function RegionDamClient({
           </Breadcrumb>
         )}
         {!mediaMode && (
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-1">
             {type === 'dam' && damName && getDamMapUrl(damName) && (
               <a
                 href={getDamMapUrl(damName)}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={t('viewOnMap')}
-                className="text-water-500 hover:text-water-700 dark:text-water-400 dark:hover:text-water-300 transition-colors"
+                className="text-water-500 hover:text-water-700 dark:text-water-400 dark:hover:text-water-300 transition-colors flex-shrink-0"
               >
                 <MapPin className="h-6 w-6" />
               </a>
             )}
-            {displayName}
-          </h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+              {displayName}
+            </h1>
+          </div>
         )}
         {damSummaryText && !mediaMode && (
           <p className="text-sm text-muted-foreground mb-4">{damSummaryText}</p>

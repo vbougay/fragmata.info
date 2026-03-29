@@ -74,7 +74,7 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 
 Each data module should export a `getDamSummary(damName, language)` function that returns a short 1-2 sentence summary for each of the 21 dams. These are displayed as subtitles on dam pages and used as SEO meta descriptions.
 
-- Write concise, single-line summaries (aim for ~150 characters for SEO)
+- Write concise, single-line summaries (110–155 characters for SEO — not shorter, or Google will substitute its own snippet; not longer, or it will be truncated)
 - Include: current fill %, storage in MCM, year-over-year comparison
 - Highlight notable conditions: at full capacity, critically low, transfers, dramatic recovery, new annual max
 - Support all 3 languages (`'en' | 'el' | 'ru'`)
