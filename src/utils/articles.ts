@@ -12,8 +12,24 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
-    slug: '2026-04-02-kalavasos-southern-conveyor',
-    date: '2026-04-02',
+    slug: '2026-03-31-nicosia-north-troodos-drought-free',
+    date: '2026-03-31',
+    dataSetId: '30-MAR-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'Drought Over North of Troodos: All Five Nicosia Dams Full — Xyliatos, Klirou, Solea, Kalopanagiotis and Tamassos Overflowing',
+      el: 'Τέλος Ξηρασίας Βόρεια του Τροόδους: Και τα Πέντε Φράγματα της Λευκωσίας Γεμάτα — Ξυλιάτος, Κλήρου, Σόλεα, Καλοπαναγιώτης και Ταμασσός Υπερχειλίζουν',
+      ru: 'Засуха отступила к северу от Троодоса: все пять никосийских дамб полны — Ксилиатос, Клиру, Солеа, Калопанайотис и Тамассос переполнены',
+    },
+    description: {
+      en: 'Five dams north of the Troodos — Xyliatos, Kalopanagiotis, Klirou-Malounta, Solea, and Tamassos — are all at 100% capacity as of 30 March. For the Nicosia district, the drought is over.',
+      el: 'Πέντε φράγματα βόρεια του Τροόδους — Ξυλιάτος, Καλοπαναγιώτης, Κλήρου-Μαλούντα, Σόλεα και Ταμασσός — βρίσκονται όλα στο 100% χωρητικότητας στις 30 Μαρτίου. Για την επαρχία Λευκωσίας, η ξηρασία έχει τελειώσει.',
+      ru: 'Пять водохранилищ к северу от Троодоса — Ксилиатос, Калопанайотис, Клиру-Малунта, Солеа и Тамассос — все на 100% ёмкости по данным на 30 марта. Для района Никосии засуха завершилась.',
+    },
+  },
+  {
+    slug: '2026-04-09-kalavasos-southern-conveyor',
+    date: '2026-04-09',
     dataSetId: '23-MAR-2026',
     author: 'Vladimir Bugay',
     hidden: true,
