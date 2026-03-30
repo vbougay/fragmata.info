@@ -6,7 +6,7 @@ Cyprus's water crisis is real — but it is not uniformly distributed. While the
 
 ### The Five Dams: Where They Stand
 
-| Dam | Capacity (mln. m³) | 30 March 2026 | Last Year (30 March) |
+| Dam | Capacity (mln. m³) | 31 March 2026 | Last Year (31 March) |
 |-----|------------------|---------------|----------------------|
 | Xyliatos | 1.430 | **100.0%** *(overflowing)* | 22.9% |
 | Kalopanagiotis | 0.363 | **100.0%** *(overflowing)* | 86.8% |
@@ -39,7 +39,7 @@ The two Nicosia district dams proper — Xyliatos and Kalopanagiotis — have a 
 
 ### The Two-Speed Island
 
-The contrast with the south is stark. As of 30 March:
+The contrast with the south is stark. As of 31 March:
 
 - **Achna** — 2.0% (zero inflow all season; entirely desalination-dependent)
 - **Kalavasos** — ~8% (being deliberately drained by the Southern Conveyor)
@@ -50,4 +50,4 @@ The island's 10% water supply cut remains island-wide, and rightfully so — Lim
 ---
 
 *Author: Vladimir Bugay, Fragmata developer*
-*Data: Cyprus Water Development Department, report of 30 March 2026. Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
+*Data: Cyprus Water Development Department, report of 31 March 2026. Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
