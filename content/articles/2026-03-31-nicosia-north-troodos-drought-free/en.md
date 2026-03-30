@@ -2,7 +2,7 @@
 
 ---
 
-Cyprus's water crisis is real — but it is not uniformly distributed. While the southern coast remains gripped by shortage and Achna sits at 2%, a different story is playing out in the hills north of Troodos. As of 30 March 2026, five dams serving Nicosia and the island's groundwater recharge network are all at **100% capacity**. For this region, the drought is over.
+Cyprus's water crisis is real — but it is not uniformly distributed. While the southern coast remains gripped by shortage and Achna sits at 2%, a different story is playing out in the hills north of Troodos. As of 31 March 2026, five dams serving Nicosia and the island's groundwater recharge network are all at **100% capacity**. For this region, the drought is over.
 
 ### The Five Dams: Where They Stand
 
