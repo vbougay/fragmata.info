@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'March rains boost Cyprus\' water reserves as dam inflows reach 12.3 million cubic meters', url: 'https://famagusta-gazette.com/march-rains-boost-cyprus-water-reserves-as-dam-inflows-reach-12-3-million-cubic-meters/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'One more Paphos dam overflows', url: 'https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Rainfall helpful but Cyprus is far from water security, WDD official tells CNA', url: 'https://www.parikiaki.com/2026/03/rainfall-helpful-but-cyprus-is-far-from-water-security-wdd-official-tells-cna', lang: 'en', source: 'Parikiaki' },
   { title: 'Rainfall offers limited relief, Cyprus water reserves at 27 per cent capacity', url: 'https://cyprus-mail.com/2026/03/23/rainfall-offers-limited-relief-as-cyprus-water-reserves-remain-under-strain', lang: 'en', source: 'Cyprus Mail' },
@@ -18,7 +19,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Rotational water cuts continue in Larnaca due to desalination issues', url: 'https://cyprus-mail.com/2026/03/18/rotational-water-cuts-continue-in-larnaca-due-to-desalination-issues', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Water levels in Cyprus dams better than last year', url: 'https://www.stockwatch.com.cy/en/news/water-levels-in-cyprus-dams-better-than-last-year', lang: 'en', source: 'StockWatch' },
   { title: 'Heavy rain a welcome boost to water reserves', url: 'https://cyprus-mail.com/2026/03/16/heavy-rain-a-welcome-boost-to-water-reserves', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Desalination plants supply 80% of Cyprus drinkable water', url: 'https://cyprus-mail.com/2026/03/10/desalination-plants-supply-80-per-cent-of-cyprus-drinkable-water', lang: 'en', source: 'Cyprus Mail' },
 
   // Russian
   { title: 'Третья дамба переполнилась в Пафосе', url: 'https://lenta.cy/tretja-damba-perepolnilas-v-pafose/', lang: 'ru', source: 'Lenta.cy' },
@@ -32,9 +32,10 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Дожди идут, но воды по-прежнему мало', url: 'https://vkcyprus.com/society/1467412349435-dozhdi-idut-no-vody-po-prezhnemu-malo/', lang: 'ru', source: 'Вестник Кипра' },
 
   // Greek
+  { title: 'Ξεπέρασε το 30% η πληρότητα φραγμάτων — 3ος καλύτερος Μάρτιος από το 1988', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-30-tis-ekato-i-sinoliki-plirotita-fragmaton-3os-kaliteros-martios-se-thema-eisroon-apo-to-1988/', lang: 'el', source: 'KitasWeather' },
+  { title: 'Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/', lang: 'el', source: 'AlphaNews' },
   { title: 'Υψίστης σημασίας η κατασκευή φραγμάτων, λέει η Επίτροπος Περιβάλλοντος', url: 'https://www.taxidromos24.com/2026/03/28/%CF%85%CF%88%CE%AF%CF%83%CF%84%CE%B7%CF%82-%CF%83%CE%B7%CE%BC%CE%B1%CF%83%CE%AF%CE%B1%CF%82-%CF%84%CE%B1-%CF%86%CF%81%CE%AC%CE%B3%CE%BC%CE%B1%CF%84%CE%B1-%CF%83%CF%84%CE%B7%CE%BD-%CE%BA%CF%8D%CF%80/', lang: 'el', source: 'Taxidromos24' },
   { title: 'Ξεπέρασε το 150% η μέση βροχόπτωση Μαρτίου — Αποτίμηση διαταραχής', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/xeperase-to-150-h-vroxoptosi-martiou-apotimisi-diataraxis/', lang: 'el', source: 'KitasWeather' },
-  { title: 'Εντυπωσιακή ροή στα φράγματα — Υπερχείλισε και δεύτερο φράγμα', url: 'https://www.alphanews.live/cyprus/entyposiaki-roi-sta-fragmata-ti-edosan-oi-vroches-tou-triimerou-ypercheilise-kai-deftero-fragma/', lang: 'el', source: 'AlphaNews' },
   { title: 'Εκπληκτικό νέο για τα φράγματα: Η μεγαλύτερη εισροή της χρονιάς!', url: 'https://www.24sports.com.cy/gr/news/nea/koinonia/ekpliktiko-neo-gia-ta-fragmata-i-megalyteri-eisroi-tis-xronias', lang: 'el', source: '24Sports' },
   { title: 'Στο 26,7% η πληρότητα στα φράγματα — Υπερχείλισε το φράγμα του Ξυλιάτου', url: 'https://www.politis.com.cy/politis-news/cyprus/993983/gemisan-ta-fraghmata-alla-paramenei-i-anisikhia-ghia-to-kalokairi-analitika-oi-plirotites-ikhitiko', lang: 'el', source: 'Politis' },
   { title: 'ΤΑΥ: Σημαντικές εισροές αναμένονται αλλά είμαστε συγκρατημένοι', url: 'https://www.sigmalive.com/news/local/1307506/tau-simantikes-eisroes-anamenontai-sta-fraghmata-alla-imaste-sighkratimenoi', lang: 'el', source: 'SigmaLive' },

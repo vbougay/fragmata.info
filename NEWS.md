@@ -4,6 +4,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [March rains boost Cyprus' water reserves as dam inflows reach 12.3 million cubic meters](https://famagusta-gazette.com/march-rains-boost-cyprus-water-reserves-as-dam-inflows-reach-12-3-million-cubic-meters/) — Famagusta Gazette, Mar 2026
 - [One more Paphos dam overflows](https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows) — Cyprus Mail, Mar 28, 2026
 - [Rainfall helpful but Cyprus is far from water security, WDD official tells CNA](https://www.parikiaki.com/2026/03/rainfall-helpful-but-cyprus-is-far-from-water-security-wdd-official-tells-cna) — Parikiaki, Mar 25, 2026
 - [Rainfall offers limited relief, Cyprus water reserves at 27 per cent capacity](https://cyprus-mail.com/2026/03/23/rainfall-offers-limited-relief-as-cyprus-water-reserves-remain-under-strain) — Cyprus Mail, Mar 23, 2026
@@ -28,9 +29,10 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Greek
 
+- [Ξεπέρασε το 30% η πληρότητα φραγμάτων — 3ος καλύτερος Μάρτιος από το 1988](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-30-tis-ekato-i-sinoliki-plirotita-fragmaton-3os-kaliteros-martios-se-thema-eisroon-apo-to-1988/) — KitasWeather, Mar 2026
+- [Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο](https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/) — AlphaNews, Mar 2026
 - [Υψίστης σημασίας η κατασκευή φραγμάτων, λέει η Επίτροπος Περιβάλλοντος](https://www.taxidromos24.com/2026/03/28/%CF%85%CF%88%CE%AF%CF%83%CF%84%CE%B7%CF%82-%CF%83%CE%B7%CE%BC%CE%B1%CF%83%CE%AF%CE%B1%CF%82-%CF%84%CE%B1-%CF%86%CF%81%CE%AC%CE%B3%CE%BC%CE%B1%CF%84%CE%B1-%CF%83%CF%84%CE%B7%CE%BD-%CE%BA%CF%8D%CF%80/) — Taxidromos24, Mar 28, 2026
 - [Ξεπέρασε το 150% η μέση βροχόπτωση Μαρτίου — Αποτίμηση διαταραχής](https://kitasweather.com/news/fragmata-vroxoptosi/xeperase-to-150-h-vroxoptosi-martiou-apotimisi-diataraxis/) — KitasWeather, Mar 2026
-- [Εντυπωσιακή ροή στα φράγματα — Υπερχείλισε και δεύτερο φράγμα](https://www.alphanews.live/cyprus/entyposiaki-roi-sta-fragmata-ti-edosan-oi-vroches-tou-triimerou-ypercheilise-kai-deftero-fragma/) — AlphaNews, Mar 2026
 - [Εκπληκτικό νέο για τα φράγματα: Η μεγαλύτερη εισροή της χρονιάς!](https://www.24sports.com.cy/gr/news/nea/koinonia/ekpliktiko-neo-gia-ta-fragmata-i-megalyteri-eisroi-tis-xronias) — 24Sports, Mar 2026
 - [Στο 26,7% η πληρότητα στα φράγματα — Υπερχείλισε το φράγμα του Ξυλιάτου](https://www.politis.com.cy/politis-news/cyprus/993983/gemisan-ta-fraghmata-alla-paramenei-i-anisikhia-ghia-to-kalokairi-analitika-oi-plirotites-ikhitiko) — Politis, Mar 2026
 - [ΤΑΥ: Σημαντικές εισροές αναμένονται αλλά είμαστε συγκρατημένοι](https://www.sigmalive.com/news/local/1307506/tau-simantikes-eisroes-anamenontai-sta-fraghmata-alla-imaste-sighkratimenoi) — SigmaLive, Mar 2026
