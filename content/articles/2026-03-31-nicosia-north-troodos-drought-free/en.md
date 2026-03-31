@@ -17,7 +17,7 @@ Cyprus's water crisis is real — but it is not uniformly distributed. While the
 
 The transformation is most striking at **Xyliatos**: a year ago this dam sat at a bare 22.9%, holding just 0.328 mln. m³. It has since accumulated 1.41 mln. m³ of inflow — essentially refilling from near-empty to full in a single season. **Tamassos** is equally dramatic: it has leaped from 37.1% to 98.9%, nearly tripling its stored volume compared to the same date last year and expected to overflow any day.
 
-{{chart:heatmap location="xyliatos"}}
+{{chart:heatmap location="xyliatos" label="Xyliatos"}}
 
 ### Why the North Fills First
 
@@ -25,7 +25,7 @@ The geography of water in Cyprus is not symmetric. The northern slopes of the Tr
 
 The Solea valley (feeding Solea Dam), the Klirou basin, and the Kalopanagiotis headwaters sit at elevations of 600–1,200 m — high enough to benefit from orographic lift that dramatically increases precipitation over the northern Troodos. This winter's succession of rainfall events hit these catchments repeatedly and hard.
 
-{{chart:heatmap location="tamassos"}}
+{{chart:heatmap location="tamassos" label="Tamassos"}}
 
 ### What This Means for Nicosia
 
@@ -35,7 +35,7 @@ Full recharge dams mean the aquifer is being actively replenished. Even after su
 
 The two Nicosia district dams proper — Xyliatos and Kalopanagiotis — have a combined capacity of just 1.793 mln. m³, small compared to the southern giants. But their overflow signals something important: the entire north Troodos catchment has had more water than it can hold. That excess is now in the rivers, in the soil, and in the groundwater.
 
-{{chart:heatmap location="kalopanagiotis"}}
+{{chart:heatmap location="kalopanagiotis" label="Kalopanagiotis"}}
 
 ### The Two-Speed Island
 

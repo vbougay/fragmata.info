@@ -32,9 +32,10 @@ interface HistoricalHeatmapProps {
   filterDamKey?: keyof HistoricalStorageEntry;
   sparklineData?: SparklineDataPoint[];
   linkHref?: string;
+  label?: string;
 }
 
-const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, filterDamKey, sparklineData, linkHref }) => {
+const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, filterDamKey, sparklineData, linkHref, label }) => {
   const { language } = useLanguage();
   const t = useTranslation(language);
   const { theme } = useTheme();
@@ -195,11 +196,11 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
             <BarChart3 className="h-5 w-5 text-water-500 dark:text-water-400" />
             {linkHref ? (
               <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
-                {filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')}
+                {filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')}{label && ` — ${label}`}
                 <ExternalLink className="h-3.5 w-3.5 opacity-50" />
               </Link>
             ) : (
-              filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')
+              <>{filterDamKey ? t('historicalLevelsSingle') : t('historicalLevels')}{label && ` — ${label}`}</>
             )}
           </CardTitle>
           <div className="flex items-center gap-2 text-[10px] text-gray-500 dark:text-gray-400">

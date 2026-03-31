@@ -9,6 +9,7 @@ interface HistoricalHeatmapWrapperProps {
   filterDamKey?: keyof HistoricalStorageEntry;
   sparklineData?: SparklineDataPoint[];
   linkHref?: string;
+  label?: string;
 }
 
 // Renders a placeholder during SSR and on initial client render, then lazily

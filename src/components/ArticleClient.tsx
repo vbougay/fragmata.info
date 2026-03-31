@@ -103,7 +103,7 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
           <StorageForecast selectionId={damKey || regionName || location || "all"} linkHref={linkHref} />
         )}
         {type === "heatmap" && (
-          <HeatmapEmbed damKey={damKey} damName={damInfo?.name} regionName={regionName} dataSetId={dataSetId} linkHref={linkHref} />
+          <HeatmapEmbed damKey={damKey} damName={damInfo?.name} regionName={regionName} dataSetId={dataSetId} linkHref={linkHref} label={attrs.label} />
         )}
         {type === "dam-card" && damInfo && (
           <DamCardEmbed damName={damInfo.name} dataSetId={dataSetId} />
@@ -124,12 +124,13 @@ function DamCardEmbed({ damName, dataSetId }: { damName: string; dataSetId: stri
   return <ReservoirCard reservoir={reservoir} />;
 }
 
-function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref }: {
+function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref, label }: {
   damKey?: string;
   damName?: string;
   regionName?: string;
   dataSetId: string;
   linkHref?: string;
+  label?: string;
 }) {
   const sparklineData = useMemo(() => {
     if (!damName) return undefined;
@@ -145,6 +146,7 @@ function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref }: {
       filterRegion={!damKey && regionName ? regionName : undefined}
       sparklineData={sparklineData}
       linkHref={linkHref}
+      label={label}
     />
   );
 }
