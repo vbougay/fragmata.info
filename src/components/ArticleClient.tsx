@@ -171,7 +171,7 @@ export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, n
   const { language } = useLanguage();
   const t = useTranslation(language);
   const localePath = (path: string) =>
-    language === defaultLocale ? (path || "/") : `/${language}${path}`;
+    language === defaultLocale ? (path || "/") : `/${language}${path === "/" ? "" : path}`;
 
   const segments = useMemo(() => splitMarkdown(markdown), [markdown]);
 
@@ -264,7 +264,7 @@ export function ArticleListClient({ articles }: ArticleListClientProps) {
   const { language } = useLanguage();
   const t = useTranslation(language);
   const localePath = (path: string) =>
-    language === defaultLocale ? (path || "/") : `/${language}${path}`;
+    language === defaultLocale ? (path || "/") : `/${language}${path === "/" ? "" : path}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 mesh-background transition-colors duration-300">

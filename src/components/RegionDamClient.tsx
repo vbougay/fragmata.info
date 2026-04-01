@@ -176,7 +176,7 @@ export function RegionDamClient({
 
   // Breadcrumb data for dam pages
   const localePath = (path: string) =>
-    language === defaultLocale ? (path || '/') : `/${language}${path}`;
+    language === defaultLocale ? (path || '/') : `/${language}${path === '/' ? '' : path}`;
 
   const regionSlug = damSlug ? getRegionSlugForDam(damSlug) : undefined;
   const breadcrumbRegionName = regionSlug ? REGION_SLUG_MAP[regionSlug] : undefined;
