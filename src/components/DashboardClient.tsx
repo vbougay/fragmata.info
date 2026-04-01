@@ -109,8 +109,8 @@ export function DashboardClient({
           const latest = getLatestPublishedArticle();
           if (!latest) return null;
           const href = language === defaultLocale
-            ? `/articles/${latest.slug}/`
-            : `/${language}/articles/${latest.slug}/`;
+            ? `/articles/${latest.slug}`
+            : `/${language}/articles/${latest.slug}`;
           return (
             <Link
               href={href}

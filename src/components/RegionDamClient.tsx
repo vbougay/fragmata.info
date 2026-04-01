@@ -199,7 +199,7 @@ export function RegionDamClient({
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href={localePath(`/region/${regionSlug}/`)}>{translatedRegionName}</BreadcrumbLink>
+                <BreadcrumbLink href={localePath(`/region/${regionSlug}`)}>{translatedRegionName}</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
@@ -291,8 +291,8 @@ export function RegionDamClient({
 
   if (mediaMode) {
     const closeHref = localePath(
-      type === 'dam' && damSlug ? `/dam/${damSlug}/`
-        : type === 'region' && regionSlug ? `/region/${regionSlug}/`
+      type === 'dam' && damSlug ? `/dam/${damSlug}`
+        : type === 'region' && regionSlug ? `/region/${regionSlug}`
         : '/'
     );
     return (

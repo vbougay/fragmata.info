@@ -74,7 +74,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             return (
               <div key={regionSlug}>
                 <Link
-                  href={localePath(language, `/region/${regionSlug}/`)}
+                  href={localePath(language, `/region/${regionSlug}`)}
                   className="font-semibold text-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors"
                 >
                   {t(regionKey as any)}
@@ -90,7 +90,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
                           style={{ backgroundColor: levelColor(damLevels[dam.name] ?? 0) }}
                         />
                         <Link
-                          href={localePath(language, `/dam/${damSlug}/`)}
+                          href={localePath(language, `/dam/${damSlug}`)}
                           className="text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors"
                         >
                           {t(dam.name as any) || dam.name}

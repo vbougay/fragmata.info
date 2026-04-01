@@ -5,7 +5,7 @@ import type { Locale } from "@/utils/locale";
 const siteUrl = "https://fragmata.info";
 
 function localeUrl(locale: Locale) {
-  return locale === "en" ? `${siteUrl}/` : `${siteUrl}/${locale}/`;
+  return locale === "en" ? siteUrl : `${siteUrl}/${locale}`;
 }
 
 const homeMeta: Record<

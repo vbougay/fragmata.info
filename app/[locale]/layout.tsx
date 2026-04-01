@@ -101,7 +101,7 @@ const meta: Record<Locale, LocaleMeta> = {
 };
 
 function localeUrl(locale: Locale, path = "") {
-  return locale === "en" ? `${siteUrl}${path}/` : `${siteUrl}/${locale}${path}/`;
+  return locale === "en" ? `${siteUrl}${path}` : `${siteUrl}/${locale}${path}`;
 }
 
 export function generateStaticParams() {

@@ -38,7 +38,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
             const slug = getDamSlug(name);
             const translatedName = translations[language][name as keyof typeof translations.en] || name;
             const href = slug
-              ? (language === 'en' ? `/dam/${slug}/` : `/${language}/dam/${slug}/`)
+              ? (language === 'en' ? `/dam/${slug}` : `/${language}/dam/${slug}`)
               : undefined;
             return href ? (
               <Link href={href} className="font-medium text-lg text-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors">

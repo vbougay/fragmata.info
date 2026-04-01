@@ -9,15 +9,15 @@ const locales = ["en", "el", "ru"] as const;
 
 function localeUrl(locale: string, path: string) {
   return locale === "en"
-    ? `${siteUrl}${path}/`
-    : `${siteUrl}/${locale}${path}/`;
+    ? `${siteUrl}${path}`
+    : `${siteUrl}/${locale}${path}`;
 }
 
 function makeEntry(path: string, priority: number): MetadataRoute.Sitemap {
   return locales.map((locale) => ({
     url: localeUrl(locale, path),
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
+    changeFrequency: "daily" as const,
     priority,
     alternates: {
       languages: Object.fromEntries([
