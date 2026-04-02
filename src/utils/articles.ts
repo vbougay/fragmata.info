@@ -28,11 +28,10 @@ export const ARTICLES: ArticleMeta[] = [
     },
   },
   {
-    slug: '2026-04-09-kalavasos-southern-conveyor',
-    date: '2026-04-09',
-    dataSetId: '23-MAR-2026',
+    slug: '2026-04-03-kalavasos-southern-conveyor',
+    date: '2026-04-03',
+    dataSetId: '02-APR-2026',
     author: 'Vladimir Bugay',
-    hidden: true,
     title: {
       en: 'Why Kalavasos Dam Drops When It Rains: The Southern Conveyor Explained',
       el: 'Γιατί το Φράγμα Καλαβασού Πέφτει Ενώ Βρέχει: Εξήγηση του Νότιου Αγωγού',

@@ -1,4 +1,4 @@
-**A Fragmata reader noticed something strange: Kalavasos Dam is at 8%, and even after rainfall the water level keeps falling. Could there be a leak? The real explanation is more interesting — and more concerning — than a simple hole in the wall.**
+**A Fragmata reader noticed something strange: Kalavasos Dam is at 12%, and even after rainfall the water level keeps falling. Could there be a leak? The real explanation is more interesting — and more concerning — than a simple hole in the wall.**
 
 ---
 
@@ -14,9 +14,9 @@ A [March 2025 WDD strategy document](https://talanews.blogspot.com/2025/03/water
 
 Water from Kalavasos flows through the **Southern Conveyor** — a 110 km pipeline running along Cyprus's south coast — to the [Tersefanou Water Treatment Plant](https://www.moa.gov.cy/moa/wdd/wdd.nsf/All/CE95C7BDDB6F4527C2258385002E00A9/$file/Water%20Treatment%20and%20Desalination%20Plants.pdf?OpenElement=), which can process 60,000–90,000 m³/day. From there, treated water goes to three districts: Larnaca and Famagusta directly, plus a 36.5 km pumped pipeline north to Nicosia. This extraction runs continuously — domestic supply is 24/7, year-round, regardless of weather.
 
-At peak throughput, Tersefanou alone could draw **2.7 MCM per month** from the combined dam system. Kalavasos currently holds about **1.3 MCM** at 8% capacity. Even a fraction of daily demand visibly lowers the level between one reading and the next. That afternoon rain shower you saw from your balcony? It probably added a few hundred cubic metres. The pipeline extracted tens of thousands overnight.
+At peak throughput, Tersefanou alone could draw **2.7 MCM per month** from the combined dam system. Kalavasos currently holds about **2.0 MCM** at 12% capacity. Even a fraction of daily demand visibly lowers the level between one reading and the next. That afternoon rain shower you saw from your balcony? It probably added a few hundred cubic metres. The pipeline extracted tens of thousands overnight.
 
-This is why the three Southern Conveyor terminal dams are the worst performers on the island: Achna at 1.8%, [Germasoyeia at 3.3%, Kalavasos at 8%](https://en.politis.com.cy/economy/economy-hot-spot/986036/water-levels-in-cyprus-reservoirs-at-138-half-of-last-years-count). They're being emptied by design.
+This is why the Southern Conveyor's terminal dams have been the hardest hit: earlier this season [Achna fell to 1.8%, Germasoyeia to 3.3%, and Kalavasos to 8%](https://en.politis.com.cy/economy/economy-hot-spot/986036/water-levels-in-cyprus-reservoirs-at-138-half-of-last-years-count). March rains have since lifted Germasoyeia to 35.5%, but Achna (2.1%) and Kalavasos (11.9%) remain critically low. They're being emptied by design.
 
 ### What the Southern Conveyor actually is
 
@@ -38,7 +38,7 @@ WDD Senior Technical Engineer Marios Hadjicostis [put it plainly](https://cyprus
 
 Open-water evaporation in southern Cyprus runs [approximately 1,800–2,000 mm per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). That means any open reservoir loses nearly 2 metres of depth annually — just to the atmosphere.
 
-At Kalavasos's current low level, the geometry is punishing: the surface-area-to-volume ratio worsens as the water drops, meaning evaporation consumes a proportionally larger share. At ~8% capacity, annual evaporation losses amount to roughly **30% of stored volume**. Southern Conveyor reservoirs collectively lose [6.9 MCM per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8) to evaporation. The WDD studied suppression measures — floating covers, shade structures — but never implemented them.
+At Kalavasos's current low level, the geometry is punishing: the surface-area-to-volume ratio worsens as the water drops, meaning evaporation consumes a proportionally larger share. At ~12% capacity, annual evaporation losses amount to roughly **25% of stored volume**. Southern Conveyor reservoirs collectively lose [6.9 MCM per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8) to evaporation. The WDD studied suppression measures — floating covers, shade structures — but never implemented them.
 
 ### So is there a leak?
 
@@ -68,7 +68,7 @@ The decline you're watching on Fragmata isn't a mystery. It's the sum of:
 
 1. **Deliberate extraction** by the WDD to supply three districts — the dominant factor
 2. **Minimal drought runoff** from a small, low-elevation catchment with desiccated soils
-3. **Evaporation** consuming ~30% of remaining stored volume annually
+3. **Evaporation** consuming ~25% of remaining stored volume annually
 4. **15%+ system losses** in the Southern Conveyor that nobody has re-measured since 2013
 5. **Confirmed but unspecified mechanical problems** that could include seepage
 
@@ -78,7 +78,7 @@ Could there also be an undetected leak through the dam body or foundation? Given
 
 The dam increasingly functions not as a long-term reservoir but as a **flow-through node** — a temporary holding point for water on its way to treatment plants and taps. That's the reality of Cyprus water management in 2026: desalination is the backbone, and dams are becoming supplementary buffers rather than primary supply. The [€1.17 billion national investment plan](https://cyprus-mail.com/2025/10/31/cyprus-to-rely-entirely-on-desalinated-water) targeting 100% desalination coverage of domestic needs reflects exactly this shift.
 
-As of late March 2026, [heavy rainfall has lifted total reserves to 27.7%](https://cyprus-mail.com/2026/03/23/rainfall-offers-limited-relief-as-cyprus-water-reserves-remain-under-strain) — the first time this year they've exceeded the prior year's level. But officials [maintain all restrictions](https://cyprus-mail.com/2026/03/21/heavy-rainfall-welcome-but-warnings-over-water-usage-remain) and warn against complacency. Keep watching the numbers.
+As of 2 April 2026, total reserves stand at 32.2% — well above last year's 24.2% — after [heavy March rainfall](https://cyprus-mail.com/2026/03/23/rainfall-offers-limited-relief-as-cyprus-water-reserves-remain-under-strain) exceeded the prior year's level for the first time this season. But officials [maintain all restrictions](https://cyprus-mail.com/2026/03/21/heavy-rainfall-welcome-but-warnings-over-water-usage-remain) and warn against complacency. Keep watching the numbers.
 
 ---
 
