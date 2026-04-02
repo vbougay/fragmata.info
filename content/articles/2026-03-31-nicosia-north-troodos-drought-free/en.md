@@ -1,21 +1,21 @@
-**Five dams north of the Troodos mountains are full or nearly so. As the island debates water restrictions, Nicosia's mountain reservoirs have quietly recorded one of their best seasons in a decade — Xyliatos, Kalopanagiotis, Klirou-Malounta, and Solea are overflowing, with Tamassos at 98.9% and expected to join them.**
+**Five dams north of the Troodos mountains are full. As the island debates water restrictions, Nicosia's mountain reservoirs have quietly recorded one of their best seasons in a decade — Xyliatos, Kalopanagiotis, Klirou-Malounta, Solea, and Tamassos are all overflowing.**
 
 ---
 
-Cyprus's water crisis is real — but it is not uniformly distributed. While the southern coast remains gripped by shortage and Achna sits at 2%, a different story is playing out in the hills north of Troodos. As of 31 March 2026, four of five dams serving Nicosia and the island's groundwater recharge network are at **100% capacity**, with Tamassos at 98.9%. For this region, the drought is over.
+Cyprus's water crisis is real — but it is not uniformly distributed. While the southern coast remains gripped by shortage and Achna sits at 2%, a different story is playing out in the hills north of Troodos. As of 2 April 2026, all five dams serving Nicosia and the island's groundwater recharge network are at **100% capacity**. For this region, the drought is over.
 
 ### The Five Dams: Where They Stand
 
-| Dam | Capacity (mln. m³) | 31 March 2026 | Last Year (31 March) |
+| Dam | Capacity (mln. m³) | 2 April 2026 | Last Year (2 April) |
 |-----|------------------|---------------|----------------------|
-| Xyliatos | 1.430 | **100.0%** *(overflowing)* | 22.9% |
+| Xyliatos | 1.430 | **100.0%** *(overflowing)* | 22.8% |
 | Kalopanagiotis | 0.363 | **100.0%** *(overflowing)* | 86.8% |
 | Klirou-Malounta | 2.000 | **100.0%** *(overflowing)* | 73.6% |
-| Solea | 4.454 | **100.0%** *(overflowing)* | 67.0% |
-| Tamassos | 2.800 | **98.9%** | 37.1% |
-| **Total** | **11.047** | **~99.7%** | **~56%** |
+| Solea | 4.454 | **100.0%** *(overflowing)* | 66.8% |
+| Tamassos | 2.800 | **100.0%** *(overflowing)* | 37.1% |
+| **Total** | **11.047** | **100%** | **~56%** |
 
-The transformation is most striking at **Xyliatos**: a year ago this dam sat at a bare 22.9%, holding just 0.328 mln. m³. It has since accumulated 1.41 mln. m³ of inflow — essentially refilling from near-empty to full in a single season. **Tamassos** is equally dramatic: it has leaped from 37.1% to 98.9%, nearly tripling its stored volume compared to the same date last year and expected to overflow any day.
+The transformation is most striking at **Xyliatos**: a year ago this dam sat at a bare 22.8%, holding just 0.326 mln. m³. It has since accumulated 1.41 mln. m³ of inflow — essentially refilling from near-empty to full in a single season. **Tamassos** is equally dramatic: it has leaped from 37.1% to 100.0%, nearly tripling its stored volume compared to the same date last year and now overflowing.
 
 {{chart:heatmap location="xyliatos" label="Xyliatos"}}
 
@@ -39,15 +39,15 @@ The two Nicosia district dams proper — Xyliatos and Kalopanagiotis — have a 
 
 ### The Two-Speed Island
 
-The contrast with the south is stark. As of 31 March:
+The contrast with the south is stark. As of 2 April:
 
 - **Achna** — 2.1% (zero inflow all season; entirely desalination-dependent)
-- **Kalavasos** — ~11% (being deliberately drained by the Southern Conveyor)
-- **Lefkara** — well below last year's levels
+- **Kalavasos** — ~12% (being deliberately drained by the Southern Conveyor)
+- **Lefkara** — 14%, well below last year's levels
 
-The island's 10% water supply cut remains island-wide, and rightfully so — Limassol, Larnaca, and Famagusta remain vulnerable. But the narrative of uniform drought no longer holds. Cyprus in late March 2026 is a tale of two water systems: a recovering north and a still-stressed south. Desalination continues to carry the south, buying time. The north is buying itself a cushion.
+The island's 10% water supply cut remains island-wide, and rightfully so — Limassol, Larnaca, and Famagusta remain vulnerable. But the narrative of uniform drought no longer holds. Cyprus in early April 2026 is a tale of two water systems: a recovering north and a still-stressed south. Desalination continues to carry the south, buying time. The north is buying itself a cushion.
 
 ---
 
 *Author: Vladimir Bugay, Fragmata developer*
-*Data: Cyprus Water Development Department, report of 31 March 2026. Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
+*Data: Cyprus Water Development Department, report of 2 April 2026. Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
