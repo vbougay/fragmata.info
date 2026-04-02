@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 2025 — Mar 2026).
+Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 2025 — Apr 2026).
 
 ## English
 
@@ -11,10 +11,9 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 - [Heavy rainfall welcome, but warnings over water usage remain](https://cyprus-mail.com/2026/03/21/heavy-rainfall-welcome-but-warnings-over-water-usage-remain) — Cyprus Mail, Mar 21, 2026
 - [Cyprus positions water security at core of EU resilience strategy](https://cyprus-mail.com/2026/03/20/cyprus-positions-water-security-at-core-of-eu-resilience-strategy) — Cyprus Mail, Mar 20, 2026
 - [Rain boosts reservoirs but Cyprus still faces water risk, official warns](https://en.politis.com.cy/social-lens/social-lens-nature/994169/rain-boosts-reservoirs-but-cyprus-still-faces-water-risk-official-warns) — Politis, Mar 2026
-- [Cyprus dam water levels rise after rainfall](https://en.sigmalive.com/cyprus-dam-water-levels-rise-after-rainfall/) — Sigmalive, Mar 2026
 - [Rotational water cuts continue in Larnaca due to desalination issues](https://cyprus-mail.com/2026/03/18/rotational-water-cuts-continue-in-larnaca-due-to-desalination-issues) — Cyprus Mail, Mar 18, 2026
 - [Water levels in Cyprus dams better than last year](https://www.stockwatch.com.cy/en/news/water-levels-in-cyprus-dams-better-than-last-year) — StockWatch, Mar 2026
-- [Heavy rain a welcome boost to water reserves](https://cyprus-mail.com/2026/03/16/heavy-rain-a-welcome-boost-to-water-reserves) — Cyprus Mail, Mar 16, 2026
+- [Cyprus Lawmakers Demand Answers on Water Loss, Dam Safety, and Drought Strategy](https://famagusta-gazette.com/cyprus-lawmakers-demand-answers-on-water-loss-dam-safety-and-drought-strategy/) — Famagusta Gazette, Mar 2026
 ## Russian
 
 - [Третья дамба переполнилась в Пафосе](https://lenta.cy/tretja-damba-perepolnilas-v-pafose/) — Lenta.cy, Mar 28, 2026
@@ -38,5 +37,5 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 - [ΤΑΥ: Σημαντικές εισροές αναμένονται αλλά είμαστε συγκρατημένοι](https://www.sigmalive.com/news/local/1307506/tau-simantikes-eisroes-anamenontai-sta-fraghmata-alla-imaste-sighkratimenoi) — SigmaLive, Mar 2026
 - [Δεν γεμίζουν τα φράγματα σε Λάρνακα και Αμμόχωστο παρά τις βροχές](https://www.politis.com.cy/cyprus/perivallon/994164/den-ghemizoyn-ta-fraghmata-se-larnaka-kai-ammokhosto-para-tis-vrokhes) — Politis, Mar 2026
 - [Αισιόδοξο το ΤΑΥ για καλές εισροές ως τέλος Μαρτίου](https://cyprustimes.com/koinonia/aisiodoxo-to-taf-gia-kales-eisroes-os-telos-martiou-se-kalyteri-moira-apo-persi/) — CyprusTimes, Mar 2026
-- [Αισιόδοξο το ΤΑΥ για εισροές — «Σε καλύτερη μοίρα από πέρσι»](https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi) — SigmaLive, Mar 2026
-- [«Ανάσα» για τα φράγματα μετά την κακοκαιρία](https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas) — 24Sports, Mar 2026
+- [«Ξεχείλισε» και το φράγμα της Αγίας Μαρίνας Χρυσοχούς — Το τρίτο στην περιοχή](https://new.cyprusnews.eu/tothemaonline/xecheilise-kai-to-fragma-tis-agias-marinas-chrysochous-to-trito-stin-periochi-pou-ftanei-sto-100/) — CyprusNews, Mar 2026
+- [Καλά νέα... υπερχείλισαν τα φράγματα Κλήρου και Πωμού](https://www.alphanews.live/cyprus/kala-nea-ypercheilisan-ta-fragmata-klirou-kai-pomou-entyposiakes-eikones/) — AlphaNews, Mar 2026

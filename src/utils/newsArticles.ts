@@ -18,7 +18,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Rain boosts reservoirs but Cyprus still faces water risk, official warns', url: 'https://en.politis.com.cy/social-lens/social-lens-nature/994169/rain-boosts-reservoirs-but-cyprus-still-faces-water-risk-official-warns', lang: 'en', source: 'Politis' },
   { title: 'Rotational water cuts continue in Larnaca due to desalination issues', url: 'https://cyprus-mail.com/2026/03/18/rotational-water-cuts-continue-in-larnaca-due-to-desalination-issues', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Water levels in Cyprus dams better than last year', url: 'https://www.stockwatch.com.cy/en/news/water-levels-in-cyprus-dams-better-than-last-year', lang: 'en', source: 'StockWatch' },
-  { title: 'Heavy rain a welcome boost to water reserves', url: 'https://cyprus-mail.com/2026/03/16/heavy-rain-a-welcome-boost-to-water-reserves', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Cyprus Lawmakers Demand Answers on Water Loss, Dam Safety, and Drought Strategy', url: 'https://famagusta-gazette.com/cyprus-lawmakers-demand-answers-on-water-loss-dam-safety-and-drought-strategy/', lang: 'en', source: 'Famagusta Gazette' },
 
   // Russian
   { title: 'Третья дамба переполнилась в Пафосе', url: 'https://lenta.cy/tretja-damba-perepolnilas-v-pafose/', lang: 'ru', source: 'Lenta.cy' },
@@ -41,6 +41,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'ΤΑΥ: Σημαντικές εισροές αναμένονται αλλά είμαστε συγκρατημένοι', url: 'https://www.sigmalive.com/news/local/1307506/tau-simantikes-eisroes-anamenontai-sta-fraghmata-alla-imaste-sighkratimenoi', lang: 'el', source: 'SigmaLive' },
   { title: 'Δεν γεμίζουν τα φράγματα σε Λάρνακα και Αμμόχωστο παρά τις βροχές', url: 'https://www.politis.com.cy/cyprus/perivallon/994164/den-ghemizoyn-ta-fraghmata-se-larnaka-kai-ammokhosto-para-tis-vrokhes', lang: 'el', source: 'Politis' },
   { title: 'Αισιόδοξο το ΤΑΥ για καλές εισροές ως τέλος Μαρτίου', url: 'https://cyprustimes.com/koinonia/aisiodoxo-to-taf-gia-kales-eisroes-os-telos-martiou-se-kalyteri-moira-apo-persi/', lang: 'el', source: 'CyprusTimes' },
-  { title: 'Αισιόδοξο το ΤΑΥ για εισροές — «Σε καλύτερη μοίρα από πέρσι»', url: 'https://www.sigmalive.com/news/local/1306896/aisiodokso-to-tau-ghia-eisroes-sta-fraghmata-se-kalyteri-mira-apo-persi', lang: 'el', source: 'SigmaLive' },
-  { title: '«Ανάσα» για τα φράγματα μετά την κακοκαιρία', url: 'https://www.24sports.com.cy/gr/news/nea/koinonia/anasa-gia-ta-fragmata-meta-tin-kakokairia-pinakas', lang: 'el', source: '24Sports' },
+  { title: '«Ξεχείλισε» και το φράγμα της Αγίας Μαρίνας Χρυσοχούς — Το τρίτο στην περιοχή', url: 'https://new.cyprusnews.eu/tothemaonline/xecheilise-kai-to-fragma-tis-agias-marinas-chrysochous-to-trito-stin-periochi-pou-ftanei-sto-100/', lang: 'el', source: 'CyprusNews' },
+  { title: 'Καλά νέα... υπερχείλισαν τα φράγματα Κλήρου και Πωμού', url: 'https://www.alphanews.live/cyprus/kala-nea-ypercheilisan-ta-fragmata-klirou-kai-pomou-entyposiakes-eikones/', lang: 'el', source: 'AlphaNews' },
 ];
