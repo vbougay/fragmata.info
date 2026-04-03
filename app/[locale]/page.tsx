@@ -100,57 +100,55 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Fragmata",
-            alternateName: m.alternateName,
-            description: m.description,
-            url: localeUrl(locale as Locale),
-            applicationCategory: "UtilitiesApplication",
-            operatingSystem: "Any",
-            inLanguage: locale,
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "EUR",
-            },
-            about: {
-              "@type": "Dataset",
-              name: m.datasetName,
-              description: m.datasetDescription,
-              spatialCoverage: {
-                "@type": "Place",
-                name: "Cyprus",
-              },
-              temporalCoverage: "2025/..",
-              creator: {
-                "@type": "Organization",
-                name: "Cyprus Water Development Department",
-                url: "https://www.moa.gov.cy/moa/wdd/",
-              },
-              provider: {
-                "@type": "Organization",
+            "@graph": [
+              {
+                "@type": "WebApplication",
                 name: "Fragmata",
-                url: "https://fragmata.info",
+                alternateName: m.alternateName,
+                description: m.description,
+                url: localeUrl(locale as Locale),
+                applicationCategory: "UtilitiesApplication",
+                operatingSystem: "Any",
+                inLanguage: locale,
+                offers: {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "EUR",
+                },
+                about: {
+                  "@type": "Dataset",
+                  name: m.datasetName,
+                  description: m.datasetDescription,
+                  spatialCoverage: {
+                    "@type": "Place",
+                    name: "Cyprus",
+                  },
+                  temporalCoverage: "2025/..",
+                  creator: {
+                    "@type": "Organization",
+                    name: "Cyprus Water Development Department",
+                    url: "https://www.moa.gov.cy/moa/wdd/",
+                  },
+                  provider: {
+                    "@type": "Organization",
+                    name: "Fragmata",
+                    url: "https://fragmata.info",
+                  },
+                  license: "https://creativecommons.org/licenses/by/4.0/",
+                },
               },
-              license: "https://creativecommons.org/licenses/by/4.0/",
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: m.faq.map((item) => ({
-              "@type": "Question",
-              name: item.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
+              {
+                "@type": "FAQPage",
+                mainEntity: m.faq.map((item) => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: item.answer,
+                  },
+                })),
               },
-            })),
+            ],
           }),
         }}
       />
