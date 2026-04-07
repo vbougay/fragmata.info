@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-04-07-100mcm-milestone',
+    date: '2026-04-07',
+    dataSetId: '07-APR-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: '100 Million Cubic Metres: Cyprus Reservoirs Cross a Milestone for the First Time in 20 Months',
+      el: '100 Εκατομμύρια Κυβικά Μέτρα: Τα Φράγματα Κύπρου Ξεπερνούν Ορόσημο για Πρώτη Φορά σε 20 Μήνες',
+      ru: '100 миллионов кубометров: водохранилища Кипра преодолели рубеж впервые за 20 месяцев',
+    },
+    description: {
+      en: 'Total storage in Cyprus\'s 18 main dams crossed 100 MCM on 7 April 2026 — the first time since August 2024. A season that began at 27 MCM has delivered a remarkable recovery.',
+      el: 'Η συνολική αποθήκευση στα 18 κύρια φράγματα Κύπρου ξεπέρασε τα 100 ΕΚΜ στις 7 Απριλίου 2026 — για πρώτη φορά από τον Αύγουστο 2024. Μια σεζόν που ξεκίνησε στα 27 ΕΚΜ απέδωσε αξιοσημείωτη ανάκαμψη.',
+      ru: 'Суммарный запас 18 основных дамб Кипра превысил 100 МКМ 7 апреля 2026 года — впервые с августа 2024. Сезон, начавшийся на 27 МКМ, принёс впечатляющее восстановление.',
+    },
+  },
+  {
     slug: '2026-03-31-nicosia-north-troodos-drought-free',
     date: '2026-03-31',
     dataSetId: '30-MAR-2026',
