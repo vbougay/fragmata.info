@@ -24,11 +24,11 @@ The government also plans a **replacement Dhekelia plant** with expanded capacit
 
 ### So what is Achna Dam actually for?
 
-Achna Dam sits at roughly **1.8% of its 6.8 MCM capacity** — about 122,000 m³ of water in a reservoir designed for nearly 7 million. But it was never meant to supply drinking water.
+Achna Dam sits at roughly **1.8% of its 6.8 mln. m³ capacity** — about 122,000 m³ of water in a reservoir designed for nearly 7 million. But it was never meant to supply drinking water.
 
 Built in 1987–88 as the [eastern terminal of the Southern Conveyor Project](https://www.ice.org.uk/what-is-civil-engineering/infrastructure-projects/cyprus-southern-conveyor-project), Achna is a holding tank. Its job is to receive water pumped 110 km through the Southern Conveyor from Kouris Dam in the Troodos mountains, then distribute it to the [Kokkinochoria irrigation network](https://www.cyprusisland.net/cyprus-dams/achna-dam) — the lifeblood of the region's famous potato farms. The dam sits on the flat, arid Mesaoria plain and has virtually no natural catchment of its own. It doesn't collect rainwater in any meaningful sense; it stores water that arrives through a pipe.
 
-With Kouris Dam at just 12.3% of its 115 MCM capacity and the entire Southern Conveyor system holding far less than the 48 MCM needed to avoid irrigation cutbacks, there is simply no surplus to send to Achna. Adding insult to injury, in February 2024 [liquid waste from a nearby livestock farm seeped into the dam](https://cyprus-mail.com/2024/02/27/irrigation-water-banned-from-achna-dam-after-waste-contamination-fears/), temporarily banning irrigation use of its remaining water.
+With Kouris Dam at just 12.3% of its 115 mln. m³ capacity and the entire Southern Conveyor system holding far less than the 48 mln. m³ needed to avoid irrigation cutbacks, there is simply no surplus to send to Achna. Adding insult to injury, in February 2024 [liquid waste from a nearby livestock farm seeped into the dam](https://cyprus-mail.com/2024/02/27/irrigation-water-banned-from-achna-dam-after-waste-contamination-fears/), temporarily banning irrigation use of its remaining water.
 
 {{chart:heatmap location="achna"}}
 
@@ -36,7 +36,7 @@ With Kouris Dam at just 12.3% of its 115 MCM capacity and the entire Southern Co
 
 ### The aquifer beneath your feet is mostly gone
 
-Before the dams and desalination plants, the Famagusta coast relied on groundwater. The aquifer beneath the Kokkinochoria ("Red Villages") once sustained the region's agriculture, but it's now [roughly 85% depleted](http://environ.chemeng.ntua.gr/wsm/Newsletters/Issue3/Cyprus.htm). Decades of over-extraction since the 1960s drew out over 350 MCM more than natural recharge could replace. Water levels within 2 km of the coast dropped to 50 metres below sea level. The most productive sections — beneath Ormidhia, Xylophagou, Liopetri and Frenaros — were abandoned due to seawater intrusion as early as the 1980s. Nitrate contamination from intensive potato farming compounds the problem.
+Before the dams and desalination plants, the Famagusta coast relied on groundwater. The aquifer beneath the Kokkinochoria ("Red Villages") once sustained the region's agriculture, but it's now [roughly 85% depleted](http://environ.chemeng.ntua.gr/wsm/Newsletters/Issue3/Cyprus.htm). Decades of over-extraction since the 1960s drew out over 350 mln. m³ more than natural recharge could replace. Water levels within 2 km of the coast dropped to 50 metres below sea level. The most productive sections — beneath Ormidhia, Xylophagou, Liopetri and Frenaros — were abandoned due to seawater intrusion as early as the 1980s. Nitrate contamination from intensive potato farming compounds the problem.
 
 Local boreholes still exist as emergency backup — residents report that Ayia Napa draws from boreholes when desalination plants go offline — but this groundwater is increasingly saline and unreliable.
 
