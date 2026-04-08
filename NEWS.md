@@ -4,6 +4,8 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [Dam levels improve but water caution urged](https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged) — Cyprus Mail, Apr 6, 2026
+- [Cyprus dams 33.9% full, better than last year but not quite satisfactory](https://www.cbn.com.cy/article/127740/cyprus-dams-33-9-full-better-than-last-year-but-not-quite-satisfactory-water-development-department-chief-engineer-says) — CBN, Apr 6, 2026
 - [Mobile desalination unit in full operation at Limassol port](https://cyprus-mail.com/2026/04/05/mobile-desalination-unit-in-full-operation-at-limassol-port) — Cyprus Mail, Apr 5, 2026
 - [Tamassos Dam overflows as reservoir levels reach 32.2% across Cyprus](https://en.politis.com.cy/economy/economy-hot-spot/996009/tamassos-dam-overflows-as-reservoir-levels-reach-322-across-cyprus) — Politis, Apr 2, 2026
 - [Amount of water in Cyprus' reservoirs nears 100m cubic metres](https://cyprus-mail.com/2026/04/02/amount-of-water-in-cyprus-reservoirs-nears-100m-cubic-metres) — Cyprus Mail, Apr 2, 2026
@@ -29,6 +31,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Greek
 
+- [Ξεπέρασαν τα 100 ΕΚΜ τα αποθέματα — συνεχίζουν εισροές Απριλίου](https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-100-ekm-ta-sinolika-apothemata-nerou-sta-fragmata-sinexizoun-simantikes-eisroes-gia-mina-aprilio/) — KitasWeather, Apr 2026
 - [Ελαφρώς πάνω του 1 ΕΚΜ οι εισροές νερού στα φράγματα](https://kitasweather.com/news/fragmata-vroxoptosi/elafros-pano-tou-1-ekm-oi-eisroes-nerou-sta-fragmata-kai-afto-to-24oro-plirotita-fragmaton/) — KitasWeather, Apr 3, 2026
 - [Ευεργετικές βροχοπτώσεις έφερε ο «Erminio» — 1,9 εκ. κυβικά νερού στα φράγματα](https://www.alphanews.live/cyprus/evergetikes-vrochoptoseis-efere-o-erminio-19-ek-kyvika-nerou-sta-fragmata/) — AlphaNews, Apr 2, 2026
 - [Σημαντικές εισροές νερού στα φράγματα](https://news.rik.cy/article/2026/4/2/semantikes-eisroes-nerou-sta-phragmata/) — RIK, Apr 2, 2026
