@@ -21,6 +21,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Rain boosts reservoirs but Cyprus still faces water risk, official warns', url: 'https://en.politis.com.cy/social-lens/social-lens-nature/994169/rain-boosts-reservoirs-but-cyprus-still-faces-water-risk-official-warns', lang: 'en', source: 'Politis' },
 
   // Russian
+  { title: 'За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%', url: 'https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609', lang: 'ru', source: 'RusCyprus' },
   { title: 'Уровень воды в водохранилищах Кипра приближается к 100 млн кубометров', url: 'https://ruscyprus.com/news/uroven-vody-v-vodohranilishchah-kipra/54512', lang: 'ru', source: 'RusCyprus' },
   { title: 'На Кипре резко вырос приток воды после циклона Erminio', url: 'https://ruscyprus.com/news/na-kipre-rezko-vyros-pritok-vody-v/54445', lang: 'ru', source: 'RusCyprus' },
   { title: 'Приток воды в дамбы Кипра — рекордный за 30 лет!', url: 'https://evropakipr.com/novosti/pritok-vody-v-damby-kipra-rekordnyy-za-30-let', lang: 'ru', source: 'Европа Кипр' },

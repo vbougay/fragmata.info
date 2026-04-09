@@ -19,6 +19,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Russian
 
+- [За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%](https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609) — RusCyprus, Apr 2026
 - [Уровень воды в водохранилищах Кипра приближается к 100 млн кубометров](https://ruscyprus.com/news/uroven-vody-v-vodohranilishchah-kipra/54512) — RusCyprus, Apr 2026
 - [На Кипре резко вырос приток воды после циклона Erminio](https://ruscyprus.com/news/na-kipre-rezko-vyros-pritok-vody-v/54445) — RusCyprus, Apr 2026
 - [Приток воды в дамбы Кипра — рекордный за 30 лет!](https://evropakipr.com/novosti/pritok-vody-v-damby-kipra-rekordnyy-za-30-let) — Европа Кипр, Mar 2026
