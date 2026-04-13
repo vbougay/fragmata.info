@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-04-13-monopatia-dam-trails',
+    date: '2026-04-13',
+    dataSetId: '09-APR-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'From Water Levels to Hiking Trails: Introducing Monopatia — A Free Guide to 164 Cyprus Trails',
+      el: 'Από τα Επίπεδα Νερού στα Μονοπάτια: Παρουσιάζουμε το Monopatia — Δωρεάν Οδηγός 164 Μονοπατιών Κύπρου',
+      ru: 'От уровней воды к пешим тропам: представляем Monopatia — бесплатный гид по 164 маршрутам Кипра',
+    },
+    description: {
+      en: 'Fragmata tracks dam water levels — now a companion project maps 164 hiking trails across Cyprus, including 7 trails at dam reservoirs. Free maps, GPS tracks, elevation profiles, and GPX downloads.',
+      el: 'Το Fragmata παρακολουθεί τα φράγματα — τώρα ένα αδελφό έργο χαρτογραφεί 164 μονοπάτια πεζοπορίας σε όλη την Κύπρο, συμπεριλαμβανομένων 7 στα φράγματα. Δωρεάν χάρτες, GPS και GPX.',
+      ru: 'Fragmata отслеживает уровни воды — теперь родственный проект картографирует 164 пешеходных маршрута по Кипру, включая 7 троп у водохранилищ. Бесплатные карты, GPS-треки и GPX.',
+    },
+  },
+  {
     slug: '2026-04-07-100mcm-milestone',
     date: '2026-04-07',
     dataSetId: '07-APR-2026',
