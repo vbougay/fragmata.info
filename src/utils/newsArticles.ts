@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Water development department acts to secure summer water supply', url: 'https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply/', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam levels improve but water caution urged', url: 'https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dams 33.9% full, better than last year but not quite satisfactory', url: 'https://www.cbn.com.cy/article/127740/cyprus-dams-33-9-full-better-than-last-year-but-not-quite-satisfactory-water-development-department-chief-engineer-says', lang: 'en', source: 'CBN' },
   { title: 'Mobile desalination unit in full operation at Limassol port', url: 'https://cyprus-mail.com/2026/04/05/mobile-desalination-unit-in-full-operation-at-limassol-port', lang: 'en', source: 'Cyprus Mail' },

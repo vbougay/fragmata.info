@@ -4,6 +4,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [Water development department acts to secure summer water supply](https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply/) — Cyprus Mail, Apr 6, 2026
 - [Dam levels improve but water caution urged](https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged) — Cyprus Mail, Apr 6, 2026
 - [Cyprus dams 33.9% full, better than last year but not quite satisfactory](https://www.cbn.com.cy/article/127740/cyprus-dams-33-9-full-better-than-last-year-but-not-quite-satisfactory-water-development-department-chief-engineer-says) — CBN, Apr 6, 2026
 - [Mobile desalination unit in full operation at Limassol port](https://cyprus-mail.com/2026/04/05/mobile-desalination-unit-in-full-operation-at-limassol-port) — Cyprus Mail, Apr 5, 2026
