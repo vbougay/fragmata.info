@@ -19,7 +19,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'March rains boost Cyprus\' water reserves as dam inflows reach 12.3 million cubic meters', url: 'https://famagusta-gazette.com/march-rains-boost-cyprus-water-reserves-as-dam-inflows-reach-12-3-million-cubic-meters/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'One more Paphos dam overflows', url: 'https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Rainfall helpful but Cyprus is far from water security, WDD official tells CNA', url: 'https://www.parikiaki.com/2026/03/rainfall-helpful-but-cyprus-is-far-from-water-security-wdd-official-tells-cna', lang: 'en', source: 'Parikiaki' },
-  { title: 'Rain boosts reservoirs but Cyprus still faces water risk, official warns', url: 'https://en.politis.com.cy/social-lens/social-lens-nature/994169/rain-boosts-reservoirs-but-cyprus-still-faces-water-risk-official-warns', lang: 'en', source: 'Politis' },
 
   // Russian
   { title: 'За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%', url: 'https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609', lang: 'ru', source: 'RusCyprus' },
@@ -30,12 +29,13 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Третья дамба переполнилась в Пафосе', url: 'https://lenta.cy/tretja-damba-perepolnilas-v-pafose/', lang: 'ru', source: 'Lenta.cy' },
   { title: 'На Кипре резко вырос приток воды в водохранилищах', url: 'https://ruscyprus.com/news/na-kipre-rezko-vyros-pritok-vodyv/54110', lang: 'ru', source: 'RusCyprus' },
   { title: 'Дожди победили засуху', url: 'https://vkcyprus.com/cyprus/1467412357679-dozhdi-pobedili-zasuhu/', lang: 'ru', source: 'Вестник Кипра' },
-  { title: 'Дожди идут, но воды по-прежнему мало', url: 'https://vkcyprus.com/society/1467412349435-dozhdi-idut-no-vody-po-prezhnemu-malo/', lang: 'ru', source: 'Вестник Кипра' },
+  { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
   { title: 'На Кипре — сезон дождей, но власти утверждают, что засуха продолжается', url: 'https://evropakipr.com/istorii/na-kipre-sezon-dozhdey-pochemu-vlasti-utverzhdayut-chto-na-ostrove-chetvertyy-god', lang: 'ru', source: 'Европа Кипр' },
 
   // Greek
+  { title: 'Πληρότητα φραγμάτων πλησιάζει 37% — πάνω από 4 ΕΚΜ εισροές το τελευταίο 5ήμερο', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-4-ekm-oi-sinolikes-eisroes-nerou-to-telefteo-5imero-plisiazei-to-37-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
+  { title: 'Βροχόπτωση Απριλίου στο 127% — μετρήσεις Μεγάλης Πέμπτης - Μεγάλου Σαββάτου', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/sto-127-tis-ekato-anilthe-i-mesi-vroxoptosi-apriliou-metriseis-vroxoptosis-megalis-pemptis-megalou-savvatou/', lang: 'el', source: 'KitasWeather' },
   { title: 'Ξεπέρασαν τα 100 ΕΚΜ τα αποθέματα — συνεχίζουν εισροές Απριλίου', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-100-ekm-ta-sinolika-apothemata-nerou-sta-fragmata-sinexizoun-simantikes-eisroes-gia-mina-aprilio/', lang: 'el', source: 'KitasWeather' },
-  { title: 'Ελαφρώς πάνω του 1 ΕΚΜ οι εισροές νερού στα φράγματα', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/elafros-pano-tou-1-ekm-oi-eisroes-nerou-sta-fragmata-kai-afto-to-24oro-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
   { title: 'Ευεργετικές βροχοπτώσεις έφερε ο «Erminio» — 1,9 εκ. κυβικά νερού στα φράγματα', url: 'https://www.alphanews.live/cyprus/evergetikes-vrochoptoseis-efere-o-erminio-19-ek-kyvika-nerou-sta-fragmata/', lang: 'el', source: 'AlphaNews' },
   { title: 'Σημαντικές εισροές νερού στα φράγματα', url: 'https://news.rik.cy/article/2026/4/2/semantikes-eisroes-nerou-sta-phragmata/', lang: 'el', source: 'RIK' },
   { title: 'Ξεπέρασε το 1 ΕΚΜ η εισροή — Υπερχείλισε το φράγμα Ταμασού', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-1-ekm-i-sinoliki-eisroi-nerou-sta-fragmata-iperxilise-to-fragma-tis-tamasou/', lang: 'el', source: 'KitasWeather' },
