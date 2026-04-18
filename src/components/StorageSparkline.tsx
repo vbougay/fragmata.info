@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, YAxis, ReferenceDot, ReferenceLine } from 'recharts';
 import { SparklineDataPoint } from '@/utils/sparklineData';
 
@@ -22,10 +22,33 @@ interface SparklineTooltipProps {
 }
 
 const SparklineTooltip: React.FC<SparklineTooltipProps> = ({ active, payload, language = 'en' }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!active || !el) return;
+    // Recharts positions its tooltip wrapper at cursor.x + offset (10px right
+    // of cursor by default). On narrow mobile screens this overflows the
+    // viewport when hovering near the right edge of the chart. Measure the
+    // untransformed position and flip the tooltip to the left of the cursor
+    // when needed. Mutating style directly (instead of using state) avoids a
+    // re-render loop where the post-flip measurement would un-flip.
+    el.style.transform = '';
+    const wrapper = el.parentElement ?? el;
+    const rect = wrapper.getBoundingClientRect();
+    const vw = typeof window !== 'undefined' ? window.innerWidth : Number.POSITIVE_INFINITY;
+    if (rect.right > vw - 4) {
+      el.style.transform = 'translateX(calc(-100% - 20px))';
+    }
+  });
+
   if (!active || !payload?.[0]) return null;
   const point = payload[0].payload;
   return (
-    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 text-[10px] shadow-sm">
+    <div
+      ref={ref}
+      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 text-[10px] shadow-sm whitespace-nowrap"
+    >
       <span className="text-muted-foreground">{formatDate(point.date, language)}</span>
       <span className="ml-1 font-medium text-foreground">{point.percentage.toFixed(1)}%</span>
     </div>
