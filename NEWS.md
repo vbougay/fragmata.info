@@ -33,6 +33,10 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Greek
 
+- [Υπερκαλύφθηκε η μέση βροχόπτωση Απριλίου — μετρήσεις τελευταίου 24ωρου](https://kitasweather.com/news/fragmata-vroxoptosi/iperkalifthike-i-mesi-vroxoptosi-apriliou-metriseis-vroxoptosis-telefteou-24orou/) — KitasWeather, Apr 2026
+- [Υπερκαλύφθηκε η μέση βροχόπτωση υδρολογικού έτους από αρχές Απριλίου](https://kitasweather.com/news/fragmata-vroxoptosi/iperkalifthike-i-mesi-vroxoptosi-tou-idrologikou-etous-apo-arxes-apriliou-plirotita-fragmaton/) — KitasWeather, Apr 2026
+- [Πληρότητα φραγμάτων πλησιάζει 37% — πάνω από 4 ΕΚΜ εισροές το τελευταίο 5ήμερο](https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-4-ekm-oi-sinolikes-eisroes-nerou-to-telefteo-5imero-plisiazei-to-37-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, Apr 2026
+- [Βροχόπτωση Απριλίου στο 127% — μετρήσεις Μεγάλης Πέμπτης - Μεγάλου Σαββάτου](https://kitasweather.com/news/fragmata-vroxoptosi/sto-127-tis-ekato-anilthe-i-mesi-vroxoptosi-apriliou-metriseis-vroxoptosis-megalis-pemptis-megalou-savvatou/) — KitasWeather, Apr 2026
 - [Ξεπέρασαν τα 100 ΕΚΜ τα αποθέματα — συνεχίζουν εισροές Απριλίου](https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-100-ekm-ta-sinolika-apothemata-nerou-sta-fragmata-sinexizoun-simantikes-eisroes-gia-mina-aprilio/) — KitasWeather, Apr 2026
 - [Ελαφρώς πάνω του 1 ΕΚΜ οι εισροές νερού στα φράγματα](https://kitasweather.com/news/fragmata-vroxoptosi/elafros-pano-tou-1-ekm-oi-eisroes-nerou-sta-fragmata-kai-afto-to-24oro-plirotita-fragmaton/) — KitasWeather, Apr 3, 2026
 - [Ευεργετικές βροχοπτώσεις έφερε ο «Erminio» — 1,9 εκ. κυβικά νερού στα φράγματα](https://www.alphanews.live/cyprus/evergetikes-vrochoptoseis-efere-o-erminio-19-ek-kyvika-nerou-sta-fragmata/) — AlphaNews, Apr 2, 2026
