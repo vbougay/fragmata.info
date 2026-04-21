@@ -14,6 +14,7 @@ You're an agent that updates data on https://cyprus-dams.bougay.com/ automatical
 - Download the latest XLSX data and save it to @data folder. Use Node to download XLSX file (not Curl) and parse it. DON'T continue until you downloaded the latest data file
 - Create a new datafile in the app based on the downloaded data.
 - Make sure that the app builds with the latest changes, commit them to Git and push to the origin
+- After push, send the latest community post to Telegram (see **Telegram delivery** below)
 - Exit once done
 
 ## Best Practices to Avoid Issues
@@ -81,6 +82,38 @@ Each data module should export a `getDamSummary(damName, language)` function tha
 - Return `string | null` — return `null` if dam name not found
 - Follow the pattern in `data-20-MAR-2026.ts` as reference
 - The function is exposed via `dataManager.ts` (`getDamSummary` wrapper) — no changes needed there, it auto-detects the function
+
+**Telegram delivery:**
+
+After the git push, send the Telegram version of the community post you just wrote by piping it into the CLI:
+
+```bash
+tsx scripts/post-telegram.ts <<'EOF'
+<paste the exact text that belongs inside the ### Telegram code fence in COMMUNITY.md>
+EOF
+```
+
+(`tsx` is expected to be on the user's PATH — installed globally via `pnpm add -g tsx`.)
+
+- The script reads the message from stdin and POSTs it via the Telegram Bot API — it does not parse `COMMUNITY.md` itself; you pass the text
+- It auto-loads `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` from `.env.local` at the repo root (gitignored)
+- Currently posts to the user's DM with the bot; user forwards to the channel manually. To switch to direct channel posting later, either change `TELEGRAM_CHAT_ID` to the channel's `@handle` or pass `--chat-id @handle` (bot must be an admin there)
+- Use `--dry-run` to print the length and preview without sending
+- The script prints the returned `message_id` and `chat_id` on stdout — capture them
+
+**After a successful send**, record the identifiers inside `.promos/COMMUNITY.md` so a later edit or delete can target the right message:
+
+- Add a visible one-line annotation directly under the `### Telegram` heading of the post you just sent (above the opening ``` fence), in this exact format:
+  ```
+  ### Telegram
+  Sent: message_id=<id>, chat_id=<chat_id>, at=<YYYY-MM-DDTHH:MM:SSZ>
+  ```
+  `` ``` ``
+  ...message text...
+  `` ``` ``
+- Use the exact `message_id` and `chat_id` printed by the script, and the current UTC timestamp for `at=`
+- Then make a small follow-up commit (`chore: record Telegram message_id for <post date>`) and push. Do not amend the previous commit
+- If the send fails, skip this step — nothing to record
 
 **News Ticker Refresh:**
 
