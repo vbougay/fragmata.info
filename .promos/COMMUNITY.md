@@ -1181,6 +1181,7 @@ Total: **38.1% (110.8 MCM)**, up from 37.9% yesterday (**+0.6 MCM**). Season: **
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=3, chat_id=151413643, at=2026-04-21T07:16:46Z
 ```
 📊 Cyprus Dams — April 21
 
