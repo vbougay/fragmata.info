@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Dam capacity reaches 38%, up from last year', url: 'https://cyprus-mail.com/2026/04/20/dam-capacity-reaches-38-up-from-last-year', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Water development department acts to secure summer water supply', url: 'https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply/', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam levels improve but water caution urged', url: 'https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dams 33.9% full, better than last year but not quite satisfactory', url: 'https://www.cbn.com.cy/article/127740/cyprus-dams-33-9-full-better-than-last-year-but-not-quite-satisfactory-water-development-department-chief-engineer-says', lang: 'en', source: 'CBN' },
@@ -18,7 +19,6 @@ export const newsArticles: NewsArticle[] = [
   { title: '\u20AC230m projects to boost Cyprus\' water resilience', url: 'https://cyprus-mail.com/2026/03/31/e230m-projects-to-boost-cyprus-water-resilience', lang: 'en', source: 'Cyprus Mail' },
   { title: 'March rains boost Cyprus\' water reserves as dam inflows reach 12.3 million cubic meters', url: 'https://famagusta-gazette.com/march-rains-boost-cyprus-water-reserves-as-dam-inflows-reach-12-3-million-cubic-meters/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'One more Paphos dam overflows', url: 'https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Rainfall helpful but Cyprus is far from water security, WDD official tells CNA', url: 'https://www.parikiaki.com/2026/03/rainfall-helpful-but-cyprus-is-far-from-water-security-wdd-official-tells-cna', lang: 'en', source: 'Parikiaki' },
 
   // Russian
   { title: 'За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%', url: 'https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609', lang: 'ru', source: 'RusCyprus' },
