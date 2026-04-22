@@ -1236,6 +1236,7 @@ Season total: 94.4 MCM. The wet season is winding down — but by any measure, i
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=4, chat_id=151413643, at=2026-04-22T07:12:44Z
 ```
 📰 Cyprus Dams — April 22 (Earth Day)
 
