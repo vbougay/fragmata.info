@@ -1210,3 +1210,75 @@ Total: *38.1% (110.8 MCM)*, up from 37.9% yesterday (*+0.6 MCM*). Season: *93.9 
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## April 22 — Major Update
+
+📰 Cyprus Dams — April 22 (Earth Day)
+
+Vyzakia is at **96.4%**. Still. Three days ago it was 94.7%. Two days ago, 96.0%. Today, 96.4%. Every morning I check and it hasn't quite tipped. Xyliatos sits just upstream — essentially full for weeks — acting as the regulator of what flows down. When Xyliatos spills enough, Vyzakia will race to catch up. The wait continues.
+
+On Earth Day 2026, the wider picture keeps improving. Total storage hit a new season high: **38.2% (111.2 MCM)**, up from 36.8% (107.2 MCM) a week ago — **+4.0 MCM in 7 days**. That's **14.7pp above last year** at the same date. April 2026 has now delivered **19.9 MCM** — still the 2nd best April on record since 1988 (only behind 2018/19's 25.3 MCM).
+
+The Arminou→Kouris transfer ticked up to **16.55 MCM** since October. Arminou keeps feeding its bigger neighbour, sitting at 35.3% itself — drained by design.
+
+- **Vyzakia 96.4%** (+7.3pp since Apr 15) — new season high; overflow imminent. Was 2.8% a year ago — 34× year-over-year
+- **Germasoyeia 52.6%** — third consecutive day above 50%, new season high, 27.4pp above last year
+- **Polemidia 57.2%** — new season high, 19.7pp above last year
+- Kannaviou **48.6%** — one decent rain from crossing 50%
+- Asprokremmos **38.8%** — holding above 20 MCM for three days running
+- Arminou 35.3% — transfer to Kouris reaches 16.55 MCM total
+- 8 dams at 100%; Achna 2.2% — zero inflow all season long
+
+Season total: 94.4 MCM. The wet season is winding down — but by any measure, it's been the best spring since 2018/19.
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — April 22 (Earth Day)
+
+Vyzakia is at 96.4%. Still.
+
+Three days ago it was 94.7%. Two days ago, 96.0%. Today, 96.4%. Xyliatos sits just upstream — essentially full for weeks — acting as the regulator of what flows down. When it spills enough, Vyzakia follows fast. The wait continues.
+
+On Earth Day 2026, the wider picture keeps improving. Total storage hit a new season high: 38.2% (111.2 MCM), up +4.0 MCM in one week. Now 14.7pp above last year's 23.5%. April has delivered 19.9 MCM — still the 2nd best on record (only 2018/19 was better at 25.3 MCM).
+
+The Arminou→Kouris transfer reached 16.55 MCM since October. Arminou sits at 35.3% — drained by design.
+
+• Vyzakia 96.4% (+7.3pp this week) — overflow approaching; was 2.8% a year ago (34×)
+• Germasoyeia 52.6% — third day above 50%, new season high
+• Polemidia 57.2% — new season high, 19.7pp above last year
+• Kannaviou 48.6% — one good rain from 50%
+• Asprokremmos 38.8% — holding above 20 MCM
+• Achna 2.2% — zero inflow all season, still the outlier
+
+Season total: 94.4 MCM. Best spring since 2018/19.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — April 22 (Earth Day)*
+
+*Vyzakia is at 96.4%. Still.*
+
+Three days ago it was 94.7%. Two days ago, 96.0%. Today, 96.4%. Xyliatos sits just upstream — essentially full for weeks — acting as the regulator of what flows down. When it spills enough, Vyzakia follows fast. The wait continues.
+
+On Earth Day 2026, the wider picture keeps improving. Total storage hit a new season high: *38.2% (111.2 MCM)*, up *+4.0 MCM in one week*. Now *14.7pp above last year's* 23.5%. April has delivered *19.9 MCM* — still the *2nd best on record* (only 2018/19 was better at 25.3 MCM).
+
+The Arminou→Kouris transfer reached *16.55 MCM* since October. Arminou sits at 35.3% — drained by design.
+
+• *Vyzakia 96.4%* (+7.3pp this week) — overflow approaching; was 2.8% a year ago (34×)
+• *Germasoyeia 52.6%* — third day above 50%, new season high
+• *Polemidia 57.2%* — new season high, 19.7pp above last year
+• Kannaviou *48.6%* — one good rain from 50%
+• Asprokremmos *38.8%* — holding above 20 MCM
+• Achna *2.2%* — zero inflow all season
+
+Season total: *94.4 MCM*. Best spring since 2018/19.
+
+🔗 https://fragmata.info
+```
