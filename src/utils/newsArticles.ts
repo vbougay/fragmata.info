@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Water scarcity in Cyprus: how can we effectively manage the crisis?', url: 'https://cyprus-mail.com/2026/04/22/water-scarcity-in-cyprus-how-can-we-effectively-manage-the-crisis', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam capacity reaches 38%, up from last year', url: 'https://cyprus-mail.com/2026/04/20/dam-capacity-reaches-38-up-from-last-year', lang: 'en', source: 'Cyprus Mail' },
   { title: '2+ MCM water inflow in three days, fullness approaching 40%', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-2-ekm-oi-eisroes-nerou-to-telefteo-triimero-plisiazei-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'en', source: 'KitasWeather' },
   { title: 'Water development department acts to secure summer water supply', url: 'https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply/', lang: 'en', source: 'Cyprus Mail' },
@@ -22,6 +23,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'One more Paphos dam overflows', url: 'https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows', lang: 'en', source: 'Cyprus Mail' },
 
   // Russian
+  { title: 'Водохранилища Кипра заполнились до 37,9% после недавних дождей', url: 'https://ruscyprus.com/news/vodohranilishcha-kipra-zapolnilis-do-37-9/55028', lang: 'ru', source: 'RusCyprus' },
   { title: 'За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%', url: 'https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609', lang: 'ru', source: 'RusCyprus' },
   { title: 'Уровень воды в водохранилищах Кипра приближается к 100 млн кубометров', url: 'https://ruscyprus.com/news/uroven-vody-v-vodohranilishchah-kipra/54512', lang: 'ru', source: 'RusCyprus' },
   { title: 'На Кипре резко вырос приток воды после циклона Erminio', url: 'https://ruscyprus.com/news/na-kipre-rezko-vyros-pritok-vody-v/54445', lang: 'ru', source: 'RusCyprus' },
