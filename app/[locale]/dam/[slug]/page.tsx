@@ -20,7 +20,7 @@ import {
   getRegionSlugForDam,
   REGION_SLUG_MAP,
 } from "@/utils/slugs";
-import { translations } from "@/utils/translations";
+import { translations, damNameGenitiveEl } from "@/utils/translations";
 import { REGION_KEYS } from "@/utils/forecastEngine";
 
 const siteUrl = "https://fragmata.info";
@@ -44,6 +44,7 @@ export async function generateMetadata({
 
   const t = translations[lang];
   const translatedDamName = t[damInfo.name as keyof typeof t] || damInfo.name;
+  const elGenitive = damNameGenitiveEl[damInfo.name] ?? translatedDamName;
 
   // Get region name for context
   const regionSlug = getRegionSlugForDam(slug);
@@ -61,14 +62,14 @@ export async function generateMetadata({
     lang === "en"
       ? `${damInfo.name} Dam Water Level Today | ${regionName} | Fragmata`
       : lang === "el"
-        ? `Φράγμα ${translatedDamName} | Επίπεδο Νερού Σήμερα | ${translatedRegion} | Fragmata`
+        ? `Φράγμα ${elGenitive} | Επίπεδο Νερού Σήμερα | ${translatedRegion} | Fragmata`
         : `Дамба ${translatedDamName} | Уровень воды сегодня | ${translatedRegion} | Фрагмата`;
   const damSummary = getDamSummary(damInfo.name, lang as 'en' | 'el' | 'ru', DEFAULT_DATASET_ID);
   const description = damSummary
     ?? (lang === "en"
       ? `Current water level, storage capacity, inflow data, and forecast for ${damInfo.name} dam in ${regionName}, Cyprus.`
       : lang === "el"
-        ? `Τρέχον επίπεδο νερού, χωρητικότητα και πρόβλεψη για το φράγμα ${translatedDamName}, ${translatedRegion}, Κύπρος.`
+        ? `Τρέχον επίπεδο νερού, χωρητικότητα και πρόβλεψη για το φράγμα ${elGenitive}, ${translatedRegion}, Κύπρος.`
         : `Текущий уровень воды, вместимость и прогноз для плотины ${translatedDamName}, ${translatedRegion}, Кипр.`);
 
   const localeUrl = (l: string, path: string) =>
@@ -141,12 +142,13 @@ export default async function DamPage({
   // FAQ structured data with dam-specific question & one-liner answer
   const t = translations[lang];
   const translatedDamName = t[damInfo.name as keyof typeof t] || damInfo.name;
+  const elGenitive = damNameGenitiveEl[damInfo.name] ?? translatedDamName;
   const damSummary = getDamSummary(damInfo.name, lang, dsId);
   const faqQuestion =
     lang === "en"
       ? `What is the current water level at ${damInfo.name} Dam?`
       : lang === "el"
-        ? `Ποιο είναι το τρέχον επίπεδο νερού στο φράγμα ${translatedDamName};`
+        ? `Ποιο είναι το τρέχον επίπεδο νερού στο φράγμα ${elGenitive};`
         : `Какой текущий уровень воды на плотине ${translatedDamName}?`;
 
   return (

@@ -551,6 +551,34 @@ export const translations = {
 
 // No need to re-export translations as it's already exported above
 
+// Greek genitive forms of dam names, for "Φράγμα X" / "στο φράγμα X" constructions
+// where X must be in the genitive case — e.g. "Φράγμα Κούρη" (not "Κούρης"),
+// matching how Greek users actually search (see GSC queries `φραγμα κουρη`,
+// `φραγμα καλαβασου`, `φραγμα γερμασογειασ`, `φραγμα ταμασου`, `φραγμα βυζακιας`).
+export const damNameGenitiveEl: Record<string, string> = {
+  Kouris: "Κούρη",
+  Kalavasos: "Καλαβασού",
+  Lefkara: "Λευκάρων",
+  Dipotamos: "Διποτάμου",
+  Germasoyeia: "Γερμασόγειας",
+  Arminou: "Αρμίνου",
+  Polemidia: "Πολεμιδίων",
+  Achna: "Άχνας",
+  Asprokremmos: "Ασπρόκρεμμου",
+  Kannaviou: "Κανναβιού",
+  Mavrokolympos: "Μαυροκόλυμπου",
+  Evretou: "Ευρέτου",
+  Argaka: "Αργάκας",
+  Pomos: "Πόμου",
+  "Agia Marina": "Αγίας Μαρίνας",
+  Vyzakia: "Βυζακιάς",
+  Xyliatos: "Ξυλιάτου",
+  Kalopanagiotis: "Καλοπαναγιώτη",
+  Tamassos: "Ταμασού",
+  "Klirou-Malounta": "Κλήρου-Μαλούντας",
+  Solea: "Σολέας",
+};
+
 // Helper function to get translations
 export const useTranslation = (language: 'en' | 'el' | 'ru') => {
   return (key: keyof typeof translations.en): string => {
