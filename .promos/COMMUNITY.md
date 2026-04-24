@@ -1345,3 +1345,62 @@ Gap vs last year: *+14.8pp*.
 
 🔗 https://fragmata.info
 ```
+
+## April 24 — Minor Update
+
+📊 Cyprus Dams — April 24
+
+Total storage: **38.5% (111.9 MCM)** — up from 38.3% (111.6 MCM) yesterday (+0.2pp, +0.3 MCM). New season high. **15.1pp above last year** (23.4%).
+
+24h inflow: 0.45 MCM total — led by Kouris (0.11), Arminou (0.11), Germasoyeia (0.04).
+
+• **Vyzakia 97.8%** (+0.9pp) — new season high, overflow imminent. 34× last year's 2.8%.
+• Polemidia 57.8% (+0.5pp) — new season high, 20pp above last year
+• Germasoyeia 53.1% (+0.3pp) — fifth straight day above 50%, new season high
+• Kouris 36.5% (42.0 MCM, +0.1pp) — new season high, 17.4pp above last year
+• Kannaviou 48.8% (+0.1pp) — still approaching 50%
+• 8 dams at 100%; Achna 2.2% — zero inflow all season
+
+Gap vs last year: +15.1pp (38.5% vs 23.4% Apr 24, 2025).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Cyprus Dams — April 24
+
+Total storage: 38.5% (111.9 MCM) — up from 38.3% yesterday (+0.2pp, +0.3 MCM). New season high. 15.1pp above last year (23.4%).
+
+24h inflow: 0.45 MCM — led by Kouris (0.11), Arminou (0.11), Germasoyeia (0.04).
+
+• Vyzakia 97.8% (+0.9pp) — new season high, overflow imminent; 34× last year's 2.8%
+• Polemidia 57.8% (+0.5pp) — new season high, 20pp above last year
+• Germasoyeia 53.1% (+0.3pp) — fifth day above 50%, new season high
+• Kouris 36.5% (42.0 MCM, +0.1pp) — new season high, 17.4pp above last year
+• Kannaviou 48.8% (+0.1pp) — inching toward 50%
+• 8 dams at 100%; Achna 2.2% — zero inflow all season
+
+Gap vs last year: +15.1pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — April 24*
+
+Total storage: *38.5% (111.9 MCM)* — up from 38.3% yesterday (+0.2pp, +0.3 MCM). New season high. *15.1pp above last year* (23.4%).
+
+24h inflow: *0.45 MCM* — led by Kouris (0.11), Arminou (0.11), Germasoyeia (0.04).
+
+• *Vyzakia 97.8%* (+0.9pp) — new season high, overflow imminent; 34× last year's 2.8%
+• *Polemidia 57.8%* (+0.5pp) — new season high, 20pp above last year
+• Germasoyeia *53.1%* (+0.3pp) — fifth day above 50%, new season high
+• Kouris *36.5%* (42.0 MCM, +0.1pp) — new season high, 17.4pp above last year
+• Kannaviou *48.8%* (+0.1pp) — inching toward 50%
+• 8 dams at 100%; Achna *2.2%* — zero inflow all season
+
+Gap vs last year: *+15.1pp*.
+
+🔗 https://fragmata.info
+```
