@@ -1405,3 +1405,62 @@ Gap vs last year: *+15.1pp*.
 
 🔗 https://fragmata.info
 ```
+
+## April 27 — Major Update
+
+📰 Cyprus Dams — April 27
+
+Total storage: **38.8% (113.0 MCM)** — up from 38.5% (111.9 MCM) on Apr 24 (+0.3pp, +1.1 MCM in 3 days). New season high. **15.6pp above last year** (23.2%). Season inflow reaches 96.5 MCM total; April 2026 at 22.0 MCM is the **2nd highest April on record**.
+
+Headline milestone: **Vyzakia filled to 100%** today (Apr 27) — the 9th dam to reach full capacity this season. Was just 2.7% a year ago (37× recovery).
+
+• **Germasoyeia 54.2%** (+1.1pp since Apr 24) — new season high, sixth consecutive day above 50%
+• **Arminou 39.0%** (+3.7pp since Apr 24) — notable rebound despite 16.84 MCM pumped to Kouris since October
+• Kouris 36.9% (42.4 MCM, +0.4pp) — new season high, 17.9pp above last year
+• Kannaviou 49.0% (+0.2pp) — approaching 50% milestone
+• Polemidia 58.3% (+0.5pp) — new season high, 20.9pp above last year
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+Gap vs last year: +15.6pp (38.8% vs 23.2% Apr 27, 2025).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — April 27
+
+Total storage: 38.8% (113.0 MCM) — up from 38.5% on Apr 24 (+0.3pp, +1.1 MCM in 3 days). New season high. 15.6pp above last year (23.2%). Season inflow: 96.5 MCM total; April 2026 at 22.0 MCM is the 2nd highest April on record.
+
+Milestone: Vyzakia reached 100% today — the 9th dam to fill this season. Was 2.7% a year ago (37× recovery).
+
+• Germasoyeia 54.2% (+1.1pp) — new season high, 6th day above 50%
+• Arminou 39.0% (+3.7pp) — notable rebound despite ongoing Kouris transfer (16.84 MCM pumped since Oct)
+• Kouris 36.9% (42.4 MCM, +0.4pp) — new season high, 17.9pp above last year
+• Kannaviou 49.0% (+0.2pp) — approaching 50% milestone
+• Polemidia 58.3% (+0.5pp) — new season high
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+Gap vs last year: +15.6pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — April 27*
+
+Total storage: *38.8% (113.0 MCM)* — up from 38.5% on Apr 24 (+0.3pp, +1.1 MCM in 3 days). New season high. *15.6pp above last year* (23.2%). Season inflow: 96.5 MCM total; April 2026 at 22.0 MCM is the *2nd highest April on record*.
+
+Milestone: *Vyzakia reached 100%* today — the 9th dam to fill this season. Was 2.7% a year ago (37× recovery).
+
+• *Germasoyeia 54.2%* (+1.1pp) — new season high, 6th day above 50%
+• *Arminou 39.0%* (+3.7pp) — notable rebound despite ongoing Kouris transfer (16.84 MCM pumped since Oct)
+• Kouris *36.9%* (42.4 MCM, +0.4pp) — new season high, 17.9pp above last year
+• Kannaviou *49.0%* (+0.2pp) — approaching 50% milestone
+• Polemidia *58.3%* (+0.5pp) — new season high
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+
+Gap vs last year: *+15.6pp*.
+
+🔗 https://fragmata.info
+```
