@@ -1474,12 +1474,12 @@ Total storage: **38.9% (113.3 MCM)** — up from 38.8% yesterday (+0.1pp, +0.3 M
 
 24h inflow: 0.36 MCM — led by Kouris (0.094), Arminou (0.071), Germasoyeia (0.047).
 
-• **Xyliatos 100%** — officially full today, 10th dam to fill this season; was 21.7% last year (4.6× recovery)
-• Arminou 40.1% (+1.1pp) — new season high, recovering despite ongoing Kouris transfer (16.86 MCM pumped since Oct)
-• Germasoyeia 54.5% (+0.3pp) — new season high
-• Polemidia 58.6% (+0.3pp) — new season high, 21.2pp above last year
-• Kannaviou 49.0% — holding, one good rain from 50%
-• 10 dams at 100%; Achna 2.2% — zero inflow all season
+• Arminou **40.1%** (+1.1pp) — new season high, recovering despite ongoing Kouris transfer (16.86 MCM pumped since Oct)
+• Germasoyeia **54.5%** (+0.3pp) — new season high
+• Polemidia **58.6%** (+0.3pp) — new season high, 21.2pp above last year
+• Kannaviou **49.0%** — holding, one good rain from 50%
+• Xyliatos back at 100% after brief late-April dip — has held at/near full since its March 23 fill (was 21.7% last year, 4.6× recovery)
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
 
 Gap vs last year: +15.7pp.
 
@@ -1494,12 +1494,12 @@ Total storage: 38.9% (113.3 MCM) — up from 38.8% yesterday (+0.1pp, +0.3 MCM).
 
 24h inflow: 0.36 MCM — led by Kouris (0.094), Arminou (0.071), Germasoyeia (0.047).
 
-• Xyliatos 100% — officially full today, 10th dam to fill this season; was 21.7% last year (4.6× recovery)
 • Arminou 40.1% (+1.1pp) — new season high, recovering despite ongoing Kouris transfer (16.86 MCM pumped since Oct)
 • Germasoyeia 54.5% (+0.3pp) — new season high
 • Polemidia 58.6% (+0.3pp) — new season high, 21.2pp above last year
 • Kannaviou 49.0% — holding, one good rain from 50%
-• 10 dams at 100%; Achna 2.2% — zero inflow all season
+• Xyliatos back at 100% after brief late-April dip — has held at/near full since its March 23 fill (was 21.7% last year, 4.6× recovery)
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
 
 Gap vs last year: +15.7pp.
 
@@ -1514,12 +1514,12 @@ Total storage: *38.9% (113.3 MCM)* — up from 38.8% yesterday (+0.1pp, +0.3 MCM
 
 24h inflow: *0.36 MCM* — led by Kouris (0.094), Arminou (0.071), Germasoyeia (0.047).
 
-• *Xyliatos 100%* — officially full today, 10th dam to fill this season; was 21.7% last year (4.6× recovery)
 • Arminou *40.1%* (+1.1pp) — new season high, recovering despite ongoing Kouris transfer (16.86 MCM pumped since Oct)
 • Germasoyeia *54.5%* (+0.3pp) — new season high
 • Polemidia *58.6%* (+0.3pp) — new season high, 21.2pp above last year
 • Kannaviou *49.0%* — holding, one good rain from 50%
-• 10 dams at 100%; Achna *2.2%* — zero inflow all season
+• Xyliatos back at 100% after brief late-April dip — has held at/near full since its March 23 fill (was 21.7% last year, 4.6× recovery)
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
 
 Gap vs last year: *+15.7pp*.
 
