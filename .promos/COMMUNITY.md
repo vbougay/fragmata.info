@@ -1486,6 +1486,7 @@ Gap vs last year: +15.7pp.
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=8, chat_id=151413643, at=2026-04-28T07:14:01Z
 ```
 📊 Cyprus Dams — April 28
 
