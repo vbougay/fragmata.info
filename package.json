@@ -4,10 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "portless",
+    "dev:next": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."
+  },
+  "portless": {
+    "name": "fragmata",
+    "script": "dev:next"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

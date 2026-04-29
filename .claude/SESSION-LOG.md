@@ -1,5 +1,18 @@
 # Session Log
 
+## 2026-04-29 — Session `81566987-4008-4e5e-82ee-75d2a039cb64`
+
+- Plugged portless into the project so dev server is reachable at `https://fragmata.localhost` instead of `localhost:3000`
+- Installed portless 0.12.0 globally via pnpm (after first installing with npm and switching on user request)
+- Updated `package.json`: `dev` → `portless`, added `dev:next` → `next dev`, registered `"portless": { "name": "fragmata", "script": "dev:next" }` config block
+- Dropped the `--port 3000` flag — portless auto-assigns a port via the `PORT` env var that Next.js respects
+- User started the HTTPS proxy daemon themselves (`sudo portless proxy start --https`); first run generated the local CA and added it to the system trust store
+- Updated `.vscode/launch.json` (gitignored): renamed "Launch Chrome against localhost" → "Launch Chrome against fragmata.localhost", changed URL to `https://fragmata.localhost`, updated compound reference to match
+- Left "Debug Next.js Server (Full)" launch config untouched — it intentionally bypasses portless so `--inspect` attaches to the Next process directly on port 3000
+- Note: `pnpm dev` is now the portless path, `pnpm dev:next` is a portless-bypass escape hatch, `PORTLESS=0 pnpm dev` also bypasses
+
+---
+
 ## 2026-04-23 — Session `e800d010-02dc-4ade-81e5-360ada91bae5`
 
 - Analyzed GSC export (last 3 months): 7,711 clicks / 77,550 imp / ~9.94% CTR / pos 3.9; Greek is biggest unrealized opportunity (/el = 15% of impressions but 2.4% of clicks)
