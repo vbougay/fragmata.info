@@ -1588,3 +1588,73 @@ Gap vs last year: *+16.0pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## April 30 — End of Month
+
+📰 Cyprus Dams — April 30 (End of Month)
+
+April 2026 ends where few imagined it would when January's alarms were sounding: **39.2% (114.0 MCM)**, up from 37.9% ten days ago. The month's final inflow tally is **23.3 MCM** — the 2nd highest April on record since 1988, beaten only by 2018/19's exceptional 25.3 MCM.
+
+The season's total now stands at **97.8 MCM** — 5.2× the entire 2024/25 drought year. The symbolic 100 MCM seasonal milestone is just 2.2 MCM away; any early-May rain will deliver it.
+
+The story of the week is **[Arminou's](/dam/arminou/) remarkable recovery**: despite the relentless [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer (16.9 MCM moved since October), [Arminou](/dam/arminou/) gained **+8.5pp in 10 days** to reach 43.4% — its best level this season. [Germasoyeia](/dam/germasoyeia/) continued its surge to 55.6% (was 14% in mid-March — a 41pp gain in six weeks). [Polemidia](/dam/polemidia/) set another season high at 59.4%.
+
+**Key movements vs yesterday (Apr 29):**
+- **[Arminou](/dam/arminou/) 43.4%** (+1.5pp) — new season high; +8.5pp since Apr 20 despite 16.9 MCM pumped to [Kouris](/dam/kouris/) since October
+- **[Germasoyeia](/dam/germasoyeia/) 55.6%** (+0.5pp) — new season high, 31.2pp above last year. Was 14% in mid-March — 41pp gain in 6 weeks
+- [Polemidia](/dam/polemidia/) 59.4% (+0.4pp) — new season high, 21.9pp above last year
+- [Kouris](/dam/kouris/) 37.1% (42.7 MCM) — new season high, 18.1pp above last year
+- [Kannaviou](/dam/kannaviou/) 49.0% — one good rain from the 50% milestone
+- 8 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+
+Now **16.1pp above last year** (23.1%).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — April 30 (End of Month)
+
+April 2026 closes at 39.2% (114.0 MCM). The month's final tally: 23.3 MCM — the 2nd highest April on record since 1988. Only 2018/19's 25.3 MCM was better.
+
+Season total: 97.8 MCM — 5.2× the entire 2024/25 drought year. The 100 MCM seasonal milestone is 2.2 MCM away.
+
+The week's standout: Arminou gained +8.5pp in 10 days to reach 43.4% — a new season high — even as the Arminou→Kouris pipeline kept running at full throttle (16.9 MCM transferred since October).
+
+Key movements vs yesterday:
+• Arminou 43.4% (+1.5pp today, +8.5pp since Apr 20) — new season high despite ongoing transfer to Kouris
+• Germasoyeia 55.6% (+0.5pp) — new season high; was 14% in mid-March, a 41pp swing in 6 weeks
+• Polemidia 59.4% (+0.4pp) — new season high, 21.9pp above last year
+• Kouris 37.1% (42.7 MCM) — new season high, 18.1pp above last year
+• Kannaviou 49.0% — one good rain from 50%
+• 8 dams at 100%; Achna 2.2% — zero inflow all season
+
+16.1pp above last year (23.1%).
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — April 30 (End of Month)*
+
+April 2026 closes at *39.2% (114.0 MCM)*. The month's final tally: *23.3 MCM* — the *2nd highest April on record* since 1988. Only 2018/19's 25.3 MCM was better.
+
+Season total: *97.8 MCM* — 5.2× the entire 2024/25 drought year. The *100 MCM seasonal milestone* is 2.2 MCM away.
+
+The week's standout: *Arminou* gained *+8.5pp in 10 days* to reach 43.4% — a new season high — even as the Arminou→Kouris pipeline kept running at full throttle (16.9 MCM since October).
+
+*Key movements vs yesterday:*
+• *Arminou 43.4%* (+1.5pp today, +8.5pp since Apr 20) — new season high despite ongoing transfer
+• *Germasoyeia 55.6%* (+0.5pp) — new season high; was 14% in mid-March, a 41pp swing
+• *Polemidia 59.4%* (+0.4pp) — new season high, 21.9pp above last year
+• Kouris *37.1%* (42.7 MCM) — new season high, 18.1pp above last year
+• Kannaviou *49.0%* — one good rain from 50%
+• 8 dams at 100%; Achna *2.2%* — zero inflow all season
+
+*16.1pp above last year* (23.1%).
+
+🔗 https://fragmata.info
+```

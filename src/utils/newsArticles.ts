@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Paphos Reservoir Update — April 2026', url: 'https://www.paphoslife.com/blog/paphos-reservoir-update-2604', lang: 'en', source: 'PaphosLife' },
   { title: 'Water reserves in Cyprus improve after April inflows', url: 'https://en.sigmalive.com/water-reserves-in-cyprus-improve-after-april-inflows/', lang: 'en', source: 'Sigmalive' },
   { title: 'April 2026 reaches exceptional rainfall levels — over 170% of monthly average', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/se-epipeda-ekseritikis-poliomvrias-perase-o-aprilios-kseperase-to-170-tis-ekato-i-mesi-vroxoptosi-apriliou/', lang: 'en', source: 'KitasWeather' },
   { title: 'Water scarcity in Cyprus: how can we effectively manage the crisis?', url: 'https://cyprus-mail.com/2026/04/22/water-scarcity-in-cyprus-how-can-we-effectively-manage-the-crisis', lang: 'en', source: 'Cyprus Mail' },
@@ -17,8 +18,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Dam levels improve but water caution urged', url: 'https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Tamassos Dam overflows as reservoir levels reach 32.2% across Cyprus', url: 'https://en.politis.com.cy/economy/economy-hot-spot/996009/tamassos-dam-overflows-as-reservoir-levels-reach-322-across-cyprus', lang: 'en', source: 'Politis' },
   { title: "Amount of water in Cyprus' reservoirs nears 100m cubic metres", url: 'https://cyprus-mail.com/2026/04/02/amount-of-water-in-cyprus-reservoirs-nears-100m-cubic-metres', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'EUR 230m projects to boost Cyprus water resilience', url: 'https://cyprus-mail.com/2026/03/31/e230m-projects-to-boost-cyprus-water-resilience', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'One more Paphos dam overflows', url: 'https://cyprus-mail.com/2026/03/28/one-more-paphos-dam-overflows', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Water development department acts to secure summer water supply', url: 'https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply', lang: 'en', source: 'Cyprus Mail' },
 
   // Russian
   { title: 'На Кипре перелилась дамба Визакья, которая в декабре была пустой', url: 'https://ruscyprus.com/news/na-kipre-perelilas-damba-vizakya-kotoraya-v/55551', lang: 'ru', source: 'RusCyprus' },
@@ -33,6 +33,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'На Кипре — сезон дождей, но власти утверждают, что засуха продолжается', url: 'https://evropakipr.com/istorii/na-kipre-sezon-dozhdey-pochemu-vlasti-utverzhdayut-chto-na-ostrove-chetvertyy-god', lang: 'ru', source: 'Европа Кипр' },
 
   // Greek
+  { title: 'Μάρτης κι Απρίλης: οι καλύτεροι μήνες για εισροή νερού στα φράγματα τα τελευταία 40 χρόνια', url: 'https://www.offsite.com.cy/eidiseis/koinonia/martis-ki-aprilis-oi-kalyteroi-mines-gia-eisroi-neroy-sta-fragmata-ta-teleytaia', lang: 'el', source: 'Offsite' },
   { title: 'Συνεχίζει να αυξάνεται η πληρότητα φραγμάτων — Υπερχείλισε το φράγμα Βυζακιάς', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/sinexizei-na-afksanete-i-sinoliki-plirotita-fragmaton-iperxeilise-to-fragma-vyzakias/', lang: 'el', source: 'KitasWeather' },
   { title: 'Σε επίπεδα εξαιρετικής πολυομβρίας πέρασε ο Απρίλιος 2026 — πάνω από 170% μέσης βροχόπτωσης', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/se-epipeda-ekseritikis-poliomvrias-perase-o-aprilios-kseperase-to-170-tis-ekato-i-mesi-vroxoptosi-apriliou/', lang: 'el', source: 'KitasWeather' },
   { title: 'Εισροές νερού άνω των 2 ΕΚΜ το τελευταίο τριήμερο — πλησιάζει 40% η πληρότητα', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-2-ekm-oi-eisroes-nerou-to-telefteo-triimero-plisiazei-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
@@ -42,5 +43,4 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Ξεπέρασε το 30% η πληρότητα φραγμάτων — 3ος καλύτερος Μάρτιος από το 1988', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-30-tis-ekato-i-sinoliki-plirotita-fragmaton-3os-kaliteros-martios-se-thema-eisroon-apo-to-1988/', lang: 'el', source: 'KitasWeather' },
   { title: 'Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/', lang: 'el', source: 'AlphaNews' },
   { title: '«Ξεχείλισε» και το φράγμα της Αγίας Μαρίνας Χρυσοχούς — Το τρίτο στην περιοχή', url: 'https://new.cyprusnews.eu/tothemaonline/xecheilise-kai-to-fragma-tis-agias-marinas-chrysochous-to-trito-stin-periochi-pou-ftanei-sto-100/', lang: 'el', source: 'CyprusNews' },
-  { title: 'Πληρότητα φραγμάτων πλησιάζει 37% — πάνω από 4 ΕΚΜ εισροές το τελευταίο 5ήμερο', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-4-ekm-oi-sinolikes-eisroes-nerou-to-telefteo-5imero-plisiazei-to-37-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
 ];
