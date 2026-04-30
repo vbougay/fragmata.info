@@ -1614,6 +1614,7 @@ Now **16.1pp above last year** (23.1%).
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=10, chat_id=151413643, at=2026-04-30T07:20:17Z
 ```
 📰 Cyprus Dams — April 30 (End of Month)
 
