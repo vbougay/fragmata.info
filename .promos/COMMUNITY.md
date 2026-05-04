@@ -1683,6 +1683,7 @@ The standout story this week is **[Arminou's](/dam/arminou/) extraordinary recov
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=11, chat_id=151413643, at=2026-05-04T07:16:52Z
 ```
 📰 Cyprus Dams — May 4
 
