@@ -1659,3 +1659,73 @@ The week's standout: *Arminou* gained *+8.5pp in 10 days* to reach 43.4% — a n
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 4 — Monday Update
+
+📰 Cyprus Dams — May 4
+
+Total storage: **39.6% (115.2 MCM)** — up from 39.2% (114.0 MCM) on April 30 (+0.4pp, +1.2 MCM in 4 days). New season high. **16.6pp above last year** (23.0%). Season total: **99.5 MCM** — the 100 MCM milestone is now just 0.5 MCM away; may already have been crossed by the time you read this.
+
+The standout story this week is **[Arminou's](/dam/arminou/) extraordinary recovery**: despite pumping **17.0 MCM** to [Kouris](/dam/kouris/) since October, Arminou has climbed to **49.2% (+10pp in 7 days)** — its highest point this season. With 18.1 MCM of seasonal inflow, the dam essentially passed almost everything it received straight to Kouris — and still grew. **[Agia Marina](/dam/agia-marina/)** reached 100%, completing the sweep: all four Chrysochou dams are now at full capacity.
+
+**Key movements since April 30:**
+- **[Arminou](/dam/arminou/) 49.2%** (+5.8pp) — new season high; recovering despite 17.0 MCM pumped to [Kouris](/dam/kouris/) since October
+- **[Germasoyeia](/dam/germasoyeia/) 56.5%** (+0.9pp) — new season high, 32.2pp above last year. Was at 14% in mid-March — 42pp gain in 7 weeks
+- [Polemidia](/dam/polemidia/) 60.3% (+0.9pp) — new season high, 22.9pp above last year
+- [Agia Marina](/dam/agia-marina/) reached 100% — now 9 dams at full capacity
+- [Kannaviou](/dam/kannaviou/) 49.5% — inching toward 50%
+- [Achna](/dam/achna/) 2.2% — zero inflow all season
+
+**16.6pp above last year** (23.0%).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — May 4
+
+Total storage: 39.6% (115.2 MCM) — up from 39.2% on April 30 (+0.4pp, +1.2 MCM). New season high. 16.6pp above last year (23.0%).
+
+Season total: 99.5 MCM — the 100 MCM milestone is 0.5 MCM away. May already be crossed by the time you read this.
+
+Arminou's story this week: despite pumping 17.0 MCM to Kouris since October, Arminou climbed +10pp in 7 days to reach 49.2% — a new season high. With 18.1 MCM of seasonal inflow, it essentially transferred almost everything it received and still grew.
+
+Agia Marina reached 100% — all four Chrysochou dams are now at full capacity.
+
+Key movements since April 30:
+• Arminou 49.2% (+5.8pp) — new season high despite ongoing Kouris transfer
+• Germasoyeia 56.5% (+0.9pp) — new season high; 42pp above mid-March levels
+• Polemidia 60.3% (+0.9pp) — new season high, 22.9pp above last year
+• Agia Marina 100% — now 9 dams at full capacity
+• Kannaviou 49.5% — approaching 50%
+• Achna 2.2% — zero inflow all season
+
+16.6pp above last year (23.0%).
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — May 4*
+
+Total storage: *39.6% (115.2 MCM)* — up from 39.2% on April 30 (+0.4pp, +1.2 MCM). New season high. *16.6pp above last year* (23.0%).
+
+Season total: *99.5 MCM* — the *100 MCM milestone* is just 0.5 MCM away.
+
+Arminou's week: despite pumping 17.0 MCM to Kouris since October, Arminou climbed *+10pp in 7 days to 49.2%* — a new season high. Agia Marina reached 100% — all four Chrysochou dams now at full capacity.
+
+*Key movements since April 30:*
+• *Arminou 49.2%* (+5.8pp) — new season high despite ongoing Kouris transfer
+• *Germasoyeia 56.5%* (+0.9pp) — new season high; 42pp above mid-March levels
+• *Polemidia 60.3%* (+0.9pp) — new season high, 22.9pp above last year
+• Agia Marina *100%* — 9 dams at full capacity
+• Kannaviou *49.5%* — approaching 50%
+• Achna *2.2%* — zero inflow all season
+
+*16.6pp above last year* (23.0%).
+
+🔗 https://fragmata.info
+```

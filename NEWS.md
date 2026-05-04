@@ -1,11 +1,11 @@
 # Cyprus Water Crisis — News Coverage
 
-Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 2025 — Apr 2026).
+Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 2025 — May 2026).
 
 ## English
 
 - [Paphos Reservoir Update — April 2026](https://www.paphoslife.com/blog/paphos-reservoir-update-2604) — PaphosLife, Apr 30, 2026
-- [April 2026 reaches exceptional rainfall levels — over 170% of monthly average](https://kitasweather.com/news/fragmata-vroxoptosi/se-epipeda-ekseritikis-poliomvrias-perase-o-aprilios-kseperase-to-170-tis-ekato-i-mesi-vroxoptosi-apriliou/) — KitasWeather, Apr 20, 2026
+- [April precipitation exceeded 183% of average — dam fullness at 39.1%](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-180-tis-ekato-i-mesi-vroxoptosi-apriliou-sinoliki-plirotita-fragmaton/) — KitasWeather, Apr 29, 2026
 - [Water scarcity in Cyprus: how can we effectively manage the crisis?](https://cyprus-mail.com/2026/04/22/water-scarcity-in-cyprus-how-can-we-effectively-manage-the-crisis) — Cyprus Mail, Apr 22, 2026
 - [Dam capacity reaches 38%, up from last year](https://cyprus-mail.com/2026/04/20/dam-capacity-reaches-38-up-from-last-year) — Cyprus Mail, Apr 20, 2026
 - [Water development department acts to secure summer water supply](https://cyprus-mail.com/2026/04/06/water-development-department-acts-to-secure-summer-water-supply/) — Cyprus Mail, Apr 6, 2026
@@ -39,7 +39,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 ## Greek
 
 - [Μάρτης κι Απρίλης: οι καλύτεροι μήνες για εισροή νερού στα φράγματα τα τελευταία 40 χρόνια](https://www.offsite.com.cy/eidiseis/koinonia/martis-ki-aprilis-oi-kalyteroi-mines-gia-eisroi-neroy-sta-fragmata-ta-teleytaia) — Offsite, Apr 30, 2026
-- [Σε επίπεδα εξαιρετικής πολυομβρίας πέρασε ο Απρίλιος 2026 — πάνω από 170% της μέσης βροχόπτωσης](https://kitasweather.com/news/fragmata-vroxoptosi/se-epipeda-ekseritikis-poliomvrias-perase-o-aprilios-kseperase-to-170-tis-ekato-i-mesi-vroxoptosi-apriliou/) — KitasWeather, Apr 20, 2026
+- [Ξεπέρασε το 183% η μέση βροχόπτωση Απριλίου — στο 39.1% η πληρότητα φραγμάτων](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-180-tis-ekato-i-mesi-vroxoptosi-apriliou-sinoliki-plirotita-fragmaton/) — KitasWeather, Apr 29, 2026
 - [Υπερκαλύφθηκε η μέση βροχόπτωση Απριλίου — μετρήσεις τελευταίου 24ωρου](https://kitasweather.com/news/fragmata-vroxoptosi/iperkalifthike-i-mesi-vroxoptosi-apriliou-metriseis-vroxoptosis-telefteou-24orou/) — KitasWeather, Apr 2026
 - [Υπερκαλύφθηκε η μέση βροχόπτωση υδρολογικού έτους από αρχές Απριλίου](https://kitasweather.com/news/fragmata-vroxoptosi/iperkalifthike-i-mesi-vroxoptosi-tou-idrologikou-etous-apo-arxes-apriliou-plirotita-fragmaton/) — KitasWeather, Apr 2026
 - [Πληρότητα φραγμάτων πλησιάζει 37% — πάνω από 4 ΕΚΜ εισροές το τελευταίο 5ήμερο](https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-4-ekm-oi-sinolikes-eisroes-nerou-to-telefteo-5imero-plisiazei-to-37-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, Apr 2026
