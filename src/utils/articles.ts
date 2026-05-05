@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-05-05-100mcm-seasonal-inflow',
+    date: '2026-05-05',
+    dataSetId: '05-MAY-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: '100 Million Cubic Metres of Inflow: Cyprus Reservoirs Cross a Line for the First Time in Four Years',
+      el: '100 Εκατομμύρια Κυβικά Μέτρα Εισροής: Τα Φράγματα Κύπρου Ξεπερνούν Όριο για Πρώτη Φορά σε Τέσσερα Χρόνια',
+      ru: '100 миллионов кубометров притока: водохранилища Кипра преодолели рубеж впервые за четыре года',
+    },
+    description: {
+      en: 'Cumulative seasonal inflow since October has reached 100.88 mln. m³ — the first season above the line since 2021/22, driven by an April that ranked as the second-largest since 1987/88.',
+      el: 'Η συνολική εποχιακή εισροή από τον Οκτώβριο έφτασε τα 100.88 ΕΚΜ — η πρώτη σεζόν πάνω από το όριο μετά το 2021/22, με Απρίλιο τον δεύτερο μεγαλύτερο από το 1987/88.',
+      ru: 'Суммарный сезонный приток с октября достиг 100.88 МКМ — первый сезон выше отметки с 2021/22 года, благодаря апрелю, ставшему вторым по величине с 1987/88 года.',
+    },
+  },
+  {
     slug: '2026-04-13-monopatia-dam-trails',
     date: '2026-04-13',
     dataSetId: '09-APR-2026',

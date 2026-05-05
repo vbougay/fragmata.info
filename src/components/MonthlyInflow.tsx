@@ -50,9 +50,10 @@ const ALL_VALUE = 'all';
 
 interface MonthlyInflowProps {
   linkHref?: string;
+  initialYear?: string;
 }
 
-const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref }) => {
+const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) => {
   const { currentDataSetId } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -66,7 +67,9 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref }) => {
   useEffect(() => { setIsMounted(true); }, []);
 
   const [selectedYear, setSelectedYear] = useState<string>(() => {
+    if (initialYear === ALL_VALUE) return ALL_VALUE;
     const data = yearlyInflowData(currentDataSetId);
+    if (initialYear && data.some(d => d.year === initialYear)) return initialYear;
     return data.length > 0 ? data[data.length - 1].year : '25/26';
   });
   const [viewMode, setViewMode] = useState<ViewMode>('cumulative');

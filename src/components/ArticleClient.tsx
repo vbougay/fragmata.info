@@ -98,7 +98,7 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
   return (
     <div className="not-prose my-6">
       <DataProvider initialDataSetId={dataSetId}>
-        {type === "inflow" && <MonthlyInflow linkHref={linkHref} />}
+        {type === "inflow" && <MonthlyInflow linkHref={linkHref} initialYear={attrs.year} />}
         {type === "forecast" && (
           <StorageForecast selectionId={damKey || regionName || location || "all"} linkHref={linkHref} />
         )}
