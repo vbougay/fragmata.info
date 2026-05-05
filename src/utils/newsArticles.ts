@@ -9,12 +9,12 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
-  { title: 'Paphos Reservoir Update — April 2026', url: 'https://www.paphoslife.com/blog/paphos-reservoir-update-2604', lang: 'en', source: 'PaphosLife' },
+  { title: 'Dams at 39.6 per cent capacity', url: 'https://cyprus-mail.com/2026/05/04/dams-at-39-6-per-cent-capacity', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Over 1.3 MCM inflow in 3 days — dam fullness to exceed 40%', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-to-13ekm-oi-eisroes-nerou-to-telefteo-triimero-tha-kseperasei-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'en', source: 'KitasWeather' },
   { title: 'Water reserves in Cyprus improve after April inflows', url: 'https://en.sigmalive.com/water-reserves-in-cyprus-improve-after-april-inflows/', lang: 'en', source: 'Sigmalive' },
   { title: 'April precipitation exceeded 183% of average — dam fullness at 39.1%', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-180-tis-ekato-i-mesi-vroxoptosi-apriliou-sinoliki-plirotita-fragmaton/', lang: 'en', source: 'KitasWeather' },
   { title: 'Water scarcity in Cyprus: how can we effectively manage the crisis?', url: 'https://cyprus-mail.com/2026/04/22/water-scarcity-in-cyprus-how-can-we-effectively-manage-the-crisis', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam capacity reaches 38%, up from last year', url: 'https://cyprus-mail.com/2026/04/20/dam-capacity-reaches-38-up-from-last-year', lang: 'en', source: 'Cyprus Mail' },
-  { title: '2+ MCM water inflow in three days, fullness approaching 40%', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-ta-2-ekm-oi-eisroes-nerou-to-telefteo-triimero-plisiazei-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'en', source: 'KitasWeather' },
   { title: 'Dam levels improve but water caution urged', url: 'https://cyprus-mail.com/2026/04/06/dam-levels-improve-but-water-caution-urged', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Tamassos Dam overflows as reservoir levels reach 32.2% across Cyprus', url: 'https://en.politis.com.cy/economy/economy-hot-spot/996009/tamassos-dam-overflows-as-reservoir-levels-reach-322-across-cyprus', lang: 'en', source: 'Politis' },
   { title: "Amount of water in Cyprus' reservoirs nears 100m cubic metres", url: 'https://cyprus-mail.com/2026/04/02/amount-of-water-in-cyprus-reservoirs-nears-100m-cubic-metres', lang: 'en', source: 'Cyprus Mail' },
@@ -33,6 +33,8 @@ export const newsArticles: NewsArticle[] = [
   { title: 'На Кипре — сезон дождей, но власти утверждают, что засуха продолжается', url: 'https://evropakipr.com/istorii/na-kipre-sezon-dozhdey-pochemu-vlasti-utverzhdayut-chto-na-ostrove-chetvertyy-god', lang: 'ru', source: 'Европа Кипр' },
 
   // Greek
+  { title: 'Υπερκαλύφθηκε η μέση βροχόπτωση Μαΐου μέσα σε 2 ημέρες — εξαιρετικά πολύομβρος και ο Μάιος', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/iperkalifthike-i-mesi-vroxoptosi-maiou-mesa-se-2-imeres-ekseretika-poliomvros-kai-o-maios/', lang: 'el', source: 'KitasWeather' },
+  { title: 'Ξεπέρασαν τα 1.3 ΕΚΜ οι εισροές νερού το τελευταίο 3ήμερο — θα ξεπεράσει το 40% η πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperasan-to-13ekm-oi-eisroes-nerou-to-telefteo-triimero-tha-kseperasei-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
   { title: 'Μάρτης κι Απρίλης: οι καλύτεροι μήνες για εισροή νερού στα φράγματα τα τελευταία 40 χρόνια', url: 'https://www.offsite.com.cy/eidiseis/koinonia/martis-ki-aprilis-oi-kalyteroi-mines-gia-eisroi-neroy-sta-fragmata-ta-teleytaia', lang: 'el', source: 'Offsite' },
   { title: 'Συνεχίζει να αυξάνεται η πληρότητα φραγμάτων — Υπερχείλισε το φράγμα Βυζακιάς', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/sinexizei-na-afksanete-i-sinoliki-plirotita-fragmaton-iperxeilise-to-fragma-vyzakias/', lang: 'el', source: 'KitasWeather' },
   { title: 'Ξεπέρασε το 183% η μέση βροχόπτωση Απριλίου — στο 39.1% η πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-180-tis-ekato-i-mesi-vroxoptosi-apriliou-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
