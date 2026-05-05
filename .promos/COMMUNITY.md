@@ -1799,3 +1799,57 @@ Total storage: *40.1% (116.6 MCM)* — up from 39.6% yesterday (+0.5pp, +1.4 MCM
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 5 — New Article: 100 MCM of Seasonal Inflow
+
+New analysis published: **"100 Million Cubic Metres of Inflow: Cyprus Reservoirs Cross a Line for the First Time in Four Years"**
+
+A different 100 MCM milestone from the one we marked a month ago. April 7 was about **storage** crossing 100 MCM. Today is about **cumulative seasonal inflow** since October — how much new water actually arrived this hydrological year. That number just hit **100.9 MCM**, the first time above the line since 2021/22.
+
+For context: the entire 2024/25 drought year delivered just 18.66 MCM. This season is already at **5.4× that**, with May, June and summer still ahead.
+
+The standout fact buried in the data: **April 2026 was the 2nd-largest April since 1987/88** (23.6 MCM), behind only April 2019. **March 2026 was the 3rd-best March since 1988**. Combined, March + April narrowly out-delivered even the famously wet spring of 2018/19.
+
+The article also covers the desalination buildout (5 → 8 plants, with 4 more by 2027), the €230m Thaleia 2021–2027 package, and what officials are saying about summer supply.
+
+Full article: [fragmata.info/articles/2026-05-05-100mcm-seasonal-inflow](https://fragmata.info/articles/2026-05-05-100mcm-seasonal-inflow)
+
+### Telegram
+```
+📰 100 MCM of seasonal inflow — first time in 4 years
+
+A different 100 MCM milestone from the one we marked a month ago. April 7 was about storage crossing 100 MCM. Today is about cumulative seasonal inflow since October — how much new water actually arrived this hydrological year. That number just hit 100.9 MCM, the first time above the line since 2021/22.
+
+For context: the entire 2024/25 drought year delivered just 18.66 MCM. This season is already at 5.4× that, with May, June and summer still ahead.
+
+The standout fact buried in the data:
+• April 2026: 23.6 MCM — 2nd-largest April since 1987/88, behind only April 2019
+• March 2026: 35.4 MCM — 3rd-best March since 1988
+• Combined March + April narrowly beat even the famously wet spring of 2018/19
+
+The article also covers the desalination buildout (5 → 8 plants, with 4 more by 2027), the €230m Thaleia 2021–2027 infrastructure package, and what officials are saying about summer supply.
+
+📖 Full article: https://fragmata.info/articles/2026-05-05-100mcm-seasonal-inflow
+🔗 Dashboard: https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *100 MCM of seasonal inflow — first time in 4 years*
+
+A different 100 MCM milestone from the one we marked a month ago. April 7 was about *storage* crossing 100 MCM. Today is about *cumulative seasonal inflow* since October — how much new water actually arrived this hydrological year. That number just hit *100.9 MCM*, the first time above the line since 2021/22.
+
+For context: the entire 2024/25 drought year delivered just 18.66 MCM. This season is already at *5.4× that*, with May, June and summer still ahead.
+
+*The standout fact buried in the data:*
+• *April 2026: 23.6 MCM* — 2nd-largest April since 1987/88, behind only April 2019
+• *March 2026: 35.4 MCM* — 3rd-best March since 1988
+• Combined March + April narrowly beat even the famously wet spring of *2018/19*
+
+The article also covers the desalination buildout (5 → 8 plants, with 4 more by 2027), the *€230m Thaleia 2021–2027* infrastructure package, and what officials are saying about summer supply.
+
+📖 Full article: https://fragmata.info/articles/2026-05-05-100mcm-seasonal-inflow
+🔗 Dashboard: https://fragmata.info
+```
