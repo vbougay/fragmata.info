@@ -1730,3 +1730,72 @@ Arminou's week: despite pumping 17.0 MCM to Kouris since October, Arminou climbe
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 5 — Tuesday Update
+
+📊 Cyprus Dams — May 5
+
+Total storage: **40.1% (116.6 MCM)** — up from 39.6% (115.2 MCM) yesterday (+0.5pp, +1.4 MCM). New season high. **17.1pp above last year** (23.0%).
+
+24-hour inflow: **1.42 MCM** total. Top contributors: [Arminou](/dam/arminou/) 0.38 MCM, [Kouris](/dam/kouris/) 0.37 MCM, [Asprokremmos](/dam/asprokremmos/) 0.24 MCM.
+
+Three milestones crossed today:
+- **Season total: 100.9 MCM** — the 100 MCM milestone has been reached (+0.5pp, +1.4 MCM since yesterday, +1.4 MCM May inflow so far)
+- **[Kannaviou](/dam/kannaviou/) 50.2%** (+0.7pp) — crossed 50% for the first time this season, 25.7pp above last year
+- **[Asprokremmos](/dam/asprokremmos/) 40.1%** (+0.5pp) — crossed 40% for the first time this season
+- **[Arminou](/dam/arminou/) 57.4%** (+8.2pp in 24h!) — new season high; a single-day surge despite 17.0 MCM pumped to [Kouris](/dam/kouris/) since October
+- [Germasoyeia](/dam/germasoyeia/) 56.7% — new season high, 32.6pp above last year
+- 9 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+
+Gap vs last year: **+17.1pp** (vs 23.0%).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=12, chat_id=151413643, at=2026-05-05T07:22:41Z
+```
+📊 Cyprus Dams — May 5
+
+Total storage: 40.1% (116.6 MCM) — up from 39.6% yesterday (+0.5pp, +1.4 MCM). New season high. 17.1pp above last year (23.0%).
+
+24h inflow: 1.42 MCM. Top: Arminou 0.38 MCM, Kouris 0.37 MCM, Asprokremmos 0.24 MCM.
+
+Three milestones crossed today:
+• Season total crossed 100 MCM! Now 100.9 MCM — 5.4× the entire 2024/25 drought year
+• Kannaviou 50.2% (+0.7pp) — crossed 50% for the first time this season, 25.7pp above last year
+• Asprokremmos 40.1% (+0.5pp) — crossed 40%, new season high
+
+Other highlights:
+• Arminou 57.4% (+8.2pp in 24h!) — new season high; one-day surge despite 17 MCM pumped to Kouris since October
+• Germasoyeia 56.7% — new season high, 32.6pp above last year
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
++17.1pp vs last year (23.0%).
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — May 5*
+
+Total storage: *40.1% (116.6 MCM)* — up from 39.6% yesterday (+0.5pp, +1.4 MCM). New season high. *17.1pp above last year* (23.0%).
+
+24h inflow: *1.42 MCM*. Top: Arminou 0.38 MCM, Kouris 0.37 MCM, Asprokremmos 0.24 MCM.
+
+*Three milestones crossed today:*
+• *Season total crossed 100 MCM!* Now 100.9 MCM — 5.4× the entire 2024/25 drought year
+• *Kannaviou 50.2%* (+0.7pp) — crossed 50% for the first time this season, 25.7pp above last year
+• *Asprokremmos 40.1%* (+0.5pp) — crossed 40%, new season high
+
+*Other highlights:*
+• *Arminou 57.4%* (+8.2pp in 24h!) — new season high; one-day surge despite 17 MCM pumped to Kouris since October
+• Germasoyeia *56.7%* — new season high, 32.6pp above last year
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+
+*+17.1pp vs last year* (23.0%).
+
+🔗 https://fragmata.info
+```
