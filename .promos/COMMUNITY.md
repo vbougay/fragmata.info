@@ -1853,3 +1853,67 @@ The article also covers the desalination buildout (5 → 8 plants, with 4 more b
 📖 Full article: https://fragmata.info/articles/2026-05-05-100mcm-seasonal-inflow
 🔗 Dashboard: https://fragmata.info
 ```
+
+---
+
+## May 6
+
+📰 Arminou climbs to 62.4% despite pumping 17 MCM to Kouris — season's most remarkable dam story
+
+Two days ago, Arminou sat at 49%. Yesterday it surged to 57.4% (+8.2pp). Today: 62.4% — another +5pp. In 48 hours it gained 13pp while continuously transferring water to Kouris.
+
+The numbers tell a striking story: Arminou has received 18.7 MCM of seasonal inflow — 4.3× its own 4.3 MCM capacity. After sending 17.02 MCM to Kouris, it's still at 62.4%, just 0.7pp below last year's level. Its catchment is essentially acting as a flow-through station for the Troodos foothills, keeping Kouris filled and itself topped up in the same stroke.
+
+Overall, reservoirs reached 40.4% (117.4 MCM) today — a new season high and 17.5pp above last year's 22.9% on the same date. Seasonal inflow stands at 101.9 MCM, comfortably above the 100 MCM milestone we passed yesterday.
+
+Other highlights:
+• Germasoyeia 57.0% — new season high, 33pp above last year. Was at 14% in mid-March.
+• Asprokremmos 40.4% — above 40%, 17.2pp above last year
+• Evretou 47.7% — new season high, 24.2pp above last year
+• 9 dams remain at 100%; Achna still at 2.2% with zero inflow all season
+
+24h inflow: 0.99 MCM. Top contributors: Kouris 0.315 MCM, Arminou 0.24 MCM, Asprokremmos 0.17 MCM.
+
+Dashboard: https://fragmata.info
+
+### Telegram
+```
+📰 Arminou: 62.4% despite pumping 17 MCM to Kouris
+
+Two days ago Arminou sat at 49%. Yesterday: 57.4% (+8.2pp). Today: 62.4% — another +5pp. In 48 hours it gained 13pp while continuously transferring water to Kouris.
+
+The numbers tell a striking story: Arminou has received 18.7 MCM of seasonal inflow — 4.3× its own 4.3 MCM capacity. After sending 17.02 MCM to Kouris, it's still at 62.4%, just 0.7pp below last year's level. Its catchment is essentially a flow-through station for the Troodos foothills.
+
+Overall: 40.4% (117.4 MCM) — new season high, 17.5pp above last year (22.9%). Season total: 101.9 MCM.
+
+Other highlights:
+• Germasoyeia 57.0% — new season high, 33pp above last year. Was 14% in mid-March.
+• Asprokremmos 40.4% — above 40%, 17.2pp above last year
+• Evretou 47.7% — new season high, 24.2pp above last year
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+24h inflow: 0.99 MCM. Top: Kouris 0.315, Arminou 0.24, Asprokremmos 0.17 MCM.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Arminou: 62.4% despite pumping 17 MCM to Kouris*
+
+Two days ago Arminou sat at 49%. Yesterday: 57.4% (+8.2pp). Today: *62.4%* — another +5pp. In 48 hours it gained *13pp* while continuously transferring water to Kouris.
+
+The numbers tell a striking story: Arminou has received *18.7 MCM of seasonal inflow* — 4.3× its own 4.3 MCM capacity. After sending 17.02 MCM to Kouris, it's still at 62.4%, just 0.7pp below last year's level. Its catchment is essentially a flow-through station for the Troodos foothills.
+
+*Overall: 40.4% (117.4 MCM)* — new season high, 17.5pp above last year (22.9%). Season total: *101.9 MCM*.
+
+*Other highlights:*
+• *Germasoyeia 57.0%* — new season high, 33pp above last year. Was 14% in mid-March.
+• *Asprokremmos 40.4%* — above 40%, 17.2pp above last year
+• *Evretou 47.7%* — new season high, 24.2pp above last year
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+24h inflow: *0.99 MCM*. Top: Kouris 0.315, Arminou 0.24, Asprokremmos 0.17 MCM.
+
+🔗 https://fragmata.info
+```
