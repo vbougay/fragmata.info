@@ -1877,6 +1877,7 @@ Other highlights:
 Dashboard: https://fragmata.info
 
 ### Telegram
+Sent: message_id=13, chat_id=151413643, at=2026-05-06T07:15:31Z
 ```
 📰 Arminou: 62.4% despite pumping 17 MCM to Kouris
 
