@@ -1922,3 +1922,68 @@ Arminou's surge continues: 49% two days ago, 57.4% yesterday, *62.4% today* — 
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 7 — Thursday Update
+
+📊 Cyprus Dams — May 7
+
+Total storage: **40.6% (118.1 MCM)** — up from 40.4% (117.4 MCM) yesterday (+0.2pp, +0.6 MCM). New season high. **17.7pp above last year** (22.9%). Season total: **102.6 MCM**.
+
+Today's milestone: **[Arminou](/dam/arminou/) at 66.2%** — now above last year's 63.3% for the first time this season, despite pumping 17.04 MCM to [Kouris](/dam/kouris/) since October. Its seasonal inflow of 18.9 MCM = 4.4× its own capacity.
+
+**Key movements since May 6:**
+- **[Arminou](/dam/arminou/) 66.2%** (+3.8pp) — new season high; first time it exceeds last year's level despite 17.04 MCM transfer to [Kouris](/dam/kouris/)
+- **[Germasoyeia](/dam/germasoyeia/) 57.2%** (+0.2pp) — new season high, 33.3pp above last year
+- **[Evretou](/dam/evretou/) 48.1%** (+0.4pp) — new season high, 24.6pp above last year
+- **[Asprokremmos](/dam/asprokremmos/) 40.6%** (+0.2pp) — new season high, 17.4pp above last year
+- [Kannaviou](/dam/kannaviou/) **50.8%** (+0.2pp) — above 50%, 26.4pp above last year
+- 9 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+
+24h inflow: 0.77 MCM. Top contributors: [Kouris](/dam/kouris/) 0.235, [Arminou](/dam/arminou/) 0.186, [Asprokremmos](/dam/asprokremmos/) 0.111 MCM.
+
+**17.7pp above last year** (22.9%).
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Arminou tops last year despite 17 MCM pumped to Kouris
+
+Total storage: 40.6% (118.1 MCM) — up from 40.4% yesterday (+0.2pp, +0.6 MCM). New season high. 17.7pp above last year (22.9%). Season total: 102.6 MCM.
+
+Today's milestone: Arminou at 66.2% — now above last year's 63.3% for the first time this season, despite having pumped 17.04 MCM to Kouris since October. Its seasonal inflow of 18.9 MCM = 4.4× its own capacity.
+
+• Arminou 66.2% (+3.8pp) — new season high; first time above last year's level
+• Germasoyeia 57.2% (+0.2pp) — new season high, 33pp above last year
+• Evretou 48.1% (+0.4pp) — new season high, 24.6pp above last year
+• Asprokremmos 40.6% (+0.2pp) — new season high, 17.4pp above last year
+• Kannaviou 50.8% (+0.2pp) — above 50%, 26.4pp above last year
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+24h inflow: 0.77 MCM. Top: Kouris 0.235, Arminou 0.186, Asprokremmos 0.111 MCM.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — May 7*
+
+Total storage: *40.6% (118.1 MCM)* — up from 40.4% yesterday (+0.2pp, +0.6 MCM). New season high. *17.7pp above last year* (22.9%). Season total: *102.6 MCM*.
+
+Today's milestone: *Arminou at 66.2%* — now above last year's 63.3% for the first time this season, despite having pumped 17.04 MCM to Kouris since October. Its seasonal inflow: 18.9 MCM = 4.4× its own capacity.
+
+*Key movements since May 6:*
+• *Arminou 66.2%* (+3.8pp) — new season high; first time above last year despite 17 MCM transfer to Kouris
+• *Germasoyeia 57.2%* (+0.2pp) — new season high, 33pp above last year
+• *Evretou 48.1%* (+0.4pp) — new season high, 24.6pp above last year
+• *Asprokremmos 40.6%* (+0.2pp) — new season high, 17.4pp above last year
+• Kannaviou *50.8%* (+0.2pp) — above 50%, 26.4pp above last year
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+
+24h inflow: *0.77 MCM*. Top: Kouris 0.235, Arminou 0.186, Asprokremmos 0.111 MCM.
+
+🔗 https://fragmata.info
+```
