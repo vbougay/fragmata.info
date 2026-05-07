@@ -1948,6 +1948,7 @@ Today's milestone: **[Arminou](/dam/arminou/) at 66.2%** — now above last year
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=14, chat_id=151413643, at=2026-05-07T07:15:20Z
 ```
 📊 Arminou tops last year despite 17 MCM pumped to Kouris
 
