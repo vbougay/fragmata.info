@@ -2013,6 +2013,7 @@ Total storage: **40.8% (118.5 MCM)** — up from 40.6% (118.1 MCM) yesterday (+0
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=15, chat_id=151413643, at=2026-05-08T07:15:35Z
 ```
 📊 Arminou reaches 69% — season continues to inch higher
 
