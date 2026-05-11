@@ -2075,6 +2075,7 @@ The standout story remains [Arminou](/dam/arminou/): now at **72.0% (3.10 MCM)**
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=16, chat_id=151413643, at=2026-05-11T09:28:48Z
 ```
 📰 Arminou breaks its own season record — storage hits 41.1%
 
