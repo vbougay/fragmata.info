@@ -2134,6 +2134,7 @@ Total storage: *41.1% (119.5 MCM)* — new season high. Up from 40.8% three days
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=18, chat_id=151413643, at=2026-05-12T07:17:49Z
 ```
 📊 Cyprus Dams — May 12
 
