@@ -2115,3 +2115,54 @@ Total storage: *41.1% (119.5 MCM)* — new season high. Up from 40.8% three days
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 12 — Tuesday Update
+
+📊 Total storage: **41.2% (119.8 MCM)** — up from 41.1% (119.5 MCM) yesterday (+0.1pp, +0.3 MCM). **18.6pp above last year** (22.6%). Season total: **105.2 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: 17.4 MCM.
+
+24h inflow: 0.435 MCM. Top contributors: [Arminou](/dam/arminou/) 0.111, [Kouris](/dam/kouris/) 0.105, [Asprokremmos](/dam/asprokremmos/) 0.060 MCM. Inflows tapering as the spring season winds down.
+
+**Notable since May 11:**
+- [Germasoyeia](/dam/germasoyeia/) **58.1%** (+0.2pp) — approaching 60% milestone; 34.6pp above last year
+- [Arminou](/dam/arminou/) **72.4%** (+0.4pp) — still slowly climbing; 1.14× its own historical maximum
+- [Evretou](/dam/evretou/) **48.9%** (+0.1pp) — inching toward 50%
+- 9 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+- Gap vs last year: +18.6pp (22.6% same day last year)
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Cyprus Dams — May 12
+
+Total storage: 41.2% (119.8 MCM) — up from 41.1% yesterday (+0.1pp, +0.3 MCM). 18.6pp above last year (22.6%). Season total: 105.2 MCM.
+
+24h inflow: 0.435 MCM. Top: Arminou 0.111, Kouris 0.105, Asprokremmos 0.060 MCM. Inflows tapering as spring winds down.
+
+• Germasoyeia 58.1% (+0.2pp) — approaching 60%; 34.6pp above last year
+• Arminou 72.4% (+0.4pp) — still climbing; 1.14× its own historical max
+• Evretou 48.9% (+0.1pp) — inching toward 50%
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+• Gap vs last year: +18.6pp (22.6% same day last year)
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — May 12*
+
+Total storage: *41.2% (119.8 MCM)* — up from 41.1% yesterday (+0.1pp, +0.3 MCM). *18.6pp above last year* (22.6%). Season total: *105.2 MCM*.
+
+24h inflow: *0.435 MCM*. Top: Arminou 0.111, Kouris 0.105, Asprokremmos 0.060 MCM. Inflows tapering as spring winds down.
+
+• Germasoyeia *58.1%* (+0.2pp) — approaching 60%; 34.6pp above last year
+• Arminou *72.4%* (+0.4pp) — still climbing; 1.14× its own historical max
+• Evretou *48.9%* (+0.1pp) — inching toward 50%
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+• Gap vs last year: +18.6pp (22.6% same day last year)
+
+🔗 https://fragmata.info
+```

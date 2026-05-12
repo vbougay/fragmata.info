@@ -4,6 +4,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [Significant May inflows continue — dam fullness exceeds 41%](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-simantikes-eisroes-gia-mina-maio-kseperase-to-41-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, May 11, 2026
 - [May precipitation exceeds 160% of average — dam inflows continue](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-160-tis-ekato-i-mesi-vroxoptosi-tou-mina-apotimisi-tis-diataraxis-maiou-kai-sinolika-ipsi-vroxis/) — KitasWeather, May 6, 2026
 - [Elevated May inflows continue — nearly 1 MCM in 24 hours](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-afksimenes-eisroes-nerou-gia-mina-maio-plisiasan-to-1-ekm-to-telefteo-24oro/) — KitasWeather, May 6, 2026
 - [Record 24-hour inflow for May — dam fullness crosses 40%](https://kitasweather.com/news/fragmata-vroxoptosi/rekor-24oris-sinolikis-eisrois-nerou-sta-fragmata-gia-mina-maio-kseperase-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, May 5, 2026
@@ -29,6 +30,8 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Russian
 
+- [Плотины Кипра заполнены на 39,6% при запасе 115,2 млн кубометров](https://ruscyprus.com/news/plotiny-kipra-zapolneny-na-39-6-pri-zapase/55998) — RusCyprus, May 4, 2026
+- [Водохранилища Кипра заполнены уже на 39,6%. Власти призывают продолжать экономить воду](https://ruscyprus.com/news/vodohranilishcha-kipra-zapolneny-uzhe-na-39/56014) — RusCyprus, May 4, 2026
 - [За зиму водохранилища Кипра выросли почти вчетверо: с 9,6% до 38%](https://lenta.cy/za-zimu-vodohranilishha-kipra-vyrosli-pochti-vchetvero-s-9-6-do-38/) — Lenta.cy, Apr 2026
 - [За семь дней апреля на Кипре уже выпала месячная норма осадков. Водохранилища заполнены на 33,9%](https://ruscyprus.com/news/za-sem-dney-aprelya-na-kipre-uzhe-vypala/54609) — RusCyprus, Apr 2026
 - [Уровень воды в водохранилищах Кипра приближается к 100 млн кубометров](https://ruscyprus.com/news/uroven-vody-v-vodohranilishchah-kipra/54512) — RusCyprus, Apr 2026
@@ -43,6 +46,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## Greek
 
+- [Συνεχίζουν σημαντικές εισροές νερού για Μάιο — Ξεπέρασε το 41% η πληρότητα φραγμάτων](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-simantikes-eisroes-gia-mina-maio-kseperase-to-41-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, May 11, 2026
 - [Ξεπέρασε το 160% η μέση βροχόπτωση Μαΐου — αποτίμηση διαταραχής και ύψη βροχής](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-160-tis-ekato-i-mesi-vroxoptosi-tou-mina-apotimisi-tis-diataraxis-maiou-kai-sinolika-ipsi-vroxis/) — KitasWeather, May 6, 2026
 - [Συνεχίζουν αυξημένες εισροές νερού για Μάιο — πλησίασαν 1 ΕΚΜ το 24ωρο](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-afksimenes-eisroes-nerou-gia-mina-maio-plisiasan-to-1-ekm-to-telefteo-24oro/) — KitasWeather, May 6, 2026
 - [Ρεκόρ 24ωρης εισροής για μήνα Μάιο — Ξεπέρασε το 40% η πληρότητα φραγμάτων](https://kitasweather.com/news/fragmata-vroxoptosi/rekor-24oris-sinolikis-eisrois-nerou-sta-fragmata-gia-mina-maio-kseperase-to-40-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, May 5, 2026
