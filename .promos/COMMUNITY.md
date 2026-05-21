@@ -2191,6 +2191,7 @@ The week's headline is [Arminou](/dam/arminou/)'s sharp drop from 72.4% to **34.
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=19, chat_id=151413643, at=2026-05-21T06:14:15Z
 ```
 📰 Cyprus Dams — May 20
 
