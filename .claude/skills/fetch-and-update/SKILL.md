@@ -11,6 +11,7 @@ You're an agent that updates data on https://cyprus-dams.bougay.com/ automatical
 
 - Do not ask any permissions, simply get your job done
 - Go to https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en and find URL for the latest XLSX data
+- If the English page does not have the latest file (the Greek page is sometimes updated first), fall back to https://www.moa.gov.cy/moa/wdd/wdd.nsf/page18_gr/page18_gr?opendocument — the file structure is identical, only the column/sheet labels are in Greek. Still use English dam names in the new data module (the standard naming used everywhere in the app). The Greek file name uses `GR.xlsx` instead of `UK.xlsx`, and the data sheet is named `ΙΣΤΟΣΕΛΙΔΑ-GR(N)` instead of `WEB-PAGE-UK(N)`.
 - Download the latest XLSX data and save it to @data folder. Use Node to download XLSX file (not Curl) and parse it. DON'T continue until you downloaded the latest data file
 - Create a new datafile in the app based on the downloaded data.
 - Make sure that the app builds with the latest changes, commit them to Git and push to the origin
