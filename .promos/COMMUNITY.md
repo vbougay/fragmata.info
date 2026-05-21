@@ -2167,3 +2167,68 @@ Total storage: *41.2% (119.8 MCM)* — up from 41.1% yesterday (+0.1pp, +0.3 MCM
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 20 — Wednesday Update
+
+📰 Total storage: **41.8% (121.6 MCM)** — new season high, up from 41.2% (119.8 MCM) eight days ago. **+0.6pp, +1.8 MCM** since May 12. **19.7pp above last year** (22.1%). Season total: **108.0 MCM**.
+
+The week's headline is [Arminou](/dam/arminou/)'s sharp drop from 72.4% to **34.9%** (3.11 → 1.50 MCM) as the [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer accelerated — total pumped to [Kouris](/dam/kouris/) now stands at **19.66 MCM**, up from 17.4 MCM on May 12. Despite drawing down [Arminou](/dam/arminou/) by 1.6 MCM, [Kouris](/dam/kouris/) gained 2.6 MCM (44.5 → 47.2 MCM, 38.7% → 41.0%) and the system as a whole still set a new season high.
+
+24h inflow: 0.324 MCM. Top contributors: [Kouris](/dam/kouris/) 0.094, [Arminou](/dam/arminou/) 0.071, [Asprokremmos](/dam/asprokremmos/) 0.059 MCM. Natural inflows continue tapering as Cyprus moves into summer.
+
+**Notable since May 12:**
+- [Arminou](/dam/arminou/) **34.9%** (-37.5pp) — sharp managed drawdown into [Kouris](/dam/kouris/); seasonal inflow now 20.2 MCM (4.7× its capacity)
+- [Kouris](/dam/kouris/) **41.0%** (+2.3pp) — new season high, crossed 47 MCM, 22.6pp above last year
+- [Germasoyeia](/dam/germasoyeia/) **59.3%** (+1.2pp) — crossed 8 MCM, highest level since 2020
+- [Evretou](/dam/evretou/) **49.6%** (+0.7pp) — just below 50% milestone
+- [Asprokremmos](/dam/asprokremmos/) **41.6%** (+0.6pp) — new season high
+- [Kannaviou](/dam/kannaviou/) **52.1%** (+0.5pp) — new season high
+- 9 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+- Gap vs last year: +19.7pp (22.1% same day last year)
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — May 20
+
+Total storage: 41.8% (121.6 MCM) — new season high. Up from 41.2% (119.8 MCM) eight days ago: +0.6pp, +1.8 MCM. 19.7pp above last year (22.1%). Season total: 108.0 MCM.
+
+The week's headline is Arminou's sharp drop from 72.4% to 34.9% (3.11 → 1.50 MCM) as the Arminou→Kouris transfer accelerated — total pumped to Kouris now stands at 19.66 MCM, up from 17.4 MCM on May 12. Despite drawing Arminou down by 1.6 MCM, Kouris gained 2.6 MCM (44.5 → 47.2 MCM, 38.7% → 41.0%) and the system as a whole still set a new season high.
+
+24h inflow: 0.324 MCM. Top: Kouris 0.094, Arminou 0.071, Asprokremmos 0.059 MCM.
+
+• Arminou 34.9% (-37.5pp) — managed drawdown into Kouris; seasonal inflow 20.2 MCM (4.7× capacity)
+• Kouris 41.0% (+2.3pp) — new season high, crossed 47 MCM, 22.6pp above last year
+• Germasoyeia 59.3% (+1.2pp) — crossed 8 MCM, highest since 2020
+• Evretou 49.6% (+0.7pp) — just below 50%
+• Asprokremmos 41.6% (+0.6pp) — new season high
+• Kannaviou 52.1% (+0.5pp) — new season high
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — May 20*
+
+Total storage: *41.8% (121.6 MCM)* — new season high. Up from 41.2% (119.8 MCM) eight days ago: *+0.6pp, +1.8 MCM*. *19.7pp above last year* (22.1%). Season total: *108.0 MCM*.
+
+The week's headline is *Arminou's sharp drop from 72.4% to 34.9%* (3.11 → 1.50 MCM) as the Arminou→Kouris transfer accelerated — total pumped to Kouris now stands at *19.66 MCM*, up from 17.4 MCM on May 12. Despite drawing Arminou down by 1.6 MCM, Kouris gained 2.6 MCM (44.5 → 47.2 MCM, 38.7% → 41.0%) and the system as a whole still set a new season high.
+
+24h inflow: *0.324 MCM*. Top: Kouris 0.094, Arminou 0.071, Asprokremmos 0.059 MCM.
+
+*Key movements since May 12:*
+• *Arminou 34.9%* (-37.5pp) — managed drawdown into Kouris; seasonal inflow 20.2 MCM (4.7× capacity)
+• *Kouris 41.0%* (+2.3pp) — new season high, crossed 47 MCM, 22.6pp above last year
+• Germasoyeia *59.3%* (+1.2pp) — crossed 8 MCM, highest since 2020
+• Evretou *49.6%* (+0.7pp) — just below 50%
+• Asprokremmos *41.6%* (+0.6pp) — new season high
+• Kannaviou *52.1%* (+0.5pp) — new season high
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+
+🔗 https://fragmata.info
+```
