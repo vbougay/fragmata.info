@@ -2233,3 +2233,62 @@ The week's headline is *Arminou's sharp drop from 72.4% to 34.9%* (3.11 → 1.50
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 21 — Thursday Update
+
+📊 Total storage: **41.9% (121.8 MCM)** — up from 41.8% yesterday (+0.1pp, +0.2 MCM). **19.6pp above last year** (22.3%). Season total: **108.4 MCM** — **new record for May inflows since records began in 1987**, surpassing the previous best of 8.9 MCM set in May 2019.
+
+24h inflow: 0.32 MCM. Top: Arminou 0.081, Kouris 0.070, Asprokremmos 0.057 MCM.
+
+**Notable:**
+- Season May inflow **10.26 MCM** — best May since 1987; all months of spring 2026 have broken or nearly broken records
+- [Germasoyeia](/dam/germasoyeia/) **59.4%** — edging higher, new season high
+- [Evretou](/dam/evretou/) **49.7%** — creeping toward 50%; new season high
+- [Arminou](/dam/arminou/) **36.0%** (+1.1pp from yesterday) — slight natural rebound; transfer to [Kouris](/dam/kouris/) now 19.69 MCM
+- 9 dams at 100%; [Achna](/dam/achna/) 2.2% — zero inflow all season
+- Gap vs last year: +19.6pp (22.3% same day last year)
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=20, chat_id=151413643, at=2026-05-22T06:11:09Z
+```
+📊 Cyprus Dams — May 21
+
+Total storage: 41.9% (121.8 MCM) — up from 41.8% yesterday (+0.1pp, +0.2 MCM). 19.6pp above last year (22.3%). Season total: 108.4 MCM.
+
+New record: May 2026 has now recorded the highest May inflow since records began in 1987 — 10.26 MCM, surpassing the previous May record of 8.9 MCM (May 2019).
+
+24h inflow: 0.32 MCM. Top: Arminou 0.081, Kouris 0.070, Asprokremmos 0.057 MCM.
+
+• May inflow record since 1987 — all three spring months broke or near-broke records this season
+• Germasoyeia 59.4% — new season high
+• Evretou 49.7% — inching toward 50%; new season high
+• Arminou 36.0% (+1.1pp) — slight rebound; Arminou→Kouris transfer now 19.69 MCM
+• 9 dams at 100%; Achna 2.2% — zero inflow all season
+• Gap vs last year: +19.6pp (22.3% same day last year)
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — May 21*
+
+Total storage: *41.9% (121.8 MCM)* — up from 41.8% yesterday (+0.1pp, +0.2 MCM). *19.6pp above last year* (22.3%). Season total: *108.4 MCM*.
+
+New record: May 2026 has now recorded the *highest May inflow since records began in 1987* — 10.26 MCM, surpassing the previous May record of 8.9 MCM (May 2019).
+
+24h inflow: *0.32 MCM*. Top: Arminou 0.081, Kouris 0.070, Asprokremmos 0.057 MCM.
+
+• May inflow *record since 1987* — all three spring months broke or near-broke records this season
+• Germasoyeia *59.4%* — new season high
+• Evretou *49.7%* — inching toward 50%; new season high
+• Arminou *36.0%* (+1.1pp) — slight rebound; Arminou→Kouris transfer now *19.69 MCM*
+• 9 dams at 100%; Achna *2.2%* — zero inflow all season
+• Gap vs last year: +19.6pp (22.3% same day last year)
+
+🔗 https://fragmata.info
+```
