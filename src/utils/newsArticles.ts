@@ -39,6 +39,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'На Кипре — сезон дождей, но власти утверждают, что засуха продолжается', url: 'https://evropakipr.com/istorii/na-kipre-sezon-dozhdey-pochemu-vlasti-utverzhdayut-chto-na-ostrove-chetvertyy-god', lang: 'ru', source: 'Европа Кипр' },
 
   // Greek
+  { title: 'Ρεκόρ συνολικών εισροών νερού τον φετινό Μάιο στα φράγματα', url: 'https://www.politis.com.cy/politis-news/cyprus/1005944/rekor-sinolikwn-eisrown-nerou-ghia-mina-maio-sta-fraghmata-sinekhizei-i-auksisi-sinolikis-plirotitas', lang: 'el', source: 'Πολίτης' },
   { title: 'Ρεκόρ εισροών Μαΐου στα φράγματα — συνεχίζεται η αύξηση πληρότητας', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/rekor-sinolikon-eisroon-nerou-gia-mina-maio-sta-fragmata-sinexizei-i-afksisi-tis-sinolikis-plirotitas/', lang: 'el', source: 'KitasWeather' },
   { title: 'Συνεχίζουν σημαντικές εισροές Μαΐου — Ξεπέρασε το 41% η πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-simantikes-eisroes-gia-mina-maio-kseperase-to-41-tis-ekato-i-sinoliki-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
   { title: 'Ξεπέρασε το 160% η μέση βροχόπτωση Μαΐου — αποτίμηση διαταραχής και ύψη βροχής', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-160-tis-ekato-i-mesi-vroxoptosi-tou-mina-apotimisi-tis-diataraxis-maiou-kai-sinolika-ipsi-vroxis/', lang: 'el', source: 'KitasWeather' },
