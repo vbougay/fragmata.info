@@ -2380,6 +2380,7 @@ Three milestones crossed since the last update: [Evretou](/dam/evretou/) cleared
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=22, chat_id=151413643, at=2026-05-27T04:25:00Z
 ```
 📰 Cyprus Dams — May 26
 
