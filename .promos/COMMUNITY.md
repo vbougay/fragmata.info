@@ -2444,6 +2444,7 @@ With May drawing to a close, inflows are tapering to single digits as the summer
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=23, chat_id=151413643, at=2026-05-27T08:18:02Z
 ```
 📰 Cyprus Dams — May 27
 
