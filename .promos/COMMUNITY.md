@@ -2357,3 +2357,67 @@ Cyprus crossed the *+20pp gap above last year* today — a milestone that would 
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 26 — Tuesday Update
+
+📰 Total storage: **42.3% (122.9 MCM)** — new season high. Up from 42.0% (122.1 MCM) on May 22: **+0.3pp, +0.8 MCM in 4 days**. **+20.5pp above last year** (21.7%). Season inflow: **110.0 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **19.84 MCM**.
+
+Three milestones crossed since the last update: [Evretou](/dam/evretou/) cleared 50%, [Germasoyeia](/dam/germasoyeia/) cleared 60%, and [Tamassos](/dam/tamassos/) reached full capacity — bringing the count to 10 dams at 100%. The pace of gains has slowed to a few tenths per day as the spring season winds down, but the remarkable season continues to push records.
+
+24h inflow: 0.33 MCM. Top: [Kouris](/dam/kouris/) 0.105, [Arminou](/dam/arminou/) 0.083, [Asprokremmos](/dam/asprokremmos/) 0.049 MCM.
+
+**Notable:**
+- **[Evretou](/dam/evretou/) 50.1%** (+0.3pp) — crossed 50% for the first time this season; new season high
+- **[Germasoyeia](/dam/germasoyeia/) 60.1%** (+0.4pp) — crossed 60%; highest level since 2020
+- **[Tamassos](/dam/tamassos/) 100%** — reached full; now **10 dams at 100%**
+- [Arminou](/dam/arminou/) **40.4%** (+3.5pp) — strongest 4-day rebound this month; transfer to [Kouris](/dam/kouris/) now 19.84 MCM
+- [Kouris](/dam/kouris/) **41.4%** (47.6 MCM) — slow steady rise, +23.2pp above last year's 18.2%
+- [Asprokremmos](/dam/asprokremmos/) **41.9%** — new season high, 20pp above last year
+- [Achna](/dam/achna/) 2.2% — zero inflow all season, unchanged
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — May 26
+
+Total storage: 42.3% (122.9 MCM) — new season high. Up from 42.0% (122.1 MCM) on May 22: +0.3pp, +0.8 MCM in 4 days. 20.5pp above last year (21.7%). Season inflow: 110.0 MCM.
+
+Three milestones crossed: Evretou cleared 50%, Germasoyeia cleared 60%, and Tamassos reached 100% — now 10 dams at full capacity. The pace of gains has slowed to tenths per day as spring winds down, but records keep falling.
+
+24h inflow: 0.33 MCM. Top: Kouris 0.105, Arminou 0.083, Asprokremmos 0.049 MCM.
+
+• Evretou 50.1% (+0.3pp) — crossed 50% for the first time this season
+• Germasoyeia 60.1% (+0.4pp) — crossed 60%; highest since 2020
+• Tamassos 100% — reached full; 10 dams now at 100%
+• Arminou 40.4% (+3.5pp) — strongest rebound this month; Arminou→Kouris transfer now 19.84 MCM
+• Kouris 41.4% (47.6 MCM) — steady, +23.2pp above last year
+• Asprokremmos 41.9% — new season high, +20pp above last year
+• Achna 2.2% — zero inflow all season
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — May 26*
+
+Total storage: *42.3% (122.9 MCM)* — new season high. Up from 42.0% on May 22: *+0.3pp, +0.8 MCM in 4 days*. *20.5pp above last year* (21.7%). Season inflow: *110.0 MCM*.
+
+Three milestones crossed: Evretou cleared *50%*, Germasoyeia cleared *60%*, and Tamassos reached *100%* — now *10 dams at full capacity*. The pace has slowed to tenths per day as spring winds down, but records keep falling.
+
+24h inflow: *0.33 MCM*. Top: Kouris 0.105, Arminou 0.083, Asprokremmos 0.049 MCM.
+
+*Notable movements:*
+• Evretou *50.1%* (+0.3pp) — crossed 50% for first time this season
+• Germasoyeia *60.1%* (+0.4pp) — crossed 60%; highest since 2020
+• Tamassos *100%* — 10 dams now at 100%
+• Arminou *40.4%* (+3.5pp) — strongest rebound this month; Arminou→Kouris now *19.84 MCM*
+• Kouris *41.4%* (47.6 MCM) — steady, +23.2pp above last year
+• Asprokremmos *41.9%* — new season high, +20pp above last year
+• Achna *2.2%* — zero inflow all season
+
+🔗 https://fragmata.info
+```
