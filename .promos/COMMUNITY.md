@@ -2506,6 +2506,7 @@ With May wrapping up, daily gains are down to a trickle — 0.30 MCM over the pa
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=24, chat_id=151413643, at=2026-05-28T15:38:52Z
 ```
 📊 Cyprus Dams — May 28
 
