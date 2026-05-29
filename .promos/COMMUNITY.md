@@ -2546,3 +2546,65 @@ Daily gains slowing to a trickle as the summer dry season begins.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## May 29 — Friday Update
+
+📊 Total storage: **42.4% (123.3 MCM)** — new season high. Up from 42.3% (123.1 MCM) yesterday: **+0.1pp, +0.2 MCM**. **+20.8pp above last year** (21.6%). Season inflow: **110.8 MCM** — record since 1987. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **19.93 MCM**.
+
+Inflows tapering to a trickle (0.24 MCM over 24h) as May closes and the summer dry season begins. The season's story is essentially written — the question now is how slowly storage will decline before the autumn rains.
+
+24h inflow: 0.24 MCM. Top: [Kouris](/dam/kouris/) 0.097, [Arminou](/dam/arminou/) 0.061, [Asprokremmos](/dam/asprokremmos/) 0.035 MCM.
+
+**Notable:**
+- [Arminou](/dam/arminou/) **42.8%** (+0.6pp) — new season high; [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer now 19.93 MCM
+- [Germasoyeia](/dam/germasoyeia/) **60.3%** — season high, highest since 2020
+- [Evretou](/dam/evretou/) **50.1%** — holding above 50% milestone
+- [Kannaviou](/dam/kannaviou/) **52.3%** — near season high, +29.2pp above last year
+- **10 dams at 100%** — [Tamassos](/dam/tamassos/), [Klirou-Malounta](/dam/klirou-malounta/), [Solea](/dam/solea/) and 7 others
+- [Achna](/dam/achna/) **1.8%** — zero inflow all season; slight decline from evaporation
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=25, chat_id=151413643, at=2026-05-29T08:12:08Z
+```
+📊 Cyprus Dams — May 29
+
+Total storage: 42.4% (123.3 MCM) — new season high. Up from 42.3% yesterday: +0.1pp, +0.2 MCM. 20.8pp above last year (21.6%). Season inflow: 110.8 MCM — record since 1987.
+
+Daily inflows tapering to a trickle (0.24 MCM/day) as May closes — summer dry season underway.
+
+24h inflow: 0.24 MCM. Top: Kouris 0.097, Arminou 0.061, Asprokremmos 0.035 MCM.
+
+• Arminou 42.8% (+0.6pp) — new season high; Arminou→Kouris now 19.93 MCM
+• Germasoyeia 60.3% — season high, highest since 2020
+• Evretou 50.1% — holding above 50% milestone
+• Kannaviou 52.3% — near season high, +29.2pp above last year
+• 10 dams at 100%
+• Achna 1.8% — zero inflow all season
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — May 29*
+
+Total storage: *42.4% (123.3 MCM)* — new season high. Up from 42.3% yesterday: *+0.1pp, +0.2 MCM*. *20.8pp above last year* (21.6%). Season inflow: *110.8 MCM* — record since 1987.
+
+Daily inflows tapering to a trickle as May closes — summer dry season underway.
+
+24h inflow: *0.24 MCM*. Top: Kouris 0.097, Arminou 0.061, Asprokremmos 0.035 MCM.
+
+*Notable:*
+• Arminou *42.8%* (+0.6pp) — new season high; Arminou→Kouris now *19.93 MCM*
+• Germasoyeia *60.3%* — season high, highest since 2020
+• Evretou *50.1%* — holding above 50% milestone
+• Kannaviou *52.3%* — near season high, +29.2pp above last year
+• *10 dams at 100%*
+• Achna *1.8%* — zero inflow all season
+
+🔗 https://fragmata.info
+```
