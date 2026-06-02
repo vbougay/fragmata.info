@@ -2632,6 +2632,7 @@ One late milestone: the [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transf
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=26, chat_id=151413643, at=2026-06-02T11:16:55Z
 ```
 📰 Cyprus Dams — June 2
 
