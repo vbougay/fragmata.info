@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-stty sane 2>/dev/null
+stty sane 2>/dev/null || true  # no-op without a TTY (e.g. nohup/cron); don't trip `set -e`
 
 # Watch WDD website for new reservoir data and trigger Claude Code to update the app.
 # Usage:
@@ -40,7 +40,7 @@ date_to_epoch() {
 # Read the current latest dataset from dataManager.ts (the static import line)
 get_current_latest() {
   grep "^import \* as dataDefault from " "$DATA_MANAGER" \
-    | grep -oE '[0-9]{1,2}-[A-Z]{3}-[0-9]{4}'
+    | grep -oE '[0-9]{1,2}-[A-Z]{3,}-[0-9]{4}'
 }
 
 # Fetch the WDD page(s) and extract the newest DD-MMM-YYYY date from XLSX links.
@@ -56,11 +56,14 @@ get_wdd_latest() {
     return 1
   fi
 
-  # Extract dates from XLSX filenames (e.g. "23-MAR-2026 UK.xlsx" or "20-MAY-2026 GR.xlsx"), skip "Graphs"
+  # Extract dates from XLSX filenames, skip "Graphs". The month may be a 3-letter
+  # abbreviation (e.g. "23-MAR-2026 UK.xlsx") or fully spelled out, as WDD does for
+  # June/July (e.g. "02-JUNE-2026 UK.xlsx") — so match 3-or-more letters. macOS
+  # `date -jf "%d-%b-%Y"` parses both abbreviated and full month names.
   dates=$(printf '%s\n%s\n' "$html_en" "$html_gr" \
-    | grep -oE '[0-9]{1,2}-[A-Z]{3}-[0-9]{4}[^"]*\.xlsx' \
+    | grep -oE '[0-9]{1,2}-[A-Z]{3,}-[0-9]{4}[^"]*\.xlsx' \
     | grep -iv 'graph' \
-    | grep -oE '^[0-9]{1,2}-[A-Z]{3}-[0-9]{4}' \
+    | grep -oE '^[0-9]{1,2}-[A-Z]{3,}-[0-9]{4}' \
     | sort -u)
 
   if [[ -z "$dates" ]]; then
