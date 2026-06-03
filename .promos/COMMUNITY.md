@@ -2676,3 +2676,71 @@ One late milestone: the *Arminou→Kouris* transfer crossed *20 MCM* for the sea
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 3 — Major Update
+
+📰 Total storage: **42.4% (123.4 MCM)** — unchanged from June 2, essentially flat since May 26's 42.3% (122.9 MCM): **+0.1pp, +0.5 MCM over 8 days**. **+21.1pp above last year** (21.3%). Season inflow: **111.5 MCM** — record since 1987.
+
+June 2 marked the crest. With daily inflows now near zero (0.17 MCM/day), the WDD's June 3 data shows the same values as the day before — the plateau is complete. From here the summer drawdown takes over: no rain is expected for months, and the stored 123 MCM will slowly diminish through evaporation and abstraction. Cyprus Water Development Department confirmed this week that dam levels are almost double those of last year, the legacy of a record wet spring.
+
+The [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) pump continues at 20.05 MCM for the season, a trickle still feeding Cyprus's largest reservoir. [Germasoyeia](/dam/germasoyeia/) sits at 60.2% — its highest level since 2020 — heading into summer with a solid buffer. The five small recharge dams remain full, groundwater topping up quietly in the background.
+
+24h inflow: 0.17 MCM. Top: [Arminou](/dam/arminou/) 0.059, [Kouris](/dam/kouris/) 0.051, [Kalavasos](/dam/kalavasos/) 0.015 MCM.
+
+**Notable:**
+- [Kouris](/dam/kouris/) **41.7%** (47.9 MCM) — season high holding; [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer at 20.05 MCM
+- [Germasoyeia](/dam/germasoyeia/) **60.2%** — highest since 2020, entering summer at a strong 60%
+- [Kannaviou](/dam/kannaviou/) **52.2%** and [Evretou](/dam/evretou/) **50.1%** — holding near season highs
+- **Smaller dams easing off full** as inflows stop: [Argaka](/dam/argaka/) 98.6%, [Vyzakia](/dam/vyzakia/) 97.8%, [Mavrokolympos](/dam/mavrokolympos/) 87.0%
+- **5 dams at 100%** — [Pomos](/dam/pomos/), [Kalopanagiotis](/dam/kalopanagiotis/), [Tamassos](/dam/tamassos/), [Klirou-Malounta](/dam/klirou-malounta/), [Solea](/dam/solea/)
+- [Achna](/dam/achna/) **2.0%** — zero inflow all season, far below last year's 7.7%
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=27, chat_id=151413643, at=2026-06-03T07:17:23Z
+```
+📰 Cyprus Dams — June 3
+
+Total storage: 42.4% (123.4 MCM) — plateau confirmed. Essentially flat since May 26: +0.5 MCM over 8 days. 21.1pp above last year (21.3%). Season inflow: 111.5 MCM — record since 1987.
+
+June 2 marked the crest. With daily inflows now near zero (0.17 MCM/day), the summer dry season has fully taken over. Cyprus Water Development Department confirmed this week that dam levels are almost double those of last year — the legacy of a record wet spring.
+
+The Arminou→Kouris transfer holds at 20.05 MCM for the season. Germasoyeia at 60.2% — highest since 2020 — enters summer with a solid buffer.
+
+24h inflow: 0.17 MCM. Top: Arminou 0.059, Kouris 0.051, Kalavasos 0.015 MCM.
+
+• Kouris 41.7% (47.9 MCM) — season high holding; Arminou→Kouris at 20.05 MCM
+• Germasoyeia 60.2% — highest since 2020, solid summer buffer
+• Kannaviou 52.2% and Evretou 50.1% — near season highs
+• Smaller dams easing off full: Argaka 98.6%, Vyzakia 97.8%, Mavrokolympos 87.0%
+• 5 dams at 100% — Pomos, Kalopanagiotis, Tamassos, Klirou-Malounta, Solea
+• Achna 2.0% — zero inflow all season
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — June 3*
+
+Total storage: *42.4% (123.4 MCM)* — plateau confirmed. Essentially flat since May 26: *+0.5 MCM over 8 days*. *21.1pp above last year* (21.3%). Season inflow: *111.5 MCM* — record since 1987.
+
+June 2 marked the crest. With daily inflows near zero (0.17 MCM/day), the summer dry season has fully taken over. Cyprus Water Development Department confirmed dam levels are *almost double those of last year* — the legacy of a record wet spring.
+
+The *Arminou→Kouris* transfer holds at *20.05 MCM*. Germasoyeia at *60.2%* — highest since 2020 — enters summer with a solid buffer.
+
+24h inflow: *0.17 MCM*. Top: Arminou 0.059, Kouris 0.051, Kalavasos 0.015 MCM.
+
+*Notable:*
+• Kouris *41.7%* (47.9 MCM) — season high; Arminou→Kouris at *20.05 MCM*
+• Germasoyeia *60.2%* — highest since 2020, solid summer buffer
+• Kannaviou *52.2%* and Evretou *50.1%* — near season highs
+• Smaller dams easing: Argaka 98.6%, Vyzakia 97.8%, Mavrokolympos 87.0%
+• *5 dams at 100%* — Pomos, Kalopanagiotis, Tamassos, Klirou-Malounta, Solea
+• Achna *2.0%* — zero inflow all season
+
+🔗 https://fragmata.info
+```
