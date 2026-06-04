@@ -2764,6 +2764,7 @@ The plateau holds. Daily inflows remain negligible as the dry season fully grips
 Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=28, chat_id=151413643, at=2026-06-04T08:14:39Z
 ```
 📊 Cyprus Dams — June 4
 
