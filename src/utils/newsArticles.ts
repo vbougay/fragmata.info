@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Water pipes across Limassol to be replaced', url: 'https://cyprus-mail.com/2026/06/02/water-pipes-across-limassol-to-be-replaced', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam levels almost double those of last year', url: 'https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus has recorded the highest May inflow of water into its dams in four decades', url: 'https://famagusta-gazette.com/cyprus-has-recorded-the-highest-may-inflow-of-water-into-its-dams-in-four-decades/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'Dams record best May inflows since 1987', url: 'https://cyprus-mail.com/2026/05/21/dams-record-best-may-inflows-since-1987', lang: 'en', source: 'Cyprus Mail' },

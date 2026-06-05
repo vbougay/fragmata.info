@@ -2804,3 +2804,64 @@ The plateau holds as the dry season takes over. The *Arminou→Kouris* transfer 
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 5 — Minor Update
+
+📊 Total storage: **42.4% (123.4 MCM)** — essentially flat for a third day. **+21.3pp above last year** (21.1%). Season inflow: **112.0 MCM** — record since 1987.
+
+The plateau holds. 24h inflow: 0.17 MCM, led by [Kouris](/dam/kouris/) 0.070, [Arminou](/dam/arminou/) 0.051, [Evretou](/dam/evretou/) 0.016 MCM. The only notable movement is [Arminou](/dam/arminou/) edging up +0.4pp to 46.3% as the [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer ticks to 20.14 MCM. The summer drawdown has fully taken over.
+
+**Notable:**
+- [Arminou](/dam/arminou/) **46.3%** (+0.4pp) — small uptick; [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer at 20.14 MCM
+- [Kouris](/dam/kouris/) **41.8%** (48.1 MCM) — holding near season high, 23.9pp above last year
+- [Germasoyeia](/dam/germasoyeia/) **60.1%** — near season high, highest since 2020
+- [Kannaviou](/dam/kannaviou/) **52.2%** · [Evretou](/dam/evretou/) **50.2%** — steady near peaks
+- **Smaller dams easing**: [Xyliatos](/dam/xyliatos/) 99.4%, [Vyzakia](/dam/vyzakia/) 97.6%, [Mavrokolympos](/dam/mavrokolympos/) 86.2%
+- **5 dams at 100%** (+ [Solea](/dam/solea/) 99.6%); [Achna](/dam/achna/) 2.0% — zero inflow all season
+
+Gap vs last year: +21.3pp.
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Cyprus Dams — June 5
+
+Total storage: 42.4% (123.4 MCM) — flat for a third day. 21.3pp above last year (21.1%). Season inflow: 112.0 MCM — record since 1987.
+
+The plateau holds. 24h inflow: 0.17 MCM. Top: Kouris 0.070, Arminou 0.051, Evretou 0.016 MCM.
+
+• Arminou 46.3% (+0.4pp) — small uptick; Arminou→Kouris transfer at 20.14 MCM
+• Kouris 41.8% (48.1 MCM) — near season high, 23.9pp above last year
+• Germasoyeia 60.1% — near season high, highest since 2020
+• Kannaviou 52.2% and Evretou 50.2% — steady near peaks
+• Smaller dams easing: Xyliatos 99.4%, Vyzakia 97.6%, Mavrokolympos 86.2%
+• 5 dams at 100% (+ Solea 99.6%); Achna 2.0% — zero inflow all season
+
+Gap vs last year: +21.3pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — June 5*
+
+Total storage: *42.4% (123.4 MCM)* — flat for a third day. *21.3pp above last year* (21.1%). Season inflow: *112.0 MCM* — record since 1987.
+
+The plateau holds. 24h inflow: *0.17 MCM*. Top: Kouris 0.070, Arminou 0.051, Evretou 0.016 MCM.
+
+*Notable:*
+• *Arminou 46.3%* (+0.4pp) — small uptick; Arminou→Kouris transfer at *20.14 MCM*
+• Kouris *41.8%* (48.1 MCM) — near season high, *23.9pp above last year*
+• Germasoyeia *60.1%* — near season high, highest since 2020
+• Kannaviou *52.2%* and Evretou *50.2%* — steady near peaks
+• Smaller dams easing: Xyliatos 99.4%, Vyzakia 97.6%, Mavrokolympos 86.2%
+• *5 dams at 100%* (+ Solea 99.6%); Achna *2.0%* — zero inflow all season
+
+Gap vs last year: *+21.3pp*.
+
+🔗 https://fragmata.info
+```

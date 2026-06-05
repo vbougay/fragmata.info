@@ -1,5 +1,5 @@
 import { Reservoir, ReservoirRegion, RegionTotal, YearlyInflowData, DrainForecast } from '../types';
-import * as dataDefault from './data-04-JUN-2026';
+import * as dataDefault from './data-05-JUN-2026';
 import {
   calculateDrainDate,
   calculateRegionDrainDate,
@@ -26,10 +26,11 @@ interface DataModule {
 }
 
 const moduleCache = new Map<string, DataModule>([
-  ['04-JUN-2026', dataDefault],
+  ['05-JUN-2026', dataDefault],
 ]);
 
 const importMap: Record<string, () => Promise<DataModule>> = {
+  '04-JUN-2026': () => import('./data-04-JUN-2026'),
   '03-JUN-2026': () => import('./data-03-JUN-2026'),
   '02-JUN-2026': () => import('./data-02-JUN-2026'),
   '29-MAY-2026': () => import('./data-29-MAY-2026'),
@@ -134,6 +135,7 @@ export async function ensureDatasetLoaded(id: string): Promise<void> {
 
 // Define available data sets (metadata only — modules loaded on demand)
 export const availableDataSets = [
+  { id: '05-JUN-2026', label: 'June 5, 2026', value: '05-JUN-2026' },
   { id: '04-JUN-2026', label: 'June 4, 2026', value: '04-JUN-2026' },
   { id: '03-JUN-2026', label: 'June 3, 2026', value: '03-JUN-2026' },
   { id: '02-JUN-2026', label: 'June 2, 2026', value: '02-JUN-2026' },
