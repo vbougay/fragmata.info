@@ -2866,3 +2866,65 @@ Gap vs last year: *+21.3pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 5 — New Article: The Inflow Season Crests
+
+📰 New article: **Peak Water — Cyprus's inflow season crests at a two-year high**
+
+Total storage has flattened at **42.4% (123.4 MCM)** — the most water in the dams since June 2024 and almost exactly double last year (21.1%). With daily inflows now negligible, the 2025/26 rain season is effectively over, so we pulled the whole season together in one place: the high point, the plateau, and how it happened.
+
+**The recovery in numbers:**
+- **112 MCM of inflow** — the most in 4 years (first season above 100 MCM since 2021/22), 6× the entire 2024/25 drought year
+- **86% of it arrived February–May** — March 35.4 MCM (3rd-best since 1988), April 23.6 (2nd since 1987/88), May 13.2 (a record May)
+- From a late-December low of 9.3%, storage climbed **4.6×** to today's peak
+- **Nine dams filled to 100%** — [Vyzakia](/dam/vyzakia/) went from 1.9% to 97.6%, [Mavrokolympos](/dam/mavrokolympos/) from 0% to 86%
+- [Arminou](/dam/arminou/) took in 4.9× its own capacity and pumped 20.14 MCM up to [Kouris](/dam/kouris/)
+- Still lagging: [Achna](/dam/achna/) 2.0% (zero inflow all season), [Lefkara](/dam/lefkara/) 18.5%
+
+The season now pivots from filling to drawdown — the question shifts from how high it fills to how long it lasts.
+
+Full article: [fragmata.info/articles/2026-06-05-inflow-season-peak-plateau](https://fragmata.info/articles/2026-06-05-inflow-season-peak-plateau)
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 New article: Peak Water — Cyprus's inflow season crests at a 2-year high
+
+Total storage has flattened at 42.4% (123.4 MCM) — the most water in the dams since June 2024 and almost exactly double last year. With inflows now negligible, the 2025/26 rain season is effectively over, so we pulled the whole season together in one place.
+
+The recovery in numbers:
+• 112 MCM of inflow — the most in 4 years (first above 100 since 2021/22), 6× the entire 24/25 drought year
+• 86% of it arrived Feb–May — March 35.4 (3rd-best since 1988), April 23.6 (2nd since 1987/88), May 13.2 (a record May)
+• From a late-December low of 9.3%, storage climbed 4.6× to today's peak
+• Nine dams filled to 100% — Vyzakia 1.9% → 97.6%, Mavrokolympos 0% → 86%
+• Arminou took in 4.9× its own capacity and pumped 20.14 MCM up to Kouris
+• Still lagging: Achna 2.0% (zero inflow all season), Lefkara 18.5%
+
+The season now pivots from filling to drawdown — the question shifts from how high it fills to how long it lasts.
+
+📖 Full article: https://fragmata.info/articles/2026-06-05-inflow-season-peak-plateau
+🔗 Dashboard: https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *New article: Peak Water — Cyprus's inflow season crests at a 2-year high*
+
+Total storage has flattened at *42.4% (123.4 MCM)* — the most water in the dams since June 2024 and almost exactly double last year. With inflows now negligible, the 2025/26 rain season is effectively over, so we pulled the whole season together in one place.
+
+*The recovery in numbers:*
+• *112 MCM of inflow* — the most in 4 years (first above 100 since 2021/22), 6× the entire 24/25 drought year
+• *86% of it arrived Feb–May* — March 35.4 (3rd-best since 1988), April 23.6 (2nd since 1987/88), May 13.2 (a record May)
+• From a late-December low of 9.3%, storage climbed *4.6×* to today's peak
+• *Nine dams filled to 100%* — Vyzakia 1.9% → 97.6%, Mavrokolympos 0% → 86%
+• Arminou took in 4.9× its own capacity and pumped *20.14 MCM* up to Kouris
+• Still lagging: Achna 2.0% (zero inflow all season), Lefkara 18.5%
+
+The season now pivots from filling to drawdown — the question shifts from how high it fills to how long it lasts.
+
+📖 Full article: https://fragmata.info/articles/2026-06-05-inflow-season-peak-plateau
+🔗 Dashboard: https://fragmata.info
+```
