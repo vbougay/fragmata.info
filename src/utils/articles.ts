@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-06-05-inflow-season-peak-plateau',
+    date: '2026-06-05',
+    dataSetId: '05-JUN-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'Peak Water: Cyprus Reservoirs Crest at a Two-Year High as the Inflow Season Hands Off to Summer',
+      el: 'Στην Κορυφή: Τα Φράγματα Κύπρου Κορυφώνονται σε Υψηλό Διετίας Καθώς η Περίοδος Εισροής Παραδίδει τη Σκυτάλη στο Καλοκαίρι',
+      ru: 'Пик воды: водохранилища Кипра вышли на двухлетний максимум, а сезон притока передаёт эстафету лету',
+    },
+    description: {
+      en: 'Storage in the 18 main dams has flattened at 42.4% (123.4 mln. m³) — a two-year high and almost double last year. The 2025/26 inflow season delivered 112 mln. m³, the most in four years, with 86% of it arriving February–May and nine dams filling to 100%.',
+      el: 'Η αποθήκευση στα 18 κύρια φράγματα σταθεροποιήθηκε στο 42.4% (123.4 ΕΚΜ) — υψηλό διετίας και σχεδόν διπλάσιο απ\' ό,τι πέρυσι. Η σεζόν 2025/26 απέδωσε 112 ΕΚΜ εισροής, την καλύτερη σε τέσσερα χρόνια, με το 86% να καταγράφεται το διάστημα Φεβρουαρίου–Μαΐου και εννέα φράγματα να φτάνουν στο 100%.',
+      ru: 'Запас 18 основных дамб стабилизировался на 42.4% (123.4 МКМ) — двухлетний максимум и почти вдвое больше прошлогоднего. Сезон 2025/26 принёс 112 МКМ притока, лучший за четыре года: 86% поступило с февраля по май, девять дамб наполнились до 100%.',
+    },
+  },
+  {
     slug: '2026-05-05-100mcm-seasonal-inflow',
     date: '2026-05-05',
     dataSetId: '05-MAY-2026',
