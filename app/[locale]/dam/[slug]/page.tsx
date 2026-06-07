@@ -75,6 +75,8 @@ export async function generateMetadata({
   const localeUrl = (l: string, path: string) =>
     l === "en" ? `${siteUrl}${path}` : `${siteUrl}/${l}${path}`;
   const canonical = localeUrl(lang, `/dam/${slug}`);
+  // Per-dam, per-locale social card; ?v= = report date busts platform OG caches on each data update.
+  const ogImage = `${siteUrl}/og/dam/${slug}.${lang}.png?v=${getReportDate(DEFAULT_DATASET_ID)}`;
 
   return {
     title,
@@ -92,13 +94,13 @@ export async function generateMetadata({
       url: canonical,
       siteName: "Fragmata",
       type: "website",
-      images: [{ url: `${siteUrl}/og-image.png` }],
+      images: [{ url: ogImage, width: 1200, height: 630, type: "image/png" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}/og-image.png`],
+      images: [ogImage],
     },
   };
 }

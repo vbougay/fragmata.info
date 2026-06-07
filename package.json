@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "portless",
     "dev:next": "next dev",
-    "build": "next build",
+    "og": "tsx scripts/og/generate.tsx",
+    "build": "tsx scripts/og/generate.tsx && next build",
     "start": "next start",
     "lint": "eslint ."
   },
@@ -75,6 +76,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^25.8.0",
@@ -84,7 +86,9 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.6.0",
     "postcss": "^8.5.14",
+    "satori": "^0.26.0",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3",
     "xlsx": "^0.18.5"

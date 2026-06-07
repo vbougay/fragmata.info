@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { notFound } from "next/navigation";
 import { Providers } from "@/components/providers";
 import { locales, isValidLocale, type Locale } from "@/utils/locale";
+import { getReportDate, DEFAULT_DATASET_ID } from "@/utils/dataManager";
 import "../globals.css";
 
 const inter = Inter({
@@ -126,6 +127,8 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   const m = meta[locale];
+  // Site-wide default = the Cyprus dashboard card (dam/region pages override below).
+  const ogImage = `/og/dashboard.${locale}.png?v=${getReportDate(DEFAULT_DATASET_ID)}`;
 
   return {
     title: m.title,
@@ -145,7 +148,7 @@ export async function generateMetadata({
       url: localeUrl(locale),
       title: m.title,
       description: m.description,
-      images: [{ url: "/og-image.png" }],
+      images: [{ url: ogImage, width: 1200, height: 630, type: "image/png" }],
       locale: m.ogLocale,
       alternateLocale: locales
         .filter((l) => l !== locale)
@@ -155,7 +158,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: m.title,
       description: m.description,
-      images: ["/og-image.png"],
+      images: [ogImage],
     },
     keywords: m.keywords,
     icons: {

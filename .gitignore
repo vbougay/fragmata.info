@@ -26,5 +26,11 @@ dist-ssr
 .next
 .promos
 *.tsbuildinfo
-scripts/
 next-env.d.ts
+
+# Local-only scripts, but keep the OG card generator (+ its fonts) tracked
+scripts/*
+!scripts/og/
+
+# Generated OG social cards (rebuilt by `pnpm og` and the build step)
+/public/og/
