@@ -3052,3 +3052,64 @@ Gap vs last year: *+21.4pp*.
 
 🔗 https://fragmata.info
 ```
+
+
+---
+
+## June 10
+
+📊 Cyprus dams — June 10: 42.4% for 12 days, 0.157 MCM in 24h — plateau holds
+
+Total storage **42.4% (123.3 MCM)** — flat for the 12th straight day. The dry season has fully taken over; tiny inflows (0.157 MCM/day) can't move the needle. **+21.4pp above last year**. Season total: **112.5 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.26 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 47.5%** — 0.045 MCM/day inflow keeps it steady despite ongoing pumping to [Kouris](/dam/kouris/)
+- [Kouris](/dam/kouris/) **41.9%** (48.2 MCM) · [Germasoyeia](/dam/germasoyeia/) **60.0%** — holding near season highs
+- **[Mavrokolympos](/dam/mavrokolympos/) 83.2%** — steady summer slide from near-full peak; was 0% last year
+- [Evretou](/dam/evretou/) **50.0%** — holding at the halfway mark
+- **4 dams at 100%** + [Tamassos](/dam/tamassos/) 99.9%, [Solea](/dam/solea/) 99.0%
+- [Achna](/dam/achna/) **2.0%** — zero inflow all season
+
+Gap vs last year: +21.4pp.
+
+Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=32, chat_id=151413643, at=2026-06-10T09:13:40Z
+```
+📊 Cyprus Dams — June 10
+
+Total storage: 42.4% (123.3 MCM) — flat for 12 days. 21.4pp above last year. Season inflow: 112.5 MCM.
+
+The plateau continues. 0.157 MCM trickled in over 24h — summer evaporation is now in full control.
+
+• Arminou 47.5% — daily inflow of 0.045 MCM keeps it steady despite Kouris pumping; Arminou→Kouris transfer at 20.26 MCM
+• Kouris 41.9% (48.2 MCM) and Germasoyeia 60.0% — holding near season highs for 12 days
+• Mavrokolympos 83.2% — steady summer decline from near-full peak; was 0% last year
+• Evretou 50.0% — holding at the halfway mark
+• 4 dams at 100% + Tamassos 99.9%, Solea 99.0%; Achna 2.0% — zero inflow all season
+
+Gap vs last year: +21.4pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — June 10*
+
+Total storage: *42.4% (123.3 MCM)* — flat for 12 days. *21.4pp above last year*. Season inflow: *112.5 MCM*.
+
+The plateau continues. 0.157 MCM trickled in over 24h — summer evaporation is now in full control.
+
+*Notable:*
+• *Arminou 47.5%* — daily inflow keeps it steady despite Kouris pumping; Arminou→Kouris transfer at *20.26 MCM*
+• Kouris *41.9%* (48.2 MCM) and Germasoyeia *60.0%* — holding near season highs
+• *Mavrokolympos 83.2%* — steady summer decline from near-full peak; was 0% last year
+• *Evretou 50.0%* — holding at the halfway mark
+• *4 dams at 100%* + Tamassos 99.9%, Solea 99.0%; Achna *2.0%* — zero inflow all season
+
+Gap vs last year: *+21.4pp*.
+
+🔗 https://fragmata.info
+```
