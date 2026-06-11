@@ -3137,6 +3137,7 @@ On June 9 the cabinet approved an extra **3.5 MCM** for irrigation — 2.0 MCM t
 Gap vs last year: +21.6pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=33, chat_id=151413643, at=2026-06-11T08:16:47Z
 ```
 📰 Cyprus Dams — June 11
 
