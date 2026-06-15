@@ -3245,6 +3245,7 @@ Gap vs last year: *+21.7pp*.
 📰 Major update — plateau at 42.4% ended; dry season drawdown begins.
 
 ### Telegram
+Sent: message_id=35, chat_id=151413643, at=2026-06-15T10:54:08Z
 ```
 📰 Cyprus Dams — June 15
 
