@@ -3237,3 +3237,51 @@ Gap vs last year: *+21.7pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 15
+
+📰 Major update — plateau at 42.4% ended; dry season drawdown begins.
+
+### Telegram
+```
+📰 Cyprus Dams — June 15
+
+Total storage: 42.3% (123.0 MCM) — the 14-day plateau at 42.4% broke. First slip below that mark since late May as the dry season takes hold. +21.8pp above last year. Season inflow: 113.2 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+Dry season drawdown now clearly underway in smaller reservoirs:
+• Polemidia 56.4% (-4.4pp since June 5) — sharpest drop, easing from season high
+• Arminou 48.3% (+2.0pp) — persistent small inflow still outpacing Kouris pumping
+• Pomos 99.5% — slipped below 100% for first time since spring fill
+• Agia Marina 89.3% (-5.7pp) · Vyzakia 96.0% (-1.6pp) — steady declines
+• Evretou 49.7% — 3rd consecutive day below 50%
+• Kouris 42.0% (48.3 MCM) — ticked up slightly; Germasoyeia 59.7% — stable near peak
+• Kalopanagiotis and Klirou-Malounta still at 100%; Achna 2.0% — zero inflow all season
+
+Gap vs last year: +21.8pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — June 15*
+
+Total storage: *42.3% (123.0 MCM)* — the 14-day plateau at 42.4% broke. First slip as the dry season takes hold. *+21.8pp above last year*. Season inflow: *113.2 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+The plateau held for two weeks, but June 15 marked the first clear dip below 42.4%. Smaller reservoirs are leading the drawdown while Kouris and Germasoyeia stay near their season highs.
+
+*Notable:*
+• *Polemidia 56.4%* (-4.4pp since June 5) — sharpest drop, off season high
+• *Arminou 48.3%* (+2.0pp) — small inflow outpacing Kouris pumping
+• *Pomos 99.5%* — below 100% for first time since spring fill
+• *Agia Marina 89.3%* (-5.7pp) · *Vyzakia 96.0%* (-1.6pp) — steady declines
+• *Evretou 49.7%* — 3rd day below 50%
+• Kouris *42.0%* (48.3 MCM) — ticked up; Germasoyeia *59.7%* — stable near peak
+• Kalopanagiotis and Klirou-Malounta still at *100%*; Achna *2.0%* — zero inflow
+
+Gap vs last year: *+21.8pp*.
+
+🔗 https://fragmata.info
+```
