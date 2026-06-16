@@ -3307,6 +3307,7 @@ Total storage **42.3%** (123.0 MCM) — essentially unchanged from June 15 as th
 Gap vs last year: +21.8pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=36, chat_id=151413643, at=2026-06-16T11:11:17Z
 ```
 📰 Cyprus Dams — June 16
 
