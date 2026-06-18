@@ -1,19 +1,19 @@
 import { NextResponse } from "next/server";
 import {
-  reservoirData,
-  yearlyInflowData,
-  getReportDate,
-  waterTransferred,
-} from "@/utils/data-24-FEB-2026";
-import {
-  calculateRegionTotals,
-  calculateGrandTotal,
   calculateDrainDate,
   calculateYTDInflow,
   calculateYTDOutflow,
   parseReportDate,
 } from "@/utils/reservoirUtils";
-import { getOctoberBaselineStorage } from "@/utils/dataManager";
+import {
+  reservoirData as getReservoirData,
+  yearlyInflowData as getYearlyInflowData,
+  getReportDate,
+  getWaterTransferred,
+  calculateRegionTotals as getRegionTotals,
+  calculateGrandTotal as getGrandTotal,
+  getOctoberBaselineStorage,
+} from "@/utils/dataManager";
 import { calculateForecast, MAIN_RES_KEYS, REGION_KEYS } from "@/utils/forecastEngine";
 import { HistoricalStorageEntry } from "@/utils/historicalStorageData";
 import { Reservoir, RegionTotal } from "@/types";
@@ -86,14 +86,16 @@ function sign(n: number): string {
 
 function buildMarkdown(): string {
   const reportDate = getReportDate();
-  const allReservoirs = reservoirData;
+  const allReservoirs = getReservoirData();
+  const yearlyInflowData = getYearlyInflowData();
+  const waterTransferred = getWaterTransferred();
   // Compute forecast-based restriction dates for each reservoir
   const reservoirs = allReservoirs.map(r => ({
     ...r,
     drainDate: getReservoirForecastDate(r, reportDate),
   }));
-  const regionTotals = calculateRegionTotals(allReservoirs);
-  const grandTotal = calculateGrandTotal(allReservoirs);
+  const regionTotals = getRegionTotals();
+  const grandTotal = getGrandTotal();
   const ytdInflow = calculateYTDInflow(yearlyInflowData, reportDate);
   const octBaseline = getOctoberBaselineStorage();
   const ytdOutflow =

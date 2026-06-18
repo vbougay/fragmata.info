@@ -292,6 +292,10 @@ export const getReportDate = (datasetId?: string): string => {
   return resolveModule(datasetId).getReportDate();
 };
 
+export const getWaterTransferred = (datasetId?: string): { from: string; to: string; sinceOct: number } | undefined => {
+  return resolveModule(datasetId).waterTransferred;
+};
+
 export { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS };
 
 /**
