@@ -3432,6 +3432,7 @@ Total storage **42.2%** (122.7 MCM) — after nearly two weeks pinned at 42.3%, 
 Gap vs last year: +21.9pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=38, chat_id=151413643, at=2026-06-19T09:12:37Z
 ```
 📰 Cyprus Dams — June 19
 
