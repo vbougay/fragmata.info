@@ -3412,3 +3412,62 @@ Gap vs last year: *+21.9pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 19
+
+📰 Major update — the plateau finally eases; headline slips to 42.2% as Arminou crosses back above 50%.
+
+Total storage **42.2%** (122.7 MCM) — after nearly two weeks pinned at 42.3%, the headline has ticked down for the first time as the dry season settles in. Daily inflow is now a trickle (~0.08 MCM), so the small seasonal drawdown in the bigger reservoirs is starting to show. Season inflow: **113.6 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer holds at **20.44 MCM**. **+21.9pp above last year** (20.3%).
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 50.4%** (+0.9pp since June 17, +2.5pp over the week) — back above 50%, small inflows still outpacing pumping to [Kouris](/dam/kouris/)
+- **[Agia Marina](/dam/agia-marina/) 86.9%** (-1.4pp) — week's clearest faller as the small Chrysochou dams ease
+- **[Mavrokolympos](/dam/mavrokolympos/) 81.5%** · **[Polemidia](/dam/polemidia/) 55.7%** — steady summer decline off their season highs
+- **[Evretou](/dam/evretou/) 49.5%** — holding just below 50%
+- [Kouris](/dam/kouris/) **41.9%** (48.2 MCM) · [Germasoyeia](/dam/germasoyeia/) **59.5%** — barely moved, near season highs
+- [Kalopanagiotis](/dam/kalopanagiotis/) and [Klirou-Malounta](/dam/klirou-malounta/) still at 100%; [Achna](/dam/achna/) **1.9%** — zero inflow all season
+
+Gap vs last year: +21.9pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — June 19
+
+Total storage: 42.2% (122.7 MCM) — after nearly two weeks flat at 42.3%, the headline ticks down for the first time as the dry season settles in. +21.9pp above last year. Season inflow: 113.6 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+Daily inflow is now just a trickle (~0.08 MCM), so the slow seasonal drawdown in the bigger reservoirs is starting to show.
+
+• Arminou 50.4% (+0.9pp since June 17, +2.5pp over the week) — back above 50%, inflows still outpacing Kouris pumping
+• Agia Marina 86.9% (-1.4pp) — week's clearest faller
+• Mavrokolympos 81.5% · Polemidia 55.7% — steady summer decline off season highs
+• Evretou 49.5% — holding just below 50%
+• Kouris 41.9% (48.2 MCM) and Germasoyeia 59.5% — barely moved, near season highs
+• Kalopanagiotis and Klirou-Malounta still at 100%; Achna 1.9% — zero inflow all season
+
+Gap vs last year: +21.9pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — June 19*
+
+Total storage: *42.2% (122.7 MCM)* — after nearly two weeks flat at 42.3%, the headline ticks down for the first time as the dry season settles in. *+21.9pp above last year*. Season inflow: *113.6 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+Daily inflow is now just a trickle (~0.08 MCM), so the slow seasonal drawdown in the bigger reservoirs is starting to show.
+
+*Notable:*
+• *Arminou 50.4%* (+0.9pp since June 17, +2.5pp over the week) — back above 50%, inflows still outpacing Kouris pumping
+• *Agia Marina 86.9%* (-1.4pp) — week's clearest faller
+• *Mavrokolympos 81.5%* · *Polemidia 55.7%* — steady summer decline off season highs
+• *Evretou 49.5%* — holding just below 50%
+• Kouris *41.9%* (48.2 MCM) and Germasoyeia *59.5%* — barely moved, near season highs
+• Kalopanagiotis and Klirou-Malounta still at *100%*; Achna *1.9%* — zero inflow all season
+
+Gap vs last year: *+21.9pp*.
+
+🔗 https://fragmata.info
+```
