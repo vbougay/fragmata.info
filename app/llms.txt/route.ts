@@ -136,7 +136,7 @@ function buildMarkdown(): string {
   lines.push("> Data sourced from the Cyprus Water Development Department.");
   lines.push("");
   lines.push(`- Website: https://fragmata.info`);
-  lines.push(`- Data source: [Cyprus Water Development Department](https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en?opendocument)`);
+  lines.push(`- Data source: [Cyprus Water Development Department](https://www.gov.cy/moa-wdd/en/documents/dams-and-off-stream-ponds/reservoir-storage/)`);
   lines.push(`- Report date: ${reportDate}`);
   lines.push(`- GitHub: https://github.com/vbougay/fragmata.info`);
   lines.push(`- Contact: v@bougay.com`);

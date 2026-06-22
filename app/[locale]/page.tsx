@@ -117,7 +117,7 @@ export default async function HomePage({
                   creator: {
                     "@type": "Organization",
                     name: "Cyprus Water Development Department",
-                    url: "https://www.moa.gov.cy/moa/wdd/",
+                    url: "https://www.gov.cy/moa-wdd/en/",
                   },
                   provider: {
                     "@type": "Organization",

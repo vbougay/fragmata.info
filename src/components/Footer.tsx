@@ -43,7 +43,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
         <div className="container mx-auto px-4">
           <p className="text-center text-xs text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
             <a
-              href="https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en?opendocument"
+              href="https://www.gov.cy/moa-wdd/en/documents/dams-and-off-stream-ponds/reservoir-storage/"
               target="_blank"
               className="hover:text-water-600 dark:hover:text-water-400 transition-colors"
             >
@@ -108,7 +108,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
         <div className="text-center text-sm text-muted-foreground border-t border-gray-200 dark:border-gray-800 pt-4">
           <p>
             <a
-              href="https://www.moa.gov.cy/moa/wdd/Wdd.nsf/page18_en/page18_en?opendocument"
+              href="https://www.gov.cy/moa-wdd/en/documents/dams-and-off-stream-ponds/reservoir-storage/"
               target="_blank"
               className="hover:text-water-600 dark:hover:text-water-400 transition-colors"
             >
