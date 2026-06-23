@@ -3492,6 +3492,7 @@ Total storage **42.1%** (122.4 MCM) — the slow seasonal drawdown continues, do
 Gap vs last year: +22.1pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=39, chat_id=151413643, at=2026-06-22T13:06:31Z
 ```
 📰 Cyprus Dams — June 22
 
@@ -3528,6 +3529,64 @@ Daily inflow is now just a trickle (~0.25 MCM across all dams). Even as the head
 • Kalopanagiotis and Klirou-Malounta still at *100%*; Achna *1.9%* — zero inflow all season
 
 Gap vs last year: *+22.1pp*.
+
+🔗 https://fragmata.info
+```
+
+---
+
+## June 23
+
+📰 Major update — dry season drawdown in slow motion; headline at 42.0% as Arminou keeps climbing to 52.3%, and the gap over last year widens to +22.0pp.
+
+Total storage **42.0%** (122.3 MCM) — the slow seasonal drawdown continues, down from 42.1% yesterday and 42.3% a week ago. Daily inflow is a trickle (~0.07 MCM total), barely enough to slow the drift. Even so, the gap over last year is *widening* — last year's reservoirs were falling faster at this point. **+22.0pp above last year** (20.0%). Season inflow: **113.9 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer holds at **20.44 MCM**.
+
+European forecast centres are now pointing to a hot summer for Cyprus, with meaningful rainfall not expected before September — which means the current dry-season drawdown will likely continue at this pace through the warmest months. The gap vs last year, already at 22pp, should keep widening as the 2025 reserves were depleted faster.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 52.3%** (+0.4pp from yesterday, +2.4pp over the week) — still climbing against the tide; small persistent inflows keep outpacing the pumping to [Kouris](/dam/kouris/)
+- **[Evretou](/dam/evretou/) 49.2%** — easing further below 50%; slowest of the medium-large dams
+- **[Agia Marina](/dam/agia-marina/) 85.9%** · **[Pomos](/dam/pomos/) 97.4%** — week's clearest fallers among the small dams
+- [Kouris](/dam/kouris/) **41.7%** (48.0 MCM) · [Germasoyeia](/dam/germasoyeia/) **59.4%** — essentially unchanged day-on-day
+- [Kalopanagiotis](/dam/kalopanagiotis/) and [Klirou-Malounta](/dam/klirou-malounta/) still at 100%; [Achna](/dam/achna/) **1.9%** — zero inflow all season
+
+Gap vs last year: +22.0pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — June 23
+
+Total storage: 42.0% (122.3 MCM) — the slow drawdown continues, down from 42.1% yesterday and 42.3% a week ago. +22.0pp above last year. Season inflow: 113.9 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+European models now point to a hot summer for Cyprus, with rain not expected before September — the dry-season drawdown will continue at this pace through the warmest months.
+
+• Arminou 52.3% (+0.4pp from yesterday, +2.4pp over the week) — still climbing against the trend, small inflows outpacing Kouris pumping
+• Evretou 49.2% — slipping further below 50%
+• Agia Marina 85.9% · Pomos 97.4% — week's clearest fallers among the small dams
+• Kouris 41.7% (48.0 MCM) and Germasoyeia 59.4% — essentially unchanged
+• Kalopanagiotis and Klirou-Malounta still at 100%; Achna 1.9% — zero inflow all season
+
+Gap vs last year: +22.0pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — June 23*
+
+Total storage: *42.0% (122.3 MCM)* — the slow drawdown continues, down from 42.1% yesterday and 42.3% a week ago. *+22.0pp above last year*. Season inflow: *113.9 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+European models now point to a hot summer for Cyprus, with rain not expected before September — the dry-season drawdown will continue at this pace through the warmest months.
+
+*Notable:*
+• *Arminou 52.3%* (+0.4pp from yesterday, +2.4pp over the week) — still climbing against the trend, small inflows outpacing Kouris pumping
+• *Evretou 49.2%* — slipping further below 50%
+• *Agia Marina 85.9%* · *Pomos 97.4%* — week's clearest fallers among the small dams
+• Kouris *41.7%* (48.0 MCM) and Germasoyeia *59.4%* — essentially unchanged
+• Kalopanagiotis and Klirou-Malounta still at *100%*; Achna *1.9%* — zero inflow all season
+
+Gap vs last year: *+22.0pp*.
 
 🔗 https://fragmata.info
 ```

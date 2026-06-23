@@ -9,6 +9,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Integrating energy and water planning', url: 'https://cyprus-mail.com/2026/06/20/integrating-energy-and-water-planning', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
   { title: 'Cabinet approves 3.5 million cubic metres of additional water supply', url: 'https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Water pipes across Limassol to be replaced', url: 'https://cyprus-mail.com/2026/06/02/water-pipes-across-limassol-to-be-replaced', lang: 'en', source: 'Cyprus Mail' },
@@ -36,6 +37,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
 
   // Greek
+  { title: 'Καλοκαίρι-καμίνι: θερμό καλοκαίρι για Κύπρο, βροχές αναμένονται από Σεπτέμβριο', url: 'https://www.politis.com.cy/politis-news/cyprus/1013524/kalokairi-kamini-provlepoyn-ta-efropaika-kentra-ghia-tin-kypro-omos-sto-vathos-vrokhes-apo-ton-septemvrio', lang: 'el', source: 'Πολίτης' },
   { title: 'Μετρήσεις βροχόπτωσης 15/06 — Πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-triimerou-plirotita-fragmaton-15-6/', lang: 'el', source: 'KitasWeather' },
   { title: 'Μετρήσεις βροχόπτωσης 10-11/06 — Πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-2imerou-10-11-6-plirotita-fragmaton/', lang: 'el', source: 'KitasWeather' },
   { title: 'ΤΑΥ: Στο 42,4% η πληρότητα των φραγμάτων — Διπλάσια από πέρυσι', url: 'https://www.offsite.com.cy/eidiseis/koinonia/tay-sto-424-i-plirotita-ton-fragmaton-diplasia-apo-perysi', lang: 'el', source: 'Offsite' },

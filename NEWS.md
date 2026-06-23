@@ -4,6 +4,10 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [Integrating energy and water planning](https://cyprus-mail.com/2026/06/20/integrating-energy-and-water-planning) — Cyprus Mail, Jun 20, 2026
+- [Cyprus dam levels double compared to last year, WDD official](https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official) — Parikiaki, Jun 2026
+- [Cabinet approves 3.5 million cubic metres of additional water supply](https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply) — Cyprus Mail, Jun 9, 2026
+- [Dam levels almost double those of last year](https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year) — Cyprus Mail, Jun 2, 2026
 - [Significant May inflows continue — dam fullness exceeds 41%](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-simantikes-eisroes-gia-mina-maio-kseperase-to-41-tis-ekato-i-sinoliki-plirotita-fragmaton/) — KitasWeather, May 11, 2026
 - [May precipitation exceeds 160% of average — dam inflows continue](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-160-tis-ekato-i-mesi-vroxoptosi-tou-mina-apotimisi-tis-diataraxis-maiou-kai-sinolika-ipsi-vroxis/) — KitasWeather, May 6, 2026
 - [Elevated May inflows continue — nearly 1 MCM in 24 hours](https://kitasweather.com/news/fragmata-vroxoptosi/sinexizoun-afksimenes-eisroes-nerou-gia-mina-maio-plisiasan-to-1-ekm-to-telefteo-24oro/) — KitasWeather, May 6, 2026
