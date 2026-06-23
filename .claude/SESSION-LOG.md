@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-06-23 — Session `16c5d22f-3421-4e64-9d28-0f99d5119122`
+
+- Diagnosed why `scripts/watch-wdd.sh` stopped seeing fresh data — logs showed `ERROR: No XLSX dates found on gov.cy pages` despite June 23 data being live
+- Root cause: WDD renamed its data files from the underscore form `19_06_2026-UK.xlsx` (`DD_MM_YYYY`) to `23-JUNE-2026-UK.xlsx` (`DD-MONTHNAME-YYYY`); the script's regex only matched the old format, and the only file still using underscores (`Graphs-*.xlsx`) is filtered out by `grep -iv graph`, so zero dates matched
+- Fix: broadened `get_wdd_latest()` in [scripts/watch-wdd.sh](scripts/watch-wdd.sh) to match both naming schemes, strip the `-UK/-GR.xlsx` suffix, and parse each token via `%d_%m_%Y` → `%d-%B-%Y` → `%d-%b-%Y`, canonicalizing to `DD-MMM-YYYY` from epoch (handles both formats so it won't break if WDD reverts)
+- Verified with `--once`: now logs `Latest data on WDD website: 23-JUN-2026` and `NEW DATA FOUND!` vs app's `22-JUN-2026`
+- Flagged a separate, unrelated issue: the nested headless `claude -p /fetch-and-update` launch failed with `401 authentication_failed` (credentials in the spawned shell, not the detection logic)
+
+---
+
 ## 2026-06-18 — Session `4d2b2aec-8204-4dcf-adee-622a98461fca`
 
 - Diagnosed why `https://fragmata.info/llms.txt` served stale data (frozen at 24-FEB-2026 while the dashboard showed current 17-JUN-2026)

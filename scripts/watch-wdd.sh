@@ -62,13 +62,16 @@ get_wdd_latest() {
     return 1
   fi
 
-  # The gov.cy uploads are named DD_MM_YYYY-UK.xlsx (English) or DD_MM_YYYY-GR.xlsx
-  # (Greek), e.g. "19_06_2026-UK.xlsx". Skip the "Graphs-*.xlsx" companion file.
-  # Extract the DD_MM_YYYY token and convert to canonical DD-MMM-YYYY below.
+  # The gov.cy reservoir uploads have used two naming schemes:
+  #   - DD-MONTHNAME-YYYY-UK.xlsx, e.g. "23-JUNE-2026-UK.xlsx"  (current, since ~23-JUN-2026)
+  #   - DD_MM_YYYY-UK.xlsx,        e.g. "19_06_2026-UK.xlsx"     (older)
+  # (GR variants for the Greek page.) Skip the "Graphs-*.xlsx" companion file, which
+  # still uses the underscore form. Extract the date token (everything before -UK/-GR)
+  # and let the loop below parse it with whichever format matches.
   dates=$(printf '%s\n%s\n' "$html_en" "$html_gr" \
-    | grep -oE '[0-9]{1,2}_[0-9]{1,2}_[0-9]{4}-(UK|GR)\.xlsx' \
+    | grep -oE '[0-9]{1,2}[-_][0-9A-Za-z]+[-_][0-9]{4}-(UK|GR)\.xlsx' \
     | grep -iv 'graph' \
-    | grep -oE '^[0-9]{1,2}_[0-9]{1,2}_[0-9]{4}' \
+    | sed -E 's/-(UK|GR)\.xlsx$//' \
     | sort -u)
 
   if [[ -z "$dates" ]]; then
@@ -81,11 +84,14 @@ get_wdd_latest() {
 
   while IFS= read -r d; do
     local ep canon
-    # Parse DD_MM_YYYY → epoch, and render canonical DD-MMM-YYYY (uppercased month).
-    ep=$(date -jf "%d_%m_%Y" "$d" "+%s" 2>/dev/null) || continue
+    # Try each known filename date format; canonicalize to DD-MMM-YYYY (uppercased).
+    ep=$(date -jf "%d_%m_%Y" "$d" "+%s" 2>/dev/null) \
+      || ep=$(date -jf "%d-%B-%Y" "$d" "+%s" 2>/dev/null) \
+      || ep=$(date -jf "%d-%b-%Y" "$d" "+%s" 2>/dev/null) \
+      || continue
     if (( ep > newest_epoch )); then
       newest_epoch=$ep
-      canon=$(date -jf "%d_%m_%Y" "$d" "+%d-%b-%Y" 2>/dev/null | tr '[:lower:]' '[:upper:]')
+      canon=$(date -jr "$ep" "+%d-%b-%Y" 2>/dev/null | tr '[:lower:]' '[:upper:]')
       newest=$canon
     fi
   done <<< "$dates"
