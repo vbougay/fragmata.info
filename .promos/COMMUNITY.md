@@ -3553,6 +3553,7 @@ European forecast centres are now pointing to a hot summer for Cyprus, with mean
 Gap vs last year: +22.0pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=40, chat_id=151413643, at=2026-06-23T11:12:25Z
 ```
 📰 Cyprus Dams — June 23
 
