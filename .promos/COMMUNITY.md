@@ -3650,3 +3650,55 @@ Gap vs last year: *+22.2pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 26
+
+📊 Minor update — storage ticks to 41.9%; Arminou climbs to 53.4% for the third straight day.
+
+Total storage **41.9%** (121.9 MCM) — down just 0.1pp from yesterday, the drawdown pace barely registers. The gap over last year holds at **+22.2pp**. Season inflow: **114.1 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 53.4%** (+0.4pp) — climbing for the third day in a row against the seasonal tide; small persistent inflows keep outpacing pumping to [Kouris](/dam/kouris/)
+- **[Agia Marina](/dam/agia-marina/) 86.2%** (+1.3pp) — a small uptick at this Chrysochou dam, bucking the general drift
+- **[Evretou](/dam/evretou/) 48.9%** — slipping further below 50%, continuing its slow slide
+- [Kouris](/dam/kouris/) **41.6%** (47.8 MCM) · [Germasoyeia](/dam/germasoyeia/) **59.2%** — negligible change
+- [Kalopanagiotis](/dam/kalopanagiotis/) and [Klirou-Malounta](/dam/klirou-malounta/) at 100%; [Achna](/dam/achna/) **1.9%** — zero inflow all season
+
+Gap vs last year: +22.2pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Cyprus Dams — June 26
+
+Total storage: 41.9% (121.9 MCM) — down just 0.1pp from yesterday, the drawdown barely registers. +22.2pp above last year. Season inflow: 114.1 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+• Arminou 53.4% (+0.4pp) — climbing for the third straight day against the seasonal tide; small inflows outpacing pumping to Kouris
+• Agia Marina 86.2% (+1.3pp) — small uptick, bucking the general drift
+• Evretou 48.9% — continuing its slow slide below 50%
+• Kouris 41.6% (47.8 MCM) and Germasoyeia 59.2% — negligible change
+• Kalopanagiotis and Klirou-Malounta at 100%; Achna 1.9% — zero inflow all season
+
+Gap vs last year: +22.2pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — June 26*
+
+Total storage: *41.9% (121.9 MCM)* — down just 0.1pp from yesterday, the drawdown barely registers. *+22.2pp above last year*. Season inflow: *114.1 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+*Notable:*
+• *Arminou 53.4%* (+0.4pp) — climbing for the third straight day against the seasonal tide
+• *Agia Marina 86.2%* (+1.3pp) — small uptick, bucking the general drift
+• *Evretou 48.9%* — continuing its slow slide below 50%
+• Kouris *41.6%* (47.8 MCM) and Germasoyeia *59.2%* — negligible change
+• Kalopanagiotis and Klirou-Malounta at *100%*; Achna *1.9%* — zero inflow all season
+
+Gap vs last year: *+22.2pp*.
+
+🔗 https://fragmata.info
+```

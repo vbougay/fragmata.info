@@ -20,6 +20,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Limassol water reservoir projects \'progressing\', says district government', url: 'https://cyprus-mail.com/2026/05/14/limassol-water-reservoir-projects-progressing-says-district-government', lang: 'en', source: 'Cyprus Mail' },
 
   // Russian
+  { title: 'Сельхозорганизации Кипра требуют увеличить объёмы воды для орошения сезонных культур', url: 'https://ruscyprus.com/news/selskohozyaystvennye-organizacii-kipra/59528', lang: 'ru', source: 'RusCyprus' },
   { title: 'Уровень воды в дамбах Кипра вырос до 42,4% — почти вдвое больше прошлогоднего', url: 'https://ruscyprus.com/news/uroven-vody-v-dambah-kipra-vyros-do-42-4-na/58033', lang: 'ru', source: 'RusCyprus' },
   { title: 'Плотины Кипра заполнены на 39,6% при запасе 115,2 млн кубометров', url: 'https://ruscyprus.com/news/plotiny-kipra-zapolneny-na-39-6-pri-zapase/55998', lang: 'ru', source: 'RusCyprus' },
   { title: 'На Кипре перелилась дамба Визакья, которая в декабре была пустой', url: 'https://ruscyprus.com/news/na-kipre-perelilas-damba-vizakya-kotoraya-v/55551', lang: 'ru', source: 'RusCyprus' },
@@ -31,6 +32,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
 
   // Greek
+  { title: 'Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης', url: 'https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/', lang: 'el', source: 'Διάλογος' },
   { title: 'ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026', url: 'https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/', lang: 'el', source: 'Διάλογος' },
   { title: 'Καλοκαίρι-καμίνι: θερμό καλοκαίρι για Κύπρο, βροχές αναμένονται από Σεπτέμβριο', url: 'https://www.politis.com.cy/politis-news/cyprus/1013524/kalokairi-kamini-provlepoyn-ta-efropaika-kentra-ghia-tin-kypro-omos-sto-vathos-vrokhes-apo-ton-septemvrio', lang: 'el', source: 'Πολίτης' },
   { title: 'Μετρήσεις βροχόπτωσης 15/06 — Πληρότητα φραγμάτων', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-triimerou-plirotita-fragmaton-15-6/', lang: 'el', source: 'KitasWeather' },
