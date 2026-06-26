@@ -3669,6 +3669,7 @@ Total storage **41.9%** (121.9 MCM) — down just 0.1pp from yesterday, the draw
 Gap vs last year: +22.2pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=42, chat_id=151413643, at=2026-06-26T07:13:04Z
 ```
 📊 Cyprus Dams — June 26
 
