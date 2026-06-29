@@ -3724,6 +3724,7 @@ The standout story entering July: [Arminou](/dam/arminou/) has risen to 54.3% �
 Gap vs last year: +22.3pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=43, chat_id=151413643, at=2026-06-29T08:02:00Z
 ```
 📰 Cyprus Dams — June 29
 
