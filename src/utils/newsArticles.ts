@@ -9,11 +9,11 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Farmers demand more irrigation water', url: 'https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Integrating energy and water planning', url: 'https://cyprus-mail.com/2026/06/20/integrating-energy-and-water-planning', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
   { title: 'WDD to distribute water-saving equipment from June 2026', url: 'https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/', lang: 'en', source: 'Dialogos' },
   { title: 'Cabinet approves 3.5 million cubic metres of additional water supply', url: 'https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Water pipes across Limassol to be replaced', url: 'https://cyprus-mail.com/2026/06/02/water-pipes-across-limassol-to-be-replaced', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Dam levels almost double those of last year', url: 'https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus has recorded the highest May inflow of water into its dams in four decades', url: 'https://famagusta-gazette.com/cyprus-has-recorded-the-highest-may-inflow-of-water-into-its-dams-in-four-decades/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'Dams record best May inflows since 1987', url: 'https://cyprus-mail.com/2026/05/21/dams-record-best-may-inflows-since-1987', lang: 'en', source: 'Cyprus Mail' },

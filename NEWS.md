@@ -4,6 +4,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Dec 202
 
 ## English
 
+- [Farmers demand more irrigation water](https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water) — Cyprus Mail, Jun 23, 2026
 - [Integrating energy and water planning](https://cyprus-mail.com/2026/06/20/integrating-energy-and-water-planning) — Cyprus Mail, Jun 20, 2026
 - [Cyprus dam levels double compared to last year, WDD official](https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official) — Parikiaki, Jun 2026
 - [Cabinet approves 3.5 million cubic metres of additional water supply](https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply) — Cyprus Mail, Jun 9, 2026

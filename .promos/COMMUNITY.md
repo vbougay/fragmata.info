@@ -3703,3 +3703,61 @@ Gap vs last year: *+22.2pp*.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## June 29
+
+📰 Major update — storage dips to 41.7%; Arminou climbs to 54.3% while farmers demand more irrigation water.
+
+Total storage **41.7%** (121.4 MCM) — just -0.5 MCM in three days (and only -1.3 MCM over ten days), the slowest drawdown at this point in summer in years. Gap over last year holds at **+22.3pp**. Season inflow: **114.3 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+The standout story entering July: [Arminou](/dam/arminou/) has risen to 54.3% — up a full +3.9pp since June 19 — making it the only reservoir on the island that has been climbing throughout the dry season. Meanwhile farmers are calling for larger irrigation allocations as the summer heat sets in, and most other dams are drifting down slowly from their season highs.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 54.3%** (+3.9pp since June 19) — lone riser of the summer; persistent light inflows outpacing pumping to [Kouris](/dam/kouris/)
+- **[Polemidia](/dam/polemidia/) 52.7%** (-2.9pp since June 19) — clearest faller over the 10-day window
+- **[Evretou](/dam/evretou/) 48.7%** — continues drifting below 50%; farmers seeking more irrigation water
+- [Kouris](/dam/kouris/) **41.4%** (47.6 MCM) · [Germasoyeia](/dam/germasoyeia/) **59.1%** — negligible change over 3 days
+- [Kalopanagiotis](/dam/kalopanagiotis/) and [Klirou-Malounta](/dam/klirou-malounta/) at 100%; [Achna](/dam/achna/) **1.9%** — zero inflow all season
+
+Gap vs last year: +22.3pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — June 29
+
+Total storage: 41.7% (121.4 MCM) — just -0.5 MCM over three days, -1.3 MCM over ten. The slowest summer drawdown pace in years. +22.3pp above last year. Season inflow: 114.3 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+Arminou has climbed to 54.3% — up +3.9pp since June 19, making it the only reservoir rising during the dry season. Meanwhile farmers are calling for bigger irrigation allocations as summer heat sets in.
+
+• Arminou 54.3% (+3.9pp since June 19) — lone riser of the summer
+• Polemidia 52.7% (-2.9pp since June 19) — clearest faller over 10 days
+• Evretou 48.7% — drifting below 50%; farmers seeking more irrigation water
+• Kouris 41.4% (47.6 MCM) and Germasoyeia 59.1% — negligible change
+• Kalopanagiotis and Klirou-Malounta at 100%; Achna 1.9% — zero inflow all season
+
+Gap vs last year: +22.3pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — June 29*
+
+Total storage: *41.7% (121.4 MCM)* — just -0.5 MCM over three days, -1.3 MCM over ten. The slowest summer drawdown in years. *+22.3pp above last year*. Season inflow: *114.3 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+Arminou has climbed to *54.3%* — up +3.9pp since June 19, the only reservoir rising during the dry season. Farmers are calling for bigger irrigation allocations as summer heat sets in.
+
+*Notable:*
+• *Arminou 54.3%* (+3.9pp since June 19) — lone riser of the summer
+• *Polemidia 52.7%* (-2.9pp since June 19) — clearest faller over 10 days
+• *Evretou 48.7%* — drifting below 50%; farmers seeking more irrigation water
+• Kouris *41.4%* (47.6 MCM) and Germasoyeia *59.1%* — negligible change
+• Kalopanagiotis and Klirou-Malounta at *100%*; Achna *1.9%* — zero inflow all season
+
+Gap vs last year: *+22.3pp*.
+
+🔗 https://fragmata.info
+```
