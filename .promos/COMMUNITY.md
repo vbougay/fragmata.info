@@ -3762,3 +3762,53 @@ Gap vs last year: *+22.3pp*.
 
 🔗 https://fragmata.info
 ```
+
+## June 30
+
+📊 Minor update — storage holds at 41.7% (121.2 MCM); Arminou inches up again to 54.6%.
+
+Total storage **41.7%** (121.2 MCM) — just -0.2 MCM in a day, the slowest summer drawdown pace in years. Gap over last year holds at **+22.3pp**. 24h inflow: **0.06 MCM** (Kouris 0.038, Arminou 0.016, Kannaviou 0.005). Season inflow: **114.3 MCM**. [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 54.6%** (+0.3pp) — still the only riser on the island; 12-day climb now +5.4pp
+- **[Mavrokolympos](/dam/mavrokolympos/) 80.0%** (-0.5pp) — easing from peak after starting the year at 0%
+- **[Vyzakia](/dam/vyzakia/) 94.1%** (-0.6pp) · **[Xyliatos](/dam/xyliatos/) 96.2%** (-0.4pp) — Nicosia dams drifting down from full
+- [Kouris](/dam/kouris/) **41.4%** (47.6 MCM) · [Germasoyeia](/dam/germasoyeia/) **59.0%** — flat
+- [Kalopanagiotis](/dam/kalopanagiotis/) and [Klirou-Malounta](/dam/klirou-malounta/) at 100%; [Achna](/dam/achna/) **1.9%** — zero inflow all season
+
+Gap vs last year: +22.3pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📊 Cyprus Dams — June 30
+
+Total storage: 41.7% (121.2 MCM) — just -0.2 MCM in a day, the slowest summer drawdown pace in years. +22.3pp above last year. 24h inflow: 0.06 MCM. Season inflow: 114.3 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+• Arminou 54.6% (+0.3pp) — still the only riser; 12-day climb now +5.4pp
+• Mavrokolympos 80.0% (-0.5pp) — easing from peak after starting the year at 0%
+• Vyzakia 94.1% (-0.6pp) and Xyliatos 96.2% (-0.4pp) — Nicosia dams drifting down from full
+• Kouris 41.4% (47.6 MCM) and Germasoyeia 59.0% — flat
+• Kalopanagiotis and Klirou-Malounta at 100%; Achna 1.9% — zero inflow all season
+
+Gap vs last year: +22.3pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — June 30*
+
+Total storage: *41.7% (121.2 MCM)* — just -0.2 MCM in a day, the slowest summer drawdown pace in years. *+22.3pp above last year*. 24h inflow: *0.06 MCM*. Season inflow: *114.3 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+*Notable:*
+• *Arminou 54.6%* (+0.3pp) — still the only riser; 12-day climb now +5.4pp
+• *Mavrokolympos 80.0%* (-0.5pp) — easing from peak after starting the year at 0%
+• *Vyzakia 94.1%* (-0.6pp) and *Xyliatos 96.2%* (-0.4pp) — Nicosia dams drifting down
+• Kouris *41.4%* (47.6 MCM) and Germasoyeia *59.0%* — flat
+• Kalopanagiotis and Klirou-Malounta at *100%*; Achna *1.9%* — zero inflow all season
+
+Gap vs last year: *+22.3pp*.
+
+🔗 https://fragmata.info
+```
