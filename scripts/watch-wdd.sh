@@ -18,6 +18,11 @@ WDD_URL_EN="https://www.gov.cy/moa-wdd/en/documents/dams-and-off-stream-ponds/re
 WDD_URL_GR="https://www.gov.cy/moa-wdd/documents/tamieytires-neroy-fragmata-ydatodexamenes/plirotita-fragmaton/"
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
 POLL_INTERVAL=300  # 5 minutes
+# Which backend Claude Code talks to:
+#   glm    -> z.ai proxy (GLM models), authenticating with your exported $ZAI_API_KEY
+#   claude -> Anthropic direct (default model)
+# Toggle by editing this one word.
+BACKEND=glm
 LOG_DIR="$PROJECT_DIR/logs"
 LOG_FILE="$LOG_DIR/watch-wdd-$(date '+%Y-%m-%d').log"
 
@@ -34,6 +39,29 @@ mkdir -p "$LOG_DIR"
 
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+}
+
+# Run Claude Code headless against the chosen $BACKEND.
+# glm: replicate the interactive `glm` shell alias inline (the alias itself is
+# unavailable to a non-interactive script), sourcing the z.ai token from the
+# exported $ZAI_API_KEY env var.
+run_claude() {
+  if [[ "$BACKEND" == "glm" ]]; then
+    if [[ -z "${ZAI_API_KEY:-}" ]]; then
+      log "ERROR: BACKEND=glm but ZAI_API_KEY is not set in the environment"
+      return 1
+    fi
+    ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic" \
+    ANTHROPIC_AUTH_TOKEN="$ZAI_API_KEY" \
+    ANTHROPIC_DEFAULT_HAIKU_MODEL="glm-4.7" \
+    ANTHROPIC_DEFAULT_SONNET_MODEL="glm-5.2[1m]" \
+    ANTHROPIC_DEFAULT_OPUS_MODEL="glm-5.2[1m]" \
+    CLAUDE_CODE_AUTO_COMPACT_WINDOW=1000000 \
+    API_TIMEOUT_MS=3000000 \
+    claude --dangerously-skip-permissions -p --output-format stream-json "/fetch-and-update"
+  else
+    claude --dangerously-skip-permissions -p --model sonnet --output-format stream-json "/fetch-and-update"
+  fi
 }
 
 # Parse DD-MMM-YYYY to epoch seconds (macOS date)
@@ -130,7 +158,7 @@ main() {
       echo ""
 
       # Run Claude in headless mode, capturing output to console + log
-      (cd "$PROJECT_DIR" && claude --dangerously-skip-permissions -p --model sonnet --output-format stream-json "/fetch-and-update") 2>&1 | tee -a "$LOG_FILE"
+      (cd "$PROJECT_DIR" && run_claude) 2>&1 | tee -a "$LOG_FILE"
 
       log "Claude Code finished. Re-reading current latest..."
       current=$(get_current_latest)
