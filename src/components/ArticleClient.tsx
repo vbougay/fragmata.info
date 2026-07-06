@@ -121,7 +121,9 @@ function DamCardEmbed({ damName, dataSetId }: { damName: string; dataSetId: stri
   }, [damName, dataSetId]);
 
   if (!reservoir) return null;
-  return <ReservoirCard reservoir={reservoir} />;
+  // In the article the card spans full width, so lay the detail sections out
+  // horizontally instead of stacked (wideDetails), unlike the narrow grid cards.
+  return <ReservoirCard reservoir={reservoir} wideDetails />;
 }
 
 function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref, label }: {

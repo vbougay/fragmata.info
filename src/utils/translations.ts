@@ -33,6 +33,17 @@ export const translations = {
     mapNoteLabel: "Note",
     viewOnMap: "View on Google Maps",
 
+    // Dam facts
+    damFactsTitle: "Dam facts",
+    damFactsBuilt: "Built",
+    damFactsHeight: "Height",
+    damFactsRiver: "River",
+    damFactsType: "Type",
+    damTypeEarthfill: "Earthfill",
+    damTypeRockfill: "Rockfill",
+    damTypeHybrid: "Earthfill/Rockfill",
+    heightUnit: "m",
+
     // Cards
     overallStatus: "Overall Reservoir Status",
     
@@ -216,6 +227,17 @@ export const translations = {
     mapNoteLabel: "Σημείωση",
     viewOnMap: "Προβολή στο Google Maps",
 
+    // Dam facts
+    damFactsTitle: "Στοιχεία φράγματος",
+    damFactsBuilt: "Έτος κατασκευής",
+    damFactsHeight: "Ύψος",
+    damFactsRiver: "Ποταμός",
+    damFactsType: "Τύπος",
+    damTypeEarthfill: "Χωμάτινο",
+    damTypeRockfill: "Λιθόρριπτο",
+    damTypeHybrid: "Χωμάτινο/Λιθόρριπτο",
+    heightUnit: "μ",
+
     // Cards
     overallStatus: "Συνολική κατάσταση ταμιευτήρων",
     
@@ -398,6 +420,17 @@ export const translations = {
     mapRecentInflow: "Приток за 24ч",
     mapNoteLabel: "Примечание",
     viewOnMap: "Посмотреть на Google Maps",
+
+    // Dam facts
+    damFactsTitle: "О плотине",
+    damFactsBuilt: "Год постройки",
+    damFactsHeight: "Высота",
+    damFactsRiver: "Река",
+    damFactsType: "Тип",
+    damTypeEarthfill: "Земляная",
+    damTypeRockfill: "Каменно-набросная",
+    damTypeHybrid: "Земляная/каменно-набросная",
+    heightUnit: "м",
 
     // Cards
     overallStatus: "Общее Состояние Водохранилищ",

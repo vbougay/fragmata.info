@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-07-06-anatomy-of-cyprus-dams',
+    date: '2026-07-06',
+    dataSetId: '06-JUL-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: 'The Anatomy of a Cyprus Dam: 108 Reservoirs, a Sunken Church, and How to Read a Dam Wall',
+      el: 'Η Ανατομία ενός Κυπριακού Φράγματος: 108 Ταμιευτήρες, μια Βυθισμένη Εκκλησία και Πώς να Διαβάζετε ένα Φράγμα',
+      ru: 'Анатомия кипрской плотины: 108 водохранилищ, затонувшая церковь и как «читать» стену дамбы',
+    },
+    description: {
+      en: 'Cyprus has more dams per square kilometre than almost any country in Europe. A field guide to all 21 of its major dams — earthfill, rockfill and hybrid — with the engineering, history and stories behind each wall, from Kouris\'s drowned village to Solea on the island\'s only permanent river.',
+      el: 'Η Κύπρος έχει περισσότερα φράγματα ανά τετραγωνικό χιλιόμετρο από σχεδόν κάθε χώρα στην Ευρώπη. Ένας οδηγός για τα 21 μεγάλα φράγματα — χωμάτινα, λιθόρριπτα και υβριδικά — με τη μηχανική, την ιστορία και τις ιστορίες πίσω από κάθε φράγμα, από το βυθισμένο χωριό του Κούρη έως τη Σόλεα στον μοναδικό μόνιμο ποταμό του νησιού.',
+      ru: 'В Кипре плотность плотин на квадратный километр выше, чем почти в любой стране Европы. Путеводитель по всем 21 крупным плотинам — земляным, каменно-набросным и смешанным — с инженерией, историей и сюжетами за каждой стеной: от затопленной деревни у Куриса до Солеа на единственной постоянной реке острова.',
+    },
+  },
+  {
     slug: '2026-06-05-inflow-season-peak-plateau',
     date: '2026-06-05',
     dataSetId: '05-JUN-2026',

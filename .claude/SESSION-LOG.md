@@ -1,42 +1,19 @@
 # Session Log
 
-## 2026-06-23 — Session `16c5d22f-3421-4e64-9d28-0f99d5119122`
+## 2026-07-06 — Session `2f829eff-d759-4806-b07b-b98be75453db`
 
-- Diagnosed why `scripts/watch-wdd.sh` stopped seeing fresh data — logs showed `ERROR: No XLSX dates found on gov.cy pages` despite June 23 data being live
-- Root cause: WDD renamed its data files from the underscore form `19_06_2026-UK.xlsx` (`DD_MM_YYYY`) to `23-JUNE-2026-UK.xlsx` (`DD-MONTHNAME-YYYY`); the script's regex only matched the old format, and the only file still using underscores (`Graphs-*.xlsx`) is filtered out by `grep -iv graph`, so zero dates matched
-- Fix: broadened `get_wdd_latest()` in [scripts/watch-wdd.sh](scripts/watch-wdd.sh) to match both naming schemes, strip the `-UK/-GR.xlsx` suffix, and parse each token via `%d_%m_%Y` → `%d-%B-%Y` → `%d-%b-%Y`, canonicalizing to `DD-MMM-YYYY` from epoch (handles both formats so it won't break if WDD reverts)
-- Verified with `--once`: now logs `Latest data on WDD website: 23-JUN-2026` and `NEW DATA FOUND!` vs app's `22-JUN-2026`
-- Flagged a separate, unrelated issue: the nested headless `claude -p /fetch-and-update` launch failed with `401 authentication_failed` (credentials in the spawned shell, not the detection logic)
-
----
-
-## 2026-06-18 — Session `4d2b2aec-8204-4dcf-adee-622a98461fca`
-
-- Diagnosed why `https://fragmata.info/llms.txt` served stale data (frozen at 24-FEB-2026 while the dashboard showed current 17-JUN-2026)
-- Root cause: [app/llms.txt/route.ts](app/llms.txt/route.ts) hardcoded `import ... from "@/utils/data-24-FEB-2026"`, so it never followed the latest dataset; the `fetch-and-update` skill only bumps `dataManager.ts`, never this route
-- Fix: wired the route to `dataManager` accessors (`reservoirData`, `yearlyInflowData`, `getReportDate`, `getWaterTransferred`, `calculateRegionTotals`, `calculateGrandTotal`) so it auto-follows the default/latest dataset — no more manual bumps
-- Added a `getWaterTransferred()` getter to [dataManager.ts](src/utils/dataManager.ts) (the only field the route used that wasn't already exposed)
-- Verified locally: route now renders `Report date: 17-JUN-2026`, `42.3%` storage, `20.4 mln. m³` transferred; `tsc` clean aside from pre-existing `baseUrl` deprecation warning
-
----
-
-## 2026-06-07 — Session `926e850b-2088-4c7b-b223-b8352e4265d7`
-
-- Built dynamic SVG-based OG (social-share) cards for fragmata, modeled on monopatia.info's build-time SVG→PNG pipeline; chose satori + `@resvg/resvg-js` over hand-authored SVG for reliable multilingual fonts + flexbox layout
-- New pipeline under `scripts/og/`: `generate.tsx` (generator) + `card-dam.tsx` (presentational 1200×630 card)
-- Card content: name, region · Cyprus, big % of capacity (level-colored to match the app's `StorageSparkline` scheme), 3 stat blocks (current storage, vs-last-year with up/down arrow, inflow since Oct), and a 12-month storage sparkline; no QR / no fill-gauge per user
-- Sparkline reuses `getAllSparklineData` for dams and a new aggregate-over-member-dams computation for region/dashboard (0–100 domain, dashed 25/50/75 gridlines, min/max/current dots)
-- Localized EN/EL/RU: names/regions from `translations.ts`, volume unit from `translations.volumeUnit` (`mln. m³` / `εκατ. κ.μ.` / `млн. м³`), full month names with correct grammar (genitive dates, nominative axis)
-- Font gotcha: satori does NOT glyph-fall-back across split Google subset files (rendered "NO GLYPH" tofu) — fixed by vendoring Inter's full-charset static TTFs (Regular/SemiBold/Bold) under `scripts/og/fonts/`
-- Region + dashboard cards reuse the same template; numbers from real `calculateRegionTotals`/`calculateGrandTotal` (dashboard excludes Recharge/Other, matches site: 42.4% / 123.4 mln m³ / 112 mln m³)
-- Generator sources `reservoirData()`/`getReportDate()` from `dataManager` (latest/default dataset), so daily data updates flow through with no code change
-- Rollout: 81 cards (21 dams + 5 regions + dashboard × 3 locales); wired `generateMetadata` in dam + region pages and the `[locale]/layout.tsx` site default (dashboard card); `?v=<report-date>` query busts platform OG caches
-- Build hook: `package.json` `build` → `tsx scripts/og/generate.tsx && next build` (+ standalone `og` script); added devDeps `satori`, `@resvg/resvg-js`, `tsx`
-- `.gitignore`: track `scripts/og/` (generator + fonts as build inputs), ignore generated `public/og/`, keep local `scripts/post-telegram.ts` ignored
-- Verified full production build passes; confirmed `og:image` meta tags in prerendered HTML (dam/region/home → correct per-locale cards); committed `cd6b05c` and pushed to `main`
+- Investigated backfilling missing historical levels for the recharge/other dams (Tamassos, Klirou-Malounta, Solea) in [historicalStorageData.ts](src/utils/historicalStorageData.ts); found the `cyprus-water.appspot.com` API only tracks 17–18 dams and has none of the three
+- User supplied `dams.wdd.moa.gov.cy/api/historical/storage?dam=…`; verified it matches our existing pre-2021 data exactly (170/170 dates) but has the same 2021–2025 gap — only two real anchor readings (2024-01-01, 2025-01-01) exist, which I backfilled; the rest is genuinely unreported (WDD `/api/data` monthly is forward-filled, not real)
+- Mapped the full WDD API surface (`/api/latest`, `/api/data`, `/api/month`, `/api/daily`, `/api/pipelines`, `/api/transfers`, `/api/historical/storage`, `/api/historical/project-storage`); noted name-spelling differences (Germasogeia/Tamasou/Klirou)
+- Built a Dam Facts feature: new [damMetadata.ts](src/utils/damMetadata.ts) (year/height/river/type/size for all 21 dams from WDD) + [DamFacts.tsx](src/components/DamFacts.tsx), wired into dam detail pages below the StatCardGrid, with en/el/ru labels + dam-type translations; iterated layout to a single centered, responsive horizontal row (no scrollbar)
+- Researched interesting facts for all 21 dams via 6 parallel subagents; corrected two disputed build years per user (Lefkara→1973, Solea→2013) with source-note comments
+- Created a trilingual educational article "The Anatomy of a Cyprus Dam" ([content/articles/2026-07-06-anatomy-of-cyprus-dams/](content/articles/2026-07-06-anatomy-of-cyprus-dams/) en/el/ru) — dam-type explainer, 3 deep-dives (Kouris/Asprokremmos/Germasoyeia), an all-21 roundup, and `dam-card`/`heatmap` embeds; registered in [articles.ts](src/utils/articles.ts)
+- Fixed the article dam-card embed stretching full-width: added a `wideDetails` prop to [ReservoirCard.tsx](src/components/ReservoirCard.tsx) that lays Inflow/History/Restrictions out in 3 horizontal columns on wide screens (via [ArticleClient.tsx](src/components/ArticleClient.tsx)), leaving region-grid cards untouched
+- Reread and rewrote the RU/EL article bodies to remove English calques (e.g. "punch above their weight", "workhorses", "loses to the sky") and fixed a stray soft-hyphen in "Мавроколимбос"; verified 3 embeds + 28 links parity across all locales, all routes 200
 
 ---
 
 ## Archives
 
+- [2026-06](SESSION-LOG-2026-06.md) — 3 sessions
 - [2026-04](SESSION-LOG-2026-04.md) — 3 sessions

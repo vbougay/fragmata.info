@@ -24,6 +24,7 @@ import Link from 'next/link';
 import { getRegionSlugForDam, REGION_SLUG_MAP } from '@/utils/slugs';
 import { defaultLocale } from '@/utils/locale';
 import { getDamMapUrl } from '@/utils/damMapLinks';
+import DamFacts from '@/components/DamFacts';
 
 interface RegionDamClientProps {
   type: 'region' | 'dam';
@@ -240,6 +241,10 @@ export function RegionDamClient({
           totalInflowSince={regionTotal.inflow.totalSince}
           last7DaysInflow={type === 'dam' && damName && weeklyInflowMap ? weeklyInflowMap.get(damName) : undefined}
         />
+
+        {type === 'dam' && damName && !mediaMode && (
+          <DamFacts damName={damName} t={t} />
+        )}
 
         <div className={mediaMode ? 'space-y-4' : 'space-y-8'}>
           {/* Historical Heatmap */}

@@ -16,9 +16,12 @@ interface ReservoirCardProps {
   reservoir: Reservoir;
   sparklineData?: SparklineDataPoint[];
   last7DaysInflow?: number;
+  // When true (e.g. full-width article embed), lay the Inflow / history /
+  // restrictions sections out horizontally on wide screens instead of stacked.
+  wideDetails?: boolean;
 }
 
-const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData, last7DaysInflow }) => {
+const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData, last7DaysInflow, wideDetails }) => {
   const { name, capacity, inflow, storage, maxStorage, drainDate, region } = reservoir;
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -60,7 +63,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
           <CapacityChart data={reservoir} />
         </div>
 
-        <div className="card-details grid grid-cols-1 gap-2 mt-4 text-sm">
+        <div className={`card-details grid grid-cols-1 gap-2 mt-4 text-sm${wideDetails ? ' md:grid-cols-3 md:items-stretch' : ''}`}>
           <div className="bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg">
             <div className="text-xs text-muted-foreground mb-2 flex items-center gap-1">
               <Droplets size={12} className="text-water-500 dark:text-water-400" />
@@ -138,9 +141,8 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               </>
             )}
           </div>
-        </div>
 
-          <div className="card-drain-date flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg mt-2 text-sm">
+          <div className="card-drain-date flex flex-col bg-gray-50 dark:bg-gray-800/50 p-2 rounded-lg text-sm">
             <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
               <Timer size={12} className="text-water-500 dark:text-water-400" />
               {t('restrictionsBy')}
@@ -151,6 +153,7 @@ const ReservoirCard: React.FC<ReservoirCardProps> = ({ reservoir, sparklineData,
               </span>
             </div>
           </div>
+        </div>
 
       </CardContent>
     </Card>
