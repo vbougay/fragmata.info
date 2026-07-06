@@ -3813,3 +3813,54 @@ Gap vs last year: *+22.3pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 6
+
+📰 Major update — storage slips to 41.4% (120.3 MCM) over six days; Arminou notches a new season high of 55.8%, while Klirou-Malounta drops below full for the first time since March.
+
+Total storage **41.4%** (120.3 MCM) — just -0.9 MCM since June 30, the slowest summer drawdown pace in years. The gap over last year widens slightly to **+22.5pp**. 24h inflow: **0.11 MCM** (Kouris 0.063, Arminou 0.038, Kannaviou 0.006). Season inflow: **114.6 MCM** (July so far: 0.18 MCM). [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 55.8%** (+1.2pp) — new season high, still the only riser on the island; light inflows keep outpacing pumping to [Kouris](/dam/kouris/)
+- **[Mavrokolympos](/dam/mavrokolympos/) 76.9%** (-3.1pp) — the week's biggest decliner, easing from its peak after starting the year at 0%
+- **[Klirou-Malounta](/dam/klirou-malounta/) 96.6%** — slipped below full for the first time since March; only [Kalopanagiotis](/dam/kalopanagiotis/) still overflows
+- [Kouris](/dam/kouris/) **41.2%** (47.4 MCM) · [Kannaviou](/dam/kannaviou/) **50.5%** · [Germasoyeia](/dam/germasoyeia/) **58.4%** — barely moving
+- [Achna](/dam/achna/) **1.9%** — zero inflow all season, no recovery expected before autumn
+
+Gap vs last year: +22.5pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=PENDING, chat_id=PENDING, at=PENDING
+```
+📰 Cyprus Dams — July 6
+
+Total storage: 41.4% (120.3 MCM) — just -0.9 MCM in six days, the slowest summer drawdown pace in years. +22.5pp above last year. 24h inflow: 0.11 MCM. Season inflow: 114.6 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+• Arminou 55.8% (+1.2pp) — new season high, still the only riser; inflows outpace pumping to Kouris
+• Mavrokolympos 76.9% (-3.1pp) — the week's biggest decliner after starting the year at 0%
+• Klirou-Malounta 96.6% — slipped below full for the first time since March; only Kalopanagiotis still overflows
+• Kouris 41.2% (47.4 MCM), Kannaviou 50.5%, Germasoyeia 58.4% — barely moving
+• Achna 1.9% — zero inflow all season, no recovery expected before autumn
+
+Gap vs last year: +22.5pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — July 6*
+
+Total storage: *41.4% (120.3 MCM)* — just -0.9 MCM in six days, the slowest summer drawdown pace in years. *+22.5pp above last year*. 24h inflow: *0.11 MCM*. Season inflow: *114.6 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+*Notable:*
+• *Arminou 55.8%* (+1.2pp) — new season high, still the only riser; inflows outpace pumping to Kouris
+• *Mavrokolympos 76.9%* (-3.1pp) — the week's biggest decliner after starting the year at 0%
+• *Klirou-Malounta 96.6%* — slipped below full for the first time since March; only Kalopanagiotis still overflows
+• Kouris *41.2%* (47.4 MCM), Kannaviou *50.5%*, Germasoyeia *58.4%* — barely moving
+• Achna *1.9%* — zero inflow all season, no recovery expected before autumn
+
+Gap vs last year: *+22.5pp*.
+
+🔗 https://fragmata.info
+```
