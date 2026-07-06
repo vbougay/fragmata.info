@@ -3830,7 +3830,7 @@ Total storage **41.4%** (120.3 MCM) — just -0.9 MCM since June 30, the slowest
 Gap vs last year: +22.5pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
-Sent: message_id=PENDING, chat_id=PENDING, at=PENDING
+Sent: message_id=45, chat_id=151413643, at=2026-07-06T10:08:33Z
 ```
 📰 Cyprus Dams — July 6
 
