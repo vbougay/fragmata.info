@@ -34,3 +34,9 @@ scripts/*
 
 # Generated OG social cards (rebuilt by `pnpm og` and the build step)
 /public/og/
+
+# Google Search Console skill: never commit the service-account key or the local DB
+# (the skill's SKILL.md and gsc-sync.tsx stay tracked)
+.claude/skills/google-search-console/gsc-credentials.json
+.claude/skills/google-search-console/gsc-data.sqlite
+.claude/skills/google-search-console/gsc-data.sqlite-*

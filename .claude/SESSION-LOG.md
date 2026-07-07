@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-07-07 — Session `017129bc-f7f8-4c4b-ae60-62465f4b523d`
+
+- Set up the `google-search-console` skill, which had been dropped in as a verbatim copy from the `pcc-local` (Parker's Crazy Cookies) project — wrong domain, and none of its pipeline (SQLite DB, sync script, deps) existed here
+- Located the original working pipeline at `/Users/smartvlad/Projects/pcc-local` and replicated it for `fragmata.info`; asked the user two gating questions — chose **new service account** (separate GCP project) + **domain property** (`sc-domain:fragmata.info`)
+- Installed `better-sqlite3`, `googleapis`, `commander` (date-fns already present); added a `pnpm.onlyBuiltDependencies` allowlist to [package.json](package.json) so the native binding compiles under pnpm 10
+- Created the sync CLI (`sync`/`export`/`status`) and fixed two porting bugs: ESM `__dirname` (project is `"type": "module"`) and pnpm blocking the native build script
+- Rewrote [SKILL.md](.claude/skills/google-search-console/SKILL.md) for fragmata.info — dropped the Parker's cookie branded-keyword section, added EN/EL/RU multilingual query guidance + Cyprus country codes, set `user-invocable: true`
+- Per user request, made the skill **self-contained**: moved the script + DB + credentials all under `.claude/skills/google-search-console/`, repointed paths to `__dirname`-relative, updated `.gitignore` to ignore only the DB + credentials while keeping `gsc-sync.tsx` and `SKILL.md` tracked
+- Installed the user's service-account key (`gsc-access@fragmata-info.iam.gserviceaccount.com`) and ran the first sync: 89 days backfilled, 32,514 page-level + 14,093 query-level rows; verified multilingual capture (English, Greek `πληρότητα φραγμάτων σημερα`, brand terms) and flagged a CTR opportunity (Greek term at 13.2k impressions / 3.49% CTR, pos 6.1)
+
+---
+
 ## 2026-07-07 — Session `2ef0a8b8-ae4a-47e1-b9bd-159576e02f78`
 
 - Ran an SEO analysis from GSC data (last 30d, via the `google-search-console` skill) focused on the Cypriot Greek audience; found Greek is already the biggest segment (16.8k impressions, 67% of total) but converts worst — `/el` ranks pos 3.9 yet gets 5.77% CTR vs the English homepage's 13.09% at pos 3.8

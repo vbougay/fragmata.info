@@ -48,11 +48,14 @@
     "@tanstack/react-query": "^5.100.10",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "better-sqlite3": "^12.11.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "commander": "^15.0.0",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
+    "googleapis": "^173.0.0",
     "html-to-image": "^1.11.13",
     "input-otp": "^1.4.2",
     "leaflet": "^1.9.4",
@@ -79,6 +82,7 @@
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.8.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -92,5 +96,10 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3",
     "xlsx": "^0.18.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }
