@@ -153,29 +153,59 @@ export default async function DamPage({
         ? `Ποιο είναι το τρέχον επίπεδο νερού στο φράγμα ${elGenitive};`
         : `Какой текущий уровень воды на плотине ${translatedDamName}?`;
 
+  // Absolute raster image for Google's SERP thumbnail (og:image is ignored by Search).
+  const ogImage = `${siteUrl}/og/dam/${slug}.${lang}.png?v=${reportDate}`;
+  const canonical =
+    lang === "en" ? `${siteUrl}/dam/${slug}` : `${siteUrl}/${lang}/dam/${slug}`;
+  const pageName =
+    lang === "en"
+      ? `${damInfo.name} Dam`
+      : lang === "el"
+        ? `Φράγμα ${elGenitive}`
+        : `Плотина ${translatedDamName}`;
+
   return (
     <>
-      {damSummary && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: faqQuestion,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: damSummary,
-                  },
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                url: canonical,
+                name: pageName,
+                inLanguage: lang,
+                image: ogImage,
+                primaryImageOfPage: {
+                  "@type": "ImageObject",
+                  url: ogImage,
+                  width: 1200,
+                  height: 630,
                 },
-              ],
-            }),
-          }}
-        />
-      )}
+              },
+              ...(damSummary
+                ? [
+                    {
+                      "@type": "FAQPage",
+                      mainEntity: [
+                        {
+                          "@type": "Question",
+                          name: faqQuestion,
+                          acceptedAnswer: {
+                            "@type": "Answer",
+                            text: damSummary,
+                          },
+                        },
+                      ],
+                    },
+                  ]
+                : []),
+            ],
+          }),
+        }}
+      />
       <RegionDamClient
       type="dam"
       damName={damInfo.name}

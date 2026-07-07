@@ -113,7 +113,42 @@ export default async function ArticlePage({
   const newer = currentIdx > 0 ? allArticles[currentIdx - 1] : null;
   const older = currentIdx < allArticles.length - 1 ? allArticles[currentIdx + 1] : null;
 
+  // Article structured data — gives Google an image + article signals for the
+  // SERP thumbnail (og:image alone is ignored by Search); pages had none before.
+  const canonical =
+    lang === "en"
+      ? `${siteUrl}/articles/${slug}`
+      : `${siteUrl}/${lang}/articles/${slug}`;
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title[lang],
+    description: article.description[lang],
+    image: [`${siteUrl}/og-image.png`],
+    datePublished: article.date,
+    dateModified: article.date,
+    inLanguage: lang,
+    author: { "@type": "Person", name: article.author },
+    publisher: {
+      "@type": "Organization",
+      name: "Fragmata",
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/icon-640.png`,
+        width: 640,
+        height: 640,
+      },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  };
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+    />
     <ArticleClient
       markdown={markdown}
       title={article.title[lang]}
@@ -122,5 +157,6 @@ export default async function ArticlePage({
       prevArticle={older ? { slug: older.slug, title: older.title[lang] } : undefined}
       nextArticle={newer ? { slug: newer.slug, title: newer.title[lang] } : undefined}
     />
+    </>
   );
 }

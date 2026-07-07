@@ -1,5 +1,6 @@
 import { DashboardClient } from "@/components/DashboardClient";
 import { getDashboardProps } from "@/utils/getDashboardProps";
+import { getReportDate, DEFAULT_DATASET_ID } from "@/utils/dataManager";
 import type { Locale } from "@/utils/locale";
 
 const siteUrl = "https://fragmata.info";
@@ -82,6 +83,9 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const m = homeMeta[locale as Locale] ?? homeMeta.en;
+  // Absolute raster image for Google's SERP thumbnail (og:image is ignored by Search).
+  // ?v= busts on each data update, matching the OG meta in layout.tsx.
+  const ogImage = `${siteUrl}/og/dashboard.${locale}.png?v=${getReportDate(DEFAULT_DATASET_ID)}`;
 
   return (
     <>
@@ -96,6 +100,7 @@ export default async function HomePage({
                 name: "Fragmata",
                 alternateName: m.alternateName,
                 description: m.description,
+                image: ogImage,
                 url: localeUrl(locale as Locale),
                 applicationCategory: "UtilitiesApplication",
                 operatingSystem: "Any",
@@ -109,6 +114,7 @@ export default async function HomePage({
                   "@type": "Dataset",
                   name: m.datasetName,
                   description: m.datasetDescription,
+                  image: ogImage,
                   spatialCoverage: {
                     "@type": "Place",
                     name: "Cyprus",

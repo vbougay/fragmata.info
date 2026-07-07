@@ -1,5 +1,17 @@
 # Session Log
 
+## 2026-07-07 — Session `db8ee96f-1b65-4b72-977d-61a90c6e54ea`
+
+- Investigated why OG images don't show in Google search results; verified the OG setup is actually **correct** (og:image → 200, image/png, 1200×630, absolute, all locales) — the premise was a category confusion
+- Diagnosed the real cause: og:image is a social-sharing signal Google Search largely ignores for SERP thumbnails; Google uses crawlable raster `<img>` + structured-data `image`, and the site had **neither** (0 `<img>`, 83 `<svg>`; no `image` in any JSON-LD; article pages emitted **zero** structured data)
+- Fix #1 — [page.tsx](app/[locale]/page.tsx): added `image` to the homepage `WebApplication` + `Dataset` nodes, pointing at the per-locale `/og/dashboard.{locale}.png` (`?v=` cache-busted)
+- Fix #2 — [dam/[slug]/page.tsx](app/[locale]/dam/[slug]/page.tsx): restructured JSON-LD into a `@graph` with a `WebPage` node (`image` + `primaryImageOfPage`) that renders **always** (previously the whole block was gated on `damSummary`), plus the existing FAQ when available
+- Fix #3 — [articles/[slug]/page.tsx](app/[locale]/articles/[slug]/page.tsx): added a full `Article` JSON-LD (headline, image, datePublished, author, publisher+logo `/icon-640.png`, mainEntityOfPage) where there was none — also earns Article rich-result eligibility
+- Verified in local dev: all three page types emit valid JSON-LD with `image`, all referenced images resolve 200 image/png, no server errors
+- Flagged the caveat that SERP thumbnails stay algorithmic/mostly-mobile and never guaranteed, but the missing precondition is now in place; recommended deploy + Rich Results Test + re-index
+
+---
+
 ## 2026-07-07 — Session `017129bc-f7f8-4c4b-ae60-62465f4b523d`
 
 - Set up the `google-search-console` skill, which had been dropped in as a verbatim copy from the `pcc-local` (Parker's Crazy Cookies) project — wrong domain, and none of its pipeline (SQLite DB, sync script, deps) existed here
