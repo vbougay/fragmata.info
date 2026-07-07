@@ -134,18 +134,20 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                   <Droplets className="relative w-8 h-8 md:w-10 md:h-10 text-water-500 dark:text-water-400 animate-float" />
                 </div>
                 <Link href={getLocalePath(language)} className="block">
+                  <span className="text-2xl md:text-4xl font-bold gradient-text block">
+                    {t('appTitle')}
+                  </span>
+                  {/* Keyword-rich subtitle carries the homepage H1; wordmark is a plain span.
+                      Sub-pages already provide their own <h1>, so keep this a <p> there. */}
                   {homePage ? (
-                    <h1 className="text-2xl md:text-4xl font-bold gradient-text">
-                      {t('appTitle')}
+                    <h1 className="text-water-800/70 dark:text-water-300/70 text-xs md:text-base font-normal mt-1">
+                      {t('subtitle')}
                     </h1>
                   ) : (
-                    <span className="text-2xl md:text-4xl font-bold gradient-text block">
-                      {t('appTitle')}
-                    </span>
+                    <p className="text-water-800/70 dark:text-water-300/70 text-xs md:text-base mt-1">
+                      {t('subtitle')}
+                    </p>
                   )}
-                  <p className="text-water-800/70 dark:text-water-300/70 text-xs md:text-base mt-1">
-                    {t('subtitle')}
-                  </p>
                 </Link>
               </div>
 

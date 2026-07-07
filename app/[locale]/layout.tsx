@@ -5,7 +5,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { notFound } from "next/navigation";
 import { Providers } from "@/components/providers";
 import { locales, isValidLocale, type Locale } from "@/utils/locale";
-import { getReportDate, DEFAULT_DATASET_ID } from "@/utils/dataManager";
+import {
+  getReportDate,
+  getGrandTotalWithForecast,
+  DEFAULT_DATASET_ID,
+} from "@/utils/dataManager";
+import { parseReportDate } from "@/utils/reservoirUtils";
 import "../globals.css";
 
 const inter = Inter({
@@ -130,9 +135,60 @@ export async function generateMetadata({
   // Site-wide default = the Cyprus dashboard card (dam/region pages override below).
   const ogImage = `/og/dashboard.${locale}.png?v=${getReportDate(DEFAULT_DATASET_ID)}`;
 
+  // Live total fill % + report date, injected into title/description so the SERP
+  // snippet answers "πληρότητα φραγμάτων σήμερα" / "cyprus dam levels today" directly.
+  // Falls back to the static copy above if the live figure can't be computed.
+  const localeTag: Record<Locale, string> = {
+    en: "en-GB",
+    el: "el-GR",
+    ru: "ru-RU",
+  };
+  const tag = localeTag[locale];
+  const grand = getGrandTotalWithForecast(DEFAULT_DATASET_ID);
+  const pctNum = grand?.storage.current.percentage;
+  const amtNum = grand?.storage.current.amount;
+  const parsed = parseReportDate(getReportDate(DEFAULT_DATASET_ID));
+  const reportDateStr = parsed
+    ? new Date(parsed.year, parsed.month - 1, parsed.day).toLocaleDateString(tag, {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })
+    : "";
+  const hasLive =
+    typeof pctNum === "number" &&
+    Number.isFinite(pctNum) &&
+    typeof amtNum === "number" &&
+    reportDateStr !== "";
+
+  let title = m.title;
+  let description = m.description;
+  if (hasLive) {
+    const fmt = (n: number) =>
+      n.toLocaleString(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const pct = fmt(pctNum);
+    const amt = fmt(amtNum);
+    const live: Record<Locale, { title: string; description: string }> = {
+      en: {
+        title: `Cyprus Dam Levels: ${pct}% Full Today | Fragmata`,
+        description: `Cyprus dams today (${reportDateStr}): ${pct}%, ${amt} MCM across 21 reservoirs — Kouris, Asprokremmos, Evretou. Live water levels, capacity & daily inflow.`,
+      },
+      el: {
+        title: `Φράγματα Κύπρου: ${pct}% Πληρότητα Σήμερα | Fragmata`,
+        description: `Πληρότητα φραγμάτων Κύπρου σήμερα (${reportDateStr}): ${pct}%, ${amt} εκατ. κ.μ. σε 21 ταμιευτήρες — Κούρη, Ασπρόκρεμμο, Ευρέτου. Ζωντανά επίπεδα νερού & εισροή.`,
+      },
+      ru: {
+        title: `Дамбы Кипра: заполнены на ${pct}% | Фрагмата`,
+        description: `Уровень воды в дамбах Кипра (${reportDateStr}): ${pct}%, ${amt} млн м³ в 21 водохранилище — Курис, Аспрокреммос, Эвретоу. Живые данные и приток.`,
+      },
+    };
+    title = live[locale].title;
+    description = live[locale].description;
+  }
+
   return {
-    title: m.title,
-    description: m.description,
+    title,
+    description,
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: localeUrl(locale),
@@ -146,8 +202,8 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       url: localeUrl(locale),
-      title: m.title,
-      description: m.description,
+      title,
+      description,
       images: [{ url: ogImage, width: 1200, height: 630, type: "image/png" }],
       locale: m.ogLocale,
       alternateLocale: locales
@@ -156,8 +212,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: m.title,
-      description: m.description,
+      title,
+      description,
       images: [ogImage],
     },
     keywords: m.keywords,
