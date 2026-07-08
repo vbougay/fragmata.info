@@ -3915,3 +3915,54 @@ Gap vs last year: *+22.5pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 8
+
+📰 Major update — storage holds at 41.3% (120.1 MCM); a small 0.17 MCM inflow day offsets most of the drawdown while Arminou reaches 56.2%.
+
+Total storage **41.3%** (120.1 MCM) — essentially flat since yesterday and just -1.2 MCM since June 30, keeping the slowest summer drawdown pace in years. Gap over last year holds at **+22.6pp**. 24h inflow: **0.17 MCM** ([Kouris](/dam/kouris/) 0.128, [Kalavasos](/dam/kalavasos/) 0.015, [Arminou](/dam/arminou/) 0.012). Season inflow: **114.8 MCM** (July so far: 0.39 MCM). [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 56.2%** (+0.2pp) — another season high, still the only reservoir rising through the dry season
+- **[Mavrokolympos](/dam/mavrokolympos/) 75.8%** (-0.4pp) — still the clearest daily decliner after its spring recovery from 0%
+- [Kouris](/dam/kouris/) **41.2%** (47.4 MCM) — gained slightly on the 24h inflow, but remains near-flat week to week
+- [Klirou-Malounta](/dam/klirou-malounta/) **96.4%** and [Solea](/dam/solea/) **95.3%** — recharge dams continue easing slowly below full
+- [Achna](/dam/achna/) **1.9%** — unchanged, with zero inflow all season
+
+Gap vs last year: +22.6pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+```
+📰 Cyprus Dams — July 8
+
+Total storage: 41.3% (120.1 MCM) — essentially flat since yesterday and just -1.2 MCM since June 30, keeping the slowest summer drawdown pace in years. +22.6pp above last year. 24h inflow: 0.17 MCM. Season inflow: 114.8 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+• Arminou 56.2% (+0.2pp) — another season high, still the only reservoir rising through the dry season
+• Mavrokolympos 75.8% (-0.4pp) — still the clearest daily decliner after its spring recovery from 0%
+• Kouris 41.2% (47.4 MCM) — gained slightly on the 24h inflow, but remains near-flat week to week
+• Klirou-Malounta 96.4% and Solea 95.3% — recharge dams continue easing slowly below full
+• Achna 1.9% — unchanged, with zero inflow all season
+
+Gap vs last year: +22.6pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — July 8*
+
+Total storage: *41.3% (120.1 MCM)* — essentially flat since yesterday and just -1.2 MCM since June 30, keeping the slowest summer drawdown pace in years. *+22.6pp above last year*. 24h inflow: *0.17 MCM*. Season inflow: *114.8 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+*Notable:*
+• *Arminou 56.2%* (+0.2pp) — another season high, still the only reservoir rising through the dry season
+• *Mavrokolympos 75.8%* (-0.4pp) — still the clearest daily decliner after its spring recovery from 0%
+• Kouris *41.2%* (47.4 MCM) — gained slightly on the 24h inflow, but remains near-flat week to week
+• Klirou-Malounta *96.4%* and Solea *95.3%* — recharge dams continue easing slowly below full
+• Achna *1.9%* — unchanged, with zero inflow all season
+
+Gap vs last year: *+22.6pp*.
+
+🔗 https://fragmata.info
+```
+
