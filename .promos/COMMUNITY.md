@@ -3966,3 +3966,54 @@ Gap vs last year: *+22.6pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 9
+
+📊 Storage holds at 41.3% (120.0 MCM), flat from yesterday — slowest summer drawdown pace continues. Arminou sets fresh season high at 56.8%.
+
+24h inflow: **0.11 MCM** (Kouris 0.078, Arminou 0.016, Kannaviou 0.003). Season inflow: **114.9 MCM** (July so far: 0.51 MCM). [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 56.8%** (+0.6pp) — new season high, still the only riser; inflows outpace pumping to [Kouris](/dam/kouris/)
+- [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — last dam still overflowing
+- [Kouris](/dam/kouris/) **41.2%** (47.4 MCM) · [Kannaviou](/dam/kannaviou/) **50.3%** · [Germasoyeia](/dam/germasoyeia/) **58.0%** — barely moving
+- [Achna](/dam/achna/) **1.9%** — zero inflow all season, no recovery expected before autumn
+- Recharge dams [Tamassos](/dam/tamassos/), [Klirou-Malounta](/dam/klirou-malounta/), [Solea](/dam/solea/) easing slowly near full
+
+Gap vs last year: +22.1pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=48, chat_id=151413643, at=2026-07-10T06:17:03Z
+```
+📊 Cyprus Dams — July 9
+
+Total storage: 41.3% (120.0 MCM) — flat from yesterday, slowest summer drawdown pace continues. +22.1pp above last year. 24h inflow: 0.11 MCM. Season inflow: 114.9 MCM. Arminou→Kouris transfer: 20.44 MCM.
+
+• Arminou 56.8% (+0.6pp) — new season high, still the only riser; inflows outpace pumping to Kouris
+• Kalopanagiotis 100% — last dam still overflowing
+• Kouris 41.2% (47.4 MCM), Kannaviou 50.3%, Germasoyeia 58.0% — barely moving
+• Achna 1.9% — zero inflow all season, no recovery expected before autumn
+• Tamassos, Klirou-Malounta, Solea easing slowly near full
+
+Gap vs last year: +22.1pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — July 9*
+
+Total storage: *41.3% (120.0 MCM)* — flat from yesterday, slowest summer drawdown pace continues. *+22.1pp above last year*. 24h inflow: *0.11 MCM*. Season inflow: *114.9 MCM*. Arminou→Kouris transfer: *20.44 MCM*.
+
+*Notable:*
+• *Arminou 56.8%* (+0.6pp) — new season high, still the only riser; inflows outpace pumping to Kouris
+• *Kalopanagiotis 100%* — last dam still overflowing
+• Kouris *41.2%* (47.4 MCM), Kannaviou *50.3%*, Germasoyeia *58.0%* — barely moving
+• Achna *1.9%* — zero inflow all season, no recovery expected before autumn
+• Tamassos, Klirou-Malounta, Solea easing slowly near full
+
+Gap vs last year: *+22.1pp*.
+
+🔗 https://fragmata.info
+```
