@@ -4085,6 +4085,7 @@ Total storage **41.1%** (119.4 MCM) — down modestly from 41.2% on July 10, kee
 Gap vs last year: +22.7pp. Dashboard: [fragmata.info](https://fragmata.info)
 
 ### Telegram
+Sent: message_id=50, chat_id=151413643, at=2026-07-13T10:53:06Z
 ```
 📰 Cyprus Dams — July 13
 
