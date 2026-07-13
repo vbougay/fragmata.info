@@ -9,6 +9,8 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Government investing €168m to tackle water shortage, minister says', url: 'https://cyprus-mail.com/2026/07/05/government-investing-e168m-to-tackle-water-shortage-minister-says', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'MPs warn water crisis threatens future of farming', url: 'https://cyprus-mail.com/2026/06/30/mps-warn-water-crisis-threatens-future-of-farming', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Farmers demand more irrigation water', url: 'https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Integrating energy and water planning', url: 'https://cyprus-mail.com/2026/06/20/integrating-energy-and-water-planning', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
@@ -17,7 +19,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Dam levels almost double those of last year', url: 'https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus has recorded the highest May inflow of water into its dams in four decades', url: 'https://famagusta-gazette.com/cyprus-has-recorded-the-highest-may-inflow-of-water-into-its-dams-in-four-decades/', lang: 'en', source: 'Famagusta Gazette' },
   { title: 'Dams record best May inflows since 1987', url: 'https://cyprus-mail.com/2026/05/21/dams-record-best-may-inflows-since-1987', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Limassol water reservoir projects \'progressing\', says district government', url: 'https://cyprus-mail.com/2026/05/14/limassol-water-reservoir-projects-progressing-says-district-government', lang: 'en', source: 'Cyprus Mail' },
 
   // Russian
   { title: 'Сельхозорганизации Кипра требуют увеличить объёмы воды для орошения сезонных культур', url: 'https://ruscyprus.com/news/selskohozyaystvennye-organizacii-kipra/59528', lang: 'ru', source: 'RusCyprus' },
@@ -32,6 +33,8 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
 
   // Greek
+  { title: 'Τελευταίες βροχές: Μικρή συνεισφορά στα φράγματα, όμως «στρώνουν χαλί» για πρώιμες μεγάλες εισροές', url: 'https://www.politis.com.cy/politis-news/cyprus/1018398/teleftaies-vrokhes-mikri-sineisfora-sta-fraghmata-omos-strwnoyn-khali-ghia-prwimes-meghales-eisroes', lang: 'el', source: 'Πολίτης' },
+  { title: 'Μετρήσεις βροχόπτωσης τελευταίου 24ώρου - Πληρότητα φραγμάτων (09-07-2026)', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-24orou-plirotita-fragmaton-9-7-2026/', lang: 'el', source: 'KitasWeather' },
   { title: 'Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης', url: 'https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/', lang: 'el', source: 'Διάλογος' },
   { title: 'ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026', url: 'https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/', lang: 'el', source: 'Διάλογος' },
   { title: 'Καλοκαίρι-καμίνι: θερμό καλοκαίρι για Κύπρο, βροχές αναμένονται από Σεπτέμβριο', url: 'https://www.politis.com.cy/politis-news/cyprus/1013524/kalokairi-kamini-provlepoyn-ta-efropaika-kentra-ghia-tin-kypro-omos-sto-vathos-vrokhes-apo-ton-septemvrio', lang: 'el', source: 'Πολίτης' },
@@ -40,5 +43,4 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/', lang: 'el', source: 'AlphaNews' },
   { title: 'Ρεκόρ συνολικών εισροών νερού τον φετινό Μάιο στα φράγματα', url: 'https://www.politis.com.cy/politis-news/cyprus/1005944/rekor-sinolikwn-eisrown-nerou-ghia-mina-maio-sta-fraghmata-sinekhizei-i-auksisi-sinolikis-plirotitas', lang: 'el', source: 'Πολίτης' },
   { title: 'Ρεκόρ εισροών Μαΐου στα φράγματα — συνεχίζεται η αύξηση πληρότητας', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/rekor-sinolikon-eisroon-nerou-gia-mina-maio-sta-fragmata-sinexizei-i-afksisi-tis-sinolikis-plirotitas/', lang: 'el', source: 'KitasWeather' },
-  { title: 'Ξεπέρασε το 160% η μέση βροχόπτωση Μαΐου — αποτίμηση διαταραχής και ύψη βροχής', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-160-tis-ekato-i-mesi-vroxoptosi-tou-mina-apotimisi-tis-diataraxis-maiou-kai-sinolika-ipsi-vroxis/', lang: 'el', source: 'KitasWeather' },
 ];
