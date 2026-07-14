@@ -24,7 +24,7 @@ export const reservoirData: Reservoir[] = [
 
   // Nicosia
   { name: "Vyzakia", capacity: 1.69, inflow: { last24Hours: 0.000, totalSince: 1.723 }, storage: { current: { amount: 1.534, percentage: 90.8 }, lastYear: { amount: 0.018, percentage: 1.1 } }, maxStorage: { amount: 0.051, date: "11/1" }, region: "Nicosia" },
-  { name: "Xyliatos", capacity: 1.43, inflow: { last24Hours: 0.001, totalSince: 1.493 }, storage: { current: { amount: 1.343, percentage: 93.9 }, lastYear: { amount: 0.183, percentage: 12.8 } }, maxStorage: { amount: 0.335, date: "24/3" }, region: "Nicosia" },
+  { name: "Xyliatos", capacity: 1.43, inflow: { last24Hours: 0.000, totalSince: 1.493 }, storage: { current: { amount: 1.343, percentage: 93.9 }, lastYear: { amount: 0.183, percentage: 12.8 } }, maxStorage: { amount: 0.335, date: "24/3" }, region: "Nicosia" },
   { name: "Kalopanagiotis", capacity: 0.363, inflow: { last24Hours: 0.000, totalSince: 0.312 }, storage: { current: { amount: 0.363, percentage: 100.0 }, lastYear: { amount: 0.174, percentage: 47.9 } }, maxStorage: { amount: 0.320, date: "18/4" }, region: "Nicosia" },
 
   // Recharge/Other
