@@ -4119,3 +4119,51 @@ Gap vs last year: *+22.7pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 14
+
+📊 Storage holds at 41.0% (119.2 MCM), essentially flat from yesterday — Arminou eases off its season high while Argaka keeps sliding off full.
+
+24h inflow: **0.05 MCM** ([Kouris](/dam/kouris/) 0.017, [Germasoyeia](/dam/germasoyeia/) 0.017, [Asprokremmos](/dam/asprokremmos/) 0.007). Season inflow: **115.1 MCM** (July so far: 0.72 MCM). [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer: **20.44 MCM**, unchanged.
+
+**Notable:**
+- **[Arminou](/dam/arminou/) 57.4%** (-0.1pp) — easing off its season high after several straight days of gains
+- [Argaka](/dam/argaka/) **88.0%** (-0.3pp) — continues its slow slide off full capacity
+- [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
+- [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
+
+Gap vs last year: +22.7pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=51, chat_id=151413643, at=2026-07-14T10:08:48Z
+```
+📊 Cyprus Dams — July 14
+
+Total storage: 41.0% (119.2 MCM) — essentially flat from yesterday. +22.7pp above last year. 24h inflow: 0.05 MCM. Season inflow: 115.1 MCM. Arminou→Kouris transfer: 20.44 MCM, unchanged.
+
+• Arminou 57.4% (-0.1pp) — easing off its season high after several straight days of gains
+• Argaka 88.0% (-0.3pp) — continues its slow slide off full capacity
+• Kalopanagiotis 100% — still the only dam overflowing
+• Achna 1.9% — unchanged, zero inflow all season
+
+Gap vs last year: +22.7pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — July 14*
+
+Total storage: *41.0% (119.2 MCM)* — essentially flat from yesterday. *+22.7pp above last year*. 24h inflow: *0.05 MCM*. Season inflow: *115.1 MCM*. Arminou→Kouris transfer: *20.44 MCM*, unchanged.
+
+*Notable:*
+• *Arminou 57.4%* (-0.1pp) — easing off its season high after several straight days of gains
+• *Argaka 88.0%* (-0.3pp) — continues its slow slide off full capacity
+• *Kalopanagiotis 100%* — still the only dam overflowing
+• Achna *1.9%* — unchanged, zero inflow all season
+
+Gap vs last year: *+22.7pp*.
+
+🔗 https://fragmata.info
+```
