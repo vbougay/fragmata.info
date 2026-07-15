@@ -4167,3 +4167,51 @@ Gap vs last year: *+22.7pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 15
+
+📰 Major update — storage holds at 40.9% (119.0 MCM), essentially flat as the plateau enters its third week, with Mavrokolympos posting the day's largest single dip.
+
+Total storage **40.9%** (119.0 MCM) — down marginally from 41.0% on July 14, keeping the slowest summer drawdown pace in years. Gap over last year holds near **+22.8pp**. Season inflow: **115.2 MCM** (July so far: 0.77 MCM). The [Arminou](/dam/arminou/)→[Kouris](/dam/kouris/) transfer remains at **20.44 MCM**, unchanged since early July.
+
+**Notable:**
+- [Mavrokolympos](/dam/mavrokolympos/) **73.3%** (-0.3pp) — the largest single-day drop of any dam, continuing its steady decline
+- [Tamassos](/dam/tamassos/) **95.5%** (-0.2pp) and [Vyzakia](/dam/vyzakia/) **90.6%** (-0.2pp) — easing slowly off full capacity
+- [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
+- [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
+
+Gap vs last year: +22.8pp. Dashboard: [fragmata.info](https://fragmata.info)
+
+### Telegram
+Sent: message_id=52, chat_id=151413643, at=2026-07-15T07:16:17Z
+```
+📰 Cyprus Dams — July 15
+
+Total storage: 40.9% (119.0 MCM) — down marginally from 41.0% on July 14, keeping the slowest summer drawdown pace in years. +22.8pp above last year. Season inflow: 115.2 MCM. Arminou→Kouris transfer: 20.44 MCM, unchanged since early July.
+
+• Mavrokolympos 73.3% (-0.3pp) — the largest single-day drop of any dam, continuing its steady decline
+• Tamassos 95.5% (-0.2pp) and Vyzakia 90.6% (-0.2pp) — easing slowly off full capacity
+• Kalopanagiotis 100% — still the only dam overflowing
+• Achna 1.9% — unchanged, zero inflow all season
+
+Gap vs last year: +22.8pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — July 15*
+
+Total storage: *40.9% (119.0 MCM)* — down marginally from 41.0% on July 14, keeping the slowest summer drawdown pace in years. *+22.8pp above last year*. Season inflow: *115.2 MCM*. Arminou→Kouris transfer: *20.44 MCM*, unchanged since early July.
+
+*Notable:*
+• *Mavrokolympos 73.3%* (-0.3pp) — the largest single-day drop of any dam, continuing its steady decline
+• Tamassos *95.5%* (-0.2pp) and Vyzakia *90.6%* (-0.2pp) — easing slowly off full capacity
+• *Kalopanagiotis 100%* — still the only dam overflowing
+• Achna *1.9%* — unchanged, zero inflow all season
+
+Gap vs last year: *+22.8pp*.
+
+🔗 https://fragmata.info
+```
