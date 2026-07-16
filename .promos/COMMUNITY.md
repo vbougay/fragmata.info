@@ -4215,3 +4215,42 @@ Gap vs last year: *+22.8pp*.
 
 🔗 https://fragmata.info
 ```
+
+
+## July 16
+
+📊 Minor update — storage holds at 40.9% (118.8 MCM), essentially flat from July 15.
+
+### Telegram
+Sent: message_id=53, chat_id=151413643, at=2026-07-16T10:56:19Z
+```
+📊 Cyprus Dams — July 16
+
+Total storage: 40.9% (118.8 MCM) — essentially flat from yesterday. +22.8pp above last year. 24h inflow: 0.06 MCM. Season inflow: 115.2 MCM. Arminou→Kouris transfer: 20.44 MCM, unchanged.
+
+• Mavrokolympos 72.6% (-0.7pp) — the largest single-day drop
+• Argaka 87.5% (-0.5pp) and Pomos 88.6% (-0.5pp) — easing off near-full levels
+• Kalopanagiotis 100% — still the only dam overflowing
+• Achna 1.9% — unchanged, zero inflow all season
+
+Gap vs last year: +22.8pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📊 *Cyprus Dams — July 16*
+
+Total storage: *40.9% (118.8 MCM)* — essentially flat from yesterday. *+22.8pp above last year*. 24h inflow: *0.06 MCM*. Season inflow: *115.2 MCM*. Arminou→Kouris transfer: *20.44 MCM*, unchanged.
+
+*Notable:*
+• *Mavrokolympos 72.6%* (-0.7pp) — the largest single-day drop
+• Argaka *87.5%* (-0.5pp) and Pomos *88.6%* (-0.5pp) — easing off near-full levels
+• *Kalopanagiotis 100%* — still the only dam overflowing
+• Achna *1.9%* — unchanged, zero inflow all season
+
+Gap vs last year: *+22.8pp*.
+
+🔗 https://fragmata.info
+```
