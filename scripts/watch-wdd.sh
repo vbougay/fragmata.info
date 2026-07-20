@@ -22,7 +22,7 @@ POLL_INTERVAL=300  # 5 minutes
 #   glm    -> z.ai proxy (GLM models), authenticating with your exported $ZAI_API_KEY
 #   claude -> Anthropic direct (default model)
 # Toggle by editing this one word.
-BACKEND=glm
+BACKEND=claude
 LOG_DIR="$PROJECT_DIR/logs"
 LOG_FILE="$LOG_DIR/watch-wdd-$(date '+%Y-%m-%d').log"
 
@@ -75,8 +75,9 @@ get_current_latest() {
     | grep -oE '[0-9]{1,2}-[A-Z]{3,}-[0-9]{4}'
 }
 
-# Fetch the gov.cy page(s) and extract the newest data date from XLSX links.
-# Checks both the English and Greek pages — the Greek page is sometimes updated first.
+# Fetch the gov.cy page(s) and extract the newest data date from XLSX or PDF links.
+# Checks both the English and Greek pages — the Greek page is sometimes updated first,
+# and the Greek page sometimes carries a fresh PDF bulletin before the XLSX lands.
 # Emits the newest date in canonical DD-MMM-YYYY form (e.g. 19-JUN-2026) so the rest
 # of the script (date_to_epoch, logging, comparisons) is unchanged.
 get_wdd_latest() {
@@ -93,13 +94,16 @@ get_wdd_latest() {
   # The gov.cy reservoir uploads have used two naming schemes:
   #   - DD-MONTHNAME-YYYY-UK.xlsx, e.g. "23-JUNE-2026-UK.xlsx"  (current, since ~23-JUN-2026)
   #   - DD_MM_YYYY-UK.xlsx,        e.g. "19_06_2026-UK.xlsx"     (older)
-  # (GR variants for the Greek page.) Skip the "Graphs-*.xlsx" companion file, which
-  # still uses the underscore form. Extract the date token (everything before -UK/-GR)
-  # and let the loop below parse it with whichever format matches.
+  # (GR variants for the Greek page.) The WDD also sometimes publishes a fresh bulletin
+  # as a PDF *before* the matching XLSX is uploaded, e.g. "20-JULY-2026-GR.pdf" while the
+  # newest XLSX is still older — so we scan both .xlsx and .pdf links and take whichever
+  # date is newest. Skip the "Graphs-*.xlsx" companion file, which still uses the
+  # underscore form. Extract the date token (everything before -UK/-GR) and let the loop
+  # below parse it with whichever format matches.
   dates=$(printf '%s\n%s\n' "$html_en" "$html_gr" \
-    | grep -oE '[0-9]{1,2}[-_][0-9A-Za-z]+[-_][0-9]{4}-(UK|GR)\.xlsx' \
+    | grep -oE '[0-9]{1,2}[-_][0-9A-Za-z]+[-_][0-9]{4}-(UK|GR)\.(xlsx|pdf)' \
     | grep -iv 'graph' \
-    | sed -E 's/-(UK|GR)\.xlsx$//' \
+    | sed -E 's/-(UK|GR)\.(xlsx|pdf)$//' \
     | sort -u)
 
   if [[ -z "$dates" ]]; then
