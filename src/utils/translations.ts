@@ -192,6 +192,13 @@ export const translations = {
     damTitle: "{name} Dam",
     forecastNotAvailable: "Forecast data is not available for this selection.",
 
+    // Zen page
+    zenPageTitle: "Zen Mode — Live Water Level",
+    zenOfCapacity: "of total capacity",
+    zenPerDay: "per day",
+    zenLitersPerSecond: "litres every second",
+    zenMethodNote: "Estimated in real time from the {date} bulletin, the trend of {n} bulletins over the last 4 weeks, and the seasonal forecast model.",
+
   },
   el: {
     // Header
@@ -386,6 +393,13 @@ export const translations = {
     damTitle: "Φράγμα {name}",
     forecastNotAvailable: "Τα δεδομένα πρόβλεψης δεν είναι διαθέσιμα για αυτή την επιλογή.",
 
+    // Zen page
+    zenPageTitle: "Λειτουργία Ζεν — Ζωντανή Στάθμη Νερού",
+    zenOfCapacity: "της συνολικής χωρητικότητας",
+    zenPerDay: "την ημέρα",
+    zenLitersPerSecond: "λίτρα κάθε δευτερόλεπτο",
+    zenMethodNote: "Εκτίμηση σε πραγματικό χρόνο από το δελτίο {date}, την τάση {n} δελτίων των τελευταίων 4 εβδομάδων και το εποχικό μοντέλο πρόβλεψης.",
+
   },
   ru: {
     // Header
@@ -579,6 +593,13 @@ export const translations = {
     // Region/Dam pages
     damTitle: "Дамба {name}",
     forecastNotAvailable: "Данные прогноза недоступны для этого выбора.",
+
+    // Zen page
+    zenPageTitle: "Дзен-режим — Уровень воды в реальном времени",
+    zenOfCapacity: "от общей ёмкости",
+    zenPerDay: "в сутки",
+    zenLitersPerSecond: "литров каждую секунду",
+    zenMethodNote: "Оценка в реальном времени: бюллетень от {date}, тренд {n} бюллетеней за последние 4 недели и сезонная модель прогноза.",
   }
 };
 

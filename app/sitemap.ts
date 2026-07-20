@@ -6,7 +6,7 @@ import { parseReportDate } from "@/utils/reservoirUtils";
 
 const siteUrl = "https://fragmata.info";
 
-const pages = ["", "/regions", "/map", "/table"];
+const pages = ["", "/regions", "/map", "/table", "/zen"];
 const locales = ["en", "el", "ru"] as const;
 
 function datasetIdToDate(id: string): Date {

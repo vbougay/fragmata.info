@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
@@ -139,6 +139,10 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             <Link href={localePath(language, '/articles')} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <FileText className="h-4 w-4" />
               {t('articles')}
+            </Link>
+            <Link href={localePath(language, '/zen')} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <Waves className="h-4 w-4" />
+              {language === 'el' ? 'Ζεν' : language === 'ru' ? 'Дзен' : 'Zen'}
             </Link>
             <a href="https://monopatia.info" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Mountain className="h-4 w-4" />

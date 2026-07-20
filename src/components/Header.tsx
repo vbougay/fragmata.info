@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { Droplets, Calendar, Globe, ChevronLeft, ChevronRight, Play, Pause, ChevronsLeft, ChevronsRight, Camera } from 'lucide-react';
+import { Droplets, Calendar, Globe, ChevronLeft, ChevronRight, Play, Pause, ChevronsLeft, ChevronsRight, Waves } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useDataContext } from '@/context/DataContext';
@@ -41,13 +41,7 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
     router.push(getLocalePath(newLocale as Locale, normalizedPath));
   }, [router, getLocalePath, getPagePath]);
 
-  const mediaHref = (() => {
-    const pagePath = getPagePath();
-    // If on a region or dam page, link to its media variant
-    const match = pagePath.match(/^\/(region|dam)\/(.+)/);
-    if (match) return getLocalePath(language, `/media/${match[1]}/${match[2]}`);
-    return getLocalePath(language, '/media');
-  })();
+  const zenHref = getLocalePath(language, '/zen');
 
   // Track if the mobile date nav has scrolled out of view
   const [showFixedNav, setShowFixedNav] = useState(false);
@@ -260,14 +254,14 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                     <ChevronsRight className="h-4 w-4 md:h-5 md:w-5" />
                   </Button>
 
-                  <Link href={mediaHref}>
+                  <Link href={zenHref}>
                     <Button
                       variant="ghost"
                       size="sm"
                       className="h-7 w-7 md:h-8 md:w-8 p-0 hover:bg-water-100 dark:hover:bg-water-900/50 rounded-lg transition-colors"
-                      title="Media mode"
+                      title="Zen mode"
                     >
-                      <Camera className="h-3.5 w-3.5 md:h-4 md:w-4" />
+                      <Waves className="h-3.5 w-3.5 md:h-4 md:w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -416,14 +410,14 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
           <ChevronsRight className="h-4 w-4" />
         </Button>
 
-        <Link href={mediaHref}>
+        <Link href={zenHref}>
           <Button
             variant="ghost"
             size="sm"
             className="h-7 w-7 p-0 hover:bg-water-100 dark:hover:bg-water-900/50 rounded-lg transition-colors"
-            title="Media mode"
+            title="Zen mode"
           >
-            <Camera className="h-3.5 w-3.5" />
+            <Waves className="h-3.5 w-3.5" />
           </Button>
         </Link>
       </div>
