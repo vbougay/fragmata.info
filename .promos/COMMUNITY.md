@@ -4254,3 +4254,46 @@ Gap vs last year: *+22.8pp*.
 
 🔗 https://fragmata.info
 ```
+
+## July 20
+
+📰 Major update — Monday bulletin after a 4-day gap: storage 40.6% (118.1 MCM), down just 0.74 MCM since July 16. Arminou the only riser; Polemidia and Kannaviou slipped under 50%.
+
+### Telegram
+```
+📰 Cyprus Dams — July 20
+
+Monday bulletin, covering the weekend: total storage 40.6% (118.1 MCM) — down from 40.9% on July 16. Just 0.74 MCM lost in four days, still the slowest summer drawdown in years. +22.8pp above last year's 17.8%. 3-day inflow: 0.085 MCM. Season total: 115.2 MCM. Arminou→Kouris transfer: 20.44 MCM, unchanged.
+
+• Arminou 58.4% (+1.2pp) — the only dam rising, on fresh weekend inflow
+• Argaka 81.9% (-5.6pp) — the biggest drop of the period
+• Mavrokolympos 69.2% (-3.4pp) — fell below 70%
+• Polemidia 49.9% and Kannaviou 49.4% — both slipped under the 50% mark
+• Vyzakia 89.2% — eased below 90%
+• Kalopanagiotis 100% — still the only dam overflowing
+• Achna 1.9% — unchanged, zero inflow all season
+
+Gap vs last year: +22.8pp.
+
+🔗 https://fragmata.info
+```
+
+### WhatsApp
+```
+📰 *Cyprus Dams — July 20*
+
+Monday bulletin, covering the weekend: total storage *40.6% (118.1 MCM)* — down from 40.9% on July 16. Just *0.74 MCM* lost in four days, still the slowest summer drawdown in years. *+22.8pp above last year's 17.8%*. 3-day inflow: *0.085 MCM*. Season total: *115.2 MCM*. Arminou→Kouris transfer: *20.44 MCM*, unchanged.
+
+*Notable:*
+• *Arminou 58.4%* (+1.2pp) — the only dam rising, on fresh weekend inflow
+• *Argaka 81.9%* (-5.6pp) — the biggest drop of the period
+• *Mavrokolympos 69.2%* (-3.4pp) — fell below 70%
+• Polemidia *49.9%* and Kannaviou *49.4%* — both slipped under the 50% mark
+• Vyzakia *89.2%* — eased below 90%
+• *Kalopanagiotis 100%* — still the only dam overflowing
+• Achna *1.9%* — unchanged, zero inflow all season
+
+Gap vs last year: *+22.8pp*.
+
+🔗 https://fragmata.info
+```
