@@ -235,6 +235,9 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
           )}
         </button>
 
+      </main>
+
+      <footer className="relative z-10 px-4 pb-5 flex justify-center">
         <div
           className={`flex flex-col items-center gap-1.5 font-mono text-base md:text-lg text-water-100 text-center rounded-2xl bg-gray-950/40 backdrop-blur-sm px-5 py-3 [text-shadow:0_1px_10px_rgba(0,0,0,0.95)] transition-opacity duration-700 ${nowMs === null ? 'opacity-0' : 'opacity-100'}`}
         >
@@ -246,13 +249,10 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
           <p className="text-water-200/90 text-sm md:text-base">
             {vsLastYearStr} {t('volumeUnit')} {t('vsLastYear').toLowerCase()}
           </p>
+          <p className="font-sans max-w-xl text-[11px] leading-relaxed text-water-300/60">
+            {methodNote}
+          </p>
         </div>
-      </main>
-
-      <footer className="relative z-10 px-6 pb-6 text-center">
-        <p className="mx-auto max-w-xl text-[11px] leading-relaxed text-water-300/60 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
-          {methodNote}
-        </p>
       </footer>
     </div>
   );
