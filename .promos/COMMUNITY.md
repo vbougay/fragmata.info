@@ -4260,6 +4260,7 @@ Gap vs last year: *+22.8pp*.
 📰 Major update — Monday bulletin after a 4-day gap: storage 40.6% (118.1 MCM), down just 0.74 MCM since July 16. Arminou the only riser; Polemidia and Kannaviou slipped under 50%.
 
 ### Telegram
+Sent: message_id=54, chat_id=151413643, at=2026-07-20T09:21:26Z
 ```
 📰 Cyprus Dams — July 20
 
