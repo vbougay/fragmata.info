@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-07-20-introducing-zen-mode',
+    date: '2026-07-20',
+    dataSetId: '20-JUL-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: "Introducing Zen Mode: It's 40°C Outside, So We Built a Page Where It's Always Raining",
+      el: 'Παρουσιάζουμε το Zen Mode: Έχει 40°C Έξω, Οπότε Φτιάξαμε μια Σελίδα Όπου Πάντα Βρέχει',
+      ru: 'Представляем дзен-режим: за окном 40°C, поэтому мы сделали страницу, где всегда идёт дождь',
+    },
+    description: {
+      en: 'Cyprus is baking and the dams have begun their long summer exhale — about 1,727 litres gone every second. Zen Mode is a live, full-screen counter over real footage of flowing water from this spring: watch the island\'s savings drain in real time, listen to the rain, and then go close a tap.',
+      el: 'Η Κύπρος ψήνεται και τα φράγματα άρχισαν τη μεγάλη καλοκαιρινή τους εκπνοή — περίπου 1.727 λίτρα χάνονται κάθε δευτερόλεπτο. Το Zen Mode είναι ένας ζωντανός μετρητής πάνω σε πραγματικά πλάνα νερού από φέτος την άνοιξη: δείτε τα αποθέματα να αδειάζουν σε πραγματικό χρόνο, ακούστε τη βροχή, και μετά κλείστε μια βρύση.',
+      ru: 'Кипр печётся на жаре, и водохранилища начали свой долгий летний выдох — примерно 1 727 литров уходит каждую секунду. Дзен-режим — это живой полноэкранный счётчик поверх настоящих видео текущей воды, снятых этой весной: смотрите, как тают запасы острова, слушайте дождь — а потом закройте кран.',
+    },
+  },
+  {
     slug: '2026-07-06-anatomy-of-cyprus-dams',
     date: '2026-07-06',
     dataSetId: '06-JUL-2026',

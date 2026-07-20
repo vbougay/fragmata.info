@@ -22,7 +22,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight, Waves } from "lucide-react";
 
 // --- Chart embed parsing ---
 
@@ -109,8 +109,38 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
           <DamCardEmbed damName={damInfo.name} dataSetId={dataSetId} />
         )}
         {type === "data-table" && <ReservoirTable />}
+        {type === "zen-cta" && <ZenCtaEmbed />}
       </DataProvider>
     </div>
+  );
+}
+
+// Prominent "Go Zen" call-to-action banner ({{chart:zen-cta}}) — always dark,
+// echoing the Zen page it links to.
+function ZenCtaEmbed() {
+  const { language } = useLanguage();
+  const href = language === defaultLocale ? "/zen" : `/${language}/zen`;
+  const copy = {
+    en: { title: "Go Zen", sub: "The island's water, live — with sound" },
+    el: { title: "Πάμε Ζεν", sub: "Το νερό του νησιού, ζωντανά — με ήχο" },
+    ru: { title: "Включить дзен", sub: "Вода острова вживую — со звуком" },
+  }[language];
+
+  return (
+    <Link href={href} className="group block no-underline">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-950 via-water-950 to-gray-900 border border-water-500/20 px-6 py-7 text-center shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:shadow-water-500/20 group-hover:border-water-400/40">
+        <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-64 h-64 rounded-full bg-water-500/15 blur-3xl animate-data-pulse" />
+        </div>
+        <div className="relative flex flex-col items-center gap-1.5">
+          <span className="inline-flex items-center gap-3 text-2xl md:text-3xl font-bold text-water-100 tracking-tight">
+            <Waves className="h-7 w-7 md:h-8 md:w-8 text-water-400 transition-transform duration-300 group-hover:scale-110" />
+            {copy.title}
+          </span>
+          <span className="text-sm text-water-300/80 font-mono">{copy.sub}</span>
+        </div>
+      </div>
+    </Link>
   );
 }
 

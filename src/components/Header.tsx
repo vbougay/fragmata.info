@@ -42,6 +42,7 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
   }, [router, getLocalePath, getPagePath]);
 
   const zenHref = getLocalePath(language, '/zen');
+  const zenLabel = language === 'el' ? 'Πάμε Ζεν' : language === 'ru' ? 'Дзен' : 'Go Zen';
 
   // Track if the mobile date nav has scrolled out of view
   const [showFixedNav, setShowFixedNav] = useState(false);
@@ -152,7 +153,7 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                   value={language}
                   onValueChange={handleLanguageChange}
                 >
-                  <SelectTrigger className="w-[70px] h-8 bg-white/50 dark:bg-white/10 backdrop-blur-sm border-blue-100 dark:border-white/10">
+                  <SelectTrigger className="w-auto h-8 px-2 bg-transparent dark:bg-transparent border-transparent shadow-none text-muted-foreground/70 hover:text-foreground hover:bg-white/40 dark:hover:bg-white/10 transition-colors">
                     <SelectValue>
                       <div className="flex items-center gap-1.5">
                         <Globe className="h-3.5 w-3.5" />
@@ -181,12 +182,21 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                     </SelectItem>
                   </SelectContent>
                 </Select>
+                <Link href={zenHref}>
+                  <Button
+                    className="h-8 px-2.5 rounded-xl gap-1 bg-gradient-to-r from-water-500 to-water-600 hover:from-water-600 hover:to-water-700 text-white border-0 shadow-md"
+                    title="Zen mode"
+                  >
+                    <Waves className="h-3.5 w-3.5" />
+                    <span className="text-xs font-medium">{zenLabel}</span>
+                  </Button>
+                </Link>
               </div>
             </div>
 
             {/* Desktop: Date Controls + Language with Subscribe below | Mobile: Date Controls Only */}
             <div className="flex flex-col items-center md:items-end gap-2">
-              <div className="flex flex-row items-center gap-2">
+              <div className="flex flex-row flex-wrap justify-center md:justify-end items-center gap-2">
                 {/* Date Navigation Controls */}
                 <div ref={mobileNavRef} className="flex items-center gap-0.5 md:gap-1 bg-white/50 dark:bg-white/10 backdrop-blur-sm rounded-xl px-1.5 md:px-3 py-1.5 md:py-2 border border-blue-100 dark:border-white/10 shadow-sm">
                   <Button
@@ -254,16 +264,6 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                     <ChevronsRight className="h-4 w-4 md:h-5 md:w-5" />
                   </Button>
 
-                  <Link href={zenHref}>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-7 w-7 md:h-8 md:w-8 p-0 hover:bg-water-100 dark:hover:bg-water-900/50 rounded-lg transition-colors"
-                      title="Zen mode"
-                    >
-                      <Waves className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                    </Button>
-                  </Link>
                 </div>
 
                 {/* Desktop controls - Theme toggle and Language selector */}
@@ -273,11 +273,11 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                     value={language}
                     onValueChange={handleLanguageChange}
                   >
-                    <SelectTrigger className="w-[80px] h-10 bg-white/50 dark:bg-white/10 backdrop-blur-sm border-blue-100 dark:border-white/10">
+                    <SelectTrigger className="w-auto h-8 px-2 bg-transparent dark:bg-transparent border-transparent shadow-none text-muted-foreground/70 hover:text-foreground hover:bg-white/40 dark:hover:bg-white/10 transition-colors">
                       <SelectValue>
-                        <div className="flex items-center gap-2">
-                          <Globe className="h-4 w-4" />
-                          <span className="text-sm">{language.toUpperCase()}</span>
+                        <div className="flex items-center gap-1.5">
+                          <Globe className="h-3.5 w-3.5" />
+                          <span className="text-xs">{language.toUpperCase()}</span>
                         </div>
                       </SelectValue>
                     </SelectTrigger>
@@ -302,6 +302,15 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
                       </SelectItem>
                     </SelectContent>
                   </Select>
+                  <Link href={zenHref}>
+                    <Button
+                      className="h-10 px-3 rounded-xl gap-1.5 bg-gradient-to-r from-water-500 to-water-600 hover:from-water-600 hover:to-water-700 text-white border-0 shadow-md"
+                      title="Zen mode"
+                    >
+                      <Waves className="h-4 w-4" />
+                      <span className="text-sm font-medium">{zenLabel}</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
@@ -410,16 +419,6 @@ const Header: React.FC<{ homePage?: boolean }> = ({ homePage }) => {
           <ChevronsRight className="h-4 w-4" />
         </Button>
 
-        <Link href={zenHref}>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-7 w-7 p-0 hover:bg-water-100 dark:hover:bg-water-900/50 rounded-lg transition-colors"
-            title="Zen mode"
-          >
-            <Waves className="h-3.5 w-3.5" />
-          </Button>
-        </Link>
       </div>
     </div>
     </>
