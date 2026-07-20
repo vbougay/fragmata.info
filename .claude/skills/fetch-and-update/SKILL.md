@@ -52,7 +52,7 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - The storage values come from each reservoir's `storage.current.amount` in the new data module
 
 **Narrative coherence** — the `getSummaryChanges` text, articles, and community posts are all part of one evolving story. Before writing any of them:
-- Read the recent entries in `.promos/COMMUNITY.md` and the latest `getSummaryChanges` to understand the current narrative arc
+- Read the recent entries in `community/TELEGRAM.md` and the latest `getSummaryChanges` to understand the current narrative arc
 - Each new update should advance the story — reference what changed since the last post, build on previous milestones, and avoid restating old news as if it's new
 - Let the data drive the narrative: when the situation shifts (e.g. a drought easing, a new region recovering, a plateau forming), the tone and focus should shift with it
 - Keep all three outputs consistent — they can differ in length and format but should not contradict each other or tell different stories
@@ -93,19 +93,19 @@ After the git push, send the Telegram version of the community post you just wro
 
 ```bash
 tsx scripts/post-telegram.ts <<'EOF'
-<paste the exact text that belongs inside the ### Telegram code fence in COMMUNITY.md>
+<paste the exact text that belongs inside the ### Telegram code fence in community/TELEGRAM.md>
 EOF
 ```
 
 (`tsx` is expected to be on the user's PATH — installed globally via `pnpm add -g tsx`.)
 
-- The script reads the message from stdin and POSTs it via the Telegram Bot API — it does not parse `COMMUNITY.md` itself; you pass the text
+- The script reads the message from stdin and POSTs it via the Telegram Bot API — it does not parse `TELEGRAM.md` itself; you pass the text
 - It auto-loads `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` from `.env.local` at the repo root (gitignored)
 - Currently posts to the user's DM with the bot; user forwards to the channel manually. To switch to direct channel posting later, either change `TELEGRAM_CHAT_ID` to the channel's `@handle` or pass `--chat-id @handle` (bot must be an admin there)
 - Use `--dry-run` to print the length and preview without sending
 - The script prints the returned `message_id` and `chat_id` on stdout — capture them
 
-**After a successful send**, record the identifiers inside `.promos/COMMUNITY.md` so a later edit or delete can target the right message:
+**After a successful send**, record the identifiers inside `community/TELEGRAM.md` so a later edit or delete can target the right message:
 
 - Add a visible one-line annotation directly under the `### Telegram` heading of the post you just sent (above the opening ``` fence), in this exact format:
   ```
@@ -116,7 +116,7 @@ EOF
   ...message text...
   `` ``` ``
 - Use the exact `message_id` and `chat_id` printed by the script, and the current UTC timestamp for `at=`
-- Then make a small follow-up commit (`chore: record Telegram message_id for <post date>`) and push. Do not amend the previous commit
+- `community/` is gitignored — the annotation stays in the local file; no commit needed
 - If the send fails, skip this step — nothing to record
 
 **News Ticker Refresh:**
@@ -129,12 +129,12 @@ The dashboard has a scrolling news ticker showing recent water crisis articles. 
 - Keep the list reasonable — cap at ~10 articles per language, removing older or less relevant ones
 - Prefer articles from established Cyprus outlets (Cyprus Mail, Politis, AlphaNews, Европа Кипр, Вестник Кипра, etc.)
 
-**Community Post (`.promos/COMMUNITY.md`):**
+**Community Post (`community/TELEGRAM.md` + `community/WHATSAPP.md`):**
 
-After each data update, append a new community post entry to `.promos/COMMUNITY.md`. Each entry needs a markdown section plus Telegram and WhatsApp code blocks.
+After each data update, append a new community post entry to both `community/TELEGRAM.md` and `community/WHATSAPP.md`. Each entry carries the same `## <date>` heading and summary line in both files, followed by that platform's code block (`### Telegram` in TELEGRAM.md, `### WhatsApp` in WHATSAPP.md).
 
 - **Schedule**: Major updates on Mon/Wed/Fri, minor updates on Tue/Thu. If more than 1 day has passed since the last data update, always do a major update regardless of day.
-- **Determining the last update**: Check the last `## March XX` heading in `.promos/COMMUNITY.md` to find when the previous post was made.
+- **Determining the last update**: Check the last `## March XX` heading in `community/TELEGRAM.md` to find when the previous post was made.
 
 **Minor data updates** (📊):
 - Headline: total storage % and MCM, delta from previous update (e.g. "up from 26.9% yesterday")
@@ -153,7 +153,7 @@ After each data update, append a new community post entry to `.promos/COMMUNITY.
 
 **Headline total calculation**: Exclude Recharge/Other dams (Tamassos, Klirou-Malounta, Solea) from the headline storage % and MCM — this matches the dashboard. Individual Recharge dams can still appear in bullet points.
 
-**Platform formatting** — each post needs two code blocks:
+**Platform formatting** — one code block per file:
 
 Telegram (`### Telegram`):
 - Plain text, no markdown formatting (asterisks show literally when pasted)
