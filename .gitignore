@@ -40,6 +40,3 @@ scripts/*
 .claude/skills/google-search-console/gsc-credentials.json
 .claude/skills/google-search-console/gsc-data.sqlite
 .claude/skills/google-search-console/gsc-data.sqlite-*
-
-# Local-only community/press drafts
-/community/
