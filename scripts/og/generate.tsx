@@ -13,6 +13,8 @@ import {
 import { historicalStorageData } from "../../src/utils/historicalStorageData";
 import { translations } from "../../src/utils/translations";
 import { damCard, type DamCardData } from "./card-dam";
+import { zenCard } from "./card-zen";
+import { getZenModel } from "../../src/utils/zenUtils";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FONTS_DIR = path.join(__dirname, "fonts");
@@ -21,12 +23,21 @@ const OG_DIR = path.join(__dirname, "..", "..", "public", "og");
 // Inter's full-charset static TTFs (Latin + Greek + Cyrillic in one file per
 // weight). satori does NOT glyph-fall-back across same-named subset files, so a
 // single combined file per weight is required for non-Latin scripts.
-const fonts = ([400, 600, 700] as const).map((weight) => ({
-  name: "Inter",
-  weight,
-  style: "normal" as const,
-  data: fs.readFileSync(path.join(FONTS_DIR, `inter-${weight}.ttf`)),
-}));
+const fonts = [
+  ...([400, 600, 700] as const).map((weight) => ({
+    name: "Inter",
+    weight,
+    style: "normal" as const,
+    data: fs.readFileSync(path.join(FONTS_DIR, `inter-${weight}.ttf`)),
+  })),
+  // Latin-only subset — used for the Zen card's digits (matches the page's mono style).
+  ...([400, 500] as const).map((weight) => ({
+    name: "Roboto Mono",
+    weight,
+    style: "normal" as const,
+    data: fs.readFileSync(path.join(FONTS_DIR, `roboto-mono-${weight}.ttf`)),
+  })),
+];
 
 // Always the latest/default dataset (whatever DEFAULT_DATASET_ID points to), so
 // daily data updates flow through with no code change here.
@@ -238,8 +249,8 @@ function dashboardCardData(loc: Locale): DamCardData {
   });
 }
 
-async function render(d: DamCardData, outPath: string) {
-  const svg = await satori(damCard(d) as React.ReactNode, {
+async function render(node: React.ReactNode, outPath: string) {
+  const svg = await satori(node, {
     width: 1200,
     height: 630,
     fonts: fonts as Parameters<typeof satori>[1]["fonts"],
@@ -254,27 +265,71 @@ async function render(d: DamCardData, outPath: string) {
   console.log("✓", path.relative(process.cwd(), outPath), `(${(png.length / 1024).toFixed(0)} KB)`);
 }
 
+// Zen card: live number evaluated from the same piecewise projection the /zen
+// page uses, snapshotted at generation time (refreshed on every data build).
+async function renderZenCards(): Promise<number> {
+  const model = await getZenModel();
+  const nowMs = Date.now();
+  let seg = model.segments[0];
+  for (const s of model.segments) {
+    if (s.startMs <= nowMs) seg = s;
+    else break;
+  }
+  const storage = Math.min(
+    model.capacity,
+    Math.max(0, seg.startStorage + (seg.ratePerDay * (nowMs - seg.startMs)) / 86_400_000),
+  );
+  const litersPerSec = (seg.ratePerDay * 1e9) / 86_400;
+  const group = (v: number) => Math.round(v).toLocaleString("en-US").replace(/,/g, " ");
+  const bgDataUri = `data:image/jpeg;base64,${fs
+    .readFileSync(path.join(__dirname, "zen-bg.jpg"))
+    .toString("base64")}`;
+
+  let n = 0;
+  for (const loc of LOCALES) {
+    const tr = translations[loc] as Record<string, string>;
+    await render(
+      zenCard({
+        bgDataUri,
+        brand: "Fragmata",
+        title: tr.zenPageTitle,
+        number: group(storage * 1e6),
+        unit: "m³",
+        rateLine: `${litersPerSec < 0 ? "−" : "+"}${group(Math.abs(litersPerSec))} ${tr.zenLitersPerSecond}`,
+        pctLine: `${num((storage / model.capacity) * 100)}% ${tr.zenOfCapacity}`,
+        url: "fragmata.info/zen",
+        dateLabel: formatReportDate(getReportDate(), loc),
+      }),
+      path.join(OG_DIR, `zen.${loc}.png`),
+    );
+    n++;
+  }
+  return n;
+}
+
 async function main() {
   let n = 0;
   // All dams
   for (const r of RES) {
     for (const loc of LOCALES) {
-      await render(damCardData(r.name, loc), path.join(OG_DIR, "dam", `${damSlug(r.name)}.${loc}.png`));
+      await render(damCard(damCardData(r.name, loc)), path.join(OG_DIR, "dam", `${damSlug(r.name)}.${loc}.png`));
       n++;
     }
   }
   // All regions
   for (const rt of REGION_TOTALS) {
     for (const loc of LOCALES) {
-      await render(regionCardData(rt.region, loc), path.join(OG_DIR, "region", `${REGION_SLUG[rt.region]}.${loc}.png`));
+      await render(damCard(regionCardData(rt.region, loc)), path.join(OG_DIR, "region", `${REGION_SLUG[rt.region]}.${loc}.png`));
       n++;
     }
   }
   // Dashboard
   for (const loc of LOCALES) {
-    await render(dashboardCardData(loc), path.join(OG_DIR, `dashboard.${loc}.png`));
+    await render(damCard(dashboardCardData(loc)), path.join(OG_DIR, `dashboard.${loc}.png`));
     n++;
   }
+  // Zen
+  n += await renderZenCards();
   console.log(`\nDone: ${n} cards.`);
 }
 

@@ -1,0 +1,90 @@
+{
+  "_comment": "Source (Apple Photos 'Fragmata' album) -> transcoded clip. Append-only: new album items get the next free number; never renumber existing entries.",
+  "clips": [
+    {
+      "file": "zen-01.mp4",
+      "source": "-2435162611994286044",
+      "duration": 3.5
+    },
+    {
+      "file": "zen-02.mp4",
+      "source": "-3102264705382928553",
+      "duration": 10.6
+    },
+    {
+      "file": "zen-03.mp4",
+      "source": "7648390901996465730",
+      "duration": 12.0
+    },
+    {
+      "file": "zen-04.mp4",
+      "source": "IMG_0035 (trimmed)",
+      "duration": 11.0
+    },
+    {
+      "file": "zen-05.mp4",
+      "source": "IMG_0037",
+      "duration": 20.9
+    },
+    {
+      "file": "zen-06.mp4",
+      "source": "IMG_9197",
+      "duration": 51.6
+    },
+    {
+      "file": "zen-07.mp4",
+      "source": "IMG_9491",
+      "duration": 7.6
+    },
+    {
+      "file": "zen-08.mp4",
+      "source": "IMG_9499",
+      "duration": 8.3
+    },
+    {
+      "file": "zen-09.mp4",
+      "source": "IMG_9791",
+      "duration": 24.3
+    },
+    {
+      "file": "zen-10.mp4",
+      "source": "IMG_9800",
+      "duration": 20.4
+    },
+    {
+      "file": "zen-11.mp4",
+      "source": "IMG_9816",
+      "duration": 5.7
+    },
+    {
+      "file": "zen-12.mp4",
+      "source": "IMG_9817",
+      "duration": 30.8
+    },
+    {
+      "file": "zen-13.mp4",
+      "source": "IMG_9873",
+      "duration": 12.2
+    },
+    {
+      "file": "zen-14.mp4",
+      "source": "IMG_9198",
+      "duration": 10.6
+    },
+    {
+      "file": "zen-15.mp4",
+      "source": "IMG_9492",
+      "duration": 12.1
+    },
+    {
+      "file": "zen-16.mp4",
+      "source": "IMG_9788",
+      "duration": 11.3
+    },
+    {
+      "file": "zen-17.mp4",
+      "source": "IMG_9793",
+      "duration": 43.5
+    }
+  ]
+}

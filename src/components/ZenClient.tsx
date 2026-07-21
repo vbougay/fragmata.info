@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, Maximize, Minimize, Volume2, VolumeX } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { formatDataSetDate } from '@/utils/dateFormatting';
@@ -45,6 +45,36 @@ function signed(n: number, formatted: string): string {
 
 type ZenMode = 'percent' | 'volume';
 
+// Fullscreen helpers with webkit fallbacks (older Safari); the button is
+// hidden entirely where the API is unavailable (e.g. iPhones).
+type FsDocument = Document & {
+  webkitFullscreenEnabled?: boolean;
+  webkitFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => void;
+};
+type FsElement = HTMLElement & { webkitRequestFullscreen?: () => void };
+
+function fullscreenElement(): Element | null {
+  const doc = document as FsDocument;
+  return document.fullscreenElement ?? doc.webkitFullscreenElement ?? null;
+}
+
+function toggleFullscreen() {
+  try {
+    if (fullscreenElement()) {
+      const doc = document as FsDocument;
+      if (document.exitFullscreen) void document.exitFullscreen().catch(() => {});
+      else doc.webkitExitFullscreen?.();
+    } else {
+      const el = document.documentElement as FsElement;
+      if (el.requestFullscreen) void el.requestFullscreen().catch(() => {});
+      else el.webkitRequestFullscreen?.();
+    }
+  } catch {
+    // fullscreen denied — nothing to do
+  }
+}
+
 export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: string[] }) {
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -52,8 +82,27 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
   // Sound defaults on; ZenVideoBackground reports back if the browser's
   // autoplay policy forces a muted start, keeping the toggle truthful.
   const [soundOn, setSoundOn] = useState(true);
+  const [fsSupported, setFsSupported] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   // null until mounted so SSR markup and first client render agree.
   const [nowMs, setNowMs] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Deferred to a frame callback: the capability check must run client-side
+    // only, and this keeps the effect body setState-free.
+    const id = requestAnimationFrame(() => {
+      const doc = document as FsDocument;
+      setFsSupported(Boolean(document.fullscreenEnabled || doc.webkitFullscreenEnabled));
+    });
+    const onChange = () => setIsFullscreen(Boolean(fullscreenElement()));
+    document.addEventListener('fullscreenchange', onChange);
+    document.addEventListener('webkitfullscreenchange', onChange);
+    return () => {
+      cancelAnimationFrame(id);
+      document.removeEventListener('fullscreenchange', onChange);
+      document.removeEventListener('webkitfullscreenchange', onChange);
+    };
+  }, []);
 
   useEffect(() => {
     let raf = 0;
@@ -141,6 +190,16 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
               {soundOn ? <Volume2 className="h-3.5 w-3.5" /> : <VolumeX className="h-3.5 w-3.5" />}
             </button>
           )}
+          {fsSupported && (
+            <button
+              onClick={toggleFullscreen}
+              aria-pressed={isFullscreen}
+              aria-label="Fullscreen"
+              className="h-[26px] w-[26px] rounded-full flex items-center justify-center border border-white/10 bg-white/5 backdrop-blur-sm text-water-300/50 hover:text-water-200 transition-colors"
+            >
+              {isFullscreen ? <Minimize className="h-3.5 w-3.5" /> : <Maximize className="h-3.5 w-3.5" />}
+            </button>
+          )}
           <div className="flex rounded-full border border-white/10 bg-white/5 backdrop-blur-sm p-0.5">
             {toggleButton('percent', '%')}
             {toggleButton('volume', 'm³')}
@@ -176,6 +235,9 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
           )}
         </button>
 
+      </main>
+
+      <footer className="relative z-10 px-4 pb-5 flex justify-center">
         <div
           className={`flex flex-col items-center gap-1.5 font-mono text-base md:text-lg text-water-100 text-center rounded-2xl bg-gray-950/40 backdrop-blur-sm px-5 py-3 [text-shadow:0_1px_10px_rgba(0,0,0,0.95)] transition-opacity duration-700 ${nowMs === null ? 'opacity-0' : 'opacity-100'}`}
         >
@@ -187,13 +249,10 @@ export function ZenClient({ model, videos = [] }: { model: ZenModel; videos?: st
           <p className="text-water-200/90 text-sm md:text-base">
             {vsLastYearStr} {t('volumeUnit')} {t('vsLastYear').toLowerCase()}
           </p>
+          <p className="font-sans max-w-xl text-[11px] leading-relaxed text-water-300/60">
+            {methodNote}
+          </p>
         </div>
-      </main>
-
-      <footer className="relative z-10 px-6 pb-6 text-center">
-        <p className="mx-auto max-w-xl text-[11px] leading-relaxed text-water-300/60 [text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
-          {methodNote}
-        </p>
       </footer>
     </div>
   );

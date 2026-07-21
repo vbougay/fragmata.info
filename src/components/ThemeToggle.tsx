@@ -17,10 +17,10 @@ export function ThemeToggle() {
         <Button
           variant="ghost"
           size="icon"
-          className="h-9 w-9 rounded-lg bg-white/50 dark:bg-white/10 backdrop-blur-sm border border-blue-100 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/20 transition-all duration-300"
+          className="h-8 w-8 rounded-lg text-muted-foreground/70 hover:text-foreground hover:bg-white/40 dark:hover:bg-white/10 transition-all duration-300"
         >
-          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-water-600 dark:text-water-400" />
-          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-water-600 dark:text-water-400" />
+          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

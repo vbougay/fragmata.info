@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 .next
-.promos
+community/
 *.tsbuildinfo
 next-env.d.ts
 

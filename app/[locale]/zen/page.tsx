@@ -3,6 +3,7 @@ import { readdirSync } from "fs";
 import { join } from "path";
 import { ZenClient } from "@/components/ZenClient";
 import { getZenModel } from "@/utils/zenUtils";
+import { getReportDate, DEFAULT_DATASET_ID } from "@/utils/dataManager";
 import { locales, type Locale } from "@/utils/locale";
 
 const siteUrl = "https://fragmata.info";
@@ -34,6 +35,8 @@ export async function generateMetadata({
   const title = `${titles[lang]} | Fragmata`;
   const description = descriptions[lang];
   const canonical = localeUrl(lang);
+  // Dedicated per-locale card, cache-busted on each data update.
+  const ogImage = `${siteUrl}/og/zen.${lang}.png?v=${getReportDate(DEFAULT_DATASET_ID)}`;
 
   return {
     title,
@@ -51,13 +54,13 @@ export async function generateMetadata({
       url: canonical,
       siteName: "Fragmata",
       type: "website",
-      images: [{ url: `${siteUrl}/og-image.png` }],
+      images: [{ url: ogImage, width: 1200, height: 630, type: "image/png" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}/og-image.png`],
+      images: [ogImage],
     },
   };
 }
