@@ -3402,3 +3402,26 @@ Gap vs last year: +23.2pp.
 
 🔗 https://fragmata.info
 ```
+
+## September 9 — Mavrokolympos leads the slide a third period, Kalopanagiotis off overflow
+
+📰 Major update (2-day gap) — total storage 37.2% (108.2 MCM), down 0.4 MCM since September 7. Mavrokolympos led the drop for a third straight period; Kalopanagiotis slipped off its overflow plateau after two weeks at 100%; Arminou, last week's lone riser, eased back too.
+
+### Telegram
+Sent: message_id=223, chat_id=151413643, at=2026-09-09T09:19:10Z
+```
+📰 Cyprus Dams — September 9
+
+Wednesday's bulletin, two days since Monday's: total storage 37.2% (108.2 MCM) — down from 37.4% (108.6 MCM) on September 7, a loss of roughly 0.4 MCM, similar slow pace as recent weeks. Mavrokolympos led the slide again, down 1.3pp to 32.9% — a third straight period leading the drop. Kalopanagiotis slipped off its overflow plateau to 99.2% after two weeks at 100%. Arminou, last week's lone riser, eased back to 58.6%. Gap over last year widened slightly to +23.3pp. Season inflow: 116.6 MCM (Aug-Sep so far: 1.15 MCM). Arminou→Kouris transfer unchanged at 20.44 MCM.
+
+• Mavrokolympos 32.9% (-1.3pp) — steepest drop, third straight period
+• Agia Marina 55.0% (-1.0pp) — multi-week slide continues
+• Kalopanagiotis 99.2% (-0.8pp) — off overflow after two weeks at 100%
+• Argaka 53.3% (-0.8pp) — continuing to slide
+• Xyliatos 80.3% (-0.9pp) — steady pullback
+• Achna 1.2% — unchanged, zero inflow all season
+
+Gap vs last year: +23.3pp.
+
+🔗 https://fragmata.info
+```
