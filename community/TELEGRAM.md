@@ -3448,3 +3448,26 @@ Gap vs last year: +23.3pp.
 
 🔗 https://fragmata.info
 ```
+
+## September 14 — Argaka and Agia Marina lead a four-day slide, Xyliatos below 80%
+
+📰 Major update (4-day gap) — total storage 36.8% (107.2 MCM), down 0.8 MCM since September 10. Argaka and Agia Marina posted the biggest drops as the small Chrysochou dams' multi-week slide continues; Mavrokolympos logged a fifth straight period of decline; Xyliatos slipped below the 80% line.
+
+### Telegram
+Sent: message_id=235, chat_id=151413643, at=2026-09-14T09:38:04Z
+```
+📰 Cyprus Dams — September 14
+
+Monday's bulletin, covering four days since Thursday: total storage 36.8% (107.2 MCM) — down from 37.1% (108.0 MCM) on September 10, a loss of ~0.8 MCM, the same slow drawdown pace continuing. Argaka and Agia Marina posted the biggest drops, down 2.7pp each, the small Chrysochou dams' multi-week slide continuing. Mavrokolympos logged a fifth straight period of decline, down 1.0pp to 31.4%. Xyliatos slipped below 80%. Gap over last year: +23.2pp. Season inflow: 116.7 MCM (Aug-Sep so far: 1.19 MCM). Arminou→Kouris transfer unchanged at 20.44 MCM.
+
+• Argaka 50.5% (-2.7pp) — a steep slide continuing for weeks
+• Agia Marina 52.0% (-2.7pp) — multi-week slide continues
+• Pomos 65.3% (-2.0pp) — continued retreat from near-full
+• Mavrokolympos 31.4% (-1.0pp) — a fifth straight period of decline
+• Xyliatos 79.2% (-0.8pp) — slipped below the 80% line
+• Achna 1.2% — unchanged, zero inflow all season
+
+Gap vs last year: +23.2pp.
+
+🔗 https://fragmata.info
+```
