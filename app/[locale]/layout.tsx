@@ -147,6 +147,7 @@ export async function generateMetadata({
   const grand = getGrandTotalWithForecast(DEFAULT_DATASET_ID);
   const pctNum = grand?.storage.current.percentage;
   const amtNum = grand?.storage.current.amount;
+  const lastYearPctNum = grand?.storage.lastYear.percentage;
   const parsed = parseReportDate(getReportDate(DEFAULT_DATASET_ID));
   const reportDateStr = parsed
     ? new Date(parsed.year, parsed.month - 1, parsed.day).toLocaleDateString(tag, {
@@ -168,6 +169,11 @@ export async function generateMetadata({
       n.toLocaleString(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
     const pct = fmt(pctNum);
     const amt = fmt(amtNum);
+    // Year-on-year hook for the Greek snippet; omitted if the figure is unavailable.
+    const lastYearClause =
+      typeof lastYearPctNum === "number" && Number.isFinite(lastYearPctNum)
+        ? ` — πέρυσι μόλις ${fmt(lastYearPctNum)}%`
+        : "";
     const live: Record<Locale, { title: string; description: string }> = {
       en: {
         title: `Cyprus Dam Levels: ${pct}% Full Today | Fragmata`,
@@ -175,7 +181,7 @@ export async function generateMetadata({
       },
       el: {
         title: `Φράγματα Κύπρου: ${pct}% Πληρότητα Σήμερα | Fragmata`,
-        description: `Πληρότητα φραγμάτων Κύπρου σήμερα (${reportDateStr}): ${pct}%, ${amt} εκατ. κ.μ. σε 21 ταμιευτήρες — Κούρη, Ασπρόκρεμμο, Ευρέτου. Ζωντανά επίπεδα νερού & εισροή.`,
+        description: `Πληρότητα φραγμάτων σήμερα (${reportDateStr}): ${pct}%, ${amt} εκατ. κ.μ.${lastYearClause}. Στοιχεία Τμήματος Αναπτύξεως Υδάτων για 21 φράγματα Κύπρου, εισροή & ροή νερού.`,
       },
       ru: {
         title: `Дамбы Кипра: заполнены на ${pct}% | Фрагмата`,
