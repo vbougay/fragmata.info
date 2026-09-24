@@ -3518,3 +3518,25 @@ Gap vs last year: +23.4pp.
 
 🔗 https://fragmata.info
 ```
+
+## September 24 — The quietest bulletin in weeks, every dam flat
+
+📊 Minor update (1-day gap) — total storage unchanged at 36.3% (105.6 MCM). Only Kouris and Arminou logged trace inflow (0.008 MCM and 0.006 MCM), offset elsewhere by evaporation and use; every one of the 21 reservoirs held within 0.1pp of Wednesday's reading.
+
+### Telegram
+Sent: message_id=259, chat_id=151413643, at=2026-09-24T07:57:40Z
+```
+📊 Cyprus Dams — September 24
+
+Thursday's bulletin: total storage unchanged at 36.3% (105.6 MCM) — same as Wednesday, September 23. Only Kouris (0.008 MCM) and Arminou (0.006 MCM) logged trace inflow, offset elsewhere by evaporation and use — the quietest bulletin in weeks. Gap over last year: +23.5pp. Season inflow: 116.9 MCM (Aug-Sep so far: 1.36 MCM). Arminou→Kouris transfer unchanged at 20.44 MCM.
+
+• All 21 reservoirs held flat — no movement above 0.1pp
+• Kouris 38.0% — trace 0.008 MCM inflow
+• Arminou 59.3% — trace 0.006 MCM inflow
+• Kalopanagiotis 96.1% — unchanged, still short of full
+• Achna 3.0% — unchanged, zero inflow all season
+
+Gap vs last year: +23.5pp.
+
+🔗 https://fragmata.info
+```
