@@ -206,15 +206,15 @@ List all available datasets.
 
 ## Forecast Fields
 
-The `forecast` object is included in summary, reservoir, and region endpoints. It uses a cycle-aware model based on 38 years of historical storage data.
+The `forecast` object is included in summary, reservoir, and region endpoints. It replays 300 random sequences of past years' weather (water years since 1995/96) from today's storage through a monthly water balance whose drawdown grows with the water stored, and reports the median and the 1-in-10 dry and wet outcomes.
 
 | Field | Description |
 |-------|-------------|
-| `restrictionDate` | Expected date when storage drops below the restriction threshold (main forecast) |
-| `droughtRestrictionDate` | Worst-case scenario (persistent drought) |
-| `recoveryRestrictionDate` | Best-case scenario (wet recovery) |
+| `restrictionDate` | Median path: date when storage drops below the restriction threshold (main forecast) |
+| `droughtRestrictionDate` | Dry outcome: 10th percentile path (1 in 10 futures fare worse) |
+| `recoveryRestrictionDate` | Wet outcome: 90th percentile path (1 in 10 futures fare better) |
 | `restrictionThresholdPct` | Threshold percentage (5% for individual reservoirs, 7% for regions/grand total) |
-| `cyclePhase` | Current position in multi-year cycle: `declining`, `trough`, `recovering`, or `peak` |
+| `cyclePhase` | Current position in multi-year cycle: `declining`, `trough`, `recovering`, or `peak` (descriptive; does not steer the forecast) |
 | `confidence` | Forecast confidence based on analog year count: `low`, `medium`, or `high` |
 
 The `drainDate` field is populated with the `restrictionDate` value for backward compatibility.

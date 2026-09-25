@@ -159,7 +159,7 @@ function buildMarkdown(): string {
     if (res) { mainStorage += res.storage.current.amount; mainCapacity += res.capacity; }
   }
   const grandForecast = calculateForecast(mainStorage, mainCapacity, reportDate, MAIN_RES_KEYS, 7);
-  lines.push(`| Forecasted restrictions | ${grandForecast.expectedRestriction} (drought: ${grandForecast.droughtRestriction}, recovery: ${grandForecast.recoveryRestriction}) |`);
+  lines.push(`| Forecasted restrictions | ${grandForecast.expectedRestriction} (median; dry 1-in-10: ${grandForecast.droughtRestriction}, wet 1-in-10: ${grandForecast.recoveryRestriction}) |`);
   lines.push(`| Cycle phase | ${grandForecast.cyclePhase} (${grandForecast.yearsInPhase} years), confidence: ${grandForecast.confidence} |`);
   if (ytdInflow) {
     const inflowChangeStr = ytdInflow.percentChange !== null
@@ -233,10 +233,10 @@ function buildMarkdown(): string {
   lines.push("");
   lines.push("- **Water year**: October through September (e.g., season 25/26 = Oct 2025 – Sep 2026)");
   lines.push("- **Grand total**: Excludes Recharge/Other region (Tamassos, Klirou-Malounta, Solea)");
-  lines.push("- **Restriction forecast**: Cycle-aware model using 38 years of historical storage data. Classifies the current position in the multi-year drought-wet cycle, builds seasonal water balance profiles for dry/moderate/wet years, and simulates forward under three scenarios (drought/expected/recovery) to estimate when storage drops below the restriction threshold (5% for individual reservoirs, 7% for regions and grand total). Values: \"Not Restricted\" (stays above threshold), \"Already Restricted\", or MM/YYYY");
+  lines.push("- **Restriction forecast**: Ensemble model fitted to the historical storage record since 1995/96. A monthly water balance (drawdown that grows with the water stored, plus each past year's weather) replays 300 random sequences of past years from today's level; the median path gives the forecast date and the 10th/90th percentiles give the dry/wet 1-in-10 dates for when storage drops below the restriction threshold (5% for individual reservoirs, 7% for regions and grand total). The cycle phase is descriptive only. Values: \"Not Restricted\" (stays above threshold), \"Already Restricted\", or MM/YYYY");
   lines.push("- **Cycle phase**: declining (storage trending down from peak), trough (extended low), recovering (trending up from trough), peak (extended high)");
   lines.push("- **YTD outflow**: Water balance = total inflow since Oct − (current storage − Oct baseline storage)");
-  lines.push("- **Inflow forecast**: Average of cycle-aware year group (dry/moderate/wet based on current cycle phase) for each remaining month in the current water year");
+  lines.push("- **Inflow forecast**: Typical-year average (middle third of completed seasons ranked by total inflow) for each remaining month in the current water year");
   lines.push("- **Storage units**: mln. m³ = Million Cubic Meters");
   lines.push("");
 

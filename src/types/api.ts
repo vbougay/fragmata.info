@@ -1,6 +1,6 @@
 import { Reservoir, RegionTotal, ReservoirRegion, YearlyInflowData } from './index';
 
-// Cycle-aware forecast data
+// Ensemble forecast data (median path; drought/recovery = 10th/90th percentile)
 export interface ApiForecast {
   restrictionDate: string;        // expectedRestriction (the main date shown)
   droughtRestrictionDate: string;  // worst case

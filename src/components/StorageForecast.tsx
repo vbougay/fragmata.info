@@ -29,10 +29,11 @@ const PHASE_LABELS: Record<string, Record<string, string>> = {
   peak: { en: 'Peak', el: 'Μέγιστο', ru: 'Максимум' },
 };
 
+// Lines are percentiles of the engine's ensemble; the data keys keep their old names.
 const SCENARIO_LABELS: Record<string, Record<string, string>> = {
-  drought: { en: 'Drought continues', el: 'Συνέχιση ξηρασίας', ru: 'Засуха продолжается' },
-  expected: { en: 'Expected', el: 'Αναμενόμενο', ru: 'Ожидаемое' },
-  recovery: { en: 'Recovery', el: 'Ανάκαμψη', ru: 'Восстановление' },
+  drought: { en: 'Dry years (1 in 10)', el: 'Ξηρά χρόνια (1 στα 10)', ru: 'Сухие годы (1 из 10)' },
+  expected: { en: 'Median', el: 'Διάμεσος', ru: 'Медиана' },
+  recovery: { en: 'Wet years (1 in 10)', el: 'Βροχερά χρόνια (1 στα 10)', ru: 'Дождливые годы (1 из 10)' },
 };
 
 // Dropdown option definitions
@@ -379,10 +380,10 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
           <Info className="h-3 w-3 mt-0.5 shrink-0" />
           <span>
             {language === 'en'
-              ? `Based on 38-year historical storage patterns. Cards show when storage drops below ${forecast.restrictionThresholdPct}% capacity — the point where water restrictions typically begin.`
+              ? `300 replays of past years' weather (since 1995) from today's level, with drawdown that grows with the water stored. The median is exceeded in half of them; 1 in 10 end below the dry line and 1 in 10 above the wet line. Cards show when storage drops below ${forecast.restrictionThresholdPct}% capacity — the point where water restrictions typically begin.`
               : language === 'el'
-                ? `Βασισμένο σε 38ετή ιστορικά δεδομένα. Οι κάρτες δείχνουν πότε η αποθήκευση πέφτει κάτω από ${forecast.restrictionThresholdPct}% — το σημείο όπου συνήθως αρχίζουν οι περιορισμοί νερού.`
-                : `На основе 38-летних данных. Карточки показывают, когда запас падает ниже ${forecast.restrictionThresholdPct}% — порог введения ограничений водоснабжения.`}
+                ? `300 επαναλήψεις του καιρού προηγούμενων ετών (από το 1995) από τη σημερινή στάθμη, με απώλειες που αυξάνονται με την ποσότητα νερού. Οι μισές καταλήγουν πάνω από τη διάμεσο· 1 στις 10 κάτω από την ξηρή γραμμή και 1 στις 10 πάνω από τη βροχερή. Οι κάρτες δείχνουν πότε η αποθήκευση πέφτει κάτω από ${forecast.restrictionThresholdPct}% — το σημείο όπου συνήθως αρχίζουν οι περιορισμοί νερού.`
+                : `300 повторов погоды прошлых лет (с 1995 года) от сегодняшнего уровня; расход растёт вместе с запасом воды. Половина из них заканчивается выше медианы, 1 из 10 — ниже сухой линии и 1 из 10 — выше дождливой. Карточки показывают, когда запас падает ниже ${forecast.restrictionThresholdPct}% — порог введения ограничений водоснабжения.`}
           </span>
         </div>
       </CardContent>
