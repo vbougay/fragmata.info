@@ -30,6 +30,13 @@ import {
 } from "@/components/ArticleEnsoCharts";
 import { StationRainChart, AugSepInflowChart, AchnaRefillChart } from "@/components/ArticleStormCharts";
 import {
+  YearTraceChart,
+  RainLateChart,
+  SpongeChart,
+  DamRangeChart,
+  OutlookChart,
+} from "@/components/ArticleYearReviewCharts";
+import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
@@ -141,6 +148,12 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
         {type === "station-rain" && <StationRainChart />}
         {type === "augsep-inflow" && <AugSepInflowChart />}
         {type === "achna-refill" && <AchnaRefillChart />}
+        {/* 2025/26 year-in-review figures */}
+        {type === "yir-trace" && <YearTraceChart />}
+        {type === "yir-rain-late" && <RainLateChart />}
+        {type === "yir-sponge" && <SpongeChart />}
+        {type === "yir-dams" && <DamRangeChart />}
+        {type === "yir-outlook" && <OutlookChart />}
       </DataProvider>
     </div>
   );
