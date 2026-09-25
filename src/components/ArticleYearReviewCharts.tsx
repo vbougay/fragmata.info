@@ -22,8 +22,13 @@ import {
   DOM_RAIN_2025_26,
   reviewInflow,
   outlookReplay,
+  yearNumbers,
+  DOM_YEAR_TOTAL,
+  ARMINOU_TO_KOURIS_2025_26,
+  DAM_COORDS,
   type HydroPoint,
 } from '@/utils/yearReviewStats';
+import { CYPRUS_OUTLINE } from '@/utils/cyprusOutline';
 
 type Lang = 'en' | 'el' | 'ru';
 const L = <T,>(m: { en: T } & Partial<Record<Lang, T>>, lang: string): T => m[lang as Lang] ?? m.en;
@@ -537,6 +542,197 @@ export function OutlookChart() {
         <Note x={W - m.r + 8} y={y(o.start) + 4} style={{ fill: CURRENT }}>{`${t.today} ${fmt(o.start, 0)}`}</Note>
         <line x1={m.l} x2={W - m.r} y1={y(twenty)} y2={y(twenty)} stroke={RECORD} strokeWidth={1.5} strokeDasharray="2 4" />
         <Note x={W - m.r + 8} y={y(twenty) + 4} style={{ fill: RECORD }}>{t.tw}</Note>
+      </Frame>
+      {node}
+    </>
+  );
+}
+
+/* ================= 6. The year in twelve numbers ================= */
+
+interface Tile { value: string; label: string; accent: string }
+
+export function NumbersGrid() {
+  const lang = lng(useLanguage().language);
+  const { currentDataSetId: ds } = useDataContext();
+  const y = useMemo(() => yearNumbers(ds), [ds]);
+  if (!y) return null;
+  const u = UNIT[lang];
+  const pct = (v: number) => `${fmt((100 * v) / y.capacity)}%`;
+  const d = (iso: string) => dayLabel(iso, lang);
+  const nov = DOM_RAIN_2025_26[1].cumPct;
+  const spring = DOM_RAIN_2025_26.slice(5, 8).map(r => `${r.pct}%`).join(' · ');
+  const x = (r: number | null) => (r ? `×${fmt(r)}` : '');
+
+  const text = L({
+    en: {
+      title: '2025/26 in twelve numbers',
+      first: `${d(y.first.date)}: first bulletin, the lowest start since 2008`,
+      low: `the low point, ${d(y.low.date)}: lowest since January 2009`,
+      nov: 'of normal rain by the end of November',
+      spring: 'March, April and May rainfall against normal',
+      gain: 'rise from 1 March to 1 June, the largest spring gain in 39 years',
+      peak: `the peak, ${d(y.peak.date)}: tied with 2009 as the latest on record`,
+      full: `reservoirs filled to capacity (last year: none)`,
+      inflow: `inflow for the season, ${x(y.inflowVsPrev)} last year's`,
+      relay: 'passed from little Arminou to Kouris',
+      rain: `official rainfall: ${DOM_YEAR_TOTAL.rank}th-wettest year since 1901`,
+      end: `in storage at year end, ${x(y.endVsLastYear)} a year earlier`,
+      need: 'of inflow 2026/27 needs just to stay level',
+      of: 'of',
+    },
+    el: {
+      title: 'Το 2025/26 σε δώδεκα αριθμούς',
+      first: `${d(y.first.date)}: πρώτο δελτίο, η χαμηλότερη αφετηρία από το 2008`,
+      low: `το χαμηλότερο σημείο, ${d(y.low.date)}: το χαμηλότερο από τον Ιανουάριο του 2009`,
+      nov: 'της κανονικής βροχής στο τέλος Νοεμβρίου',
+      spring: 'βροχή Μαρτίου, Απριλίου και Μαΐου έναντι κανονικής',
+      gain: 'άνοδος 1 Μαρτίου – 1 Ιουνίου, η μεγαλύτερη ανοιξιάτικη σε 39 χρόνια',
+      peak: `η κορυφή, ${d(y.peak.date)}: μαζί με το 2009 η πιο αργοπορημένη`,
+      full: 'ταμιευτήρες γέμισαν ως πάνω (πέρυσι: κανένας)',
+      inflow: `εισροή της χρονιάς, ${x(y.inflowVsPrev)} η περυσινή`,
+      relay: 'πέρασαν από τον μικρό Αρμίνου στον Κούρη',
+      rain: `επίσημη βροχόπτωση: η ${DOM_YEAR_TOTAL.rank}η πιο βροχερή χρονιά από το 1901`,
+      end: `αποθέματα στο τέλος της χρονιάς, ${x(y.endVsLastYear)} τα περυσινά`,
+      need: 'εισροής χρειάζεται το 2026/27 μόνο για να μείνουμε στα ίδια',
+      of: 'από',
+    },
+    ru: {
+      title: '2025/26 в двенадцати цифрах',
+      first: `${d(y.first.date)}: первый бюллетень, самый низкий старт с 2008 года`,
+      low: `минимум года, ${d(y.low.date)}: самый низкий с января 2009 года`,
+      nov: 'нормы осадков к концу ноября',
+      spring: 'осадки марта, апреля и мая к норме',
+      gain: 'прирост с 1 марта по 1 июня — крупнейший весенний за 39 лет',
+      peak: `пик, ${d(y.peak.date)}: вместе с 2009-м самый поздний`,
+      full: 'водохранилищ заполнились до краёв (год назад — ни одного)',
+      inflow: `приток за сезон, ${x(y.inflowVsPrev)} к прошлому году`,
+      relay: 'передал маленький Арминоу в Курис',
+      rain: `официальные осадки: ${DOM_YEAR_TOTAL.rank}-й по дождливости год с 1901`,
+      end: `запас на конец года, ${x(y.endVsLastYear)} к прошлому году`,
+      need: 'притока нужно в 2026/27, только чтобы остаться на уровне',
+      of: 'из',
+    },
+  }, lang);
+
+  const tiles: Tile[] = [
+    { value: `${fmt(y.first.value)} ${u}`, label: `${pct(y.first.value)} · ${text.first}`, accent: RECORD },
+    { value: `${fmt(y.low.value)} ${u}`, label: `${pct(y.low.value)} · ${text.low}`, accent: RECORD },
+    { value: `${nov}%`, label: text.nov, accent: PRIOR },
+    { value: spring, label: text.spring, accent: RAIN },
+    { value: y.springGain != null ? `+${fmt(y.springGain)} ${u}` : '—', label: text.gain, accent: RAIN },
+    { value: `${fmt(y.peak.value)} ${u}`, label: `${pct(y.peak.value)} · ${text.peak}`, accent: CURRENT },
+    { value: `${y.full} ${text.of} ${y.reservoirs}`, label: text.full, accent: CURRENT },
+    { value: `${fmt(y.inflow)} ${u}`, label: text.inflow, accent: CURRENT },
+    { value: `${fmt(ARMINOU_TO_KOURIS_2025_26)} ${u}`, label: text.relay, accent: CURRENT },
+    { value: `${fmt(DOM_YEAR_TOTAL.mm)} mm · ${DOM_YEAR_TOTAL.pct}%`, label: text.rain, accent: RAIN },
+    { value: `${fmt(y.end.value, 0)} ${u}`, label: `${pct(y.end.value)} · ${text.end}`, accent: CURRENT },
+    { value: y.breakEven != null ? `≈${fmt(y.breakEven, 0)} ${u}` : '—', label: text.need, accent: PRIOR },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <CardContent className="p-4 sm:p-5">
+        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{text.title}</h4>
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {tiles.map((t, i) => (
+            <div key={i} className="rounded-lg border border-gray-200 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800/50"
+              style={{ borderTop: `3px solid ${t.accent}` }}>
+              <div className="text-xl font-bold tabular-nums leading-tight text-gray-900 dark:text-gray-100">{t.value}</div>
+              <div className="mt-1 text-xs leading-snug text-gray-600 dark:text-gray-400">{t.label}</div>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+/* ================= 7. The overflow club, on the map ================= */
+
+// Where each big dam's name sits relative to its circle (SVG units).
+const BIG_LABEL: Record<string, { dx: number; dy: number; anchor: 'start' | 'middle' | 'end' }> = {
+  Kouris: { dx: -6, dy: 44, anchor: 'end' },
+  Germasoyeia: { dx: 10, dy: 34, anchor: 'start' },
+  Asprokremmos: { dx: 0, dy: 40, anchor: 'middle' },
+  Evretou: { dx: -22, dy: 5, anchor: 'end' },
+  Kannaviou: { dx: 4, dy: 36, anchor: 'middle' },
+  Kalavasos: { dx: 0, dy: 34, anchor: 'middle' },
+  Dipotamos: { dx: 20, dy: 14, anchor: 'start' },
+  Lefkara: { dx: 18, dy: -10, anchor: 'start' },
+};
+
+export function OverflowMap() {
+  const lang = lng(useLanguage().language);
+  const { currentDataSetId: ds } = useDataContext();
+  const { show, hide, node } = useTip();
+  const rows = useMemo(() => damYearRanges(ds), [ds]);
+  if (!rows.length) return null;
+  const full = rows.filter(r => r.fullFrom).sort((a, b) => (a.fullFrom! < b.fullFrom! ? -1 : 1));
+  const order = new Map(full.map((r, i) => [r.name, i + 1]));
+
+  const t = L({
+    en: {
+      title: `The overflow club: ${full.length} reservoirs filled, all of them small`,
+      sub: 'Circles are sized by capacity. Red: filled to the brim this year, numbered in the order they spilled. Blue: the other dams, shaded by their highest level of the year.',
+      src: 'Cyprus Water Development Department daily bulletins, 1 October 2025 to the latest bulletin. Coastline: Natural Earth.',
+      peak: 'peak', list: 'In the order they filled', filled: 'Filled to capacity', other: 'Other dams (shade = peak level)',
+    },
+    el: {
+      title: `Η λέσχη των υπερχειλίσεων: ${full.length} ταμιευτήρες γέμισαν, όλοι μικροί`,
+      sub: 'Το μέγεθος του κύκλου δείχνει τη χωρητικότητα. Κόκκινο: γέμισε φέτος ως πάνω, με αρίθμηση κατά σειρά υπερχείλισης. Μπλε: τα υπόλοιπα φράγματα, με απόχρωση ανάλογα με το υψηλότερο επίπεδο της χρονιάς.',
+      src: 'Ημερήσια δελτία Τμήματος Αναπτύξεως Υδάτων, από 1 Οκτωβρίου 2025 ως το τελευταίο δελτίο. Ακτογραμμή: Natural Earth.',
+      peak: 'κορυφή', list: 'Με τη σειρά που γέμισαν', filled: 'Γέμισε ως πάνω', other: 'Άλλα φράγματα (απόχρωση = κορυφή)',
+    },
+    ru: {
+      title: `Клуб переливов: заполнились ${full.length} водохранилищ, и все маленькие`,
+      sub: 'Размер кружка — ёмкость. Красные заполнились до краёв в этом году, номера — по порядку перелива. Синие — остальные дамбы, оттенок по максимальному уровню за год.',
+      src: 'Ежедневные бюллетени Департамента водного развития с 1 октября 2025 года по последний бюллетень. Береговая линия: Natural Earth.',
+      peak: 'пик', list: 'По порядку заполнения', filled: 'Заполнилась до краёв', other: 'Остальные дамбы (оттенок = пик)',
+    },
+  }, lang);
+
+  const W = 1000, lngMin = 32.2, lngMax = 34.65, latMax = 35.75, latMin = 34.5;
+  const k = W / (lngMax - lngMin);                        // px per degree of longitude
+  const kLat = k / Math.cos((35.1 * Math.PI) / 180);       // keep the island's proportions
+  const H = Math.round((latMax - latMin) * kLat);
+  const px = (lon: number) => (lon - lngMin) * k;
+  const py = (lat: number) => (latMax - lat) * kLat;
+  const coast = CYPRUS_OUTLINE.map(([lon, lat], i) => `${i ? 'L' : 'M'}${px(lon).toFixed(1)},${py(lat).toFixed(1)}`).join(' ') + 'Z';
+  const radius = (cap: number) => 4 + Math.sqrt(cap) * 2.4;
+  const bySize = [...rows].sort((a, b) => b.capacity - a.capacity);
+
+  return (
+    <>
+      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+        legend={[{ color: RECORD, label: t.filled }, { color: CURRENT, label: t.other }]}>
+        <path d={coast} className="fill-current text-gray-100 dark:text-gray-800" stroke={MUTED} strokeWidth={1} />
+        {bySize.map(r => {
+          const c = DAM_COORDS[r.name];
+          if (!c) return null;
+          const cx = px(c[0]), cy = py(c[1]);
+          const n = order.get(r.name);
+          const tip = `<b>${damName(r.name, lang)}</b> · ${fmt(r.capacity, r.capacity < 1 ? 2 : 1)} ${UNIT[lang]}<br/>${t.peak}: ${fmt(r.peakPct, 0)}%${r.fullFrom ? ` · ${dayLabel(r.fullFrom, lang)}` : ''}`;
+          return (
+            <g key={r.name} onMouseMove={e => show(e, tip)} onMouseLeave={hide}>
+              <circle cx={cx} cy={cy} r={radius(r.capacity)} fill={n ? RECORD : CURRENT}
+                fillOpacity={n ? 0.9 : 0.2 + 0.6 * (r.peakPct / 100)} stroke="white" strokeWidth={1.5} />
+              {n && <Note x={cx + radius(r.capacity) + 3} y={cy - 4} fontWeight={700} style={{ fill: RECORD }}>{n}</Note>}
+              {BIG_LABEL[r.name] && (
+                <Note x={cx + BIG_LABEL[r.name].dx} y={cy + BIG_LABEL[r.name].dy} textAnchor={BIG_LABEL[r.name].anchor}>
+                  {`${damName(r.name, lang)} ${fmt(r.peakPct, 0)}%`}
+                </Note>
+              )}
+            </g>
+          );
+        })}
+        <Label x={24} y={32} fontWeight={600}>{t.list}</Label>
+        {full.map((r, i) => (
+          <Note key={r.name} x={24} y={56 + i * 21}>
+            <tspan fontWeight={700} style={{ fill: RECORD }}>{i + 1}</tspan>
+            {`  ${damName(r.name, lang)} · ${dayLabel(r.fullFrom!, lang)}`}
+          </Note>
+        ))}
       </Frame>
       {node}
     </>

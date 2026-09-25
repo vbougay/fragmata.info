@@ -35,6 +35,8 @@ import {
   SpongeChart,
   DamRangeChart,
   OutlookChart,
+  NumbersGrid,
+  OverflowMap,
 } from "@/components/ArticleYearReviewCharts";
 import {
   Breadcrumb,
@@ -154,6 +156,8 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
         {type === "yir-sponge" && <SpongeChart />}
         {type === "yir-dams" && <DamRangeChart />}
         {type === "yir-outlook" && <OutlookChart />}
+        {type === "yir-numbers" && <NumbersGrid />}
+        {type === "yir-map" && <OverflowMap />}
       </DataProvider>
     </div>
   );

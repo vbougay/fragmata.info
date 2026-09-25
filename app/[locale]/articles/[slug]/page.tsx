@@ -9,6 +9,13 @@ import { autoLinkDams } from "@/utils/autoLinkDams";
 
 const siteUrl = "https://fragmata.info";
 
+// Articles with their own card use /og/articles/<slug>.<lang>.png; the rest share the site image.
+function articleOgImage(slug: string, lang: string): string {
+  return getArticleBySlug(slug)?.ogImage
+    ? `${siteUrl}/og/articles/${slug}.${lang}.png`
+    : `${siteUrl}/og-image.png`;
+}
+
 function readArticleMd(slug: string, lang: string): Promise<string | null> {
   const mdPath = path.join(process.cwd(), "content", "articles", slug, `${lang}.md`);
   return fs.readFile(mdPath, "utf-8").catch(() => null);
@@ -65,6 +72,7 @@ export async function generateMetadata({
   const localeUrl = (l: string, p: string) =>
     l === "en" ? `${siteUrl}${p}` : `${siteUrl}/${l}${p}`;
   const canonical = localeUrl(lang, `/articles/${slug}`);
+  const ogImage = articleOgImage(slug, lang);
 
   return {
     title,
@@ -82,7 +90,7 @@ export async function generateMetadata({
       url: canonical,
       siteName: "Fragmata",
       type: "article",
-      images: [{ url: `${siteUrl}/og-image.png` }],
+      images: [{ url: ogImage }],
       publishedTime: article.date,
       authors: [article.author],
     },
@@ -90,7 +98,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}/og-image.png`],
+      images: [ogImage],
     },
   };
 }
@@ -127,7 +135,7 @@ export default async function ArticlePage({
     "@type": "Article",
     headline: article.title[lang],
     description: article.description[lang],
-    image: [`${siteUrl}/og-image.png`],
+    image: [articleOgImage(slug, lang)],
     datePublished: article.date,
     dateModified: article.date,
     inLanguage: lang,

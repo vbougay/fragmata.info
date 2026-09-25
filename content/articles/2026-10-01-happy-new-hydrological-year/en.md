@@ -8,22 +8,7 @@ In Cyprus the water year runs from 1 October to 30 September, so that a whole ra
 
 It was a year worth reviewing.
 
-### 2025/26 in twelve numbers
-
-| Number | What it means |
-|---|---|
-| **34.4 mln. m³ (11.8%)** | in the 18 main dams on 10 October, the first bulletin of the season: the lowest start since 2008 |
-| **26.9 mln. m³ (9.2%)** | the low point, on 29 December: the lowest since January 2009 |
-| **42%** | rainfall since 1 October as a share of normal, at the end of November |
-| **182%, 183%, 238%** | March, April and May rainfall against the monthly normal |
-| **+63.5 mln. m³** | the rise between 1 March and 1 June, the largest spring gain in 39 years of records |
-| **123.4 mln. m³ (42.4%)** | the peak, on 4 June, tied with 2009 for the latest peak on record |
-| **9 of 21** | reservoirs that filled to capacity (last year: none) |
-| **116.9 mln. m³** | inflow for the season, 6.3 times last year's |
-| **20.4 mln. m³** | water passed from little Arminou to Kouris |
-| **616.5 mm (123%)** | official island rainfall, the 27th-wettest year since 1901 |
-| **105 mln. m³ (36%)** | in storage at the end of the year, 2.8 times a year earlier |
-| **≈77 mln. m³** | the inflow 2026/27 needs just to stay level |
+{{chart:yir-numbers}}
 
 ### A year that started in the red
 
@@ -91,6 +76,8 @@ That matters for next winter, as we will see.
 ### Nine spills and a relay
 
 By spring the mountains had the opposite problem. Kalopanagiotis overflowed first, on 19 January. Klirou-Malounta and Pomos followed on 16 February, then Solea on 9 March, Argaka on 16 March, [Xyliatos](/articles/2026-03-23-reserves-exceed-last-year/) on 23 March, Agia Marina on 30 March and Tamassos on 2 April. Vyzakia, which held about a thousand cubic metres in November, overflowed on 27 April. That makes **nine of 21 reservoirs full**, after a year in which not one had filled, only the second such year since 1988.
+
+{{chart:yir-map}}
 
 Every one of them is small. None of the eight dams larger than 13 mln. m³ got past 61%, and Kouris, which holds 40% of the island's capacity, peaked at 42.0%. The regions diverged just as sharply. Nicosia's three mountain dams went from 2% to [100%](/articles/2026-03-31-nicosia-north-troodos-drought-free/) and still stand at 78%. The [Southern Conveyor](/region/southern-conveyor/), with 65% of all capacity, went from 12.5% to 38.6% and now holds 34.1%.
 

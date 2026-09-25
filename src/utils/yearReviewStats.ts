@@ -213,3 +213,92 @@ export function outlookReplay(dataSetId?: string): Outlook | null {
   if (!rows.length) return null;
   return { start, capacity, outflow, rows, lower: rows.filter(r => r.end < start).length };
 }
+
+/* ---------- headline numbers ---------- */
+
+/**
+ * Official DoM island rainfall for the whole year. Provisional to 25 Sep;
+ * refresh from the 30/09 "Daily and Cumulative Precipitation" PDF. `rank` is
+ * among hydrological years since 1901/02 (1 = wettest).
+ */
+export const DOM_YEAR_TOTAL = { mm: 616.5, pct: 123, rank: 27, years: 125 };
+
+/** Arminou → Kouris transfer for 2025/26 (WDD bulletin; resets on 1 October). */
+export const ARMINOU_TO_KOURIS_2025_26 = 20.44;
+
+/** Main-dam storage nearest a date within the reviewed year's trace. */
+function traceAt(trace: HydroPoint[], isoDate: string, maxDays = 8): HydroPoint | null {
+  const target = ts(isoDate);
+  let best: HydroPoint | null = null;
+  let bestDiff = Infinity;
+  for (const p of trace) {
+    const diff = Math.abs(ts(p.date) - target) / DAY;
+    if (diff < bestDiff && diff <= maxDays) { bestDiff = diff; best = p; }
+  }
+  return best;
+}
+
+export interface YearNumbers {
+  capacity: number;
+  first: HydroPoint;
+  low: HydroPoint;
+  peak: HydroPoint;
+  end: HydroPoint;
+  endVsLastYear: number | null;   // ratio to the same date a year earlier
+  springGain: number | null;      // 1 Mar → 1 Jun
+  full: number;
+  reservoirs: number;
+  inflow: number;
+  inflowVsPrev: number | null;
+  breakEven: number | null;       // inflow 2026/27 needs to stay level
+}
+
+export function yearNumbers(dataSetId?: string): YearNumbers | null {
+  const trace = hydroYearTrace(REVIEW_YEAR);
+  if (!trace.length) return null;
+  const capacity = mainCapacity(dataSetId);
+  const low = trace.reduce((a, b) => (b.value < a.value ? b : a));
+  const peak = trace.reduce((a, b) => (b.value > a.value ? b : a));
+  const end = trace[trace.length - 1];
+
+  // Same date a year earlier, from the full record (2024/25 readings are sparser)
+  const prevDate = `${+end.date.slice(0, 4) - 1}${end.date.slice(4)}`;
+  const prev = traceAt(hydroYearTrace(REVIEW_YEAR - 1), prevDate, 16);
+
+  const mar = traceAt(trace, `${REVIEW_YEAR + 1}-03-01`);
+  const jun = traceAt(trace, `${REVIEW_YEAR + 1}-06-01`);
+
+  const seasons = yearlyInflowData(dataSetId);
+  const cur = seasons.find(s => s.year === REVIEW_LABEL);
+  const idx = seasons.findIndex(s => s.year === REVIEW_LABEL);
+  const prevSeason = idx > 0 ? seasons[idx - 1] : undefined;
+
+  const ranges = damYearRanges(dataSetId);
+  const outlook = outlookReplay(dataSetId);
+
+  return {
+    capacity,
+    first: trace[0],
+    low, peak, end,
+    endVsLastYear: prev ? end.value / prev.value : null,
+    springGain: mar && jun ? jun.value - mar.value : null,
+    full: ranges.filter(r => r.fullFrom).length,
+    reservoirs: ranges.length,
+    inflow: cur?.total ?? 0,
+    inflowVsPrev: cur && prevSeason && prevSeason.total > 0 ? cur.total / prevSeason.total : null,
+    breakEven: outlook ? outlook.outflow : null,
+  };
+}
+
+/* ---------- map ---------- */
+
+/** Dam locations (same coordinates as the dashboard map). */
+export const DAM_COORDS: Record<string, [number, number]> = {
+  Kouris: [32.9178, 34.7278], Asprokremmos: [32.5543, 34.7259], Evretou: [32.4727, 34.9757],
+  Kannaviou: [32.5878, 34.9277], Arminou: [32.7371, 34.8752], Kalavasos: [33.260517, 34.803972],
+  Dipotamos: [33.359274, 34.851618], Germasoyeia: [33.0843, 34.7439], Polemidia: [32.9888, 34.7187],
+  Achna: [33.814307, 35.055321], Lefkara: [33.2956, 34.8944], Tamassos: [33.2479, 35.0167],
+  'Klirou-Malounta': [33.1727, 35.0318], Solea: [32.9029, 35.0668], Kalopanagiotis: [32.8254, 35.0061],
+  Xyliatos: [33.0372, 35.0089], Vyzakia: [33.0272, 35.0615], Argaka: [32.5022, 35.0486],
+  Pomos: [32.5762, 35.1449], 'Agia Marina': [32.5410, 35.1170], Mavrokolympos: [32.4058, 34.8565],
+};

@@ -8,6 +8,8 @@ export interface ArticleMeta {
   title: Record<Locale, string>;
   description: Record<Locale, string>;
   hidden?: boolean;
+  /** Has its own card at /og/articles/<slug>.<locale>.png (see scripts/og/generate.tsx). */
+  ogImage?: boolean;
 }
 
 export const ARTICLES: ArticleMeta[] = [
@@ -19,6 +21,7 @@ export const ARTICLES: ArticleMeta[] = [
     dataSetId: '25-SEP-2026',
     author: 'Vladimir Bugay',
     hidden: true,
+    ogImage: true,
     title: {
       en: 'Happy New Hydrological Year: 2025/26 in Review, and What the Dams Can Expect in 2026/27',
       el: 'Καλή Νέα Υδρολογική Χρονιά: Ο Απολογισμός του 2025/26 και τι Περιμένει τα Φράγματα το 2026/27',
