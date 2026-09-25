@@ -3540,3 +3540,26 @@ Gap vs last year: +23.5pp.
 
 🔗 https://fragmata.info
 ```
+
+## September 25 — Achna's third unexplained jump, Kouris leads the drawdown
+
+📰 Major update (Friday) — total storage 36.15% (105.1 MCM), down 0.5 MCM since September 24. Achna posted a sudden 1.2pp jump to 4.2% despite zero recorded inflow all season, its third such unexplained rise this month; Kouris logged the largest absolute drop.
+
+### Telegram
+Sent: message_id=262, chat_id=151413643, at=2026-09-25T08:08:40Z
+```
+📰 Cyprus Dams — September 25
+
+Friday's bulletin: total storage 36.15% (105.1 MCM) — down from 36.3% (105.6 MCM) on Thursday, September 24, a loss of roughly 0.5 MCM, the same slow drawdown pace continuing. Kouris posted the largest absolute drop (-0.23 MCM). Achna stood out with a sudden 1.2pp jump to 4.2% despite zero recorded inflow all season — the third such unexplained rise this month. Gap over last year: +23.4pp. Season inflow: 116.9 MCM (Aug-Sep so far: 1.37 MCM). Arminou→Kouris transfer unchanged at 20.44 MCM.
+
+• Achna 4.2% (+1.2pp) — sudden jump despite zero recorded inflow all season
+• Kouris 37.8% (-0.2pp) — largest absolute drop, -0.23 MCM
+• Dipotamos 26.4% (-0.5pp) — steepest pp drop on the Southern Conveyor
+• Pomos 62.1% (-0.8pp) — continued retreat from near-full
+• Agia Marina 47.3% (-1.0pp) — multi-week slide continues
+• Kalopanagiotis 96.1% — still the only dam near overflow, short of full
+
+Gap vs last year: +23.4pp.
+
+🔗 https://fragmata.info
+```
