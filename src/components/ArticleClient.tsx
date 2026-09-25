@@ -28,6 +28,7 @@ import {
   EnsoTimelineChart,
   EnsoRefillChart,
 } from "@/components/ArticleEnsoCharts";
+import { StationRainChart, AugSepInflowChart, AchnaRefillChart } from "@/components/ArticleStormCharts";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -136,6 +137,10 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
         {type === "enso-strong-ninos" && <StrongNinoChart />}
         {type === "enso-timeline" && <EnsoTimelineChart />}
         {type === "enso-refill" && <EnsoRefillChart />}
+        {/* Late-summer storms article figures */}
+        {type === "station-rain" && <StationRainChart />}
+        {type === "augsep-inflow" && <AugSepInflowChart />}
+        {type === "achna-refill" && <AchnaRefillChart />}
       </DataProvider>
     </div>
   );

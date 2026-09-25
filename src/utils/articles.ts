@@ -12,6 +12,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-09-25-summer-that-wouldnt-stay-dry',
+    date: '2026-09-25',
+    dataSetId: '25-SEP-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: "The Summer That Wouldn't Stay Dry: Record Rain, Record Late-Summer Inflow, and Achna Refills by Pipe",
+      el: 'Το Καλοκαίρι που Δεν Έλεγε να Στεγνώσει: Βροχές-Ρεκόρ, Εισροές-Ρεκόρ και η Άχνα Γεμίζει από τον Αγωγό',
+      ru: 'Лето, которое так и не стало сухим: рекордные дожди, рекордный приток, а Ахну наполняют по трубе',
+    },
+    description: {
+      en: 'August 2026 was the wettest August in Cyprus since records began in 1902. Four Met Department gauges logged their wettest late summer on record, the dams took in 1.366 mln. m³ in August–September — 2.5 times the previous best — and Achna tripled in eleven days, not from its own record storm but from water piped in after the cabinet released 3 mln. m³ from the Southern Conveyor.',
+      el: 'Ο Αύγουστος του 2026 ήταν ο πιο βροχερός Αύγουστος στην Κύπρο από το 1902. Τέσσερις σταθμοί του Τμήματος Μετεωρολογίας κατέγραψαν το πιο βροχερό τέλος καλοκαιριού στα χρονικά τους, τα φράγματα δέχτηκαν 1.366 εκατ. κ.μ. τον Αύγουστο–Σεπτέμβριο — 2.5 φορές το προηγούμενο ρεκόρ — και τα αποθέματα της Άχνας τριπλασιάστηκαν σε έντεκα μέρες, όχι από την καταιγίδα-ρεκόρ που έπεσε πάνω της αλλά από νερό του Νότιου Αγωγού.',
+      ru: 'Август 2026 года стал самым дождливым августом на Кипре с начала наблюдений в 1902 году. Четыре станции Департамента метеорологии зафиксировали самый дождливый конец лета за всю историю измерений, в дамбы поступило 1.366 млн. м³ за август–сентябрь — в 2.5 раза больше прежнего рекорда, а запас Ахны за одиннадцать дней вырос втрое — не от рекордного ливня над ней самой, а благодаря воде из Южного водовода.',
+    },
+  },
+  {
     slug: '2026-09-06-el-nino-cyprus-dams',
     date: '2026-09-06',
     dataSetId: '24-AUG-2026',
