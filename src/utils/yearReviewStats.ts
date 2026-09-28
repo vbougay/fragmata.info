@@ -91,6 +91,24 @@ export function hydroYearBand(firstYear: number, lastYear: number): BandPoint[] 
   return out;
 }
 
+/** Band restricted to [from, to], interpolating the edges, so it spans exactly the line drawn over it. */
+export function clipBand(band: BandPoint[], from: number, to: number): BandPoint[] {
+  const at = (day: number): BandPoint | null => {
+    for (let i = 1; i < band.length; i++) {
+      const a = band[i - 1], b = band[i];
+      if (day >= a.day && day <= b.day) {
+        const f = b.day === a.day ? 0 : (day - a.day) / (b.day - a.day);
+        const mix = (x: number, y: number) => x + (y - x) * f;
+        return { day, min: mix(a.min, b.min), median: mix(a.median, b.median), max: mix(a.max, b.max), years: a.years };
+      }
+    }
+    return null;
+  };
+  const start = at(from), end = at(to);
+  const inner = band.filter(p => p.day > from && p.day < to);
+  return [...(start ? [start] : []), ...inner, ...(end ? [end] : [])];
+}
+
 export interface DamYearRange {
   name: string;
   region: string;

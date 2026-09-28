@@ -18,6 +18,7 @@ import {
   REVIEW_YEAR,
   hydroYearTrace,
   hydroYearBand,
+  clipBand,
   damYearRanges,
   DOM_RAIN_2025_26,
   reviewInflow,
@@ -142,7 +143,7 @@ export function YearTraceChart() {
   const { cur, prev, band, low, peak, end, cross } = useMemo(() => {
     const cur = hydroYearTrace(REVIEW_YEAR);
     const prev = hydroYearTrace(REVIEW_YEAR - 1);
-    const band = hydroYearBand(1988, REVIEW_YEAR - 1);
+    const band = cur.length ? clipBand(hydroYearBand(1988, REVIEW_YEAR - 1), cur[0].day, cur[cur.length - 1].day) : [];
     const low = cur.length ? cur.reduce((a, b) => (b.value < a.value ? b : a)) : null;
     const peak = cur.length ? cur.reduce((a, b) => (b.value > a.value ? b : a)) : null;
     const end = cur.length ? cur[cur.length - 1] : null;

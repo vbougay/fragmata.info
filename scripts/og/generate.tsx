@@ -16,7 +16,7 @@ import { damCard, type DamCardData } from "./card-dam";
 import { zenCard } from "./card-zen";
 import { getZenModel } from "../../src/utils/zenUtils";
 import { yearReviewCard } from "./card-year-review";
-import { REVIEW_YEAR, hydroYearTrace, hydroYearBand, yearNumbers } from "../../src/utils/yearReviewStats";
+import { REVIEW_YEAR, hydroYearTrace, hydroYearBand, clipBand, yearNumbers } from "../../src/utils/yearReviewStats";
 import { ARTICLES } from "../../src/utils/articles";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -334,7 +334,7 @@ async function renderArticleCards(): Promise<number> {
   const y = yearNumbers();
   if (!article || !y) return 0;
   const trace = hydroYearTrace(REVIEW_YEAR);
-  const band = hydroYearBand(1988, REVIEW_YEAR - 1);
+  const band = clipBand(hydroYearBand(1988, REVIEW_YEAR - 1), trace[0].day, trace[trace.length - 1].day);
   const pct = (v: number) => `${num((100 * v) / y.capacity)}%`;
   const short = (iso: string, loc: Locale) => `${parseInt(iso.slice(8, 10), 10)} ${SHORT_MONTHS[loc][parseInt(iso.slice(5, 7), 10) - 1]}`;
   let n = 0;
