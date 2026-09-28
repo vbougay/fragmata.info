@@ -41,7 +41,6 @@ function Chart({ d, w, h }: { d: YearReviewCardData; w: number; h: number }) {
     ...[...d.band].reverse().map((b) => `L${X(b.day).toFixed(1)} ${Y(b.min).toFixed(1)}`),
     "Z",
   ].join(" ");
-  const area = `${line} L ${X(d.trace[d.trace.length - 1].day).toFixed(1)} ${Y(0)} L ${X(d.trace[0].day).toFixed(1)} ${Y(0)} Z`;
   const dot = (p: { day: number; value: number }, color: string, r = 7) => (
     <circle cx={X(p.day)} cy={Y(p.value)} r={r} fill={color} stroke={C.white} strokeWidth={3} />
   );
@@ -49,7 +48,6 @@ function Chart({ d, w, h }: { d: YearReviewCardData; w: number; h: number }) {
     <div style={{ display: "flex", position: "relative", width: w, height: h }}>
       <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
         <path d={band} fill="rgba(255,255,255,0.10)" />
-        <path d={area} fill="rgba(56,189,248,0.25)" />
         <path d={line} fill="none" stroke={C.line} strokeWidth={5} strokeLinejoin="round" />
         {dot(d.low, C.red)}
         {dot(d.peak, C.green)}
