@@ -84,6 +84,10 @@ export function hydroYearBand(firstYear: number, lastYear: number): BandPoint[] 
     const median = vals.length % 2 ? vals[mid] : (vals[mid - 1] + vals[mid]) / 2;
     out.push({ day, min: vals[0], median, max: vals[vals.length - 1], years: vals.length });
   }
+  // The grid's last point is 15 September; hold it to 30 September so the band
+  // spans the whole year behind a line that runs to the latest bulletin.
+  const last = out[out.length - 1];
+  if (last && last.day < 364) out.push({ ...last, day: 364 });
   return out;
 }
 
