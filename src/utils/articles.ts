@@ -14,13 +14,10 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
-    // Draft: refresh figures from the first October bulletin, point dataSetId
-    // at it and drop `hidden` to publish on 1 October.
     slug: '2026-10-01-happy-new-hydrological-year',
     date: '2026-10-01',
     dataSetId: '30-SEP-2026',
     author: 'Vladimir Bugay',
-    hidden: true,
     ogImage: true,
     title: {
       en: 'Happy New Hydrological Year: 2025/26 in Review, and What the Dams Can Expect in 2026/27',
