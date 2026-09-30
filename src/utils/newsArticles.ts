@@ -18,7 +18,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Farmers demand more irrigation water', url: 'https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
   { title: 'Cabinet approves 3.5 million cubic metres of additional water supply', url: 'https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Dam levels almost double those of last year', url: 'https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Reservoir levels over double from same time last year', url: 'https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year', lang: 'en', source: 'Cyprus Mail' },
   // Russian
   { title: 'Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства', url: 'https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057', lang: 'ru', source: 'RusCyprus' },
   { title: 'Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением', url: 'https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/', lang: 'ru', source: 'Cyprus Inform' },
@@ -34,7 +34,7 @@ export const newsArticles: NewsArticle[] = [
   // Greek
   { title: 'Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση', url: 'https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi', lang: 'el', source: 'Πολίτης' },
   { title: 'Υπουργικό: Πρόταση από Σενέκη για επιπρόσθετες ποσότητες νερού σε γεωργούς', url: 'https://www.politis.com.cy/politis-news/cyprus/1033164/ypoyrghiko-protasi-apo-seneki-ghia-epiprosthetes-posotites-nerou-se-gheorghous', lang: 'el', source: 'Πολίτης' },
-  { title: 'Μετρήσεις βροχόπτωσης τελευταίου 3ημέρου - Πληρότητα φραγμάτων (20/7)', url: 'https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-triimerou-plirotita-fragmaton-20-7/', lang: 'el', source: 'KitasWeather' },
+  { title: 'Στο 39,3% η πληρότητα των φραγμάτων την 1η Σεπτεμβρίου — ανάσα σε σχέση με πέρυσι, αλλά 4 εκπέμπουν SOS', url: 'https://www.politis.com.cy/cyprus/perivallon/1030808/sto-393-i-plirotita-ton-fraghmaton-tin-1i-septemvrioy-anasa-se-skhesi-me-persi-alla-4-ekpempoyn-sos', lang: 'el', source: 'Πολίτης' },
   { title: 'Τελευταίες βροχές: Μικρή συνεισφορά στα φράγματα, όμως «στρώνουν χαλί» για πρώιμες μεγάλες εισροές', url: 'https://www.politis.com.cy/politis-news/cyprus/1018398/teleftaies-vrokhes-mikri-sineisfora-sta-fraghmata-omos-strwnoyn-khali-ghia-prwimes-meghales-eisroes', lang: 'el', source: 'Πολίτης' },
   { title: 'Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης', url: 'https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/', lang: 'el', source: 'Διάλογος' },
   { title: 'ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026', url: 'https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/', lang: 'el', source: 'Διάλογος' },

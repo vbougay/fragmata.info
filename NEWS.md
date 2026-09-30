@@ -13,7 +13,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Mar 202
 - [Farmers demand more irrigation water](https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water) — Cyprus Mail, Jun 23, 2026
 - [Cyprus dam levels double compared to last year, WDD official](https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official) — Parikiaki, Jun 2026
 - [Cabinet approves 3.5 million cubic metres of additional water supply](https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply) — Cyprus Mail, Jun 9, 2026
-- [Dam levels almost double those of last year](https://cyprus-mail.com/2026/06/02/dam-levels-almost-double-those-of-last-year) — Cyprus Mail, Jun 2, 2026
+- [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail, Aug 24, 2026
 
 ## Russian
 
@@ -32,7 +32,7 @@ Recent articles covering the Cyprus water shortage and reservoir crisis (Mar 202
 
 - [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης, Sep 2026
 - [Υπουργικό: Πρόταση από Σενέκη για επιπρόσθετες ποσότητες νερού σε γεωργούς](https://www.politis.com.cy/politis-news/cyprus/1033164/ypoyrghiko-protasi-apo-seneki-ghia-epiprosthetes-posotites-nerou-se-gheorghous) — Πολίτης, Sep 2026
-- [Μετρήσεις βροχόπτωσης τελευταίου 3ημέρου - Πληρότητα φραγμάτων (20/7)](https://kitasweather.com/news/fragmata-vroxoptosi/metriseis-vroxoptosis-telefteou-triimerou-plirotita-fragmaton-20-7/) — KitasWeather, Jul 20, 2026
+- [Στο 39,3% η πληρότητα των φραγμάτων την 1η Σεπτεμβρίου — ανάσα σε σχέση με πέρυσι, αλλά 4 εκπέμπουν SOS](https://www.politis.com.cy/cyprus/perivallon/1030808/sto-393-i-plirotita-ton-fraghmaton-tin-1i-septemvrioy-anasa-se-skhesi-me-persi-alla-4-ekpempoyn-sos) — Πολίτης, Sep 1, 2026
 - [Τελευταίες βροχές: Μικρή συνεισφορά στα φράγματα, όμως «στρώνουν χαλί» για πρώιμες μεγάλες εισροές](https://www.politis.com.cy/politis-news/cyprus/1018398/teleftaies-vrokhes-mikri-sineisfora-sta-fraghmata-omos-strwnoyn-khali-ghia-prwimes-meghales-eisroes) — Πολίτης, Jul 10, 2026
 - [Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης](https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/) — Διάλογος, Jun 2026
 - [ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026](https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/) — Διάλογος, Jun 2026

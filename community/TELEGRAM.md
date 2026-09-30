@@ -3586,3 +3586,26 @@ Gap vs last year: +23.4pp.
 
 🔗 https://fragmata.info
 ```
+
+## September 30 — Agia Marina's steepest drop yet, Achna's fifth unexplained jump
+
+📰 Major update (Wednesday) — total storage 35.81% (104.1 MCM), down 0.4 MCM since September 28. Agia Marina posted its steepest drop yet as its multi-week slide continues; Achna jumped again despite zero recorded inflow all season, its fifth such unexplained rise this month.
+
+### Telegram
+Sent: message_id=276, chat_id=151413643, at=2026-09-30T07:40:16Z
+```
+📰 Cyprus Dams — September 30
+
+Wednesday's bulletin: total storage 35.81% (104.1 MCM) — down from 35.95% (104.5 MCM) on Monday, September 28, a loss of roughly 0.4 MCM over two days, a slower pace than Monday's drop. Agia Marina posted its steepest drop yet (-1.0pp). Achna jumped again, up 0.4pp to 5.6% despite zero recorded inflow all season — the fifth such unexplained rise this month. Gap over last year: +23.4pp. Season inflow: 117.0 MCM (Aug-Sep so far: 1.49 MCM). Arminou→Kouris transfer unchanged at 20.44 MCM.
+
+• Achna 5.6% (+0.4pp) — fifth unexplained jump despite zero inflow all season
+• Agia Marina 45.3% (-1.0pp) — steepest drop yet, multi-week slide continues
+• Argaka 44.7% (-0.6pp) — second-steepest drop, still retreating
+• Pomos 60.8% (-0.5pp) — continued pullback from near-full
+• Kouris 37.4% (-0.2pp) — largest absolute drop, -0.21 MCM
+• Kalopanagiotis 96.1% — still the only dam near overflow
+
+Gap vs last year: +23.4pp.
+
+🔗 https://fragmata.info
+```
