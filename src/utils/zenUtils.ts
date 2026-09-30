@@ -5,7 +5,7 @@
 //
 // Level       — anchored at the latest bulletin's grand total.
 // Rate        — least-squares slope over all bulletins in the last 28 days.
-// Seasonality — reuses the cycle-aware forecast engine ("expected" scenario):
+// Seasonality — reuses the forecast engine's median path ("expected"):
 //               its month-over-month rate *change* is added on top of the
 //               measured rate as the projection crosses month boundaries,
 //               so at the anchor the rate equals the observed 4-week trend
@@ -56,7 +56,7 @@ function daysInMonth(year: number, month1: number): number {
 
 /**
  * Per-day storage-change rates by calendar month from the forecast engine's
- * "expected" trajectory. Index 0 = the report month, k = k months later.
+ * median ("expected") trajectory. Index 0 = the report month, k = k months later.
  * Returns null when no trajectory is available (e.g. already below the
  * restriction threshold) — callers then fall back to a flat measured rate.
  */
@@ -81,10 +81,12 @@ function getModelMonthRates(
     const y = parsed.year + Math.floor((parsed.month - 1 + i) / 12);
     const value = expectedByLabel.get(`${m}/${y}`);
     if (value === undefined) break;
-    // Trajectory point i holds storage after the delta of month (i-1 after report month)
+    // Trajectory point i holds storage after the delta of month (i-1 after report month).
+    // The engine's first step only covers the rest of the report month.
     const dm = ((parsed.month - 1 + (i - 1)) % 12) + 1;
     const dy = parsed.year + Math.floor((parsed.month - 1 + (i - 1)) / 12);
-    rates.push((value - prev) / daysInMonth(dy, dm));
+    const days = i === 1 ? daysInMonth(dy, dm) - parsed.day + 1 : daysInMonth(dy, dm);
+    rates.push((value - prev) / days);
     prev = value;
   }
   return rates.length > 0 ? rates : null;

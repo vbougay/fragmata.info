@@ -10,7 +10,7 @@ import {
   parseReportDate
 } from './reservoirUtils';
 import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
-import { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS, getExpectedInflowYears } from './forecastEngine';
+import { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS } from './forecastEngine';
 
 // --- Lazy data module loading ---
 // Only the default (latest) dataset is statically imported.
@@ -394,7 +394,7 @@ export { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_K
 
 /**
  * Compute the drain forecast for a dataset's grand total.
- * Uses the cycle-aware scenario engine.
+ * Uses the ensemble forecast engine.
  */
 export const getGrandTotalForecast = (datasetId?: string): DrainForecast => {
   const dsId = resolveId(datasetId);
@@ -525,7 +525,7 @@ const MAIN_REGION_NAMES: ReservoirRegion[] = ['Southern Conveyor', 'Paphos', 'Ch
 
 /**
  * Get reservoirs with forecast-based expected restriction dates.
- * Main reservoirs use the cycle-aware forecast engine (7% threshold).
+ * Main reservoirs use the ensemble forecast engine's median path (7% threshold).
  * Recharge/Other reservoirs fall back to simple linear drain date.
  */
 export const getReservoirsWithForecastDates = (datasetId?: string): Reservoir[] => {
@@ -545,7 +545,7 @@ export const getReservoirsWithForecastDates = (datasetId?: string): Reservoir[] 
 
 /**
  * Get region totals with forecast-based expected restriction dates.
- * Main regions use the cycle-aware forecast engine (7% threshold).
+ * Main regions use the ensemble forecast engine's median path (7% threshold).
  * Recharge/Other keeps the simple linear drain date.
  */
 export const getRegionTotalsWithForecasts = (datasetId?: string): RegionTotal[] => {
@@ -562,7 +562,7 @@ export const getRegionTotalsWithForecasts = (datasetId?: string): RegionTotal[] 
 
 /**
  * Get grand total with forecast-based expected restriction date.
- * Uses the cycle-aware forecast engine (7% threshold).
+ * Uses the ensemble forecast engine's median path (7% threshold).
  */
 export const getGrandTotalWithForecast = (datasetId?: string): RegionTotal => {
   const dsId = resolveId(datasetId);
@@ -572,9 +572,10 @@ export const getGrandTotalWithForecast = (datasetId?: string): RegionTotal => {
 };
 
 /**
- * Get cycle-aware monthly inflow averages for the "expected" scenario.
- * Instead of averaging all historical years, only averages years matching
- * the expected year type (dry/moderate/wet) based on the current cycle phase.
+ * Typical-year monthly inflow for the "predicted" part of the current season:
+ * the average of the middle third of completed seasons, ranked by total
+ * inflow. Matches the forecast engine's median path, which assumes neither a
+ * wet nor a dry year. `yearType` is kept for the chart's legend label.
  * @param monthKeys - array of month key strings (e.g., ["October", "November", ...])
  * @param latestYear - the latest (current) year label to exclude from averaging
  */
@@ -584,27 +585,14 @@ export const getScenarioInflowAverages = (
   datasetId?: string,
 ): { averages: Record<string, number>; yearType: 'dry' | 'moderate' | 'wet' } => {
   const dsId = resolveId(datasetId);
-  const { type, startYears } = getExpectedInflowYears(dsId);
-  const inflowData = yearlyInflowData(dsId);
+  const completed = yearlyInflowData(dsId)
+    .filter(d => d.year !== latestYear)
+    .sort((a, b) => a.total - b.total);
 
-  // Map startYears to inflow year labels: startYear 2015 → "15/16"
-  const matchingLabels = new Set(
-    startYears.map(sy => {
-      const shortStart = sy % 100;
-      const shortEnd = (sy + 1) % 100;
-      return `${shortStart}/${shortEnd < 10 ? '0' + shortEnd : shortEnd}`;
-    })
-  );
-
-  // Filter to matching years, excluding the current (incomplete) year
-  const matchingSeasons = inflowData.filter(
-    d => d.year !== latestYear && matchingLabels.has(d.year)
-  );
-
-  // Fall back to all completed seasons if no matches
-  const seasons = matchingSeasons.length > 0
-    ? matchingSeasons
-    : inflowData.filter(d => d.year !== latestYear);
+  const third = Math.floor(completed.length / 3);
+  const seasons = completed.length >= 3
+    ? completed.slice(third, completed.length - third)
+    : completed;
 
   const averages: Record<string, number> = {};
   monthKeys.forEach(month => {
@@ -614,7 +602,7 @@ export const getScenarioInflowAverages = (
       : 0;
   });
 
-  return { averages, yearType: type };
+  return { averages, yearType: 'moderate' };
 };
 
 /**

@@ -15,6 +15,9 @@ import { translations } from "../../src/utils/translations";
 import { damCard, type DamCardData } from "./card-dam";
 import { zenCard } from "./card-zen";
 import { getZenModel } from "../../src/utils/zenUtils";
+import { yearReviewCard } from "./card-year-review";
+import { REVIEW_YEAR, hydroYearTrace, hydroYearBand, clipBand, yearNumbers } from "../../src/utils/yearReviewStats";
+import { ARTICLES } from "../../src/utils/articles";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FONTS_DIR = path.join(__dirname, "fonts");
@@ -307,6 +310,63 @@ async function renderZenCards(): Promise<number> {
   return n;
 }
 
+
+// Article cards: articles with `ogImage` get /og/articles/<slug>.<locale>.png.
+const YEAR_REVIEW_SLUG = "2026-10-01-happy-new-hydrological-year";
+const SHORT_MONTHS: Record<Locale, string[]> = {
+  en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  el: ["Ιαν", "Φεβ", "Μαρ", "Απρ", "Μαΐ", "Ιουν", "Ιουλ", "Αυγ", "Σεπ", "Οκτ", "Νοε", "Δεκ"],
+  ru: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"],
+};
+const YR: Record<Locale, { kicker: string; title: string; subtitle: string; times: string; lowPeak: string; filled: (n: number, of: number) => string }> = {
+  en: { kicker: "2025/26 IN REVIEW", title: "Happy New Hydrological Year!", subtitle: "How 2025/26 turned the dams around, and what 2026/27 holds",
+        times: "more water than a year ago", lowPeak: "the low → the peak", filled: (n, of) => `${n} of ${of}` },
+  el: { kicker: "ΑΠΟΛΟΓΙΣΜΟΣ 2025/26", title: "Καλή Νέα Υδρολογική Χρονιά!", subtitle: "Πώς το 2025/26 γύρισε τα φράγματα, και τι φέρνει το 2026/27",
+        times: "περισσότερο νερό από πέρυσι", lowPeak: "το χαμηλό → η κορυφή", filled: (n, of) => `${n} από ${of}` },
+  ru: { kicker: "ИТОГИ 2025/26", title: "С новым гидрологическим годом!", subtitle: "Как 2025/26 развернул дамбы и чего ждать в 2026/27",
+        times: "больше воды, чем год назад", lowPeak: "минимум → пик", filled: (n, of) => `${n} из ${of}` },
+};
+const BAND: Record<Locale, string> = { en: "Range of every year, 1988–2025", el: "Εύρος όλων των ετών, 1988–2025", ru: "Диапазон всех лет, 1988–2025" };
+const FILLED: Record<Locale, string> = { en: "reservoirs filled to the brim", el: "ταμιευτήρες γέμισαν ως πάνω", ru: "водохранилищ заполнились до краёв" };
+
+async function renderArticleCards(): Promise<number> {
+  const article = ARTICLES.find((a) => a.slug === YEAR_REVIEW_SLUG && a.ogImage);
+  const y = yearNumbers();
+  if (!article || !y) return 0;
+  const trace = hydroYearTrace(REVIEW_YEAR);
+  const band = clipBand(hydroYearBand(1988, REVIEW_YEAR - 1), trace[0].day, trace[trace.length - 1].day);
+  const pct = (v: number) => `${num((100 * v) / y.capacity)}%`;
+  const short = (iso: string, loc: Locale) => `${parseInt(iso.slice(8, 10), 10)} ${SHORT_MONTHS[loc][parseInt(iso.slice(5, 7), 10) - 1]}`;
+  let n = 0;
+  for (const loc of LOCALES) {
+    const t = YR[loc];
+    await render(
+      yearReviewCard({
+        brand: "Fragmata",
+        site: "fragmata.info",
+        kicker: t.kicker,
+        title: t.title,
+        subtitle: t.subtitle,
+        trace,
+        band,
+        low: { day: y.low.day, value: y.low.value, label: `${pct(y.low.value)} · ${short(y.low.date, loc)}` },
+        peak: { day: y.peak.day, value: y.peak.value, label: `${pct(y.peak.value)} · ${short(y.peak.date, loc)}` },
+        end: { day: y.end.day, value: y.end.value, label: pct(y.end.value) },
+        monthLabels: [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8].map((m) => SHORT_MONTHS[loc][m]),
+        bandLabel: BAND[loc],
+        stats: [
+          { value: y.endVsLastYear ? `×${num(y.endVsLastYear)}` : "—", label: t.times, color: "#34d399" },
+          { value: `${num((100 * y.low.value) / y.capacity, 0)}% → ${num((100 * y.peak.value) / y.capacity, 0)}%`, label: t.lowPeak },
+          { value: t.filled(y.full, y.reservoirs), label: FILLED[loc] },
+        ],
+      }),
+      path.join(OG_DIR, "articles", `${YEAR_REVIEW_SLUG}.${loc}.png`),
+    );
+    n++;
+  }
+  return n;
+}
+
 async function main() {
   let n = 0;
   // All dams
@@ -330,6 +390,8 @@ async function main() {
   }
   // Zen
   n += await renderZenCards();
+  // Articles
+  n += await renderArticleCards();
   console.log(`\nDone: ${n} cards.`);
 }
 

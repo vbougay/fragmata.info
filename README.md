@@ -13,8 +13,8 @@ A comprehensive dashboard for monitoring and visualizing water reservoir data ac
 - **Individual Reservoir Cards**: Detailed view per reservoir with capacity charts, current vs. last year storage, inflow data, max storage history, and restriction forecast
 - **Interactive Map**: Leaflet-based map of Cyprus with color-coded markers — green (>75%), yellow (50–75%), orange (25–50%), red (<25%) — sized by capacity
 - **Data Table**: Searchable, filterable, and sortable table with all reservoir metrics
-- **Monthly Inflow Charts**: Monthly and cumulative inflow views with multi-year comparison and cycle-aware prediction
-- **Storage Forecast**: Per-reservoir, per-region, and system-wide storage projections under drought, expected, and recovery scenarios with restriction threshold visualization
+- **Monthly Inflow Charts**: Monthly and cumulative inflow views with multi-year comparison and typical-year prediction
+- **Storage Forecast**: Per-reservoir, per-region, and system-wide storage projections (median with 1-in-10 dry and wet outcomes) with restriction threshold visualization
 - **Individual Dam Pages**: Dedicated page per reservoir with detailed statistics, capacity chart, and storage forecast
 - **Articles**: News and analysis articles about the Cyprus water situation
 - **Media Export**: Download dashboard snapshots as PNG images for sharing
@@ -38,17 +38,24 @@ All data is sourced from the [Cyprus Water Development Department](https://www.m
 
 ## Forecasting Approach
 
-The dashboard uses a cycle-aware forecasting engine built on 38 years of historical reservoir storage data (1988–2025). Rather than simple linear extrapolation, it models the multi-year drought-wet cycles that characterize Cyprus's climate.
+The dashboard's forecast replays past years' weather from today's storage, using the WDD storage record since 1995/96.
 
-**Storage Forecast** — Historical water years are classified into dry, moderate, and wet categories based on annual net storage change. The engine identifies the current position in the drought-wet cycle (declining, trough, recovering, or peak) and finds analog years with similar storage levels and trends. Three forward scenarios are simulated over 10 years:
+**Storage Forecast** — For the selected reservoirs the engine fits a monthly water balance, ΔS = w − b·S:
 
-- **Drought**: Assumes dry-year water balance every year (worst case)
-- **Expected**: Models the typical cycle — remaining decline followed by recovery then moderation
-- **Recovery**: Assumes wet conditions for 2 years then moderate (best case)
+- **b** (drawdown): the extra loss per unit of water stored. Releases, evaporation and spills all grow with the amount in the dams.
+- **w** (weather): what each past year's month delivered net of fixed demand. It does not depend on how full the dams happened to be.
+
+It then runs 300 fixed-seed simulations over 10 years. Each one replays a random sequence of past years' weather, and every month it reports three percentiles:
+
+- **Dry years (1 in 10)**: 10th percentile (API field `drought`)
+- **Median**: 50th percentile (API field `expected`), the main forecast
+- **Wet years (1 in 10)**: 90th percentile (API field `recovery`)
+
+The cycle phase (declining, trough, recovering, peak) and analog years are shown for context but do not steer the forecast. Annual rainfall has no useful year-to-year persistence: the lag-1 correlation is 0.04 since 1961. In a backtest on 174 start dates from 2003–2024, actual storage finished above the median path about half the time at horizons of 6–36 months, at low, middle and high storage alike.
 
 Forecasts can be viewed for the entire system, individual regions (Southern Conveyor, Paphos, Chrysochou, Nicosia), or major dams (Kouris, Asprokremmos, Evretou, Kannaviou). Water restriction dates show when storage is projected to drop below a 7% capacity threshold — the point where restrictions typically begin, well before actual depletion.
 
-**Inflow Prediction** — The Monthly Inflow chart predicts remaining months of the current water year using the same cycle classification. Instead of averaging all historical years equally, it averages only the years matching the expected scenario's year type (dry/moderate/wet), producing predictions consistent with the storage forecast.
+**Inflow Prediction** — The Monthly Inflow chart predicts the remaining months of the current water year from a typical year: the average of the middle third of completed seasons, ranked by total inflow.
 
 ## API
 
