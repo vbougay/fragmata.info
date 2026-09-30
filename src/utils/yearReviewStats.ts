@@ -15,7 +15,8 @@
  */
 
 import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
-import { reservoirData, yearlyInflowData, RESERVOIR_NAME_TO_KEY } from './dataManager';
+import { reservoirData, yearlyInflowData, getReportDate, RESERVOIR_NAME_TO_KEY } from './dataManager';
+import { parseReportDate } from './reservoirUtils';
 import { mainTotal, mainCapacity } from './summerStats';
 
 const DAY = 86400000;
@@ -165,7 +166,7 @@ export interface RainMonth {
 /**
  * Department of Meteorology monthly area-average rainfall, 2025/26. Oct–Apr
  * are the final figures; May–Aug preliminary (monthly weather reports);
- * September is provisional to the 25th, so its cumulative % is against the
+ * September is provisional to the 29th, so its cumulative % is against the
  * full-year normal of 503 mm.
  */
 export const DOM_RAIN_2025_26: RainMonth[] = [
@@ -179,7 +180,7 @@ export const DOM_RAIN_2025_26: RainMonth[] = [
   { key: 'May', mm: 46.7, pct: 238, cumPct: 117 },
   { key: 'June', mm: 2.0, pct: 33, cumPct: 116 },
   { key: 'July', mm: 5.6, pct: 215, cumPct: 117 },
-  { key: 'Aug-Sep', mm: 37.4, pct: 505, cumPct: 123 },
+  { key: 'Aug-Sep', mm: 38.7, pct: 523, cumPct: 123 },
 ];
 
 export const INFLOW_MONTH_KEYS = [
@@ -239,11 +240,11 @@ export function outlookReplay(dataSetId?: string): Outlook | null {
 /* ---------- headline numbers ---------- */
 
 /**
- * Official DoM island rainfall for the whole year. Provisional to 25 Sep;
- * refresh from the 30/09 "Daily and Cumulative Precipitation" PDF. `rank` is
+ * Official DoM island rainfall for the whole year. Provisional to 29 Sep;
+ * refresh from the final "Daily and Cumulative Precipitation" PDF. `rank` is
  * among hydrological years since 1901/02 (1 = wettest).
  */
-export const DOM_YEAR_TOTAL = { mm: 616.5, pct: 123, rank: 27, years: 125 };
+export const DOM_YEAR_TOTAL = { mm: 617.8, pct: 123, rank: 25, years: 125 };
 
 /** Arminou → Kouris transfer for 2025/26 (WDD bulletin; resets on 1 October). */
 export const ARMINOU_TO_KOURIS_2025_26 = 20.44;
@@ -283,9 +284,15 @@ export function yearNumbers(dataSetId?: string): YearNumbers | null {
   const peak = trace.reduce((a, b) => (b.value > a.value ? b : a));
   const end = trace[trace.length - 1];
 
-  // Same date a year earlier, from the full record (2024/25 readings are sparser)
+  // Same date a year earlier: the bulletin's own "last year" column when the
+  // dataset is the year's last reading, else the nearest 2024/25 reading.
+  const main = reservoirData(dataSetId).filter(r => r.region !== 'Recharge/Other');
+  const report = parseReportDate(getReportDate(dataSetId));
+  const reportIso = report ? `${report.year}-${String(report.month).padStart(2, '0')}-${String(report.day).padStart(2, '0')}` : '';
   const prevDate = `${+end.date.slice(0, 4) - 1}${end.date.slice(4)}`;
-  const prev = traceAt(hydroYearTrace(REVIEW_YEAR - 1), prevDate, 16);
+  const prevValue = reportIso === end.date
+    ? main.reduce((a, r) => a + r.storage.lastYear.amount, 0)
+    : traceAt(hydroYearTrace(REVIEW_YEAR - 1), prevDate, 16)?.value ?? null;
 
   const mar = traceAt(trace, `${REVIEW_YEAR + 1}-03-01`);
   const jun = traceAt(trace, `${REVIEW_YEAR + 1}-06-01`);
@@ -302,7 +309,7 @@ export function yearNumbers(dataSetId?: string): YearNumbers | null {
     capacity,
     first: trace[0],
     low, peak, end,
-    endVsLastYear: prev ? end.value / prev.value : null,
+    endVsLastYear: prevValue ? end.value / prevValue : null,
     springGain: mar && jun ? jun.value - mar.value : null,
     full: ranges.filter(r => r.fullFrom).length,
     reservoirs: ranges.length,

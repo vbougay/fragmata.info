@@ -1,4 +1,4 @@
-**Today the Water Development Department's inflow counter goes back to zero and Cyprus starts a new hydrological year. The one that just ended opened with the dams at their lowest in seventeen years and spent five months short of rain. Then came a record-breaking spring, nine overflowing reservoirs and the wettest August since 1902. The island ends the year with 2.8 times as much water as a year ago. That turns out to be roughly what an average year looks like. Here is 2025/26 in numbers, and what 2026/27 is likely to bring.**
+**Today the Water Development Department's inflow counter goes back to zero and Cyprus starts a new hydrological year. The one that just ended opened with the dams at their lowest in seventeen years and spent five months short of rain. Then came a record-breaking spring, nine overflowing reservoirs and the wettest August since 1902. The island ends the year with 2.9 times as much water as a year ago. That turns out to be roughly what an average year looks like. Here is 2025/26 in numbers, and what 2026/27 is likely to bring.**
 
 ---
 
@@ -39,9 +39,9 @@ Yet at the end of February the season was still *behind*, at 95% of normal to da
 | June | 2 | 33% | 116% | |
 | July | 6 | 215% | 117% | Agros: 100 mm in 2 hours 38 minutes |
 | August | 30 | 1034% | 122% | Wettest August since 1902 |
-| September* | 7 | 164% | 123% | Lefkara: 64 mm on the 18th |
+| September* | 9 | 193% | 123% | Lefkara: 64 mm on the 18th |
 
-\*To 25 September. May–September figures are preliminary.
+\*To 29 September. May–September figures are preliminary.
 
 March, April and May together brought 214 mm, **192% of normal**. In [Kairika's](https://kairika.info/rain) reconstruction of island rainfall going back to 1940 it is the wettest spring of all, well ahead of 1967. At the Met Department's own gauges it was the wettest spring on record at 13 of the 29 stations with at least twelve years of data. The gauge at Kouris Dam caught 212 mm, **more than twice its previous record** (100 mm, in 2011).
 
@@ -94,9 +94,9 @@ Our awards for the year:
 
 ### Back to average, not to plenty
 
-Add it all up and 2025/26 was a very good year. The dams end it at about **105 mln. m³ (36%)**, 2.8 times the 37.0 mln. m³ they held on this date last year. The net gain of roughly 68 mln. m³ is the sixth-largest since 1988, behind 2018/19, 2001/02, 2011/12, 1991/92 and 2009/10.
+Add it all up and 2025/26 was a very good year. The dams end it at **104.1 mln. m³ (35.8%)**, 2.9 times the 36.1 mln. m³ they held on this date last year. The net gain of roughly 68 mln. m³ is the sixth-largest since 1988, behind 2018/19, 2001/02, 2011/12, 1991/92 and 2009/10.
 
-But it was a good year, not a historic one. Officially the island received **616.5 mm, 123% of normal**: the 27th-wettest year since 1901/02 and the fourth-wettest this century, well short of 2018/19's 796 mm. The level the dams end on is almost exactly the average for the close of a hydrological year since 1988 (106.8 mln. m³). The comeback has brought Cyprus back to normal, not to plenty.
+But it was a good year, not a historic one. Officially the island received **617.8 mm, 123% of normal**: the 25th-wettest year since 1901/02 and the fourth-wettest this century, well short of 2018/19's 796 mm. The level the dams end on is almost exactly the average for the close of a hydrological year since 1988 (106.8 mln. m³). The comeback has brought Cyprus back to normal, not to plenty.
 
 The three dry years before it left a hole that one wet year cannot fill. From 2022/23 to 2024/25 the island ran a rainfall deficit of about 355 mm, and this year repaid about a third of it. In storage terms, the dams lost 173 mln. m³ between October 2022 and October 2025 and have won back about 68, some 40%. [In March](/articles/2026-03-02-cyprus-reservoirs-forecast/) we called the crisis cyclical, not catastrophic. The cycle has turned, but it has not yet come full circle.
 
@@ -106,7 +106,7 @@ Now for the question everyone asks. Nobody can forecast a Cyprus winter in Octob
 
 **The level will keep falling for a while.** In years that began at a similar level, the dams lost another 11% or so after 1 October before the winter inflows turned them around. That points to a low of about 90–94 mln. m³ (31–32%) around December or January, so don't be alarmed when the numbers keep dropping in November.
 
-**The break-even point is higher than it looks.** Over the past eleven seasons, the water that leaves the dams each year has tracked the level they start from very closely. That covers taps, farms, evaporation and spillways. Starting from about 105 mln. m³, the dams need about **77 mln. m³ of inflow just to end next September where they are now**. That takes roughly 525 mm of rain, a little above a normal year. Only four of the last eleven seasons delivered that much.
+**The break-even point is higher than it looks.** Over the past eleven seasons, the water that leaves the dams each year has tracked the level they start from very closely. That covers taps, farms, evaporation and spillways. Starting from about 104 mln. m³, the dams need about **77 mln. m³ of inflow just to end next September where they are now**. That takes roughly 525 mm of rain, a little above a normal year. Only four of the last eleven seasons delivered that much.
 
 {{chart:yir-outlook}}
 
@@ -122,11 +122,11 @@ There is one thing in our favour: the ground is wet. Kouris and Arminou took in 
 
 ### Thank you
 
-This was Fragmata's first full hydrological year. We processed 126 bulletins from the Water Development Department and published fifteen articles. Two of them, on [Achna](/articles/2026-03-27-famagusta-water-supply/) and [Kalavasos](/articles/2026-04-03-kalavasos-southern-conveyor/), began as questions from readers. We also added [Zen Mode](/articles/2026-07-20-introducing-zen-mode/) for the long summer exhale. Thank you for reading, asking and sharing.
+This was Fragmata's first full hydrological year. We processed 128 bulletins from the Water Development Department and published fifteen articles. Two of them, on [Achna](/articles/2026-03-27-famagusta-water-supply/) and [Kalavasos](/articles/2026-04-03-kalavasos-southern-conveyor/), began as questions from readers. We also added [Zen Mode](/articles/2026-07-20-introducing-zen-mode/) for the long summer exhale. Thank you for reading, asking and sharing.
 
 The counter is back at zero. Let it rain.
 
 ---
 
 *Author: Vladimir Bugay, Fragmata developer*
-*Data: Cyprus Water Development Department, daily bulletins to 25 September 2026. Storage figures cover the 18 main dams (290.804 mln. m³ capacity), excluding recharge reservoirs; historical comparisons use Fragmata's record from 1988, with readings twice a month before 2014. Rainfall: Cyprus Department of Meteorology monthly area averages for the government-controlled areas against the 1961–90 normal (October–April final, May–August preliminary, September provisional to 25 September), monthly weather reports, and the annual island series from 1901/02 via data.gov.cy (CC BY 4.0). Station rainfall and temperature: Department of Meteorology automatic weather stations (CC BY 4.0, raw data) via [kairika.info](https://kairika.info/rain); spring ranks count stations with at least twelve years of data. Rainfall since 1940: ERA5 via Open-Meteo (CC BY 4.0), average of Kairika's seven places. The outlook replays WDD inflow for 2015/16–2025/26 against an outflow fitted on the same seasons; the odds draw annual rainfall from the 1991/92–2025/26 record. They are a range of precedents, not a weather forecast. Dam levels updated daily at [fragmata.info](https://fragmata.info/).*
+*Data: Cyprus Water Development Department, daily bulletins to 30 September 2026. Storage figures cover the 18 main dams (290.804 mln. m³ capacity), excluding recharge reservoirs; historical comparisons use Fragmata's record from 1988, with readings twice a month before 2014. Rainfall: Cyprus Department of Meteorology monthly area averages for the government-controlled areas against the 1961–90 normal (October–April final, May–August preliminary, September provisional to 29 September), monthly weather reports, and the annual island series from 1901/02 via data.gov.cy (CC BY 4.0). Station rainfall and temperature: Department of Meteorology automatic weather stations (CC BY 4.0, raw data) via [kairika.info](https://kairika.info/rain); spring ranks count stations with at least twelve years of data. Rainfall since 1940: ERA5 via Open-Meteo (CC BY 4.0), average of Kairika's seven places. The outlook replays WDD inflow for 2015/16–2025/26 against an outflow fitted on the same seasons; the odds draw annual rainfall from the 1991/92–2025/26 record. They are a range of precedents, not a weather forecast. Dam levels updated daily at [fragmata.info](https://fragmata.info/).*

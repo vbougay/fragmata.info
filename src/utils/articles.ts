@@ -18,7 +18,7 @@ export const ARTICLES: ArticleMeta[] = [
     // at it and drop `hidden` to publish on 1 October.
     slug: '2026-10-01-happy-new-hydrological-year',
     date: '2026-10-01',
-    dataSetId: '25-SEP-2026',
+    dataSetId: '30-SEP-2026',
     author: 'Vladimir Bugay',
     hidden: true,
     ogImage: true,
@@ -28,9 +28,9 @@ export const ARTICLES: ArticleMeta[] = [
       ru: 'С новым гидрологическим годом! Итоги 2025/26 и чего ждать дамбам в 2026/27',
     },
     description: {
-      en: 'The 2025/26 water year began with the dams at a 17-year low and five months of below-normal rain, then brought a record-breaking spring, nine overflowing reservoirs and the wettest August since 1902. The dams end it 2.8 times fuller than a year ago, which is back to average, not to plenty, and they need about 77 mln. m³ of inflow in 2026/27 just to stay level.',
-      el: 'Το υδρολογικό έτος 2025/26 ξεκίνησε με τα φράγματα στο χαμηλότερο σημείο 17 ετών και πέντε μήνες βροχών κάτω από το κανονικό. Ακολούθησαν μια άνοιξη-ρεκόρ, εννέα ταμιευτήρες που υπερχείλισαν και ο πιο βροχερός Αύγουστος από το 1902. Τα φράγματα κλείνουν τη χρονιά 2.8 φορές πιο γεμάτα από πέρυσι, δηλαδή πίσω στον μέσο όρο και όχι σε αφθονία, και το 2026/27 χρειάζονται περίπου 77 εκατ. κ.μ. εισροής μόνο για να μείνουν στα ίδια.',
-      ru: 'Гидрологический год 2025/26 начался с минимума запасов за 17 лет и пяти месяцев осадков ниже нормы. Затем пришли рекордная весна, девять переполненных водохранилищ и самый дождливый август с 1902 года. Дамбы заканчивают год в 2.8 раза полнее, чем годом ранее, но это лишь возвращение к среднему, а не изобилие. В 2026/27 им нужно около 77 млн. м³ притока, только чтобы остаться на том же уровне.',
+      en: 'The 2025/26 water year began with the dams at a 17-year low and five months of below-normal rain, then brought a record-breaking spring, nine overflowing reservoirs and the wettest August since 1902. The dams end it 2.9 times fuller than a year ago, which is back to average, not to plenty, and they need about 77 mln. m³ of inflow in 2026/27 just to stay level.',
+      el: 'Το υδρολογικό έτος 2025/26 ξεκίνησε με τα φράγματα στο χαμηλότερο σημείο 17 ετών και πέντε μήνες βροχών κάτω από το κανονικό. Ακολούθησαν μια άνοιξη-ρεκόρ, εννέα ταμιευτήρες που υπερχείλισαν και ο πιο βροχερός Αύγουστος από το 1902. Τα φράγματα κλείνουν τη χρονιά 2.9 φορές πιο γεμάτα από πέρυσι, δηλαδή πίσω στον μέσο όρο και όχι σε αφθονία, και το 2026/27 χρειάζονται περίπου 77 εκατ. κ.μ. εισροής μόνο για να μείνουν στα ίδια.',
+      ru: 'Гидрологический год 2025/26 начался с минимума запасов за 17 лет и пяти месяцев осадков ниже нормы. Затем пришли рекордная весна, девять переполненных водохранилищ и самый дождливый август с 1902 года. Дамбы заканчивают год в 2.9 раза полнее, чем годом ранее, но это лишь возвращение к среднему, а не изобилие. В 2026/27 им нужно около 77 млн. м³ притока, только чтобы остаться на том же уровне.',
     },
   },
   {
