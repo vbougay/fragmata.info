@@ -3663,8 +3663,8 @@ December and January finally delivered. Storm Byron dumped over 100 mm on the Tr
 🌧 **Act 3: March happened**
 Then came the wettest spring since at least 1940, with snow on Troodos in May. The ground was full now, and a March storm with less rain than Byron brought __seventeen times__ the water. The dams kept rising until 4 June, tied for the latest peak on record, and nine reservoirs overflowed. The year before, none did.
 
-🏆 **The cast
-• Vyzakia**: from 0.06% to overflowing in five months. Comeback of the year.
+🏆 **The cast**
+• **Vyzakia**: from 0.06% to overflowing in five months. Comeback of the year.
 • **Arminou**: a tiny dam that sent Kouris nearly half of all the water it got this year.
 • **Kouris**: the big one peaked at... 42%. It's fine.
 • **Achna**: zero inflow all year, highest level of the year last week, by pipe.
