@@ -1,4 +1,4 @@
-**A Fragmata reader asks: the Achna Dam has been empty for ages — so where does the Protaras / Ayia Napa / Paralimni area actually get its drinking water? The answer involves a 40-year-old desalination plant, a single 50-year-old pipeline, and infrastructure projects that exist only on paper.**
+**A Fragmata reader asks: the Achna Dam has been empty for ages — so where does the Protaras / Ayia Napa / Paralimni area actually get its drinking water? The answer involves a 29-year-old desalination plant, a single 50-year-old pipeline, and infrastructure projects that exist only on paper.**
 
 ---
 

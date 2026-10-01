@@ -63,11 +63,11 @@ The milestone is real, and it's worth marking. But the picture is still partial:
 - **[Kalavasos](/dam/kalavasos/)** — 22.6%, [being deliberately drained](/articles/2026-04-03-kalavasos-southern-conveyor/) to feed the Southern Conveyor
 - **[Lefkara](/dam/lefkara/)** — 18.2%, below last year
 
-Cyprus still carries the EU's highest Water Exploitation Index (71%), and roughly 60% of dam reserves go to agriculture — much of it through the kind of traditional irrigation that an opinion piece in Cyprus Mail recently called "treating rainwater as waste rather than a resource." One excellent year does not erase four dry ones, and officials have been careful not to pretend otherwise.
+Cyprus still carries the EU's highest Water Exploitation Index (71%), and in most years about half of the water the dams deliver goes to agriculture — much of it through the kind of traditional irrigation that an opinion piece in Cyprus Mail recently called "treating rainwater as waste rather than a resource." One excellent year does not erase four dry ones, and officials have been careful not to pretend otherwise.
 
 Still: 100 million cubic metres of new water arrived this year. After 2024/25 delivered less than 19, that's a number worth writing down.
 
 ---
 
 *Author: Vladimir Bugay, Fragmata developer*
-*Data: Cyprus Water Development Department, report of 5 May 2026. Historical inflow figures from Fragmata's own dataset (1988–present). Infrastructure details via Cyprus Mail. Dam levels updated daily at [fragmata.info](https://fragmata.info/).*
+*Data: Cyprus Water Development Department, report of 5 May 2026. Historical inflow figures from Fragmata's own dataset (1988–present). Infrastructure details via Cyprus Mail. Agriculture's share of dam water: Water Development Department [supply and irrigation tables](https://www.gov.cy/moa-wdd/documents/tamieytires-neroy-fragmata-ydatodexamenes/statistika-stoicheia/), to 2024. Farms took 49% of what the dams delivered in 2024, and about 40% of all the water that left them in 2016–2024 once evaporation and other losses are counted (Fragmata's estimate). Agriculture's share of national water demand, from all sources, is about 60%. Dam levels updated daily at [fragmata.info](https://fragmata.info/).*

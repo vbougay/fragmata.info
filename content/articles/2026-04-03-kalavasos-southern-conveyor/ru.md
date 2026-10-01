@@ -36,7 +36,7 @@
 
 ### Испарение: невидимый расход
 
-Испарение с открытой водной поверхности на юге Кипра составляет [приблизительно 1 800–2 000 мм в год](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). Это означает, что любое открытое водохранилище теряет почти 2 метра глубины ежегодно — просто в атмосферу.
+Испарение с открытой водной поверхности у дамб на юге Кипра составляет [приблизительно 1 200–1 500 мм в год](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). Это означает, что любое открытое водохранилище теряет заметно больше метра глубины ежегодно — просто в атмосферу.
 
 При текущем низком уровне Калавасоса геометрия работает против: соотношение поверхности к объёму ухудшается по мере падения воды, что означает, что испарение потребляет пропорционально бо́льшую долю. При ~12% ёмкости годовые потери от испарения составляют примерно **25% хранимого объёма**. Водохранилища Южного водовода в совокупности теряют [6,9 млн. м³ в год](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8) от испарения. Департамент водного развития изучал меры подавления — плавучие покрытия, навесные конструкции — но так и не внедрил их.
 
@@ -83,4 +83,4 @@
 ---
 
 *Автор: Владимир Бугай, разработчик Fragmata*
-*Источники данных: [Департамент водного развития Кипра](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Данные об уровне дамб обновляются ежедневно на [fragmata.info](https://fragmata.info/).*
+*Источники данных: [Департамент водного развития Кипра](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Испарение: метеорологический испаритель у этих дамб теряет около двух метров в год, но открытая вода теряет меньше — 1 200–1 500 мм с коэффициентом 0,7, который использует Cox (1999), или 1 400–1 700 мм по оценкам Департамента водного развития методом Пенмана ([отчёт о водной политике, 2011](https://www.moa.gov.cy/moa/WDD/wfd.nsf/all/8B051968A3709746C22583E000388C7F/%24file/7_ANNEX_VII_Teliki_Ekthesi_politikis.pdf?openelement)). Данные об уровне дамб обновляются ежедневно на [fragmata.info](https://fragmata.info/).*

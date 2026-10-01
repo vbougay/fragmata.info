@@ -36,7 +36,7 @@ Cyprus's **second-largest** reservoir sits on the Xeros river east of Paphos, a 
 
 ### Germasoyeia: the dam that gives its water away
 
-Not every dam is built to hoard water. **Germasoyeia** — a 49-metre earthfill dam from **1968**, one of the oldest on Fragmata — is a key node in an [artificial groundwater recharge scheme](https://www.nwrm.eu/case-study/germasogeia-riverbed-artificial-groundwater-recharge-cyprus). It deliberately releases water down the riverbed so it can soak into the alluvial aquifer below, from which communities then pump their supply. The dam doesn't just store water; it *re-banks* it underground, where evaporation can't reach it — a clever answer to an island that loses close to two metres of open-water depth to the sky every year.
+Not every dam is built to hoard water. **Germasoyeia** — a 49-metre earthfill dam from **1968**, one of the oldest on Fragmata — is a key node in an [artificial groundwater recharge scheme](https://www.nwrm.eu/case-study/germasogeia-riverbed-artificial-groundwater-recharge-cyprus). It deliberately releases water down the riverbed so it can soak into the alluvial aquifer below, from which communities then pump their supply. The dam doesn't just store water; it *re-banks* it underground, where evaporation can't reach it — a clever answer to an island that loses around a metre and a half of open-water depth to the sky every year.
 
 ### The small dams north of Troodos
 

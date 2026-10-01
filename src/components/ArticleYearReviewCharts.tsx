@@ -494,19 +494,19 @@ export function OutlookChart() {
     en: {
       title: `Replay the last ${n} winters from today's level: ${o.lower} of ${n} end lower`,
       sub: `Where the 18 main dams would stand a year from now if 2026/27 brought the inflow of each past season. Each bar starts from today's ${fmt(o.start)} ${u}, adds that season's actual inflow and takes away the typical outflow at this level, about ${fmt(o.outflow, 0)} ${u} a year. Breaking even needs a season like the ${n - o.lower} on the right.`,
-      src: 'Inflow: Cyprus Water Development Department, seasons 2015/16–2025/26. Outflow (supply, irrigation, evaporation and spills) = 39.4 + 0.359 × storage on 1 October, fitted on the same eleven seasons (r = 0.96). A range of precedents, not a weather forecast.',
+      src: 'Inflow: Cyprus Water Development Department, seasons 2015/16–2025/26. Outflow (supply, irrigation, recharge releases, evaporation and leakage) = 39.4 + 0.359 × storage on 1 October, fitted on the same eleven seasons (r = 0.96). A range of precedents, not a weather forecast.',
       today: 'today', tw: '20% of capacity', inflowL: 'inflow',
     },
     el: {
       title: `Επαναλαμβάνοντας τους τελευταίους ${n} χειμώνες από τη σημερινή στάθμη: οι ${o.lower} στους ${n} τελειώνουν χαμηλότερα`,
       sub: `Πού θα βρίσκονταν τα 18 κύρια φράγματα σε έναν χρόνο, αν το 2026/27 έφερνε την εισροή κάθε προηγούμενης περιόδου. Κάθε μπάρα ξεκινά από τα σημερινά ${fmt(o.start)} ${u}, προσθέτει την πραγματική εισροή εκείνης της περιόδου και αφαιρεί τη συνηθισμένη εκροή σε αυτό το επίπεδο, περίπου ${fmt(o.outflow, 0)} ${u} τον χρόνο. Για να μείνουν στα ίδια χρειάζεται μια χρονιά σαν τις ${n - o.lower} στα δεξιά.`,
-      src: 'Εισροή: Τμήμα Αναπτύξεως Υδάτων, περίοδοι 2015/16–2025/26. Εκροή (ύδρευση, άρδευση, εξάτμιση και υπερχειλίσεις) = 39.4 + 0.359 × αποθέματα την 1η Οκτωβρίου, προσαρμογή στις ίδιες έντεκα περιόδους (r = 0.96). Εύρος προηγουμένων, όχι πρόγνωση καιρού.',
+      src: 'Εισροή: Τμήμα Αναπτύξεως Υδάτων, περίοδοι 2015/16–2025/26. Εκροή (ύδρευση, άρδευση, εμπλουτισμός υδροφορέων, εξάτμιση και διαρροές) = 39.4 + 0.359 × αποθέματα την 1η Οκτωβρίου, προσαρμογή στις ίδιες έντεκα περιόδους (r = 0.96). Εύρος προηγουμένων, όχι πρόγνωση καιρού.',
       today: 'σήμερα', tw: '20% της χωρητικότητας', inflowL: 'εισροή',
     },
     ru: {
       title: `Повторим последние ${n} зим с сегодняшнего уровня: в ${o.lower} случаях из ${n} запас снизится`,
       sub: `Где окажутся 18 основных дамб через год, если 2026/27 принесёт приток одного из прошлых сезонов. Каждый столбец начинается с сегодняшних ${fmt(o.start)} ${u}, прибавляет фактический приток того сезона и вычитает обычный для такого уровня расход — около ${fmt(o.outflow, 0)} ${u} в год. Чтобы остаться при своих, нужен сезон вроде тех ${n - o.lower}, что справа.`,
-      src: 'Приток: Департамент водного развития, сезоны 2015/16–2025/26. Расход (водоснабжение, орошение, испарение и переливы) = 39.4 + 0.359 × запас на 1 октября, подобран по тем же одиннадцати сезонам (r = 0.96). Набор прецедентов, а не прогноз погоды.',
+      src: 'Приток: Департамент водного развития, сезоны 2015/16–2025/26. Расход (водоснабжение, орошение, пополнение подземных вод, испарение и утечки) = 39.4 + 0.359 × запас на 1 октября, подобран по тем же одиннадцати сезонам (r = 0.96). Набор прецедентов, а не прогноз погоды.',
       today: 'сегодня', tw: '20% ёмкости', inflowL: 'приток',
     },
   }, lang);

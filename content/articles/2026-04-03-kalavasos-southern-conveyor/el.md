@@ -36,7 +36,7 @@
 
 ### Εξάτμιση: η αόρατη αποστράγγιση
 
-Η εξάτμιση ανοιχτού νερού στη νότια Κύπρο κυμαίνεται [περίπου στα 1.800–2.000 mm ετησίως](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). Αυτό σημαίνει ότι κάθε ανοιχτός ταμιευτήρας χάνει σχεδόν 2 μέτρα βάθους ετησίως — μόνο στην ατμόσφαιρα.
+Η εξάτμιση ανοιχτού νερού στα φράγματα της νότιας Κύπρου κυμαίνεται [περίπου στα 1.200–1.500 mm ετησίως](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). Αυτό σημαίνει ότι κάθε ανοιχτός ταμιευτήρας χάνει αρκετά πάνω από ένα μέτρο βάθους ετησίως — μόνο στην ατμόσφαιρα.
 
 Στη σημερινή χαμηλή στάθμη του Καλαβασού, η γεωμετρία τιμωρεί: η αναλογία επιφάνειας-προς-όγκο χειροτερεύει καθώς πέφτει το νερό, πράγμα που σημαίνει ότι η εξάτμιση καταναλώνει αναλογικά μεγαλύτερο μερίδιο. Στο ~12% χωρητικότητας, οι ετήσιες απώλειες εξάτμισης αντιστοιχούν σε περίπου **25% του αποθηκευμένου όγκου**. Οι ταμιευτήρες του Νότιου Αγωγού χάνουν συλλογικά [6,9 εκ. m³ ετησίως](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8) σε εξάτμιση. Το ΤΑΥ μελέτησε μέτρα καταστολής — πλωτά καλύμματα, σκιάστρα — αλλά δεν τα εφάρμοσε ποτέ.
 
@@ -83,4 +83,4 @@
 ---
 
 *Συντάκτης: Vladimir Bugay, προγραμματιστής Fragmata*
-*Πηγές δεδομένων: [Τμήμα Αναπτύξεως Υδάτων Κύπρου](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Τα δεδομένα στάθμης φραγμάτων ενημερώνονται καθημερινά στο [fragmata.info](https://fragmata.info/).*
+*Πηγές δεδομένων: [Τμήμα Αναπτύξεως Υδάτων Κύπρου](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Εξάτμιση: ένα εξατμισίμετρο σε αυτά τα φράγματα χάνει περίπου δύο μέτρα τον χρόνο, αλλά το ανοιχτό νερό χάνει λιγότερο — 1.200–1.500 mm με τον συντελεστή 0,7 που χρησιμοποιεί ο Cox (1999), ή 1.400–1.700 mm σύμφωνα με τις εκτιμήσεις Penman του Τμήματος Αναπτύξεως Υδάτων ([Έκθεση Υδατικής Πολιτικής, 2011](https://www.moa.gov.cy/moa/WDD/wfd.nsf/all/8B051968A3709746C22583E000388C7F/%24file/7_ANNEX_VII_Teliki_Ekthesi_politikis.pdf?openelement)). Τα δεδομένα στάθμης φραγμάτων ενημερώνονται καθημερινά στο [fragmata.info](https://fragmata.info/).*

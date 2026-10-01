@@ -198,9 +198,10 @@ export function reviewInflow(dataSetId?: string): { key: string; v: number }[] {
 /* ---------- 2026/27 outlook ---------- */
 
 /**
- * Yearly outflow (supply, irrigation, evaporation, spills) against storage on
- * 1 October, fitted on the eleven seasons 2015/16–2025/26 (r = 0.96):
- * outflow ≈ 39.4 + 0.359 × start.
+ * Yearly outflow (supply, irrigation, recharge releases, evaporation, leakage)
+ * against storage on 1 October, fitted on the eleven seasons 2015/16–2025/26
+ * (r = 0.96): outflow ≈ 39.4 + 0.359 × start. Spills are mostly in neither
+ * inflow nor outflow: the WDD inflow counters largely stop when a dam is full.
  */
 export const OUTFLOW_BASE = 39.4;
 export const OUTFLOW_PER_MCM = 0.359;

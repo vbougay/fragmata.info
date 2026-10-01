@@ -36,7 +36,7 @@ WDD Senior Technical Engineer Marios Hadjicostis [put it plainly](https://cyprus
 
 ### Evaporation: the invisible drain
 
-Open-water evaporation in southern Cyprus runs [approximately 1,800–2,000 mm per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). That means any open reservoir loses nearly 2 metres of depth annually — just to the atmosphere.
+Open-water evaporation at the dam sites of southern Cyprus runs [approximately 1,200–1,500 mm per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8). That means any open reservoir loses well over a metre of depth annually — just to the atmosphere.
 
 At Kalavasos's current low level, the geometry is punishing: the surface-area-to-volume ratio worsens as the water drops, meaning evaporation consumes a proportionally larger share. At ~12% capacity, annual evaporation losses amount to roughly **25% of stored volume**. Southern Conveyor reservoirs collectively lose [6.9 mln. m³ per year](https://www.semanticscholar.org/paper/Water-supply-enhancement-in-Cyprus-through-Cox/b7c396bb923007cb48b8a70540d578cb3193bbe8) to evaporation. The WDD studied suppression measures — floating covers, shade structures — but never implemented them.
 
@@ -83,4 +83,4 @@ As of 2 April 2026, total reserves stand at 32.2% — well above last year's 24.
 ---
 
 *Author: Vladimir Bugay, Fragmata developer*
-*Data sources: [Cyprus Water Development Department](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
+*Data sources: [Cyprus Water Development Department](http://www.moa.gov.cy/moa/wdd/wdd.nsf), [Fragmata.info](https://fragmata.info/), [Cyprus Mail](https://cyprus-mail.com/), [Politis](https://en.politis.com.cy/), [Euronews](https://www.euronews.com/), [MDPI Water](https://www.mdpi.com/journal/water), [World Bank](https://documents.worldbank.org/), [Institution of Civil Engineers](https://www.ice.org.uk/). Evaporation: an evaporation pan at these dam sites loses about two metres a year, but open water loses less — 1,200–1,500 mm with the 0.7 pan coefficient used by Cox (1999), or 1,400–1,700 mm on the Water Development Department's Penman estimates ([Water Policy report, 2011](https://www.moa.gov.cy/moa/WDD/wfd.nsf/all/8B051968A3709746C22583E000388C7F/%24file/7_ANNEX_VII_Teliki_Ekthesi_politikis.pdf?openelement)). Dam level data updated daily at [fragmata.info](https://fragmata.info/).*
