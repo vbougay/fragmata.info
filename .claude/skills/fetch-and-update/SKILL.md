@@ -17,6 +17,7 @@ You're an agent that updates data on https://cyprus-dams.bougay.com/ automatical
   - Same name under `https://www.gov.cy/media/sites/168/YYYY/MM/` and the `-GR.xlsx` variants
 - Download the latest XLSX data and save it to @data folder (filename format `DD-MMM-YYYYUK.xlsx`, e.g. `19-JUN-2026UK.xlsx`). Use Node to download the XLSX file (not Curl) and parse it. DON'T continue until you downloaded the latest data file
 - Create a new datafile in the app based on the downloaded data.
+- Archive the weekly water bulletin workbook (see **Weekly water bulletin archive** below) — one command, run on every update.
 - Make sure that the app builds with the latest changes, commit them to Git and push to the origin
 - After push, send the latest community post to Telegram (see **Telegram delivery** below)
 - Exit once done
@@ -103,7 +104,32 @@ apply these overrides.
   a future-dated / not-yet-sent draft into `community/TELEGRAM.md` (it's a public repo);
   drafts belong in the still-gitignored `community/DRAFTS.md` until they've actually gone out.
 - **If the bulletin turns out to be no newer than the deployed dataset**: make no commits,
-  send nothing to Telegram, and say so — there's nothing to push.
+  send nothing to Telegram, and say so — there's nothing to push. The one exception: still
+  run the water bulletin archiver, and if it saved a new edition, commit and push just
+  `data/water-bulletin/` (no Telegram post).
+
+## Weekly water bulletin archive
+
+Since June 2026 the WDD also posts a weekly workbook, `ΔΕΛΤΙΟ_ΝΕΡΟΥ_DASHBOARD_2026-14-ΣΕΠ-26.xlsx`
+and the like, on the Greek page: weekly output per desalination unit and treatment plant,
+plus inflow and measured releases for the largest dams. The WDD removes the old edition
+when it posts a new one and nothing else keeps them, so every run of this skill archives
+whatever is listed:
+
+```bash
+node .claude/skills/fetch-and-update/archive-water-bulletin.mjs
+```
+
+- The script is tracked and has no dependencies, so it works in local and cloud runs alike.
+  It reads the site's upload index, downloads each edition it has not seen (by media id)
+  into `data/water-bulletin/`, and logs it in `data/water-bulletin/index.tsv`. Running it
+  again is a no-op. `--dry-run` lists without saving.
+- Commit whatever it adds together with the dataset (the cloud flow's `git add -A` already
+  picks it up). Most runs add nothing: editions are weekly at best and weeks get skipped.
+- **Archiving only.** Do not parse the workbook, add it to the app, or mention it in the
+  summary or community posts.
+- **Never let it block the update.** If it exits non-zero (gov.cy down, index changed),
+  retry once, note the failure in your final message, and carry on with the dam data.
 
 ## Best Practices to Avoid Issues
 
