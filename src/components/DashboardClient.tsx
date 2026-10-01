@@ -6,6 +6,7 @@ import { getAllSparklineData } from '@/utils/sparklineData';
 import { NewsTicker } from '@/components/NewsTicker';
 import ReservoirMapWrapper from '@/components/ReservoirMapWrapper';
 import StorageForecast from '@/components/StorageForecast';
+import RollingRainfall from '@/components/RollingRainfall';
 import { StatCardGrid } from '@/components/StatCardGrid';
 import { YTDInflowResult, YTDOutflowResult } from '@/utils/reservoirUtils';
 import { useReservoirData } from '@/hooks/useReservoirData';
@@ -164,6 +165,7 @@ export function DashboardClient({
                 </div>
 
                 <StorageForecast />
+                <RollingRainfall />
                 <MonthlyInflow />
               </div>
           </TabsContent>

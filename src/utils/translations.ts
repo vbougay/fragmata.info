@@ -200,6 +200,18 @@ export const translations = {
     zenLitersPerSecond: "litres every second",
     zenMethodNote: "Estimated in real time from the {date} bulletin, the trend of {n} bulletins over the last 4 weeks, and the seasonal forecast model.",
 
+    // Rainfall section (Kairika)
+    rainYearTitle: "Rainfall, Last 12 Months",
+    rainUnit: "mm",
+    rainOfNormal: "of the {period} normal",
+    rainTo: "to {date}",
+    rainNormalWord: "normal",
+    rainLast12: "Last 12 months",
+    rainNormal: "Normal {period}",
+    rainModelNote: "Model estimate: the ERA5 average of Kairika's 7 forecast places, not an official island measurement.",
+    rainDataSource: "Rain data",
+    rainSeasonTracker: "Season tracker on Kairika",
+
   },
   el: {
     // Header
@@ -402,6 +414,18 @@ export const translations = {
     zenLitersPerSecond: "λίτρα κάθε δευτερόλεπτο",
     zenMethodNote: "Εκτίμηση σε πραγματικό χρόνο από το δελτίο {date}, την τάση {n} δελτίων των τελευταίων 4 εβδομάδων και το εποχικό μοντέλο πρόβλεψης.",
 
+    // Rainfall section (Kairika)
+    rainYearTitle: "Βροχόπτωση Τελευταίων 12 Μηνών",
+    rainUnit: "mm",
+    rainOfNormal: "της κανονικής {period}",
+    rainTo: "έως {date}",
+    rainNormalWord: "κανονική",
+    rainLast12: "Τελευταίοι 12 μήνες",
+    rainNormal: "Κανονική {period}",
+    rainModelNote: "Εκτίμηση μοντέλου: μέσος όρος του ERA5 για τις 7 περιοχές πρόγνωσης του Kairika, όχι επίσημη παγκύπρια μέτρηση.",
+    rainDataSource: "Δεδομένα βροχής",
+    rainSeasonTracker: "Δείκτης βροχερής περιόδου στο Kairika",
+
   },
   ru: {
     // Header
@@ -603,6 +627,18 @@ export const translations = {
     zenPerDay: "в сутки",
     zenLitersPerSecond: "литров каждую секунду",
     zenMethodNote: "Оценка в реальном времени: бюллетень от {date}, тренд {n} бюллетеней за последние 4 недели и сезонная модель прогноза.",
+
+    // Rainfall section (Kairika)
+    rainYearTitle: "Осадки за 12 месяцев",
+    rainUnit: "мм",
+    rainOfNormal: "нормы {period}",
+    rainTo: "по {date}",
+    rainNormalWord: "норма",
+    rainLast12: "Последние 12 месяцев",
+    rainNormal: "Норма {period}",
+    rainModelNote: "Оценка по модели: среднее ERA5 для 7 прогнозных пунктов Kairika, а не официальные данные по острову.",
+    rainDataSource: "Данные об осадках",
+    rainSeasonTracker: "Трекер дождливого сезона на Kairika",
   }
 };
 

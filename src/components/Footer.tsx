@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
 import { reservoirData } from '@/utils/dataManager';
 import { REGION_SLUG_MAP, DAM_SLUG_MAP, REGION_DAMS } from '@/utils/slugs';
+import { kairikaUrl, trackKairikaClick } from '@/utils/kairika';
 
 function localePath(language: string, path: string): string {
   return language === 'en' ? path : `/${language}${path}`;
@@ -144,11 +145,16 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
               <Waves className="h-4 w-4" />
               {language === 'el' ? 'Ζεν' : language === 'ru' ? 'Дзен' : 'Zen'}
             </Link>
-            <a href="https://monopatia.info" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+            {/* No noreferrer on the family sites: their analytics should see these visits as coming from Fragmata */}
+            <a href={kairikaUrl(language)} target="_blank" rel="noopener" onClick={() => trackKairikaClick('footer', kairikaUrl(language))} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <CloudSun className="h-4 w-4" />
+              Kairika
+            </a>
+            <a href="https://monopatia.info" target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Mountain className="h-4 w-4" />
               Monopatia
             </a>
-            <a href="https://giatroi.info/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+            <a href="https://giatroi.info/" target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Stethoscope className="h-4 w-4" />
               Giatroi
             </a>
