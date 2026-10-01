@@ -3564,6 +3564,35 @@ Gap vs last year: +23.4pp.
 🔗 https://fragmata.info
 ```
 
+## September 25 — New Article: The Summer That Wouldn't Stay Dry
+
+📰 New article published: **"The Summer That Wouldn't Stay Dry: Record Rain, Record Late-Summer Inflow, and Achna Refills by Pipe"** (EN/EL/RU)
+
+August 2026 was the wettest August since 1902 (DoM, 30 mm island average vs 2.9 mm normal). Four AWS gauges set Aug–Sep records (Achna, Larnaca Airport, Kouris Dam, Polystypos; data via kairika.info). Aug–Sep inflow 1.366 mln. m³, 2.5× the previous best (18/19). Achna tripled in eleven days with zero inflow and no rain, most likely water from the cabinet's Sep 16 Southern Conveyor release for autumn potatoes (not confirmed by WDD).
+
+Full article: [fragmata.info/articles/2026-09-25-summer-that-wouldnt-stay-dry](https://fragmata.info/articles/2026-09-25-summer-that-wouldnt-stay-dry)
+
+### Telegram
+Sent by Vlad, 2026-09-25. Public link: https://t.me/fragmatainfo/155 (message_id not captured; sent manually, not via the pipeline).
+```
+📰 New article: The summer that wouldn't stay dry
+
+Cyprus summers are supposed to be dry. This one kept raining. The Met Office confirmed that August 2026 was the wettest August since records began in 1902: 30 mm across the island against a normal of 2.9 mm. Most of it fell in one storm on 29 August.
+
+We went through the Met Office's weather stations day by day (via kairika.info) and the dam bulletins to see what the storms actually did.
+
+What came out:
+• Four stations had their wettest August–September on record: Achna, Larnaca Airport, Kouris Dam and Polystypos. At Achna a typical late summer brings 0.3 mm. This year one day brought 68 mm.
+• The high Troodos was wet but not a record. August 2009 was far wetter there.
+• The dams took in 1.37 mln. m³ in August and September, 2.5 times the previous best in eleven seasons. Last year it was 0.004.
+• About half came from the storms. The other half is the Troodos still draining the wet spring: Kouris and Arminou got a steady trickle all summer, rain or no rain.
+
+And the Achna puzzle from our last few updates: the dam tripled in eleven days with zero inflow and almost no rain. The record storm that hit Achna directly did nothing for it. The rise began the same week the cabinet released an extra 3 mln. m³ from the Southern Conveyor, mostly for autumn potatoes, and Achna is the tank that feeds the potato villages. The Water Development Department hasn't confirmed where the water went, but everything points down the pipe.
+
+The water year closes on 30 September with 105 mln. m³ in the main dams, against 37 a year ago.
+
+📖 Full article (EN/EL/RU): https://fragmata.info/articles/2026-09-25-summer-that-wouldnt-stay-dry
+
 ## September 28 — Weekend drawdown continues, Achna's fourth unexplained jump
 
 📰 Major update (Monday, covering the weekend) — total storage 35.95% (104.5 MCM), down 0.6 MCM since Friday, September 25. Achna posted another sudden jump, up 1.0pp to 5.2% despite zero recorded inflow all season — its fourth such unexplained rise this month.
@@ -3608,4 +3637,51 @@ Wednesday's bulletin: total storage 35.81% (104.1 MCM) — down from 35.95% (104
 Gap vs last year: +23.4pp.
 
 🔗 https://fragmata.info
+```
+
+## October 1 — New Article: Happy New Hydrological Year
+
+📰 New article published: **"Happy New Hydrological Year: 2025/26 in Review, and What the Dams Can Expect in 2026/27"** (EN/EL/RU)
+
+The year in review: 34.4 MCM (11.8%) at the first October bulletin, a low of 26.9 (9.2%) on 29 December, the wettest spring since 1940, a peak of 123.4 (42.4%) on 4 June, nine of 21 reservoirs overflowing, and a close of 104.1 MCM (35.8%), 2.9× last year and almost exactly the 1988–2025 average. Rainfall 617.8 mm (123%), the 25th-wettest year since 1901. Outlook for 2026/27: about 77 MCM of inflow needed to break even, roughly a 1-in-3 chance of ending higher.
+
+Full article: [fragmata.info/articles/2026-10-01-happy-new-hydrological-year](https://fragmata.info/articles/2026-10-01-happy-new-hydrological-year)
+
+### Telegram
+Sent by Vlad, 2026-09-30T19:03:24Z (the evening before the article date). Public link: https://t.me/fragmatainfo/157 (message_id not captured; sent manually, not via the pipeline). Text below is as sent, read back from the public post; `**bold**` and `__italic__` mark its formatting.
+```
+🎉 **Happy New Hydrological Year!**
+
+At midnight, the WDD inflow counter resets to zero and new hydrological year starts. We went through all 128 bulletins of 2025/26, and it was quite a year.
+
+📉 **Act 1: Doom**
+The dams opened at their lowest in 17 years, after three dry years in a row. Then autumn forgot to rain. By Christmas, they were at __9%__.
+
+🧽 **Act 2: The rain that disappeared**
+December and January finally delivered. Storm Byron dumped over 100 mm on the Troodos, and the dams gained... almost nothing. The thirsty ground drank nearly all of it. At the end of February, the season was __still__ below normal.
+
+🌧 **Act 3: March happened**
+Then came the wettest spring since at least 1940, with snow on Troodos in May. The ground was full now, and a March storm with less rain than Byron brought __seventeen times__ the water. The dams kept rising until 4 June, tied for the latest peak on record, and nine reservoirs overflowed. The year before, none did.
+
+🏆 **The cast
+• Vyzakia**: from 0.06% to overflowing in five months. Comeback of the year.
+• **Arminou**: a tiny dam that sent Kouris nearly half of all the water it got this year.
+• **Kouris**: the big one peaked at... 42%. It's fine.
+• **Achna**: zero inflow all year, highest level of the year last week, by pipe.
+
+🎯 **The ending**
+The dams finish at __2.9 times__ last year: 104.1 mln. m³ (35.8%). Sounds amazing, but it's almost exactly the average end of a water year since 1988. A historic comeback that brought us back to normal, not to plenty.
+
+🔮 **And 2026/27?**
+Nobody can forecast a Cyprus winter, but the maths is simple enough:
+• Don't panic in November. The level keeps falling until the winter rains arrive, to about 90–94 mln. m³.
+• To stay where they are, the dams need a slightly above-average winter. Only 4 of the last 11 delivered one.
+• Even a repeat of the worst winter of the last decade leaves us better off than we started this year. It would take two.
+• The ground is wet this time, so the first rains should reach the dams.
+
+Rough odds: about 1 in 3 that we end next September higher than today.
+
+Thank you for reading, asking, and sharing this year. The counter is back at zero. Let it rain 🌧
+
+📖 Full article with charts (EN/EL/RU): https://fragmata.info/articles/2026-10-01-happy-new-hydrological-year
 ```
