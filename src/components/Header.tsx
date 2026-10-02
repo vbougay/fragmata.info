@@ -7,15 +7,33 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { formatDataSetDate } from '@/utils/dateFormatting';
 import { defaultLocale, type Locale } from '@/utils/locale';
+import type { RegionTotal } from '@/types';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import ChurchSilhouette from '@/components/ChurchSilhouette';
 
-const Header: React.FC<{ homePage?: boolean; hideDateNav?: boolean }> = ({ homePage, hideDateNav }) => {
+const Header: React.FC<{ homePage?: boolean; hideDateNav?: boolean; grandTotal?: RegionTotal }> = ({ homePage, hideDateNav, grandTotal }) => {
   const { currentDataSetId, availableDataSets, setDataSet, isPlaying, setIsPlaying } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
+
+  // Greek-only experiment: the homepage H1 states the answer to "πληρότητα φραγμάτων σήμερα"
+  // (total fill, last year) instead of the static subtitle. Follows the selected dataset.
+  const homeHeading = (() => {
+    if (language !== 'el' || !grandTotal) return t('subtitle');
+    const fmt = (n: number) =>
+      n.toLocaleString('el-GR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const { current, lastYear } = grandTotal.storage;
+    if (!Number.isFinite(current.percentage)) return t('subtitle');
+    const when = currentDataSetId === availableDataSets[0]?.id
+      ? ' σήμερα'
+      : `, ${formatDataSetDate(currentDataSetId, language)}`;
+    const lastYearClause = Number.isFinite(lastYear.percentage)
+      ? ` — πέρυσι ${fmt(lastYear.percentage)}%`
+      : '';
+    return `Πληρότητα φραγμάτων Κύπρου${when}: ${fmt(current.percentage)}%${lastYearClause}`;
+  })();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -137,7 +155,7 @@ const Header: React.FC<{ homePage?: boolean; hideDateNav?: boolean }> = ({ homeP
                       Sub-pages already provide their own <h1>, so keep this a <p> there. */}
                   {homePage ? (
                     <h1 className="text-water-800/70 dark:text-water-300/70 text-xs md:text-base font-normal mt-1">
-                      {t('subtitle')}
+                      {homeHeading}
                     </h1>
                   ) : (
                     <p className="text-water-800/70 dark:text-water-300/70 text-xs md:text-base mt-1">

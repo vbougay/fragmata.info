@@ -68,7 +68,7 @@ const meta: Record<Locale, LocaleMeta> = {
   },
   el: {
     title:
-      "Φράγματα Κύπρου: Πληρότητα & Επίπεδα Νερού Σήμερα | Fragmata",
+      "Πληρότητα Φραγμάτων Σήμερα – Φράγματα Κύπρου | Fragmata",
     description:
       "Ζωντανή πληρότητα φραγμάτων Κύπρου σήμερα. Επίπεδα νερού, χωρητικότητα & ημερήσια εισροή σε 21 ταμιευτήρες: Κούρη, Ασπρόκρεμμο, Ευρέτου, Καλαβασό.",
     ogLocale: "el_GR",
@@ -180,7 +180,7 @@ export async function generateMetadata({
         description: `Cyprus dams today (${reportDateStr}): ${pct}%, ${amt} MCM across 21 reservoirs — Kouris, Asprokremmos, Evretou. Live water levels, capacity & daily inflow.`,
       },
       el: {
-        title: `Φράγματα Κύπρου: ${pct}% Πληρότητα Σήμερα | Fragmata`,
+        title: `Πληρότητα Φραγμάτων Σήμερα: ${pct}% – Φράγματα Κύπρου | Fragmata`,
         description: `Πληρότητα φραγμάτων σήμερα (${reportDateStr}): ${pct}%, ${amt} εκατ. κ.μ.${lastYearClause}. Στοιχεία Τμήματος Αναπτύξεως Υδάτων για 21 φράγματα Κύπρου, εισροή & ροή νερού.`,
       },
       ru: {
