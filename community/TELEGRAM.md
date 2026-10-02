@@ -3685,3 +3685,26 @@ Thank you for reading, asking, and sharing this year. The counter is back at zer
 
 📖 Full article with charts (EN/EL/RU): https://fragmata.info/articles/2026-10-01-happy-new-hydrological-year
 ```
+
+## October 2 — Kalopanagiotis back to 100% as the 2026/27 season opens
+
+📰 Major update (Friday) — the first bulletin of the new water year: total storage 35.75% (104.0 MCM), almost unchanged from the 35.81% (104.1 MCM) that closed out 2025/26. Kalopanagiotis returned to full capacity and is overflowing again, just days after dipping to 96.1%. The Arminou→Kouris transfer, which totaled 20.44 MCM across 2025/26, resets to zero for the new season.
+
+### Telegram
+Sent: message_id=284, chat_id=151413643, at=2026-10-02T09:23:58Z
+```
+📰 Cyprus Dams — October 2
+
+Friday's bulletin — the first of the 2026/27 season: total storage 35.75% (104.0 MCM), almost unchanged from Wednesday's 35.81% (104.1 MCM) that closed out 2025/26, now that the inflow counter has reset to zero for the new water year. Kalopanagiotis is back to 100%, overflowing again just days after dipping to 96.1%. The Arminou→Kouris transfer, which totaled 20.44 MCM across 2025/26, also resets to zero for the new season. Gap over last year: +23.5pp.
+
+• Kalopanagiotis 100% (+3.9pp) — back to full, overflowing again
+• Achna 6.4% (+0.8pp) — months-long run of unexplained rises continues despite zero recorded inflow
+• Argaka 43.9% (-0.8pp) — steepest drop yet in its multi-week slide
+• Agia Marina 46.0% (+0.7pp) — first gain in weeks, slide pauses
+• Arminou 59.8% (+0.4pp) — the only Southern Conveyor dam moving up
+• Kouris 37.3% (-0.1pp) — barely moved
+
+Gap vs last year: +23.5pp.
+
+🔗 https://fragmata.info
+```
