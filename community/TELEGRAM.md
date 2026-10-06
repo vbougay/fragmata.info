@@ -3731,3 +3731,25 @@ Gap vs last year: +23.6pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 6 — a quiet day as two running streaks pause
+
+📊 Minor update (Tuesday) — total storage 35.64% (103.6 MCM), down fractionally from 35.68% (103.8 MCM) on Monday. Most dams held steady: Achna's rise streak paused after two straight jumps, and Argaka's multi-week slide paused too. Arminou remains the only Southern Conveyor dam still rising.
+
+### Telegram
+Sent: message_id=295, chat_id=151413643, at=2026-10-06T07:07:29Z
+```
+📊 Cyprus Dams — October 6
+
+Tuesday bulletin: total storage 35.64% (103.6 MCM) — down fractionally from 35.68% (103.8 MCM) on Monday, a quiet day with most dams unchanged. 24h inflow: 0.034 MCM, led by Kannaviou (0.012) and Kouris (0.011). Arminou remains the only Southern Conveyor dam still rising. Gap over last year: +23.6pp.
+
+• Arminou 61.0% (+0.1pp) — still the only Southern Conveyor dam rising
+• Achna 8.3% (unchanged) — rise streak pauses after two straight jumps
+• Argaka 43.5% (unchanged) — multi-week slide pauses
+• Kalopanagiotis 100% — still the only dam overflowing
+• Kouris 37.0% (-0.1pp) — barely moved
+
+Gap vs last year: +23.6pp.
+
+🔗 https://fragmata.info
+```
