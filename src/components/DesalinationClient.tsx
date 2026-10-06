@@ -123,7 +123,7 @@ export function DesalinationClient() {
                       return (
                         <tr key={p.id} className="border-b border-border/50 last:border-0">
                           <td className="py-2 pr-4 text-foreground">
-                            <a href={p.source} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.name[language]}</a>
+                            <Link href={localePath(`/desalination/${p.id}`)} className="text-water-600 dark:text-water-400 hover:underline">{p.name[language]}</Link>
                           </td>
                           <td className="py-2 pr-4 text-muted-foreground">{p.kind === 'permanent' ? tx.permanent : tx.mobile}</td>
                           <td className="py-2 pr-4 text-right tabular-nums">{num(p.capacity)}</td>

@@ -1,0 +1,5 @@
+The Dhekelia plant was the first desalination plant in Cyprus to supply the public network. It started on 1 April 1997, after the droughts of the 1990s, on the coast east of Larnaca. It opened at 20,000 m³ a day, doubled in 1998 and reached 60,000 m³ a day in April 2009. It serves the free Famagusta area and part of Larnaca district.
+
+Caramondani built it under a 10-year build-own-operate contract. In 2004 the Audit Office found that buying the plant was the cheapest option, and the state took it over on 1 October 2005. The same company won a 20-year contract to renovate and run it, at €0.64 per m³ for the first 40,000 m³ a day. The plant was shut from November 2006 to May 2007 for the rebuild. It runs on grid electricity. In 2022, as energy prices rose, it was the dearest of the five permanent plants, at an average €1.78 per m³.
+
+An electrical fault stopped it for about three days in June 2008, and rough seas halved its output in March 2026. The operating contract ends in May 2027, and in September 2026 an extension was still being negotiated. On 2 September 2026 the cabinet approved a new 80,000 m³ a day plant beside it, due in 2030, to replace it.

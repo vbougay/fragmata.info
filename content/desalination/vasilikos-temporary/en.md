@@ -1,0 +1,5 @@
+This temporary unit is planned inside the Electricity Authority of Cyprus (EAC) power station at Vasilikos, near Mari on the south coast between Limassol and Larnaca, next to the EAC's permanent desalination plant. Unlike the other mobile units, it is being procured by the EAC rather than the Water Development Department: the EAC is the contracting authority, and the contract covers 66 months of water supply to the department.
+
+The EAC issued the tender on 9 December 2025 and reissued it on 24 February 2026. The unit was tendered at 10,000 m³ a day, and in January 2026 the cabinet approved raising it to 20,000. By September 2026 the bids had been evaluated, but the award was waiting for a memorandum between the department and the EAC that was still under legal review. First water, once expected in November 2026 and then in January 2027, is now put at March to July 2027. The department's planning of May 2026 counted the unit at 10,000 m³ a day only and said that delivering it is the EAC's responsibility alone.
+
+A temporary 20,000 m³ a day unit at Vasilikos was also planned in 2009–2010, during the previous drought, but it was never built.

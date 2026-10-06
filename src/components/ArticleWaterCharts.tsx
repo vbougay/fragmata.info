@@ -440,3 +440,53 @@ export function YearlySupplyChart() {
   );
 }
 
+
+/* ================= One plant's output, week by week ================= */
+
+/** Weekly output of one desalination unit against its capacity (plant pages). Text comes from the caller. */
+export function PlantWeeklyChart({ plantKey, capacity, title, subtitle, source }: {
+  plantKey: string; capacity: number; title: string; subtitle: string; source: string;
+}) {
+  const lang = lng(useLanguage().language);
+  const { show, hide, node } = useTip();
+  const weeks = weeksWithOutput()
+    .map(w => ({ weekEnding: w.weekEnding, out: w.desalination?.[plantKey] }))
+    .filter((w): w is { weekEnding: string; out: number } => w.out !== undefined);
+  if (weeks.length < 2) return null;
+
+  // Small outputs (a unit winding down) need more than whole thousands.
+  const k = (v: number) => (v >= 10000 ? `${Math.round(v / 1000)}k` : v >= 1000 ? `${(v / 1000).toFixed(1)}k` : String(Math.round(v)));
+  const top = Math.max(capacity, ...weeks.map(w => w.out)) * 1.15;
+  const step = [2000, 5000, 10000, 20000].find(s => top / s <= 6) ?? 20000;
+  const vMax = Math.ceil(top / step) * step;
+  const W = 1000, H = 260, m = { t: 28, r: 20, b: 40, l: 60 };
+  const band = (W - m.l - m.r) / weeks.length, bw = Math.min(80, band * 0.5);
+  const y = (v: number) => (H - m.b) - (v / vMax) * (H - m.b - m.t);
+  const ticks = Array.from({ length: vMax / step + 1 }, (_, i) => i * step);
+  return (
+    <>
+      <Frame title={title} subtitle={subtitle} source={source} height={H}>
+        {ticks.map(v => (
+          <g key={v}>
+            <line x1={m.l} x2={W - m.r} y1={y(v)} y2={y(v)} className="stroke-current text-gray-200 dark:text-gray-700" strokeWidth={1} />
+            <SubText x={m.l - 8} y={y(v) + 4} textAnchor="end">{v ? thousands(v) : '0'}</SubText>
+          </g>
+        ))}
+        <line x1={m.l} x2={W - m.r} y1={y(capacity)} y2={y(capacity)} stroke={DESAL} strokeWidth={1.5} strokeDasharray="6 4" />
+        {weeks.map((w, i) => {
+          const cx = m.l + band * (i + 0.5);
+          const tip = `${dayLabel(w.weekEnding, lang)}: <b>${Math.round(w.out).toLocaleString('en')}</b> m³`;
+          return (
+            <g key={w.weekEnding} onMouseMove={e => show(e, tip)} onMouseLeave={hide}>
+              <rect x={cx - band / 2} y={m.t} width={band} height={H - m.t - m.b} fill="transparent" />
+              <rect x={cx - bw / 2} y={y(w.out)} width={bw} height={Math.max(1, y(0) - y(w.out))} rx={3} fill={DESAL} />
+              <Note x={cx} y={y(w.out) - 6} textAnchor="middle">{k(w.out)}</Note>
+              <SubText x={cx} y={H - m.b + 16} textAnchor="middle">{dayLabel(w.weekEnding, lang)}</SubText>
+            </g>
+          );
+        })}
+      </Frame>
+      {node}
+    </>
+  );
+}

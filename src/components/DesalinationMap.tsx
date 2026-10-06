@@ -10,18 +10,21 @@ function NoScrollZoom() {
   return null;
 }
 
-/** Map of desalination plants for the /desalination page (loaded client-side only). */
-export default function DesalinationMap() {
+/**
+ * Map of desalination plants (loaded client-side only). With `focus` it centres on one plant,
+ * as on the plant pages; otherwise it shows the whole island, as on /desalination.
+ */
+export default function DesalinationMap({ focus }: { focus?: { id: string; lat: number; lng: number } }) {
   return (
-    <div className="w-full h-[440px] rounded-lg overflow-hidden">
-      <MapContainer center={[34.92, 33.1]} zoom={9} style={{ height: '100%', width: '100%' }} zoomControl={false}>
+    <div className={`w-full rounded-lg overflow-hidden ${focus ? 'h-[320px]' : 'h-[440px]'}`}>
+      <MapContainer center={focus ? [focus.lat, focus.lng] : [34.92, 33.1]} zoom={focus ? 11 : 9} style={{ height: '100%', width: '100%' }} zoomControl={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <ZoomControl position="topright" />
         <NoScrollZoom />
-        <DesalinationMarkers />
+        <DesalinationMarkers focusId={focus?.id} />
       </MapContainer>
     </div>
   );

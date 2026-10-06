@@ -28,6 +28,8 @@ export interface DesalPlant {
   bulletinKey?: string;
   /** Replaces an existing plant (net capacity is lower). */
   replaces?: string;
+  /** Temporary capacity on top of the nominal figure (not counted in `operatingCapacity`). */
+  tempExtra?: { capacity: number; since: string; until: string };
   source: string;
 }
 
@@ -41,7 +43,7 @@ export const DESAL_PLANTS: DesalPlant[] = [
   { id: 'larnaca', name: { en: 'Larnaca', el: 'Λάρνακα', ru: 'Ларнака' }, kind: 'permanent', status: 'operating', capacity: 60000, start: '2001', district: 'Larnaca', coords: { lat: 34.86925, lng: 33.63084 }, bulletinKey: 'larnaca', source: AUDIT },
   { id: 'vasilikos', name: { en: 'Vasilikos', el: 'Βασιλικό', ru: 'Василикос' }, kind: 'permanent', status: 'operating', capacity: 60000, start: '2014', district: 'Larnaca', coords: { lat: 34.72507, lng: 33.28886 }, bulletinKey: 'vasilikos', source: AUDIT },
   { id: 'episkopi', name: { en: 'Episkopi', el: 'Επισκοπή', ru: 'Эпископи' }, kind: 'permanent', status: 'operating', capacity: 40000, start: '2014', district: 'Limassol', coords: { lat: 34.64323, lng: 32.90355 }, bulletinKey: 'episkopi', source: AUDIT },
-  { id: 'paphos', name: { en: 'Paphos (Kouklia)', el: 'Πάφος (Κούκλια)', ru: 'Пафос (Куклия)' }, kind: 'permanent', status: 'operating', capacity: 15000, start: '2021', district: 'Paphos', coords: { lat: 34.69774, lng: 32.54891 }, bulletinKey: 'paphos', source: AUDIT },
+  { id: 'paphos', name: { en: 'Paphos (Kouklia)', el: 'Πάφος (Κούκλια)', ru: 'Пафос (Куклия)' }, kind: 'permanent', status: 'operating', capacity: 15000, start: '2021', district: 'Paphos', coords: { lat: 34.69774, lng: 32.54891 }, bulletinKey: 'paphos', tempExtra: { capacity: 5000, since: '2026-03', until: '2027-09' }, source: AUDIT },
   // Mobile units
   { id: 'moni', name: { en: 'Moni', el: 'Μονή', ru: 'Мони' }, kind: 'mobile', status: 'operating', capacity: 15000, start: '2025', district: 'Limassol', coords: { lat: 34.71008, lng: 33.18498 }, bulletinKey: 'moni', source: 'https://www.gov.cy/georgia-agrotiki-anaptyxi-perivallon/enarxi-tis-leitourgias-kiniton-monadon-afalatosis-me-stocho-tin-enischysi-tou-ydatikou-isozygiou-tis-kyprou/' },
   { id: 'kissonerga', name: { en: 'Kissonerga', el: 'Κισσόνεργα', ru: 'Киссонерга' }, kind: 'mobile', status: 'operating', capacity: 12000, start: '2025', district: 'Paphos', coords: { lat: 34.8433, lng: 32.3873, approx: true }, bulletinKey: 'kissonerga', source: 'https://ted.europa.eu/en/notice/433062-2025/xml' },
@@ -59,6 +61,11 @@ export const DESAL_PLANTS: DesalPlant[] = [
   { id: 'germasogeia-floating', name: { en: 'Germasogeia (floating unit)', el: 'Γερμασόγεια (πλωτή μονάδα)', ru: 'Гермасогея (плавучая установка)' }, kind: 'mobile', status: 'postponed', capacity: 20000, start: '–', district: 'Limassol', source: CABINET_2SEP },
   { id: 'ayia-napa', name: { en: 'Ayia Napa', el: 'Αγία Νάπα', ru: 'Айя-Напа' }, kind: 'mobile', status: 'cancelled', capacity: 15000, start: '–', district: 'Famagusta', source: CABINET_2SEP },
 ];
+
+export const getPlant = (id: string) => DESAL_PLANTS.find(p => p.id === id);
+
+/** Capacity the plant can deliver now, including any temporary addition. */
+export const effectiveCapacity = (p: DesalPlant) => p.capacity + (p.tempExtra?.capacity ?? 0);
 
 export const operatingCapacity = () =>
   DESAL_PLANTS.filter(p => p.status === 'operating').reduce((a, p) => a + p.capacity, 0);

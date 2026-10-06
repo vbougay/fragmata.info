@@ -1,0 +1,5 @@
+The Kissonerga unit stands on Potima bay, north of Paphos in the Akamas municipality, next to the site of the planned Paphos marina. It feeds the Paphos supply system, one of the island's three separate drinking-water networks, alongside the permanent plant at Kouklia.
+
+The Water Development Department tendered it in January 2025 as a five-year water purchase: the contractor designs, finances, builds and runs a reverse-osmosis plant, and removes it at the end. Four companies bid, and on 19 May 2025 the contract went to SYCHEM SA of Athens at €1.47 per m³ for a minimum of 16,425,000 m³, a total of €24.1 million.
+
+The unit was built while the Kouklia plant was out of service after the fire of December 2024. A first module of 1,000 m³ a day started in August 2025, more followed, and full output came in December 2025. Capacity was raised along the way from 10,000 to 12,000 m³ a day. Output then dropped in August 2026, and by September the unit was running at a small fraction of its rating. The brief for a feasibility study tendered in July 2026 asks whether the unit should stay or be moved to serve the Akamas area.
