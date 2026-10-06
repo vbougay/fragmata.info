@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun, Receipt } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
@@ -145,6 +145,8 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
               <Waves className="h-4 w-4" />
               {language === 'el' ? 'Ζεν' : language === 'ru' ? 'Дзен' : 'Zen'}
             </Link>
+          </p>
+          <p className="mt-2 flex items-center justify-center gap-4 flex-wrap">
             {/* No noreferrer on the family sites: their analytics should see these visits as coming from Fragmata */}
             <a href={kairikaUrl(language)} target="_blank" rel="noopener" onClick={() => trackKairikaClick('footer', kairikaUrl(language))} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <CloudSun className="h-4 w-4" />
@@ -157,6 +159,10 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             <a href="https://giatroi.info/" target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Stethoscope className="h-4 w-4" />
               Giatroi
+            </a>
+            <a href="https://foroi.info" target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <Receipt className="h-4 w-4" />
+              Foroi
             </a>
           </p>
         </div>
