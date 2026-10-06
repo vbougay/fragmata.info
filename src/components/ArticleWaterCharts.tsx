@@ -286,9 +286,9 @@ const DESAL = SOURCE_COLOR.desalination;
 const DAMS = SOURCE_COLOR.dams;
 const BOREHOLES = SOURCE_COLOR.govBoreholes;
 
-/** Weeks of the WDD weekly bulletin that report plant output. */
-export const weeklyMix = () =>
-  weeksWithOutput().map(w => {
+/** Weeks of the WDD weekly bulletin that report plant output, optionally only those ending on or before `upTo` (ISO date). */
+export const weeklyMix = (upTo?: string) =>
+  weeksWithOutput().filter(w => !upTo || w.weekEnding <= upTo).map(w => {
     const desal = sum(w.desalination), dams = sum(w.treatment);
     return { weekEnding: w.weekEnding, desal, dams, share: desal / (desal + dams), plants: w.desalination ?? {} };
   });
@@ -296,10 +296,11 @@ function weeksWithOutput() {
   return WEEKLY_BULLETINS.filter(w => w.desalination && w.treatment);
 }
 
-export function WeeklyMixChart() {
+/** `upTo` hides weeks after a date; `brief` drops the sentence on the share's trend (for the dashboard, where tiles state it). */
+export function WeeklyMixChart({ upTo, brief = false }: { upTo?: string; brief?: boolean } = {}) {
   const lang = lng(useLanguage().language);
   const { show, hide, node } = useTip();
-  const weeks = weeklyMix();
+  const weeks = weeklyMix(upTo);
   if (!weeks.length) return null;
   const first = weeks[0], last = weeks[weeks.length - 1];
   const pct = (v: number) => `${Math.round(v * 100)}%`;
@@ -307,23 +308,32 @@ export function WeeklyMixChart() {
   const t = L({
     en: {
       title: 'Where the tap water came from, week by week',
-      sub: `Drinking water produced each week by the desalination units and by the treatment plants that take water from the dams, m³ a day. Desalination's share fell from ${pct(first.share)} in the week to ${dayLabel(first.weekEnding, 'en')} to ${pct(last.share)} in the week to ${dayLabel(last.weekEnding, 'en')}. Only weeks with a published bulletin are shown; there is none for August.`,
+      sub: 'Drinking water produced each week by the desalination units and by the treatment plants that take water from the dams, m³ a day.',
+      trend: ` Desalination's share fell from ${pct(first.share)} in the week to ${dayLabel(first.weekEnding, 'en')} to ${pct(last.share)} in the week to ${dayLabel(last.weekEnding, 'en')}.`,
+      gap: ' Only weeks with a published bulletin are shown', noAug: '; there is none for August',
       src: 'Cyprus Water Development Department, weekly «Δελτίο Νερού» workbooks, 2026 (plant output published from June). Treatment-plant output is mostly dam water; Tersefanou also treats some desalinated water from Vasilikos a second time.',
       desal: 'Desalination', dams: 'Treatment plants (dam water)', week: 'week to',
     },
     el: {
       title: 'Από πού ήρθε το νερό της βρύσης, εβδομάδα με εβδομάδα',
-      sub: `Πόσιμο νερό που παρήγαγαν κάθε εβδομάδα οι μονάδες αφαλάτωσης και τα διυλιστήρια που παίρνουν νερό από τα φράγματα, σε κ.μ. την ημέρα. Το μερίδιο της αφαλάτωσης έπεσε από ${pct(first.share)} την εβδομάδα ως τις ${dayLabel(first.weekEnding, 'el')} σε ${pct(last.share)} την εβδομάδα ως τις ${dayLabel(last.weekEnding, 'el')}. Εμφανίζονται μόνο οι εβδομάδες με δημοσιευμένο δελτίο· για τον Αύγουστο δεν υπάρχει.`,
+      sub: 'Πόσιμο νερό που παρήγαγαν κάθε εβδομάδα οι μονάδες αφαλάτωσης και τα διυλιστήρια που παίρνουν νερό από τα φράγματα, σε κ.μ. την ημέρα.',
+      trend: ` Το μερίδιο της αφαλάτωσης έπεσε από ${pct(first.share)} την εβδομάδα ως τις ${dayLabel(first.weekEnding, 'el')} σε ${pct(last.share)} την εβδομάδα ως τις ${dayLabel(last.weekEnding, 'el')}.`,
+      gap: ' Εμφανίζονται μόνο οι εβδομάδες με δημοσιευμένο δελτίο', noAug: '· για τον Αύγουστο δεν υπάρχει',
       src: 'Τμήμα Αναπτύξεως Υδάτων, εβδομαδιαία αρχεία «Δελτίο Νερού», 2026 (παραγωγή μονάδων από τον Ιούνιο). Η παραγωγή των διυλιστηρίων είναι κυρίως νερό φραγμάτων· το διυλιστήριο Τερσεφάνου επεξεργάζεται ξανά και μέρος του αφαλατωμένου νερού του Βασιλικού.',
       desal: 'Αφαλάτωση', dams: 'Διυλιστήρια (νερό φραγμάτων)', week: 'εβδομάδα ως',
     },
     ru: {
       title: 'Откуда шла вода в кране, неделя за неделей',
-      sub: `Питьевая вода, произведённая за неделю опреснителями и станциями очистки, которые берут воду из водохранилищ, м³ в сутки. Доля опреснения упала с ${pct(first.share)} за неделю до ${dayLabel(first.weekEnding, 'ru')} до ${pct(last.share)} за неделю до ${dayLabel(last.weekEnding, 'ru')}. Показаны только недели с опубликованным бюллетенем; за август его нет.`,
+      sub: 'Питьевая вода, произведённая за неделю опреснителями и станциями очистки, которые берут воду из водохранилищ, м³ в сутки.',
+      trend: ` Доля опреснения упала с ${pct(first.share)} за неделю до ${dayLabel(first.weekEnding, 'ru')} до ${pct(last.share)} за неделю до ${dayLabel(last.weekEnding, 'ru')}.`,
+      gap: ' Показаны только недели с опубликованным бюллетенем', noAug: '; за август его нет',
       src: 'Департамент водного развития Кипра, еженедельные файлы «Δελτίο Νερού», 2026 (выработка станций публикуется с июня). Выработка станций очистки — в основном вода из водохранилищ; станция Терсефану также повторно очищает часть опреснённой воды из Василикоса.',
       desal: 'Опреснение', dams: 'Станции очистки (вода водохранилищ)', week: 'неделя до',
     },
   }, lang);
+  // The trend sentence is written for a fall; the dashboard states the share in tiles instead.
+  const spansAugust = first.weekEnding < '2026-08-01' && last.weekEnding > '2026-08-31';
+  const subtitle = t.sub + (brief ? '' : t.trend) + t.gap + (spansAugust ? t.noAug : '') + '.';
 
   const W = 1000, H = 340, m = { t: 34, r: 20, b: 40, l: 60 };
   const vMax = 400000;
@@ -331,7 +341,7 @@ export function WeeklyMixChart() {
   const y = (v: number) => (H - m.b) - (v / vMax) * (H - m.b - m.t);
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <Frame title={t.title} subtitle={subtitle} source={t.src} height={H}
         legend={[{ color: DESAL, label: t.desal }, { color: DAMS, label: t.dams }]}>
         {[0, 100000, 200000, 300000, 400000].map(v => (
           <g key={v}>

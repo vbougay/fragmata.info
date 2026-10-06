@@ -63,6 +63,9 @@ export const DESAL_PLANTS: DesalPlant[] = [
 export const operatingCapacity = () =>
   DESAL_PLANTS.filter(p => p.status === 'operating').reduce((a, p) => a + p.capacity, 0);
 
+/** Date of the cabinet decision that completed today's list of approved plants; before it, `plannedNetCapacity` overstates what was approved. */
+export const PLANNED_AS_OF = '2026-09-02';
+
 /** Net capacity the approved permanent plants add (a replacement only counts its increase). */
 export const plannedNetCapacity = () =>
   DESAL_PLANTS.filter(p => p.status === 'approved').reduce((a, p) => {
@@ -109,11 +112,3 @@ export const SUPPLY_BY_SOURCE: SupplyYear[] = [
   { year: 2024, boreholes: 3.1, dams: 34.6, desalination: 74.9 },
 ];
 
-/** Desalinated share of the latest week's drinking-water production (desalination + treatment plants). */
-export function latestDesalShare(): { share: number; weekEnding: string } | null {
-  const w = [...WEEKLY_BULLETINS].reverse().find(b => b.desalination && b.treatment);
-  if (!w) return null;
-  const d = Object.values(w.desalination!).reduce((a, v) => a + v, 0);
-  const t = Object.values(w.treatment!).reduce((a, v) => a + v, 0);
-  return { share: d / (d + t), weekEnding: w.weekEnding };
-}

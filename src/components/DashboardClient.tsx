@@ -20,8 +20,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getLatestPublishedArticle } from '@/utils/articles';
-import { latestDesalShare } from '@/utils/desalinationData';
-import { DESAL_TEXT } from '@/utils/desalinationText';
+import { DashboardDesalination } from '@/components/DashboardDesalination';
 import { defaultLocale } from '@/utils/locale';
 
 const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
@@ -126,21 +125,6 @@ export function DashboardClient({
           );
         })()}
 
-        {(() => {
-          const desal = latestDesalShare();
-          if (!desal) return null;
-          return (
-            <Link
-              href={language === defaultLocale ? '/desalination' : `/${language}/desalination`}
-              className="flex items-center justify-center gap-2 -mt-5 mb-6 py-1 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors group"
-            >
-              <Droplets className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="truncate">{DESAL_TEXT[language].share}: {Math.round(desal.share * 100)}%</span>
-              <ArrowRight className="h-3 w-3 flex-shrink-0" />
-            </Link>
-          );
-        })()}
-
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8 modern-tabs">
           <TabsList className="w-full max-w-xl mx-auto grid grid-cols-4 mb-8 bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl p-1 border border-white/20 dark:border-white/10">
             <TabsTrigger value="dashboard" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-sm rounded-lg transition-all">{t('dashboard')}</TabsTrigger>
@@ -181,6 +165,7 @@ export function DashboardClient({
                   </div>
                 </div>
 
+                <DashboardDesalination />
                 <StorageForecast />
                 <RollingRainfall />
                 <MonthlyInflow />

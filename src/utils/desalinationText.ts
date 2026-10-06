@@ -11,6 +11,7 @@ export const DESAL_TEXT: Record<Locale, {
   tableTitle: string; plant: string; type: string; capacity: string; status: string; startCol: string; lastWeekCol: string;
   permanent: string; mobile: string; perDay: string; since: string; expected: string; lastWeek: string;
   approx: string; more: string; readArticle: string; netNote: string; sources: string;
+  dashIntro: string; desalDay: string; desalDaySub: string; damsDay: string; damsDaySub: string;
 }> = {
   en: {
     nav: 'Desalination',
@@ -30,6 +31,9 @@ export const DESAL_TEXT: Record<Locale, {
     lastWeek: 'Last reported week', approx: 'Approximate location', more: 'All desalination plants',
     readArticle: 'Read: where Cyprus\'s water comes from, and where it goes',
     netNote: 'The new Dhekelia plant replaces the existing one, so it adds 20,000 m³ a day, not 80,000.',
+    dashIntro: 'Most tap water now comes from the sea. Desalinated water goes straight into the drinking-water network, never into a dam, so each cubic metre of it is one the dams do not have to supply.',
+    desalDay: 'Desalinated', desalDaySub: 'm³ a day on average that week',
+    damsDay: 'From the dams', damsDaySub: 'm³ a day through the treatment plants that week',
     sources: 'Sources: Cyprus Water Development Department (weekly «Δελτίο Νερού» bulletins and the «Πηγές Ύδρευσης» supply table), Audit Office of the Republic, cabinet and ministry announcements; plant locations from the Department of Lands and Surveys. Statuses are updated by hand as news arrives.',
   },
   el: {
@@ -50,6 +54,9 @@ export const DESAL_TEXT: Record<Locale, {
     lastWeek: 'Τελευταία εβδομάδα', approx: 'Κατά προσέγγιση θέση', more: 'Όλες οι μονάδες αφαλάτωσης',
     readArticle: 'Διαβάστε: από πού έρχεται και πού πηγαίνει το νερό της Κύπρου',
     netNote: 'Η νέα μονάδα της Δεκέλειας αντικαθιστά την υπάρχουσα, άρα προσθέτει 20.000 κ.μ. την ημέρα, όχι 80.000.',
+    dashIntro: 'Το μεγαλύτερο μέρος του νερού της βρύσης έρχεται πλέον από τη θάλασσα. Το αφαλατωμένο νερό πηγαίνει κατευθείαν στο δίκτυο ύδρευσης, ποτέ σε φράγμα, άρα κάθε κυβικό του είναι ένα κυβικό που δεν χρειάζεται να δώσουν τα φράγματα.',
+    desalDay: 'Αφαλατωμένο', desalDaySub: 'κ.μ. την ημέρα κατά μέσο όρο εκείνη την εβδομάδα',
+    damsDay: 'Από τα φράγματα', damsDaySub: 'κ.μ. την ημέρα μέσω των διυλιστηρίων εκείνη την εβδομάδα',
     sources: 'Πηγές: Τμήμα Αναπτύξεως Υδάτων (εβδομαδιαίο «Δελτίο Νερού» και πίνακας «Πηγές Ύδρευσης»), Ελεγκτική Υπηρεσία, ανακοινώσεις Υπουργικού Συμβουλίου και Υπουργείου· θέσεις μονάδων από το Τμήμα Κτηματολογίου και Χωρομετρίας. Η κατάσταση κάθε μονάδας ενημερώνεται χειροκίνητα.',
   },
   ru: {
@@ -70,6 +77,9 @@ export const DESAL_TEXT: Record<Locale, {
     lastWeek: 'Последняя неделя', approx: 'Приблизительное место', more: 'Все опреснительные станции',
     readArticle: 'Читайте: откуда на Кипре берётся вода и куда уходит',
     netNote: 'Новая станция в Декелии заменит существующую, поэтому прибавит 20 000 м³ в сутки, а не 80 000.',
+    dashIntro: 'Большая часть воды в кране теперь поступает из моря. Опреснённая вода идёт прямо в сеть водоснабжения, а не в водохранилища, поэтому каждый её кубометр — это кубометр, который не нужно брать из водохранилищ.',
+    desalDay: 'Опреснено', desalDaySub: 'м³ в сутки в среднем за ту неделю',
+    damsDay: 'Из водохранилищ', damsDaySub: 'м³ в сутки через станции очистки за ту неделю',
     sources: 'Источники: Департамент водного развития Кипра (недельный бюллетень «Δελτίο Νερού» и таблица «Πηγές Ύδρευσης»), Счётная палата, решения Совета министров и министерства; местоположение станций — Департамент земель и кадастра. Статусы обновляются вручную.',
   },
 };

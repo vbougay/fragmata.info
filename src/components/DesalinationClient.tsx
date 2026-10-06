@@ -69,7 +69,7 @@ export function DesalinationClient() {
         </Breadcrumb>
 
         <h1 className="text-3xl font-bold mb-3 text-foreground">{tx.title}</h1>
-        <p className="text-base leading-relaxed text-muted-foreground mb-6 max-w-3xl">{tx.intro}</p>
+        <p className="text-base leading-relaxed text-muted-foreground mb-6">{tx.intro}</p>
 
         {article && (
           <Link href={localePath(`/articles/${ARTICLE_SLUG}`)} className="inline-flex items-center gap-2 mb-8 text-sm text-water-600 dark:text-water-400 hover:underline">
