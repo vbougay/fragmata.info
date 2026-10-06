@@ -20,6 +20,8 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getLatestPublishedArticle } from '@/utils/articles';
+import { latestDesalShare } from '@/utils/desalinationData';
+import { DESAL_TEXT } from '@/utils/desalinationText';
 import { defaultLocale } from '@/utils/locale';
 
 const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
@@ -119,6 +121,21 @@ export function DashboardClient({
             >
               <FileText className="h-3.5 w-3.5 flex-shrink-0" />
               <span className="truncate">{latest.title[language]}</span>
+              <ArrowRight className="h-3 w-3 flex-shrink-0" />
+            </Link>
+          );
+        })()}
+
+        {(() => {
+          const desal = latestDesalShare();
+          if (!desal) return null;
+          return (
+            <Link
+              href={language === defaultLocale ? '/desalination' : `/${language}/desalination`}
+              className="flex items-center justify-center gap-2 -mt-5 mb-6 py-1 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors group"
+            >
+              <Droplets className="h-3.5 w-3.5 flex-shrink-0" />
+              <span className="truncate">{DESAL_TEXT[language].share}: {Math.round(desal.share * 100)}%</span>
               <ArrowRight className="h-3 w-3 flex-shrink-0" />
             </Link>
           );

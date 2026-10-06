@@ -14,6 +14,22 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: '2026-10-08-cyprus-water-ins-and-outs',
+    date: '2026-10-08',
+    dataSetId: '30-SEP-2026',
+    author: 'Vladimir Bugay',
+    title: {
+      en: "Where Cyprus's Water Comes From, and Where It Goes",
+      el: 'Από Πού Έρχεται το Νερό της Κύπρου και Πού Πηγαίνει',
+      ru: 'Откуда на Кипре берётся вода и куда она уходит',
+    },
+    description: {
+      en: 'Rain, dams, desalination, boreholes and recycled water on one side; taps, farms and evaporation on the other. A map of the whole system for 2024 shows why new desalination plants spare the dams only about 31 mln. m³ a year, not the 66 they can produce.',
+      el: 'Βροχή, φράγματα, αφαλάτωση, γεωτρήσεις και ανακυκλωμένο νερό από τη μία· βρύσες, γεωργία και εξάτμιση από την άλλη. Ένας χάρτης ολόκληρου του συστήματος για το 2024 δείχνει γιατί οι νέες μονάδες αφαλάτωσης γλιτώνουν στα φράγματα μόνο περίπου 31 εκατ. κ.μ. τον χρόνο και όχι τα 66 που μπορούν να παράγουν.',
+      ru: 'Дождь, водохранилища, опреснение, скважины и очищенные стоки с одной стороны; краны, поля и испарение — с другой. Карта всей системы за 2024 год показывает, почему новые опреснительные станции сберегут водохранилищам лишь около 31 млн. м³ в год, а не те 66, что они способны произвести.',
+    },
+  },
+  {
     slug: '2026-10-01-happy-new-hydrological-year',
     date: '2026-10-01',
     dataSetId: '30-SEP-2026',

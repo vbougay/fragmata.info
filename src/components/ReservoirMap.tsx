@@ -12,6 +12,10 @@ import { useTranslation } from '@/utils/translations';
 import { Reservoir } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Map } from 'lucide-react';
+import Link from 'next/link';
+import DesalinationMarkers from '@/components/DesalinationMarkers';
+import { DESAL_TEXT } from '@/utils/desalinationText';
+import { defaultLocale } from '@/utils/locale';
 
 // Fix Leaflet's default icon issue
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -155,12 +159,19 @@ const ReservoirMap: React.FC = () => {
                 </Marker>
               );
             })}
+            <DesalinationMarkers />
           </MapContainer>
         </div>
 
         <div className="mt-4 p-3 bg-water-50 dark:bg-water-900/30 rounded-lg">
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">{t('mapNoteLabel')}:</strong> {t('mapNote')}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {DESAL_TEXT[language].mapNote}{' '}
+            <Link href={language === defaultLocale ? '/desalination' : `/${language}/desalination`} className="text-water-600 dark:text-water-400 hover:underline">
+              {DESAL_TEXT[language].more} →
+            </Link>
           </p>
         </div>
       </CardContent>

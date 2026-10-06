@@ -126,8 +126,17 @@ node .claude/skills/fetch-and-update/archive-water-bulletin.mjs
   again is a no-op. `--dry-run` lists without saving.
 - Commit whatever it adds together with the dataset (the cloud flow's `git add -A` already
   picks it up). Most runs add nothing: editions are weekly at best and weeks get skipped.
-- **Archiving only.** Do not parse the workbook, add it to the app, or mention it in the
-  summary or community posts.
+- **When it adds an edition, regenerate the app's weekly data** (the /desalination page,
+  the dashboard's "tap water from desalination" line and the article charts read it):
+
+  ```bash
+  npx tsx .claude/skills/fetch-and-update/water-bulletin-to-ts.ts
+  ```
+
+  This rewrites `src/utils/desalinationWeekly.ts` from every workbook in the archive; commit
+  it with the dataset. If the WDD changes the workbook layout, the script prints fewer
+  "editions with plant output" than before: check the new file rather than shipping a gap.
+  Do not mention the weekly bulletin in the summary or community posts.
 - **Never let it block the update.** If it exits non-zero (gov.cy down, index changed),
   retry once, note the failure in your final message, and carry on with the dam data.
 

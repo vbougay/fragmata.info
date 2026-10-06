@@ -38,6 +38,7 @@ import {
   NumbersGrid,
   OverflowMap,
 } from "@/components/ArticleYearReviewCharts";
+import { WaterFlowChart, WeeklyMixChart, YearlySupplyChart } from "@/components/ArticleWaterCharts";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -158,6 +159,10 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
         {type === "yir-outlook" && <OutlookChart />}
         {type === "yir-numbers" && <NumbersGrid />}
         {type === "yir-map" && <OverflowMap />}
+        {/* Water ins-and-outs article figures */}
+        {type === "water-flow" && <WaterFlowChart />}
+        {type === "desal-weekly" && <WeeklyMixChart />}
+        {type === "desal-yearly" && <YearlySupplyChart />}
       </DataProvider>
     </div>
   );
