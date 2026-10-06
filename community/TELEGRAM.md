@@ -3708,3 +3708,26 @@ Gap vs last year: +23.5pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 5 — Achna's biggest single-bulletin jump yet
+
+📰 Major update (Monday, three days since Friday) — total storage 35.68% (103.8 MCM), down slightly from 35.75% (104.0 MCM) on October 2. Arminou remains the only Southern Conveyor dam still rising, and Achna posted its biggest single-bulletin jump yet in its unexplained rise streak despite zero recorded inflow.
+
+### Telegram
+Sent: message_id=294, chat_id=151413643, at=2026-10-06T05:23:43Z
+```
+📰 Cyprus Dams — October 5
+
+Monday's bulletin, three days since Friday: total storage 35.68% (103.8 MCM) — down slightly from 35.75% (104.0 MCM) on October 2, the same slow drawdown pace continuing into the new season. Arminou remains the only Southern Conveyor dam still rising, up 1.1pp to 60.9%. Achna jumped again, up 1.9pp to 8.3% — its biggest single-bulletin rise yet, despite zero recorded inflow all season. Kalopanagiotis remains the only dam overflowing, unchanged at 100%. Gap over last year: +23.6pp. Season inflow: 0.3 MCM so far. Arminou→Kouris transfer still at zero this season.
+
+• Achna 8.3% (+1.9pp) — biggest single-bulletin rise yet, still zero recorded inflow
+• Agia Marina 47.7% (+1.7pp) — second straight gain
+• Arminou 60.9% (+1.1pp) — only Southern Conveyor dam still rising
+• Kalopanagiotis 100% — still the only dam overflowing
+• Argaka 43.5% (-0.4pp) — continues its multi-week slide
+• Kouris 37.1% (-0.2pp) — barely moved
+
+Gap vs last year: +23.6pp.
+
+🔗 https://fragmata.info
+```
