@@ -14,8 +14,8 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
-    slug: '2026-10-08-cyprus-water-ins-and-outs',
-    date: '2026-10-08',
+    slug: '2026-10-09-cyprus-water-ins-and-outs',
+    date: '2026-10-09',
     dataSetId: '30-SEP-2026',
     author: 'Vladimir Bugay',
     title: {

@@ -24,7 +24,7 @@ const DesalinationMap = dynamic(() => import('@/components/DesalinationMap'), {
   loading: () => <div className="w-full h-[440px] rounded-lg bg-muted animate-pulse" />,
 });
 
-const ARTICLE_SLUG = '2026-10-08-cyprus-water-ins-and-outs';
+const ARTICLE_SLUG = '2026-10-09-cyprus-water-ins-and-outs';
 const MONTHS = {
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   el: ['Ιανουαρίου', 'Φεβρουαρίου', 'Μαρτίου', 'Απριλίου', 'Μαΐου', 'Ιουνίου', 'Ιουλίου', 'Αυγούστου', 'Σεπτεμβρίου', 'Οκτωβρίου', 'Νοεμβρίου', 'Δεκεμβρίου'],
