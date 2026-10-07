@@ -16,6 +16,7 @@ import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { yearlyInflowData } from '@/utils/dataManager';
 import { historicalStorageData } from '@/utils/historicalStorageData';
+import { parseReportDate } from '@/utils/reservoirUtils';
 
 type Lang = 'en' | 'el' | 'ru';
 const L = <T,>(m: { en: T } & Partial<Record<Lang, T>>, lang: string): T => m[lang as Lang] ?? m.en;
@@ -26,6 +27,14 @@ const MUTED = '#9aa0a8';
 const RECORD = '#d94f2b';
 
 const fmt = (v: number, d = 1) => v.toFixed(d);
+/** a / b, or 0 when b is not a positive number (an empty season has a zero max). */
+const ratio = (a: number, b: number) => (b > 0 ? a / b : 0);
+
+/** "25-SEP-2026" → "2026-09-25"; null if the id does not parse. */
+function isoOf(dataSetId: string): string | null {
+  const p = parseReportDate(dataSetId);
+  return p ? `${p.year}-${String(p.month).padStart(2, '0')}-${String(p.day).padStart(2, '0')}` : null;
+}
 
 /* ---------- shared text marks ---------- */
 
@@ -153,24 +162,25 @@ export function AugSepInflowChart() {
   const { currentDataSetId: ds } = useDataContext();
   const { show, hide, node } = useTip();
   const rows = useMemo(() => yearlyInflowData(ds).map(y => ({ year: y.year, v: y.months['Aug-Sep'] ?? 0, jul: y.months['July'] ?? 0 })), [ds]);
+  if (!rows.length) return null;
   const cur = rows[rows.length - 1];
-  const prevBest = rows.slice(0, -1).reduce((a, b) => (b.v > a.v ? b : a));
+  const prevBest = rows.slice(0, -1).reduce((a, b) => (b.v > a.v ? b : a), { year: '', v: 0, jul: 0 });
 
   const t = L({
     en: {
-      title: `Aug–Sep inflow: ${fmt(cur.v, 2)} mln. m³, ${fmt(cur.v / prevBest.v, 1)}× the previous best`,
+      title: `Aug–Sep inflow: ${fmt(cur.v, 2)} mln. m³, ${fmt(ratio(cur.v, prevBest.v), 1)}× the previous best`,
       sub: `Water that reached the dams in August and September, by hydrological season. The previous high was ${prevBest.year} at ${fmt(prevBest.v, 2)} mln. m³. In six of the other ten seasons it was under 0.1 mln. m³.`,
       src: 'Cyprus Water Development Department, monthly inflow table in the daily bulletin; 2025/26 through the latest bulletin, with the last days of September still to come.',
       unit: 'mln. m³',
     },
     el: {
-      title: `Εισροή Αυγ–Σεπ: ${fmt(cur.v, 2)} εκατ. κ.μ., ${fmt(cur.v / prevBest.v, 1)}× το προηγούμενο ρεκόρ`,
+      title: `Εισροή Αυγ–Σεπ: ${fmt(cur.v, 2)} εκατ. κ.μ., ${fmt(ratio(cur.v, prevBest.v), 1)}× το προηγούμενο ρεκόρ`,
       sub: `Νερό που έφτασε στα φράγματα τον Αύγουστο και τον Σεπτέμβριο, ανά υδρολογική περίοδο. Το προηγούμενο υψηλό ήταν το ${prevBest.year} με ${fmt(prevBest.v, 2)} εκατ. κ.μ. Σε έξι από τις άλλες δέκα περιόδους ήταν κάτω από 0.1 εκατ. κ.μ.`,
       src: 'Τμήμα Αναπτύξεως Υδάτων, πίνακας μηνιαίας εισροής στο ημερήσιο δελτίο· 2025/26 ως το τελευταίο δελτίο, με τις τελευταίες μέρες του Σεπτεμβρίου να απομένουν.',
       unit: 'εκατ. κ.μ.',
     },
     ru: {
-      title: `Приток за авг–сен: ${fmt(cur.v, 2)} млн. м³, в ${fmt(cur.v / prevBest.v, 1)} раза больше прежнего рекорда`,
+      title: `Приток за авг–сен: ${fmt(cur.v, 2)} млн. м³, в ${fmt(ratio(cur.v, prevBest.v), 1)} раза больше прежнего рекорда`,
       sub: `Вода, поступившая в дамбы в августе и сентябре, по гидрологическим сезонам. Прежний максимум — ${prevBest.year}, ${fmt(prevBest.v, 2)} млн. м³. В шести из остальных десяти сезонов — меньше 0.1 млн. м³.`,
       src: 'Департамент водного развития Кипра, таблица месячного притока в ежедневном бюллетене; 2025/26 по последний бюллетень, последние дни сентября ещё впереди.',
       unit: 'млн. м³',
@@ -178,9 +188,9 @@ export function AugSepInflowChart() {
   }, language);
 
   const W = 1000, H = 320, m = { t: 30, r: 20, b: 36, l: 50 };
-  const max = Math.ceil(cur.v * 1.15 * 10) / 10;
+  const max = Math.max(0.1, Math.ceil(Math.max(...rows.map(r => r.v)) * 1.15 * 10) / 10);
   const bw = (W - m.l - m.r) / rows.length;
-  const y = (v: number) => (H - m.b) - (v / max) * (H - m.b - m.t);
+  const y = (v: number) => (H - m.b) - ratio(v, max) * (H - m.b - m.t);
   const ticks = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5].filter(v => v <= max);
 
   return (
@@ -225,13 +235,16 @@ const ACHNA_RAIN: { day: string; mm: number }[] = [
 
 export function AchnaRefillChart() {
   const { language } = useLanguage();
+  const { currentDataSetId: ds } = useDataContext();
   const { show, hide, node } = useTip();
-  const pts = useMemo(
-    () => historicalStorageData
-      .filter(e => e.date >= '2026-06-01' && e.achna != null)
-      .map(e => ({ day: e.date, v: e.achna as number })),
-    [],
-  );
+  // Readings up to the article's bulletin; later ones would run off the Oct edge.
+  const pts = useMemo(() => {
+    const asOf = isoOf(ds) ?? '2026-09-30';
+    return historicalStorageData
+      .filter(e => e.date >= '2026-06-01' && e.date <= asOf && e.achna != null)
+      .map(e => ({ day: e.date, v: e.achna as number }));
+  }, [ds]);
+  if (!pts.length) return null;
   const last = pts[pts.length - 1];
   const low = pts.reduce((a, b) => (b.v < a.v ? b : a));
 

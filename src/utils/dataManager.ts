@@ -181,6 +181,56 @@ const importMap: Record<string, () => Promise<DataModule>> = {
   '17-MAR-2025': () => import('./data-17-mar-2025'),
 };
 
+/**
+ * A dataset module flattened to plain data, so a Server Component can load it
+ * and hand it to the client. Articles use this to render against the bulletin
+ * they were written about: without it, a lazy dataset that is not in the cache
+ * silently resolves to the latest one (see resolveModule).
+ */
+export interface DatasetSnapshot {
+  id: string;
+  reservoirData: Reservoir[];
+  yearlyInflowData: YearlyInflowData[];
+  reportDate: string;
+  waterTransferred: { from: string; to: string; sinceOct: number } | null;
+  summaryChanges: Record<'en' | 'el' | 'ru', string | null>;
+  damSummaries: Record<string, Record<'en' | 'el' | 'ru', string | null>>;
+}
+
+const SNAPSHOT_LANGS = ['en', 'el', 'ru'] as const;
+
+export async function getDatasetSnapshot(id: string): Promise<DatasetSnapshot | null> {
+  await ensureDatasetLoaded(id);
+  const mod = moduleCache.get(id);
+  if (!mod) return null;
+  const perLang = (f: (l: 'en' | 'el' | 'ru') => string | null) =>
+    Object.fromEntries(SNAPSHOT_LANGS.map(l => [l, f(l)])) as Record<'en' | 'el' | 'ru', string | null>;
+  return {
+    id,
+    reservoirData: mod.reservoirData,
+    yearlyInflowData: mod.yearlyInflowData,
+    reportDate: mod.getReportDate(),
+    waterTransferred: mod.waterTransferred ?? null,
+    summaryChanges: perLang(l => mod.getSummaryChanges?.(l) ?? null),
+    damSummaries: Object.fromEntries(
+      mod.reservoirData.map(r => [r.name, perLang(l => mod.getDamSummary?.(r.name, l) ?? null)]),
+    ),
+  };
+}
+
+/** Put a server-loaded snapshot into the cache. Synchronous, so it can run during render. */
+export function registerDatasetSnapshot(s: DatasetSnapshot): void {
+  if (moduleCache.has(s.id)) return;
+  moduleCache.set(s.id, {
+    reservoirData: s.reservoirData,
+    yearlyInflowData: s.yearlyInflowData,
+    getReportDate: () => s.reportDate,
+    waterTransferred: s.waterTransferred ?? undefined,
+    getSummaryChanges: s.summaryChanges.en == null ? undefined : (l = 'en') => s.summaryChanges[l] ?? '',
+    getDamSummary: (name, l = 'en') => s.damSummaries[name]?.[l] ?? null,
+  });
+}
+
 /** Load a dataset module into the cache. No-op if already cached. */
 export async function ensureDatasetLoaded(id: string): Promise<void> {
   if (moduleCache.has(id)) return;
