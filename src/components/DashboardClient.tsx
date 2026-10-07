@@ -20,6 +20,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getLatestPublishedArticle } from '@/utils/articles';
+import { DashboardDesalination } from '@/components/DashboardDesalination';
 import { defaultLocale } from '@/utils/locale';
 
 const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
@@ -164,6 +165,7 @@ export function DashboardClient({
                   </div>
                 </div>
 
+                <DashboardDesalination />
                 <StorageForecast />
                 <RollingRainfall />
                 <MonthlyInflow />

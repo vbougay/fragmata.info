@@ -1,0 +1,5 @@
+The cabinet approved a mobile unit for Ayia Napa on 29 October 2025 at 10,000 m³ a day for five years, and on 22 January 2026 enlarged it to 15,000 m³ a day for seven years. It was to stand on state forest land at a former camping site near Nissi beach and start in October 2026.
+
+The plan met strong local opposition. In February 2026 the Famagusta District Local Government Organisation (EOA) wrote against a plant at the entrance to the resort, and hoteliers pointed to Nissi and Makronissos beaches and complained that there had been no consultation and no impact study. At a meeting chaired by the minister on 27 February 2026 the project was moved to Agia Thekla beach as a permanent plant of up to 30,000 m³ a day, and local authorities and hoteliers signed minutes accepting responsibility for any shortage this caused in 2027.
+
+The tender for the mobile unit drew three bids and was closed without award on 15 July 2026. The cabinet cancelled the unit on 2 September 2026, the same day it approved the permanent Agia Thekla plant, now due in 2030.

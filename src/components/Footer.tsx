@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun, Receipt } from 'lucide-react';
+import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun, Droplets, Receipt } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
 import { useTranslation } from '@/utils/translations';
 import { reservoirData } from '@/utils/dataManager';
 import { REGION_SLUG_MAP, DAM_SLUG_MAP, REGION_DAMS } from '@/utils/slugs';
 import { kairikaUrl, trackKairikaClick } from '@/utils/kairika';
+import { DESAL_TEXT } from '@/utils/desalinationText';
 
 function localePath(language: string, path: string): string {
   return language === 'en' ? path : `/${language}${path}`;
@@ -140,6 +141,10 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
             <Link href={localePath(language, '/articles')} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <FileText className="h-4 w-4" />
               {t('articles')}
+            </Link>
+            <Link href={localePath(language, '/desalination')} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
+              <Droplets className="h-4 w-4" />
+              {DESAL_TEXT[language].nav}
             </Link>
             <Link href={localePath(language, '/zen')} className="inline-flex items-center gap-1.5 hover:text-water-600 dark:hover:text-water-400 transition-colors">
               <Waves className="h-4 w-4" />

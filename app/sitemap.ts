@@ -3,10 +3,11 @@ import { getAllRegionSlugs, getAllDamSlugs } from "@/utils/slugs";
 import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/utils/articles";
 import { DEFAULT_DATASET_ID } from "@/utils/dataManager";
 import { parseReportDate } from "@/utils/reservoirUtils";
+import { DESAL_PLANTS } from "@/utils/desalinationData";
 
 const siteUrl = "https://fragmata.info";
 
-const pages = ["", "/regions", "/map", "/table", "/zen"];
+const pages = ["", "/regions", "/map", "/table", "/zen", "/desalination"];
 const locales = ["en", "el", "ru"] as const;
 
 function datasetIdToDate(id: string): Date {
@@ -51,6 +52,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     makeEntry(`/dam/${slug}`, 0.7, latestDataDate)
   );
 
+  const plantPages = DESAL_PLANTS.flatMap((p) =>
+    makeEntry(`/desalination/${p.id}`, 0.6, latestDataDate)
+  );
+
   const latestArticle = getAllArticles()[0];
   const latestArticleDate = latestArticle ? new Date(latestArticle.date) : latestDataDate;
   const articleListPage = makeEntry("/articles", 0.5, latestArticleDate);
@@ -61,5 +66,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return makeEntry(`/articles/${slug}`, 0.6, date);
   });
 
-  return [...mainPages, ...regionPages, ...damPages, ...articleListPage, ...articlePages];
+  return [...mainPages, ...regionPages, ...damPages, ...plantPages, ...articleListPage, ...articlePages];
 }
