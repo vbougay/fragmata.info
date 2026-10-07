@@ -11,7 +11,7 @@ import { DataProvider } from "@/context/DataContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/utils/translations";
 import { defaultLocale } from "@/utils/locale";
-import { getReservoirsWithDrainDates } from "@/utils/dataManager";
+import { getReservoirsWithDrainDates, registerDatasetSnapshot, type DatasetSnapshot } from "@/utils/dataManager";
 import { getAllSparklineData } from "@/utils/sparklineData";
 import { DAM_SLUG_MAP, REGION_SLUG_MAP } from "@/utils/slugs";
 import {
@@ -161,8 +161,8 @@ function ArticleChartEmbed({ embed, dataSetId }: { embed: ChartEmbed; dataSetId:
         {type === "yir-map" && <OverflowMap />}
         {/* Water ins-and-outs article figures */}
         {type === "water-flow" && <WaterFlowChart />}
-        {type === "desal-weekly" && <WeeklyMixChart />}
-        {type === "desal-yearly" && <YearlySupplyChart />}
+        {type === "desal-weekly" && <WeeklyMixChart upTo={attrs.upTo} />}
+        {type === "desal-yearly" && <YearlySupplyChart through={attrs.through ? +attrs.through : undefined} />}
       </DataProvider>
     </div>
   );
@@ -248,11 +248,15 @@ interface ArticleClientProps {
   title: string;
   date: string;
   dataSetId: string;
+  /** The article's dataset, loaded on the server. */
+  dataSet?: DatasetSnapshot | null;
   prevArticle?: ArticleNav;
   nextArticle?: ArticleNav;
 }
 
-export function ArticleClient({ markdown, title, date, dataSetId, prevArticle, nextArticle }: ArticleClientProps) {
+export function ArticleClient({ markdown, title, date, dataSetId, dataSet, prevArticle, nextArticle }: ArticleClientProps) {
+  // Before any embed reads it: an uncached dataset resolves to the latest one.
+  if (dataSet) registerDatasetSnapshot(dataSet);
   const { language } = useLanguage();
   const t = useTranslation(language);
   const localePath = (path: string) =>

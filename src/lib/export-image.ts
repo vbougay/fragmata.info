@@ -33,8 +33,14 @@ const ICON =
 
 const isDark = () => document.documentElement.classList.contains("dark");
 
-/** The credit under the image: icon and wordmark, the page's name and full address, the licence. */
-function creditFooter(url: string, pageName: string, siteName: string): HTMLElement {
+/**
+ * The credit under the image: icon and wordmark, the page's name and full
+ * address, the licence, and a QR code to the page. The code keeps dark
+ * modules on white in both themes (many scanners miss inverted codes), so in
+ * the dark theme it sits on a small white tile.
+ */
+async function creditFooter(url: string, pageName: string, siteName: string): Promise<HTMLElement> {
+  const { renderSVG } = await import("uqr");
   const el = (tag: string, css: string, text?: string) => {
     const e = document.createElement(tag);
     e.style.cssText = css;
@@ -65,7 +71,13 @@ function creditFooter(url: string, pageName: string, siteName: string): HTMLElem
 
   const licence = el("span", "font-size:12px;line-height:1.25;text-align:right;flex:none;", LICENCE);
 
-  foot.append(brand, rule, page, licence);
+  const qr = el("span", `display:flex;flex:none;${isDark() ? "padding:4px;background:#ffffff;border-radius:4px;" : ""}`);
+  qr.innerHTML = renderSVG(url, { border: 0, whiteColor: "#ffffff", blackColor: "#0f172a" });
+  const svg = qr.querySelector("svg");
+  svg?.setAttribute("width", "60");
+  svg?.setAttribute("height", "60");
+
+  foot.append(brand, rule, page, licence, qr);
   return foot;
 }
 
@@ -102,7 +114,7 @@ async function inlineFigure(node: HTMLElement, url: string, pageName: string, si
   // The frame, not the figure, is what gets drawn: its padding sets the margins of the image.
   const frame = document.createElement("div");
   frame.style.cssText = `box-sizing:border-box;width:${width}px;padding:26px 32px 30px;background:hsl(var(--card));`;
-  frame.append(clone, creditFooter(url, pageName, siteName));
+  frame.append(clone, await creditFooter(url, pageName, siteName));
 
   host.append(frame);
   document.body.append(host);
