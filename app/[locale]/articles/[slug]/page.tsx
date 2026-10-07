@@ -6,7 +6,6 @@ import { ArticleClient } from "@/components/ArticleClient";
 import { locales, isValidLocale } from "@/utils/locale";
 import { getAllArticles, getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
 import { autoLinkDams } from "@/utils/autoLinkDams";
-import { getDatasetSnapshot } from "@/utils/dataManager";
 
 const siteUrl = "https://fragmata.info";
 
@@ -118,9 +117,6 @@ export default async function ArticlePage({
   if (!rawMarkdown) notFound();
   // Link each dam's first mention to its /dam/<slug> page (internal linking for SEO)
   const markdown = autoLinkDams(rawMarkdown, lang);
-  // The article's own bulletin, sent with the page so its charts never fall
-  // back to whatever dataset is newest.
-  const dataSet = await getDatasetSnapshot(article.dataSetId);
 
   // Compute prev/next articles (sorted newest-first)
   const allArticles = getAllArticles();
@@ -169,7 +165,6 @@ export default async function ArticlePage({
       title={article.title[lang]}
       date={article.date}
       dataSetId={article.dataSetId}
-      dataSet={dataSet}
       prevArticle={older ? { slug: older.slug, title: older.title[lang] } : undefined}
       nextArticle={newer ? { slug: newer.slug, title: newer.title[lang] } : undefined}
     />
