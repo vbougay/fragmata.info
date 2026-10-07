@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { yearlyInflowData, getReportDate, getScenarioInflowAverages } from '@/utils/dataManager';
 import { parseReportDate } from '@/utils/reservoirUtils';
 import { useDataContext } from '@/context/DataContext';
@@ -7,6 +7,7 @@ import { useTranslation, translations } from '@/utils/translations';
 import { TrendingUp, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ChartExportBar, ExportCaption } from '@/components/ChartExportBar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
   BarChart, Bar, AreaChart, Area, LineChart, Line,
@@ -73,6 +74,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
     return data.length > 0 ? data[data.length - 1].year : '25/26';
   });
   const [viewMode, setViewMode] = useState<ViewMode>('cumulative');
+  const exportRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hiddenYears, setHiddenYears] = useState<Set<string>>(new Set());
 
@@ -285,7 +287,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
   ) : null;
 
   return (
-    <Card id="inflow" className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 animate-fade-in">
+    <Card id="inflow" ref={exportRef} data-export-width="live" className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 animate-fade-in">
       <CardHeader className="pb-2 px-3 sm:px-6">
         <CardTitle className="text-lg md:text-xl flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -293,13 +295,13 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
             {linkHref ? (
               <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
                 <span>{t('monthlyInflow')}</span>
-                <ExternalLink className="h-3.5 w-3.5 opacity-50" />
+                <ExternalLink data-export="hide" className="h-3.5 w-3.5 opacity-50" />
               </Link>
             ) : (
               <span>{t('monthlyInflow')}</span>
             )}
           </div>
-          <div className="flex items-center gap-2">
+          <div data-export="hide" className="flex items-center gap-2">
             <div className="flex rounded-lg bg-gray-100 dark:bg-gray-800 p-0.5">
               <button
                 onClick={() => setViewMode('cumulative')}
@@ -344,7 +346,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="px-0 sm:px-6">
+      <CardContent data-export-flush className="px-0 sm:px-6">
         <div className={`${isAllMode ? 'h-[26rem] md:h-[29rem]' : 'h-64 md:h-72'} w-full mt-4 transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
 
           {/* CUMULATIVE — Single Season */}
@@ -505,6 +507,13 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
             </div>
           </div>
         )}
+        <ExportCaption
+          className="px-3 sm:px-0"
+          subject={`${t(viewMode === 'cumulative' ? 'cumulativeView' : 'monthlyView')} · ${isAllMode ? t('allSeasons') : selectedYear}`}
+        />
+        <div className="px-3 sm:px-0">
+          <ChartExportBar target={exportRef} name={`inflow-${viewMode}-${selectedYear.replace(/[^0-9a-z]+/gi, '-')}`} />
+        </div>
       </CardContent>
     </Card>
   );

@@ -49,7 +49,7 @@ The dashboard updates weekly and includes:
 - **Interactive map** with Leaflet-based visualisation
 - **Heatmaps** spanning 10 years — clearly showing drought and recovery cycles
 - **10-year forecast** with three scenarios and a restriction threshold
-- **Media mode** (fragmata.info/media) — generates publication-ready PNG infographics
+- **Chart images** — article charts can be copied or downloaded as publication-ready PNGs
 
 All data comes from public reports by the Cyprus Water Development Department. The project's source code is open. The platform is entirely free.
 

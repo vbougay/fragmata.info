@@ -175,9 +175,14 @@ export const translations = {
     full: "Full",
     fillLevel: "Fill",
 
-    // Media Mode
-    downloadImage: "Download as Image",
-    downloading: "Downloading...",
+    // Chart export
+    exportCopy: "Copy image",
+    exportDownload: "Download PNG",
+    exportCopied: "Copied",
+    exportShared: "Shared",
+    exportDownloaded: "Downloaded",
+    exportFailed: "Could not make the image",
+    exportBulletin: "Water Development Department bulletin of {date}",
 
     // Storage Forecast
     storageForecast: "Storage Forecast",
@@ -389,9 +394,14 @@ export const translations = {
     full: "Πλήρες",
     fillLevel: "Πλήρωση",
 
-    // Media Mode
-    downloadImage: "Λήψη ως Εικόνα",
-    downloading: "Γίνεται λήψη...",
+    // Chart export
+    exportCopy: "Αντιγραφή εικόνας",
+    exportDownload: "Λήψη PNG",
+    exportCopied: "Αντιγράφηκε",
+    exportShared: "Κοινοποιήθηκε",
+    exportDownloaded: "Λήφθηκε",
+    exportFailed: "Η εικόνα δεν δημιουργήθηκε",
+    exportBulletin: "Δελτίο Τμήματος Αναπτύξεως Υδάτων, {date}",
 
     // Storage Forecast
     storageForecast: "Πρόβλεψη Αποθήκευσης",
@@ -603,9 +613,14 @@ export const translations = {
     full: "Полн.",
     fillLevel: "Заполн.",
 
-    // Media Mode
-    downloadImage: "Скачать как изображение",
-    downloading: "Загрузка...",
+    // Chart export
+    exportCopy: "Копировать картинку",
+    exportDownload: "Скачать PNG",
+    exportCopied: "Скопировано",
+    exportShared: "Отправлено",
+    exportDownloaded: "Скачано",
+    exportFailed: "Не удалось создать картинку",
+    exportBulletin: "Бюллетень Департамента водного развития от {date}",
 
     // Storage Forecast
     storageForecast: "Прогноз запасов",

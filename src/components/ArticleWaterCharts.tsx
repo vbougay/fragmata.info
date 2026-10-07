@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ChartFrame } from '@/components/ChartFrame';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   WATER_BALANCE_YEAR,
@@ -43,43 +43,7 @@ const USE_COLOR = '#6b7280';
 
 const fmt = (v: number, d = 1) => v.toFixed(d);
 
-/* ---------- shared frame (mirrors ArticleYearReviewCharts) ---------- */
-
-interface FrameProps {
-  title: string; subtitle: string; source: string; height: number;
-  children: React.ReactNode; minWidth?: number; legend?: { color: string; label: string }[];
-}
-
-function Frame({ title, subtitle, source, height, children, minWidth = 640, legend }: FrameProps) {
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-4 sm:p-5">
-        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
-        {legend && legend.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
-            {legend.map(l => (
-              <span key={l.label} className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                <i className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: l.color }} />
-                {l.label}
-              </span>
-            ))}
-          </div>
-        )}
-        <div className="relative mt-3">
-          <div className="overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-20px),transparent)] sm:[mask-image:none]">
-            <svg viewBox={`0 0 1000 ${height}`} className="block h-auto w-full" style={{ minWidth }}
-              role="img" aria-label={`${title.replace(/[.!?]$/, '')}. ${subtitle}`}>
-              {children}
-            </svg>
-          </div>
-        </div>
-        <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 sm:hidden">← swipe to see the full chart →</p>
-        <p className="mt-3 border-t border-gray-200 pt-2 text-[11px] leading-relaxed text-gray-500 dark:border-gray-700 dark:text-gray-500">{source}</p>
-      </CardContent>
-    </Card>
-  );
-}
+/* ---------- shared text marks ---------- */
 
 const SubText = (p: React.SVGProps<SVGTextElement>) => (
   <text {...p} className="fill-current text-[10px] tabular-nums text-gray-500 dark:text-gray-400" />
@@ -232,7 +196,7 @@ export function WaterFlowChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}>
+      <ChartFrame name="water-flow" title={t.title} subtitle={t.sub} source={t.src} height={H}>
         <defs>
           <pattern id="wf-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <rect width="6" height="6" fill={SOURCE_COLOR.privateBoreholes} opacity={0.18} />
@@ -265,7 +229,7 @@ export function WaterFlowChart() {
           nodeLabel(k, t.sources[k], num(totalForSource(k), est(k)), x0 - 10, src[k].y + src[k].h / 2, 'end'))}
         {WATER_USES.map(k =>
           nodeLabel(k, t.uses[k], num(totalForUse(k), k === 'farms'), x1 + bw + 10, use[k].y + use[k].h / 2, 'start'))}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -341,7 +305,7 @@ export function WeeklyMixChart({ upTo, brief = false }: { upTo?: string; brief?:
   const y = (v: number) => (H - m.b) - (v / vMax) * (H - m.b - m.t);
   return (
     <>
-      <Frame title={t.title} subtitle={subtitle} source={t.src} height={H}
+      <ChartFrame name="weekly-mix" title={t.title} subtitle={subtitle} source={t.src} height={H}
         legend={[{ color: DESAL, label: t.desal }, { color: DAMS, label: t.dams }]}>
         {[0, 100000, 200000, 300000, 400000].map(v => (
           <g key={v}>
@@ -362,7 +326,7 @@ export function WeeklyMixChart({ upTo, brief = false }: { upTo?: string; brief?:
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -406,7 +370,7 @@ export function YearlySupplyChart() {
   const y = (v: number) => (H - m.b) - (v / vMax) * (H - m.b - m.t);
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="yearly-supply" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: DESAL, label: t.desal }, { color: DAMS, label: t.dams }, { color: BOREHOLES, label: t.bore }, { color: '#9aa0a8', label: t.tank }]}>
         {[0, 20, 40, 60, 80, 100, 120].map(v => (
           <g key={v}>
@@ -434,7 +398,7 @@ export function YearlySupplyChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -465,7 +429,7 @@ export function PlantWeeklyChart({ plantKey, capacity, title, subtitle, source }
   const ticks = Array.from({ length: vMax / step + 1 }, (_, i) => i * step);
   return (
     <>
-      <Frame title={title} subtitle={subtitle} source={source} height={H}>
+      <ChartFrame name={`plant-${plantKey}`} title={title} subtitle={subtitle} source={source} height={H}>
         {ticks.map(v => (
           <g key={v}>
             <line x1={m.l} x2={W - m.r} y1={y(v)} y2={y(v)} className="stroke-current text-gray-200 dark:text-gray-700" strokeWidth={1} />
@@ -485,7 +449,7 @@ export function PlantWeeklyChart({ plantKey, capacity, title, subtitle, source }
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );

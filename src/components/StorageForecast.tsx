@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { getForecastForSelection, getStorageForKeys, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS } from '@/utils/dataManager';
 import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
 import { useDataContext } from '@/context/DataContext';
@@ -8,6 +8,7 @@ import { TrendingDown, Info, ExternalLink } from 'lucide-react';
 import { isDrainDateBeyondYears } from '@/utils/reservoirUtils';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ChartExportBar, ExportCaption } from '@/components/ChartExportBar';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
   AreaChart, Area,
@@ -97,6 +98,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
   const [isMounted, setIsMounted] = useState(false);
   const [selectedId, setSelectedId] = useState(fixedSelectionId ?? 'all');
   const isFixed = fixedSelectionId !== undefined;
+  const exportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -152,7 +154,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
   };
 
   return (
-    <Card id="forecast" className={`bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <Card id="forecast" ref={exportRef} data-export-width="live" className={`bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <CardHeader className="pb-2 px-3 sm:px-6">
         <CardTitle className="text-lg md:text-xl flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -160,16 +162,16 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
             {linkHref ? (
               <Link href={linkHref} className="hover:text-water-600 dark:hover:text-water-400 transition-colors inline-flex items-center gap-1.5">
                 <span>{t('storageForecast')}</span>
-                <ExternalLink className="h-3.5 w-3.5 opacity-50" />
+                <ExternalLink data-export="hide" className="h-3.5 w-3.5 opacity-50" />
               </Link>
             ) : (
               <span>{t('storageForecast')}</span>
             )}
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
+          <div data-export-nowrap className="flex items-center gap-2 flex-wrap">
             {!isFixed && (
               <Select value={selectedId} onValueChange={setSelectedId}>
-                <SelectTrigger className="w-[200px] h-8 text-xs">
+                <SelectTrigger data-export="hide" className="w-[200px] h-8 text-xs">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -207,7 +209,7 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="px-1 sm:px-4">
+      <CardContent data-export-flush className="px-1 sm:px-4">
         {/* Legend */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2 px-2 text-xs">
           <div className="flex items-center gap-1.5">
@@ -386,6 +388,11 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
                 : `300 повторов погоды прошлых лет (с 1995 года) от сегодняшнего уровня; расход растёт вместе с запасом воды. Половина из них заканчивается выше медианы, 1 из 10 — ниже сухой линии и 1 из 10 — выше дождливой. Карточки показывают, когда запас падает ниже ${forecast.restrictionThresholdPct}% — порог введения ограничений водоснабжения.`}
           </span>
         </div>
+        <ExportCaption
+          className="px-2"
+          subject={selectedId === 'all' ? t('allMainReservoirs') : REGION_DISPLAY_NAMES[selectedId]?.[language] ?? DAM_DISPLAY_NAMES[selectedId]?.[language] ?? selectedId}
+        />
+        <ChartExportBar target={exportRef} name={`forecast-${selectedId.toLowerCase()}`} />
       </CardContent>
     </Card>
   );

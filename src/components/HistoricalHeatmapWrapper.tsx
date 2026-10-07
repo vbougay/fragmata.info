@@ -10,6 +10,7 @@ interface HistoricalHeatmapWrapperProps {
   sparklineData?: SparklineDataPoint[];
   linkHref?: string;
   label?: string;
+  exportSubject?: string;
 }
 
 // Renders a placeholder during SSR and on initial client render, then lazily

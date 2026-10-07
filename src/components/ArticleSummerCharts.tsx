@@ -13,7 +13,7 @@
  */
 
 import React, { useMemo, useState, useCallback } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ChartFrame } from '@/components/ChartFrame';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
@@ -34,65 +34,7 @@ const MUTED = '#9aa0a8';
 
 const fmt = (v: number, d = 1) => v.toFixed(d);
 
-/* ---------- shared frame ---------- */
-
-interface FrameProps {
-  title: string;
-  subtitle: string;
-  source: string;
-  height: number;
-  children: React.ReactNode;
-  legend?: { color: string; label: string }[];
-  minWidth?: number;
-}
-
-function Frame({ title, subtitle, source, height, children, legend, minWidth = 640 }: FrameProps) {
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-4 sm:p-5">
-        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
-        {legend && legend.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
-            {legend.map(l => (
-              <span key={l.label} className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                <i className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: l.color }} />
-                {l.label}
-              </span>
-            ))}
-          </div>
-        )}
-        {/* Below ~640px the chart is wider than the viewport (minWidth keeps axis
-            text legible rather than shrinking it below ~4px) and needs a horizontal
-            swipe to see in full. Without any cue for that, a mobile reader hits a
-            chart that looks cut off and reaches for pinch-zoom instead — which
-            distorts the whole page rather than just revealing the chart. The edge
-            fade and hint below exist to make "swipe right" obvious instead. */}
-        <div className="relative mt-3">
-          <div
-            className="overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-20px),transparent)] sm:[mask-image:none]"
-          >
-            <svg
-              viewBox={`0 0 1000 ${height}`}
-              className="block h-auto w-full"
-              style={{ minWidth }}
-              role="img"
-              aria-label={`${title}. ${subtitle}`}
-            >
-              {children}
-            </svg>
-          </div>
-        </div>
-        <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 sm:hidden">
-          ← swipe to see the full chart →
-        </p>
-        <p className="mt-3 border-t border-gray-200 pt-2 text-[11px] leading-relaxed text-gray-500 dark:border-gray-700 dark:text-gray-500">
-          {source}
-        </p>
-      </CardContent>
-    </Card>
-  );
-}
+/* ---------- shared text marks ---------- */
 
 const AxisText = (p: React.SVGProps<SVGTextElement>) => (
   <text {...p} className="fill-current text-[10px] tabular-nums text-gray-500 dark:text-gray-400" />
@@ -163,7 +105,7 @@ export function EndOfSummerChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="end-of-summer" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: CURRENT, label: String(cur) }, { color: PRIOR, label: String(cur - 1) }, { color: MUTED, label: t.other }]}>
         {ticks.map(v => (
           <g key={v}>
@@ -201,7 +143,7 @@ export function EndOfSummerChart() {
         </AxisText>
         <line x1={x(rows.length - 1) + bw / 2} x2={x(rows.length - 1) + bw / 2}
           y1={y(top * 0.62) + 22} y2={y(stats.current.value) - 4} stroke={CURRENT} strokeWidth={1.4} />
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -263,7 +205,7 @@ export function SummerDrawdownChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="summer-drawdown" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: CURRENT, label: String(cur) }, { color: PRIOR, label: String(cur - 1) }, { color: MUTED, label: t.other }]}>
         {yTicks.map(v => (
           <g key={v}>
@@ -293,7 +235,7 @@ export function SummerDrawdownChart() {
         <line x1={cx + 12} y1={cy - 4} x2={cx + 86} y2={cy - 38} stroke={CURRENT} strokeWidth={1.4} />
         <Note x={cx + 92} y={cy - 41} fill={CURRENT}>{t.slow}</Note>
         <AxisText x={cx + 92} y={cy - 27}>{`${fmt(stats.current.start)} → ${fmt(stats.current.rate, 3)}${t.perDay}`}</AxisText>
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -355,7 +297,7 @@ export function PeakMonthChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}>
+      <ChartFrame name="peak-month" title={t.title} subtitle={t.sub} source={t.src} height={H}>
         <AxisText x={2} y={m.t - 26}>{t.unit}</AxisText>
         {MONTHS.map((mn, i) => {
           const cx = m.l + i * colW + colW / 2;
@@ -386,7 +328,7 @@ export function PeakMonthChart() {
 
         <Note x={m.l + 3.5 * colW} y={m.t - 48} textAnchor="middle">{t.bulk}</Note>
         <AxisText x={m.l + 3.5 * colW} y={m.t - 34} textAnchor="middle">{t.bulk2}</AxisText>
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -429,7 +371,7 @@ export function SummerInflowChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={560}>
+      <ChartFrame name="summer-inflow" title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={560}>
         {ticks.map(v => (
           <g key={v}>
             <Grid x1={m.l} x2={W - m.r} y1={y(v)} y2={y(v)} />
@@ -452,7 +394,7 @@ export function SummerInflowChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -510,7 +452,7 @@ export function DamFullnessChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={760}>
+      <ChartFrame name="dam-fullness" title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={760}>
         <AxisText x={NAME_R} y={top - 22} textAnchor="end">{t.c1}</AxisText>
         <AxisText x={BAR_L} y={top - 22}>{t.c2}</AxisText>
         <AxisText x={CAP_R} y={top - 22} textAnchor="end">{t.c3}</AxisText>
@@ -557,7 +499,7 @@ export function DamFullnessChart() {
         <Note x={ANN_L + 4} y={ky - 2}>{t.b2}</Note>
         <AxisText x={ANN_L + 4} y={ky + 12}>{t.b3}</AxisText>
         <AxisText x={ANN_L + 4} y={ky + 24}>{t.b4}</AxisText>
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -620,7 +562,7 @@ export function TwoYearTraceChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="two-year-trace" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[
           { color: CURRENT, label: `${ref.year} ${t.actual}` },
           { color: PRIOR, label: `${ref.year - 1} ${t.actual}` },
@@ -676,7 +618,7 @@ export function TwoYearTraceChart() {
           <circle key={`p${p.doy}`} cx={x(p.doy)} cy={y(p.value)} r={7} fill="transparent"
             onMouseMove={e => show(e, `<b>${ref.year - 1}</b> · ${p.date}<br>${fmt(p.value, 2)} ${t.mln}`)} onMouseLeave={hide} />
         ))}
-      </Frame>
+      </ChartFrame>
     </>
   );
 }

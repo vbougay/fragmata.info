@@ -11,7 +11,7 @@
  */
 
 import React, { useMemo, useState, useCallback } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ChartFrame } from '@/components/ChartFrame';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { yearlyInflowData } from '@/utils/dataManager';
@@ -27,43 +27,7 @@ const RECORD = '#d94f2b';
 
 const fmt = (v: number, d = 1) => v.toFixed(d);
 
-/* ---------- shared frame (mirrors ArticleSummerCharts) ---------- */
-
-interface FrameProps {
-  title: string; subtitle: string; source: string; height: number;
-  children: React.ReactNode; legend?: { color: string; label: string }[]; minWidth?: number;
-}
-
-function Frame({ title, subtitle, source, height, children, legend, minWidth = 640 }: FrameProps) {
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-4 sm:p-5">
-        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
-        {legend && legend.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
-            {legend.map(l => (
-              <span key={l.label} className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                <i className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: l.color }} />
-                {l.label}
-              </span>
-            ))}
-          </div>
-        )}
-        <div className="relative mt-3">
-          <div className="overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-20px),transparent)] sm:[mask-image:none]">
-            <svg viewBox={`0 0 1000 ${height}`} className="block h-auto w-full" style={{ minWidth }}
-              role="img" aria-label={`${title}. ${subtitle}`}>
-              {children}
-            </svg>
-          </div>
-        </div>
-        <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 sm:hidden">← swipe to see the full chart →</p>
-        <p className="mt-3 border-t border-gray-200 pt-2 text-[11px] leading-relaxed text-gray-500 dark:border-gray-700 dark:text-gray-500">{source}</p>
-      </CardContent>
-    </Card>
-  );
-}
+/* ---------- shared text marks ---------- */
 
 const AxisText = (p: React.SVGProps<SVGTextElement>) => (
   <text {...p} className="fill-current text-[10px] tabular-nums text-gray-500 dark:text-gray-400" />
@@ -150,7 +114,7 @@ export function StationRainChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="station-rain" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: RAIN, label: t.y26 }, { color: MUTED, label: t.med }, { color: RECORD, label: t.best }]}>
         {ticks.map(v => (
           <g key={v}>
@@ -176,7 +140,7 @@ export function StationRainChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -221,7 +185,7 @@ export function AugSepInflowChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={560}>
+      <ChartFrame name="aug-sep-inflow" title={t.title} subtitle={t.sub} source={t.src} height={H} minWidth={560}>
         {ticks.map(v => (
           <g key={v}>
             <Grid x1={m.l} x2={W - m.r} y1={y(v)} y2={y(v)} />
@@ -243,7 +207,7 @@ export function AugSepInflowChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -307,7 +271,7 @@ export function AchnaRefillChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="achna-refill" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: ACCENT, label: t.storage }, { color: RAIN, label: t.rain }]}>
         {[0, 0.1, 0.2, 0.3].map(v => (
           <g key={v}>
@@ -334,7 +298,7 @@ export function AchnaRefillChart() {
             onMouseMove={e => show(e, `<b>${p.day}</b><br/>${fmt(p.v, 3)} mln. m³`)} onMouseLeave={hide} />
         ))}
         <Note x={x(last.day) + 8} y={y(last.v) + 4}>{fmt(last.v, 3)}</Note>
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );

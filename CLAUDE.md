@@ -31,13 +31,12 @@ This is a React-based Cyprus reservoir monitoring dashboard built with TypeScrip
 **Next.js App Router Structure**:
 - `app/layout.tsx` — Root Server Component, imports `providers.tsx` (the `"use client"` boundary)
 - `app/page.tsx` — Homepage Server Component, imports `DashboardClient.tsx`
-- `app/media/page.tsx` — Media page Server Component, imports `MediaClient.tsx`
 - `app/not-found.tsx` — 404 page (Server Component, no client boundary needed)
 - `app/robots.ts`, `app/sitemap.ts` — SEO route handlers
-- Only 3 files have `"use client"`: `providers.tsx`, `DashboardClient.tsx`, `MediaClient.tsx` — all other components inherit the client boundary
+- `providers.tsx` and the page-level `*Client.tsx` components carry `"use client"` — most other components inherit the client boundary
 
 **Component Structure**:
-- Client components: `src/components/DashboardClient.tsx` (main tabbed dashboard), `src/components/MediaClient.tsx` (media export)
+- Client components: `src/components/DashboardClient.tsx` (main tabbed dashboard), `src/components/ChartFrame.tsx` (article chart card with Copy image / Download PNG, via `src/lib/export-image.ts`)
 - Main page tabs: Dashboard, By Region, Map, Data Table
 - Reusable components in `src/components/` for charts, maps, tables, cards, heatmaps, and headers
 - UI components from shadcn/ui in `src/components/ui/`
