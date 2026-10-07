@@ -4,8 +4,9 @@
     {
       "name": "fragmata",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["dev:next", "--port", "8090"],
-      "port": 8090
+      "runtimeArgs": ["dev:next"],
+      "port": 8090,
+      "autoPort": true
     }
   ]
 }
