@@ -20,7 +20,7 @@ import { useTranslation } from '@/utils/translations';
 import {
   endOfSummerSeries, endOfSummerStats, summerDrawdown, drawdownStats,
   peakMonths, summerInflow, damsByCapacity, yearTrace, autumnProjection,
-  mainCapacity, referencePoint,
+  mainCapacity, referencePoint, referenceIso,
 } from '@/utils/summerStats';
 
 type Lang = 'en' | 'el' | 'ru';
@@ -171,8 +171,8 @@ export function SummerDrawdownChart() {
   const cur = stats.current.year;
 
   const W = 1000, H = 420, m = { t: 30, r: 28, b: 54, l: 56 };
-  const maxX = Math.ceil(Math.max(...rows.map(r => r.start)) / 50) * 50;
-  const maxY = Math.ceil(Math.max(...rows.map(r => r.rate)) * 20) / 20;
+  const maxX = Math.max(50, Math.ceil(Math.max(...rows.map(r => r.start)) / 50) * 50);
+  const maxY = Math.max(0.05, Math.ceil(Math.max(...rows.map(r => r.rate)) * 20) / 20);
   const x = (v: number) => m.l + (v / maxX) * (W - m.l - m.r);
   const y = (v: number) => (H - m.b) - (v / maxY) * (H - m.b - m.t);
 
@@ -348,7 +348,7 @@ export function SummerInflowChart() {
   const rank = ranked.findIndex(r => r.season === latest.season) + 1;
 
   const W = 1000, H = 250, m = { t: 26, r: 18, b: 40, l: 42 };
-  const top = Math.ceil(Math.max(...rows.map(r => r.value)));
+  const top = Math.max(2, Math.ceil(Math.max(...rows.map(r => r.value))));
   const bw = (W - m.l - m.r) / rows.length;
   const y = (v: number) => (H - m.b) - (v / top) * (H - m.b - m.t);
   const ticks: number[] = []; for (let v = 0; v <= top; v += 2) ticks.push(v);
@@ -412,7 +412,7 @@ export function DamFullnessChart() {
 
   const twoBiggest = rows.slice(0, 2);
   const totalStored = rows.reduce((s, r) => s + r.amount, 0);
-  const bigShare = (twoBiggest.reduce((s, r) => s + r.amount, 0) / totalStored) * 100;
+  const bigShare = totalStored > 0 ? (twoBiggest.reduce((s, r) => s + r.amount, 0) / totalStored) * 100 : 0;
   const full = rows.filter(r => r.percentage >= 80);
   const fullStored = full.reduce((s, r) => s + r.amount, 0);
 
@@ -514,7 +514,7 @@ export function TwoYearTraceChart() {
 
   const ref = referencePoint(ds);
   const { cur, prev, proj, peak, nowPoint } = useMemo(() => {
-    const cur = yearTrace(ref.year);
+    const cur = yearTrace(ref.year, referenceIso(ds));
     const prev = yearTrace(ref.year - 1);
     const proj = autumnProjection(ds);
     const peak = cur.length ? cur.reduce((a, b) => (b.value > a.value ? b : a)) : null;
