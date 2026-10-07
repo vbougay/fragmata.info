@@ -178,6 +178,12 @@ export const translations = {
     // Media Mode
     downloadImage: "Download as Image",
     downloading: "Downloading...",
+    exportCopy: "Copy image",
+    exportDownload: "Download PNG",
+    exportCopied: "Copied",
+    exportShared: "Shared",
+    exportDownloaded: "Downloaded",
+    exportFailed: "Could not make the image",
 
     // Storage Forecast
     storageForecast: "Storage Forecast",
@@ -392,6 +398,12 @@ export const translations = {
     // Media Mode
     downloadImage: "Λήψη ως Εικόνα",
     downloading: "Γίνεται λήψη...",
+    exportCopy: "Αντιγραφή εικόνας",
+    exportDownload: "Λήψη PNG",
+    exportCopied: "Αντιγράφηκε",
+    exportShared: "Κοινοποιήθηκε",
+    exportDownloaded: "Λήφθηκε",
+    exportFailed: "Η εικόνα δεν δημιουργήθηκε",
 
     // Storage Forecast
     storageForecast: "Πρόβλεψη Αποθήκευσης",
@@ -606,6 +618,12 @@ export const translations = {
     // Media Mode
     downloadImage: "Скачать как изображение",
     downloading: "Загрузка...",
+    exportCopy: "Копировать картинку",
+    exportDownload: "Скачать PNG",
+    exportCopied: "Скопировано",
+    exportShared: "Отправлено",
+    exportDownloaded: "Скачано",
+    exportFailed: "Не удалось создать картинку",
 
     // Storage Forecast
     storageForecast: "Прогноз запасов",

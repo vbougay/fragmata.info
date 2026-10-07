@@ -9,7 +9,7 @@
  */
 
 import React, { useMemo, useState, useCallback } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ChartFrame } from '@/components/ChartFrame';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { ENSO_RAIN } from '@/utils/ensoData';
@@ -28,43 +28,7 @@ const phaseColor = (p: Phase) => (p === 'nino' ? NINO : p === 'nina' ? NINA : NE
 const fmt = (v: number, d = 1) => v.toFixed(d);
 const hy = (y: number) => `${y}-${String(y + 1).slice(2)}`;
 
-/* ---------- shared frame (mirrors ArticleSummerCharts) ---------- */
-
-interface FrameProps {
-  title: string; subtitle: string; source: string; height: number;
-  children: React.ReactNode; legend?: { color: string; label: string }[]; minWidth?: number;
-}
-
-function Frame({ title, subtitle, source, height, children, legend, minWidth = 640 }: FrameProps) {
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-4 sm:p-5">
-        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
-        {legend && legend.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
-            {legend.map(l => (
-              <span key={l.label} className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                <i className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: l.color }} />
-                {l.label}
-              </span>
-            ))}
-          </div>
-        )}
-        <div className="relative mt-3">
-          <div className="overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-20px),transparent)] sm:[mask-image:none]">
-            <svg viewBox={`0 0 1000 ${height}`} className="block h-auto w-full" style={{ minWidth }}
-              role="img" aria-label={`${title}. ${subtitle}`}>
-              {children}
-            </svg>
-          </div>
-        </div>
-        <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 sm:hidden">← swipe to see the full chart →</p>
-        <p className="mt-3 border-t border-gray-200 pt-2 text-[11px] leading-relaxed text-gray-500 dark:border-gray-700 dark:text-gray-500">{source}</p>
-      </CardContent>
-    </Card>
-  );
-}
+/* ---------- shared text marks ---------- */
 
 const AxisText = (p: React.SVGProps<SVGTextElement>) => (
   <text {...p} className="fill-current text-[10px] tabular-nums text-gray-500 dark:text-gray-400" />
@@ -144,7 +108,7 @@ export function EnsoScatterChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="enso-scatter" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: NINO, label: pl.nino }, { color: NINA, label: pl.nina }, { color: NEUTRAL, label: pl.neutral }]}>
         {[40, 60, 80, 100, 120, 140, 160].map(v => (
           <g key={v}>
@@ -187,7 +151,7 @@ export function EnsoScatterChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -230,7 +194,7 @@ export function StrongNinoChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="strong-nino" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: NINO, label: L({ en: 'Below normal', el: 'Κάτω από την κανονική', ru: 'Ниже нормы' }, language) }, { color: ACCENT, label: L({ en: 'Above normal', el: 'Πάνω από την κανονική', ru: 'Выше нормы' }, language) }]}>
         {[40, 60, 80, 100, 120].map(v => (
           <g key={v}>
@@ -270,7 +234,7 @@ export function StrongNinoChart() {
             </g>
           );
         })()}
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -318,7 +282,7 @@ export function EnsoTimelineChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="enso-timeline" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: NINO, label: L({ en: 'El Niño', el: 'Ελ Νίνιο', ru: 'Эль-Ниньо' }, language) }, { color: NINA, label: L({ en: 'La Niña', el: 'Λα Νίνια', ru: 'Ла-Нинья' }, language) }, { color: NEUTRAL, label: L({ en: 'Neutral', el: 'Ουδέτερος', ru: 'Нейтральная' }, language) }]}>
         {/* top panel */}
         <AxisText x={2} y={y0Top - 10}>{t.pacific}</AxisText>
@@ -365,7 +329,7 @@ export function EnsoTimelineChart() {
         })}
         <rect x={x(rows.length) + 1} y={yAn(20)} width={bw - 2} height={yAn(-20) - yAn(20)} fill="none" stroke={NEUTRAL} strokeWidth={1.2} strokeDasharray="3 2" />
         <Note x={x(rows.length) + bw / 2} y={yAn(0) + 4} textAnchor="middle">?</Note>
-      </Frame>
+      </ChartFrame>
     </>
   );
 }
@@ -424,7 +388,7 @@ export function EnsoRefillChart() {
   return (
     <>
       {node}
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="enso-refill" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: NINO, label: pl.nino }, { color: NEUTRAL, label: pl.neutral }, { color: NINA, label: pl.nina }]}>
         {[0, 50, 100, 150, 200, 250].map(v => (
           <g key={v}>
@@ -468,7 +432,7 @@ export function EnsoRefillChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
     </>
   );
 }

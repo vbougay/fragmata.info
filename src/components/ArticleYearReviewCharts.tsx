@@ -11,6 +11,7 @@
 
 import React, { useMemo, useState, useCallback } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { ChartFrame } from '@/components/ChartFrame';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/utils/translations';
@@ -62,45 +63,7 @@ const damName = (name: string, lang: Lang) => {
   return typeof t === 'string' && t ? t : name;
 };
 
-/* ---------- shared frame (mirrors ArticleSummerCharts) ---------- */
-
-interface FrameProps {
-  title: string; subtitle: string; source: string; height: number;
-  children: React.ReactNode; legend?: { color: string; label: string; dashed?: boolean }[]; minWidth?: number;
-}
-
-function Frame({ title, subtitle, source, height, children, legend, minWidth = 640 }: FrameProps) {
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-4 sm:p-5">
-        <h4 className="text-base font-semibold leading-snug text-gray-900 dark:text-gray-100">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
-        {legend && legend.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
-            {legend.map(l => (
-              <span key={l.label} className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                {l.dashed
-                  ? <i className="h-0 w-3 shrink-0 border-t-2 border-dashed" style={{ borderColor: l.color }} />
-                  : <i className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: l.color }} />}
-                {l.label}
-              </span>
-            ))}
-          </div>
-        )}
-        <div className="relative mt-3">
-          <div className="overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-20px),transparent)] sm:[mask-image:none]">
-            <svg viewBox={`0 0 1000 ${height}`} className="block h-auto w-full" style={{ minWidth }}
-              role="img" aria-label={`${title.replace(/[.!?]$/, '')}. ${subtitle}`}>
-              {children}
-            </svg>
-          </div>
-        </div>
-        <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 sm:hidden">← swipe to see the full chart →</p>
-        <p className="mt-3 border-t border-gray-200 pt-2 text-[11px] leading-relaxed text-gray-500 dark:border-gray-700 dark:text-gray-500">{source}</p>
-      </CardContent>
-    </Card>
-  );
-}
+/* ---------- shared text marks ---------- */
 
 const AxisText = (p: React.SVGProps<SVGTextElement>) => (
   <text {...p} className="fill-current text-[10px] tabular-nums text-gray-500 dark:text-gray-400" />
@@ -192,7 +155,7 @@ export function YearTraceChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="year-trace" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[
           { color: CURRENT, label: t.cur }, { color: PRIOR, label: t.prev },
           { color: '#d7dbe0', label: t.band }, { color: MUTED, label: t.med, dashed: true },
@@ -229,7 +192,7 @@ export function YearTraceChart() {
         {prev.length > 0 && (
           <Note x={x(prev[prev.length - 1].day) + 8} y={y(prev[prev.length - 1].value) + 4}>{t.prev}</Note>
         )}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -282,7 +245,7 @@ export function RainLateChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="rain-late" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: CURRENT, label: t.inflow }, { color: RAIN, label: t.rain }]}>
         {Array.from({ length: iMax / 10 + 1 }, (_, i) => i * 10).map(v => (
           <g key={v}>
@@ -320,7 +283,7 @@ export function RainLateChart() {
         <Note x={cx(n - 1)} y={yp(DOM_RAIN_2025_26[n - 1].cumPct) - 10} textAnchor="middle" fontWeight={700}>
           {`${DOM_RAIN_2025_26[n - 1].cumPct}%`}
         </Note>
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -375,7 +338,7 @@ export function SpongeChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="sponge" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: RAIN, label: t.rain }, { color: CURRENT, label: t.inflow }]}>
         <Note x={mid - 40} y={m.t - 18} textAnchor="end">{t.rain}</Note>
         <Note x={mid + 40} y={m.t - 18}>{t.inflow}</Note>
@@ -395,7 +358,7 @@ export function SpongeChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -441,7 +404,7 @@ export function DamRangeChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="dam-range" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: MUTED, label: t.low }, { color: CURRENT, label: t.peak }, { color: RECORD, label: t.fullL }, { color: '#6b7280', label: t.now }]}>
         {[0, 25, 50, 75, 100].map(v => (
           <g key={v}>
@@ -472,7 +435,7 @@ export function DamRangeChart() {
             </g>
           );
         })}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -518,7 +481,7 @@ export function OutlookChart() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}>
+      <ChartFrame name="outlook" title={t.title} subtitle={t.sub} source={t.src} height={H}>
         {[0, 50, 100, 150, 200, 250, 300].map(v => (
           <g key={v}>
             <Grid x1={m.l} x2={W - m.r} y1={y(v)} y2={y(v)} />
@@ -543,7 +506,7 @@ export function OutlookChart() {
         <Note x={W - m.r + 8} y={y(o.start) + 4} style={{ fill: CURRENT }}>{`${t.today} ${fmt(o.start, 0)}`}</Note>
         <line x1={m.l} x2={W - m.r} y1={y(twenty)} y2={y(twenty)} stroke={RECORD} strokeWidth={1.5} strokeDasharray="2 4" />
         <Note x={W - m.r + 8} y={y(twenty) + 4} style={{ fill: RECORD }}>{t.tw}</Note>
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
@@ -705,7 +668,7 @@ export function OverflowMap() {
 
   return (
     <>
-      <Frame title={t.title} subtitle={t.sub} source={t.src} height={H}
+      <ChartFrame name="overflow-map" title={t.title} subtitle={t.sub} source={t.src} height={H}
         legend={[{ color: RECORD, label: t.filled }, { color: CURRENT, label: t.other }]}>
         <path d={coast} className="fill-current text-gray-100 dark:text-gray-800" stroke={MUTED} strokeWidth={1} />
         {bySize.map(r => {
@@ -734,7 +697,7 @@ export function OverflowMap() {
             {`  ${damName(r.name, lang)} · ${dayLabel(r.fullFrom!, lang)}`}
           </Note>
         ))}
-      </Frame>
+      </ChartFrame>
       {node}
     </>
   );
