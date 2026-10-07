@@ -4,8 +4,9 @@
  *
  * The image follows the theme the reader is viewing: the figure is cloned
  * into an off-screen box under <body>, so the page's light or dark styles
- * still apply. The clone is drawn at a fixed width so the image is the same
- * from a phone or a desktop. Elements marked `data-export="hide"` (buttons,
+ * still apply. Article charts are drawn at a fixed width so the image is the
+ * same from a phone or a desktop; dashboard cards at the width on screen
+ * (see inlineFigure). Elements marked `data-export="hide"` (buttons,
  * the swipe hint, the export bar itself) are dropped; `data-export="show"`
  * ones (a line only the image needs) appear; `data-export-scroll` boxes that
  * scroll sideways on phones are shown in full; `data-export-flush` boxes
@@ -81,9 +82,26 @@ async function creditFooter(url: string, pageName: string, siteName: string): Pr
   return foot;
 }
 
-async function inlineFigure(node: HTMLElement, url: string, pageName: string, siteName: string): Promise<{ host: HTMLElement; frame: HTMLElement }> {
-  const minWidth = Number(node.dataset.minWidth) || 0;
-  const width = Math.max(EXPORT_WIDTH, minWidth + 48);
+interface Inlined {
+  host: HTMLElement;
+  frame: HTMLElement;
+  scale: number;
+}
+
+/**
+ * Two layouts. By default (the article charts: fixed-viewBox SVGs) the clone
+ * is drawn 960px wide with its own padding dropped. A figure marked
+ * `data-export-width="live"` (dashboard cards with responsive charts, whose
+ * SVGs are sized in pixels) is drawn at the width the reader sees, keeping its
+ * padding, and the credit is inset to line up with its content.
+ */
+async function inlineFigure(node: HTMLElement, url: string, pageName: string, siteName: string): Promise<Inlined> {
+  const live = node.dataset.exportWidth === "live";
+  const nodeRect = node.getBoundingClientRect();
+  const pad = live ? 24 : 32;
+  const width = live
+    ? Math.round(nodeRect.width) + pad * 2
+    : Math.max(EXPORT_WIDTH, (Number(node.dataset.minWidth) || 0) + 48);
 
   const host = document.createElement("div");
   host.setAttribute("aria-hidden", "true");
@@ -101,25 +119,51 @@ async function inlineFigure(node: HTMLElement, url: string, pageName: string, si
     el.style.maskImage = "none";
     el.style.webkitMaskImage = "none";
   });
-  clone.querySelectorAll<HTMLElement>("[data-export-flush]").forEach((el) => {
-    el.style.padding = "0";
+  // The rasteriser pins every box to its measured size, so a wrapping row whose
+  // text draws a pixel wider breaks onto a second line over what follows.
+  // Rows marked `data-export-nowrap` stay on one line instead.
+  clone.querySelectorAll<HTMLElement>("[data-export-nowrap]").forEach((el) => {
+    el.style.flexWrap = "nowrap";
+    el.style.whiteSpace = "nowrap";
   });
   clone.style.margin = "0";
-  clone.style.border = "0";
-  clone.style.borderRadius = "0";
-  clone.style.padding = "0";
   clone.style.boxShadow = "none";
   clone.style.background = "transparent";
+  clone.style.opacity = "1";
+  clone.style.animation = "none";
+  if (live) {
+    // Same box as on screen, so pixel-sized charts still fit.
+    clone.style.width = `${nodeRect.width}px`;
+    clone.style.borderColor = "transparent";
+  } else {
+    clone.querySelectorAll<HTMLElement>("[data-export-flush]").forEach((el) => {
+      el.style.padding = "0";
+    });
+    clone.style.border = "0";
+    clone.style.borderRadius = "0";
+    clone.style.padding = "0";
+  }
+
+  const footer = await creditFooter(url, pageName, siteName);
+  const content = live ? node.querySelector<HTMLElement>("[data-export-flush]") : null;
+  if (content) {
+    const r = content.getBoundingClientRect();
+    const cs = getComputedStyle(content);
+    footer.style.marginLeft = `${r.left - nodeRect.left + parseFloat(cs.paddingLeft)}px`;
+    footer.style.marginRight = `${nodeRect.right - r.right + parseFloat(cs.paddingRight)}px`;
+  }
 
   // The frame, not the figure, is what gets drawn: its padding sets the margins of the image.
   const frame = document.createElement("div");
-  frame.style.cssText = `box-sizing:border-box;width:${width}px;padding:26px 32px 30px;background:hsl(var(--card));`;
-  frame.append(clone, await creditFooter(url, pageName, siteName));
+  frame.style.cssText = `box-sizing:border-box;width:${width}px;padding:${live ? "16px" : "26px"} ${pad}px 30px;background:hsl(var(--card));`;
+  frame.append(clone, footer);
 
   host.append(frame);
   document.body.append(host);
   await document.fonts.ready;
-  return { host, frame };
+  // At least two pixels per CSS pixel; narrow (phone-width) figures get more, up to four, so the image is not tiny.
+  const scale = live ? Math.min(4, Math.max(2, 1920 / width)) : 2;
+  return { host, frame, scale };
 }
 
 export interface FigureMeta {
@@ -130,13 +174,13 @@ export interface FigureMeta {
   siteName: string;
 }
 
-/** The figure as a PNG blob, two pixels per CSS pixel. */
+/** The figure as a PNG blob. */
 export async function figureToPng(node: HTMLElement, meta: FigureMeta): Promise<Blob> {
   const { domToBlob } = await import("modern-screenshot");
-  const { host, frame } = await inlineFigure(node, creditUrl(meta.pathname), meta.pageName, meta.siteName);
+  const { host, frame, scale } = await inlineFigure(node, creditUrl(meta.pathname), meta.pageName, meta.siteName);
   try {
     const background = getComputedStyle(frame).backgroundColor;
-    return await domToBlob(frame, { scale: 2, type: "image/png", backgroundColor: background });
+    return await domToBlob(frame, { scale, type: "image/png", backgroundColor: background });
   } finally {
     host.remove();
   }

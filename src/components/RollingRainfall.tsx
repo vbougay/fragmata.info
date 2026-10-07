@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { CloudRain, ArrowRight, Info } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ChartExportBar } from '@/components/ChartExportBar';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { kairikaUrl, trackKairikaClick } from '@/utils/kairika';
@@ -98,6 +99,7 @@ let cachedYear: RainYear | null = null;
 const RollingRainfall: React.FC = () => {
   const { language } = useLanguage();
   const t = useTranslation(language);
+  const exportRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<RainState>(() =>
     cachedYear ? { status: 'ready', year: cachedYear } : { status: 'loading' }
   );
@@ -138,6 +140,8 @@ const RollingRainfall: React.FC = () => {
   return (
     <Card
       id="rain"
+      ref={exportRef}
+      data-export-width="live"
       className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-200 dark:border-gray-800 p-1 animate-fade-in"
       aria-busy={!year}
     >
@@ -149,6 +153,7 @@ const RollingRainfall: React.FC = () => {
           </div>
           {/* No noreferrer: Kairika's analytics should see these visits as coming from Fragmata */}
           <a
+            data-export="hide"
             href={trackerUrl}
             target="_blank"
             rel="noopener"
@@ -161,7 +166,7 @@ const RollingRainfall: React.FC = () => {
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="px-0 sm:px-6">
+      <CardContent data-export-flush className="px-0 sm:px-6">
         {year ? (
           <>
             <div className="px-3 sm:px-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -267,6 +272,11 @@ const RollingRainfall: React.FC = () => {
             </span>
           </span>
         </div>
+        {year && (
+          <div className="px-3 sm:px-0">
+            <ChartExportBar target={exportRef} name="rainfall" />
+          </div>
+        )}
       </CardContent>
     </Card>
   );

@@ -4,6 +4,8 @@ import { sendGAEvent } from '@next/third-parties/google';
 import { Check, Copy, Download, LoaderCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
+import { useDataContext } from '@/context/DataContext';
+import { formatDataSetDate } from '@/utils/dateFormatting';
 import { copyFigure, downloadBlob, figureToPng, type CopyOutcome, type FigureMeta } from '@/lib/export-image';
 
 type State = 'idle' | 'busy' | CopyOutcome | 'failed';
@@ -71,5 +73,22 @@ export function ChartExportBar({ target, name }: { target: React.RefObject<HTMLE
         </button>
       ))}
     </div>
+  );
+}
+
+/**
+ * A line only the exported image shows: what the card is set to (a dam, a
+ * season), then the bulletin the figures come from, since the image outlives
+ * the page's date picker.
+ */
+export function ExportCaption({ subject, className = '' }: { subject?: string; className?: string }) {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+  const { currentDataSetId } = useDataContext();
+  const bulletin = t('exportBulletin').replace('{date}', formatDataSetDate(currentDataSetId, language));
+  return (
+    <p data-export="show" hidden className={`mt-3 text-[11px] leading-relaxed text-muted-foreground ${className}`}>
+      {subject ? `${subject} · ${bulletin}` : bulletin}
+    </p>
   );
 }

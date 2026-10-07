@@ -213,6 +213,7 @@ export function RegionDamClient({
             filterRegion={type === 'region' ? heatmapRegionKey : undefined}
             filterDamKey={type === 'dam' ? damKey : undefined}
             sparklineData={type === 'dam' && damName ? sparklineMap.get(damName) : undefined}
+            exportSubject={type === 'dam' ? displayName : undefined}
           />
 
           {/* Dam Cards (region pages only) */}

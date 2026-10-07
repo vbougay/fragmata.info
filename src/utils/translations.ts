@@ -182,6 +182,7 @@ export const translations = {
     exportShared: "Shared",
     exportDownloaded: "Downloaded",
     exportFailed: "Could not make the image",
+    exportBulletin: "Water Development Department bulletin of {date}",
 
     // Storage Forecast
     storageForecast: "Storage Forecast",
@@ -400,6 +401,7 @@ export const translations = {
     exportShared: "Κοινοποιήθηκε",
     exportDownloaded: "Λήφθηκε",
     exportFailed: "Η εικόνα δεν δημιουργήθηκε",
+    exportBulletin: "Δελτίο Τμήματος Αναπτύξεως Υδάτων, {date}",
 
     // Storage Forecast
     storageForecast: "Πρόβλεψη Αποθήκευσης",
@@ -618,6 +620,7 @@ export const translations = {
     exportShared: "Отправлено",
     exportDownloaded: "Скачано",
     exportFailed: "Не удалось создать картинку",
+    exportBulletin: "Бюллетень Департамента водного развития от {date}",
 
     // Storage Forecast
     storageForecast: "Прогноз запасов",
