@@ -175,9 +175,7 @@ export const translations = {
     full: "Full",
     fillLevel: "Fill",
 
-    // Media Mode
-    downloadImage: "Download as Image",
-    downloading: "Downloading...",
+    // Chart export
     exportCopy: "Copy image",
     exportDownload: "Download PNG",
     exportCopied: "Copied",
@@ -395,9 +393,7 @@ export const translations = {
     full: "Πλήρες",
     fillLevel: "Πλήρωση",
 
-    // Media Mode
-    downloadImage: "Λήψη ως Εικόνα",
-    downloading: "Γίνεται λήψη...",
+    // Chart export
     exportCopy: "Αντιγραφή εικόνας",
     exportDownload: "Λήψη PNG",
     exportCopied: "Αντιγράφηκε",
@@ -615,9 +611,7 @@ export const translations = {
     full: "Полн.",
     fillLevel: "Заполн.",
 
-    // Media Mode
-    downloadImage: "Скачать как изображение",
-    downloading: "Загрузка...",
+    // Chart export
     exportCopy: "Копировать картинку",
     exportDownload: "Скачать PNG",
     exportCopied: "Скопировано",

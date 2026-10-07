@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The media pages (whole-page PNG snapshots) were removed: charts have their own export buttons now.
+      { source: "/media/:type(dam|region)/:slug", destination: "/:type/:slug", permanent: true },
+      { source: "/media/:path*", destination: "/", permanent: true },
+      { source: "/:locale(el|ru)/media/:type(dam|region)/:slug", destination: "/:locale/:type/:slug", permanent: true },
+      { source: "/:locale(el|ru)/media/:path*", destination: "/:locale", permanent: true },
       {
         source: "/:path+/",
         destination: "/:path+",

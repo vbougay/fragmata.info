@@ -10,7 +10,6 @@ export { default as MonthlyInflow } from './MonthlyInflow';
 // HistoricalHeatmap is also loaded via wrapper (ssr: false) to avoid 2MB+ of
 // inline-styled heatmap cells in the server-rendered HTML
 export { default as HistoricalHeatmap } from './HistoricalHeatmapWrapper';
-export { default as MediaHeader } from './MediaHeader';
 export { default as ChurchSilhouette } from './ChurchSilhouette';
 export { default as StorageSparkline } from './StorageSparkline';
 export { default as Footer } from './Footer';

@@ -29,10 +29,14 @@ export function mainTotal(e: HistoricalStorageEntry): number | null {
 
 const ts = (isoDate: string) => Date.parse(isoDate + 'T00:00:00Z');
 
-/** Readings that have a usable main-dam total, ascending by date. */
-function series(): { date: string; t: number; v: number }[] {
+/**
+ * Readings that have a usable main-dam total, ascending by date. `asOf` drops
+ * readings after it, so a figure tied to a bulletin does not pick up later ones.
+ */
+function series(asOf?: string): { date: string; t: number; v: number }[] {
   const out: { date: string; t: number; v: number }[] = [];
   for (const e of historicalStorageData) {
+    if (asOf && e.date > asOf) continue;
     const v = mainTotal(e);
     if (v != null) out.push({ date: e.date, t: ts(e.date), v });
   }
@@ -50,11 +54,11 @@ function series(): { date: string; t: number; v: number }[] {
  * bulletin (9 days from the 15th) fell outside a 7-day window and quietly
  * dropped every pre-2025 year from a drawdown comparison.
  */
-function nearest(year: number, month: number, day: number, maxDays = 16) {
+function nearest(year: number, month: number, day: number, maxDays = 16, asOf?: string) {
   const target = Date.UTC(year, month - 1, day);
   let best: { date: string; t: number; v: number } | null = null;
   let bestDiff = Infinity;
-  for (const r of series()) {
+  for (const r of series(asOf)) {
     const diff = Math.abs(r.t - target) / DAY;
     if (diff < bestDiff && diff <= maxDays) { bestDiff = diff; best = r; }
   }
@@ -69,6 +73,12 @@ export function referencePoint(dataSetId?: string): { year: number; month: numbe
   return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1, day: now.getUTCDate() };
 }
 
+/** The reference point as an ISO date, the cut-off for readings. */
+export function referenceIso(dataSetId?: string): string {
+  const r = referencePoint(dataSetId);
+  return `${r.year}-${String(r.month).padStart(2, '0')}-${String(r.day).padStart(2, '0')}`;
+}
+
 export const FIRST_YEAR = 1988;
 
 export interface YearValue { year: number; value: number; date: string }
@@ -81,7 +91,7 @@ export function endOfSummerSeries(dataSetId?: string): YearValue[] {
   const ref = referencePoint(dataSetId);
   const out: YearValue[] = [];
   for (let y = FIRST_YEAR; y <= ref.year; y++) {
-    const e = nearest(y, ref.month, ref.day);
+    const e = nearest(y, ref.month, ref.day, 16, referenceIso(dataSetId));
     if (e) out.push({ year: y, value: e.v, date: e.date });
   }
   return out;
@@ -139,15 +149,16 @@ export interface DrawdownRow {
  */
 export function summerDrawdown(dataSetId?: string): DrawdownRow[] {
   const ref = referencePoint(dataSetId);
+  const asOf = referenceIso(dataSetId);
   const out: DrawdownRow[] = [];
   for (let y = FIRST_YEAR; y <= ref.year; y++) {
-    const a = nearest(y, 6, 15, 6);
-    const b = nearest(y, ref.month, ref.day);
+    const a = nearest(y, 6, 15, 6, asOf);
+    const b = nearest(y, ref.month, ref.day, 16, asOf);
     if (!a || !b) continue;
     const days = (b.t - a.t) / DAY;
     if (days < 40) continue;
     const lost = a.v - b.v;
-    out.push({ year: y, start: a.v, end: b.v, lost, rate: lost / days, pctLost: (lost / a.v) * 100 });
+    out.push({ year: y, start: a.v, end: b.v, lost, rate: lost / days, pctLost: a.v > 0 ? (lost / a.v) * 100 : 0 });
   }
   return out;
 }
@@ -193,7 +204,7 @@ export interface PeakRow { year: number; month: number; value: number; date: str
  */
 export function peakMonths(dataSetId?: string, minGain = 2): PeakRow[] {
   const ref = referencePoint(dataSetId);
-  const all = series();
+  const all = series(referenceIso(dataSetId));
   const out: PeakRow[] = [];
   for (let y = FIRST_YEAR; y <= ref.year; y++) {
     const inYear = all.filter(r => r.date.startsWith(String(y)) && +r.date.slice(5, 7) <= 7);
@@ -244,8 +255,8 @@ export interface TracePoint { doy: number; value: number; date: string }
 const dayOfYear = (iso: string) =>
   Math.floor((ts(iso) - Date.UTC(+iso.slice(0, 4), 0, 1)) / DAY) + 1;
 
-export function yearTrace(year: number): TracePoint[] {
-  return series()
+export function yearTrace(year: number, asOf?: string): TracePoint[] {
+  return series(asOf)
     .filter(r => r.date.startsWith(String(year)))
     .map(r => ({ doy: dayOfYear(r.date), value: r.v, date: r.date }));
 }
@@ -271,7 +282,7 @@ export interface AutumnProjection {
  */
 export function autumnProjection(dataSetId?: string, lookback = 11): AutumnProjection | null {
   const ref = referencePoint(dataSetId);
-  const all = series();
+  const all = series(referenceIso(dataSetId));
   const drops: number[] = [];
   let priorYearFloor: number | null = null;
 
