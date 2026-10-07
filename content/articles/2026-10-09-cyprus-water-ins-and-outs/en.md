@@ -30,7 +30,7 @@ Three things stand out. Farms use more water than homes do, and most of it comes
 
 Desalination is also a dial. The same plants supplied 76% of tap water in 2016, a drought year, and 33% in 2020, when the dams were full and the plants were parked to save money. Since March 2025 the [stated policy](https://www.gov.cy/georgia-agrotiki-anaptyxi-perivallon/eisagogiki-dilosi-tis-ypourgou-georgias-agrotikis-anaptyxis-kai-perivallontos-dros-marias-panagiotou-se-synentefxi-typou-gia-ti-diacheirisi-tou-ydatikou-provlimatos/) is to run them all the time, whatever the dams hold.
 
-{{chart:desal-yearly through="2024"}}
+{{chart:desal-yearly}}
 
 **Groundwater.** The largest source on the island is the one with the weakest numbers. Farms pump an estimated 108 mln. m³ a year from private boreholes. The figure reported to Eurostat has not moved in years because it is an estimate, not a reading. The Audit Office found 14 of the island's 22 groundwater bodies in bad condition, several with seawater moving in.
 
@@ -58,7 +58,7 @@ A desalination plant can replace only the first of those. It cannot irrigate a f
 
 Since June the Water Development Department has published a weekly bulletin with the output of every desalination unit and every treatment plant, and the department has shared its earlier editions with us. Treatment plants are the route by which dam water reaches the taps, so for the first time the tap duty can be followed week by week.
 
-{{chart:desal-weekly upTo="2026-09-14"}}
+{{chart:desal-weekly}}
 
 Three things show up. First, desalination ran close to its limit: 257,000 to 264,000 m³ a day through June and July, out of roughly 280,000 in service. Second, the dams' share of tap water grew with summer demand. The treatment plants took 83,000 m³ a day in early June and 115,000 by mid-September, about 3.0 mln. m³ a month across the weeks on record. The year's plan allows the dams about 24 mln. m³ for taps, 2 a month, so this summer ran well above it. Third, the mobile unit at Kissonerga, which made about 11,000 m³ a day through July, was producing almost nothing by September.
 

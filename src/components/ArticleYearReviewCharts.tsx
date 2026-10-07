@@ -215,19 +215,19 @@ export function RainLateChart() {
   const t = L({
     en: {
       title: 'Five months below normal, then the dams filled from February on',
-      sub: `Bars: water reaching the 18 main dams each month. Line: rainfall since 1 October as a share of the normal for the date. The season stood at 42% of normal at the end of November and passed 100% only in March. ${fmt(total > 0 ? (100 * afterFeb) / total : 0, 0)}% of the year's ${fmt(total, 1)} ${u} of inflow arrived from February onwards.`,
+      sub: `Bars: water reaching the 18 main dams each month. Line: rainfall since 1 October as a share of the normal for the date. The season stood at 42% of normal at the end of November and passed 100% only in March. ${fmt((100 * afterFeb) / total, 0)}% of the year's ${fmt(total, 1)} ${u} of inflow arrived from February onwards.`,
       src: 'Inflow: Cyprus Water Development Department monthly inflow table. Rainfall: Cyprus Department of Meteorology area average for the government-controlled areas, 1961–90 normal. October–April final, May–August preliminary, September provisional to the 25th.',
       inflow: `Inflow, ${u}`, rain: 'Rainfall since 1 Oct, % of normal', normal: 'normal', crossed: 'passes normal',
     },
     el: {
       title: 'Πέντε μήνες κάτω από το κανονικό, μετά τα φράγματα γέμιζαν από τον Φεβρουάριο και μετά',
-      sub: `Μπάρες: νερό που έφτασε στα 18 κύρια φράγματα κάθε μήνα. Γραμμή: βροχόπτωση από την 1η Οκτωβρίου ως ποσοστό της κανονικής για την ημερομηνία. Στο τέλος Νοεμβρίου η χρονιά ήταν στο 42% της κανονικής και ξεπέρασε το 100% μόλις τον Μάρτιο. Το ${fmt(total > 0 ? (100 * afterFeb) / total : 0, 0)}% των ${fmt(total, 1)} ${u} της χρονιάς έφτασε από τον Φεβρουάριο και μετά.`,
+      sub: `Μπάρες: νερό που έφτασε στα 18 κύρια φράγματα κάθε μήνα. Γραμμή: βροχόπτωση από την 1η Οκτωβρίου ως ποσοστό της κανονικής για την ημερομηνία. Στο τέλος Νοεμβρίου η χρονιά ήταν στο 42% της κανονικής και ξεπέρασε το 100% μόλις τον Μάρτιο. Το ${fmt((100 * afterFeb) / total, 0)}% των ${fmt(total, 1)} ${u} της χρονιάς έφτασε από τον Φεβρουάριο και μετά.`,
       src: 'Εισροή: πίνακας μηνιαίας εισροής του Τμήματος Αναπτύξεως Υδάτων. Βροχόπτωση: Τμήμα Μετεωρολογίας, μέσος όρος για τις ελεύθερες περιοχές, κανονική 1961–90. Οκτώβριος–Απρίλιος τελικά, Μάιος–Αύγουστος προκαταρκτικά, Σεπτέμβριος προσωρινά ως τις 25.',
       inflow: `Εισροή, ${u}`, rain: 'Βροχή από 1 Οκτ, % της κανονικής', normal: 'κανονική', crossed: 'ξεπερνά την κανονική',
     },
     ru: {
       title: 'Пять месяцев ниже нормы, а потом дамбы наполнялись с февраля',
-      sub: `Столбцы: вода, поступившая в 18 основных дамб за каждый месяц. Линия: осадки с 1 октября в процентах от нормы на эту дату. В конце ноября сезон был на 42% нормы и превысил 100% только в марте. ${fmt(total > 0 ? (100 * afterFeb) / total : 0, 0)}% годового притока (${fmt(total, 1)} ${u}) пришлось на февраль и позже.`,
+      sub: `Столбцы: вода, поступившая в 18 основных дамб за каждый месяц. Линия: осадки с 1 октября в процентах от нормы на эту дату. В конце ноября сезон был на 42% нормы и превысил 100% только в марте. ${fmt((100 * afterFeb) / total, 0)}% годового притока (${fmt(total, 1)} ${u}) пришлось на февраль и позже.`,
       src: 'Приток: таблица месячного притока Департамента водного развития. Осадки: Департамент метеорологии, среднее по подконтрольной правительству территории, норма 1961–90 годов. Октябрь–апрель — окончательные данные, май–август — предварительные, сентябрь — по 25-е число.',
       inflow: `Приток, ${u}`, rain: 'Осадки с 1 окт, % нормы', normal: 'норма', crossed: 'выше нормы',
     },

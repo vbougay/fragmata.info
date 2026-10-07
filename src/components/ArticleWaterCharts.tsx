@@ -334,41 +334,39 @@ export function WeeklyMixChart({ upTo, brief = false }: { upTo?: string; brief?:
 
 /* ================= Tap water by source, every year since 1997 ================= */
 
-/** `through` drops years after it, so an article keeps the record it was written from. */
-export function YearlySupplyChart({ through }: { through?: number } = {}) {
+export function YearlySupplyChart() {
   const lang = lng(useLanguage().language);
   const { show, hide, node } = useTip();
   const u = UNIT[lang];
-  const rows = SUPPLY_BY_SOURCE.filter(r => !through || r.year <= through);
-  const first = rows[0], last = rows[rows.length - 1];
+  const last = SUPPLY_BY_SOURCE[SUPPLY_BY_SOURCE.length - 1];
   const total = (r: typeof last) => r.dams + r.desalination + r.boreholes + (r.tankers ?? 0);
   const share = (r: typeof last) => Math.round((100 * r.desalination) / total(r));
-  const y2016 = rows.find(r => r.year === 2016)!, y2020 = rows.find(r => r.year === 2020)!;
+  const y2016 = SUPPLY_BY_SOURCE.find(r => r.year === 2016)!, y2020 = SUPPLY_BY_SOURCE.find(r => r.year === 2020)!;
 
   const t = L({
     en: {
       title: 'Desalination and the dams take turns at the tap',
       sub: `Drinking water supplied by the Government Water Works each year, by source, ${u}. When the dams are full the plants are throttled back: desalination was ${share(y2016)}% of supply in 2016 and ${share(y2020)}% in 2020. In ${last.year} it was ${share(last)}%.`,
-      src: `Cyprus Water Development Department, «Πηγές Ύδρευσης» (water supply by source), ${first.year}–${last.year}. Tankers: water shipped from Greece in 2008–09.`,
+      src: 'Cyprus Water Development Department, «Πηγές Ύδρευσης» (water supply by source), 1997–2024. Tankers: water shipped from Greece in 2008–09.',
       desal: 'Desalination', dams: 'Dams', bore: 'Boreholes', tank: 'Tankers from Greece',
     },
     el: {
       title: 'Αφαλάτωση και φράγματα εναλλάσσονται στη βρύση',
       sub: `Πόσιμο νερό από τα Κυβερνητικά Υδατικά Έργα κάθε χρόνο, ανά πηγή, ${u}. Όταν τα φράγματα είναι γεμάτα, οι μονάδες περιορίζονται: η αφαλάτωση ήταν το ${share(y2016)}% της υδατοπρομήθειας το 2016 και το ${share(y2020)}% το 2020. Το ${last.year} ήταν το ${share(last)}%.`,
-      src: `Τμήμα Αναπτύξεως Υδάτων, «Πηγές Ύδρευσης», ${first.year}–${last.year}. Δεξαμενόπλοια: νερό από την Ελλάδα το 2008–09.`,
+      src: 'Τμήμα Αναπτύξεως Υδάτων, «Πηγές Ύδρευσης», 1997–2024. Δεξαμενόπλοια: νερό από την Ελλάδα το 2008–09.',
       desal: 'Αφαλάτωση', dams: 'Φράγματα', bore: 'Γεωτρήσεις', tank: 'Δεξαμενόπλοια από Ελλάδα',
     },
     ru: {
       title: 'Опреснение и водохранилища сменяют друг друга в кране',
       sub: `Питьевая вода государственных водных систем по источникам за каждый год, ${u}. Когда водохранилища полны, опреснители притормаживают: в 2016 году опреснение дало ${share(y2016)}% воды, в 2020-м — ${share(y2020)}%. В ${last.year} году — ${share(last)}%.`,
-      src: `Департамент водного развития Кипра, «Πηγές Ύδρευσης» (источники водоснабжения), ${first.year}–${last.year}. Танкеры: вода, привезённая из Греции в 2008–09 годах.`,
+      src: 'Департамент водного развития Кипра, «Πηγές Ύδρευσης» (источники водоснабжения), 1997–2024. Танкеры: вода, привезённая из Греции в 2008–09 годах.',
       desal: 'Опреснение', dams: 'Водохранилища', bore: 'Скважины', tank: 'Танкеры из Греции',
     },
   }, lang);
 
   const W = 1000, H = 360, m = { t: 20, r: 16, b: 34, l: 48 };
   const vMax = 120;
-  const n = rows.length, band = (W - m.l - m.r) / n, bw = band * 0.68;
+  const n = SUPPLY_BY_SOURCE.length, band = (W - m.l - m.r) / n, bw = band * 0.68;
   const y = (v: number) => (H - m.b) - (v / vMax) * (H - m.b - m.t);
   return (
     <>
@@ -380,7 +378,7 @@ export function YearlySupplyChart({ through }: { through?: number } = {}) {
             <SubText x={m.l - 8} y={y(v) + 4} textAnchor="end">{v}</SubText>
           </g>
         ))}
-        {rows.map((r, i) => {
+        {SUPPLY_BY_SOURCE.map((r, i) => {
           const x = m.l + band * i + (band - bw) / 2;
           const parts: [number, string][] = [[r.desalination, DESAL], [r.dams, DAMS], [r.boreholes, BOREHOLES], [r.tankers ?? 0, '#9aa0a8']];
           let acc = 0;
