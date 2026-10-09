@@ -18,6 +18,7 @@ export const ARTICLES: ArticleMeta[] = [
     date: '2026-10-09',
     dataSetId: '30-SEP-2026',
     author: 'Vladimir Bugay',
+    ogImage: true,
     title: {
       en: "Where Cyprus's Water Comes From, and Where It Goes",
       el: 'Από Πού Έρχεται το Νερό της Κύπρου και Πού Πηγαίνει',

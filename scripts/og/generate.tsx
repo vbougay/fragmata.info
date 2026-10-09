@@ -18,6 +18,11 @@ import { getZenModel } from "../../src/utils/zenUtils";
 import { yearReviewCard } from "./card-year-review";
 import { REVIEW_YEAR, hydroYearTrace, hydroYearBand, clipBand, yearNumbers } from "../../src/utils/yearReviewStats";
 import { ARTICLES } from "../../src/utils/articles";
+import { waterFlowCard } from "./card-water-flow";
+import {
+  WATER_FLOWS, WATER_SOURCES, WATER_USES, ESTIMATED_SOURCES, WATER_BALANCE_YEAR, totalForSource, totalForUse,
+  type WaterSource, type WaterUse,
+} from "../../src/utils/waterBalanceData";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FONTS_DIR = path.join(__dirname, "fonts");
@@ -367,7 +372,95 @@ async function renderArticleCards(): Promise<number> {
   return n;
 }
 
+// Water ins-and-outs article: the 2024 sources-to-uses diagram, small.
+const WATER_SLUG = "2026-10-09-cyprus-water-ins-and-outs";
+// Same colours as the article chart (ArticleWaterCharts.tsx).
+const SOURCE_COLOR: Record<WaterSource, string> = {
+  desalination: "#0f9d8a", dams: "#2f7fd8", govBoreholes: "#e2691f", recycled: "#8a63d2", privateBoreholes: "#9aa0a8",
+};
+const WF: Record<Locale, {
+  kicker: string; subtitle: string; unit: string;
+  sources: Record<WaterSource, string>; uses: Record<WaterUse, string>;
+  stats: { value: string; label: string; color?: string }[];
+}> = {
+  en: {
+    kicker: "DESALINATION AND THE DAMS",
+    subtitle: "Four new desalination plants are approved. How much will they help the dams?",
+    unit: `Sources → uses, ${WATER_BALANCE_YEAR}, mln. m³`,
+    sources: { desalination: "Desalination", dams: "Dams", govBoreholes: "State boreholes", recycled: "Recycled", privateBoreholes: "Private boreholes" },
+    uses: { taps: "Taps", losses: "Losses", recharge: "Recharge", farms: "Farms" },
+    stats: [
+      { value: "66.5%", label: "of tap water came from the sea", color: "#34d399" },
+      { value: "34.6", label: "mln. m³ of dam water went to taps: the most desalination can replace" },
+      { value: "2029–31", label: "when the new plants are due" },
+    ],
+  },
+  el: {
+    kicker: "ΑΦΑΛΑΤΩΣΗ ΚΑΙ ΦΡΑΓΜΑΤΑ",
+    subtitle: "Εγκρίθηκαν τέσσερις νέες μονάδες αφαλάτωσης. Πόσο θα βοηθήσουν τα φράγματα;",
+    unit: `Πηγές → χρήσεις, ${WATER_BALANCE_YEAR}, εκατ. κ.μ.`,
+    sources: { desalination: "Αφαλάτωση", dams: "Φράγματα", govBoreholes: "Κρατικές γεωτρήσεις", recycled: "Ανακυκλωμένο", privateBoreholes: "Ιδιωτικές γεωτρήσεις" },
+    uses: { taps: "Βρύσες", losses: "Απώλειες", recharge: "Εμπλουτισμός", farms: "Γεωργία" },
+    stats: [
+      { value: "66.5%", label: "του νερού της βρύσης ήρθε από τη θάλασσα", color: "#34d399" },
+      { value: "34.6", label: "εκατ. κ.μ. από τα φράγματα στις βρύσες: το μέγιστο που αντικαθιστά η αφαλάτωση" },
+      { value: "2029–31", label: "πότε έρχονται οι νέες μονάδες" },
+    ],
+  },
+  ru: {
+    kicker: "ОПРЕСНЕНИЕ И ВОДОХРАНИЛИЩА",
+    subtitle: "Одобрены четыре новые опреснительные станции. Насколько они помогут водохранилищам?",
+    unit: `Источники → потребители, ${WATER_BALANCE_YEAR}, млн. м³`,
+    sources: { desalination: "Опреснение", dams: "Водохранилища", govBoreholes: "Гос. скважины", recycled: "Очищенные стоки", privateBoreholes: "Частные скважины" },
+    uses: { taps: "Краны", losses: "Потери", recharge: "Подпитка", farms: "Фермы" },
+    stats: [
+      { value: "66.5%", label: "воды в кранах пришло из моря", color: "#34d399" },
+      { value: "34.6", label: "млн. м³ из водохранилищ ушло в краны: максимум, который заменит опреснение" },
+      { value: "2029–31", label: "когда ждут новые станции" },
+    ],
+  },
+};
+
+async function renderWaterFlowCards(): Promise<number> {
+  const article = ARTICLES.find((a) => a.slug === WATER_SLUG && a.ogImage);
+  if (!article) return 0;
+  const est = (k: WaterSource) => ESTIMATED_SOURCES.includes(k);
+  let n = 0;
+  for (const loc of LOCALES) {
+    const t = WF[loc];
+    await render(
+      waterFlowCard({
+        brand: "Fragmata",
+        site: "fragmata.info",
+        kicker: t.kicker,
+        title: article.title[loc],
+        subtitle: t.subtitle,
+        unitLabel: t.unit,
+        sources: WATER_SOURCES.map((k) => ({
+          key: k, label: t.sources[k], color: SOURCE_COLOR[k], estimated: est(k),
+          value: est(k) ? `~${Math.round(totalForSource(k))}` : num(totalForSource(k)),
+        })),
+        uses: WATER_USES.map((k) => ({
+          key: k, label: t.uses[k],
+          value: k === "farms" ? `~${Math.round(totalForUse(k))}` : num(totalForUse(k)),
+        })),
+        flows: WATER_FLOWS,
+        stats: t.stats,
+      }),
+      path.join(OG_DIR, "articles", `${WATER_SLUG}.${loc}.png`),
+    );
+    n++;
+  }
+  return n;
+}
+
 async function main() {
+  // `pnpm og articles` renders only the article cards (they don't change with daily data).
+  if (process.argv[2] === "articles") {
+    const n = (await renderArticleCards()) + (await renderWaterFlowCards());
+    console.log(`\nDone: ${n} cards.`);
+    return;
+  }
   let n = 0;
   // All dams
   for (const r of RES) {
@@ -392,6 +485,7 @@ async function main() {
   n += await renderZenCards();
   // Articles
   n += await renderArticleCards();
+  n += await renderWaterFlowCards();
   console.log(`\nDone: ${n} cards.`);
 }
 
