@@ -3776,6 +3776,63 @@ Gap vs last year: +23.6pp.
 🔗 https://fragmata.info
 ```
 
+## October 9 — New Article: Where Cyprus's Water Comes From, and Where It Goes
+
+📰 New article published: **"Where Cyprus's Water Comes From, and Where It Goes"** (EN/EL/RU), with desalination launched as a topic on the site (dashboard section, /desalination page, a page per plant).
+
+A reader asked whether four new desalination plants (180,000 m³ a day, about 66 MCM a year) close the dams' typical-winter gap of about 22 MCM three times over. They don't: desalinated water feeds taps, not dams, and the dams sent only 34.6 MCM to taps in 2024. The article walks through the 2024 ins and outs, this summer's weekly bulletins (desalination share of tap water 76% → 68%, dam water to taps 83,000 → 115,000 m³ a day), the plants due 2029–2031 (net +120,000 m³ a day), and the policy catch: freed dam water is earmarked for farmers.
+
+Full article: [fragmata.info/articles/2026-10-09-cyprus-water-ins-and-outs](https://fragmata.info/articles/2026-10-09-cyprus-water-ins-and-outs)
+
+### Telegram
+Sent by Vlad, 2026-10-09T08:45:24Z. Public link: https://t.me/fragmatainfo/168 (message_id not captured; sent manually, not via the pipeline). Text below is as sent, checked against the public post; `**bold**` and `__italic__` mark its formatting.
+```
+💧 **Where does Cyprus's water come from, and where does it go?**
+
+A reader wrote in after our year in review. The government has just approved four new desalination plants: 180,000 m³ a day, about 66 mln. m³ a year. A typical winter leaves the dams about 22 short. Doesn't that close the gap three times over?
+
+Short answer: no. The long answer is our new article, and it starts with a map of the whole system.
+
+🌊 **The ins** (2024, mln. m³)
+• Dams: 84.6
+• The sea (desalination): 74.9
+• Government boreholes: 15.5
+• Recycled water: 14.2
+• Private boreholes: about 108, and nobody meters them
+
+🚰 **The outs**
+• Farms: about 168
+• Taps: 112.6
+• Evaporation and other losses: 13.2
+• Aquifer recharge: 3.1
+
+Farms use more water than homes do, and two thirds of tap water already comes from the sea.
+
+🔧 **The catch is plumbing**
+Desalinated water never reaches a dam. It goes straight into the drinking-water network, so it helps the dams only by replacing dam water __at the tap__. In 2024 the dams sent 34.6 mln. m³ to taps. A desalination plant can't irrigate an orchard at a price a farmer can pay, can't stop evaporation and can't refill an aquifer. The most it can spare the dams is about 30, not 66.
+
+📅 **This summer, week by week**
+The WDD shared its earlier weekly bulletins with us (thank you!), so for the first time we can watch it happen:
+• Desalination ran close to its limit through June and July: about 260,000 m³ a day out of 280,000.
+• Dam water going to taps rose from 83,000 to 115,000 m³ a day, about 3 mln. m³ a month against a plan of 2.
+• The Kissonerga unit went from 11,000 m³ a day to almost nothing by September.
+• The sea's share of tap water fell from 76% to 68%.
+
+🏗 **What's coming**
+The new Dhekelia plant replaces the old one, so the four plants add about 120,000 m³ a day, not 180,000. None has been tendered yet, and the dates are 2029 to 2031. Meanwhile, demand for tap water grows by 4 to 6 mln. m³ every year.
+
+🎯 **So, to our reader**
+On paper, yes. Once everything is built, desalination could take over nearly all of the dams' tap duty, about 30 mln. m³ a year, which is more than the 22 gap. But the government has said that dam water freed by desalination goes to farmers, and they have been about 22 short themselves. So the plants will decide __who gets__ the dams' water more than how full the dams are. That still depends on the winter.
+
+✨ **New on Fragmata: desalination**
+• A Desalination section on the dashboard, with this week's share of tap water from the sea
+• Every plant, running and planned, on one page with a map and weekly output
+• A page for each of the 18 plants and units, with its story: fires, rebuilds, contracts, and the ones that were never built
+
+📖 Full article with charts (EN/EL/RU): https://fragmata.info/articles/2026-10-09-cyprus-water-ins-and-outs
+🏭 All the plants: https://fragmata.info/desalination
+```
+
 ## October 12 — Arminou keeps climbing as Achna's long streak finally breaks
 
 📰 Major update (Monday, covering the weekend after Thursday) — total storage 35.4% (102.9 MCM), down from 35.55% (103.4 MCM) on October 8. Arminou kept climbing to 62.3% (+0.7pp), still the only Southern Conveyor dam rising. Achna broke its months-long unexplained rise streak, slipping to 8.1% for its first drop in weeks.
