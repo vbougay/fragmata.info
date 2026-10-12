@@ -3775,3 +3775,26 @@ Gap vs last year: +23.6pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 12 — Arminou keeps climbing as Achna's long streak finally breaks
+
+📰 Major update (Monday, covering the weekend after Thursday) — total storage 35.4% (102.9 MCM), down from 35.55% (103.4 MCM) on October 8. Arminou kept climbing to 62.3% (+0.7pp), still the only Southern Conveyor dam rising. Achna broke its months-long unexplained rise streak, slipping to 8.1% for its first drop in weeks.
+
+### Telegram
+Sent: message_id=312, chat_id=151413643, at=2026-10-12T09:20:03Z
+```
+📰 Cyprus Dams — October 12
+
+Monday's bulletin, covering the weekend after Thursday: total storage 35.4% (102.9 MCM) — down from 35.55% (103.4 MCM) on October 8, the same slow drawdown pace continuing. Arminou kept climbing to 62.3% (+0.7pp over four days), still the only Southern Conveyor dam rising. Achna broke its months-long unexplained rise streak, slipping to 8.1% (-0.2pp). Kalopanagiotis remains the only dam overflowing, unchanged at 100%. Gap over last year: +23.6pp. Season inflow: 0.54 MCM so far. Arminou→Kouris transfer still at zero.
+
+• Arminou 62.3% (+0.7pp) — keeps climbing, only Southern Conveyor dam rising
+• Achna 8.1% (-0.2pp) — breaks its months-long rise streak
+• Pomos 59.5% (-1.0pp) — steepest drop in weeks
+• Argaka 43.7% (+0.2pp) — small uptick ends two-bulletin plateau
+• Kalopanagiotis 100% — still the only dam overflowing
+• Kouris 36.8% (-0.1pp) — barely moved
+
+Gap vs last year: +23.6pp.
+
+🔗 https://fragmata.info
+```
