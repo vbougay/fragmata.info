@@ -3900,3 +3900,44 @@ Gap vs last year: +23.8pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 14 — Kairika: Thunder, with data (lightning page and article)
+
+📰 Announcement from the sister project Kairika (kairika.info): a new lightning page, built from a static snapshot of EUMETSAT MTG Lightning Imager flashes, and the article **"Thunder, with data: a record August storm, a very wet October and Cyprus's first lightning page"** (EN/EL/RU/DE, dated 14 Oct 2026). Not a Fragmata data post: no dam figures.
+
+Full article: [kairika.info/articles/lightning-and-a-wet-october-2026](https://kairika.info/articles/lightning-and-a-wet-october-2026)
+Reddit: https://www.reddit.com/r/cyprus/s/cV9idSZgpc
+
+### Telegram
+Sent by Vlad, 2026-10-14T05:00:09Z. Public link: https://t.me/fragmatainfo/173 (message_id not captured; sent manually, not via the pipeline). Text below is as sent, read back from the public post (the title line is not bold in the original; only the emoji are). The forecast lines are for Wednesday 14 and Thursday 15 October. The EUMETSAT credit line from the draft ("Contains modified EUMETSAT Meteosat data 2026") was not included.
+```
+⚡ Thunder, with data
+
+Kairika now has a lightning page, and a full write-up of a record August storm, a very wet start to October, and what a European weather satellite saw.
+
+🛰 29 August, seen from space
+• About 17,600 flashes within 25 km of the island in one day (about 9,400 over land, about 109,000 across the wider sea area)
+• Busiest hour over land: 11:00, about 5,000 flashes. You can replay the whole day flash by flash.
+
+🌧 A wet start to the new water year
+• 1–12 October: 28 mm on average across our 54 stations, up to 72 mm at Polis Chrysochous
+• Paphos: its wettest 1–6 October since 1940 (model)
+• Lightning within 25 km of the island on 8 of those 12 days. On 11 and 12 October the sea lit up (about 80,000 flashes) while the stations stayed dry.
+
+📍 Where it flashes most
+• Most: the Mesaoria plain around Nicosia and east towards Famagusta
+• Least: Limassol
+
+📅 Rain today and tomorrow (model forecast)
+• Wednesday: Limassol about 18 mm, Paphos about 17 mm
+• Thursday: Paphos about 17 mm
+• Nicosia and Larnaca stay dry
+
+🔌 Bonus fact: that 29 August storm held roughly three quarters of a day of Cyprus's electricity (about 11 GWh). Sadly none of it can be harvested.
+
+ℹ️ A static snapshot, not live, and not a warning. For official warnings, see the Department of Meteorology (also on our home page).
+
+📖 Full article: https://kairika.info/articles/lightning-and-a-wet-october-2026
+⚡ Lightning: https://kairika.info/lightning
+🌧 Rain: https://kairika.info/rain · 📍 Near me: https://kairika.info/near-me
+```
