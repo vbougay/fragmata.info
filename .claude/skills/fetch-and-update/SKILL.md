@@ -193,7 +193,7 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
   - Use the English slug from `DAM_SLUG_MAP` in `src/utils/slugs.ts` (e.g., `agia-marina`, `klirou-malounta`)
   - The locale prefix is: none for `en`, `/el` for Greek, `/ru` for Russian
 - Search the web for Cyprus water/reservoir/drought news from the past week and incorporate relevant context (government plans, drought status, weather events)
-- Add up to 3 media article links at the end under an "In the media" / "Στα μέσα" section
+- Add up to 3 media article links at the end under an "In the media" / "Στα μέσα" / "В СМИ" section. Leave a **blank line** between the last dam bullet and the `**In the media:**` heading — without it Markdown folds the heading and the links into the last dam bullet. Articles are their own section, never part of the dam-movements list
 - Write both English, Russian and Greek versions with the same structure
 - Tone: informative and factual, not verbose
 - Do **not** end the summary with `🔗 https://fragmata.info` — it renders as a stray link on the site (that line belongs only in Telegram/WhatsApp posts)
