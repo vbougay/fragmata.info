@@ -1,49 +1,41 @@
 import type { Locale } from './locale';
 
+export const NEWS_TOPICS = ['reservoirs', 'desalination', 'irrigation', 'policy', 'weather'] as const;
+export type NewsTopic = (typeof NEWS_TOPICS)[number];
+
 export interface NewsArticle {
   title: string;
   url: string;
   lang: Locale;
   source: string;
+  /** Publication date, YYYY-MM-DD, as stated on the article page. */
+  date: string;
+  /** reservoirs = levels/inflows, desalination = plants/supply, irrigation = farming water,
+   *  policy = government plans/funding, weather = rain/climate. */
+  topic: NewsTopic;
 }
 
 export const newsArticles: NewsArticle[] = [
   // English
-  { title: 'Plan for irrigation water heads to cabinet', url: 'https://cyprus-mail.com/2026/09/15/plan-for-irrigation-water-heads-to-cabinet', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Farmers to get additional 3.5m cubic metres of water', url: 'https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Implementation of four new desalination plants underway, minister says', url: 'https://www.parikiaki.com/2026/09/implementation-of-four-new-desalination-plants-underway-in-cyprus-minister-says/', lang: 'en', source: 'Parikiaki' },
-  { title: 'Cyprus targets full reliance upon desalination plants by next year', url: 'https://cyprus-mail.com/2026/06/29/cyprus-targets-full-reliance-upon-desalination-plants-by-next-year', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Government investing €168m to tackle water shortage, minister says', url: 'https://cyprus-mail.com/2026/07/05/government-investing-e168m-to-tackle-water-shortage-minister-says', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'MPs warn water crisis threatens future of farming', url: 'https://cyprus-mail.com/2026/06/30/mps-warn-water-crisis-threatens-future-of-farming', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Farmers demand more irrigation water', url: 'https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
-  { title: 'Cabinet approves 3.5 million cubic metres of additional water supply', url: 'https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Reservoir levels over double from same time last year', url: 'https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year', lang: 'en', source: 'Cyprus Mail' },
-  { title: 'Agriculture ministry allocates €200m to irrigation projects', url: 'https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects', lang: 'en', source: 'Cyprus Mail' },
-  // Russian
-  { title: 'Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства', url: 'https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057', lang: 'ru', source: 'RusCyprus' },
-  { title: 'Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением', url: 'https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/', lang: 'ru', source: 'Cyprus Inform' },
-  { title: 'Сельхозорганизации Кипра требуют увеличить объёмы воды для орошения сезонных культур', url: 'https://ruscyprus.com/news/selskohozyaystvennye-organizacii-kipra/59528', lang: 'ru', source: 'RusCyprus' },
-  { title: 'Уровень воды в дамбах Кипра вырос до 42,4% — почти вдвое больше прошлогоднего', url: 'https://ruscyprus.com/news/uroven-vody-v-dambah-kipra-vyros-do-42-4-na/58033', lang: 'ru', source: 'RusCyprus' },
-  { title: 'Плотины Кипра заполнены на 39,6% при запасе 115,2 млн кубометров', url: 'https://ruscyprus.com/news/plotiny-kipra-zapolneny-na-39-6-pri-zapase/55998', lang: 'ru', source: 'RusCyprus' },
-  { title: 'На Кипре перелилась дамба Визакья, которая в декабре была пустой', url: 'https://ruscyprus.com/news/na-kipre-perelilas-damba-vizakya-kotoraya-v/55551', lang: 'ru', source: 'RusCyprus' },
-  { title: 'За зиму водохранилища Кипра выросли почти вчетверо: с 9,6% до 38%', url: 'https://lenta.cy/za-zimu-vodohranilishha-kipra-vyrosli-pochti-vchetvero-s-9-6-do-38/', lang: 'ru', source: 'Lenta.cy' },
-  { title: 'Приток воды в дамбы Кипра — рекордный за 30 лет!', url: 'https://evropakipr.com/novosti/pritok-vody-v-damby-kipra-rekordnyy-za-30-let', lang: 'ru', source: 'Европа Кипр' },
-  { title: 'Третья дамба переполнилась в Пафосе', url: 'https://lenta.cy/tretja-damba-perepolnilas-v-pafose/', lang: 'ru', source: 'Lenta.cy' },
-  { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
-  { title: 'Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов', url: 'https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306', lang: 'ru', source: 'RusCyprus' },
+  { title: 'Agriculture ministry allocates €200m to irrigation projects', url: 'https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects', lang: 'en', source: 'Cyprus Mail', date: '2026-10-07', topic: 'policy' },
+  { title: 'Water levels higher at Larnaca and Famagusta reservoirs than last year', url: 'https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year', lang: 'en', source: 'Cyprus Mail', date: '2026-10-02', topic: 'reservoirs' },
+  { title: 'Senekis: Four New Desalination Plants Under Way Across Cyprus', url: 'https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus', lang: 'en', source: 'Politis', date: '2026-09-13', topic: 'desalination' },
+  { title: 'Farmers to get additional 3.5m cubic metres of water', url: 'https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water', lang: 'en', source: 'Cyprus Mail', date: '2026-09-16', topic: 'irrigation' },
+  { title: 'The Shared Water Project That Outlived Cyprus\'s Division', url: 'https://en.politis.com.cy/news/environment/1030241/the-shared-water-project-that-outlived-cypruss-division', lang: 'en', source: 'Politis', date: '2026-09-03', topic: 'policy' },
+  { title: 'Mazotos Residents Oppose Desalination Plant on Larnaca Coast', url: 'https://en.politis.com.cy/news/environment/1026889/mazotos-residents-oppose-desalination-plant-on-larnaca-coast', lang: 'en', source: 'Politis', date: '2026-08-18', topic: 'desalination' },
 
   // Greek
-  { title: 'Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση', url: 'https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi', lang: 'el', source: 'Πολίτης' },
-  { title: 'Υπουργικό: Πρόταση από Σενέκη για επιπρόσθετες ποσότητες νερού σε γεωργούς', url: 'https://www.politis.com.cy/politis-news/cyprus/1033164/ypoyrghiko-protasi-apo-seneki-ghia-epiprosthetes-posotites-nerou-se-gheorghous', lang: 'el', source: 'Πολίτης' },
-  { title: 'Στο 39,3% η πληρότητα των φραγμάτων την 1η Σεπτεμβρίου — ανάσα σε σχέση με πέρυσι, αλλά 4 εκπέμπουν SOS', url: 'https://www.politis.com.cy/cyprus/perivallon/1030808/sto-393-i-plirotita-ton-fraghmaton-tin-1i-septemvrioy-anasa-se-skhesi-me-persi-alla-4-ekpempoyn-sos', lang: 'el', source: 'Πολίτης' },
-  { title: 'Τελευταίες βροχές: Μικρή συνεισφορά στα φράγματα, όμως «στρώνουν χαλί» για πρώιμες μεγάλες εισροές', url: 'https://www.politis.com.cy/politis-news/cyprus/1018398/teleftaies-vrokhes-mikri-sineisfora-sta-fraghmata-omos-strwnoyn-khali-ghia-prwimes-meghales-eisroes', lang: 'el', source: 'Πολίτης' },
-  { title: 'Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης', url: 'https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/', lang: 'el', source: 'Διάλογος' },
-  { title: 'ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026', url: 'https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/', lang: 'el', source: 'Διάλογος' },
-  { title: 'ΤΑΥ: Στο 42,4% η πληρότητα των φραγμάτων — Διπλάσια από πέρυσι', url: 'https://www.offsite.com.cy/eidiseis/koinonia/tay-sto-424-i-plirotita-ton-fragmaton-diplasia-apo-perysi', lang: 'el', source: 'Offsite' },
-  { title: 'Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/', lang: 'el', source: 'AlphaNews' },
-  { title: 'Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028', url: 'https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/', lang: 'el', source: 'Dialogos' },
-  { title: 'Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης', url: 'https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/', lang: 'el', source: 'ΡΙΚ' },
-  { title: 'Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι', url: 'https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/', lang: 'el', source: 'Σημερινή' },
-  { title: 'Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%', url: 'https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi', lang: 'el', source: 'Πολίτης' },
+  { title: 'Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι', url: 'https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/', lang: 'el', source: 'Σημερινή', date: '2026-10-08', topic: 'reservoirs' },
+  { title: 'Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία', url: 'https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia', lang: 'el', source: 'Πολίτης', date: '2026-10-15', topic: 'weather' },
+  { title: 'Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%', url: 'https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi', lang: 'el', source: 'Πολίτης', date: '2026-10-08', topic: 'reservoirs' },
+  { title: 'Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης', url: 'https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/', lang: 'el', source: 'ΡΙΚ', date: '2026-09-14', topic: 'desalination' },
+  { title: 'Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση', url: 'https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi', lang: 'el', source: 'Πολίτης', date: '2026-09-20', topic: 'irrigation' },
+  { title: 'Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028', url: 'https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/', lang: 'el', source: 'Dialogos', date: '2026-08-18', topic: 'policy' },
+
+  // Russian
+  { title: 'Сильные дожди на Кипре вызвали наводнения, перебои с электричеством и ограничения движения', url: 'https://ruscyprus.com/news/silnye-dozhdi-na-kipre-vyzvali-navodneniya/63395', lang: 'ru', source: 'RusCyprus', date: '2026-10-15', topic: 'weather' },
+  { title: 'Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов', url: 'https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306', lang: 'ru', source: 'RusCyprus', date: '2026-10-06', topic: 'reservoirs' },
+  { title: 'Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением', url: 'https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/', lang: 'ru', source: 'Cyprus Inform', date: '2026-09-06', topic: 'irrigation' },
+  { title: 'Кипр готовится жить без дождей: на острове построят еще три опреснительные установки', url: 'https://ruscyprus.com/news/kipr-gotovitsya-zhit-bez-dozhdey-na-ostrove/62981', lang: 'ru', source: 'RusCyprus', date: '2026-09-03', topic: 'desalination' },
+  { title: 'Кипр получил от ОАЭ мобильные опреснительные установки для увеличения водоснабжения', url: 'https://www.kiprinform.com/news/kipr-poluchil-ot-oae-mobilnye-opresnitelnye-ustanovki-dlya-uvelicheniya-vodosnabzheniya/', lang: 'ru', source: 'Cyprus Inform', date: '2026-08-20', topic: 'desalination' },
 ];

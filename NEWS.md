@@ -1,46 +1,29 @@
 # Cyprus Water Crisis — News Coverage
 
-Recent articles covering the Cyprus water shortage and reservoir crisis (Mar 2026 — Oct 2026).
+Articles shown in the dashboard's news ticker (18 Aug 2026 — 15 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
-- [Plan for irrigation water heads to cabinet](https://cyprus-mail.com/2026/09/15/plan-for-irrigation-water-heads-to-cabinet) — Cyprus Mail, Sep 15, 2026
-- [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail, Sep 16, 2026
-- [Implementation of four new desalination plants underway, minister says](https://www.parikiaki.com/2026/09/implementation-of-four-new-desalination-plants-underway-in-cyprus-minister-says/) — Parikiaki, Sep 2026
-- [Cyprus targets full reliance upon desalination plants by next year](https://cyprus-mail.com/2026/06/29/cyprus-targets-full-reliance-upon-desalination-plants-by-next-year) — Cyprus Mail, Jun 29, 2026
-- [Government investing €168m to tackle water shortage, minister says](https://cyprus-mail.com/2026/07/05/government-investing-e168m-to-tackle-water-shortage-minister-says) — Cyprus Mail, Jul 5, 2026
-- [MPs warn water crisis threatens future of farming](https://cyprus-mail.com/2026/06/30/mps-warn-water-crisis-threatens-future-of-farming) — Cyprus Mail, Jun 30, 2026
-- [Farmers demand more irrigation water](https://cyprus-mail.com/2026/06/23/farmers-demand-more-irrigation-water) — Cyprus Mail, Jun 23, 2026
-- [Cyprus dam levels double compared to last year, WDD official](https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official) — Parikiaki, Jun 2026
-- [Cabinet approves 3.5 million cubic metres of additional water supply](https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply) — Cyprus Mail, Jun 9, 2026
-- [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail, Aug 24, 2026
-- [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail, Oct 7, 2026
+- [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail, 7 Oct 2026 · policy
+- [Water levels higher at Larnaca and Famagusta reservoirs than last year](https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year) — Cyprus Mail, 2 Oct 2026 · reservoirs
+- [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail, 16 Sept 2026 · irrigation
+- [Senekis: Four New Desalination Plants Under Way Across Cyprus](https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus) — Politis, 13 Sept 2026 · desalination
+- [The Shared Water Project That Outlived Cyprus's Division](https://en.politis.com.cy/news/environment/1030241/the-shared-water-project-that-outlived-cypruss-division) — Politis, 3 Sept 2026 · policy
+- [Mazotos Residents Oppose Desalination Plant on Larnaca Coast](https://en.politis.com.cy/news/environment/1026889/mazotos-residents-oppose-desalination-plant-on-larnaca-coast) — Politis, 18 Aug 2026 · desalination
 
 ## Russian
 
-- [Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства](https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057) — RusCyprus, Sep 2026
-- [Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением](https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/) — Cyprus Inform, Sep 2026
-- [Сельхозорганизации Кипра требуют увеличить объёмы воды для орошения сезонных культур](https://ruscyprus.com/news/selskohozyaystvennye-organizacii-kipra/59528) — RusCyprus, Jun 2026
-- [Уровень воды в дамбах Кипра вырос до 42,4% — почти вдвое больше прошлогоднего](https://ruscyprus.com/news/uroven-vody-v-dambah-kipra-vyros-do-42-4-na/58033) — RusCyprus, Jun 2026
-- [Плотины Кипра заполнены на 39,6% при запасе 115,2 млн кубометров](https://ruscyprus.com/news/plotiny-kipra-zapolneny-na-39-6-pri-zapase/55998) — RusCyprus, May 4, 2026
-- [На Кипре перелилась дамба Визакья, которая в декабре была пустой](https://ruscyprus.com/news/na-kipre-perelilas-damba-vizakya-kotoraya-v/55551) — RusCyprus, Apr 2026
-- [За зиму водохранилища Кипра выросли почти вчетверо: с 9,6% до 38%](https://lenta.cy/za-zimu-vodohranilishha-kipra-vyrosli-pochti-vchetvero-s-9-6-do-38/) — Lenta.cy, Apr 2026
-- [Приток воды в дамбы Кипра — рекордный за 30 лет!](https://evropakipr.com/novosti/pritok-vody-v-damby-kipra-rekordnyy-za-30-let) — Европа Кипр, Mar 2026
-- [Третья дамба переполнилась в Пафосе](https://lenta.cy/tretja-damba-perepolnilas-v-pafose/) — Lenta.cy, Mar 28, 2026
-- [Март 2026 года стал одним из самых дождливых за всю историю Кипра](https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612) — RusCyprus, Mar 2026
-- [Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов](https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306) — RusCyprus, Oct 6, 2026
+- [Сильные дожди на Кипре вызвали наводнения, перебои с электричеством и ограничения движения](https://ruscyprus.com/news/silnye-dozhdi-na-kipre-vyzvali-navodneniya/63395) — RusCyprus, 15 Oct 2026 · weather
+- [Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов](https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306) — RusCyprus, 6 Oct 2026 · reservoirs
+- [Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением](https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/) — Cyprus Inform, 6 Sept 2026 · irrigation
+- [Кипр готовится жить без дождей: на острове построят еще три опреснительные установки](https://ruscyprus.com/news/kipr-gotovitsya-zhit-bez-dozhdey-na-ostrove/62981) — RusCyprus, 3 Sept 2026 · desalination
+- [Кипр получил от ОАЭ мобильные опреснительные установки для увеличения водоснабжения](https://www.kiprinform.com/news/kipr-poluchil-ot-oae-mobilnye-opresnitelnye-ustanovki-dlya-uvelicheniya-vodosnabzheniya/) — Cyprus Inform, 20 Aug 2026 · desalination
 
 ## Greek
 
-- [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης, Sep 2026
-- [Υπουργικό: Πρόταση από Σενέκη για επιπρόσθετες ποσότητες νερού σε γεωργούς](https://www.politis.com.cy/politis-news/cyprus/1033164/ypoyrghiko-protasi-apo-seneki-ghia-epiprosthetes-posotites-nerou-se-gheorghous) — Πολίτης, Sep 2026
-- [Στο 39,3% η πληρότητα των φραγμάτων την 1η Σεπτεμβρίου — ανάσα σε σχέση με πέρυσι, αλλά 4 εκπέμπουν SOS](https://www.politis.com.cy/cyprus/perivallon/1030808/sto-393-i-plirotita-ton-fraghmaton-tin-1i-septemvrioy-anasa-se-skhesi-me-persi-alla-4-ekpempoyn-sos) — Πολίτης, Sep 1, 2026
-- [Τελευταίες βροχές: Μικρή συνεισφορά στα φράγματα, όμως «στρώνουν χαλί» για πρώιμες μεγάλες εισροές](https://www.politis.com.cy/politis-news/cyprus/1018398/teleftaies-vrokhes-mikri-sineisfora-sta-fraghmata-omos-strwnoyn-khali-ghia-prwimes-meghales-eisroes) — Πολίτης, Jul 10, 2026
-- [Σήμα κινδύνου από αγροτικές οργανώσεις για το νερό άρδευσης](https://dialogos.com.cy/sima-kindynoy-apo-agrotikes-organoseis-gia-to-nero-ardeysis-stin-kypro/) — Διάλογος, Jun 2026
-- [ΤΑΥ: Σταδιακή διάθεση εξοπλισμού εξοικονόμησης νερού από τον Ιούνιο 2026](https://dialogos.com.cy/tay-stadiaki-diathesi-exoplismoy-exoikonomisis-neroy-apo-ton-ioynio-2026/) — Διάλογος, Jun 2026
-- [ΤΑΥ: Στο 42,4% η πληρότητα των φραγμάτων — Διπλάσια από πέρυσι](https://www.offsite.com.cy/eidiseis/koinonia/tay-sto-424-i-plirotita-ton-fragmaton-diplasia-apo-perysi) — Offsite, Jun 2026
-- [Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο](https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/) — AlphaNews, Mar 2026
-- [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — Dialogos, Sep 2026
-- [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ, Sep 14, 2026
-- [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή, Oct 8, 2026
-- [Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%](https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi) — Πολίτης, Oct 8, 2026
+- [Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία](https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia) — Πολίτης, 15 Oct 2026 · weather
+- [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή, 8 Oct 2026 · reservoirs
+- [Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%](https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi) — Πολίτης, 8 Oct 2026 · reservoirs
+- [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης, 20 Sept 2026 · irrigation
+- [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ, 14 Sept 2026 · desalination
+- [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — Dialogos, 18 Aug 2026 · policy

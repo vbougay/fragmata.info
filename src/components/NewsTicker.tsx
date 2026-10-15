@@ -9,11 +9,21 @@ const labels = {
   ru: 'В новостях',
 } as const;
 
+const dateLocales = { en: 'en-GB', el: 'el-GR', ru: 'ru-RU' } as const;
+
+function formatDate(iso: string, language: keyof typeof dateLocales) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(dateLocales[language], {
+    day: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
+  });
+}
+
 export function NewsTicker() {
   const { language } = useLanguage();
 
   const articles = useMemo(
-    () => newsArticles.filter((a) => a.lang === language),
+    () => newsArticles.filter((a) => a.lang === language).sort((a, b) => b.date.localeCompare(a.date)),
     [language]
   );
 
@@ -21,6 +31,9 @@ export function NewsTicker() {
 
   const items = articles.map((article, i) => (
     <span key={i} className="inline-flex items-center shrink-0">
+      <time dateTime={article.date} className="mr-1.5 text-xs text-gray-500 dark:text-gray-400">
+        {formatDate(article.date, language)}
+      </time>
       <a
         href={article.url}
         target="_blank"

@@ -103,6 +103,7 @@ apply these overrides.
   git rebase origin/main` (still one commit) and retry — never force-push `main`. Never write
   a future-dated / not-yet-sent draft into `community/TELEGRAM.md` (it's a public repo);
   drafts belong in the still-gitignored `community/DRAFTS.md` until they've actually gone out.
+- **The news step is part of the run, not an extra.** Do **News Ticker Refresh** (below) before you send Telegram and commit; it has no network or secret requirements beyond `WebSearch`/fetch. Report in the final message which articles you added and dropped. A run that finished without it is incomplete.
 - **If the bulletin turns out to be no newer than the deployed dataset**: make no commits,
   send nothing to Telegram, and say so — there's nothing to push. The one exception: still
   run the water bulletin archiver, and if it saved a new edition, commit and push just
@@ -265,15 +266,39 @@ forwarding the single message carries the whole package:
   commit; cloud runs: alongside the dataset commit, before pushing to `main`)
 - If the send fails, skip this step — nothing to record
 
-**News Ticker Refresh:**
+**News Ticker Refresh (required on every data update — local and cloud):**
 
-The dashboard has a scrolling news ticker showing recent water crisis articles. Keep it current on each data update:
+The dashboard's scrolling ticker (`src/utils/newsArticles.ts`) and the "In the media" section of
+`getSummaryChanges` draw on the same pool of articles. Skipping this step is how both went stale
+for weeks (Jul 23 – Sep 23 and again Oct 2 – 15), so do it **before** the commit and Telegram post,
+in cloud runs too. The helper is tracked, so it is present in a cloud checkout (`pnpm install` first):
 
-- Search the web for recent Cyprus water/reservoir/drought articles in all three languages (EN, EL, RU)
-- Update `src/utils/newsArticles.ts` — add new articles following the existing `{ title, url, lang, source }` format
-- Update `NEWS.md` to keep it in sync (grouped by language: English, Russian, Greek)
-- Keep the list reasonable — cap at ~10 articles per language, removing older or less relevant ones
-- Prefer articles from established Cyprus outlets (Cyprus Mail, Politis, AlphaNews, Европа Кипр, Вестник Кипра, etc.)
+1. **Find candidates**: `npx tsx .claude/skills/fetch-and-update/check-news.ts --candidates` lists
+   recent water articles from outlet RSS feeds and Cyprus Mail topic pages, already filtered to the
+   last 60 days and minus what the ticker holds. Then use WebSearch for what the feeds miss, in all
+   three languages (EN, EL, RU), and open the sites that don't expose feeds.
+2. **Get the real date**: for any article you consider, `npx tsx .claude/skills/fetch-and-update/check-news.ts --lookup <url>…`
+   prints the status, the page's own publication date and its title. Never type a date from memory
+   or from a search snippet, and never use a page that is not a 200 or has no date you can confirm
+   (a few outlets redirect old article URLs to their homepage; a 2019 article once sat in the ticker
+   labelled "Mar 2026").
+3. **Edit `src/utils/newsArticles.ts`**: every entry is `{ title, url, lang, source, date, topic }`.
+   `date` is the page's `YYYY-MM-DD`; `topic` is one of `reservoirs` (levels, inflows), `desalination`
+   (plants, supply), `irrigation` (farming water), `policy` (government plans, funding, governance),
+   `weather` (rain, climate). Aim for a **mix**: several topics and at least 3 outlets per language
+   where they exist. Don't let one story dominate (two articles about the same cabinet decision is
+   one too many).
+4. **Retire stale items**: drop anything older than 60 days and keep at most 10 per language. Retire
+   the oldest first, but a fresh article on an under-represented topic or from a new outlet beats an
+   older one from an outlet that is already well represented.
+5. **Regenerate and audit**: `npx tsx .claude/skills/fetch-and-update/check-news.ts --write-news-md`
+   rewrites `NEWS.md` (never hand-edit it), then `npx tsx .claude/skills/fetch-and-update/check-news.ts`
+   re-fetches every link and fails on a dead link, a date that doesn't match the page, an article
+   older than 60 days, more than 10 per language, or one topic above 40% of a language. Source
+   concentration above 50% is a warning: widen the search before accepting it.
+6. **Reuse the freshest 1–3 articles per language for the "In the media" section** of the summary
+   (see `getSummaryChanges` above). They must pass the same checks.
+7. A language with nothing fresh is fine — fewer items beat stale ones — but say so in the final report.
 
 **Community Post (`community/TELEGRAM.md` + `community/WHATSAPP.md`):**
 
