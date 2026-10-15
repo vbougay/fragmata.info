@@ -273,10 +273,33 @@ The dashboard's scrolling ticker (`src/utils/newsArticles.ts`) and the "In the m
 for weeks (Jul 23 – Sep 23 and again Oct 2 – 15), so do it **before** the commit and Telegram post,
 in cloud runs too. The helper is tracked, so it is present in a cloud checkout (`pnpm install` first):
 
-1. **Find candidates**: `npx tsx .claude/skills/fetch-and-update/check-news.ts --candidates` lists
-   recent water articles from outlet RSS feeds and Cyprus Mail topic pages, already filtered to the
-   last 60 days and minus what the ticker holds. Then use WebSearch for what the feeds miss, in all
-   three languages (EN, EL, RU), and open the sites that don't expose feeds.
+1. **Collect candidates from both routes — neither is enough alone.**
+   - **Feeds**: `npx tsx .claude/skills/fetch-and-update/check-news.ts --candidates` scans the outlet RSS
+     feeds (EN, EL, RU) for water articles from the last 60 days that the ticker doesn't hold yet.
+     Feeds only reach back a few days, and some outlets (in-cyprus, lenta.cy, kathimerini) block them.
+   - **Search** (WebSearch, three languages in parallel). Use a few plain keyword queries per language,
+     with the month and year, varied by topic so the results aren't one story:
+     - EN: `Cyprus dams reservoirs level <month year>`, `Cyprus desalination plant <month year>`,
+       `Cyprus irrigation farmers water <month year>`, `Cyprus water cabinet drought <month year>`
+     - EL: `φράγματα πληρότητα Κύπρος <μήνας έτος>`, `αφαλάτωση Κύπρος <μήνας έτος>`,
+       `νερό άρδευση αγρότες Κύπρος <μήνας έτος>`, `υδατικό Υπουργικό Κύπρος <μήνας έτος>`
+     - RU: `Кипр водохранилища уровень <месяц год>`, `Кипр опреснение <месяц год>`,
+       `Кипр орошение фермеры вода <месяц год>`, `Кипр дожди засуха <месяц год>`
+     Then one query per outlet with `allowed_domains` (one outlet at a time, no duplicates in the list)
+     so a single outlet can't crowd the others out. Outlets that answer: Cyprus Mail, Politis (EN:
+     en.politis.com.cy), Σημερινή/Sigmalive,
+     Πολίτης, Dialogos, ΡΙΚ (news.rik.cy), AlphaNews, Cyprus Times, Offsite, Cyprus Butterfly,
+     Европа Кипр, Вестник Кипра.
+     The search tool refuses philenews.com, kathimerini.com.cy, reuters.com, apnews.com and
+     ekathimerini.com.
+   **Original reporting only.** Link the outlet that did the reporting, never a site that reposts it.
+   Known reposters, not to be used: RusCyprus ("агрегатор новостей", it republishes Cyprus Butterfly),
+   Cyprus Inform / kiprinform.com (rewrites of Cyprus Mail and others), Famagusta Gazette ("according to
+   Haravgi"), Lenta.cy (rewrites Phileleftheros). If a page says `Источник: …`, `according to …` or
+   shows an "Об этом же в других СМИ" block, follow it to the source and cite that instead. Also skip
+   pieces about this project itself (Cyprus Butterfly has run articles written by Fragmata's author).
+   Search snippets and "latest" labels are unreliable (old articles resurface), so treat every hit from
+   either route as unverified until step 2.
 2. **Get the real date**: for any article you consider, `npx tsx .claude/skills/fetch-and-update/check-news.ts --lookup <url>…`
    prints the status, the page's own publication date and its title. Never type a date from memory
    or from a search snippet, and never use a page that is not a 200 or has no date you can confirm

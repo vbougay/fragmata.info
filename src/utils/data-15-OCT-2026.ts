@@ -180,8 +180,8 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — το μόνο φράγμα που υπερχειλίζει
 
 **Στα μέσα:**
-- [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή
-- [Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%](https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi) — Πολίτης
+- [Στο 36,8% η πληρότητα των φραγμάτων](https://www.sigmalive.com/news/local/1333275/sto-368-i-plirotita-ton-fraghmaton) — Sigmalive
+- [Αγρότες: Ευρωπαϊκή βοήθεια €4,6 εκατ. μετά τις ζημιές από την ξηρασία](https://dialogos.com.cy/agrotes-eyropaiki-voitheia-e46-ekat-meta-tis-zimies-apo-tin-xirasia-ta-paroysiazei-os-kratiki-ypostirixi-o-christodoylidis/) — Dialogos
 `;
   }
   if (language === 'ru') {
@@ -198,7 +198,8 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — единственная переполненная дамба
 
 **В СМИ:**
-- [Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов](https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306) — RusCyprus
+- [Сильные дожди на Кипре вызвали наводнения, перебои с электричеством и ограничения движения](https://cyprusbutterfly.com.cy/news/silnyie-dozhdi-kipre-vyizvali-navodneniya) — Cyprus Butterfly
+- [14 и 15 октября на Кипр обрушатся ливни и сильные грозы](https://evropakipr.com/novosti/14-i-15-oktyabrya-na-kipr-obrushatsya-livni-i-silnye-grozy) — Европа Кипр
 `;
   }
   return `
@@ -215,5 +216,6 @@ Thursday's bulletin: total storage **35.3%** (102.8 MCM) — up 0.14 MCM from We
 
 **In the media:**
 - [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail
+- [Senekis: Four New Desalination Plants Under Way Across Cyprus](https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus) — Politis
 `;
 };

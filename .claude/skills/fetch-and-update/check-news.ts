@@ -5,9 +5,9 @@
 // Usage:
 //   tsx .claude/skills/fetch-and-update/check-news.ts                  Audit the collection (exit 1 on errors)
 //   tsx .claude/skills/fetch-and-update/check-news.ts --lookup <url>…  Print title + published date for URLs
-//   tsx .claude/skills/fetch-and-update/check-news.ts --write-news-md   Regenerate NEWS.md from the collection
 //   tsx .claude/skills/fetch-and-update/check-news.ts --candidates     List recent water articles from outlet feeds
-//                                              (and Cyprus Mail topic pages) not yet in the ticker
+//                                              (one source of candidates; always search too)
+//   tsx .claude/skills/fetch-and-update/check-news.ts --write-news-md   Regenerate NEWS.md from the collection
 //
 // The audit fetches every article and checks:
 //   - the link answers 200
@@ -92,6 +92,8 @@ function share(counts: Map<string, number>, total: number, limit: number, what: 
 }
 
 // --- Candidate discovery -----------------------------------------------------
+// Feeds only reach back a few days and some outlets block bots, so this is ONE source of
+// candidates. The skill also requires keyword searches; verify every candidate with --lookup.
 
 interface Feed {
   lang: 'en' | 'el' | 'ru';
@@ -99,23 +101,23 @@ interface Feed {
   url: string;
 }
 
-// RSS feeds that answer to a plain fetch. Add outlets here; keep them diverse.
-// (Cyprus Mail has no feed, so its topic pages are scraped below. in-cyprus and lenta.cy block bots.)
+// Original newsrooms only: no aggregators/reposters (RusCyprus, Cyprus Inform, Famagusta Gazette).
 const FEEDS: Feed[] = [
-  { lang: 'en', source: 'Politis (EN)', url: 'https://en.politis.com.cy/feed' },
-  { lang: 'en', source: 'Financial Mirror', url: 'https://financialmirror.com/feed/' },
+  { lang: 'en', source: 'Cyprus Mail', url: 'https://cyprus-mail.com/feed' },
+  { lang: 'en', source: 'Cyprus Mail', url: 'https://cyprus-mail.com/category/cyprus/feed' },
+  { lang: 'en', source: 'Politis', url: 'https://en.politis.com.cy/feed' },
+    { lang: 'en', source: 'Financial Mirror', url: 'https://financialmirror.com/feed/' },
   { lang: 'el', source: 'Πολίτης', url: 'https://www.politis.com.cy/feed' },
-  { lang: 'el', source: 'Σημερινή', url: 'https://www.sigmalive.com/rss' },
-  { lang: 'el', source: 'AlphaNews', url: 'https://www.alphanews.live/feed' },
-  { lang: 'ru', source: 'RusCyprus', url: 'https://ruscyprus.com/rss' },
-  { lang: 'ru', source: 'Cyprus Inform', url: 'https://www.kiprinform.com/feed/' },
+  { lang: 'el', source: 'Σημερινή', url: 'https://www.sigmalive.com/rss/news' },
+  { lang: 'el', source: 'AlphaNews', url: 'https://www.alphanews.live/rss' },
+  { lang: 'el', source: 'Φιλελεύθερος', url: 'https://www.philenews.com/feed' },
+  { lang: 'el', source: 'Dialogos', url: 'https://dialogos.com.cy/feed/' },
+  { lang: 'el', source: 'OmegaLive', url: 'https://www.omegalive.com.cy/feed' },
 ];
 
-const CYPRUS_MAIL_TAGS = ['water-levels', 'desalination', 'water', 'water-shortage', 'drought', 'dams'];
-
 const WATER: Record<string, RegExp> = {
-  en: /water|dam\b|dams\b|reservoir|desalinat|irrigat|drought|rainfall/i,
-  el: /νερ|φράγμ|αφαλάτ|άρδευ|αρδευ|ξηρασ|βροχ|υδατικ/i,
+  en: /water|\bdams?\b|reservoir|desalinat|irrigat|drought|rainfall|flood/i,
+  el: /νερ(?:ό|ά|ού|ών)|φράγμ|αφαλάτ|άρδευ|ξηρασ|βροχ|υδατικ|λειψυδρ/i,
   ru: /вод[аыуео]|дамб|водохранилищ|опресн|орошен|засух|дожд|плотин/i,
 };
 
@@ -136,9 +138,8 @@ async function candidates() {
         for (const item of xml.split(/<item[ >]/i).slice(1)) {
           const title = xmlText(item, 'title');
           const url = xmlText(item, 'link');
-          const pub = xmlText(item, 'pubDate');
-          const d = pub ? new Date(pub) : null;
-          if (!title || !url || !d || isNaN(+d)) continue;
+          const d = new Date(xmlText(item, 'pubDate'));
+          if (!title || !url || isNaN(+d)) continue;
           const date = d.toISOString().slice(0, 10);
           if (date >= cutoff && WATER[f.lang].test(title)) rows.push({ date, lang: f.lang, source: f.source, title, url });
         }
@@ -148,24 +149,7 @@ async function candidates() {
     }),
   );
 
-  await Promise.all(
-    CYPRUS_MAIL_TAGS.map(async (tag) => {
-      try {
-        const html = await (await fetch(`https://cyprus-mail.com/tag/${tag}`, { headers: { 'User-Agent': UA } })).text();
-        const links = new Set(html.match(/https:\/\/cyprus-mail\.com\/20\d{2}\/\d{2}\/\d{2}\/[a-z0-9-]+/g) ?? []);
-        for (const url of links) {
-          const date = extractDate('', url)!;
-          if (date < cutoff || rows.some((r) => r.url === url)) continue;
-          const slug = url.split('/').pop()!.replace(/-/g, ' ');
-          rows.push({ date, lang: 'en', source: 'Cyprus Mail', title: slug, url });
-        }
-      } catch {
-        console.log(`warn  Cyprus Mail tag failed: ${tag}`);
-      }
-    }),
-  );
-
-  rows.sort((a, b) => (a.lang + b.date).localeCompare(b.lang + a.date) || b.date.localeCompare(a.date));
+  rows.sort((a, b) => a.lang.localeCompare(b.lang) || b.date.localeCompare(a.date));
   const seen = new Set<string>();
   for (const r of rows) {
     const key = r.url.replace(/\/$/, '');
@@ -244,10 +228,10 @@ async function audit() {
 const args = process.argv.slice(2);
 if (args[0] === '--lookup') {
   lookup(args.slice(1));
-} else if (args[0] === '--write-news-md') {
-  writeNewsMd();
 } else if (args[0] === '--candidates') {
   candidates();
+} else if (args[0] === '--write-news-md') {
+  writeNewsMd();
 } else {
   audit();
 }
