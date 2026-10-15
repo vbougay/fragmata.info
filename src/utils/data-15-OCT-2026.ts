@@ -178,6 +178,9 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αγία Μαρίνα](/el/dam/agia-marina/) **48.3%** (+0.6μ.π.) και [Ξυλιάτος](/el/dam/xyliatos/) **74.8%** (+0.5μ.π.)
 - [Αχνά](/el/dam/achna/) **8.0%** — αμετάβλητη, μηδενική εισροή
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — το μόνο φράγμα που υπερχειλίζει
+**Στα μέσα:**
+- [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή
+- [Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%](https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi) — Πολίτης
 `;
   }
   if (language === 'ru') {
@@ -192,6 +195,8 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Агия Марина](/ru/dam/agia-marina/) **48.3%** (+0.6пп) и [Ксилиатос](/ru/dam/xyliatos/) **74.8%** (+0.5пп)
 - [Ахна](/ru/dam/achna/) **8.0%** — без изменений, притока нет
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — единственная переполненная дамба
+**В СМИ:**
+- [Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов](https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306) — RusCyprus
 `;
   }
   return `
@@ -205,5 +210,7 @@ Thursday's bulletin: total storage **35.3%** (102.8 MCM) — up 0.14 MCM from We
 - [Agia Marina](/dam/agia-marina/) **48.3%** (+0.6pp) and [Xyliatos](/dam/xyliatos/) **74.8%** (+0.5pp)
 - [Achna](/dam/achna/) **8.0%** — unchanged, zero inflow
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
+**In the media:**
+- [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail
 `;
 };

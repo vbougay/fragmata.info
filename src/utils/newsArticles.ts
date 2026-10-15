@@ -19,6 +19,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Cyprus dam levels double compared to last year, WDD official', url: 'https://www.parikiaki.com/2026/06/cyprus-dam-levels-double-compared-to-last-year-wdd-official', lang: 'en', source: 'Parikiaki' },
   { title: 'Cabinet approves 3.5 million cubic metres of additional water supply', url: 'https://cyprus-mail.com/2026/06/09/cabinet-approves-3-5-million-cubic-metres-of-additional-water-supply', lang: 'en', source: 'Cyprus Mail' },
   { title: 'Reservoir levels over double from same time last year', url: 'https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year', lang: 'en', source: 'Cyprus Mail' },
+  { title: 'Agriculture ministry allocates €200m to irrigation projects', url: 'https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects', lang: 'en', source: 'Cyprus Mail' },
   // Russian
   { title: 'Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства', url: 'https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057', lang: 'ru', source: 'RusCyprus' },
   { title: 'Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением', url: 'https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/', lang: 'ru', source: 'Cyprus Inform' },
@@ -30,6 +31,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Приток воды в дамбы Кипра — рекордный за 30 лет!', url: 'https://evropakipr.com/novosti/pritok-vody-v-damby-kipra-rekordnyy-za-30-let', lang: 'ru', source: 'Европа Кипр' },
   { title: 'Третья дамба переполнилась в Пафосе', url: 'https://lenta.cy/tretja-damba-perepolnilas-v-pafose/', lang: 'ru', source: 'Lenta.cy' },
   { title: 'Март 2026 года стал одним из самых дождливых за всю историю Кипра', url: 'https://ruscyprus.com/news/mart-2026-goda-stal-odnim-iz-samyh/54612', lang: 'ru', source: 'RusCyprus' },
+  { title: 'Водохранилища Кипра 2026 - от худшего старта со времён танкеров до девяти переливов', url: 'https://ruscyprus.com/news/vodohranilishcha-kipra-2026-ot-hudshego/63306', lang: 'ru', source: 'RusCyprus' },
 
   // Greek
   { title: 'Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση', url: 'https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi', lang: 'el', source: 'Πολίτης' },
@@ -42,4 +44,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Ρεκόρ εισροής νερού στα φράγματα το τελευταίο τριήμερο', url: 'https://www.alphanews.live/cyprus/rekor-eisrois-nerou-sta-fragmata-to-teleftaio-triimero/', lang: 'el', source: 'AlphaNews' },
   { title: 'Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028', url: 'https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/', lang: 'el', source: 'Dialogos' },
   { title: 'Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης', url: 'https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/', lang: 'el', source: 'ΡΙΚ' },
+  { title: 'Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι', url: 'https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/', lang: 'el', source: 'Σημερινή' },
+  { title: 'Μεγάλες διαφορές στην πληρότητα των φραγμάτων: Ποιο είναι γεμάτο 100% και ποιο μόλις στο 8,3%', url: 'https://www.politis.com.cy/cyprus/perivallon/1048813/sto-356-i-plirotita-ton-fraghmaton-simantika-auksimena-ta-apothemata-se-skhesi-me-persi', lang: 'el', source: 'Πολίτης' },
 ];
