@@ -3820,3 +3820,26 @@ Gap vs last year: +23.7pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 15 — Arminou and Kouris gain as storage ticks up for the first time in weeks
+
+📊 Minor update (Thursday) — total storage 35.3% (102.8 MCM), up from 102.6 MCM on October 14. 24-hour inflow 0.25 MCM, led by Kouris (0.08) and Arminou (0.06, now 64.0%).
+
+### Telegram
+Sent: message_id=322, chat_id=151413643, at=2026-10-15T07:37:27Z
+```
+📊 Cyprus Dams — October 15
+
+Thursday's bulletin: total storage 35.3% (102.8 MCM) — up 0.14 MCM from Wednesday's 102.6 MCM, the first net gain after weeks of slow drawdown. 24-hour inflow was 0.25 MCM: Kouris 0.08, Arminou 0.06, Kannaviou 0.02. Gap over last year: +23.8pp. Season inflow: 0.86 MCM so far. Arminou→Kouris transfer still at zero.
+
+• Arminou 64.0% (+1.3pp) — keeps climbing, still the only Southern Conveyor dam rising
+• Kouris 36.7% (±0.0pp) — 0.08 MCM inflow finally offsets the drawdown
+• Agia Marina 48.3% (+0.6pp) — biggest gain among the small dams
+• Xyliatos 74.8% (+0.5pp) — small inflow lifts it too
+• Achna 8.0% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +23.8pp.
+
+🔗 https://fragmata.info
+```
