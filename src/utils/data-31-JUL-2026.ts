@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αρμίνου](/el/dam/arminou/) **59.0%** (+0.1μ.π.) — ελαφρά άνοδος, έσπασε το πλατό του
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — παραμένει το μόνο φράγμα σε υπερχείλιση
 - [Αχνά](/el/dam/achna/) **1.9%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Арминоу](/ru/dam/arminou/) **59.0%** (+0.1пп) — небольшой рост, прервал своё плато
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — по-прежнему единственное переливающееся водохранилище
 - [Ахна](/ru/dam/achna/) **1.9%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Friday bulletin: total storage at **39.8%** (115.8 MCM) — down from 40.0% on J
 - [Arminou](/dam/arminou/) **59.0%** (+0.1pp) — a slight uptick, snapping its plateau
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
 - [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

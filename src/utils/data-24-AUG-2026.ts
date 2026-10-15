@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Βυζακιά](/el/dam/vyzakia/) **80.5%** (-1.7μ.π.) — κάτω από το 82% για πρώτη φορά εδώ και εβδομάδες
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **99.4%** (+0.8μ.π.) — ανέβηκε πιο κοντά στο οροπέδιο του 100% με μικρή εισροή
 - [Αχνά](/el/dam/achna/) **1.3%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Визакия](/ru/dam/vyzakia/) **80.5%** (-1.7пп) — впервые за недели ниже 82%
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **99.4%** (+0.8пп) — поднялся ближе к плато 100% благодаря небольшому притоку
 - [Ахна](/ru/dam/achna/) **1.3%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Monday bulletin, covering the weekend: total storage at **38.2%** (111.0 MCM) �
 - [Vyzakia](/dam/vyzakia/) **80.5%** (-1.7pp) — below 82% for the first time in weeks
 - [Kalopanagiotis](/dam/kalopanagiotis/) **99.4%** (+0.8pp) — ticked back up toward its 100% plateau on light inflow
 - [Achna](/dam/achna/) **1.3%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

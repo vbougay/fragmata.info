@@ -179,8 +179,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Ταμασός](/el/dam/tamassos/) **89.1%** (-1.7μ.π.) — υποχωρεί σταδιακά από το πλήρες
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — παραμένει το μόνο φράγμα σε υπερχείλιση
 - [Αχνά](/el/dam/achna/) **1.6%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -197,8 +195,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Тамассос](/ru/dam/tamassos/) **89.1%** (-1.7пп) — постепенно снижается от полного уровня
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — по-прежнему единственное переливающееся водохранилище
 - [Ахна](/ru/dam/achna/) **1.6%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -214,7 +210,5 @@ Tuesday bulletin: total storage at **39.0%** (113.5 MCM) — down from 39.3% (11
 - [Tamassos](/dam/tamassos/) **89.1%** (-1.7pp) — gradually easing from full
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
 - [Achna](/dam/achna/) **1.6%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

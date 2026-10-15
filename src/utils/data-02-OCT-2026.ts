@@ -183,8 +183,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **Στα μέσα:**
 - [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — Dialogos
 - [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -204,8 +202,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **В СМИ:**
 - [Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства](https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057) — RusCyprus
 - [Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением](https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/) — Cyprus Inform
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -225,7 +221,5 @@ The first bulletin of the 2026/27 season: total storage **35.75%** (104.0 MCM) �
 - [Plan for irrigation water heads to cabinet](https://cyprus-mail.com/2026/09/15/plan-for-irrigation-water-heads-to-cabinet) — Cyprus Mail
 - [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail
 - [Implementation of four new desalination plants underway, minister says](https://www.parikiaki.com/2026/09/implementation-of-four-new-desalination-plants-underway-in-cyprus-minister-says/) — Parikiaki
-
-🔗 https://fragmata.info
 `;
 };

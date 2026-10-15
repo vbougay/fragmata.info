@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αργάκα](/el/dam/argaka/) **43.5%** (αμετάβλητη) — η πολυεβδομαδιαία πτώση σταματά
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — αμετάβλητος, το μόνο φράγμα που υπερχειλίζει
 - [Κούρης](/el/dam/kouris/) **37.0%** (-0.1μ.π.) — σχεδόν αμετάβλητος
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -194,8 +192,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Аргака](/ru/dam/argaka/) **43.5%** (без изменений) — многонедельное снижение остановилось
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — без изменений, единственная переполненная дамба
 - [Курис](/ru/dam/kouris/) **37.0%** (-0.1пп) — почти без изменений
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -209,7 +205,5 @@ Tuesday's bulletin, a quiet day: total storage **35.64%** (103.6 MCM) — just b
 - [Argaka](/dam/argaka/) **43.5%** (unchanged) — multi-week slide pauses
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — unchanged, still the only dam overflowing
 - [Kouris](/dam/kouris/) **37.0%** (-0.1pp) — barely moved
-
-🔗 https://fragmata.info
 `;
 };

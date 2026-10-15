@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Πόμος](/el/dam/pomos/) **72.1%** (-3.4μ.π.) — υποχωρεί από το σχεδόν πλήρες
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **98.6%** — απομακρύνεται περαιτέρω από το τετράμηνο οροπέδιο στο 100%
 - [Αχνά](/el/dam/achna/) **1.4%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Помос](/ru/dam/pomos/) **72.1%** (-3.4пп) — отступает от почти полного уровня
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **98.6%** — дальше отдаляется от четырёхмесячного плато на 100%
 - [Ахна](/ru/dam/achna/) **1.4%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Friday bulletin: total storage at **38.4%** (111.7 MCM) — down from 38.9% (113
 - [Pomos](/dam/pomos/) **72.1%** (-3.4pp) — easing further from near-full
 - [Kalopanagiotis](/dam/kalopanagiotis/) **98.6%** — drifting further off its four-month plateau at 100%
 - [Achna](/dam/achna/) **1.4%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

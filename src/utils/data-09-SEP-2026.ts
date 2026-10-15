@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αργάκα](/el/dam/argaka/) **53.3%** (-0.8μ.π.) — συνεχίζεται η πτώση
 - [Ξυλιάτος](/el/dam/xyliatos/) **80.3%** (-0.9μ.π.) — σταθερή υποχώρηση
 - [Αχνά](/el/dam/achna/) **1.2%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Аргака](/ru/dam/argaka/) **53.3%** (-0.8пп) — снижение продолжается
 - [Ксилиатос](/ru/dam/xyliatos/) **80.3%** (-0.9пп) — устойчивый откат
 - [Ахна](/ru/dam/achna/) **1.2%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Wednesday's bulletin, covering two days since Monday's: total storage at **37.2%
 - [Argaka](/dam/argaka/) **53.3%** (-0.8pp) — continuing to slide
 - [Xyliatos](/dam/xyliatos/) **80.3%** (-0.9pp) — steady pullback
 - [Achna](/dam/achna/) **1.2%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

@@ -182,8 +182,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **Στα μέσα:**
 - [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης
 - [Υπουργικό: Πρόταση από Σενέκη για επιπρόσθετες ποσότητες νερού σε γεωργούς](https://www.politis.com.cy/politis-news/cyprus/1033164/ypoyrghiko-protasi-apo-seneki-ghia-epiprosthetes-posotites-nerou-se-gheorghous) — Πολίτης
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -203,8 +201,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **В СМИ:**
 - [Депутаты Кипра предупреждают, что водная политика может вынудить профессиональных фермеров уйти из сельского хозяйства](https://ruscyprus.com/news/deputaty-kipra-preduprezhdayut-chto-vodnaya/60057) — RusCyprus
 - [Фермеры долины Хрисохус планируют акцию протеста из-за перебоев с орошением](https://www.kiprinform.com/news/fermery-doliny-hrisohus-planiruyut-akciyu-protesta-iz-za-pereboev-s-orosheniem/) — Cyprus Inform
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -224,7 +220,5 @@ Friday's bulletin: total storage **36.15%** (105.1 MCM) — down from 36.3% (105
 - [Plan for irrigation water heads to cabinet](https://cyprus-mail.com/2026/09/15/plan-for-irrigation-water-heads-to-cabinet) — Cyprus Mail
 - [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail
 - [Implementation of four new desalination plants underway, minister says](https://www.parikiaki.com/2026/09/implementation-of-four-new-desalination-plants-underway-in-cyprus-minister-says/) — Parikiaki
-
-🔗 https://fragmata.info
 `;
 };

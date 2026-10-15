@@ -180,8 +180,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **Στα μέσα:**
 - [Ξεπέρασε το 250% η μέση βροχόπτωση Αυγούστου](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-250-tis-ekato-i-mesi-vroxoptosi-avgoustou-metriseis-telefteou-24orou-kai-plirotita-fragmaton/) — kitasweather.com
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -199,8 +197,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **В СМИ:**
 - [В августе в горах Кипра третий день подряд идут дожди](https://ruscyprus.com/news/v-avguste-v-gorah-kipra-tretiy-den-podryad/62794) — ruscyprus.com
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -218,7 +214,5 @@ Wednesday bulletin: total storage at **38.0%** (110.6 MCM) — down from 38.1% (
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
 - [Ξεπέρασε το 250% η μέση βροχόπτωση Αυγούστου](https://kitasweather.com/news/fragmata-vroxoptosi/kseperase-to-250-tis-ekato-i-mesi-vroxoptosi-avgoustou-metriseis-telefteou-24orou-kai-plirotita-fragmaton/) — kitasweather.com
 - [В августе в горах Кипра третий день подряд идут дожди](https://ruscyprus.com/news/v-avguste-v-gorah-kipra-tretiy-den-podryad/62794) — ruscyprus.com
-
-🔗 https://fragmata.info
 `;
 };

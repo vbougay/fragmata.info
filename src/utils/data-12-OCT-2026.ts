@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Πόμος](/el/dam/pomos/) **59.5%** (-1.0μ.π.) — η μεγαλύτερη πτώση δελτίου εδώ και εβδομάδες
 - [Αργάκα](/el/dam/argaka/) **43.7%** (+0.2μ.π.) — μικρή άνοδος τερματίζει το πλατό δύο δελτίων
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — αμετάβλητος, το μόνο φράγμα που υπερχειλίζει
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -194,8 +192,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Помос](/ru/dam/pomos/) **59.5%** (-1.0пп) — самое резкое падение за недели
 - [Аргака](/ru/dam/argaka/) **43.7%** (+0.2пп) — небольшой рост завершает плато двух бюллетеней
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — без изменений, единственная переполненная дамба
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -209,7 +205,5 @@ Monday's bulletin, covering the weekend after Thursday's update: total storage *
 - [Pomos](/dam/pomos/) **59.5%** (-1.0pp) — steepest single-bulletin drop in weeks
 - [Argaka](/dam/argaka/) **43.7%** (+0.2pp) — small uptick ends its two-bulletin plateau
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — unchanged, still the only dam overflowing
-
-🔗 https://fragmata.info
 `;
 };

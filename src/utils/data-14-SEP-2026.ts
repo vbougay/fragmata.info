@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Μαυροκόλυμπος](/el/dam/mavrokolympos/) **31.4%** (-1.0μ.π.) — πέμπτη συνεχόμενη περίοδος πτώσης
 - [Ξυλιάτος](/el/dam/xyliatos/) **79.2%** (-0.8μ.π.) — γλίστρησε κάτω από το 80%
 - [Αχνά](/el/dam/achna/) **1.2%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Мавроколимпос](/ru/dam/mavrokolympos/) **31.4%** (-1.0пп) — пятый период подряд снижения
 - [Ксилиатос](/ru/dam/xyliatos/) **79.2%** (-0.8пп) — опустился ниже отметки 80%
 - [Ахна](/ru/dam/achna/) **1.2%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Monday's bulletin, covering four days: total storage at **36.8%** (107.2 MCM) �
 - [Mavrokolympos](/dam/mavrokolympos/) **31.4%** (-1.0pp) — a fifth straight period of decline
 - [Xyliatos](/dam/xyliatos/) **79.2%** (-0.8pp) — slipped below the 80% line
 - [Achna](/dam/achna/) **1.2%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

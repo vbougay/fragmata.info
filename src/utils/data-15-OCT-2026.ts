@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αγία Μαρίνα](/el/dam/agia-marina/) **48.3%** (+0.6μ.π.) και [Ξυλιάτος](/el/dam/xyliatos/) **74.8%** (+0.5μ.π.)
 - [Αχνά](/el/dam/achna/) **8.0%** — αμετάβλητη, μηδενική εισροή
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — το μόνο φράγμα που υπερχειλίζει
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -194,8 +192,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Агия Марина](/ru/dam/agia-marina/) **48.3%** (+0.6пп) и [Ксилиатос](/ru/dam/xyliatos/) **74.8%** (+0.5пп)
 - [Ахна](/ru/dam/achna/) **8.0%** — без изменений, притока нет
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — единственная переполненная дамба
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -209,7 +205,5 @@ Thursday's bulletin: total storage **35.3%** (102.8 MCM) — up 0.14 MCM from We
 - [Agia Marina](/dam/agia-marina/) **48.3%** (+0.6pp) and [Xyliatos](/dam/xyliatos/) **74.8%** (+0.5pp)
 - [Achna](/dam/achna/) **8.0%** — unchanged, zero inflow
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
-
-🔗 https://fragmata.info
 `;
 };

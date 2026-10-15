@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αργάκα](/el/dam/argaka/) **43.5%** (αμετάβλητη) — το πλατό κρατά για δεύτερο δελτίο
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — αμετάβλητος, το μόνο φράγμα που υπερχειλίζει
 - [Κούρης](/el/dam/kouris/) **36.9%** (-0.1μ.π.) — σχεδόν αμετάβλητος
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -194,8 +192,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Аргака](/ru/dam/argaka/) **43.5%** (без изменений) — плато держится второй бюллетень подряд
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — без изменений, единственная переполненная дамба
 - [Курис](/ru/dam/kouris/) **36.9%** (-0.1пп) — почти без изменений
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -209,7 +205,5 @@ Thursday's bulletin, two days since Tuesday: total storage **35.55%** (103.4 MCM
 - [Argaka](/dam/argaka/) **43.5%** (unchanged) — plateau holds for a second bulletin
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — unchanged, still the only dam overflowing
 - [Kouris](/dam/kouris/) **36.9%** (-0.1pp) — barely moved
-
-🔗 https://fragmata.info
 `;
 };

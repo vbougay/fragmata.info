@@ -177,8 +177,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Πολεμίδια](/el/dam/polemidia/) **49.1%** και [Καννάβιου](/el/dam/kannaviou/) **49.0%** — και τα δύο ακριβώς στο όριο του 50%
 - [Αργάκα](/el/dam/argaka/) **77.4%** (-3.0μ.π.) — η μεγαλύτερη πτώση της ημέρας
 - [Αχνά](/el/dam/achna/) **1.9%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -193,8 +191,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Полемидия](/ru/dam/polemidia/) **49.1%** и [Каннавиу](/ru/dam/kannaviou/) **49.0%** — оба ровно на границе 50%
 - [Аргака](/ru/dam/argaka/) **77.4%** (-3.0пп) — крупнейшее падение дня
 - [Ахна](/ru/dam/achna/) **1.9%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -208,7 +204,5 @@ Friday bulletin: total storage at **40.3%** (117.3 MCM) — another slow day of 
 - [Polemidia](/dam/polemidia/) **49.1%** and [Kannaviou](/dam/kannaviou/) **49.0%** — both sitting right at the 50% threshold
 - [Argaka](/dam/argaka/) **77.4%** (-3.0pp) — the largest single-day drop
 - [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

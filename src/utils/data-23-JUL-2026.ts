@@ -177,8 +177,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Πολεμίδια](/el/dam/polemidia/) **49.3%** και [Καννάβιου](/el/dam/kannaviou/) **49.1%** — και τα δύο κοντά στο 50%
 - [Αχνά](/el/dam/achna/) **1.9%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
 - Τα υπόλοιπα φράγματα κινήθηκαν κατά 0.2μ.π. ή λιγότερο
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -193,8 +191,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Полемидия](/ru/dam/polemidia/) **49.3%** и [Каннавиу](/ru/dam/kannaviou/) **49.1%** — оба рядом с отметкой 50%
 - [Ахна](/ru/dam/achna/) **1.9%** — без изменений, без притока за весь сезон
 - Остальные водохранилища изменились не более чем на 0.2пп
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -208,7 +204,5 @@ Thursday bulletin: total storage at **40.4%** (117.5 MCM) — another slow day o
 - [Polemidia](/dam/polemidia/) **49.3%** and [Kannaviou](/dam/kannaviou/) **49.1%** — both hovering near the 50% mark
 - [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
 - Every other dam moved 0.2pp or less
-
-🔗 https://fragmata.info
 `;
 };

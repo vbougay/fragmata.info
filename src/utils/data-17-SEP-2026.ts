@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αγία Μαρίνα](/el/dam/agia-marina/) **50.7%** (-1.3μ.π.) — η πολυεβδομαδιαία πτώση συνεχίζεται
 - [Μαυροκόλυμπος](/el/dam/mavrokolympos/) **31.0%** (-0.4μ.π.) — έκτη συνεχόμενη περίοδος πτώσης
 - [Αχνά](/el/dam/achna/) **1.6%** (+0.4μ.π.) — μικρή άνοδος παρά τη μηδενική εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Агия Марина](/ru/dam/agia-marina/) **50.7%** (-1.3пп) — многонедельное снижение продолжается
 - [Мавроколимпос](/ru/dam/mavrokolympos/) **31.0%** (-0.4пп) — шестой период подряд снижения
 - [Ахна](/ru/dam/achna/) **1.6%** (+0.4пп) — небольшой рост несмотря на нулевой приток за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Thursday's bulletin, three days since Monday: total storage at **36.6%** (106.5 
 - [Agia Marina](/dam/agia-marina/) **50.7%** (-1.3pp) — multi-week slide continues
 - [Mavrokolympos](/dam/mavrokolympos/) **31.0%** (-0.4pp) — a sixth straight period of decline
 - [Achna](/dam/achna/) **1.6%** (+0.4pp) — a small rise despite zero recorded inflow all season
-
-🔗 https://fragmata.info
 `;
 };

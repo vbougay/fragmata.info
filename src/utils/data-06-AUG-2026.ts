@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Πόμος](/el/dam/pomos/) **78.5%** (-0.3μ.π.) — συνεχίζει να υποχωρεί από το σχεδόν πλήρες
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — παραμένει το μόνο φράγμα σε υπερχείλιση
 - [Αχνά](/el/dam/achna/) **1.7%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Помос](/ru/dam/pomos/) **78.5%** (-0.3пп) — продолжает отступать от почти полного уровня
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — по-прежнему единственное переливающееся водохранилище
 - [Ахна](/ru/dam/achna/) **1.7%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Thursday bulletin: total storage at **39.4%** (114.5 MCM) — down from 39.5% (1
 - [Pomos](/dam/pomos/) **78.5%** (-0.3pp) — continues easing from near-full
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
 - [Achna](/dam/achna/) **1.7%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

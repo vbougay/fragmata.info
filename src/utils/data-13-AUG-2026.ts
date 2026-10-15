@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Αργάκα](/el/dam/argaka/) **66.3%** (-0.7μ.π.) — συνεχίζει η πολυεβδομαδιαία πτώση
 - [Πόμος](/el/dam/pomos/) **75.5%** (-0.7μ.π.) — συνεχίζει να υποχωρεί από το σχεδόν πλήρες
 - [Αχνά](/el/dam/achna/) **1.5%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Аргака](/ru/dam/argaka/) **66.3%** (-0.7пп) — продолжается многонедельное снижение
 - [Помос](/ru/dam/pomos/) **75.5%** (-0.7пп) — продолжает отступать от почти полного уровня
 - [Ахна](/ru/dam/achna/) **1.5%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Thursday bulletin: total storage at **38.9%** (113.1 MCM) — down from 39.0% (1
 - [Argaka](/dam/argaka/) **66.3%** (-0.7pp) — extending its multi-week slide
 - [Pomos](/dam/pomos/) **75.5%** (-0.7pp) — continues easing from near-full
 - [Achna](/dam/achna/) **1.5%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

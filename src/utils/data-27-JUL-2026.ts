@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Μαυροκόλυμπος](/el/dam/mavrokolympos/) **65.3%** (-3.9μ.π.) — συνεχίζει να υποχωρεί από την κορύφωση
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — παραμένει το μόνο φράγμα σε υπερχείλιση
 - [Αχνά](/el/dam/achna/) **1.9%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Мавроколимпос](/ru/dam/mavrokolympos/) **65.3%** (-3.9пп) — продолжает снижаться от пика
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — по-прежнему единственное переливающееся водохранилище
 - [Ахна](/ru/dam/achna/) **1.9%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Monday bulletin, after a 3-day gap in publication: total storage at **40.1%** (1
 - [Mavrokolympos](/dam/mavrokolympos/) **65.3%** (-3.9pp) — continued easing from its summer peak
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — still the only dam overflowing
 - [Achna](/dam/achna/) **1.9%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

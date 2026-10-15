@@ -196,6 +196,7 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - Add up to 3 media article links at the end under an "In the media" / "Στα μέσα" section
 - Write both English, Russian and Greek versions with the same structure
 - Tone: informative and factual, not verbose
+- Do **not** end the summary with `🔗 https://fragmata.info` — it renders as a stray link on the site (that line belongs only in Telegram/WhatsApp posts)
 
 **Per-Dam Summaries (`getDamSummary`):**
 

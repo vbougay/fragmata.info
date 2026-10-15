@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Καννάβιου](/el/dam/kannaviou/) **41.8%** (-0.2μ.π.) — η μεγαλύτερη πτώση ανάμεσα στα μεγαλύτερα φράγματα
 - [Αχνά](/el/dam/achna/) **8.0%** (-0.1μ.π.) — η αργή πτώση συνεχίζεται
 - [Καλοπαναγιώτης](/el/dam/kalopanagiotis/) **100%** — αμετάβλητος, το μόνο φράγμα που υπερχειλίζει
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -194,8 +192,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Каннавиу](/ru/dam/kannaviou/) **41.8%** (-0.2пп) — самое заметное снижение среди крупных дамб
 - [Ахна](/ru/dam/achna/) **8.0%** (-0.1пп) — медленное снижение продолжается
 - [Калопанайотис](/ru/dam/kalopanagiotis/) **100%** — без изменений, единственная переполненная дамба
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -209,7 +205,5 @@ Wednesday's bulletin, two days after Monday's update: total storage **35.3%** (1
 - [Kannaviou](/dam/kannaviou/) **41.8%** (-0.2pp) — largest drop among the larger dams
 - [Achna](/dam/achna/) **8.0%** (-0.1pp) — slow slide continues after last week's streak break
 - [Kalopanagiotis](/dam/kalopanagiotis/) **100%** — unchanged, still the only dam overflowing
-
-🔗 https://fragmata.info
 `;
 };

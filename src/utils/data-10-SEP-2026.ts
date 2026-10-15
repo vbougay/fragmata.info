@@ -178,8 +178,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Ξυλιάτος](/el/dam/xyliatos/) **80.0%** (-0.3μ.π.) — σταθερή υποχώρηση, ακριβώς στο 80%
 - [Σολέα](/el/dam/solea/) **88.0%** (-0.2μ.π.) — ελαφριά υποχώρηση
 - [Αχνά](/el/dam/achna/) **1.2%** — αμετάβλητη, μηδέν εισροή όλη τη σεζόν
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -195,8 +193,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 - [Ксилиатос](/ru/dam/xyliatos/) **80.0%** (-0.3пп) — устойчивый откат, ровно на отметке 80%
 - [Солеа](/ru/dam/solea/) **88.0%** (-0.2пп) — небольшое снижение
 - [Ахна](/ru/dam/achna/) **1.2%** — без изменений, без притока за весь сезон
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -211,7 +207,5 @@ Thursday's bulletin: total storage at **37.1%** (108.0 MCM) — down from 37.2% 
 - [Xyliatos](/dam/xyliatos/) **80.0%** (-0.3pp) — steady pullback, right at the 80% line
 - [Solea](/dam/solea/) **88.0%** (-0.2pp) — easing as dry season progresses
 - [Achna](/dam/achna/) **1.2%** — unchanged, zero inflow all season
-
-🔗 https://fragmata.info
 `;
 };

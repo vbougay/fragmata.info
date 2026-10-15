@@ -182,8 +182,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **Στα μέσα:**
 - [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — dialogos.com.cy
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
-
-🔗 https://fragmata.info
 `;
   }
   if (language === 'ru') {
@@ -203,8 +201,6 @@ export const getSummaryChanges = (language: 'en' | 'el' | 'ru' = 'en'): string =
 **В СМИ:**
 - [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — dialogos.com.cy
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
-
-🔗 https://fragmata.info
 `;
   }
   return `
@@ -223,7 +219,5 @@ Monday's bulletin, covering the past week: total storage at **37.4%** (108.6 MCM
 **In the media:**
 - [Reservoir levels over double from same time last year](https://cyprus-mail.com/2026/08/24/reservoir-levels-over-double-from-same-time-last-year) — Cyprus Mail
 - [Καμπανάκι για το νερό: Τα φράγματα στο 39% και ο κίνδυνος για το 2027-2028](https://dialogos.com.cy/kampanaki-gia-to-nero-ta-fragmata-sto-39-kai-o-kindynos-gia-to-2027-2028/) — dialogos.com.cy
-
-🔗 https://fragmata.info
 `;
 };
