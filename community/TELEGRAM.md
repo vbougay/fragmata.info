@@ -3941,3 +3941,26 @@ Kairika now has a lightning page, and a full write-up of a record August storm, 
 ⚡ Lightning: https://kairika.info/lightning
 🌧 Rain: https://kairika.info/rain · 📍 Near me: https://kairika.info/near-me
 ```
+
+## October 16 — Friday bulletin: second small gain, Arminou keeps rising
+
+📰 Major update (Friday): 35.3% (102.8 MCM), +0.03 MCM on Thursday; inflow eased to 0.15 MCM; Arminou 64.9%.
+
+### Telegram
+Sent: message_id=325, chat_id=151413643, at=2026-10-16T08:45:28Z
+```
+📰 Cyprus Dams — October 16
+
+Friday bulletin: total storage 35.3% (102.8 MCM) — up 0.03 MCM from Thursday's 102.76 MCM, a second small gain in a row after weeks of slow drawdown. 24-hour inflow eased to 0.15 MCM (from 0.25): Kouris 0.06, Arminou 0.04, Asprokremmos 0.02. Arminou is still the only Southern Conveyor dam rising. Gap over last year: +23.8pp. Season inflow: 1.01 MCM so far. Arminou→Kouris transfer still at zero.
+
+• Arminou 64.9% (+0.9pp) — keeps climbing, 0.04 MCM of inflow
+• Kouris 36.7% (±0.0pp) — 0.06 MCM inflow, the largest, holds storage steady
+• Agia Marina 48.7% (+0.4pp) and Argaka 44.3% (+0.2pp) — small Chrysochou gains
+• Pomos 59.3% (−0.4pp) — the only noticeable slip
+• Achna 8.0% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +23.8pp.
+
+🔗 https://fragmata.info
+```
