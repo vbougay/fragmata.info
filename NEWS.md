@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (18 Aug 2026 — 16 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (3 Sept 2026 — 19 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -10,7 +10,6 @@ Articles shown in the dashboard's news ticker (18 Aug 2026 — 16 Oct 2026). Gen
 - [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail, 16 Sept 2026 · irrigation
 - [Senekis: Four New Desalination Plants Under Way Across Cyprus](https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus) — Politis, 13 Sept 2026 · desalination
 - [The Shared Water Project That Outlived Cyprus's Division](https://en.politis.com.cy/news/environment/1030241/the-shared-water-project-that-outlived-cypruss-division) — Politis, 3 Sept 2026 · policy
-- [Mazotos Residents Oppose Desalination Plant on Larnaca Coast](https://en.politis.com.cy/news/environment/1026889/mazotos-residents-oppose-desalination-plant-on-larnaca-coast) — Politis, 18 Aug 2026 · desalination
 
 ## Russian
 
@@ -20,6 +19,7 @@ Articles shown in the dashboard's news ticker (18 Aug 2026 — 16 Oct 2026). Gen
 
 ## Greek
 
+- [Οργή αγροτών για τα €4,6 εκατ. για αντιμετώπιση της ξηρασίας - Αναξιοποίητη η πρόσθετη ευρωπαϊκή ενίσχυση, εκτός σχεδίου σημαντικοί κλάδοι](https://www.politis.com.cy/oikonomia/cyprus/1054224/aghrotikes-orghanwseis-diamartiria-ghia-tin-eniskhisi-ton-eur46-ekat-kai-ton-apokleismo-kladon) — Πολίτης, 19 Oct 2026 · policy
 - [Τρίτη συνεχόμενη ημέρα βροχών: Πότε εκτιμά η Μετεωρολογική ότι θα αλλάξει το σκηνικό του καιρού](https://www.alphanews.live/cyprus/triti-synechomeni-imera-vrochon-pote-ektima-i-meteorologiki-oti-tha-allaxei-to-skiniko-tou-kairou/) — AlphaNews, 16 Oct 2026 · weather
 - [Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία](https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia) — Πολίτης, 15 Oct 2026 · weather
 - [Στο 36,8% η πληρότητα των φραγμάτων](https://www.sigmalive.com/news/local/1333275/sto-368-i-plirotita-ton-fraghmaton) — Sigmalive, 14 Oct 2026 · reservoirs
@@ -29,4 +29,3 @@ Articles shown in the dashboard's news ticker (18 Aug 2026 — 16 Oct 2026). Gen
 - [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ, 14 Sept 2026 · desalination
 - [Καλύτερη από πέρσι η εικόνα στα φράγματα Πάφου αλλά όχι εφησυχασμός, λέει το ΤΑΥ](https://cyprustimes.com/koinonia/kalyteri-apo-persi-i-eikona-sta-fragmata-pafou-alla-ochi-efisychasmos-leei-to-taf/) — Cyprus Times, 9 Sept 2026 · reservoirs
 - [Η κυβέρνηση προχωρεί στην ενίσχυση των μονάδων αφαλάτωσης](https://news.rik.cy/el/article/2026/9/3/e-kubernese-prokhorei-sten-eniskhuse-ton-monadon-aphalatoses/) — ΡΙΚ, 3 Sept 2026 · desalination
-- [Έρχεται νέα μάχη για το νερό: «Δεν έχουμε περιθώρια για επιπλέον ποσότητες»](https://dialogos.com.cy/erchetai-nea-machi-gia-to-nero-den-echoyme-perithoria-gia-epipleon-posotites/) — Dialogos, 19 Aug 2026 · irrigation
