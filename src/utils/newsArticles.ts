@@ -17,6 +17,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Nicosia water losses below national average', url: 'https://cyprus-mail.com/2026/10/21/nicosia-water-losses-below-national-average', lang: 'en', source: 'Cyprus Mail', date: '2026-10-21', topic: 'policy' },
   { title: 'Mazotos residents gather signatures against planned desalination plant', url: 'https://cyprus-mail.com/2026/10/20/mazotos-residents-gather-signatures-against-planned-desalination-plant', lang: 'en', source: 'Cyprus Mail', date: '2026-10-20', topic: 'desalination' },
   { title: 'Fire brigade responds to 78 calls in 24 hours, 13 flood related', url: 'https://cyprus-mail.com/2026/10/15/fire-brigade-responds-to-78-calls-in-24-hours-13-flood-related', lang: 'en', source: 'Cyprus Mail', date: '2026-10-15', topic: 'weather' },
   { title: 'Agriculture ministry allocates €200m to irrigation projects', url: 'https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects', lang: 'en', source: 'Cyprus Mail', date: '2026-10-07', topic: 'policy' },

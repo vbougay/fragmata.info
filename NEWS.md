@@ -1,9 +1,10 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (3 Sept 2026 — 20 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (3 Sept 2026 — 21 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
+- [Nicosia water losses below national average](https://cyprus-mail.com/2026/10/21/nicosia-water-losses-below-national-average) — Cyprus Mail, 21 Oct 2026 · policy
 - [Mazotos residents gather signatures against planned desalination plant](https://cyprus-mail.com/2026/10/20/mazotos-residents-gather-signatures-against-planned-desalination-plant) — Cyprus Mail, 20 Oct 2026 · desalination
 - [Fire brigade responds to 78 calls in 24 hours, 13 flood related](https://cyprus-mail.com/2026/10/15/fire-brigade-responds-to-78-calls-in-24-hours-13-flood-related) — Cyprus Mail, 15 Oct 2026 · weather
 - [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail, 7 Oct 2026 · policy
