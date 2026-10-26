@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (3 Sept 2026 — 21 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (3 Sept 2026 — 26 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -21,9 +21,9 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 21 Oct 2026). Gen
 
 ## Greek
 
+- [«Κοκτέιλ» σκόνης και βροχών: Πότε έρχονται έντονα καιρικά φαινόμενα κι αισθητή πτώση της θερμοκρασίας](https://www.alphanews.live/cyprus/kokteil-skonis-kai-vrochon-pote-erchontai-entona-kairika-fainomena-ki-aisthiti-ptosi-tis-thermokrasias/) — AlphaNews, 26 Oct 2026 · weather
 - [Αντιδράσεις στον Μαζωτό για τους σχεδιασμούς αφαλάτωσης – Ζητούν διαφάνεια και διαβούλευση](https://dialogos.com.cy/antidraseis-ston-mazoto-gia-toys-schediasmoys-afalatosis-zitoyn-diafaneia-kai-diavoyleysi/) — Dialogos, 20 Oct 2026 · desalination
 - [Οργή αγροτών για τα €4,6 εκατ. για αντιμετώπιση της ξηρασίας - Αναξιοποίητη η πρόσθετη ευρωπαϊκή ενίσχυση, εκτός σχεδίου σημαντικοί κλάδοι](https://www.politis.com.cy/oikonomia/cyprus/1054224/aghrotikes-orghanwseis-diamartiria-ghia-tin-eniskhisi-ton-eur46-ekat-kai-ton-apokleismo-kladon) — Πολίτης, 19 Oct 2026 · policy
-- [Τρίτη συνεχόμενη ημέρα βροχών: Πότε εκτιμά η Μετεωρολογική ότι θα αλλάξει το σκηνικό του καιρού](https://www.alphanews.live/cyprus/triti-synechomeni-imera-vrochon-pote-ektima-i-meteorologiki-oti-tha-allaxei-to-skiniko-tou-kairou/) — AlphaNews, 16 Oct 2026 · weather
 - [Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία](https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia) — Πολίτης, 15 Oct 2026 · weather
 - [Στο 36,8% η πληρότητα των φραγμάτων](https://www.sigmalive.com/news/local/1333275/sto-368-i-plirotita-ton-fraghmaton) — Sigmalive, 14 Oct 2026 · reservoirs
 - [Αγρότες: Ευρωπαϊκή βοήθεια €4,6 εκατ. μετά τις ζημιές από την ξηρασία](https://dialogos.com.cy/agrotes-eyropaiki-voitheia-e46-ekat-meta-tis-zimies-apo-tin-xirasia-ta-paroysiazei-os-kratiki-ypostirixi-o-christodoylidis/) — Dialogos, 14 Oct 2026 · policy
