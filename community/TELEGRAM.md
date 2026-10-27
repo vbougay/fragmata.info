@@ -4100,3 +4100,25 @@ Gap vs last year: +24.1pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 27 — Tuesday bulletin: slow drawdown continues, Arminou still rising
+
+📊 Minor update (Tuesday): 35.0% (101.80 MCM), −0.12 MCM since Monday; 24h inflow 0.02 MCM; Arminou 68.0%.
+
+### Telegram
+Sent: message_id=358, chat_id=151413643, at=2026-10-27T10:15:53Z
+```
+📊 Cyprus Dams — October 27
+
+Tuesday bulletin: total storage 35.0% (101.80 MCM) — down 0.12 MCM from Monday's 101.92 MCM, the same slow drawdown pace continuing. 24-hour inflow was only 0.02 MCM: Kouris 0.013, Arminou 0.010. Arminou is still the only Southern Conveyor dam rising, at 68.0% (66.4% a week ago). Gap over last year: +24.1pp. Season inflow: 1.66 MCM. Arminou→Kouris transfer still at zero.
+
+• Arminou 68.0% (+0.2pp) — keeps climbing, 2.92 MCM
+• Kouris 36.4% — down 0.07 MCM to 41.83 MCM despite 0.013 MCM of inflow
+• Germasoyeia 46.5% (−0.1pp) — down 1.0pp over the week
+• Achna 7.8% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +24.1pp.
+
+🔗 https://fragmata.info
+```
