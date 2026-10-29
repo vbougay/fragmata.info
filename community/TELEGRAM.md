@@ -4122,3 +4122,25 @@ Gap vs last year: +24.1pp.
 
 🔗 https://fragmata.info
 ```
+
+## October 29 — Thursday bulletin: first small uptick as rain crosses the island
+
+📰 Major update (Thursday): 35.0% (101.83 MCM), +0.03 MCM since Tuesday; 48h inflow 0.22 MCM; Arminou 68.5%.
+
+### Telegram
+Sent: message_id=365, chat_id=151413643, at=2026-10-29T09:46:06Z
+```
+📰 Cyprus Dams — October 29
+
+Thursday bulletin, covering two days: total storage 35.0% (101.83 MCM) — up 0.03 MCM from Tuesday's 101.80 MCM, the first small uptick after days of slow drawdown as rain moved across the island. 48-hour inflow was 0.22 MCM: Kouris 0.11, Arminou 0.03, Asprokremmos 0.03. Since October 22 the total is still down 0.59 MCM, while Arminou climbed from 67.0% to 68.5%, the only Southern Conveyor dam rising steadily. Gap over last year: +24.2pp. Season inflow: 1.89 MCM. Arminou→Kouris transfer unchanged at zero.
+
+• Arminou 68.5% (+0.5pp) — keeps climbing, 2.95 MCM
+• Kouris 36.4% — steadied at 41.85 MCM (+0.02) on 0.11 MCM of inflow
+• Germasoyeia 46.4% (−0.1pp) — down 0.9pp over the week
+• Achna 7.8% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +24.2pp.
+
+🔗 https://fragmata.info
+```

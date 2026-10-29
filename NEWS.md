@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (3 Sept 2026 — 26 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (3 Sept 2026 — 29 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -21,7 +21,8 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 26 Oct 2026). Gen
 
 ## Greek
 
-- [«Κοκτέιλ» σκόνης και βροχών: Πότε έρχονται έντονα καιρικά φαινόμενα κι αισθητή πτώση της θερμοκρασίας](https://www.alphanews.live/cyprus/kokteil-skonis-kai-vrochon-pote-erchontai-entona-kairika-fainomena-ki-aisthiti-ptosi-tis-thermokrasias/) — AlphaNews, 26 Oct 2026 · weather
+- [Βροχές, καταιγίδες, χαλάζι και πολύ ισχυρά μποφόρ: Έτσι «χτυπά» το βαρομετρικό χαμηλό την Κύπρο](https://www.alphanews.live/cyprus/vroches-kataigides-chalazi-kai-poly-ischyra-bofor-etsi-chtypa-to-varometriko-chamilo-tin-kypro/) — AlphaNews, 29 Oct 2026 · weather
+- [Έντονες βροχοπτώσεις στην Πάφο](https://www.politis.com.cy/politis-news/koinonia/1059789/entones-vrokhoptwseis-stin-pafo) — Πολίτης, 29 Oct 2026 · weather
 - [Αντιδράσεις στον Μαζωτό για τους σχεδιασμούς αφαλάτωσης – Ζητούν διαφάνεια και διαβούλευση](https://dialogos.com.cy/antidraseis-ston-mazoto-gia-toys-schediasmoys-afalatosis-zitoyn-diafaneia-kai-diavoyleysi/) — Dialogos, 20 Oct 2026 · desalination
 - [Οργή αγροτών για τα €4,6 εκατ. για αντιμετώπιση της ξηρασίας - Αναξιοποίητη η πρόσθετη ευρωπαϊκή ενίσχυση, εκτός σχεδίου σημαντικοί κλάδοι](https://www.politis.com.cy/oikonomia/cyprus/1054224/aghrotikes-orghanwseis-diamartiria-ghia-tin-eniskhisi-ton-eur46-ekat-kai-ton-apokleismo-kladon) — Πολίτης, 19 Oct 2026 · policy
 - [Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία](https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia) — Πολίτης, 15 Oct 2026 · weather
@@ -30,4 +31,3 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 26 Oct 2026). Gen
 - [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή, 8 Oct 2026 · reservoirs
 - [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης, 20 Sept 2026 · irrigation
 - [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ, 14 Sept 2026 · desalination
-- [Καλύτερη από πέρσι η εικόνα στα φράγματα Πάφου αλλά όχι εφησυχασμός, λέει το ΤΑΥ](https://cyprustimes.com/koinonia/kalyteri-apo-persi-i-eikona-sta-fragmata-pafou-alla-ochi-efisychasmos-leei-to-taf/) — Cyprus Times, 9 Sept 2026 · reservoirs
