@@ -1,9 +1,11 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (3 Sept 2026 — 29 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (3 Sept 2026 — 30 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
+- [Reservoir levels rise to 35.1% after rainfall](https://cyprus-mail.com/2026/10/30/reservoir-levels-rise-to-35-1-after-rainfall) — Cyprus Mail, 30 Oct 2026 · reservoirs
+- [Cyprus Reservoir Levels Rise After Early Rainfall, but Water Concerns Remain](https://en.politis.com.cy/news/environment/1060401/cyprus-reservoir-levels-rise-after-early-rainfall-but-water-concerns-remain) — Politis, 30 Oct 2026 · reservoirs
 - [Nicosia water losses below national average](https://cyprus-mail.com/2026/10/21/nicosia-water-losses-below-national-average) — Cyprus Mail, 21 Oct 2026 · policy
 - [Mazotos residents gather signatures against planned desalination plant](https://cyprus-mail.com/2026/10/20/mazotos-residents-gather-signatures-against-planned-desalination-plant) — Cyprus Mail, 20 Oct 2026 · desalination
 - [Fire brigade responds to 78 calls in 24 hours, 13 flood related](https://cyprus-mail.com/2026/10/15/fire-brigade-responds-to-78-calls-in-24-hours-13-flood-related) — Cyprus Mail, 15 Oct 2026 · weather
@@ -21,13 +23,11 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 29 Oct 2026). Gen
 
 ## Greek
 
+- [«Ξύπνησαν» νωρίς οι ποταμοί της Κύπρου: Αισιοδοξία για τις εισροές στα φράγματα - Τριπλάσιο νερό σε σχέση με πέρυσι](https://www.politis.com.cy/cyprus/perivallon/1060393/ksypnisan-noris-oi-potami-tis-kyproy-aisiodoksia-ghia-tis-eisroes-sta-fraghmata-triplasio-nero-se-skhesi-me-persi) — Πολίτης, 30 Oct 2026 · reservoirs
+- [Φράγματα: Από το 10,7% στο 35,1% η πληρότητα, πόσο νερό έφεραν οι τελευταίες βροχές](https://www.alphanews.live/cyprus/fragmata-apo-to-107-sto-351-i-plirotita-poso-nero-eferan-oi-teleftaies-vroches/) — AlphaNews, 30 Oct 2026 · reservoirs
 - [Βροχές, καταιγίδες, χαλάζι και πολύ ισχυρά μποφόρ: Έτσι «χτυπά» το βαρομετρικό χαμηλό την Κύπρο](https://www.alphanews.live/cyprus/vroches-kataigides-chalazi-kai-poly-ischyra-bofor-etsi-chtypa-to-varometriko-chamilo-tin-kypro/) — AlphaNews, 29 Oct 2026 · weather
-- [Έντονες βροχοπτώσεις στην Πάφο](https://www.politis.com.cy/politis-news/koinonia/1059789/entones-vrokhoptwseis-stin-pafo) — Πολίτης, 29 Oct 2026 · weather
 - [Αντιδράσεις στον Μαζωτό για τους σχεδιασμούς αφαλάτωσης – Ζητούν διαφάνεια και διαβούλευση](https://dialogos.com.cy/antidraseis-ston-mazoto-gia-toys-schediasmoys-afalatosis-zitoyn-diafaneia-kai-diavoyleysi/) — Dialogos, 20 Oct 2026 · desalination
 - [Οργή αγροτών για τα €4,6 εκατ. για αντιμετώπιση της ξηρασίας - Αναξιοποίητη η πρόσθετη ευρωπαϊκή ενίσχυση, εκτός σχεδίου σημαντικοί κλάδοι](https://www.politis.com.cy/oikonomia/cyprus/1054224/aghrotikes-orghanwseis-diamartiria-ghia-tin-eniskhisi-ton-eur46-ekat-kai-ton-apokleismo-kladon) — Πολίτης, 19 Oct 2026 · policy
 - [Κύπρος: Έως 54% απώλεια μελλοντικού εισοδήματος από καύσωνες και ξηρασία](https://www.politis.com.cy/politis-news/oikonomia/1052268/kypros-eos-54-apwleia-mellontikou-eisodimatos-apo-kausones-kai-ksirasia) — Πολίτης, 15 Oct 2026 · weather
-- [Στο 36,8% η πληρότητα των φραγμάτων](https://www.sigmalive.com/news/local/1333275/sto-368-i-plirotita-ton-fraghmaton) — Sigmalive, 14 Oct 2026 · reservoirs
 - [Αγρότες: Ευρωπαϊκή βοήθεια €4,6 εκατ. μετά τις ζημιές από την ξηρασία](https://dialogos.com.cy/agrotes-eyropaiki-voitheia-e46-ekat-meta-tis-zimies-apo-tin-xirasia-ta-paroysiazei-os-kratiki-ypostirixi-o-christodoylidis/) — Dialogos, 14 Oct 2026 · policy
 - [Φράγματα: Σχεδόν τριπλάσια αποθέματα σε σχέση με πέρσι](https://simerini.sigmalive.com/article/2026/10/8/phragmata-skhedon-triplasia-apothemata-se-skhese-me-persi/) — Σημερινή, 8 Oct 2026 · reservoirs
-- [Ο Χρίστος Σενέκης στον «Π»: Περισσότερο νερό στους γεωργούς, υπό την προϋπόθεση ότι δεν τίθεται σε κίνδυνο η ύδρευση](https://www.politis.com.cy/cyprus/perivallon/1034164/o-xristos-senekis-ston-p-perissotero-nero-stoys-gheorghous-ipo-tin-proypothesi-oti-den-tithetai-se-kindino-i-ydrefsi) — Πολίτης, 20 Sept 2026 · irrigation
-- [Με τέσσερις μονάδες αφαλάτωσης θα επιλυθεί το υδατικό, λέει ο Σενέκης](https://news.rik.cy/el/article/2026/9/14/me-tesseris-monades-aphalatoses-tha-epiluthei-to-udatiko-leei-o-senekes/) — ΡΙΚ, 14 Sept 2026 · desalination
