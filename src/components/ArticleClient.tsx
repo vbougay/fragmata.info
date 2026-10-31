@@ -48,6 +48,8 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Calendar, ChevronLeft, ChevronRight, Waves } from "lucide-react";
+import { KairikaBadge } from "@/components/KairikaBadge";
+import { trackKairikaClick } from "@/utils/kairika";
 
 // --- Chart embed parsing ---
 
@@ -343,6 +345,8 @@ interface ArticleListItem {
   description: string;
   excerpt: string;
   date: string;
+  /** Set for articles published on Kairika: the link leaves the site. */
+  externalUrl?: string;
 }
 
 interface ArticleListClientProps {
@@ -375,18 +379,15 @@ export function ArticleListClient({ articles }: ArticleListClientProps) {
         <h1 className="text-3xl font-bold mb-8 text-foreground">{t("articles")}</h1>
 
         <div className="space-y-6">
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={localePath(`/articles/${article.slug}`)}
-              className="block group"
-            >
+          {articles.map((article) => {
+            const card = (
               <article className="rounded-xl border border-border/50 bg-white/70 dark:bg-gray-900/70 p-6 shadow-sm transition-all hover:shadow-md hover:border-water-300 dark:hover:border-water-700">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-3.5 w-3.5" />
                     {article.date}
                   </span>
+                  {article.externalUrl && <KairikaBadge />}
                 </div>
                 <h2 className="text-lg font-semibold text-foreground group-hover:text-water-600 dark:group-hover:text-water-400 transition-colors mb-2">
                   {article.title}
@@ -400,8 +401,25 @@ export function ArticleListClient({ articles }: ArticleListClientProps) {
                   </p>
                 )}
               </article>
-            </Link>
-          ))}
+            );
+            return article.externalUrl ? (
+              // No noreferrer: Kairika's analytics should see these visits as coming from Fragmata
+              <a
+                key={article.slug}
+                href={article.externalUrl}
+                target="_blank"
+                rel="noopener"
+                onClick={() => trackKairikaClick("article", article.externalUrl!)}
+                className="block group"
+              >
+                {card}
+              </a>
+            ) : (
+              <Link key={article.slug} href={localePath(`/articles/${article.slug}`)} className="block group">
+                {card}
+              </Link>
+            );
+          })}
         </div>
       </main>
 

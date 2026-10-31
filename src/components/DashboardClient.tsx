@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import React, { useMemo, useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { Header, ReservoirCard, ReservoirTable, RegionSummary, MonthlyInflow, HistoricalHeatmap } from '@/components';
 import { getAllSparklineData } from '@/utils/sparklineData';
 import { NewsTicker } from '@/components/NewsTicker';
@@ -16,12 +16,16 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
 import { RegionTotal, ReservoirRegion, Reservoir } from '@/types';
 import { Droplets, FileText, ArrowRight } from 'lucide-react';
+import { KairikaBadge } from '@/components/KairikaBadge';
+import { trackKairikaClick } from '@/utils/kairika';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { getLatestPublishedArticle } from '@/utils/articles';
+import { cyprusToday, getLatestPublishedArticle } from '@/utils/articles';
 import { DashboardDesalination } from '@/components/DashboardDesalination';
 import { defaultLocale } from '@/utils/locale';
+
+const subscribeNever = () => () => {};
 
 const VALID_TABS = ['dashboard', 'regions', 'map', 'table'] as const;
 type TabValue = (typeof VALID_TABS)[number];
@@ -57,6 +61,11 @@ export function DashboardClient({
   const { currentDataSetId } = useDataContext();
   const { language } = useLanguage();
   const t = useTranslation(language);
+  // Read on the client only: the page is prerendered, so a date read at render time would be
+  // frozen at build time (or mismatch on hydration), and a day-dated article would wait for
+  // the next data rebuild.
+  const today = useSyncExternalStore(subscribeNever, cyprusToday, () => null);
+  const latest = today ? getLatestPublishedArticle(today) : undefined;
 
   const [activeTab, setActiveTab] = useState<TabValue>(
     isValidTab(initialTab) ? initialTab : 'dashboard'
@@ -107,22 +116,32 @@ export function DashboardClient({
       <main className="container mx-auto px-4 pb-2">
         <StatCardGrid grandTotal={grandTotal} ytdInflow={ytdInflow} ytdOutflow={ytdOutflow} t={t} animate />
 
-        {(() => {
-          const latest = getLatestPublishedArticle();
-          if (!latest) return null;
+        {latest && (() => {
+          const external = latest.externalUrl?.[language];
+          const className = "flex items-center justify-center gap-2 -mt-1 mb-6 py-1 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors group";
+          const content = (
+            <>
+              <FileText className="h-3.5 w-3.5 flex-shrink-0" />
+              <span className="truncate">{latest.title[language]}</span>
+              {external ? (
+                <KairikaBadge />
+              ) : (
+                <ArrowRight className="h-3 w-3 flex-shrink-0" />
+              )}
+            </>
+          );
+          if (external) {
+            return (
+              // No noreferrer: Kairika's analytics should see these visits as coming from Fragmata
+              <a href={external} target="_blank" rel="noopener" onClick={() => trackKairikaClick('article', external)} className={className}>
+                {content}
+              </a>
+            );
+          }
           const href = language === defaultLocale
             ? `/articles/${latest.slug}`
             : `/${language}/articles/${latest.slug}`;
-          return (
-            <Link
-              href={href}
-              className="flex items-center justify-center gap-2 -mt-1 mb-6 py-1 text-sm text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors group"
-            >
-              <FileText className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="truncate">{latest.title[language]}</span>
-              <ArrowRight className="h-3 w-3 flex-shrink-0" />
-            </Link>
-          );
+          return <Link href={href} className={className}>{content}</Link>;
         })()}
 
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8 modern-tabs">
