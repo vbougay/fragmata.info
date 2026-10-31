@@ -4,7 +4,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { ArticleClient } from "@/components/ArticleClient";
 import { locales, isValidLocale } from "@/utils/locale";
-import { getAllArticles, getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
+import { getLocalArticles, getAllArticleSlugs, getArticleBySlug } from "@/utils/articles";
 import { autoLinkDams } from "@/utils/autoLinkDams";
 import { getDatasetSnapshot } from "@/utils/dataManager";
 
@@ -65,7 +65,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const lang = isValidLocale(locale) ? locale : "en";
   const article = getArticleBySlug(slug);
-  if (!article) return {};
+  if (!article || article.externalUrl) return {};
 
   const markdown = await readArticleMd(slug, lang);
   const title = `${article.title[lang]} | Fragmata`;
@@ -112,7 +112,7 @@ export default async function ArticlePage({
   const { locale, slug } = await params;
   const lang = isValidLocale(locale) ? locale : "en";
   const article = getArticleBySlug(slug);
-  if (!article) notFound();
+  if (!article || article.externalUrl) notFound();
 
   const rawMarkdown = await readArticleMd(slug, lang);
   if (!rawMarkdown) notFound();
@@ -123,7 +123,7 @@ export default async function ArticlePage({
   const dataSet = await getDatasetSnapshot(article.dataSetId);
 
   // Compute prev/next articles (sorted newest-first)
-  const allArticles = getAllArticles();
+  const allArticles = getLocalArticles();
   const currentIdx = allArticles.findIndex((a) => a.slug === slug);
   const newer = currentIdx > 0 ? allArticles[currentIdx - 1] : null;
   const older = currentIdx < allArticles.length - 1 ? allArticles[currentIdx + 1] : null;

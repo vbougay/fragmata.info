@@ -10,9 +10,35 @@ export interface ArticleMeta {
   hidden?: boolean;
   /** Has its own card at /og/articles/<slug>.<locale>.png (see scripts/og/generate.tsx). */
   ogImage?: boolean;
+  /**
+   * Published on another site (Kairika). Listed with a link out per locale; there is no
+   * local page, content/articles/<slug>/ file, sitemap entry or OG card. `dataSetId` is unused.
+   */
+  externalUrl?: Record<Locale, string>;
 }
 
 export const ARTICLES: ArticleMeta[] = [
+  {
+    slug: '2026-11-01-october-2026-in-numbers',
+    date: '2026-11-01',
+    dataSetId: '30-OCT-2026',
+    author: 'Vladimir Bugay',
+    externalUrl: {
+      en: 'https://kairika.info/articles/october-2026-in-numbers',
+      el: 'https://kairika.info/el/articles/october-2026-in-numbers',
+      ru: 'https://kairika.info/ru/articles/october-2026-in-numbers',
+    },
+    title: {
+      en: 'October 2026 in numbers: 2.5 times the rain, and the sponge drank first',
+      el: 'Ο Οκτώβριος 2026 σε αριθμούς: 2,5 φορές η κανονική βροχή, και το σφουγγάρι ρούφηξε πρώτο',
+      ru: 'Октябрь 2026 в цифрах: дождя в 2,5 раза больше нормы, но первой напиталась губка',
+    },
+    description: {
+      en: 'October 2026 brought Cyprus about 81 mm of rain, roughly 2.5 times normal, in three storm spells with 11 thunder days and unusually cool days. Then the question of where all that water went.',
+      el: 'Ο Οκτώβριος 2026 έφερε στην Κύπρο περίπου 81 mm βροχής, περίπου 2,5 φορές το κανονικό, σε τρία κύματα κακοκαιρίας, με 11 μέρες καταιγίδας και ασυνήθιστα δροσερές μέρες. Μένει το ερώτημα: πού πήγε όλο αυτό το νερό;',
+      ru: 'В октябре 2026 года на Кипре выпало около 81 мм осадков, примерно в 2,5 раза больше нормы: три штормовых периода, 11 грозовых дней и необычно прохладные дни. А дальше — вопрос: куда ушла вся эта вода?',
+    },
+  },
   {
     slug: '2026-10-09-cyprus-water-ins-and-outs',
     date: '2026-10-09',
@@ -289,19 +315,29 @@ export const ARTICLES: ArticleMeta[] = [
   },
 ];
 
+/** Everything the /articles list shows, including external articles. */
 export function getAllArticles(): ArticleMeta[] {
   return [...ARTICLES].filter((a) => !a.hidden).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/** Articles that have a page on this site (neighbour links, sitemap, static params). */
+export function getLocalArticles(): ArticleMeta[] {
+  return getAllArticles().filter((a) => !a.externalUrl);
 }
 
 export function getArticleBySlug(slug: string): ArticleMeta | undefined {
   return ARTICLES.find((a) => a.slug === slug);
 }
 
-export function getLatestPublishedArticle(): ArticleMeta | undefined {
-  const today = new Date().toISOString().slice(0, 10);
+// Cyprus calendar date, so a day-dated article appears at Cyprus midnight whatever the reader's clock.
+export function cyprusToday(): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Nicosia' }).format(new Date());
+}
+
+export function getLatestPublishedArticle(today: string = cyprusToday()): ArticleMeta | undefined {
   return getAllArticles().find((a) => a.date <= today);
 }
 
 export function getAllArticleSlugs(): string[] {
-  return ARTICLES.filter((a) => !a.hidden).map((a) => a.slug);
+  return getLocalArticles().map((a) => a.slug);
 }

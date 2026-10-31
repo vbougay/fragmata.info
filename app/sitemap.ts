@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllRegionSlugs, getAllDamSlugs } from "@/utils/slugs";
-import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/utils/articles";
+import { getAllArticleSlugs, getArticleBySlug, getLocalArticles } from "@/utils/articles";
 import { DEFAULT_DATASET_ID } from "@/utils/dataManager";
 import { parseReportDate } from "@/utils/reservoirUtils";
 import { DESAL_PLANTS } from "@/utils/desalinationData";
@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     makeEntry(`/desalination/${p.id}`, 0.6, latestDataDate)
   );
 
-  const latestArticle = getAllArticles()[0];
+  const latestArticle = getLocalArticles()[0];
   const latestArticleDate = latestArticle ? new Date(latestArticle.date) : latestDataDate;
   const articleListPage = makeEntry("/articles", 0.5, latestArticleDate);
 

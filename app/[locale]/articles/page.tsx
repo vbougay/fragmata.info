@@ -71,7 +71,7 @@ export default async function ArticlesPage({
   const items = await Promise.all(
     articles.map(async (a) => {
       const mdPath = path.join(process.cwd(), "content", "articles", a.slug, `${lang}.md`);
-      const md = await fs.readFile(mdPath, "utf-8").catch(() => "");
+      const md = a.externalUrl ? "" : await fs.readFile(mdPath, "utf-8").catch(() => "");
       let firstParagraph = "";
       let pastSeparator = false;
       for (const line of md.split("\n")) {
@@ -88,6 +88,7 @@ export default async function ArticlesPage({
         description: a.description[lang],
         excerpt: firstParagraph.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"),
         date: a.date,
+        externalUrl: a.externalUrl?.[lang],
       };
     })
   );
