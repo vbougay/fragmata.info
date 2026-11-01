@@ -4166,3 +4166,41 @@ Gap vs last year: +24.3pp.
 
 🔗 https://fragmata.info
 ```
+
+## November 1 — Kairika: October 2026 in numbers (recap article)
+
+📰 Announcement from the sister project Kairika (kairika.info): the monthly recap **"October 2026 in numbers: 2.5 times the rain, and the sponge drank first"** (EN/EL/RU/DE, dated 1 Nov 2026), with share cards. A weather post with the dams as one short section. Rain to 31 October; dams and lightning to 30 October.
+
+Full article: [kairika.info/articles/october-2026-in-numbers](https://kairika.info/articles/october-2026-in-numbers)
+Reddit: https://www.reddit.com/r/cyprus/s/oNsYHz3T32
+
+### Telegram
+Sent by Vlad, 2026-11-01T08:46:59Z. Public link: https://t.me/fragmatainfo/188 (message_id not captured; sent manually, not via the pipeline). Text below is as sent, read back from the public post. The public embed showed no photo. "At least 11 thunder days" is deliberate: EUMETSAT has no data for about 05:30–19:30 UTC on 31 October.
+```
+🌧 October 2026: Cyprus had a proper autumn
+
+About 2.5x the normal rain, three storms and days that never really got hot. Kairika's October recap is out.
+
+⛈ A month of three storms
+• Second-wettest October on our stations since at least 2010
+• Even the driest gauge got nearly twice last October's average
+• Lysos doubled its October record
+• 14 October: orange warning and 7,557 flashes over the island
+• At least 11 thunder days, against 3 last October
+
+🌡 Cool days
+• Highest reading all month: 32.8°C, the lowest October peak since at least 2010
+• The sea is still 23°C, because Cyprus can't commit to anything
+
+🧽 Where did all the rain go?
+• Into the ground first: the Troodos behaves like a sponge after a long summer
+• The dams took in about 3% of what they need this year
+• Storage still fell, but by the smallest share of any October since 1988
+
+🔮 Does a wet October mean a wet winter? Sorry, no. Since 1940 it has told us basically nothing.
+
+Full article, with charts and a look at where the water went:
+https://kairika.info/articles/october-2026-in-numbers
+
+Contains modified EUMETSAT Meteosat data 2026.
+```
