@@ -1,9 +1,10 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (3 Sept 2026 — 30 Oct 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (9 Sept 2026 — 2 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
+- [Agriculture Ministry Budget Rises to €532m, With 43% Allocated to Water](https://en.politis.com.cy/news/environment/1061681/agriculture-ministry-budget-rises-to-eur532m-with-43-allocated-to-water) — Politis, 2 Nov 2026 · policy
 - [Reservoir levels rise to 35.1% after rainfall](https://cyprus-mail.com/2026/10/30/reservoir-levels-rise-to-35-1-after-rainfall) — Cyprus Mail, 30 Oct 2026 · reservoirs
 - [Cyprus Reservoir Levels Rise After Early Rainfall, but Water Concerns Remain](https://en.politis.com.cy/news/environment/1060401/cyprus-reservoir-levels-rise-after-early-rainfall-but-water-concerns-remain) — Politis, 30 Oct 2026 · reservoirs
 - [Nicosia water losses below national average](https://cyprus-mail.com/2026/10/21/nicosia-water-losses-below-national-average) — Cyprus Mail, 21 Oct 2026 · policy
@@ -13,7 +14,6 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 30 Oct 2026). Gen
 - [Water levels higher at Larnaca and Famagusta reservoirs than last year](https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year) — Cyprus Mail, 2 Oct 2026 · reservoirs
 - [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail, 16 Sept 2026 · irrigation
 - [Senekis: Four New Desalination Plants Under Way Across Cyprus](https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus) — Politis, 13 Sept 2026 · desalination
-- [The Shared Water Project That Outlived Cyprus's Division](https://en.politis.com.cy/news/environment/1030241/the-shared-water-project-that-outlived-cypruss-division) — Politis, 3 Sept 2026 · policy
 
 ## Russian
 
@@ -23,6 +23,7 @@ Articles shown in the dashboard's news ticker (3 Sept 2026 — 30 Oct 2026). Gen
 
 ## Greek
 
+- [Αλλάζει το σκηνικό του καιρού στην Κύπρο – Έρχονται βροχές και καταιγίδες, πότε θα επηρεαστεί το νησί](https://dialogos.com.cy/allazei-to-skiniko-toy-kairoy-stin-kypro-erchontai-vroches-kai-kataigides-pote-tha-epireastei-to-nisi/) — Dialogos, 2 Nov 2026 · weather
 - [«Ξύπνησαν» νωρίς οι ποταμοί της Κύπρου: Αισιοδοξία για τις εισροές στα φράγματα - Τριπλάσιο νερό σε σχέση με πέρυσι](https://www.politis.com.cy/cyprus/perivallon/1060393/ksypnisan-noris-oi-potami-tis-kyproy-aisiodoksia-ghia-tis-eisroes-sta-fraghmata-triplasio-nero-se-skhesi-me-persi) — Πολίτης, 30 Oct 2026 · reservoirs
 - [Φράγματα: Από το 10,7% στο 35,1% η πληρότητα, πόσο νερό έφεραν οι τελευταίες βροχές](https://www.alphanews.live/cyprus/fragmata-apo-to-107-sto-351-i-plirotita-poso-nero-eferan-oi-teleftaies-vroches/) — AlphaNews, 30 Oct 2026 · reservoirs
 - [Βροχές, καταιγίδες, χαλάζι και πολύ ισχυρά μποφόρ: Έτσι «χτυπά» το βαρομετρικό χαμηλό την Κύπρο](https://www.alphanews.live/cyprus/vroches-kataigides-chalazi-kai-poly-ischyra-bofor-etsi-chtypa-to-varometriko-chamilo-tin-kypro/) — AlphaNews, 29 Oct 2026 · weather

@@ -17,6 +17,7 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   // English
+  { title: 'Agriculture Ministry Budget Rises to €532m, With 43% Allocated to Water', url: 'https://en.politis.com.cy/news/environment/1061681/agriculture-ministry-budget-rises-to-eur532m-with-43-allocated-to-water', lang: 'en', source: 'Politis', date: '2026-11-02', topic: 'policy' },
   { title: 'Reservoir levels rise to 35.1% after rainfall', url: 'https://cyprus-mail.com/2026/10/30/reservoir-levels-rise-to-35-1-after-rainfall', lang: 'en', source: 'Cyprus Mail', date: '2026-10-30', topic: 'reservoirs' },
   { title: 'Cyprus Reservoir Levels Rise After Early Rainfall, but Water Concerns Remain', url: 'https://en.politis.com.cy/news/environment/1060401/cyprus-reservoir-levels-rise-after-early-rainfall-but-water-concerns-remain', lang: 'en', source: 'Politis', date: '2026-10-30', topic: 'reservoirs' },
   { title: 'Nicosia water losses below national average', url: 'https://cyprus-mail.com/2026/10/21/nicosia-water-losses-below-national-average', lang: 'en', source: 'Cyprus Mail', date: '2026-10-21', topic: 'policy' },
@@ -26,9 +27,9 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Water levels higher at Larnaca and Famagusta reservoirs than last year', url: 'https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year', lang: 'en', source: 'Cyprus Mail', date: '2026-10-02', topic: 'reservoirs' },
   { title: 'Farmers to get additional 3.5m cubic metres of water', url: 'https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water', lang: 'en', source: 'Cyprus Mail', date: '2026-09-16', topic: 'irrigation' },
   { title: 'Senekis: Four New Desalination Plants Under Way Across Cyprus', url: 'https://en.politis.com.cy/news/1032662/senekis-four-new-desalination-plants-under-way-across-cyprus', lang: 'en', source: 'Politis', date: '2026-09-13', topic: 'desalination' },
-  { title: 'The Shared Water Project That Outlived Cyprus\'s Division', url: 'https://en.politis.com.cy/news/environment/1030241/the-shared-water-project-that-outlived-cypruss-division', lang: 'en', source: 'Politis', date: '2026-09-03', topic: 'policy' },
 
   // Greek
+  { title: 'Αλλάζει το σκηνικό του καιρού στην Κύπρο – Έρχονται βροχές και καταιγίδες, πότε θα επηρεαστεί το νησί', url: 'https://dialogos.com.cy/allazei-to-skiniko-toy-kairoy-stin-kypro-erchontai-vroches-kai-kataigides-pote-tha-epireastei-to-nisi/', lang: 'el', source: 'Dialogos', date: '2026-11-02', topic: 'weather' },
   { title: '«Ξύπνησαν» νωρίς οι ποταμοί της Κύπρου: Αισιοδοξία για τις εισροές στα φράγματα - Τριπλάσιο νερό σε σχέση με πέρυσι', url: 'https://www.politis.com.cy/cyprus/perivallon/1060393/ksypnisan-noris-oi-potami-tis-kyproy-aisiodoksia-ghia-tis-eisroes-sta-fraghmata-triplasio-nero-se-skhesi-me-persi', lang: 'el', source: 'Πολίτης', date: '2026-10-30', topic: 'reservoirs' },
   { title: 'Φράγματα: Από το 10,7% στο 35,1% η πληρότητα, πόσο νερό έφεραν οι τελευταίες βροχές', url: 'https://www.alphanews.live/cyprus/fragmata-apo-to-107-sto-351-i-plirotita-poso-nero-eferan-oi-teleftaies-vroches/', lang: 'el', source: 'AlphaNews', date: '2026-10-30', topic: 'reservoirs' },
   { title: 'Αντιδράσεις στον Μαζωτό για τους σχεδιασμούς αφαλάτωσης – Ζητούν διαφάνεια και διαβούλευση', url: 'https://dialogos.com.cy/antidraseis-ston-mazoto-gia-toys-schediasmoys-afalatosis-zitoyn-diafaneia-kai-diavoyleysi/', lang: 'el', source: 'Dialogos', date: '2026-10-20', topic: 'desalination' },

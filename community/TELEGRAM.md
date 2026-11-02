@@ -4204,3 +4204,26 @@ https://kairika.info/articles/october-2026-in-numbers
 
 Contains modified EUMETSAT Meteosat data 2026.
 ```
+
+## November 2 — Monday bulletin: dams hold level, Arminou keeps climbing
+
+📰 Major update (Monday, after a 3-day gap): 35.1% (101.97 MCM), +0.01 MCM since Friday; 24h inflow 0.07 MCM; Arminou 71.0%.
+
+### Telegram
+Sent: message_id=375, chat_id=151413643, at=2026-11-02T09:45:18Z
+```
+📰 Cyprus Dams — November 2
+
+Monday bulletin, covering the weekend: total storage 35.1% (101.97 MCM) — up just 0.01 MCM from Friday's 101.96 MCM and 0.05 MCM on the week, so the rain is holding the dams level rather than filling them. 24-hour inflow was 0.07 MCM: Kouris 0.04, Arminou 0.02. Season inflow: 2.36 MCM. Arminou keeps climbing — 71.0%, now +3.2pp in a week. Gap over last year: +24.5pp. Arminou→Kouris transfer unchanged at zero.
+
+• Arminou 71.0% (+1.3pp) — still the steady riser, 3.05 MCM
+• Mavrokolympos 32.3% (+1.7pp) — biggest mover of the weekend, 0.71 MCM
+• Kouris 36.4% — 41.87 MCM, flat on 0.04 MCM of inflow
+• Asprokremmos 35.2% — 18.42 MCM (−0.03), holding
+• Achna 7.8% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +24.5pp.
+
+🔗 https://fragmata.info
+```
