@@ -4251,3 +4251,27 @@ Gap vs last year: +24.5pp.
 
 🔗 https://fragmata.info
 ```
+
+---
+
+## 2026-11-04
+📰 Major update (Wednesday): 35.0% (101.87 MCM), −0.05 MCM since Tuesday; 24h inflow 0.04 MCM; Arminou 71.6%.
+
+### Telegram
+Sent: message_id=381, chat_id=151413643, at=2026-11-04T09:44:29Z
+```
+📰 Cyprus Dams — November 4
+
+Wednesday bulletin: total storage 35.0% (101.87 MCM) — down 0.05 MCM from Tuesday's 101.92 MCM and from October 26, so the rain is holding the dams level rather than filling them. 24-hour inflow was 0.04 MCM: Kouris 0.03, Arminou 0.01. Season inflow: 2.47 MCM. Arminou keeps climbing — 71.6%, +3.8pp in a week. Gap over last year: +24.5pp. Arminou→Kouris transfer unchanged at zero.
+
+• Arminou 71.6% (+0.2pp) — still the steady riser, 3.08 MCM
+• Mavrokolympos 33.5% (+0.6pp) — 0.73 MCM, +3.8pp on the week
+• Kouris 36.3% — 41.80 MCM, flat on 0.03 MCM of inflow
+• Asprokremmos 35.1% — 18.39 MCM, holding
+• Achna 7.8% — unchanged, zero inflow all season
+• Kalopanagiotis 100% — still the only dam overflowing
+
+Gap vs last year: +24.5pp.
+
+🔗 https://fragmata.info
+```
