@@ -42,5 +42,4 @@ export const newsArticles: NewsArticle[] = [
   // Russian
   { title: 'Сильные дожди на Кипре вызвали наводнения, перебои с электричеством и ограничения движения', url: 'https://cyprusbutterfly.com.cy/news/silnyie-dozhdi-kipre-vyizvali-navodneniya', lang: 'ru', source: 'Cyprus Butterfly', date: '2026-10-15', topic: 'weather' },
   { title: '14 и 15 октября на Кипр обрушатся ливни и сильные грозы', url: 'https://evropakipr.com/novosti/14-i-15-oktyabrya-na-kipr-obrushatsya-livni-i-silnye-grozy', lang: 'ru', source: 'Европа Кипр', date: '2026-10-13', topic: 'weather' },
-  { title: 'Нестабильная погода и исторический шторм в августе принесли острову более чем тройной объем сезонных дождей', url: 'https://cyprusbutterfly.com.cy/news/leto-2026-goda-kipre-priznano', lang: 'ru', source: 'Cyprus Butterfly', date: '2026-09-09', topic: 'weather' },
 ];

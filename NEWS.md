@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (9 Sept 2026 — 3 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (16 Sept 2026 — 3 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -19,7 +19,6 @@ Articles shown in the dashboard's news ticker (9 Sept 2026 — 3 Nov 2026). Gene
 
 - [Сильные дожди на Кипре вызвали наводнения, перебои с электричеством и ограничения движения](https://cyprusbutterfly.com.cy/news/silnyie-dozhdi-kipre-vyizvali-navodneniya) — Cyprus Butterfly, 15 Oct 2026 · weather
 - [14 и 15 октября на Кипр обрушатся ливни и сильные грозы](https://evropakipr.com/novosti/14-i-15-oktyabrya-na-kipr-obrushatsya-livni-i-silnye-grozy) — Европа Кипр, 13 Oct 2026 · weather
-- [Нестабильная погода и исторический шторм в августе принесли острову более чем тройной объем сезонных дождей](https://cyprusbutterfly.com.cy/news/leto-2026-goda-kipre-priznano) — Cyprus Butterfly, 9 Sept 2026 · weather
 
 ## Greek
 
