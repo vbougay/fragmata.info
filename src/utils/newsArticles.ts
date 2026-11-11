@@ -28,6 +28,7 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Water levels higher at Larnaca and Famagusta reservoirs than last year', url: 'https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year', lang: 'en', source: 'Cyprus Mail', date: '2026-10-02', topic: 'reservoirs' },
   { title: 'Farmers to get additional 3.5m cubic metres of water', url: 'https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water', lang: 'en', source: 'Cyprus Mail', date: '2026-09-16', topic: 'irrigation' },
 
+  { title: 'Έρχονται βροχές: Ποιες περιοχές επηρεάζονται, ο καιρός μέχρι το Σάββατο', url: 'https://www.alphanews.live/cyprus/erchontai-vroches-poies-perioches-epireazontai-o-kairos-mechri-to-savvato/', lang: 'el', source: 'AlphaNews', date: '2026-11-11', topic: 'weather' },
   // Greek
   { title: 'Αλλάζει το σκηνικό του καιρού στην Κύπρο – Έρχονται βροχές και καταιγίδες, πότε θα επηρεαστεί το νησί', url: 'https://dialogos.com.cy/allazei-to-skiniko-toy-kairoy-stin-kypro-erchontai-vroches-kai-kataigides-pote-tha-epireastei-to-nisi/', lang: 'el', source: 'Dialogos', date: '2026-11-02', topic: 'weather' },
   { title: '«Ξύπνησαν» νωρίς οι ποταμοί της Κύπρου: Αισιοδοξία για τις εισροές στα φράγματα - Τριπλάσιο νερό σε σχέση με πέρυσι', url: 'https://www.politis.com.cy/cyprus/perivallon/1060393/ksypnisan-noris-oi-potami-tis-kyproy-aisiodoksia-ghia-tis-eisroes-sta-fraghmata-triplasio-nero-se-skhesi-me-persi', lang: 'el', source: 'Πολίτης', date: '2026-10-30', topic: 'reservoirs' },

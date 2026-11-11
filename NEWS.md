@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (16 Sept 2026 — 3 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (16 Sept 2026 — 11 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -22,6 +22,7 @@ Articles shown in the dashboard's news ticker (16 Sept 2026 — 3 Nov 2026). Gen
 
 ## Greek
 
+- [Έρχονται βροχές: Ποιες περιοχές επηρεάζονται, ο καιρός μέχρι το Σάββατο](https://www.alphanews.live/cyprus/erchontai-vroches-poies-perioches-epireazontai-o-kairos-mechri-to-savvato/) — AlphaNews, 11 Nov 2026 · weather
 - [Αλλάζει το σκηνικό του καιρού στην Κύπρο – Έρχονται βροχές και καταιγίδες, πότε θα επηρεαστεί το νησί](https://dialogos.com.cy/allazei-to-skiniko-toy-kairoy-stin-kypro-erchontai-vroches-kai-kataigides-pote-tha-epireastei-to-nisi/) — Dialogos, 2 Nov 2026 · weather
 - [«Ξύπνησαν» νωρίς οι ποταμοί της Κύπρου: Αισιοδοξία για τις εισροές στα φράγματα - Τριπλάσιο νερό σε σχέση με πέρυσι](https://www.politis.com.cy/cyprus/perivallon/1060393/ksypnisan-noris-oi-potami-tis-kyproy-aisiodoksia-ghia-tis-eisroes-sta-fraghmata-triplasio-nero-se-skhesi-me-persi) — Πολίτης, 30 Oct 2026 · reservoirs
 - [Φράγματα: Από το 10,7% στο 35,1% η πληρότητα, πόσο νερό έφεραν οι τελευταίες βροχές](https://www.alphanews.live/cyprus/fragmata-apo-to-107-sto-351-i-plirotita-poso-nero-eferan-oi-teleftaies-vroches/) — AlphaNews, 30 Oct 2026 · reservoirs
