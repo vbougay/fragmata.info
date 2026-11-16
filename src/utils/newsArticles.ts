@@ -26,7 +26,6 @@ export const newsArticles: NewsArticle[] = [
   { title: 'Fire brigade responds to 78 calls in 24 hours, 13 flood related', url: 'https://cyprus-mail.com/2026/10/15/fire-brigade-responds-to-78-calls-in-24-hours-13-flood-related', lang: 'en', source: 'Cyprus Mail', date: '2026-10-15', topic: 'weather' },
   { title: 'Agriculture ministry allocates €200m to irrigation projects', url: 'https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects', lang: 'en', source: 'Cyprus Mail', date: '2026-10-07', topic: 'policy' },
   { title: 'Water levels higher at Larnaca and Famagusta reservoirs than last year', url: 'https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year', lang: 'en', source: 'Cyprus Mail', date: '2026-10-02', topic: 'reservoirs' },
-  { title: 'Farmers to get additional 3.5m cubic metres of water', url: 'https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water', lang: 'en', source: 'Cyprus Mail', date: '2026-09-16', topic: 'irrigation' },
 
   { title: 'Έρχονται βροχές: Ποιες περιοχές επηρεάζονται, ο καιρός μέχρι το Σάββατο', url: 'https://www.alphanews.live/cyprus/erchontai-vroches-poies-perioches-epireazontai-o-kairos-mechri-to-savvato/', lang: 'el', source: 'AlphaNews', date: '2026-11-11', topic: 'weather' },
   // Greek

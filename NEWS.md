@@ -1,6 +1,6 @@
 # Cyprus Water Crisis — News Coverage
 
-Articles shown in the dashboard's news ticker (16 Sept 2026 — 11 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
+Articles shown in the dashboard's news ticker (2 Oct 2026 — 11 Nov 2026). Generated from `src/utils/newsArticles.ts` by `.claude/skills/fetch-and-update/check-news.ts --write-news-md`; don't edit by hand.
 
 ## English
 
@@ -13,7 +13,6 @@ Articles shown in the dashboard's news ticker (16 Sept 2026 — 11 Nov 2026). Ge
 - [Fire brigade responds to 78 calls in 24 hours, 13 flood related](https://cyprus-mail.com/2026/10/15/fire-brigade-responds-to-78-calls-in-24-hours-13-flood-related) — Cyprus Mail, 15 Oct 2026 · weather
 - [Agriculture ministry allocates €200m to irrigation projects](https://cyprus-mail.com/2026/10/07/agriculture-ministry-allocates-e200m-to-irrigation-projects) — Cyprus Mail, 7 Oct 2026 · policy
 - [Water levels higher at Larnaca and Famagusta reservoirs than last year](https://cyprus-mail.com/2026/10/02/water-levels-higher-at-larnaca-and-famagusta-reservoirs-than-last-year) — Cyprus Mail, 2 Oct 2026 · reservoirs
-- [Farmers to get additional 3.5m cubic metres of water](https://cyprus-mail.com/2026/09/16/farmers-to-get-additional-3-5m-cubic-metres-of-water) — Cyprus Mail, 16 Sept 2026 · irrigation
 
 ## Russian
 
