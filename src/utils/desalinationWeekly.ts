@@ -339,5 +339,28 @@ export const WEEKLY_BULLETINS: WeeklyBulletin[] = [
       "kissonerga": 10183,
       "limassol-port": 9855
     }
+  },
+  {
+    "edition": "2026-11-17",
+    "weekEnding": "2026-11-16",
+    "damInflow": 0.259,
+    "damOutflow": 0.768,
+    "treatment": {
+      "tersefanou": 15129,
+      "kornos": 17935,
+      "limassol": 16722,
+      "asprokremmos": 16343,
+      "kannaviou": 5214
+    },
+    "desalination": {
+      "dhekelia": 54929,
+      "vasilikos": 57622,
+      "episkopi": 37325,
+      "larnaca": 55408,
+      "paphos": 20421,
+      "moni": 13396,
+      "kissonerga": 8923,
+      "limassol-port": 9584
+    }
   }
 ];
