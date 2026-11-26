@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { DataProvider } from "@/context/DataContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/utils/translations";
+import type { HistoricalStorageEntry } from "@/types";
 import { defaultLocale } from "@/utils/locale";
 import { getReservoirsWithDrainDates, registerDatasetSnapshot, type DatasetSnapshot } from "@/utils/dataManager";
 import { getAllSparklineData } from "@/utils/sparklineData";
@@ -229,7 +230,7 @@ function HeatmapEmbed({ damKey, damName, regionName, dataSetId, linkHref, label 
 
   return (
     <HistoricalHeatmap
-      filterDamKey={damKey as any}
+      filterDamKey={damKey as keyof HistoricalStorageEntry | undefined}
       filterRegion={!damKey && regionName ? regionName : undefined}
       sparklineData={sparklineData}
       linkHref={linkHref}

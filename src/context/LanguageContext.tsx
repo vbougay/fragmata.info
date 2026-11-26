@@ -16,10 +16,13 @@ export const useLanguage = () => useContext(LanguageContext);
 export const LanguageProvider: React.FC<{children: ReactNode; initialLocale?: Locale}> = ({ children, initialLocale = 'en' }) => {
   const [language, setLanguage] = useState<Locale>(initialLocale);
 
-  // Sync when initialLocale prop changes (e.g. navigation)
-  useEffect(() => {
+  // Sync when initialLocale prop changes (e.g. navigation); adjusted during
+  // render rather than in an effect
+  const [prevLocale, setPrevLocale] = useState(initialLocale);
+  if (prevLocale !== initialLocale) {
+    setPrevLocale(initialLocale);
     setLanguage(initialLocale);
-  }, [initialLocale]);
+  }
 
   // Keep <html lang> in sync
   useEffect(() => {

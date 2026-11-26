@@ -63,7 +63,7 @@ function computeApiForecast(
 function flattenReservoir(r: Reservoir, datasetId: string): ApiReservoir {
   const key = RESERVOIR_NAME_TO_KEY[r.name];
   let forecast: ApiForecast | null = null;
-  let drainDate = r.drainDate ?? 'N/A';
+  let drainDate: string;
 
   if (key && r.region !== 'Recharge/Other') {
     forecast = computeApiForecast(

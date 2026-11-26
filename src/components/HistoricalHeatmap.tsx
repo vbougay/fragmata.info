@@ -1,7 +1,8 @@
 import React, { useMemo, useRef, useEffect, useState, useCallback } from 'react';
 import { historicalStorageData, HistoricalStorageEntry } from '@/utils/historicalStorageData';
 import { useLanguage } from '@/context/LanguageContext';
-import { useTranslation } from '@/utils/translations';
+import { useTranslation, type TranslationKey } from '@/utils/translations';
+import { useIsClient } from '@/hooks/use-is-client';
 import { useTheme } from '@/components/ThemeProvider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartExportBar, ExportCaption } from '@/components/ChartExportBar';
@@ -18,6 +19,7 @@ interface TooltipData {
   percentage: number | null;
   x: number;
   y: number;
+  containerWidth: number;
 }
 
 const CELL = 8;
@@ -47,8 +49,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
   const exportRef = useRef<HTMLDivElement>(null);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useIsClient();
   const isDark = mounted
     ? (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches))
     : false;
@@ -166,6 +167,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
       percentage,
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
+      containerWidth: container.clientWidth,
     });
   }, [gridData]);
 
@@ -280,7 +282,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
                           }}
                         >
                           <span className="text-[9px] sm:text-[10px] leading-tight text-gray-500 dark:text-gray-400">
-                            {t(group.region as any)}
+                            {t(group.region as TranslationKey)}
                           </span>
                         </div>
                       );
@@ -388,6 +390,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
                         percentage: pct,
                         x: e.clientX - rect.left,
                         y: e.clientY - rect.top,
+                        containerWidth: container.clientWidth,
                       });
                     }}
                     onMouseLeave={handleMouseLeave}
@@ -463,7 +466,7 @@ const HistoricalHeatmap: React.FC<HistoricalHeatmapProps> = ({ filterRegion, fil
             <div
               className="absolute z-20 pointer-events-none bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg px-3 py-2 shadow-lg border border-gray-700"
               style={{
-                left: tooltip.x > (containerRef.current?.clientWidth ?? 400) / 2
+                left: tooltip.x > tooltip.containerWidth / 2
                   ? tooltip.x - 164
                   : tooltip.x + 14,
                 top: Math.max(tooltip.y - 70, 4),

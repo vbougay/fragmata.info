@@ -64,12 +64,11 @@ const RegionSummary: React.FC<RegionSummaryProps> = ({
       { threshold: 0.1 }
     );
 
-    observer.observe(cardRef.current);
+    const node = cardRef.current;
+    observer.observe(node);
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+      observer.unobserve(node);
     };
   }, [regionTotal, isPlaying]); // Add isPlaying to dependency array
 

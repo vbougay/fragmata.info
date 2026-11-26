@@ -15,6 +15,7 @@ import {
   XAxis, YAxis, Tooltip,
   ResponsiveContainer, ReferenceLine
 } from 'recharts';
+import { useIsClient } from '@/hooks/use-is-client';
 
 const PHASE_COLORS = {
   declining: '#ef4444',
@@ -95,13 +96,12 @@ const StorageForecast: React.FC<StorageForecastProps> = ({ selectionId: fixedSel
   const { language } = useLanguage();
   const t = useTranslation(language);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useIsClient();
   const [selectedId, setSelectedId] = useState(fixedSelectionId ?? 'all');
   const isFixed = fixedSelectionId !== undefined;
   const exportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsMounted(true);
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);

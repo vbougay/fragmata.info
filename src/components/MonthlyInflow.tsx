@@ -14,6 +14,7 @@ import {
   XAxis, YAxis, Tooltip,
   ResponsiveContainer, ReferenceLine
 } from 'recharts';
+import { useIsClient } from '@/hooks/use-is-client';
 
 type ViewMode = 'cumulative' | 'monthly';
 
@@ -64,8 +65,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
     return data.map(d => d.year).reverse();
   }, [currentDataSetId]);
 
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => { setIsMounted(true); }, []);
+  const isMounted = useIsClient();
 
   const [selectedYear, setSelectedYear] = useState<string>(() => {
     if (initialYear === ALL_VALUE) return ALL_VALUE;
@@ -78,19 +78,25 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
   const [isVisible, setIsVisible] = useState(false);
   const [hiddenYears, setHiddenYears] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
+  // When the dataset changes and the selected season isn't in it, fall back to
+  // the latest season. Adjusted during render rather than in an effect, see
+  // https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes
+  const [prevDataSetId, setPrevDataSetId] = useState(currentDataSetId);
+  if (prevDataSetId !== currentDataSetId) {
+    setPrevDataSetId(currentDataSetId);
     const data = yearlyInflowData(currentDataSetId);
-    const latestYear = data.length > 0 ? data[data.length - 1].year : null;
-    if (latestYear && selectedYear !== ALL_VALUE && !years.includes(selectedYear)) {
-      setSelectedYear(latestYear);
+    const latestSeason = data.length > 0 ? data[data.length - 1].year : null;
+    if (latestSeason && selectedYear !== ALL_VALUE && !years.includes(selectedYear)) {
+      setSelectedYear(latestSeason);
     }
-  }, [currentDataSetId]);
+  }
 
-  useEffect(() => {
-    if (selectedYear !== ALL_VALUE) {
-      setHiddenYears(new Set());
-    }
-  }, [selectedYear]);
+  // Leaving the all-seasons view clears the hidden-season toggles
+  const [prevSelectedYear, setPrevSelectedYear] = useState(selectedYear);
+  if (prevSelectedYear !== selectedYear) {
+    setPrevSelectedYear(selectedYear);
+    if (selectedYear !== ALL_VALUE) setHiddenYears(new Set());
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200);
@@ -108,7 +114,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
 
   const monthNames = useMemo(() =>
     MONTH_TRANSLATION_KEYS.map(key => t(key as keyof typeof translations.en)),
-    [language]
+    [t]
   );
 
   const latestYear = years[0];
@@ -132,7 +138,7 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
       : expectedYearType === 'wet' ? 'predictedWet'
       : 'predictedModerate';
     return t(key as keyof typeof translations.en);
-  }, [expectedYearType, language]);
+  }, [expectedYearType, t]);
 
   const singleSeasonData = useMemo(() => {
     if (selectedYear === ALL_VALUE) return [];
@@ -175,7 +181,9 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
     let cumActual = 0;
     let cumPrevious = 0;
     let cumForecast = 0;
-    return singleSeasonData.map((d, index) => {
+    const out = [];
+    for (let index = 0; index < singleSeasonData.length; index++) {
+      const d = singleSeasonData[index];
       const isPast = index <= currentMonthIndex;
       cumPrevious += d.previousYear;
 
@@ -191,14 +199,15 @@ const MonthlyInflow: React.FC<MonthlyInflowProps> = ({ linkHref, initialYear }) 
         }
       }
 
-      return {
+      out.push({
         name: d.name,
         key: d.key,
         actual: (isLatestSelected && !isPast) ? null : parseFloat(cumActual.toFixed(3)),
         forecast: (isLatestSelected && index >= currentMonthIndex) ? parseFloat(cumForecast.toFixed(3)) : null,
         previousYear: parseFloat(cumPrevious.toFixed(3)),
-      };
-    });
+      });
+    }
+    return out;
   }, [singleSeasonData, isLatestSelected, currentMonthIndex]);
 
   const cumulativeAllData = useMemo(() => {

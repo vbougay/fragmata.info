@@ -688,6 +688,8 @@ export const damNameGenitiveEl: Record<string, string> = {
 };
 
 // Helper function to get translations
+export type TranslationKey = keyof typeof translations.en;
+
 export const useTranslation = (language: 'en' | 'el' | 'ru') => {
   return (key: keyof typeof translations.en): string => {
     return translations[language][key] || translations.en[key];

@@ -158,12 +158,11 @@ const CapacityChart: React.FC<CapacityChartProps> = ({ data, showComparison = tr
       { threshold: 0.1 }
     );
 
-    observer.observe(chartRef.current);
+    const node = chartRef.current;
+    observer.observe(node);
 
     return () => {
-      if (chartRef.current) {
-        observer.unobserve(chartRef.current);
-      }
+      observer.unobserve(node);
     };
   }, [isPlaying]);
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Github, Code, Mail, Linkedin, FileText, Send, Stethoscope, Mountain, Waves, CloudSun, Droplets, Receipt } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDataContext } from '@/context/DataContext';
-import { useTranslation } from '@/utils/translations';
+import { useTranslation, type TranslationKey } from '@/utils/translations';
 import { reservoirData } from '@/utils/dataManager';
 import { REGION_SLUG_MAP, DAM_SLUG_MAP, REGION_DAMS } from '@/utils/slugs';
 import { kairikaUrl, trackKairikaClick } from '@/utils/kairika';
@@ -79,7 +79,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
                   href={localePath(language, `/region/${regionSlug}`)}
                   className="font-semibold text-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors"
                 >
-                  {t(regionKey as any)}
+                  {t(regionKey as TranslationKey)}
                 </Link>
                 <ul className="mt-1 space-y-0.5">
                   {damSlugs.map((damSlug) => {
@@ -95,7 +95,7 @@ const Footer: React.FC<{ hideLinks?: boolean }> = ({ hideLinks }) => {
                           href={localePath(language, `/dam/${damSlug}`)}
                           className="text-muted-foreground hover:text-water-600 dark:hover:text-water-400 transition-colors"
                         >
-                          {t(dam.name as any) || dam.name}
+                          {t(dam.name as TranslationKey) || dam.name}
                         </Link>
                       </li>
                     );

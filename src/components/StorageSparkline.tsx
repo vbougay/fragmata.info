@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, YAxis, ReferenceDot, ReferenceLine } from 'recharts';
 import { SparklineDataPoint } from '@/utils/sparklineData';
+import { useIsClient } from '@/hooks/use-is-client';
 
 function getSparklineColor(percentage: number): { stroke: string; fill: string } {
   if (percentage >= 100) return { stroke: '#3b82f6', fill: '#3b82f650' };
@@ -64,8 +65,7 @@ interface StorageSparklineProps {
 }
 
 const StorageSparkline: React.FC<StorageSparklineProps> = ({ data, highlightMax, highlightMin, showLevelLines, language = 'en' }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => { setIsMounted(true); }, []);
+  const isMounted = useIsClient();
 
   if (!isMounted || data.length === 0) return null;
 

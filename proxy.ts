@@ -26,7 +26,7 @@ export function proxy(request: NextRequest) {
   }
 
   // If path starts with a non-default locale, pass through
-  if (locales.includes(maybeLocale as any) && maybeLocale !== defaultLocale) {
+  if ((locales as readonly string[]).includes(maybeLocale) && maybeLocale !== defaultLocale) {
     const response = NextResponse.next();
     response.headers.set('Content-Language', maybeLocale);
     return response;
