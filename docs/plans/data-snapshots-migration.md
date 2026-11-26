@@ -15,7 +15,9 @@ of every client consumer, swap reviewable text diffs for a binary blob, and add 
 What actually hurts today:
 
 - 182 `src/utils/data-*.ts` files, 4.1 MB of TypeScript that tsc, ESLint and the bundler all
-  process, though it is data.
+  process, though it is data. (Measured in phase 0: this costs about 1 s of type-checking and
+  2.6 s of lint, and almost nothing in the build. The payoff of this migration is the update
+  workflow, not speed.)
 - `dataManager.ts` carries a hand-maintained `importMap` and `availableDataSets` (two edits
   per update, plus the static import of the newest module).
 - Prose (`getSummaryChanges`, `getDamSummary`) is wrapped in functions with the same
@@ -84,10 +86,44 @@ touch only the new folder. Consequences:
 
 ### 0. Baseline (before touching anything)
 
-Record, so the payoff is a number:
-- `pnpm build` wall time, `tsc --noEmit` time, `pnpm lint` time
-- First-load JS for `/` and the chunk count and sizes of the dataset chunks
-- Repo size of `src/utils/data-*.ts`
+**Done 2026-11-26** at `d8aa263` (182 datasets, newest 26-NOV-2026). M2 Pro, 10 cores,
+32 GB, Node 22.16, Next 16.3.4 (Turbopack). Every run is cold: no `.next`, no tsc
+incremental cache.
+
+| Measure | Today | Without the 181 older modules* |
+|---|---|---|
+| `tsc --noEmit` | 6.5–7.5 s (check 5.4 s, 1,748 files, 67.6k lines) | 5.9–6.4 s (check 4.7 s, 1,567 files, 24.0k lines) |
+| `pnpm lint` (as configured) | 13.1–14.2 s, 168 problems | not measured |
+| ESLint, main checkout only (`.claude/**` ignored) | 6.4 s, 28 problems | 5.2 s† |
+| ESLint, `src/utils/data-*.ts` alone | 2.6 s | – |
+| `next build` (tsc 7.0 s, compile 4.7–4.9 s, 215 static pages 1.6 s) | 15.3–15.7 s | 14.3–17.5 s (tsc 6.6–6.9 s, compile 4.3–4.4 s) |
+
+\*A scratch copy with every dataset module except the newest deleted and its `importMap`
+lines removed. This is an upper bound on what the migration can save, since the JSON still
+has to be bundled.
+†Measured in the real checkout with `src/utils/data-*.ts` ignored, not in the scratch copy.
+
+**Bundle** (client chunks in `.next/static/chunks`, gzip −9):
+- Per-dataset splitting already works: 182 lazy single-dataset chunks for the 181 older
+  datasets, median 17.8 KB raw / 6.8 KB gzipped (min 6.8 KB, total about 2.9 MB raw). The
+  one extra chunk is unexplained (possibly the newest dataset shipped twice); phase 2 should
+  compare against 182, not assume one per dataset.
+- The homepage (`/en`) loads 19 scripts, 2,063 KB raw / 579 KB gzipped.
+- The largest of them, 473 KB raw / 96 KB gzipped, is mostly `historicalStorageData`
+  (about 447 KB raw of it), plus `dataManager` and the newest dataset. Dam and region pages load
+  the same chunk.
+- **So the datasets aren't what makes first load heavy; the historical table is.** Moving the
+  datasets to JSON won't change first-load JS. If first load matters, the bigger lever is
+  `historicalStorageData` (see "Later"), though it is not a drop-in lazy load.
+
+**Found while measuring, separate from this migration:**
+- `pnpm lint` (`eslint .`) also lints `.claude/worktrees/` (330 extra TS files), which
+  doubles its time and adds 140 problems. The main checkout alone has 23 errors and 5
+  warnings, so lint currently fails.
+- 3 of 9 cold `next build` runs failed with `Module not found:
+  '@vercel/turbopack-next/internal/font/google/font'` ("next/font/google queries have
+  exactly one entry") on all 20 Google font imports. Fonts were reachable from Node; a retry
+  succeeded. Unknown whether Vercel builds hit this too.
 
 ### 1. Exporter and equivalence check
 
@@ -137,6 +173,19 @@ run by the skill after writing a dataset and as part of `pnpm build`, checks for
 - **`historicalStorageData.ts`** (454 KB) duplicates each new dataset's readings. It could be
   derived from snapshots for dates from March 2025 on, but only **at compile time**; deriving
   it at runtime would make the heatmap load all 182 snapshots in the browser.
+  **Done 2026-11-26: out of first-load JS.** First-render code now reads a generated digest
+  (`scripts/build/history-digest.ts` → `src/generated/historyDigest.ts`, gitignored, built on
+  `postinstall`, `dev:next`, `og` and `build`): the earliest entry of each month plus the
+  last 14 months in full. Outputs were byte-identical for all 182 datasets (every forecast
+  selection at 7% and 20%, October baselines, sparklines). First-load JS went from 579 to
+  542 KB gzipped on `/en` and from 549 to 511 KB on dam and region pages (about 305 KB less
+  raw JS each); the digest itself costs 32 KB gzipped. The full table is now one lazy
+  chunk (396 KB raw, 71 KB gzipped) that the heatmap fetches after hydration. **Trade-off:**
+  the heatmap is on the homepage, dam and region pages, so those pages still download the
+  table, just after hydration; total bytes per view are about 34 KB gzipped *higher* (the
+  digest duplicates part of the table). The gain is a lighter critical path, not fewer bytes. Article pages still load it through
+  `ArticleStormCharts`. **This is the first `src/generated/` output, so phase 2 reuses the
+  same hooks.**
 - `yearlyInflowData` differs between most snapshots, so it stays per snapshot for now.
 
 ## Rollout risks
