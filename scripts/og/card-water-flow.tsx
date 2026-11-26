@@ -121,6 +121,7 @@ export function waterFlowCard(d: WaterFlowCardData) {
         display: "flex",
         flexDirection: "column",
         padding: "40px 52px",
+        boxSizing: "border-box",
         color: C.white,
         fontFamily: "Inter",
         background: "linear-gradient(135deg, #0c4a6e 0%, #0a4a78 48%, #075985 100%)",
