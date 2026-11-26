@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import React, { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -16,31 +17,6 @@ import { getReservoirsWithDrainDates, registerDatasetSnapshot, type DatasetSnaps
 import { getAllSparklineData } from "@/utils/sparklineData";
 import { DAM_SLUG_MAP, REGION_SLUG_MAP } from "@/utils/slugs";
 import {
-  EndOfSummerChart,
-  SummerDrawdownChart,
-  PeakMonthChart,
-  SummerInflowChart,
-  DamFullnessChart,
-  TwoYearTraceChart,
-} from "@/components/ArticleSummerCharts";
-import {
-  EnsoScatterChart,
-  StrongNinoChart,
-  EnsoTimelineChart,
-  EnsoRefillChart,
-} from "@/components/ArticleEnsoCharts";
-import { StationRainChart, AugSepInflowChart, AchnaRefillChart } from "@/components/ArticleStormCharts";
-import {
-  YearTraceChart,
-  RainLateChart,
-  SpongeChart,
-  DamRangeChart,
-  OutlookChart,
-  NumbersGrid,
-  OverflowMap,
-} from "@/components/ArticleYearReviewCharts";
-import { WaterFlowChart, WeeklyMixChart, YearlySupplyChart } from "@/components/ArticleWaterCharts";
-import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
@@ -51,6 +27,33 @@ import {
 import { Calendar, ChevronLeft, ChevronRight, Waves } from "lucide-react";
 import { KairikaBadge } from "@/components/KairikaBadge";
 import { trackKairikaClick } from "@/utils/kairika";
+
+// Article charts load per module, only when an article embeds one: several read the
+// full historical table (~450 KB) or other large data, and every article page shares
+// this component. Still rendered on the server (ssr is the default).
+const EndOfSummerChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.EndOfSummerChart));
+const SummerDrawdownChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.SummerDrawdownChart));
+const PeakMonthChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.PeakMonthChart));
+const SummerInflowChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.SummerInflowChart));
+const DamFullnessChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.DamFullnessChart));
+const TwoYearTraceChart = dynamic(() => import("@/components/ArticleSummerCharts").then(m => m.TwoYearTraceChart));
+const EnsoScatterChart = dynamic(() => import("@/components/ArticleEnsoCharts").then(m => m.EnsoScatterChart));
+const StrongNinoChart = dynamic(() => import("@/components/ArticleEnsoCharts").then(m => m.StrongNinoChart));
+const EnsoTimelineChart = dynamic(() => import("@/components/ArticleEnsoCharts").then(m => m.EnsoTimelineChart));
+const EnsoRefillChart = dynamic(() => import("@/components/ArticleEnsoCharts").then(m => m.EnsoRefillChart));
+const StationRainChart = dynamic(() => import("@/components/ArticleStormCharts").then(m => m.StationRainChart));
+const AugSepInflowChart = dynamic(() => import("@/components/ArticleStormCharts").then(m => m.AugSepInflowChart));
+const AchnaRefillChart = dynamic(() => import("@/components/ArticleStormCharts").then(m => m.AchnaRefillChart));
+const YearTraceChart = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.YearTraceChart));
+const RainLateChart = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.RainLateChart));
+const SpongeChart = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.SpongeChart));
+const DamRangeChart = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.DamRangeChart));
+const OutlookChart = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.OutlookChart));
+const NumbersGrid = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.NumbersGrid));
+const OverflowMap = dynamic(() => import("@/components/ArticleYearReviewCharts").then(m => m.OverflowMap));
+const WaterFlowChart = dynamic(() => import("@/components/ArticleWaterCharts").then(m => m.WaterFlowChart));
+const WeeklyMixChart = dynamic(() => import("@/components/ArticleWaterCharts").then(m => m.WeeklyMixChart));
+const YearlySupplyChart = dynamic(() => import("@/components/ArticleWaterCharts").then(m => m.YearlySupplyChart));
 
 // --- Chart embed parsing ---
 
