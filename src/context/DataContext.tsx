@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { availableDataSets, DEFAULT_DATASET_ID } from '@/utils/dataManager';
+import React, { createContext, useContext, useState, useRef, useCallback, ReactNode } from 'react';
+import { availableDataSets, DEFAULT_DATASET_ID, ensureDatasetLoaded } from '@/utils/dataManager';
 
 // Define the context type
 interface DataContextType {
@@ -32,11 +32,21 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children, initialDat
   const [currentDataSetId, setCurrentDataSetId] = useState<string>(initialDataSetId || DEFAULT_DATASET_ID);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const setDataSet = (dataSetId: string) => {
-    if (availableDataSets.some(ds => ds.id === dataSetId)) {
-      setCurrentDataSetId(dataSetId);
-    }
-  };
+  // Older datasets are lazy chunks. Switch only once the chunk is in the cache:
+  // components read data synchronously and memoize on the id, so switching
+  // first would leave them showing the newest dataset under the older date.
+  // If requests overlap (fast clicks, playback), only the latest one applies.
+  const latestRequest = useRef<string | null>(null);
+  const setDataSet = useCallback((dataSetId: string) => {
+    if (!availableDataSets.some(ds => ds.id === dataSetId)) return;
+    latestRequest.current = dataSetId;
+    ensureDatasetLoaded(dataSetId).then(
+      () => {
+        if (latestRequest.current === dataSetId) setCurrentDataSetId(dataSetId);
+      },
+      (err) => console.error(`Failed to load dataset ${dataSetId}`, err),
+    );
+  }, []);
 
   return (
     <DataContext.Provider
