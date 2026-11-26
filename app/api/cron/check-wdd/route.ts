@@ -26,8 +26,9 @@ const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36';
 
 // The routine pushes straight to main, so main is the authority on "already done".
-const REPO_DATA_MANAGER =
-  'https://raw.githubusercontent.com/vbougay/fragmata.info/main/src/utils/dataManager.ts';
+// Each dataset is a folder data/snapshots/<id>/ on main.
+const REPO_SNAPSHOT_URL = (datasetId: string) =>
+  `https://raw.githubusercontent.com/vbougay/fragmata.info/main/data/snapshots/${datasetId}/data.json`;
 
 const FIRE_BETA_HEADER = 'experimental-cc-routine-2026-04-01';
 
@@ -65,12 +66,14 @@ async function fetchPage(url: string): Promise<string | null> {
  */
 async function mainHasDataset(datasetId: string): Promise<boolean | null> {
   try {
-    const res = await fetch(REPO_DATA_MANAGER, {
+    const res = await fetch(REPO_SNAPSHOT_URL(datasetId), {
+      method: 'HEAD',
       signal: AbortSignal.timeout(15_000),
       cache: 'no-store',
     });
-    if (!res.ok) return null;
-    return (await res.text()).includes(`'${datasetId}'`);
+    if (res.ok) return true;
+    if (res.status === 404) return false;
+    return null;
   } catch {
     return null;
   }

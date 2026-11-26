@@ -11,12 +11,12 @@ You're an agent that updates data on https://cyprus-dams.bougay.com/ automatical
 
 - Do not ask any permissions, simply get your job done
 - The official data now lives on the gov.cy WordPress site: **https://www.gov.cy/moa-wdd/en/documents/dams-and-off-stream-ponds/reservoir-storage/** (this replaced the old `moa.gov.cy/moa/wdd/Wdd.nsf/page18_en` Notes page). Fetch this page's HTML with **Node** (`https.get` with a browser `User-Agent` header) — `WebFetch`/`curl` return HTTP 403. The latest data file appears as a direct link of the form `https://www.gov.cy/app/uploads/sites/168/YYYY/MM/DD_MM_YYYY-UK.xlsx`. Grep the HTML for `href="..."` and pick the most recent `*-UK.xlsx` (ignore the `Graphs-*.xlsx` companion file). The English data sheet is named `ΙΣΤΟΣΕΛΙΔΑ-UK(N)` (the column layout is identical to the old `WEB-PAGE-UK(N)` sheet: cols 0=name, 3=capacity, 4=last-24h inflow, 5=total inflow since Oct, 6=current MCM, 7=current %, 8=last-year MCM, 9=last-year %, 10=max MCM, 11=max date). Note the Recharge/Other dams (Tamassos, Klirou-Malounta, Solea) now sit **below** the 10-year inflow table, after a `RECHARGE/OTHER` heading row.
-- If the English page does not have the latest file (the Greek page is sometimes updated first), fall back to the Greek page **https://www.gov.cy/moa-wdd/documents/tamieytires-neroy-fragmata-ydatodexamenes/plirotita-fragmaton/** — the file structure is identical, only the column/sheet labels are in Greek. Still use English dam names in the new data module (the standard naming used everywhere in the app). The Greek file name uses `GR.xlsx` instead of `UK.xlsx`, and the data sheet is named `ΙΣΤΟΣΕΛΙΔΑ-GR(N)`.
+- If the English page does not have the latest file (the Greek page is sometimes updated first), fall back to the Greek page **https://www.gov.cy/moa-wdd/documents/tamieytires-neroy-fragmata-ydatodexamenes/plirotita-fragmaton/** — the file structure is identical, only the column/sheet labels are in Greek. Still use English dam names in the new dataset (the standard naming used everywhere in the app). The Greek file name uses `GR.xlsx` instead of `UK.xlsx`, and the data sheet is named `ΙΣΤΟΣΕΛΙΔΑ-GR(N)`.
 - **Fresh bulletin, stale data link**: sometimes the Greek page shows a newer bulletin date — the `Graphs-DD_MM_YYYY.xlsx` companion gets refreshed to the new date (e.g. `Graphs-20_07_2026.xlsx` alongside a stale `16_07_2026-GR.xlsx`) — while the data XLSX for that date is not linked yet. It is usually **already uploaded at a predictable URL** — probe directly (HTTP HEAD/GET) before concluding there's no new data:
   - `https://www.gov.cy/app/uploads/sites/168/YYYY/MM/DD-MONTHNAME-YYYY-UK.xlsx` (e.g. `.../2026/02/20-JULY-2026-UK.xlsx`; full uppercase English month name; the `/YYYY/MM/` path segment is the upload folder — reuse the one from the currently linked files, it does not track the report month)
   - Same name under `https://www.gov.cy/media/sites/168/YYYY/MM/` and the `-GR.xlsx` variants
 - Download the latest XLSX data and save it to @data folder (filename format `DD-MMM-YYYYUK.xlsx`, e.g. `19-JUN-2026UK.xlsx`). Use Node to download the XLSX file (not Curl) and parse it. DON'T continue until you downloaded the latest data file
-- Create a new datafile in the app based on the downloaded data.
+- Create the new dataset folder `data/snapshots/DD-MMM-YYYY/` from the downloaded data (see **Dataset Folder Creation** below), then run `pnpm generate`.
 - Archive the weekly water bulletin workbook (see **Weekly water bulletin archive** below) — one command, run on every update.
 - Make sure that the app builds with the latest changes, commit them to Git and push to the origin
 - After push, send the latest community post to Telegram (see **Telegram delivery** below)
@@ -29,7 +29,7 @@ every 10 minutes and fires this routine when a newer bulletin appears (see
 `CLOUD-AUTOMATION.md`).
 A cloud session is a **fresh checkout**, so anything gitignored is simply absent —
 `community/*` (except the tracked `community/TELEGRAM.md`), `logs/`, `.env.local`, and all
-of `scripts/` except `scripts/og/`. When those files are missing, you are in a cloud run:
+of `scripts/` except `scripts/og/` and `scripts/build/`. When those files are missing, you are in a cloud run:
 apply these overrides.
 
 - **Install first**: `corepack enable && pnpm install --frozen-lockfile`. Retry once on registry failure.
@@ -42,16 +42,16 @@ apply these overrides.
   the template in **Platform formatting** below). `community/WHATSAPP.md` and any other
   sibling file are still gitignored and absent — cloud runs only post to Telegram, not
   WhatsApp; leave that platform's post to a local run.
-- **Narrative context** — optional supplement for the *website* `getSummaryChanges` story arc
+- **Narrative context** — optional supplement for the *website* summary (`summary.<lang>.md`) story arc
   (markdown, links, different structure from the Telegram file):
   ```bash
   curl -s -H "Authorization: Bearer $INTERNAL_API_SECRET" \
     "https://fragmata.info/api/internal/narrative?limit=6"
   ```
-  Returns the recent datasets' `getSummaryChanges` narratives in all three languages, newest
-  first, plus `daysSinceLatest`. Since the recent `data-*.ts` modules are also tracked and
-  present in the checkout, reading them directly works just as well — use whichever is
-  convenient.
+  Returns the recent datasets' summary narratives in all three languages, newest
+  first, plus `daysSinceLatest`. Since the dataset folders (`data/snapshots/*/summary.*.md`)
+  are also tracked and present in the checkout, reading them directly works just as well —
+  use whichever is convenient.
 - **Telegram** replaces `tsx scripts/post-telegram.ts`:
   ```bash
   curl -s -X POST "https://fragmata.info/api/internal/telegram" \
@@ -74,7 +74,8 @@ apply these overrides.
     -F "text=<$post.txt" \
     -F "photo=@public/og/dashboard.en.png;type=image/png"
   ```
-  Run `pnpm og` **after** `dataManager.ts` points at the new dataset, or you'll upload the old
+  Run `pnpm og` **after** the new dataset folder exists (it runs `pnpm generate` first, which
+  picks the folder up), or you'll upload the old
   card. Pass the body via `-F "text=<file"` rather than inline, to avoid shell-quoting problems;
   add `-F "dryRun=true"` to preview (the response echoes `photo: "upload:… (N bytes)"` so you can
   confirm the file arrived). Uploads must be PNG or JPEG and under 4MB — a card is ~120KB.
@@ -92,7 +93,7 @@ apply these overrides.
   ```bash
   git fetch origin main
   git checkout -B main origin/main        # start from the current tip of main
-  # ...edit data-DD-MMM-YYYY.ts, dataManager.ts, historicalStorageData.ts...
+  # ...add data/snapshots/DD-MMM-YYYY/, edit historicalStorageData.ts, run pnpm generate...
   # ...send the Telegram post via the relay (see above), capture message_id...
   # ...append the Sent: annotation + post to community/TELEGRAM.md (see After a successful send)...
   git add -A
@@ -157,32 +158,56 @@ node .claude/skills/fetch-and-update/archive-water-bulletin.mjs
 - Never create temporary script files (like parse-xlsx.js) - always use inline bash commands
 - Keep all ad-hoc scripts as one-liners or multi-line inline bash, not separate files
 
- **Data Module Creation:**
+**Dataset Folder Creation:**
 
-- Follow existing data-*.ts patterns exactly
-- Ensure all 21 reservoirs are included with correct regional assignments
-- Compare to the latest previous dataset available
-- Update dataManager.ts imports AND availableDataSets array AND default dataset ID
+Each bulletin is one folder, `data/snapshots/DD-MMM-YYYY/`, named exactly by its date in
+uppercase (`27-NOV-2026`). The folder name *is* the dataset id and the report date; the app
+lists datasets by sorting the folders, so there is no index or `dataManager.ts` to edit.
+Start from the previous folder's `data.json` (copy it and change the numbers); write the
+summaries and `dams.json` fresh for the new date rather than editing copies:
+
+- `data.json`: `waterTransferred` (`{ "from", "to", "sinceOct" }` or `null`),
+  `reservoirData` (all 21 reservoirs, one per line, same shape as before:
+  `name, capacity, inflow {last24Hours, totalSince}, storage {current, lastYear} {amount, percentage}, maxStorage {amount, date}, region`)
+  and `yearlyInflowData` (one season per line; usually copy from the previous folder and
+  update the current season)
+- `summary.en.md`, `summary.el.md`, `summary.ru.md`: the Recent Changes narrative (see
+  **Summary / Recent Changes** below), plain markdown, one file per language
+- `dams.json`: `{ "<reservoir name>": { "en": "...", "el": "...", "ru": "..." } }` for all 21
+  dams (see **Per-Dam Summaries** below)
+
+Then run `pnpm generate`. It compiles the folders into `src/generated/` (gitignored) and
+**validates every dataset**; fix whatever it reports, never bypass it. It checks: 21
+reservoirs with known names, each in its CLAUDE.md region, every number present,
+percentages within 0.6 pp of amount / capacity, the folder name a real date, and `dams.json`
+names matching `data.json`, and the newest folder's `summary.<lang>.md` and `dams.json` not
+being byte-identical to the previous folder's (a copied file left unedited). Compare the new folder with the previous one before committing
+(`git diff --no-index data/snapshots/<previous>/data.json data/snapshots/<new>/data.json`
+shows the day's changes reservoir by reservoir).
 
 **Historical Storage Data (`historicalStorageData.ts`):**
 
-The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it must be updated alongside each new data module or the chart will stop at the previous date.
+The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it must be updated alongside each new dataset or the chart will stop at the previous date.
 
-- Add a new entry to the `historicalStorageData` array with the current storage amounts from the new data module
+- Add a new entry to the `historicalStorageData` array with the current storage amounts from the new dataset
 - Use the format: `{ date: "YYYY-MM-DD", kouris: X, kalavasos: X, ... , totalSCP: X, totalAll: X }`
 - `totalSCP` = sum of Southern Conveyor reservoirs (kouris, kalavasos, lefkara, dipotamos, germasoyeia, arminou, polemidia, achna)
 - `totalAll` = sum of all 21 reservoirs
-- The storage values come from each reservoir's `storage.current.amount` in the new data module
-- The dashboard, dam and region pages don't load this table on first render. The forecast, October baseline and sparklines read a compact digest generated from it into `src/generated/historyDigest.ts` (gitignored). `pnpm og`, `pnpm build`, `pnpm dev:next` and `pnpm install` regenerate it, so a run that uses `pnpm og` needs nothing extra. If a dev server is already running, refresh it with `npx tsx scripts/build/history-digest.ts`. The generator exits non-zero if the table is out of date order or a month's first entry isn't its day-1..3 reading when one exists: fix the entry, don't bypass the check
+- The storage values come from each reservoir's `storage.current.amount` in the new dataset's `data.json`
+- The dashboard, dam and region pages don't load this table on first render. The forecast, October baseline and sparklines read a compact digest generated from it into `src/generated/historyDigest.ts` (gitignored). `pnpm generate` writes it (as do `pnpm og`, `pnpm build`, `pnpm dev:next` and `pnpm install`, which all run `generate`). If a dev server is already running, run `pnpm generate` again after editing. The generator exits non-zero if the table is out of date order or a month's first entry isn't its day-1..3 reading when one exists: fix the entry, don't bypass the check
 
-**Narrative coherence** — the `getSummaryChanges` text, articles, and community posts are all part of one evolving story. Before writing any of them:
-- Read the recent entries in `community/TELEGRAM.md` (tracked, present in every run including cloud) and the latest `getSummaryChanges` to understand the current narrative arc
+**Narrative coherence** — the website summary (`summary.<lang>.md`), articles, and community posts are all part of one evolving story. Before writing any of them:
+- Read the recent entries in `community/TELEGRAM.md` (tracked, present in every run including cloud) and the latest `data/snapshots/*/summary.en.md` to understand the current narrative arc
 - Each new update should advance the story — reference what changed since the last post, build on previous milestones, and avoid restating old news as if it's new
 - Let the data drive the narrative: when the situation shifts (e.g. a drought easing, a new region recovering, a plateau forming), the tone and focus should shift with it
 - Keep all three outputs consistent — they can differ in length and format but should not contradict each other or tell different stories
 - Articles with future dates are pre-scheduled drafts — ignore them when determining the current narrative state. Community posts don't have this problem: `community/TELEGRAM.md` only ever holds posts that have actually been sent (see **Community Post** below on where drafts belong instead)
 
-**Summary / Recent Changes (`getSummaryChanges`):**
+**Summary / Recent Changes (`summary.<lang>.md`):**
+
+- One markdown file per language in the dataset folder; the dashboard renders it as-is.
+  Older files start with a blank line (left over from TypeScript template strings); new
+  ones don't need it
 
 - For comparison use the date 7-10 days away
 - Keep it concise — highlight only notable or important changes, not every region or reservoir
@@ -200,17 +225,15 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - Tone: informative and factual, not verbose
 - Do **not** end the summary with `🔗 https://fragmata.info` — it renders as a stray link on the site (that line belongs only in Telegram/WhatsApp posts)
 
-**Per-Dam Summaries (`getDamSummary`):**
+**Per-Dam Summaries (`dams.json`):**
 
-Each data module should export a `getDamSummary(damName, language)` function that returns a short 1-2 sentence summary for each of the 21 dams. These are displayed as subtitles on dam pages and used as SEO meta descriptions.
+Each dataset folder has a `dams.json` with a short 1-2 sentence summary per dam and language, for all 21 dams, keyed by the English reservoir name exactly as in `data.json`. These are displayed as subtitles on dam pages and used as SEO meta descriptions.
 
 - Write concise, single-line summaries (110–155 characters for SEO — not shorter, or Google will substitute its own snippet; not longer, or it will be truncated)
 - Include: current fill %, storage in MCM, year-over-year comparison
 - Highlight notable conditions: at full capacity, critically low, transfers, dramatic recovery, new annual max
-- Support all 3 languages (`'en' | 'el' | 'ru'`)
-- Return `string | null` — return `null` if dam name not found
-- Follow the pattern in `data-20-MAR-2026.ts` as reference
-- The function is exposed via `dataManager.ts` (`getDamSummary` wrapper) — no changes needed there, it auto-detects the function
+- Write all 3 languages (`en`, `el`, `ru`) for every dam
+- Follow the previous folder's `dams.json` as the pattern
 
 **Telegram delivery:**
 
@@ -270,7 +293,7 @@ forwarding the single message carries the whole package:
 **News Ticker Refresh (required on every data update — local and cloud):**
 
 The dashboard's scrolling ticker (`src/utils/newsArticles.ts`) and the "In the media" section of
-`getSummaryChanges` draw on the same pool of articles. Skipping this step is how both went stale
+the summary files (`summary.<lang>.md`) draw on the same pool of articles. Skipping this step is how both went stale
 for weeks (Jul 23 – Sep 23 and again Oct 2 – 15), so do it **before** the commit and Telegram post,
 in cloud runs too. The helper is tracked, so it is present in a cloud checkout (`pnpm install` first):
 
@@ -321,7 +344,7 @@ in cloud runs too. The helper is tracked, so it is present in a cloud checkout (
    older than 60 days, more than 10 per language, or one topic above 40% of a language. Source
    concentration above 50% is a warning: widen the search before accepting it.
 6. **Reuse the freshest 1–3 articles per language for the "In the media" section** of the summary
-   (see `getSummaryChanges` above). They must pass the same checks.
+   (see **Summary / Recent Changes** above). They must pass the same checks.
 7. A language with nothing fresh is fine — fewer items beat stale ones — but say so in the final report.
 
 **Community Post (`community/TELEGRAM.md` + `community/WHATSAPP.md`):**

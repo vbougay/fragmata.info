@@ -10,7 +10,7 @@ stty sane 2>/dev/null || true  # no-op without a TTY (e.g. nohup/cron); don't tr
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-DATA_MANAGER="$PROJECT_DIR/src/utils/dataManager.ts"
+SNAPSHOTS_DIR="$PROJECT_DIR/data/snapshots"
 # Data source moved to the gov.cy WordPress site (the old moa.gov.cy Lotus Notes
 # page18 pages were retired). The pages reject requests without a browser
 # User-Agent (HTTP 403), so all curl calls must send $UA.
@@ -69,10 +69,16 @@ date_to_epoch() {
   date -jf "%d-%b-%Y" "$1" "+%s" 2>/dev/null
 }
 
-# Read the current latest dataset from dataManager.ts (the static import line)
+# The current latest dataset: the newest data/snapshots/<DD-MMM-YYYY>/ folder
 get_current_latest() {
-  grep "^import \* as dataDefault from " "$DATA_MANAGER" \
-    | grep -oE '[0-9]{1,2}-[A-Z]{3,}-[0-9]{4}'
+  local d id e best="" best_epoch=0
+  for d in "$PROJECT_DIR"/data/snapshots/*/; do
+    id=$(basename "$d")
+    [[ "$id" =~ ^[0-9]{2}-[A-Z]{3}-[0-9]{4}$ ]] || continue
+    e=$(date_to_epoch "$id") || continue
+    if [[ -n "$e" && "$e" -gt "$best_epoch" ]]; then best_epoch=$e; best=$id; fi
+  done
+  echo "$best"
 }
 
 # Fetch the gov.cy page(s) and extract the newest data date from XLSX links.

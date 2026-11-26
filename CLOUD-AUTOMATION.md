@@ -26,13 +26,13 @@ The routine reaches back into the app for the one thing a fresh checkout still d
 checkout has it directly; the routine reads/appends it the same way a local run does. Only
 `community/WHATSAPP.md` and other sibling files stay gitignored, since those still need
 `scripts/*` or manual posting. `GET /api/internal/narrative` is kept as an optional convenience
-for the *website* `getSummaryChanges` story arc (a different, markdown-flavored narrative from
-the plain-text Telegram history) — not required, since the recent `data-*.ts` modules are also
-tracked and readable directly.
+for the *website* summary story arc (a different, markdown-flavored narrative from
+the plain-text Telegram history) — not required, since the dataset folders
+(`data/snapshots/*/summary.<lang>.md`) are tracked and readable directly.
 
 ## Files
 
-- `app/api/cron/check-wdd/route.ts` — the check and the fire call
+- `app/api/cron/check-wdd/route.ts` — the check and the fire call. Its push guard asks raw GitHub whether `data/snapshots/<id>/data.json` exists on `main`
 - `src/utils/wddDates.ts` — bulletin-date parsing (both gov.cy filename schemes + the `Graphs-*` companion)
 - `app/api/internal/telegram/route.ts` — Telegram relay
 - `app/api/internal/narrative/route.ts` — narrative history for the routine

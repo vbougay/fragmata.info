@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "portless",
-    "dev:next": "tsx scripts/build/history-digest.ts && next dev",
-    "og": "tsx scripts/build/history-digest.ts && tsx scripts/og/generate.tsx",
-    "build": "tsx scripts/build/history-digest.ts && tsx scripts/og/generate.tsx && next build",
+    "dev:next": "pnpm -s generate && next dev",
+    "og": "pnpm -s generate && tsx scripts/og/generate.tsx",
+    "build": "pnpm -s generate && tsx scripts/og/generate.tsx && next build",
     "start": "next start",
     "lint": "eslint .",
-    "postinstall": "tsx scripts/build/history-digest.ts"
+    "postinstall": "pnpm -s generate",
+    "generate": "tsx scripts/build/build-snapshots.ts && tsx scripts/build/history-digest.ts"
   },
   "portless": {
     "name": "fragmata",

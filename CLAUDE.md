@@ -17,10 +17,9 @@ This is a React-based Cyprus reservoir monitoring dashboard built with TypeScrip
 ### Key Architectural Patterns
 
 **Data Management System**: The core architecture revolves around a dynamic data management system in `src/utils/dataManager.ts`. This module:
-- Manages multiple datasets (from March 2025 to February 2026) as individual modules
-- Provides a unified API that switches between datasets dynamically
-- Uses the `availableDataSets` array to define all available data sources
-- Defaults to the most recent dataset ('16-FEB-2026')
+- Manages every dataset (one per WDD bulletin since March 2025), each stored as a folder in `data/snapshots/DD-MMM-YYYY/`
+- Provides a unified API that switches between datasets dynamically; older datasets are lazy chunks loaded on demand (`ensureDatasetLoaded`; `DataContext.setDataSet` waits for it)
+- `availableDataSets` and the default (newest) dataset come from the compiled folder list, not a hand-kept array
 - All data access goes through this central manager, not direct imports
 
 **Context-Based State Management**:
@@ -44,7 +43,7 @@ This is a React-based Cyprus reservoir monitoring dashboard built with TypeScrip
 ### Data Flow
 
 1. **Data Sources**: Raw Excel files in `/data/` directory containing reservoir data
-2. **Data Modules**: Each dataset is converted to a TypeScript module in `src/utils/data-*.ts`
+2. **Dataset folders**: Each bulletin is a folder `data/snapshots/DD-MMM-YYYY/` (`data.json`, `dams.json`, `summary.<lang>.md`). `pnpm generate` validates them and compiles them into `src/generated/` (gitignored; also run by `postinstall`, `dev:next`, `og` and `build`)
 3. **Data Manager**: `dataManager.ts` provides unified access to current dataset
 4. **Utilities**: `reservoirUtils.ts` contains calculation functions for drain dates, region totals, water balance (`getOctoberBaselineStorage`), etc.
 5. **Historical record**: `historicalStorageData.ts` is the full bi-monthly table since 1988. First-render code (forecast, October baseline, sparklines) reads `historyDigest.ts` instead, which expands `src/generated/historyDigest.ts` (gitignored, written by `scripts/build/history-digest.ts` on `postinstall`, `dev:next`, `og` and `build`). Only the lazy heatmap, article charts and the API import the full table. Import the `HistoricalStorageEntry` type from `@/types`, not from the table, or the table lands in that bundle
@@ -52,13 +51,10 @@ This is a React-based Cyprus reservoir monitoring dashboard built with TypeScrip
 
 ### Key Features Implementation
 
-**Multi-Dataset Support**: Add new datasets by:
-1. Creating a new data module in `src/utils/data-DD-MMM-YYYY.ts`
-2. Adding to `availableDataSets` array in `dataManager.ts`
-3. Updating the default dataset ID if needed
+**Multi-Dataset Support**: Add a dataset by adding a folder `data/snapshots/DD-MMM-YYYY/` (uppercase month; the name is the dataset id and the report date) and running `pnpm generate`. The newest folder is the default dataset. Nothing in `src/` changes. The `fetch-and-update` skill has the full procedure.
 
-**Creating New Data Files from Excel**:
-To add a new dataset from an Excel file (e.g., `data/[DATE]UK.xlsx`):
+**Creating a Dataset from Excel**:
+To add a dataset from an Excel file (e.g., `data/[DATE]UK.xlsx`):
 
 1. **Extract data structure**: Use Node.js with xlsx package to understand the Excel layout:
    ```bash
@@ -72,13 +68,10 @@ To add a new dataset from an Excel file (e.g., `data/[DATE]UK.xlsx`):
    "
    ```
 
-2. **Create new data module**: Follow the pattern in existing `data-*.ts` files:
-   - Import types from `../types`
-   - Export `reservoirData` array with all 21 reservoirs
-   - Include all required fields: capacity, inflow, storage (current/lastYear), maxStorage, region
-   - Export `yearlyInflowData` (usually copy from previous dataset)
-   - Export `getReportDate()` function
-   - Export `getSummaryChanges()` with bilingual summaries
+2. **Create the folder**: copy the previous `data/snapshots/<id>/` and edit:
+   - `data.json`: `waterTransferred`, `reservoirData` (all 21 reservoirs, one per line: capacity, inflow, storage current/lastYear, maxStorage, region) and `yearlyInflowData` (usually copied from the previous dataset)
+   - `summary.en.md`, `summary.el.md`, `summary.ru.md`: the Recent Changes narrative
+   - `dams.json`: one-line summary per dam and language
 
 3. **Data extraction mapping**:
    - Column 0: Reservoir name
@@ -92,16 +85,14 @@ To add a new dataset from an Excel file (e.g., `data/[DATE]UK.xlsx`):
    - Column 10: Max storage amount (MCM)
    - Column 11: Max storage date
 
-4. **Regional classification**:
+4. **Regional classification** (enforced by `pnpm generate`):
    - Southern Conveyor: Kouris, Kalavasos, Lefkara, Dipotamos, Germasoyeia, Arminou, Polemidia, Achna
    - Paphos: Asprokremmos, Kannaviou, Mavrokolympos
    - Chrysochou: Evretou, Argaka, Pomos, Agia Marina
    - Nicosia: Vyzakia, Xyliatos, Kalopanagiotis
    - Recharge/Other: Tamassos, Klirou-Malounta, Solea
 
-5. **Update data manager**: Add import and entry to `availableDataSets` array, update default dataset ID
-
-6. **Validation**: Verify total storage percentage matches dashboard display by calculating (total current storage / total capacity) * 100
+5. **Validate**: run `pnpm generate`. It rejects a dataset with missing or unknown reservoirs, wrong regions, non-numeric fields, percentages more than 0.6 pp from amount / capacity, a folder name that isn't a real date, or `dams.json` names not in `data.json`. Also verify the total storage percentage matches the dashboard: (total current storage / total capacity) * 100
 
 **Internationalization**: Translations in `src/utils/translations.ts` with language switching via `LanguageContext`
 

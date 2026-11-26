@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-26
 **Session:** 23524c54-2c72-4435-83c4-a8617b15867d
-**Status:** sketch, nothing converted yet; generated output gitignored (decided 2026-11-26)
+**Status:** phases 0–4 done 2026-11-26; datasets live in `data/snapshots/`, the `data-*.ts` modules are gone. Generated output gitignored (decided 2026-11-26)
 
 ## Why, and why not SQLite
 
@@ -127,17 +127,48 @@ has to be bundled.
 
 ### 1. Exporter and equivalence check
 
-- `scripts/export-snapshots.ts` imports every module through the current `dataManager`,
+- `scripts/build/export-snapshots.ts` imports every module through the current `dataManager`,
   calls `getDatasetSnapshot(id)` for all 182 ids, and writes the folder layout above. Going
   through the real modules handles the old files' differing formats (older ones have no
   summaries; some are formatted across many lines) without parsing TypeScript.
-- `scripts/check-snapshots.ts` compares the **public `dataManager` outputs** per id, old
+- `scripts/build/check-snapshots.ts` compares the **public `dataManager` outputs** per id, old
   loader vs. new: `reservoirData`, `getReportDate`, `yearlyInflowData`,
   `getWaterTransferred`, `getSummaryChanges` × 3 languages, `getDamSummary` × 21 dams × 3
   languages. Comparing snapshot files alone isn't enough, because `registerDatasetSnapshot`
   behaves slightly differently from a real module (`getSummaryChanges` is `undefined` when
   `en` is null; a missing language returns `''`). **Nothing is deleted until this passes for
   all 182 ids.**
+
+**Done 2026-11-26** at `ee13f1e`. What exists:
+- `scripts/build/snapshots-lib.ts`: `writeSnapshot`, `readSnapshot`, `listSnapshotIds`
+  (folders sorted newest first). `data.json` keeps one reservoir / one season per line, so a
+  changed value is a one-line diff. `dams.json` is omitted when a dataset has no dam
+  summaries; a `summary.<lang>.md` is omitted when that language has none.
+- `scripts/build/export-snapshots.ts`: writes all 182 folders in about 1 s; deterministic
+  (same bytes on every run). 857 files, 3.65 MB of content, against 3.88 MB for the
+  TypeScript modules. 181 folders have
+  summaries (all but 17-MAR-2025) and 132 have dam summaries, matching the modules.
+- `scripts/build/check-snapshots.ts`: 13,286 comparisons (the getters above, plus
+  `getDamSummary` for every `DAM_SLUG_MAP` name and an unknown name), all equal. It also
+  checks that the folder list, sorted by date, equals today's `availableDataSets` and that
+  every label is derivable from its id. Tested against injected faults: a changed reservoir
+  value, one trailing space in a Russian summary, and a missing folder were each reported,
+  with a non-zero exit.
+- `dataManager.snapshotToModule()` (extracted from `registerDatasetSnapshot`) is the adapter
+  the check uses and the phase 2 loader will use, so the check tests the real code path.
+
+Notes for phase 2:
+- `data/snapshots/` is **not committed, and not kept on disk**: the daily routine still writes
+  `data-*.ts` modules, so the folders would go stale, and an untracked tree could get swept
+  into a `git add -A`. Regenerate it with `npx tsx scripts/build/export-snapshots.ts` right
+  before switching the loader, run the check, and commit the folders in the same change.
+- The compile step must build each snapshot with `readSnapshot` from `snapshots-lib.ts`.
+  That is the reader the check covers; a second parser would fall outside it.
+- `check-snapshots.ts` needs the old modules, so it stops working once they're deleted.
+  It is a one-time gate: retire it in the same change.
+- Summaries are verbatim, so most start with the `\n` the template literals had. Once the
+  skill writes `summary.*.md` by hand, decide whether that newline matters (it is rendered
+  as markdown) and, if not, trim it in the compile step and relax the check to match.
 
 ### 2. Switch the loader
 
@@ -147,6 +178,46 @@ has to be bundled.
 - `DEFAULT_DATASET_ID` is the newest folder.
 - Run the equivalence check again, then delete the 182 `data-*.ts` files.
 
+**Done 2026-11-26.** `scripts/build/build-snapshots.ts` validates every folder (via
+`readSnapshot` and `validateSnapshot` in `snapshots-lib.ts`) and writes
+`src/generated/snapshots/<id>.json` plus `snapshotIndex.ts` (dataset list with derived labels,
+static import of the newest, one literal `import()` per older one). `pnpm generate` runs it and
+the history digest; `postinstall`, `dev:next`, `og` and `build` run `generate`. `dataManager.ts`
+went from 758 to 433 lines.
+
+- **Report dates normalized** (decided during phase 2): the report date is the folder name.
+  `data.json` has no `reportDate`; 17 older datasets had `6/2/25`-style or `1-SEP-2025` dates.
+  Every consumer parses the date, so the only visible change is the public API's `reportDate`
+  field for those 17, now `DD-MMM-YYYY` like the rest.
+- **Equivalence:** all public `dataManager` outputs dumped for all 182 datasets before and after
+  the switch (getters, summaries for every dam name, region totals, drain dates, forecasts for
+  every selection, October baselines, sparklines, `getDatasetSnapshot`): identical except the
+  17 normalized date strings. Phase 1's check also passed on the final export.
+- `check-snapshots.ts` and `export-snapshots.ts` were deleted with the modules and were never
+  committed, so they are not in git history; their results are recorded above.
+- The planned `ensureCompiled()` for standalone `tsx` scripts was not built. The daily flow
+  runs `pnpm og` / `pnpm build`, which run `pnpm generate` first, and `postinstall` covers
+  fresh checkouts. A script run by hand right after adding a folder needs `pnpm generate`
+  first.
+- **Cron push guard:** `app/api/cron/check-wdd` decided "already pushed" by searching raw
+  `dataManager.ts` on `main` for the id, which would never match after the migration and
+  would have let the cron fire a duplicate run (and a duplicate Telegram post) in the window
+  between a push and its deploy. It now HEADs `data/snapshots/<id>/data.json` on `main`
+  (200 = pushed, 404 = not yet, anything else = guard unavailable, as before).
+- Validation also fails when the newest folder's `summary.<lang>.md` or `dams.json` is
+  byte-identical to the previous folder's, the likely mistake when a folder is copied.
+- **Bundle:** unchanged. 182 lazy dataset chunks, median 6.8 KB gzipped; first-load JS
+  543 KB gzipped on `/en` (542 before), 512 KB on dam and region pages (511).
+- **Speed:** tsc 7.3 s (6.5–7.5 before): 44k fewer TypeScript lines, but tsc now infers types
+  for the 182 imported JSON files, so check time stays 5.4 s. Lint 5.5 s (6.8 s). `next build`
+  16.0 s (15.3–15.7). As phase 0 predicted, the gain is the workflow, not speed.
+- **Found and fixed on the way:** the public API (`/api/v1/summary`, `reservoirs`, `regions`,
+  `inflow`) never loaded the requested dataset, so any older `?dataset=` returned the newest
+  numbers under the old id (e.g. 02-JUN-2025 answered 34.7% instead of 21.3%). This was live
+  in production before this migration. The routes now `await ensureDatasetLoaded()`.
+- `scripts/watch-wdd.sh` (local only, gitignored) now reads the latest dataset from the newest
+  `data/snapshots/` folder instead of grepping `dataManager.ts`.
+
 ### 3. Validation that replaces tsc
 
 tsc catches a malformed module for free today; JSON gets no such check. `scripts/validate-snapshots.ts`,
@@ -155,6 +226,15 @@ run by the skill after writing a dataset and as part of `pnpm build`, checks for
 - every required field present and numeric
 - storage % agrees with amount / capacity (CLAUDE.md validation rule)
 - the folder name is a valid id (`DD-MMM-YYYY`) that matches `reportDate`
+
+**Done 2026-11-26**, as `validateSnapshot()` inside the compile step rather than a separate
+script, so `pnpm generate` (and therefore install, dev, og and build) always validates. Checks:
+21 reservoirs, known names, no duplicates, CLAUDE.md regions, every number finite,
+`maxStorage.date` present, percentages within 0.6 pp of amount / capacity (the largest gap in
+the 182 existing datasets is 0.5 pp), the folder name a real calendar date, valid
+`yearlyInflowData` and `waterTransferred`, and `dams.json` names present in `data.json`.
+Tested on injected faults (wrong region, percentage 18 pp off, a missing reservoir, the
+orphaned dam summary that leaves, `31-NOV-2026`): each reported, non-zero exit.
 
 ### 4. Update the workflow docs, in the same commit as the code
 
@@ -167,6 +247,11 @@ run by the skill after writing a dataset and as part of `pnpm build`, checks for
   the Data Flow list.
 - No route changes expected: `app/api/internal/narrative` and `llms.txt` go through
   `dataManager`, so they follow the loader.
+
+**Done 2026-11-26.** The skill's dataset steps now describe the folder (Dataset Folder
+Creation, `dams.json`, `summary.<lang>.md`, `pnpm generate`), and CLAUDE.md's architecture,
+data flow, Multi-Dataset Support and Excel sections match. Summaries stay verbatim; the skill
+notes that older ones start with a blank line and new ones don't need it.
 
 ### Later, not in this migration
 
