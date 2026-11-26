@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getApiReservoirs, isValidDataset, isValidRegion, VALID_REGIONS } from '@/utils/dataApi';
 import { ApiErrorResponse } from '@/types/api';
+import { ensureDatasetLoaded } from '@/utils/dataManager';
 
 const CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
@@ -27,6 +28,10 @@ export async function GET(request: NextRequest) {
     };
     return NextResponse.json(error, { status: 400, headers: { 'Access-Control-Allow-Origin': '*' } });
   }
+
+  // Older datasets are lazy: load before reading, or the getters fall back to the newest
+
+  if (datasetId) await ensureDatasetLoaded(datasetId);
 
   const data = getApiReservoirs(datasetId, region);
   return NextResponse.json(data, { headers: CACHE_HEADERS });
