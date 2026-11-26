@@ -4326,6 +4326,48 @@ Gap vs last year: +24.6pp.
 
 ---
 
+## November 9 — Kairika: Frost in Cyprus (article)
+
+📰 Announcement from the sister project Kairika (kairika.info): **"Below zero: when, where and how often Cyprus freezes"** (EN/EL/RU/DE, dated 9 Nov 2026), prompted by the summit's first frost on the night of 8 November, three weeks early. Station data 2000–2026, with the frost calendar as the share card.
+
+Full article: [kairika.info/articles/frost-in-cyprus](https://kairika.info/articles/frost-in-cyprus)
+Reddit: https://www.reddit.com/r/cyprus/s/ARhjnuja8m
+
+### Telegram
+Sent by Vlad, 2026-11-09 09:13 (time as shown on the public embed). Public link: https://t.me/fragmatainfo/198 (message_id not captured; sent manually, not via the pipeline). Text below is the final draft; a read-back of the public post confirmed the same content but could not be captured verbatim, so edits made while posting are not reflected. The public embed showed no photo.
+```
+❄️ Cyprus is below zero again
+
+The first frost of the winter reached the top of Troodos on Sunday night, three weeks early. Heating-oil season has officially begun. So we counted every frost night at every station since 2000.
+
+🌡 The night of 8 November
+• Chromio (1829 m) dropped below zero at 17:50 and stayed there for about 12½ hours
+• Low of −2.0°C at 22:00; Troodos station reached −0.9°C
+• The summit usually gets its first frost around 1 December
+
+🗺 Where Cyprus freezes
+• 46 of 50 stations have recorded frost; only four coastal ones never have
+• Troodos averages 61 frost nights a winter, Prodromos about 30
+• Eptagoneia at 511 m gets as many frost nights as Agros at 1004 m
+• Avdimou, at 47 m and near the sea, has frozen in 12 of 15 winters
+
+🏙 City life has perks
+• Athalassa gets three times the frost of central Nicosia, 4 km away
+• The buildings give back the day's heat all night: the only free central heating on the island this winter
+
+🥶 The big ones
+• 24 February 2025: 37 of 50 stations below zero at once, even Larnaca airport
+• Coldest night on record: −13.2°C at Chromio, 9 February 2023
+• Frostiest winter: 2021/22, with 103 frost nights on Troodos
+
+🔮 Does an early frost mean a harsh winter? No: early starts have been followed by mild winters and harsh ones alike. But if you live in the hills, maybe call the heating-oil man before everyone else does.
+
+Full article, with the frost map, the frost calendar and the night of 8 November minute by minute:
+https://kairika.info/articles/frost-in-cyprus
+```
+
+---
+
 ## 2026-11-09
 📰 Major update (Monday): 35.1% (102.01 MCM), +0.22 MCM since Friday; 3-day inflow 0.45 MCM; Arminou 73.1%.
 
