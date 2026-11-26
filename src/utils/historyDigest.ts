@@ -1,5 +1,5 @@
 // Compact slices of the historical record for code that runs on first load.
-// See scripts/build/history-digest.ts; the full table is in historicalStorageData.ts.
+// See scripts/build/build-history.ts; the full table is in historicalStorageData.ts.
 import type { HistoricalStorageEntry } from '../types';
 import { DIGEST_KEYS, monthlyRows, recentRows, type DigestRow } from '../generated/historyDigest';
 

@@ -258,8 +258,20 @@ notes that older ones start with a blank line and new ones don't need it.
 - **`historicalStorageData.ts`** (454 KB) duplicates each new dataset's readings. It could be
   derived from snapshots for dates from March 2025 on, but only **at compile time**; deriving
   it at runtime would make the heatmap load all 182 snapshots in the browser.
+  **Done 2026-11-26: derived at compile time.** From 17 March 2025 the table had exactly one
+  row per dataset folder, on the same 182 dates. `scripts/build/build-history.ts` (replacing
+  `history-digest.ts`) now merges `data/history/archive.json` (893 rows, 1988 to 1 March 2025,
+  moved verbatim) with a row built from each folder, writes the full table to
+  `src/generated/historicalStorage.ts` (re-exported by `src/utils/historicalStorageData.ts`)
+  and the digest from the same rows. The update skill no longer writes history rows.
+  Against the hand-kept table: 1,072 of 1,075 rows identical; three corrections, all toward
+  the bulletin data: 2025-12-05 Pomos 0.088 → 0.0883 and 2025-12-11 Kalopanagiotis 0.158 →
+  0.1575 (rows had been rounded), and 2026-06-17 `totalSCP` 73.088 → 73.097 (a mis-summed
+  total). Downstream, only two sparkline points moved (about 0.1 pp each); forecasts,
+  baselines and every other output identical; OG cards byte-identical; first-load JS
+  unchanged.
   **Done 2026-11-26: out of first-load JS.** First-render code now reads a generated digest
-  (`scripts/build/history-digest.ts` → `src/generated/historyDigest.ts`, gitignored, built on
+  (`scripts/build/history-digest.ts`, now `build-history.ts` → `src/generated/historyDigest.ts`, gitignored, built on
   `postinstall`, `dev:next`, `og` and `build`): the earliest entry of each month plus the
   last 14 months in full. Outputs were byte-identical for all 182 datasets (every forecast
   selection at 7% and 20%, October baselines, sparklines). First-load JS went from 579 to

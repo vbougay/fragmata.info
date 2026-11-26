@@ -93,7 +93,7 @@ apply these overrides.
   ```bash
   git fetch origin main
   git checkout -B main origin/main        # start from the current tip of main
-  # ...add data/snapshots/DD-MMM-YYYY/, edit historicalStorageData.ts, run pnpm generate...
+  # ...add data/snapshots/DD-MMM-YYYY/, run pnpm generate...
   # ...send the Telegram post via the relay (see above), capture message_id...
   # ...append the Sent: annotation + post to community/TELEGRAM.md (see After a successful send)...
   git add -A
@@ -185,16 +185,13 @@ being byte-identical to the previous folder's (a copied file left unedited). Com
 (`git diff --no-index data/snapshots/<previous>/data.json data/snapshots/<new>/data.json`
 shows the day's changes reservoir by reservoir).
 
-**Historical Storage Data (`historicalStorageData.ts`):**
-
-The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it must be updated alongside each new dataset or the chart will stop at the previous date.
-
-- Add a new entry to the `historicalStorageData` array with the current storage amounts from the new dataset
-- Use the format: `{ date: "YYYY-MM-DD", kouris: X, kalavasos: X, ... , totalSCP: X, totalAll: X }`
-- `totalSCP` = sum of Southern Conveyor reservoirs (kouris, kalavasos, lefkara, dipotamos, germasoyeia, arminou, polemidia, achna)
-- `totalAll` = sum of all 21 reservoirs
-- The storage values come from each reservoir's `storage.current.amount` in the new dataset's `data.json`
-- The dashboard, dam and region pages don't load this table on first render. The forecast, October baseline and sparklines read a compact digest generated from it into `src/generated/historyDigest.ts` (gitignored). `pnpm generate` writes it (as do `pnpm og`, `pnpm build`, `pnpm dev:next` and `pnpm install`, which all run `generate`). If a dev server is already running, run `pnpm generate` again after editing. The generator exits non-zero if the table is out of date order or a month's first entry isn't its day-1..3 reading when one exists: fix the entry, don't bypass the check
+**Historical Storage Data:** nothing to do. The heatmap's history table is built by
+`pnpm generate` from `data/history/archive.json` (1988 to 1 March 2025, fixed) plus one row
+per dataset folder (each reservoir's `storage.current.amount`, with `totalSCP` and `totalAll`
+summed for you). Never edit `src/utils/historicalStorageData.ts` or add rows by hand. The
+builder exits non-zero if the dates are out of order or a month's first entry isn't its
+day-1..3 reading when one exists (the forecast relies on that); fix the dataset folder,
+don't bypass the check.
 
 **Narrative coherence** — the website summary (`summary.<lang>.md`), articles, and community posts are all part of one evolving story. Before writing any of them:
 - Read the recent entries in `community/TELEGRAM.md` (tracked, present in every run including cloud) and the latest `data/snapshots/*/summary.en.md` to understand the current narrative arc

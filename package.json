@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint .",
     "postinstall": "pnpm -s generate",
-    "generate": "tsx scripts/build/build-snapshots.ts && tsx scripts/build/history-digest.ts"
+    "generate": "tsx scripts/build/build-snapshots.ts && tsx scripts/build/build-history.ts"
   },
   "portless": {
     "name": "fragmata",
