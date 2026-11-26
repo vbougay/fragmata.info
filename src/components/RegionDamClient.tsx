@@ -14,7 +14,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation, translations } from '@/utils/translations';
 import { RegionTotal, ReservoirRegion, Reservoir } from '@/types';
 import { YTDInflowResult, YTDOutflowResult } from '@/utils/reservoirUtils';
-import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
+import type { HistoricalStorageEntry } from '@/types';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { MapPin } from 'lucide-react';
 import { getRegionSlugForDam, REGION_SLUG_MAP } from '@/utils/slugs';

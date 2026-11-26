@@ -37,6 +37,10 @@ next-env.d.ts
 # Local-only scripts, but keep the OG card generator (+ its fonts) tracked
 scripts/*
 !scripts/og/
+# Build-time generators (outputs go to src/generated/, which is gitignored)
+!scripts/build/
+
+src/generated/
 
 # Generated OG social cards (rebuilt by `pnpm og` and the build step)
 /public/og/

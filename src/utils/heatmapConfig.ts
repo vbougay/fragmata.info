@@ -1,4 +1,4 @@
-import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
+import type { HistoricalStorageEntry } from '@/types';
 
 export interface ReservoirMeta {
   key: keyof HistoricalStorageEntry;

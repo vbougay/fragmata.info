@@ -15,7 +15,7 @@ import {
   getOctoberBaselineStorage,
 } from "@/utils/dataManager";
 import { calculateForecast, MAIN_RES_KEYS, REGION_KEYS } from "@/utils/forecastEngine";
-import { HistoricalStorageEntry } from "@/utils/historicalStorageData";
+import type { HistoricalStorageEntry } from "@/types";
 import { Reservoir, RegionTotal } from "@/types";
 
 const MONTH_KEYS = [

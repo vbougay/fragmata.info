@@ -1,5 +1,6 @@
 import { Reservoir } from '../types';
-import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
+import type { HistoricalStorageEntry } from '../types';
+import { recentHistory } from './historyDigest';
 
 export interface SparklineDataPoint {
   date: string;
@@ -38,16 +39,17 @@ const RESERVOIR_NAME_TO_HISTORICAL_KEY: Record<string, keyof HistoricalStorageEn
  */
 export function getAllSparklineData(reservoirs: Reservoir[]): Map<string, SparklineDataPoint[]> {
   const result = new Map<string, SparklineDataPoint[]>();
-  if (historicalStorageData.length === 0) return result;
+  // recentHistory is the tail of the record (a little over 12 months), not the whole table
+  if (recentHistory.length === 0) return result;
 
   // Determine date range: last 12 months from the latest entry
-  const latestDate = historicalStorageData[historicalStorageData.length - 1].date;
+  const latestDate = recentHistory[recentHistory.length - 1].date;
   const cutoff = new Date(latestDate);
   cutoff.setFullYear(cutoff.getFullYear() - 1);
   const cutoffStr = cutoff.toISOString().slice(0, 10);
 
   // Filter historical data to trailing 12 months
-  const recentData = historicalStorageData.filter(entry => entry.date >= cutoffStr);
+  const recentData = recentHistory.filter(entry => entry.date >= cutoffStr);
 
   // Build capacity lookup from current reservoir data
   const capacityMap = new Map<string, number>();

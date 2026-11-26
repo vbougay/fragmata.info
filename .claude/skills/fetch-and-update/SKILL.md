@@ -173,6 +173,7 @@ The historical heatmap chart uses `src/utils/historicalStorageData.ts` — it mu
 - `totalSCP` = sum of Southern Conveyor reservoirs (kouris, kalavasos, lefkara, dipotamos, germasoyeia, arminou, polemidia, achna)
 - `totalAll` = sum of all 21 reservoirs
 - The storage values come from each reservoir's `storage.current.amount` in the new data module
+- The dashboard, dam and region pages don't load this table on first render. The forecast, October baseline and sparklines read a compact digest generated from it into `src/generated/historyDigest.ts` (gitignored). `pnpm og`, `pnpm build`, `pnpm dev:next` and `pnpm install` regenerate it, so a run that uses `pnpm og` needs nothing extra. If a dev server is already running, refresh it with `npx tsx scripts/build/history-digest.ts`. The generator exits non-zero if the table is out of date order or a month's first entry isn't its day-1..3 reading when one exists: fix the entry, don't bypass the check
 
 **Narrative coherence** — the `getSummaryChanges` text, articles, and community posts are all part of one evolving story. Before writing any of them:
 - Read the recent entries in `community/TELEGRAM.md` (tracked, present in every run including cloud) and the latest `getSummaryChanges` to understand the current narrative arc

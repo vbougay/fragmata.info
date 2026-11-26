@@ -9,7 +9,8 @@ import {
   getReservoirsWithDrainDates as getReservoirsWithDrainDatesUtil,
   parseReportDate
 } from './reservoirUtils';
-import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
+import type { HistoricalStorageEntry } from '../types';
+import { monthlyHistory } from './historyDigest';
 import { calculateGrandTotalForecast, calculateForecast, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS } from './forecastEngine';
 
 // --- Lazy data module loading ---
@@ -605,10 +606,9 @@ export const getForecastForSelection = (
  */
 function getOctoberStorageFromHistorical(year: number): number | null {
   const prefix = `${year}-10`;
-  const octEntries = historicalStorageData.filter(entry => entry.date.startsWith(prefix));
-  if (octEntries.length === 0) return null;
-
-  const entry = octEntries[0]; // earliest Oct entry (data is chronological)
+  // monthlyHistory holds the earliest entry of each month, so this is the earliest Oct entry
+  const entry = monthlyHistory.find(e => e.date.startsWith(prefix));
+  if (!entry) return null;
   return MAIN_RES_KEYS.reduce((sum, key) => sum + ((entry[key] as number | null) ?? 0), 0);
 }
 

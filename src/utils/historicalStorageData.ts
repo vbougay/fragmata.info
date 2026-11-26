@@ -4,32 +4,8 @@
 // Readings are bi-monthly (1st and 15th of each month)
 // null values indicate the reservoir did not exist or data was not recorded
 
-export interface HistoricalStorageEntry {
-  date: string; // ISO date string YYYY-MM-DD
-  kouris: number | null;
-  kalavasos: number | null;
-  lefkara: number | null;
-  dipotamos: number | null;
-  germasoyeia: number | null;
-  arminou: number | null;
-  polemidia: number | null;
-  asprokremmos: number | null;
-  evretou: number | null;
-  kannaviou: number | null;
-  mavrokolympos: number | null;
-  vyzakia: number | null;
-  xyliatos: number | null;
-  argaka: number | null;
-  pomos: number | null;
-  kalopanagiotis: number | null;
-  agiaMarina: number | null;
-  achna: number | null;
-  tamassos: number | null;
-  klirouMalounta: number | null;
-  solea: number | null;
-  totalSCP: number | null; // Southern Conveyor Project total
-  totalAll: number | null; // All reservoirs total
-}
+import type { HistoricalStorageEntry } from '../types';
+export type { HistoricalStorageEntry };
 
 export const historicalStorageData: HistoricalStorageEntry[] = [
   { date: "1988-01-01", kouris: 8.02, kalavasos: 4.102, lefkara: 0.671, dipotamos: 1.187, germasoyeia: 7.341, arminou: 0, polemidia: 1.326, asprokremmos: 36.29, evretou: 8.364, kannaviou: null, mavrokolympos: 0.228, vyzakia: 0, xyliatos: 0.944, argaka: 0.26, pomos: 0, kalopanagiotis: 0, agiaMarina: 0.06, achna: 0, tamassos: null, klirouMalounta: null, solea: null, totalSCP: 22.647, totalAll: 68.793 },

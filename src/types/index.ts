@@ -92,3 +92,32 @@ export interface DrainForecast {
   confidence: 'low' | 'medium' | 'high';
   trajectories: ForecastTrajectoryPoint[];
 }
+
+// One row of the bi-monthly historical record (src/utils/historicalStorageData.ts).
+// Lives here so type-only users don't pull the 450 KB table into a bundle.
+export interface HistoricalStorageEntry {
+  date: string; // ISO date string YYYY-MM-DD
+  kouris: number | null;
+  kalavasos: number | null;
+  lefkara: number | null;
+  dipotamos: number | null;
+  germasoyeia: number | null;
+  arminou: number | null;
+  polemidia: number | null;
+  asprokremmos: number | null;
+  evretou: number | null;
+  kannaviou: number | null;
+  mavrokolympos: number | null;
+  vyzakia: number | null;
+  xyliatos: number | null;
+  argaka: number | null;
+  pomos: number | null;
+  kalopanagiotis: number | null;
+  agiaMarina: number | null;
+  achna: number | null;
+  tamassos: number | null;
+  klirouMalounta: number | null;
+  solea: number | null;
+  totalSCP: number | null; // Southern Conveyor Project total
+  totalAll: number | null; // All reservoirs total
+}

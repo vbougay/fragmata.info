@@ -16,7 +16,8 @@
 // (lag-1 correlation 0.04 since 1961). Backtested on 174 start dates in
 // 2003–2024, the median path was exceeded about half the time at 6–36 months.
 
-import { historicalStorageData, HistoricalStorageEntry } from './historicalStorageData';
+import type { HistoricalStorageEntry } from '../types';
+import { monthlyHistory } from './historyDigest';
 import { CyclePhase, DrainForecast, ForecastTrajectoryPoint } from '../types';
 import { parseReportDate } from './reservoirUtils';
 
@@ -74,7 +75,9 @@ function sumKeys(entry: HistoricalStorageEntry, keys: (keyof HistoricalStorageEn
  */
 function getMonthlyStorageForKeys(keys: (keyof HistoricalStorageEntry)[]): Map<string, number> {
   const result = new Map<string, number>();
-  for (const entry of historicalStorageData) {
+  // monthlyHistory holds the earliest entry of each month; the history-digest
+  // generator guarantees it is a day-1..3 entry whenever the month has one
+  for (const entry of monthlyHistory) {
     const day = parseInt(entry.date.substring(8, 10));
     if (day <= 3) {
       const mapKey = entry.date.substring(0, 7);

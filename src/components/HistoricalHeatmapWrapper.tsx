@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import type { HistoricalStorageEntry } from "@/utils/historicalStorageData";
+import type { HistoricalStorageEntry } from "@/types";
 import type { SparklineDataPoint } from "@/utils/sparklineData";
 
 interface HistoricalHeatmapWrapperProps {

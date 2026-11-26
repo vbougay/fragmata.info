@@ -1,5 +1,5 @@
 import { ReservoirRegion } from '@/types';
-import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
+import type { HistoricalStorageEntry } from '@/types';
 
 // Region slug → ReservoirRegion
 export const REGION_SLUG_MAP: Record<string, ReservoirRegion> = {

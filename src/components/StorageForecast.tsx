@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { getForecastForSelection, getStorageForKeys, MAIN_RES_KEYS, REGION_KEYS, MAJOR_DAM_KEYS } from '@/utils/dataManager';
-import { HistoricalStorageEntry } from '@/utils/historicalStorageData';
+import type { HistoricalStorageEntry } from '@/types';
 import { useDataContext } from '@/context/DataContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTranslation } from '@/utils/translations';
